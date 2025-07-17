@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Med Expeditions - WildMed Safaris</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#2563eb',secondary:'#059669'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.parallax-bg { background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
+.program-card { transition: all 0.3s ease; }
+.program-card:hover { transform: translateY(-8px); }
+.specialty-card { transition: all 0.3s ease; }
+.specialty-card:hover { transform: translateY(-4px); }
+.accommodation-card { transition: all 0.3s ease; }
+.accommodation-card:hover { transform: scale(1.02); }
+.map-pin { transition: all 0.3s ease; cursor: pointer; }
+.map-pin:hover { transform: scale(1.2); }
+.calendar-card { transition: all 0.3s ease; }
+.calendar-card:hover { border-color: #2563eb; }
+</style>
+</head>
+<body class="bg-gray-50">
+<header class="fixed top-0 w-full z-50" style="background-color: rgba(59, 42, 27, 0.95);">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center">
+<h1 class="text-white text-xl font-['Pacifico'] tracking-wide">WildMed Safaris</h1>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a href="https://readdy.ai/home/345e607d-4005-4f04-acb2-e79926632841/9a80af20-e47a-457d-bd58-99e8af1e83a9" data-readdy="true" class="text-white hover:text-green-400 transition-colors duration-200">Home</a>
+<div class="relative group">
+<a href="#" class="text-white hover:text-green-400 transition-colors duration-200 flex items-center">
+Destinations
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-down-s-line text-sm"></i>
+</div>
+</a>
+<div class="absolute top-full left-0 mt-2 w-48 bg-blue-900 bg-opacity-90 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-t-md">East Africa</a>
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800">Southern Africa</a>
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-b-md">West Africa</a>
+</div>
+</div>
+<div class="relative group">
+<a href="#" class="text-white hover:text-green-400 transition-colors duration-200 flex items-center">
+Custom Expeditions
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-down-s-line text-sm"></i>
+</div>
+</a>
+<div class="absolute top-full left-0 mt-2 w-48 bg-blue-900 bg-opacity-90 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-t-md">Wildlife Focus</a>
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800">Photography Tours</a>
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-b-md">Adventure Safaris</a>
+</div>
+</div>
+<div class="relative group">
+<a href="#" class="text-white hover:text-green-400 transition-colors duration-200 flex items-center">
+Vet Expeditions
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-down-s-line text-sm"></i>
+</div>
+</a>
+<div class="absolute top-full left-0 mt-2 w-48 bg-blue-900 bg-opacity-90 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-t-md">Conservation Programs</a>
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800">Research Projects</a>
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-b-md">Field Training</a>
+</div>
+</div>
+<a href="#" class="text-green-400 hover:text-green-300 transition-colors duration-200">Med Expeditions</a>
+</nav>
+<button class="md:hidden text-white">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-menu-line text-xl"></i>
+</div>
+</button>
+</div>
+</div>
+</header>
+
+<section class="relative h-screen flex items-center justify-center parallax-bg" style="background-image: url('https://readdy.ai/api/search-image?query=Medical%20professionals%20providing%20healthcare%20in%20rural%20African%20village%20setting%20with%20mobile%20clinic%20tent%2C%20doctors%20and%20nurses%20treating%20patients%20outdoors%2C%20medical%20equipment%20and%20supplies%20visible%2C%20community%20members%20receiving%20care%2C%20golden%20hour%20lighting%20over%20savanna%20landscape%2C%20acacia%20trees%20in%20background%2C%20professional%20humanitarian%20medical%20mission%20atmosphere%2C%20warm%20earth%20tones%20and%20natural%20colors&width=1920&height=1080&seq=med-expedition-hero&orientation=landscape');">
+<div class="absolute inset-0 bg-gradient-to-r from-blue-900 via-blue-800 to-transparent opacity-85"></div>
+<div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+<h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">Medical Expeditions</h1>
+<p class="text-xl md:text-2xl mb-8 font-light">Join healthcare volunteer programs that deliver critical medical services to remote African communities</p>
+<button class="bg-secondary hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold !rounded-button transition-colors duration-200 whitespace-nowrap">
+Apply Now
+</button>
+</div>
+</section>
+
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Medical Program Types</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive healthcare programs that combine medical expertise with community outreach and safari operations</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Mobile%20medical%20clinic%20vehicle%20in%20African%20rural%20setting%2C%20healthcare%20workers%20setting%20up%20medical%20equipment%20outside%20van%2C%20patients%20waiting%20in%20line%20for%20treatment%2C%20medical%20supplies%20and%20examination%20table%20visible%2C%20dusty%20village%20road%20with%20traditional%20huts%20in%20background%2C%20professional%20mobile%20healthcare%20delivery%20scene&width=400&height=300&seq=mobile-clinic&orientation=landscape');"></div>
+<div class="p-6">
+<div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mb-4">
+<i class="ri-truck-line text-white text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Mobile Clinics</h3>
+<p class="text-gray-600 mb-4">Deliver essential healthcare services to remote rural communities using fully equipped mobile medical units.</p>
+<div class="text-sm text-gray-500 mb-4">Duration: 2-4 weeks | Requirements: MD/RN</div>
+<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
+</div>
+</div>
+
+<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Medical%20training%20session%20in%20African%20healthcare%20facility%2C%20experienced%20doctor%20teaching%20local%20healthcare%20workers%2C%20medical%20equipment%20and%20educational%20materials%20on%20table%2C%20engaged%20students%20taking%20notes%2C%20modern%20classroom%20setting%20with%20medical%20charts%20on%20walls%2C%20professional%20medical%20education%20atmosphere&width=400&height=300&seq=medical-training&orientation=landscape');"></div>
+<div class="p-6">
+<div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4">
+<i class="ri-graduation-cap-line text-white text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Medical Training</h3>
+<p class="text-gray-600 mb-4">Train local healthcare workers in advanced medical techniques and emergency response protocols.</p>
+<div class="text-sm text-gray-500 mb-4">Duration: 3-6 weeks | Requirements: Specialist MD</div>
+<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
+</div>
+</div>
+
+<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Emergency%20medical%20response%20team%20at%20safari%20camp%2C%20paramedics%20with%20medical%20equipment%20treating%20patient%20in%20wilderness%20setting%2C%20safari%20vehicles%20and%20tents%20in%20background%2C%20professional%20emergency%20medical%20care%20in%20remote%20location%2C%20golden%20savanna%20landscape%2C%20urgent%20medical%20response%20scene&width=400&height=300&seq=emergency-support&orientation=landscape');"></div>
+<div class="p-6">
+<div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mb-4">
+<i class="ri-first-aid-kit-line text-white text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Emergency Support</h3>
+<p class="text-gray-600 mb-4">Provide emergency medical support for safari operations and wilderness expeditions.</p>
+<div class="text-sm text-gray-500 mb-4">Duration: 1-3 weeks | Requirements: Emergency MD</div>
+<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
+</div>
+</div>
+
+<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Remote%20healthcare%20delivery%20in%20African%20wilderness%2C%20medical%20team%20hiking%20with%20backpack%20medical%20supplies%20to%20isolated%20village%2C%20mountainous%20terrain%20and%20challenging%20landscape%2C%20healthcare%20workers%20carrying%20portable%20medical%20equipment%2C%20adventure%20medical%20mission%20in%20remote%20area&width=400&height=300&seq=remote-healthcare&orientation=landscape');"></div>
+<div class="p-6">
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
+<i class="ri-map-pin-line text-white text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Remote Healthcare</h3>
+<p class="text-gray-600 mb-4">Deliver healthcare services to the most isolated communities in challenging wilderness environments.</p>
+<div class="text-sm text-gray-500 mb-4">Duration: 2-5 weeks | Requirements: General Practice</div>
+<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-16 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Program Destinations</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Medical expedition locations across Africa where your expertise is needed most</p>
+</div>
+<div class="relative bg-white rounded-2xl shadow-lg p-8">
+<div class="h-96 relative bg-cover bg-center rounded-lg overflow-hidden" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');">
+<div class="absolute inset-0 bg-black bg-opacity-20"></div>
+<div class="absolute top-8 left-8 map-pin bg-red-500 w-6 h-6 rounded-full flex items-center justify-center" data-location="kenya">
+<i class="ri-hospital-line text-white text-xs"></i>
+</div>
+<div class="absolute top-16 left-20 map-pin bg-blue-500 w-6 h-6 rounded-full flex items-center justify-center" data-location="tanzania">
+<i class="ri-first-aid-kit-line text-white text-xs"></i>
+</div>
+<div class="absolute bottom-20 left-12 map-pin bg-secondary w-6 h-6 rounded-full flex items-center justify-center" data-location="botswana">
+<i class="ri-truck-line text-white text-xs"></i>
+</div>
+<div class="absolute bottom-12 right-16 map-pin bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center" data-location="south-africa">
+<i class="ri-graduation-cap-line text-white text-xs"></i>
+</div>
+<div class="absolute top-1/3 right-1/4 map-pin bg-purple-500 w-6 h-6 rounded-full flex items-center justify-center" data-location="uganda">
+<i class="ri-map-pin-line text-white text-xs"></i>
+</div>
+</div>
+<div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="flex items-center p-3 bg-gray-50 rounded-lg">
+<div class="w-4 h-4 bg-red-500 rounded-full mr-3"></div>
+<div>
+<div class="font-semibold text-gray-900">Kenya</div>
+<div class="text-sm text-gray-600">Mobile Clinics</div>
+</div>
+</div>
+<div class="flex items-center p-3 bg-gray-50 rounded-lg">
+<div class="w-4 h-4 bg-blue-500 rounded-full mr-3"></div>
+<div>
+<div class="font-semibold text-gray-900">Tanzania</div>
+<div class="text-sm text-gray-600">Emergency Support</div>
+</div>
+</div>
+<div class="flex items-center p-3 bg-gray-50 rounded-lg">
+<div class="w-4 h-4 bg-secondary rounded-full mr-3"></div>
+<div>
+<div class="font-semibold text-gray-900">Botswana</div>
+<div class="text-sm text-gray-600">Remote Healthcare</div>
+</div>
+</div>
+<div class="flex items-center p-3 bg-gray-50 rounded-lg">
+<div class="w-4 h-4 bg-orange-500 rounded-full mr-3"></div>
+<div>
+<div class="font-semibold text-gray-900">South Africa</div>
+<div class="text-sm text-gray-600">Medical Training</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Medical Specialties Required</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Healthcare expertise needed for our medical expedition programs</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+<div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+<i class="ri-heart-pulse-line text-white text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Emergency Medicine</h3>
+<p class="text-gray-600 mb-4 text-center">Critical care and trauma management in remote settings</p>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="text-sm text-gray-600 mb-2">Requirements:</div>
+<ul class="text-sm text-gray-700 space-y-1">
+<li>• Board certification in Emergency Medicine</li>
+<li>• Minimum 3 years experience</li>
+<li>• Wilderness medicine training preferred</li>
+</ul>
+<div class="text-sm text-gray-600 mt-3">Commitment: 2-4 weeks</div>
+</div>
+</div>
+
+<div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+<div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+<i class="ri-stethoscope-line text-white text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">General Practice</h3>
+<p class="text-gray-600 mb-4 text-center">Primary care and preventive medicine for communities</p>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="text-sm text-gray-600 mb-2">Requirements:</div>
+<ul class="text-sm text-gray-700 space-y-1">
+<li>• MD or equivalent medical degree</li>
+<li>• Family medicine or internal medicine</li>
+<li>• Experience with tropical diseases</li>
+</ul>
+<div class="text-sm text-gray-600 mt-3">Commitment: 3-6 weeks</div>
+</div>
+</div>
+
+<div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+<div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-4 mx-auto">
+<i class="ri-global-line text-white text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Public Health</h3>
+<p class="text-gray-600 mb-4 text-center">Community health programs and disease prevention</p>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="text-sm text-gray-600 mb-2">Requirements:</div>
+<ul class="text-sm text-gray-700 space-y-1">
+<li>• MPH or equivalent public health degree</li>
+<li>• Community health experience</li>
+<li>• Program development skills</li>
+</ul>
+<div class="text-sm text-gray-600 mt-3">Commitment: 4-8 weeks</div>
+</div>
+</div>
+
+<div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+<div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+<i class="ri-microscope-line text-white text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Tropical Medicine</h3>
+<p class="text-gray-600 mb-4 text-center">Specialized care for tropical and infectious diseases</p>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="text-sm text-gray-600 mb-2">Requirements:</div>
+<ul class="text-sm text-gray-700 space-y-1">
+<li>• Tropical medicine certification</li>
+<li>• Infectious disease experience</li>
+<li>• Research background preferred</li>
+</ul>
+<div class="text-sm text-gray-600 mt-3">Commitment: 3-5 weeks</div>
+</div>
+</div>
+
+<div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+<div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+<i class="ri-surgical-mask-line text-white text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Surgery</h3>
+<p class="text-gray-600 mb-4 text-center">Essential surgical procedures in field conditions</p>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="text-sm text-gray-600 mb-2">Requirements:</div>
+<ul class="text-sm text-gray-700 space-y-1">
+<li>• Board certification in surgery</li>
+<li>• General surgery experience</li>
+<li>• Field surgery training preferred</li>
+</ul>
+<div class="text-sm text-gray-600 mt-3">Commitment: 2-3 weeks</div>
+</div>
+</div>
+
+<div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+<div class="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+<i class="ri-nurse-line text-white text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Nursing</h3>
+<p class="text-gray-600 mb-4 text-center">Comprehensive nursing care and patient education</p>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="text-sm text-gray-600 mb-2">Requirements:</div>
+<ul class="text-sm text-gray-700 space-y-1">
+<li>• RN license and BSN degree</li>
+<li>• Minimum 2 years clinical experience</li>
+<li>• Emergency nursing preferred</li>
+</ul>
+<div class="text-sm text-gray-600 mt-3">Commitment: 2-6 weeks</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-16 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Accommodation Details</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Comfortable and safe accommodations designed for medical professionals</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="accommodation-card bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Comfortable%20safari%20lodge%20accommodation%20with%20modern%20amenities%2C%20spacious%20bedroom%20with%20mosquito%20nets%20and%20comfortable%20beds%2C%20private%20bathroom%20facilities%2C%20wooden%20furniture%20and%20African%20decor%2C%20natural%20lighting%20through%20large%20windows%2C%20professional%20accommodation%20for%20medical%20volunteers&width=400&height=300&seq=lodge-accommodation&orientation=landscape');"></div>
+<div class="p-6">
+<h3 class="text-lg font-semibold text-gray-900 mb-3">Safari Lodges</h3>
+<p class="text-gray-600 mb-4">Comfortable lodge accommodations with private rooms and modern amenities.</p>
+<ul class="text-sm text-gray-600 space-y-1">
+<li>• Private en-suite bathrooms</li>
+<li>• Air conditioning/fans</li>
+<li>• WiFi access</li>
+<li>• 24/7 security</li>
+</ul>
+</div>
+</div>
+
+<div class="accommodation-card bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Medical%20field%20station%20accommodation%20in%20African%20setting%2C%20clean%20dormitory%20style%20rooms%20with%20bunk%20beds%2C%20shared%20facilities%20and%20common%20areas%2C%20medical%20equipment%20storage%20visible%2C%20functional%20and%20practical%20living%20space%20for%20healthcare%20workers%2C%20simple%20but%20comfortable%20setup&width=400&height=300&seq=field-station&orientation=landscape');"></div>
+<div class="p-6">
+<h3 class="text-lg font-semibold text-gray-900 mb-3">Field Stations</h3>
+<p class="text-gray-600 mb-4">Purpose-built medical field stations with shared facilities and work spaces.</p>
+<ul class="text-sm text-gray-600 space-y-1">
+<li>• Shared dormitory rooms</li>
+<li>• Common bathrooms</li>
+<li>• Medical equipment storage</li>
+<li>• Generator power</li>
+</ul>
+</div>
+</div>
+
+<div class="accommodation-card bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Mobile%20camping%20setup%20for%20medical%20expeditions%2C%20high%20quality%20expedition%20tents%20with%20comfortable%20sleeping%20arrangements%2C%20portable%20camp%20furniture%20and%20equipment%2C%20organized%20campsite%20in%20African%20wilderness%2C%20professional%20mobile%20accommodation%20for%20healthcare%20missions&width=400&height=300&seq=mobile-camp&orientation=landscape');"></div>
+<div class="p-6">
+<h3 class="text-lg font-semibold text-gray-900 mb-3">Mobile Camps</h3>
+<p class="text-gray-600 mb-4">Fully equipped mobile camps that move with medical missions to remote areas.</p>
+<ul class="text-sm text-gray-600 space-y-1">
+<li>• Weather-resistant tents</li>
+<li>• Portable facilities</li>
+<li>• Solar power systems</li>
+<li>• Mobile communication</li>
+</ul>
+</div>
+</div>
+
+<div class="accommodation-card bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Community%20guesthouse%20accommodation%20in%20African%20village%2C%20local%20style%20building%20with%20modern%20amenities%2C%20cultural%20integration%20and%20community%20interaction%2C%20simple%20but%20clean%20rooms%20with%20basic%20facilities%2C%20authentic%20local%20accommodation%20experience%20for%20medical%20volunteers&width=400&height=300&seq=community-guesthouse&orientation=landscape');"></div>
+<div class="p-6">
+<h3 class="text-lg font-semibold text-gray-900 mb-3">Community Guesthouses</h3>
+<p class="text-gray-600 mb-4">Local guesthouses that provide cultural immersion and community integration.</p>
+<ul class="text-sm text-gray-600 space-y-1">
+<li>• Local cultural experience</li>
+<li>• Basic but clean facilities</li>
+<li>• Community meals</li>
+<li>• Cultural exchange</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="mt-12 bg-white rounded-xl p-8 shadow-lg">
+<h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Standard Amenities</h3>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="text-center">
+<div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
+<i class="ri-restaurant-line text-white text-xl"></i>
+</div>
+<h4 class="font-semibold text-gray-900 mb-2">Meals Included</h4>
+<p class="text-sm text-gray-600">Three nutritious meals daily with dietary accommodations</p>
+</div>
+<div class="text-center">
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-3">
+<i class="ri-wifi-line text-white text-xl"></i>
+</div>
+<h4 class="font-semibold text-gray-900 mb-2">Internet Access</h4>
+<p class="text-sm text-gray-600">WiFi or satellite internet for communication and research</p>
+</div>
+<div class="text-center">
+<div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
+<i class="ri-shield-check-line text-white text-xl"></i>
+</div>
+<h4 class="font-semibold text-gray-900 mb-2">24/7 Security</h4>
+<p class="text-sm text-gray-600">Round-the-clock security and emergency support</p>
+</div>
+<div class="text-center">
+<div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
+<i class="ri-car-line text-white text-xl"></i>
+</div>
+<h4 class="font-semibold text-gray-900 mb-2">Transportation</h4>
+<p class="text-sm text-gray-600">Airport transfers and local transportation included</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Application Requirements</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Essential requirements for medical expedition participation</p>
+</div>
+<div class="grid lg:grid-cols-2 gap-12">
+<div class="bg-gray-50 rounded-xl p-8">
+<h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+<div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3">
+<i class="ri-star-fill text-white text-sm"></i>
+</div>
+Professional Requirements
+</h3>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Medical License</h4>
+<p class="text-gray-600 text-sm">Valid medical license in good standing from home country</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Professional Experience</h4>
+<p class="text-gray-600 text-sm">Minimum 2 years post-residency clinical experience</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Medical Clearance</h4>
+<p class="text-gray-600 text-sm">Complete medical examination and vaccination records</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Insurance Coverage</h4>
+<p class="text-gray-600 text-sm">International medical and evacuation insurance</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Background Check</h4>
+<p class="text-gray-600 text-sm">Clean criminal background check and references</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Language Proficiency</h4>
+<p class="text-gray-600 text-sm">Fluent English communication skills</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="bg-gray-50 rounded-xl p-8">
+<h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+<div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+<i class="ri-file-list-line text-white text-sm"></i>
+</div>
+Documentation Required
+</h3>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-file-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Curriculum Vitae</h4>
+<p class="text-gray-600 text-sm">Detailed CV with medical education and experience</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-file-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Medical Diploma</h4>
+<p class="text-gray-600 text-sm">Certified copy of medical degree and certifications</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-file-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Professional References</h4>
+<p class="text-gray-600 text-sm">Three professional references from medical colleagues</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-file-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Passport Copy</h4>
+<p class="text-gray-600 text-sm">Valid passport with minimum 6 months validity</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-file-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Vaccination Records</h4>
+<p class="text-gray-600 text-sm">Complete vaccination history including travel vaccines</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-file-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Motivation Letter</h4>
+<p class="text-gray-600 text-sm">Personal statement explaining your interest and goals</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-16 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Program Calendar</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Upcoming medical expedition dates and application deadlines</p>
+</div>
+<div class="bg-white rounded-2xl shadow-lg p-8">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div class="calendar-card border border-gray-200 rounded-lg p-4 hover:border-primary transition-colors duration-200">
+<div class="text-center">
+<div class="text-2xl font-bold text-primary mb-1">Apr 2024</div>
+<div class="text-sm text-gray-600 mb-3">Kenya Mobile Clinic</div>
+<div class="space-y-2 text-xs">
+<div class="flex justify-between">
+<span class="text-gray-500">Application:</span>
+<span class="font-semibold text-red-500">Feb 15</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Program:</span>
+<span class="font-semibold">Apr 8-22</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Spots:</span>
+<span class="font-semibold text-secondary">6 available</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Specialty:</span>
+<span class="font-semibold">General Practice</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="calendar-card border border-gray-200 rounded-lg p-4 hover:border-primary transition-colors duration-200">
+<div class="text-center">
+<div class="text-2xl font-bold text-primary mb-1">Jul 2024</div>
+<div class="text-sm text-gray-600 mb-3">Tanzania Emergency</div>
+<div class="space-y-2 text-xs">
+<div class="flex justify-between">
+<span class="text-gray-500">Application:</span>
+<span class="font-semibold text-green-600">May 1</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Program:</span>
+<span class="font-semibold">Jul 10-24</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Spots:</span>
+<span class="font-semibold text-secondary">4 available</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Specialty:</span>
+<span class="font-semibold">Emergency Med</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="calendar-card border border-gray-200 rounded-lg p-4 hover:border-primary transition-colors duration-200">
+<div class="text-center">
+<div class="text-2xl font-bold text-primary mb-1">Oct 2024</div>
+<div class="text-sm text-gray-600 mb-3">Botswana Training</div>
+<div class="space-y-2 text-xs">
+<div class="flex justify-between">
+<span class="text-gray-500">Application:</span>
+<span class="font-semibold text-green-600">Aug 15</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Program:</span>
+<span class="font-semibold">Oct 5-26</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Spots:</span>
+<span class="font-semibold text-secondary">8 available</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Specialty:</span>
+<span class="font-semibold">All Specialties</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="calendar-card border border-gray-200 rounded-lg p-4 hover:border-primary transition-colors duration-200">
+<div class="text-center">
+<div class="text-2xl font-bold text-primary mb-1">Jan 2025</div>
+<div class="text-sm text-gray-600 mb-3">Uganda Remote Care</div>
+<div class="space-y-2 text-xs">
+<div class="flex justify-between">
+<span class="text-gray-500">Application:</span>
+<span class="font-semibold text-green-600">Nov 1</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Program:</span>
+<span class="font-semibold">Jan 12-Feb 2</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Spots:</span>
+<span class="font-semibold text-secondary">10 available</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Specialty:</span>
+<span class="font-semibold">Public Health</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center">
+<button class="bg-primary hover:bg-blue-700 text-white px-8 py-3 !rounded-button font-semibold transition-colors duration-200 whitespace-nowrap mr-4">
+View Full Calendar
+</button>
+<button class="bg-secondary hover:bg-green-700 text-white px-8 py-3 !rounded-button font-semibold transition-colors duration-200 whitespace-nowrap">
+Apply Now
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Start Your Medical Expedition</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Ready to make a difference in global healthcare? Apply for our medical expedition programs</p>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8">
+<div class="grid lg:grid-cols-2 gap-12">
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Application Inquiry Form</h3>
+<form class="space-y-6">
+<div class="grid md:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
+<input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your first name">
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
+<input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your last name">
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+<input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your email">
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Medical Specialty</label>
+<div class="relative">
+<button type="button" class="w-full bg-white border border-gray-300 rounded-md px-4 py-3 text-left text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary specialty-btn">
+<span class="specialty-text">Select your medical specialty</span>
+<div class="w-4 h-4 flex items-center justify-center absolute right-3 top-1/2 transform -translate-y-1/2">
+<i class="ri-arrow-down-s-line text-gray-400"></i>
+</div>
+</button>
+<div class="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-300 rounded-md shadow-lg z-10 hidden specialty-dropdown">
+<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 specialty-option" data-value="emergency">Emergency Medicine</button>
+<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 specialty-option" data-value="general">General Practice</button>
+<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 specialty-option" data-value="public-health">Public Health</button>
+<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 specialty-option" data-value="tropical">Tropical Medicine</button>
+<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 specialty-option" data-value="surgery">Surgery</button>
+<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 specialty-option" data-value="nursing">Nursing</button>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Years of Experience</label>
+<div class="relative">
+<button type="button" class="w-full bg-white border border-gray-300 rounded-md px-4 py-3 text-left text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary experience-btn">
+<span class="experience-text">Select your experience level</span>
+<div class="w-4 h-4 flex items-center justify-center absolute right-3 top-1/2 transform -translate-y-1/2">
+<i class="ri-arrow-down-s-line text-gray-400"></i>
+</div>
+</button>
+<div class="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-300 rounded-md shadow-lg z-10 hidden experience-dropdown">
+<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 experience-option" data-value="2-5">2-5 years</button>
+<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 experience-option" data-value="6-10">6-10 years</button>
+<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 experience-option" data-value="11-15">11-15 years</button>
+<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 experience-option" data-value="15+">15+ years</button>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Program Interest</label>
+<div class="grid grid-cols-2 gap-3">
+<label class="flex items-center">
+<input type="checkbox" class="hidden program-checkbox" data-program="mobile-clinic">
+<div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
+<i class="ri-check-line text-white text-xs hidden"></i>
+</div>
+<span class="text-sm text-gray-700">Mobile Clinics</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="hidden program-checkbox" data-program="training">
+<div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
+<i class="ri-check-line text-white text-xs hidden"></i>
+</div>
+<span class="text-sm text-gray-700">Medical Training</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="hidden program-checkbox" data-program="emergency">
+<div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
+<i class="ri-check-line text-white text-xs hidden"></i>
+</div>
+<span class="text-sm text-gray-700">Emergency Support</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="hidden program-checkbox" data-program="remote">
+<div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
+<i class="ri-check-line text-white text-xs hidden"></i>
+</div>
+<span class="text-sm text-gray-700">Remote Healthcare</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Availability</label>
+<textarea rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Please describe your availability and preferred program dates..."></textarea>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Additional Information</label>
+<textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Tell us about your motivation for joining medical expeditions and any relevant experience..."></textarea>
+</div>
+<button type="submit" class="w-full bg-secondary hover:bg-green-700 text-white py-3 !rounded-button font-semibold transition-colors duration-200 whitespace-nowrap">
+Submit Application
+</button>
+</form>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+<i class="ri-phone-line text-white text-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Medical Program Coordinator</h4>
+<p class="text-gray-600 mb-2">Speak with our medical expedition specialists</p>
+<p class="text-primary font-semibold">+254 700 987 654</p>
+<p class="text-sm text-gray-500">Monday - Friday, 8:00 AM - 6:00 PM EAT</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+<i class="ri-mail-line text-white text-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Medical Programs Email</h4>
+<p class="text-gray-600 mb-2">Get detailed program information and requirements</p>
+<p class="text-secondary font-semibold">medical@wildmedsafaris.com</p>
+<p class="text-sm text-gray-500">Response within 12 hours</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+<i class="ri-calendar-line text-white text-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Schedule Consultation</h4>
+<p class="text-gray-600 mb-2">Book a one-on-one consultation call</p>
+<p class="text-orange-600 font-semibold">calendly.com/wildmed-medical</p>
+<p class="text-sm text-gray-500">Available slots updated daily</p>
+</div>
+</div>
+</div>
+<div class="mt-8 p-6 bg-blue-50 rounded-lg">
+<h4 class="font-semibold text-blue-900 mb-2 flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-heart-pulse-line text-blue-600"></i>
+</div>
+Medical Professional Priority
+</h4>
+<p class="text-blue-800 text-sm">Healthcare professionals receive priority processing and dedicated support throughout the application process.</p>
+</div>
+<div class="mt-4 p-6 bg-green-50 rounded-lg">
+<h4 class="font-semibold text-green-900 mb-2 flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-shield-check-line text-green-600"></i>
+</div>
+Comprehensive Support
+</h4>
+<p class="text-green-800 text-sm">Full pre-departure training, in-country support, and post-mission debrief included with every program.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="bg-brown-900 text-white py-16" style="background-color: rgba(59, 42, 27, 1);">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-4 gap-8">
+<div>
+<h3 class="text-xl font-['Pacifico'] mb-4">WildMed Safaris</h3>
+<p class="text-gray-300 mb-4">Creating unforgettable wildlife adventures that combine conservation, education, and cultural exchange.</p>
+<div class="flex space-x-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-facebook-fill text-xl hover:text-green-400 cursor-pointer transition-colors"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-twitter-fill text-xl hover:text-green-400 cursor-pointer transition-colors"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-instagram-fill text-xl hover:text-green-400 cursor-pointer transition-colors"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-youtube-fill text-xl hover:text-green-400 cursor-pointer transition-colors"></i>
+</div>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">About Us</a></li>
+<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">Destinations</a></li>
+<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">Custom Expeditions</a></li>
+<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">Medical Programs</a></li>
+<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">Conservation</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+<div class="space-y-2">
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-phone-line text-green-400"></i>
+</div>
+<span class="text-gray-300">+254 700 123 456</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-mail-line text-green-400"></i>
+</div>
+<span class="text-gray-300">info@wildmedsafaris.com</span>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-2 mt-1">
+<i class="ri-map-pin-line text-green-400"></i>
+</div>
+<span class="text-gray-300">Nairobi, Kenya<br>East Africa</span>
+</div>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+<p class="text-gray-300 mb-4">Stay updated with our latest expeditions and conservation efforts.</p>
+<div class="flex">
+<input type="email" placeholder="Your email" class="flex-1 px-3 py-2 bg-white text-gray-900 rounded-l-md border-none focus:outline-none focus:ring-2 focus:ring-green-400 text-sm">
+<button class="bg-secondary hover:bg-green-700 px-4 py-2 rounded-r-md transition-colors duration-200">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-send-plane-line text-white"></i>
+</div>
+</button>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-600 mt-8 pt-8 text-center">
+<p class="text-gray-300">&copy; 2024 WildMed Safaris. All rights reserved. | Privacy Policy | Terms of Service</p>
+</div>
+</div>
+</footer>
+
+<script id="specialty-dropdown">
+document.addEventListener('DOMContentLoaded', function() {
+const specialtyBtn = document.querySelector('.specialty-btn');
+const specialtyDropdown = document.querySelector('.specialty-dropdown');
+const specialtyText = document.querySelector('.specialty-text');
+const specialtyOptions = document.querySelectorAll('.specialty-option');
+
+specialtyBtn.addEventListener('click', function() {
+specialtyDropdown.classList.toggle('hidden');
+});
+
+specialtyOptions.forEach(option => {
+option.addEventListener('click', function() {
+const value = this.dataset.value;
+const text = this.textContent;
+specialtyText.textContent = text;
+specialtyDropdown.classList.add('hidden');
+});
+});
+
+document.addEventListener('click', function(e) {
+if (!specialtyBtn.contains(e.target) && !specialtyDropdown.contains(e.target)) {
+specialtyDropdown.classList.add('hidden');
+}
+});
+});
+</script>
+
+<script id="experience-dropdown">
+document.addEventListener('DOMContentLoaded', function() {
+const experienceBtn = document.querySelector('.experience-btn');
+const experienceDropdown = document.querySelector('.experience-dropdown');
+const experienceText = document.querySelector('.experience-text');
+const experienceOptions = document.querySelectorAll('.experience-option');
+
+experienceBtn.addEventListener('click', function() {
+experienceDropdown.classList.toggle('hidden');
+});
+
+experienceOptions.forEach(option => {
+option.addEventListener('click', function() {
+const value = this.dataset.value;
+const text = this.textContent;
+experienceText.textContent = text;
+experienceDropdown.classList.add('hidden');
+});
+});
+
+document.addEventListener('click', function(e) {
+if (!experienceBtn.contains(e.target) && !experienceDropdown.contains(e.target)) {
+experienceDropdown.classList.add('hidden');
+}
+});
+});
+</script>
+
+<script id="checkbox-functionality">
+document.addEventListener('DOMContentLoaded', function() {
+const checkboxes = document.querySelectorAll('.program-checkbox');
+checkboxes.forEach(checkbox => {
+const customBox = checkbox.nextElementSibling;
+const checkIcon = customBox.querySelector('i');
+
+checkbox.addEventListener('change', function() {
+if (this.checked) {
+customBox.classList.add('bg-secondary', 'border-secondary');
+customBox.classList.remove('border-gray-300');
+checkIcon.classList.remove('hidden');
+} else {
+customBox.classList.remove('bg-secondary', 'border-secondary');
+customBox.classList.add('border-gray-300');
+checkIcon.classList.add('hidden');
+}
+});
+
+customBox.addEventListener('click', function() {
+checkbox.click();
+});
+});
+});
+</script>
+
+<script id="map-pin-interaction">
+document.addEventListener('DOMContentLoaded', function() {
+const mapPins = document.querySelectorAll('.map-pin');
+mapPins.forEach(pin => {
+pin.addEventListener('mouseenter', function() {
+const location = this.dataset.location;
+console.log('Hovering over:', location);
+});
+});
+});
+</script>
+
+</body>
+</html>

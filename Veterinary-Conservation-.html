@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conservation Programs - WildMed Safaris</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#2563eb',secondary:'#059669'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.parallax-bg { background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
+.program-card { transition: all 0.3s ease; }
+.program-card:hover { transform: translateY(-8px); }
+.timeline-item { position: relative; }
+.timeline-item::before { content: ''; position: absolute; left: 1.5rem; top: 3rem; bottom: -2rem; width: 2px; background: linear-gradient(to bottom, #2563eb, #059669); }
+.timeline-item:last-child::before { display: none; }
+.success-story { background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(5, 150, 105, 0.1)); }
+</style>
+</head>
+<body class="bg-gray-50">
+<header class="fixed top-0 w-full z-50" style="background-color: rgba(59, 42, 27, 0.95);">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center">
+<h1 class="text-white text-xl font-['Pacifico'] tracking-wide">WildMed Safaris</h1>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a href="#" class="text-white hover:text-green-400 transition-colors duration-200">Home</a>
+<div class="relative group">
+<a href="#" class="text-white hover:text-green-400 transition-colors duration-200 flex items-center">
+Destinations
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-down-s-line text-sm"></i>
+</div>
+</a>
+<div class="absolute top-full left-0 mt-2 w-48 bg-blue-900 bg-opacity-90 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-t-md">East Africa</a>
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800">Southern Africa</a>
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-b-md">West Africa</a>
+</div>
+</div>
+<div class="relative group">
+<a href="#" class="text-white hover:text-green-400 transition-colors duration-200 flex items-center">
+Custom Expeditions
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-down-s-line text-sm"></i>
+</div>
+</a>
+<div class="absolute top-full left-0 mt-2 w-48 bg-blue-900 bg-opacity-90 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-t-md">Wildlife Focus</a>
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800">Photography Tours</a>
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-b-md">Adventure Safaris</a>
+</div>
+</div>
+<div class="relative group">
+<a href="#" class="text-green-400 hover:text-green-300 transition-colors duration-200 flex items-center">
+Vet Expeditions
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-down-s-line text-sm"></i>
+</div>
+</a>
+<div class="absolute top-full left-0 mt-2 w-48 bg-blue-900 bg-opacity-90 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+<a href="https://readdy.ai/home/345e607d-4005-4f04-acb2-e79926632841/2c59c689-7e18-4611-b593-c928cb5cd075" data-readdy="true" class="block px-4 py-2 text-green-400 hover:bg-blue-800 rounded-t-md">Conservation Programs</a>
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800">Research Projects</a>
+<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-b-md">Field Training</a>
+</div>
+</div>
+<a href="https://readdy.ai/home/345e607d-4005-4f04-acb2-e79926632841/8ca71a30-1eb2-4385-a2e4-8a523cffa694" data-readdy="true" class="text-white hover:text-green-400 transition-colors duration-200">Med Expeditions</a>
+</nav>
+<button class="md:hidden text-white">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-menu-line text-xl"></i>
+</div>
+</button>
+</div>
+</div>
+</header>
+<section class="relative h-screen flex items-center justify-center parallax-bg" style="background-image: url('https://readdy.ai/api/search-image?query=Veterinarian%20examining%20wild%20elephant%20in%20African%20savanna%20with%20conservation%20team%20in%20background%2C%20golden%20hour%20lighting%2C%20professional%20wildlife%20conservation%20scene%2C%20medical%20equipment%20and%20research%20tools%20visible%2C%20acacia%20trees%20and%20vast%20plains%20stretching%20to%20horizon%2C%20warm%20natural%20colors%2C%20documentary%20photography%20style%2C%20inspiring%20conservation%20work%20atmosphere&width=1920&height=1080&seq=conservation-hero&orientation=landscape');">
+<div class="absolute inset-0 bg-gradient-to-r from-blue-900 via-blue-800 to-transparent opacity-85"></div>
+<div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+<h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">Conservation Programs</h1>
+<p class="text-xl md:text-2xl mb-8 font-light">Join veterinary conservation initiatives that protect wildlife and support local communities</p>
+<button class="bg-secondary hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold !rounded-button transition-colors duration-200 whitespace-nowrap">
+Apply for Programs
+</button>
+</div>
+</section>
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Our Conservation Initiatives</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive programs that combine veterinary expertise with field conservation work to protect Africa's wildlife</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Wildlife%20health%20monitoring%20equipment%20and%20veterinary%20tools%20in%20African%20field%20station%2C%20medical%20charts%20and%20data%20collection%20devices%2C%20professional%20conservation%20workspace%2C%20clean%20modern%20setup%20with%20natural%20lighting%2C%20scientific%20research%20atmosphere%2C%20organized%20medical%20supplies%20and%20monitoring%20technology&width=400&height=300&seq=health-monitoring&orientation=landscape');"></div>
+<div class="p-6">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+<i class="ri-heart-pulse-line text-white text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Wildlife Health Monitoring</h3>
+<p class="text-gray-600 mb-4">Conduct comprehensive health assessments of wild animal populations, track disease patterns, and implement preventive care strategies.</p>
+<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
+</div>
+</div>
+<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Anti-poaching%20rangers%20and%20veterinary%20team%20working%20together%20in%20African%20wilderness%2C%20protective%20gear%20and%20communication%20equipment%2C%20serious%20conservation%20mission%20atmosphere%2C%20professional%20teamwork%20scene%2C%20sunset%20lighting%20over%20savanna%2C%20wildlife%20protection%20operations&width=400&height=300&seq=anti-poaching&orientation=landscape');"></div>
+<div class="p-6">
+<div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mb-4">
+<i class="ri-shield-check-line text-white text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Anti-Poaching Support</h3>
+<p class="text-gray-600 mb-4">Provide medical support to anti-poaching units, treat injured wildlife, and assist in rescue operations for endangered species.</p>
+<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
+</div>
+</div>
+<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Research%20laboratory%20setup%20in%20African%20field%20station%2C%20microscopes%20and%20scientific%20equipment%2C%20data%20analysis%20workstation%2C%20professional%20research%20environment%2C%20clean%20modern%20laboratory%20with%20natural%20light%2C%20wildlife%20research%20samples%20and%20documentation&width=400&height=300&seq=research-lab&orientation=landscape');"></div>
+<div class="p-6">
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
+<i class="ri-microscope-line text-white text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Research Opportunities</h3>
+<p class="text-gray-600 mb-4">Participate in cutting-edge wildlife research projects, contribute to scientific publications, and advance conservation medicine.</p>
+<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
+</div>
+</div>
+<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Mobile%20veterinary%20clinic%20in%20African%20village%20setting%2C%20medical%20tent%20with%20equipment%2C%20veterinarians%20treating%20animals%2C%20community%20members%20observing%2C%20rural%20healthcare%20scene%2C%20professional%20medical%20service%20delivery%2C%20warm%20community%20atmosphere&width=400&height=300&seq=field-clinic&orientation=landscape');"></div>
+<div class="p-6">
+<div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mb-4">
+<i class="ri-hospital-line text-white text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Field Veterinary Clinics</h3>
+<p class="text-gray-600 mb-4">Establish and operate mobile veterinary clinics in remote areas, providing essential medical care to wildlife and domestic animals.</p>
+<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
+</div>
+</div>
+<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Community%20education%20session%20in%20African%20village%2C%20veterinarian%20teaching%20local%20people%20about%20wildlife%20conservation%2C%20outdoor%20classroom%20setting%2C%20engaged%20audience%20of%20adults%20and%20children%2C%20educational%20materials%20and%20visual%20aids%2C%20collaborative%20learning%20atmosphere&width=400&height=300&seq=education&orientation=landscape');"></div>
+<div class="p-6">
+<div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mb-4">
+<i class="ri-graduation-cap-line text-white text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Community Education</h3>
+<p class="text-gray-600 mb-4">Deliver educational programs to local communities about wildlife conservation, animal health, and sustainable coexistence practices.</p>
+<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
+</div>
+</div>
+<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Partnership%20meeting%20between%20conservation%20organizations%20in%20modern%20conference%20room%2C%20diverse%20team%20of%20professionals%20collaborating%2C%20maps%20and%20conservation%20plans%20on%20table%2C%20professional%20business%20atmosphere%2C%20teamwork%20and%20collaboration%20focus%2C%20natural%20lighting&width=400&height=300&seq=partnership&orientation=landscape');"></div>
+<div class="p-6">
+<div class="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center mb-4">
+<i class="ri-team-line text-white text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Partnership Programs</h3>
+<p class="text-gray-600 mb-4">Collaborate with leading conservation organizations, research institutions, and government agencies on large-scale conservation initiatives.</p>
+<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Application Process Timeline</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Follow our structured application process to join our conservation programs</p>
+</div>
+<div class="max-w-4xl mx-auto">
+<div class="space-y-8">
+<div class="timeline-item flex items-start">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0 z-10">
+<span class="text-white font-bold">1</span>
+</div>
+<div class="ml-6 bg-white rounded-xl shadow-lg p-6 flex-1">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Initial Application</h3>
+<p class="text-gray-600 mb-3">Submit your online application with personal details, educational background, and conservation interests.</p>
+<div class="text-sm text-gray-500">Duration: 30 minutes | Required: CV, Cover Letter</div>
+</div>
+</div>
+<div class="timeline-item flex items-start">
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 z-10">
+<span class="text-white font-bold">2</span>
+</div>
+<div class="ml-6 bg-white rounded-xl shadow-lg p-6 flex-1">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Qualification Review</h3>
+<p class="text-gray-600 mb-3">Our team reviews your qualifications, experience, and alignment with program requirements.</p>
+<div class="text-sm text-gray-500">Duration: 5-7 business days | Status updates via email</div>
+</div>
+</div>
+<div class="timeline-item flex items-start">
+<div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0 z-10">
+<span class="text-white font-bold">3</span>
+</div>
+<div class="ml-6 bg-white rounded-xl shadow-lg p-6 flex-1">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Interview Process</h3>
+<p class="text-gray-600 mb-3">Participate in a video interview to discuss your motivation, experience, and program expectations.</p>
+<div class="text-sm text-gray-500">Duration: 45-60 minutes | Scheduled within 2 weeks</div>
+</div>
+</div>
+<div class="timeline-item flex items-start">
+<div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 z-10">
+<span class="text-white font-bold">4</span>
+</div>
+<div class="ml-6 bg-white rounded-xl shadow-lg p-6 flex-1">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Medical Clearance</h3>
+<p class="text-gray-600 mb-3">Complete medical examination and obtain required vaccinations for field work in Africa.</p>
+<div class="text-sm text-gray-500">Duration: 2-4 weeks | Health certificate required</div>
+</div>
+</div>
+<div class="timeline-item flex items-start">
+<div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0 z-10">
+<span class="text-white font-bold">5</span>
+</div>
+<div class="ml-6 bg-white rounded-xl shadow-lg p-6 flex-1">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Program Assignment</h3>
+<p class="text-gray-600 mb-3">Receive your specific program assignment, location details, and team information.</p>
+<div class="text-sm text-gray-500">Notification: 4-6 weeks before departure</div>
+</div>
+</div>
+<div class="timeline-item flex items-start">
+<div class="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center flex-shrink-0 z-10">
+<span class="text-white font-bold">6</span>
+</div>
+<div class="ml-6 bg-white rounded-xl shadow-lg p-6 flex-1">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Pre-departure Training</h3>
+<p class="text-gray-600 mb-3">Attend comprehensive training covering safety protocols, cultural awareness, and program-specific skills.</p>
+<div class="text-sm text-gray-500">Duration: 2 days | Location: Virtual or Regional Center</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Required Qualifications</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Ensure you meet our program requirements before applying</p>
+</div>
+<div class="grid lg:grid-cols-2 gap-12">
+<div class="bg-gray-50 rounded-xl p-8">
+<h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+<div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3">
+<i class="ri-star-fill text-white text-sm"></i>
+</div>
+Essential Requirements
+</h3>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Doctor of Veterinary Medicine (DVM)</h4>
+<p class="text-gray-600 text-sm">From accredited veterinary school with valid license</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Minimum 2 Years Experience</h4>
+<p class="text-gray-600 text-sm">Clinical veterinary practice or related field</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Physical Fitness</h4>
+<p class="text-gray-600 text-sm">Ability to work in challenging field conditions</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Valid Passport</h4>
+<p class="text-gray-600 text-sm">With at least 6 months validity remaining</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Insurance Coverage</h4>
+<p class="text-gray-600 text-sm">International travel and medical insurance</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Language Proficiency</h4>
+<p class="text-gray-600 text-sm">Fluent English (written and spoken)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 rounded-xl p-8">
+<h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+<div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center mr-3">
+<i class="ri-star-line text-white text-sm"></i>
+</div>
+Preferred Qualifications
+</h3>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-add-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Wildlife Medicine Experience</h4>
+<p class="text-gray-600 text-sm">Previous work with exotic or wildlife species</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-add-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Research Background</h4>
+<p class="text-gray-600 text-sm">Published research or advanced degree</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-add-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Field Work Experience</h4>
+<p class="text-gray-600 text-sm">Previous experience in remote or challenging environments</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-add-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Additional Languages</h4>
+<p class="text-gray-600 text-sm">Swahili, French, or other African languages</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-add-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Teaching Experience</h4>
+<p class="text-gray-600 text-sm">Educational or training background</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-add-line text-white text-xs"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800">Conservation Certifications</h4>
+<p class="text-gray-600 text-sm">Additional certifications in conservation or ecology</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Success Stories</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Hear from veterinarians who have made a difference through our conservation programs</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="success-story rounded-xl p-6 border border-gray-200">
+<div class="flex items-center mb-4">
+<div class="w-16 h-16 bg-cover bg-center rounded-full mr-4" style="background-image: url('https://readdy.ai/api/search-image?query=Professional%20female%20veterinarian%20portrait%20in%20field%20setting%2C%20confident%20smile%2C%20wearing%20safari%20clothing%2C%20African%20landscape%20background%2C%20natural%20lighting%2C%20professional%20headshot%20style%2C%20conservation%20work%20atmosphere&width=200&height=200&seq=vet-portrait-1&orientation=squarish');"></div>
+<div>
+<h4 class="font-semibold text-gray-900">Dr. Emily Richardson</h4>
+<p class="text-sm text-gray-600">Wildlife Veterinarian, Australia</p>
+<div class="flex mt-1">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400 text-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400 text-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400 text-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400 text-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400 text-xs"></i>
+</div>
+</div>
+</div>
+</div>
+<p class="text-gray-700 italic mb-4">"Working with the anti-poaching unit in Kenya was life-changing. We saved 23 elephants from snare injuries and trained local rangers in wildlife first aid. The impact goes far beyond individual animals."</p>
+<div class="bg-white rounded-lg p-3">
+<div class="text-sm text-gray-600">Program Impact:</div>
+<div class="font-semibold text-secondary">23 elephants treated • 15 rangers trained</div>
+</div>
+</div>
+<div class="success-story rounded-xl p-6 border border-gray-200">
+<div class="flex items-center mb-4">
+<div class="w-16 h-16 bg-cover bg-center rounded-full mr-4" style="background-image: url('https://readdy.ai/api/search-image?query=Professional%20male%20veterinarian%20portrait%20in%20conservation%20setting%2C%20warm%20smile%2C%20field%20work%20attire%2C%20African%20wildlife%20background%2C%20natural%20outdoor%20lighting%2C%20documentary%20style%20portrait%2C%20conservation%20professional%20appearance&width=200&height=200&seq=vet-portrait-2&orientation=squarish');"></div>
+<div>
+<h4 class="font-semibold text-gray-900">Dr. Marcus Thompson</h4>
+<p class="text-sm text-gray-600">Research Veterinarian, USA</p>
+<div class="flex mt-1">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400 text-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400 text-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400 text-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400 text-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400 text-xs"></i>
+</div>
+</div>
+</div>
+</div>
+<p class="text-gray-700 italic mb-4">"The research opportunities in Tanzania exceeded my expectations. Our disease monitoring program led to early detection of a potential outbreak, preventing significant wildlife losses."</p>
+<div class="bg-white rounded-lg p-3">
+<div class="text-sm text-gray-600">Research Achievement:</div>
+<div class="font-semibold text-secondary">2 published papers • Disease outbreak prevented</div>
+</div>
+</div>
+<div class="success-story rounded-xl p-6 border border-gray-200">
+<div class="flex items-center mb-4">
+<div class="w-16 h-16 bg-cover bg-center rounded-full mr-4" style="background-image: url('https://readdy.ai/api/search-image?query=Professional%20female%20veterinarian%20portrait%20with%20community%20education%20background%2C%20confident%20expression%2C%20teaching%20materials%20visible%2C%20African%20village%20setting%2C%20warm%20natural%20lighting%2C%20educational%20work%20atmosphere%2C%20professional%20appearance&width=200&height=200&seq=vet-portrait-3&orientation=squarish');"></div>
+<div>
+<h4 class="font-semibold text-gray-900">Dr. Priya Sharma</h4>
+<p class="text-sm text-gray-600">Community Veterinarian, India</p>
+<div class="flex mt-1">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400 text-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400 text-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400 text-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400 text-xs"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400 text-xs"></i>
+</div>
+</div>
+</div>
+</div>
+<p class="text-gray-700 italic mb-4">"The community education program in Botswana was incredibly rewarding. Teaching local farmers about wildlife-friendly practices created lasting change for human-wildlife coexistence."</p>
+<div class="bg-white rounded-lg p-3">
+<div class="text-sm text-gray-600">Community Impact:</div>
+<div class="font-semibold text-secondary">150 farmers trained • 5 villages reached</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Partner Organizations</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">We collaborate with leading conservation organizations worldwide</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+<div class="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+<div class="text-center">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-2">
+<i class="ri-leaf-line text-secondary text-2xl"></i>
+</div>
+<div class="text-sm font-semibold text-gray-700">WWF</div>
+</div>
+</div>
+<div class="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+<div class="text-center">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-2">
+<i class="ri-earth-line text-secondary text-2xl"></i>
+</div>
+<div class="text-sm font-semibold text-gray-700">Conservation International</div>
+</div>
+</div>
+<div class="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+<div class="text-center">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-2">
+<i class="ri-tree-line text-secondary text-2xl"></i>
+</div>
+<div class="text-sm font-semibold text-gray-700">African Wildlife Foundation</div>
+</div>
+</div>
+<div class="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+<div class="text-center">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-2">
+<i class="ri-microscope-line text-secondary text-2xl"></i>
+</div>
+<div class="text-sm font-semibold text-gray-700">Wildlife Conservation Society</div>
+</div>
+</div>
+<div class="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+<div class="text-center">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-2">
+<i class="ri-government-line text-secondary text-2xl"></i>
+</div>
+<div class="text-sm font-semibold text-gray-700">Kenya Wildlife Service</div>
+</div>
+</div>
+<div class="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-200">
+<div class="text-center">
+<div class="w-12 h-12 flex items-center justify-center mx-auto mb-2">
+<i class="ri-shield-check-line text-secondary text-2xl"></i>
+</div>
+<div class="text-sm font-semibold text-gray-700">Save the Rhino</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Program Calendar</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Upcoming program dates and application deadlines</p>
+</div>
+<div class="bg-white rounded-2xl shadow-lg p-8">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="border border-gray-200 rounded-lg p-4 hover:border-primary transition-colors duration-200">
+<div class="text-center">
+<div class="text-2xl font-bold text-primary mb-1">Mar 2024</div>
+<div class="text-sm text-gray-600 mb-3">Kenya Wildlife Health</div>
+<div class="space-y-2 text-xs">
+<div class="flex justify-between">
+<span class="text-gray-500">Application:</span>
+<span class="font-semibold text-red-500">Jan 15</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Program:</span>
+<span class="font-semibold">Mar 10-24</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Spots:</span>
+<span class="font-semibold text-secondary">8 available</span>
+</div>
+</div>
+</div>
+</div>
+<div class="border border-gray-200 rounded-lg p-4 hover:border-primary transition-colors duration-200">
+<div class="text-center">
+<div class="text-2xl font-bold text-primary mb-1">Jun 2024</div>
+<div class="text-sm text-gray-600 mb-3">Tanzania Research</div>
+<div class="space-y-2 text-xs">
+<div class="flex justify-between">
+<span class="text-gray-500">Application:</span>
+<span class="font-semibold text-green-600">Apr 1</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Program:</span>
+<span class="font-semibold">Jun 5-19</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Spots:</span>
+<span class="font-semibold text-secondary">6 available</span>
+</div>
+</div>
+</div>
+</div>
+<div class="border border-gray-200 rounded-lg p-4 hover:border-primary transition-colors duration-200">
+<div class="text-center">
+<div class="text-2xl font-bold text-primary mb-1">Sep 2024</div>
+<div class="text-sm text-gray-600 mb-3">Botswana Community</div>
+<div class="space-y-2 text-xs">
+<div class="flex justify-between">
+<span class="text-gray-500">Application:</span>
+<span class="font-semibold text-green-600">Jul 15</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Program:</span>
+<span class="font-semibold">Sep 8-22</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Spots:</span>
+<span class="font-semibold text-secondary">10 available</span>
+</div>
+</div>
+</div>
+</div>
+<div class="border border-gray-200 rounded-lg p-4 hover:border-primary transition-colors duration-200">
+<div class="text-center">
+<div class="text-2xl font-bold text-primary mb-1">Dec 2024</div>
+<div class="text-sm text-gray-600 mb-3">South Africa Anti-Poaching</div>
+<div class="space-y-2 text-xs">
+<div class="flex justify-between">
+<span class="text-gray-500">Application:</span>
+<span class="font-semibold text-green-600">Oct 1</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Program:</span>
+<span class="font-semibold">Dec 3-17</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Spots:</span>
+<span class="font-semibold text-secondary">12 available</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-8">
+<button class="bg-primary hover:bg-blue-700 text-white px-8 py-3 !rounded-button font-semibold transition-colors duration-200 whitespace-nowrap mr-4">
+View Full Calendar
+</button>
+<button class="bg-secondary hover:bg-green-700 text-white px-8 py-3 !rounded-button font-semibold transition-colors duration-200 whitespace-nowrap">
+Apply Now
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Get Started Today</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Ready to make a difference in wildlife conservation? Contact us to learn more about our programs</p>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8">
+<div class="grid lg:grid-cols-2 gap-12">
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Program Inquiry Form</h3>
+<form class="space-y-6">
+<div class="grid md:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
+<input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your first name">
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
+<input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your last name">
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+<input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your email">
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Veterinary Experience</label>
+<div class="relative">
+<button type="button" class="w-full bg-white border border-gray-300 rounded-md px-4 py-3 text-left text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary experience-btn">
+<span class="experience-text">Select your experience level</span>
+<div class="w-4 h-4 flex items-center justify-center absolute right-3 top-1/2 transform -translate-y-1/2">
+<i class="ri-arrow-down-s-line text-gray-400"></i>
+</div>
+</button>
+<div class="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-300 rounded-md shadow-lg z-10 hidden experience-dropdown">
+<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 experience-option" data-value="0-2">0-2 years</button>
+<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 experience-option" data-value="3-5">3-5 years</button>
+<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 experience-option" data-value="6-10">6-10 years</button>
+<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 experience-option" data-value="10+">10+ years</button>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Program Interest</label>
+<div class="grid grid-cols-2 gap-3">
+<label class="flex items-center">
+<input type="checkbox" class="hidden program-checkbox" data-program="health">
+<div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
+<i class="ri-check-line text-white text-xs hidden"></i>
+</div>
+<span class="text-sm text-gray-700">Health Monitoring</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="hidden program-checkbox" data-program="research">
+<div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
+<i class="ri-check-line text-white text-xs hidden"></i>
+</div>
+<span class="text-sm text-gray-700">Research</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="hidden program-checkbox" data-program="anti-poaching">
+<div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
+<i class="ri-check-line text-white text-xs hidden"></i>
+</div>
+<span class="text-sm text-gray-700">Anti-Poaching</span>
+</label>
+<label class="flex items-center">
+<input type="checkbox" class="hidden program-checkbox" data-program="education">
+<div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
+<i class="ri-check-line text-white text-xs hidden"></i>
+</div>
+<span class="text-sm text-gray-700">Education</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+<textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Tell us about your interest in conservation programs..."></textarea>
+</div>
+<button type="submit" class="w-full bg-secondary hover:bg-green-700 text-white py-3 !rounded-button font-semibold transition-colors duration-200 whitespace-nowrap">
+Send Inquiry
+</button>
+</form>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+<i class="ri-phone-line text-white text-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Phone Support</h4>
+<p class="text-gray-600 mb-2">Speak with our conservation program coordinators</p>
+<p class="text-primary font-semibold">+254 700 123 456</p>
+<p class="text-sm text-gray-500">Monday - Friday, 9:00 AM - 6:00 PM EAT</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+<i class="ri-mail-line text-white text-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Email Support</h4>
+<p class="text-gray-600 mb-2">Get detailed information about programs</p>
+<p class="text-secondary font-semibold">conservation@wildmedsafaris.com</p>
+<p class="text-sm text-gray-500">Response within 24 hours</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+<i class="ri-map-pin-line text-white text-xl"></i>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900 mb-1">Office Location</h4>
+<p class="text-gray-600 mb-2">Visit our headquarters in Nairobi</p>
+<p class="text-gray-700">Conservation House, Westlands<br>Nairobi, Kenya</p>
+<p class="text-sm text-gray-500">By appointment only</p>
+</div>
+</div>
+</div>
+<div class="mt-8 p-6 bg-blue-50 rounded-lg">
+<h4 class="font-semibold text-blue-900 mb-2 flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-information-line text-blue-600"></i>
+</div>
+Quick Response Guarantee
+</h4>
+<p class="text-blue-800 text-sm">We respond to all program inquiries within 24 hours. For urgent matters, please call our direct line.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-brown-900 text-white py-16" style="background-color: rgba(59, 42, 27, 1);">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid md:grid-cols-4 gap-8">
+<div>
+<h3 class="text-xl font-['Pacifico'] mb-4">WildMed Safaris</h3>
+<p class="text-gray-300 mb-4">Creating unforgettable wildlife adventures that combine conservation, education, and cultural exchange.</p>
+<div class="flex space-x-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-facebook-fill text-xl hover:text-green-400 cursor-pointer transition-colors"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-twitter-fill text-xl hover:text-green-400 cursor-pointer transition-colors"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-instagram-fill text-xl hover:text-green-400 cursor-pointer transition-colors"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-youtube-fill text-xl hover:text-green-400 cursor-pointer transition-colors"></i>
+</div>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">About Us</a></li>
+<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">Destinations</a></li>
+<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">Custom Expeditions</a></li>
+<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">Medical Programs</a></li>
+<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">Conservation</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+<div class="space-y-2">
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-phone-line text-green-400"></i>
+</div>
+<span class="text-gray-300">+254 700 123 456</span>
+</div>
+<div class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-mail-line text-green-400"></i>
+</div>
+<span class="text-gray-300">info@wildmedsafaris.com</span>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-2 mt-1">
+<i class="ri-map-pin-line text-green-400"></i>
+</div>
+<span class="text-gray-300">Nairobi, Kenya<br>East Africa</span>
+</div>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+<p class="text-gray-300 mb-4">Stay updated with our latest expeditions and conservation efforts.</p>
+<div class="flex">
+<input type="email" placeholder="Your email" class="flex-1 px-3 py-2 bg-white text-gray-900 rounded-l-md border-none focus:outline-none focus:ring-2 focus:ring-green-400 text-sm">
+<button class="bg-secondary hover:bg-green-700 px-4 py-2 rounded-r-md transition-colors duration-200">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-send-plane-line text-white"></i>
+</div>
+</button>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-600 mt-8 pt-8 text-center">
+<p class="text-gray-300">&copy; 2024 WildMed Safaris. All rights reserved. | Privacy Policy | Terms of Service</p>
+</div>
+</div>
+</footer>
+<script id="experience-dropdown">
+document.addEventListener('DOMContentLoaded', function() {
+const experienceBtn = document.querySelector('.experience-btn');
+const experienceDropdown = document.querySelector('.experience-dropdown');
+const experienceText = document.querySelector('.experience-text');
+const experienceOptions = document.querySelectorAll('.experience-option');
+experienceBtn.addEventListener('click', function() {
+experienceDropdown.classList.toggle('hidden');
+});
+experienceOptions.forEach(option => {
+option.addEventListener('click', function() {
+const value = this.dataset.value;
+const text = this.textContent;
+experienceText.textContent = text;
+experienceDropdown.classList.add('hidden');
+});
+});
+document.addEventListener('click', function(e) {
+if (!experienceBtn.contains(e.target) && !experienceDropdown.contains(e.target)) {
+experienceDropdown.classList.add('hidden');
+}
+});
+});
+</script>
+<script id="checkbox-functionality">
+document.addEventListener('DOMContentLoaded', function() {
+const checkboxes = document.querySelectorAll('.program-checkbox');
+checkboxes.forEach(checkbox => {
+const customBox = checkbox.nextElementSibling;
+const checkIcon = customBox.querySelector('i');
+checkbox.addEventListener('change', function() {
+if (this.checked) {
+customBox.classList.add('bg-secondary', 'border-secondary');
+customBox.classList.remove('border-gray-300');
+checkIcon.classList.remove('hidden');
+} else {
+customBox.classList.remove('bg-secondary', 'border-secondary');
+customBox.classList.add('border-gray-300');
+checkIcon.classList.add('hidden');
+}
+});
+customBox.addEventListener('click', function() {
+checkbox.click();
+});
+});
+});
+</script>
+</body>
+</html>

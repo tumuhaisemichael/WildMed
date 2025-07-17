@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanzania Adventures - WildMed Safaris</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B2A1B',
+                        secondary: '#2D5A3D'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .dropdown {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        .dropdown-trigger:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .filter-active {
+            background-color: #3B2A1B;
+            color: white;
+        }
+        .package-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .package-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="font-['Inter'] text-gray-800">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm">
+        <nav class="w-full px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 flex items-center justify-center bg-secondary rounded-full">
+                        <i class="ri-leaf-line text-white text-xl"></i>
+                    </div>
+                    <span class="text-white text-2xl font-['Pacifico']">WildMed Safaris</span>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="https://readdy.ai/home/c9cda4a4-f52b-448e-ab35-c75de11a9119/9fbc5af3-8bf9-4421-9500-e69eb838d5a2" data-readdy="true" class="text-white hover:text-green-300 transition-colors duration-300">Home</a>
+                    
+                    <div class="relative dropdown-trigger">
+                        <button class="text-green-300 hover:text-green-200 transition-colors duration-300 flex items-center space-x-1 font-medium">
+                            <span>Destinations</span>
+                            <i class="ri-arrow-down-s-line text-sm"></i>
+                        </button>
+                        <div class="dropdown absolute top-full left-0 mt-2 w-48 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg">
+                            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Kenya Safaris</a>
+                            <a href="#" class="block px-4 py-3 text-green-300 bg-white/10">Tanzania Adventures</a>
+                            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Uganda Expeditions</a>
+                            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Rwanda Gorilla Tours</a>
+                        </div>
+                    </div>
+                    
+                    <div class="relative dropdown-trigger">
+                        <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+                            <span>Custom Expeditions</span>
+                            <i class="ri-arrow-down-s-line text-sm"></i>
+                        </button>
+                        <div class="dropdown absolute top-full left-0 mt-2 w-48 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg">
+                            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Private Safaris</a>
+                            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Group Adventures</a>
+                            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Photography Tours</a>
+                            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Luxury Expeditions</a>
+                        </div>
+                    </div>
+                    
+                    <div class="relative dropdown-trigger">
+                        <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+                            <span>Vet Expeditions</span>
+                            <i class="ri-arrow-down-s-line text-sm"></i>
+                        </button>
+                        <div class="dropdown absolute top-full left-0 mt-2 w-48 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg">
+                            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Wildlife Conservation</a>
+                            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Animal Research</a>
+                            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Veterinary Training</a>
+                            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Field Studies</a>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="text-white hover:text-green-300 transition-colors duration-300">Med Expeditions</a>
+                    <a href="#" class="text-white hover:text-green-300 transition-colors duration-300">Gallery</a>
+                    <a href="#" class="text-white hover:text-green-300 transition-colors duration-300">Review</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-white">
+                    <i class="ri-menu-line text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 parallax-bg" style="background-image: url('https://readdy.ai/api/search-image?query=Breathtaking%20Mount%20Kilimanjaro%20snow-capped%20peak%20rising%20above%20golden%20African%20savanna%20at%20sunrise%2C%20acacia%20trees%20silhouetted%20in%20foreground%2C%20dramatic%20orange%20and%20pink%20sky%2C%20Tanzania%20wilderness%20landscape%2C%20majestic%20and%20inspiring%20natural%20wonder%2C%20professional%20landscape%20photography&width=1920&height=1080&seq=tanzania-hero&orientation=landscape')"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-900/60 to-transparent"></div>
+        
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 text-white">
+            <div class="max-w-4xl">
+                <h1 class="text-6xl lg:text-7xl font-bold mb-6 leading-tight">Tanzania Adventures</h1>
+                <p class="text-xl lg:text-2xl mb-8 text-gray-200">Discover the legendary Serengeti, witness the Great Migration, and conquer Mount Kilimanjaro in the heart of East Africa</p>
+                
+                <!-- Quick Search -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-8 max-w-2xl">
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Duration</label>
+                            <select class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-green-400 pr-8">
+                                <option value="">Any Duration</option>
+                                <option value="3-5">3-5 Days</option>
+                                <option value="6-10">6-10 Days</option>
+                                <option value="11+">11+ Days</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Budget</label>
+                            <select class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-green-400 pr-8">
+                                <option value="">Any Budget</option>
+                                <option value="budget">Under $2,000</option>
+                                <option value="mid">$2,000 - $4,000</option>
+                                <option value="luxury">$4,000+</option>
+                            </select>
+                        </div>
+                        <div class="flex items-end">
+                            <button class="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-3 !rounded-button font-semibold transition-colors duration-300 whitespace-nowrap">
+                                <i class="ri-search-line mr-2"></i>Search Safaris
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 !rounded-button text-lg font-semibold transition-colors duration-300 whitespace-nowrap">
+                    Explore Tanzania Packages
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Iconic Tanzania Destinations</h2>
+                <p class="text-xl text-gray-600">Experience Africa's most spectacular wildlife destinations</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="relative h-64">
+                        <img src="https://readdy.ai/api/search-image?query=Serengeti%20National%20Park%20endless%20plains%20during%20Great%20Migration%2C%20thousands%20of%20wildebeest%20and%20zebras%20crossing%20savanna%2C%20dramatic%20sky%20with%20scattered%20clouds%2C%20golden%20grassland%20stretching%20to%20horizon%2C%20iconic%20African%20wildlife%20spectacle%2C%20professional%20nature%20photography&width=300&height=256&seq=serengeti-dest&orientation=landscape" alt="Serengeti National Park" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Serengeti</h3>
+                            <p class="text-sm opacity-90">Great Migration</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Witness the world's greatest wildlife spectacle in Tanzania's most famous national park</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-green-600">From $2,450</span>
+                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="relative h-64">
+                        <img src="https://readdy.ai/api/search-image?query=Ngorongoro%20Crater%20aerial%20panoramic%20view%20showing%20massive%20volcanic%20caldera%20with%20diverse%20wildlife%20on%20crater%20floor%2C%20lush%20green%20vegetation%2C%20pristine%20lake%20reflecting%20sky%2C%20dramatic%20crater%20rim%20walls%2C%20UNESCO%20World%20Heritage%20natural%20wonder&width=300&height=256&seq=ngorongoro-dest&orientation=landscape" alt="Ngorongoro Crater" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Ngorongoro</h3>
+                            <p class="text-sm opacity-90">World's Largest Crater</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Explore the world's largest inactive volcanic caldera, a UNESCO World Heritage Site</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-green-600">From $2,150</span>
+                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="relative h-64">
+                        <img src="https://readdy.ai/api/search-image?query=Mount%20Kilimanjaro%20majestic%20snow-capped%20peak%20towering%20above%20African%20plains%2C%20dramatic%20clouds%20surrounding%20summit%2C%20golden%20savanna%20grassland%20in%20foreground%2C%20clear%20blue%20sky%2C%20Africas%20highest%20mountain%2C%20inspiring%20adventure%20landscape%20photography&width=300&height=256&seq=kilimanjaro-dest&orientation=landscape" alt="Mount Kilimanjaro" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Kilimanjaro</h3>
+                            <p class="text-sm opacity-90">Africa's Highest Peak</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Conquer Africa's highest mountain and witness breathtaking views from the roof of Africa</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-green-600">From $3,200</span>
+                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="relative h-64">
+                        <img src="https://readdy.ai/api/search-image?query=Tarangire%20National%20Park%20landscape%20with%20massive%20ancient%20baobab%20trees%20scattered%20across%20golden%20savanna%2C%20elephants%20grazing%20peacefully%20beneath%20giant%20trees%2C%20warm%20afternoon%20lighting%2C%20unique%20African%20wilderness%20scenery%2C%20professional%20wildlife%20photography&width=300&height=256&seq=tarangire-dest&orientation=landscape" alt="Tarangire National Park" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Tarangire</h3>
+                            <p class="text-sm opacity-90">Baobab & Elephants</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Famous for its ancient baobab trees and large elephant herds in pristine wilderness</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-green-600">From $1,850</span>
+                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safari Packages -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Tanzania Safari Packages</h2>
+                <p class="text-xl text-gray-600">Carefully crafted adventures for every type of traveler</p>
+            </div>
+            
+            <!-- Filter Options -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-btn filter-active px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="all">All Packages</button>
+                <button class="filter-btn bg-white hover:bg-gray-100 px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="classic">Classic Safari</button>
+                <button class="filter-btn bg-white hover:bg-gray-100 px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="adventure">Adventure</button>
+                <button class="filter-btn bg-white hover:bg-gray-100 px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="luxury">Luxury</button>
+                <button class="filter-btn bg-white hover:bg-gray-100 px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="climbing">Climbing</button>
+            </div>
+            
+            <!-- Package Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Classic Serengeti Safari -->
+                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="classic">
+                    <div class="relative h-64">
+                        <img src="https://readdy.ai/api/search-image?query=Classic%20African%20safari%20scene%20with%20open%20safari%20vehicle%20overlooking%20vast%20Serengeti%20plains%20filled%20with%20migrating%20wildebeest%20herds%2C%20golden%20sunset%20lighting%2C%20acacia%20trees%20silhouetted%20against%20dramatic%20sky%2C%20authentic%20safari%20adventure%20atmosphere&width=400&height=256&seq=classic-safari&orientation=landscape" alt="Classic Serengeti Safari" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            7 Days
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <div class="flex items-center space-x-1">
+                                <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                                <span class="text-sm font-medium">4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Classic Serengeti & Ngorongoro</h3>
+                        <p class="text-gray-600 mb-4">Experience the Great Migration and explore the world's largest crater in this classic Tanzania adventure</p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-map-pin-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Serengeti • Ngorongoro • Tarangire</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Max 6 people</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Available year-round</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-2xl font-bold text-green-600">$2,450</span>
+                                <span class="text-gray-500 text-sm">/person</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">Next available</div>
+                                <div class="text-sm font-medium">Mar 15, 2024</div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-primary hover:bg-primary/90 text-white py-3 !rounded-button font-semibold transition-colors duration-300 whitespace-nowrap">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Kilimanjaro Climbing -->
+                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="climbing adventure">
+                    <div class="relative h-64">
+                        <img src="https://readdy.ai/api/search-image?query=Mount%20Kilimanjaro%20climbing%20expedition%20with%20trekkers%20ascending%20rocky%20trail%20towards%20snow-capped%20summit%2C%20dramatic%20mountain%20landscape%2C%20clear%20blue%20sky%2C%20adventure%20climbing%20gear%20visible%2C%20inspiring%20mountaineering%20challenge%2C%20professional%20adventure%20photography&width=400&height=256&seq=kilimanjaro-climb&orientation=landscape" alt="Kilimanjaro Climbing" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 left-4 bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            8 Days
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <div class="flex items-center space-x-1">
+                                <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                                <span class="text-sm font-medium">4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Kilimanjaro Machame Route</h3>
+                        <p class="text-gray-600 mb-4">Conquer Africa's highest peak via the scenic Machame route with expert mountain guides</p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-mountain-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>5,895m Summit • Machame Route</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Max 8 people</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Jun-Oct, Dec-Mar</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-2xl font-bold text-green-600">$3,200</span>
+                                <span class="text-gray-500 text-sm">/person</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">Next available</div>
+                                <div class="text-sm font-medium">Apr 8, 2024</div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-primary hover:bg-primary/90 text-white py-3 !rounded-button font-semibold transition-colors duration-300 whitespace-nowrap">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Luxury Safari -->
+                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="luxury">
+                    <div class="relative h-64">
+                        <img src="https://readdy.ai/api/search-image?query=Luxury%20African%20safari%20camp%20with%20elegant%20tented%20accommodation%20overlooking%20Serengeti%20plains%2C%20comfortable%20outdoor%20seating%20area%2C%20golden%20sunset%20lighting%2C%20premium%20safari%20experience%2C%20sophisticated%20wilderness%20luxury%2C%20high-end%20travel%20photography&width=400&height=256&seq=luxury-safari&orientation=landscape" alt="Luxury Safari" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            10 Days
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <div class="flex items-center space-x-1">
+                                <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                                <span class="text-sm font-medium">5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Ultimate Luxury Tanzania</h3>
+                        <p class="text-gray-600 mb-4">Experience Tanzania's finest with luxury lodges, private guides, and exclusive access</p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-vip-crown-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Luxury Lodges • Private Vehicle</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Max 4 people</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Available year-round</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-2xl font-bold text-green-600">$6,850</span>
+                                <span class="text-gray-500 text-sm">/person</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">Next available</div>
+                                <div class="text-sm font-medium">Mar 22, 2024</div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-primary hover:bg-primary/90 text-white py-3 !rounded-button font-semibold transition-colors duration-300 whitespace-nowrap">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Northern Circuit Adventure -->
+                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="adventure">
+                    <div class="relative h-64">
+                        <img src="https://readdy.ai/api/search-image?query=Tanzania%20northern%20circuit%20adventure%20safari%20with%20rugged%20landscape%20featuring%20diverse%20wildlife%20including%20lions%20and%20elephants%2C%20dramatic%20rift%20valley%20scenery%2C%20adventure%20safari%20vehicles%2C%20wild%20and%20remote%20African%20wilderness%2C%20authentic%20adventure%20travel%20photography&width=400&height=256&seq=northern-circuit&orientation=landscape" alt="Northern Circuit Adventure" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            12 Days
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <div class="flex items-center space-x-1">
+                                <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                                <span class="text-sm font-medium">4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Complete Northern Circuit</h3>
+                        <p class="text-gray-600 mb-4">Comprehensive adventure covering all major northern Tanzania parks and cultural experiences</p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-road-map-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>5 Parks • Cultural Villages</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Max 6 people</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Jun-Oct, Dec-Mar</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-2xl font-bold text-green-600">$4,200</span>
+                                <span class="text-gray-500 text-sm">/person</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">Next available</div>
+                                <div class="text-sm font-medium">May 12, 2024</div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-primary hover:bg-primary/90 text-white py-3 !rounded-button font-semibold transition-colors duration-300 whitespace-nowrap">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Family Safari -->
+                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="classic">
+                    <div class="relative h-64">
+                        <img src="https://readdy.ai/api/search-image?query=Family-friendly%20African%20safari%20with%20parents%20and%20children%20observing%20gentle%20elephants%20from%20safe%20safari%20vehicle%2C%20educational%20wildlife%20experience%2C%20comfortable%20family%20accommodation%2C%20safe%20and%20enjoyable%20adventure%2C%20heartwarming%20family%20travel%20photography&width=400&height=256&seq=family-safari&orientation=landscape" alt="Family Safari" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            6 Days
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <div class="flex items-center space-x-1">
+                                <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                                <span class="text-sm font-medium">4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Family Safari Adventure</h3>
+                        <p class="text-gray-600 mb-4">Perfect introduction to Tanzania's wildlife for families with children of all ages</p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-parent-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Family-friendly • Educational</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Families welcome</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Available year-round</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-2xl font-bold text-green-600">$1,950</span>
+                                <span class="text-gray-500 text-sm">/person</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">Next available</div>
+                                <div class="text-sm font-medium">Mar 28, 2024</div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-primary hover:bg-primary/90 text-white py-3 !rounded-button font-semibold transition-colors duration-300 whitespace-nowrap">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Photography Safari -->
+                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="adventure">
+                    <div class="relative h-64">
+                        <img src="https://readdy.ai/api/search-image?query=Professional%20wildlife%20photography%20safari%20with%20photographer%20using%20telephoto%20lens%20to%20capture%20magnificent%20African%20lion%20in%20golden%20hour%20lighting%2C%20specialized%20photography%20equipment%2C%20perfect%20wildlife%20shot%20opportunity%2C%20professional%20nature%20photography%20workshop&width=400&height=256&seq=photo-safari&orientation=landscape" alt="Photography Safari" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 left-4 bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            9 Days
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                            <div class="flex items-center space-x-1">
+                                <i class="ri-star-fill text-yellow-400 text-sm"></i>
+                                <span class="text-sm font-medium">4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Photography Masterclass</h3>
+                        <p class="text-gray-600 mb-4">Specialized safari for photographers with expert guidance and prime shooting locations</p>
+                        
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-camera-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Pro Photography • Workshops</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Max 4 people</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Jun-Oct, Jan-Mar</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-2xl font-bold text-green-600">$3,850</span>
+                                <span class="text-gray-500 text-sm">/person</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-sm text-gray-500">Next available</div>
+                                <div class="text-sm font-medium">Jun 5, 2024</div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-primary hover:bg-primary/90 text-white py-3 !rounded-button font-semibold transition-colors duration-300 whitespace-nowrap">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wildlife Highlights -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Tanzania Wildlife Highlights</h2>
+                <p class="text-xl text-gray-600">Discover the incredible biodiversity of Tanzania's ecosystems</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Majestic%20African%20lion%20male%20with%20magnificent%20golden%20mane%20in%20close-up%20portrait%2C%20intense%20amber%20eyes%2C%20regal%20expression%2C%20natural%20savanna%20habitat%2C%20king%20of%20the%20jungle%2C%20professional%20wildlife%20portrait%20photography&width=96&height=96&seq=lion-highlight&orientation=squarish" alt="African Lion" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">African Lion</h3>
+                    <p class="text-gray-600">The king of the savanna, best spotted in Serengeti and Ngorongoro</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Magnificent%20African%20elephant%20with%20large%20tusks%20in%20natural%20habitat%2C%20gentle%20giant%20expression%2C%20detailed%20skin%20texture%2C%20peaceful%20wilderness%20setting%2C%20largest%20land%20mammal%2C%20conservation%20symbol%2C%20professional%20wildlife%20photography&width=96&height=96&seq=elephant-highlight&orientation=squarish" alt="African Elephant" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">African Elephant</h3>
+                    <p class="text-gray-600">Gentle giants roaming freely across Tanzania's vast landscapes</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Powerful%20African%20leopard%20with%20distinctive%20spotted%20coat%20resting%20on%20tree%20branch%2C%20alert%20predator%20expression%2C%20beautiful%20rosette%20patterns%2C%20natural%20forest%20habitat%2C%20elusive%20big%20cat%2C%20professional%20wildlife%20portrait&width=96&height=96&seq=leopard-highlight&orientation=squarish" alt="Leopard" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Leopard</h3>
+                    <p class="text-gray-600">Elusive spotted cats, masters of stealth and climbing</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Great%20Migration%20wildebeest%20herd%20crossing%20river%20in%20dramatic%20action%20scene%2C%20thousands%20of%20animals%20in%20motion%2C%20dust%20clouds%2C%20natural%20wildlife%20spectacle%2C%20annual%20migration%20phenomenon%2C%20dynamic%20nature%20photography&width=96&height=96&seq=migration-highlight&orientation=squarish" alt="Great Migration" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Great Migration</h3>
+                    <p class="text-gray-600">Witness 2 million wildebeest and zebras on their epic journey</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Graceful%20cheetah%20in%20hunting%20pose%20on%20African%20savanna%2C%20sleek%20spotted%20coat%2C%20focused%20predator%20expression%2C%20fastest%20land%20animal%2C%20golden%20grassland%20background%2C%20wildlife%20action%20photography&width=96&height=96&seq=cheetah-highlight&orientation=squarish" alt="Cheetah" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Cheetah</h3>
+                    <p class="text-gray-600">The world's fastest land animal, built for incredible speed</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Massive%20African%20buffalo%20with%20impressive%20curved%20horns%20in%20natural%20grassland%20habitat%2C%20powerful%20build%2C%20wild%20and%20untamed%20expression%2C%20dangerous%20big%20five%20animal%2C%20professional%20wildlife%20portrait&width=96&height=96&seq=buffalo-highlight&orientation=squarish" alt="African Buffalo" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">African Buffalo</h3>
+                    <p class="text-gray-600">Formidable members of the Big Five with impressive horns</p>
+                </div>
+            </div>
+            
+            <!-- Best Viewing Seasons -->
+            <div class="bg-green-50 rounded-xl p-8">
+                <h3 class="text-2xl font-bold text-center mb-8">Best Wildlife Viewing Seasons</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 flex items-center">
+                            <i class="ri-sun-line w-6 h-6 flex items-center justify-center text-orange-500 mr-3"></i>
+                            Dry Season (June - October)
+                        </h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                                <span>Excellent wildlife viewing with animals gathering at water sources</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                                <span>Great Migration river crossings in northern Serengeti</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                                <span>Clear skies and minimal rainfall</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 flex items-center">
+                            <i class="ri-heavy-showers-line w-6 h-6 flex items-center justify-center text-blue-500 mr-3"></i>
+                            Green Season (November - May)
+                        </h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                                <span>Calving season with thousands of newborn animals</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                                <span>Lush landscapes and dramatic skies</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                                <span>Fewer crowds and lower prices</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodation Options -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Accommodation Options</h2>
+                <p class="text-xl text-gray-600">From luxury lodges to authentic camping experiences</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Luxury Lodges -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative h-48">
+                        <img src="https://readdy.ai/api/search-image?query=Luxury%20African%20safari%20lodge%20with%20elegant%20tented%20suites%20overlooking%20Serengeti%20plains%2C%20sophisticated%20interior%20design%2C%20comfortable%20furnishings%2C%20panoramic%20views%20of%20wildlife%2C%20premium%20hospitality%2C%20five-star%20wilderness%20accommodation&width=300&height=192&seq=luxury-lodge&orientation=landscape" alt="Luxury Lodge" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Luxury
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold mb-2">Luxury Lodges</h3>
+                        <p class="text-gray-600 mb-4">Five-star accommodations with world-class amenities and service</p>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <div class="flex items-center">
+                                <i class="ri-star-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Premium locations</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-restaurant-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Gourmet dining</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-service-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Butler service</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <span class="text-lg font-bold text-green-600">$800-1,500/night</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tented Camps -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative h-48">
+                        <img src="https://readdy.ai/api/search-image?query=Authentic%20African%20safari%20tented%20camp%20with%20comfortable%20canvas%20tents%20under%20acacia%20trees%2C%20traditional%20safari%20atmosphere%2C%20campfire%20area%2C%20natural%20bush%20setting%2C%20classic%20safari%20experience%2C%20adventure%20accommodation&width=300&height=192&seq=tented-camp&orientation=landscape" alt="Tented Camp" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Mid-Range
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold mb-2">Tented Camps</h3>
+                        <p class="text-gray-600 mb-4">Comfortable canvas accommodations with authentic safari atmosphere</p>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <div class="flex items-center">
+                                <i class="ri-tent-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Canvas tents</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-fire-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Campfire dinners</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-nature-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Close to nature</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <span class="text-lg font-bold text-green-600">$300-600/night</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Camping -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative h-48">
+                        <img src="https://readdy.ai/api/search-image?query=Mobile%20safari%20camping%20setup%20in%20remote%20African%20wilderness%2C%20portable%20tents%20and%20equipment%2C%20campfire%20under%20starry%20night%20sky%2C%20adventure%20camping%20experience%2C%20off-the-beaten-path%20locations%2C%20authentic%20bush%20camping&width=300&height=192&seq=mobile-camp&orientation=landscape" alt="Mobile Camping" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 right-4 bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Adventure
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold mb-2">Mobile Camping</h3>
+                        <p class="text-gray-600 mb-4">Follow wildlife movements with portable camps in remote locations</p>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <div class="flex items-center">
+                                <i class="ri-map-2-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Remote locations</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-compass-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Follow migration</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-star-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Stargazing</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <span class="text-lg font-bold text-green-600">$200-400/night</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Budget Options -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative h-48">
+                        <img src="https://readdy.ai/api/search-image?query=Budget-friendly%20safari%20accommodation%20with%20simple%20but%20clean%20rooms%2C%20basic%20amenities%2C%20communal%20dining%20area%2C%20affordable%20travel%20option%2C%20backpacker-friendly%20lodge%2C%20social%20atmosphere%2C%20value%20accommodation&width=300&height=192&seq=budget-lodge&orientation=landscape" alt="Budget Lodge" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Budget
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold mb-2">Budget Lodges</h3>
+                        <p class="text-gray-600 mb-4">Clean, comfortable accommodations perfect for budget-conscious travelers</p>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <div class="flex items-center">
+                                <i class="ri-home-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Clean rooms</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Shared facilities</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-money-dollar-circle-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Great value</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <span class="text-lg font-bold text-green-600">$50-150/night</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practical Information -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Essential Travel Information</h2>
+                <p class="text-xl text-gray-600">Everything you need to know for your Tanzania adventure</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Visa Requirements -->
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full mb-6">
+                        <i class="ri-passport-line text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Visa Requirements</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Tourist visa required for most nationalities</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Available on arrival or online</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Valid for 90 days</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Passport valid 6+ months</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Health & Safety -->
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="w-16 h-16 flex items-center justify-center bg-red-100 rounded-full mb-6">
+                        <i class="ri-heart-pulse-line text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Health & Safety</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Yellow fever vaccination required</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Malaria prophylaxis recommended</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Travel insurance essential</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Generally safe for tourists</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Packing Essentials -->
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mb-6">
+                        <i class="ri-suitcase-line text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Packing Essentials</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Neutral colored clothing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Sun protection (hat, sunscreen)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Binoculars and camera</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Insect repellent</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Climate -->
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="w-16 h-16 flex items-center justify-center bg-orange-100 rounded-full mb-6">
+                        <i class="ri-sun-cloudy-line text-orange-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Climate</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Tropical climate year-round</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Dry season: June-October</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Wet season: November-May</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Temperature: 20-30°C</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Currency -->
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="w-16 h-16 flex items-center justify-center bg-purple-100 rounded-full mb-6">
+                        <i class="ri-money-dollar-circle-line text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Currency & Payments</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Tanzanian Shilling (TZS)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>USD widely accepted</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Credit cards in major hotels</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>ATMs available in cities</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Language -->
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="w-16 h-16 flex items-center justify-center bg-indigo-100 rounded-full mb-6">
+                        <i class="ri-translate-line text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Language & Culture</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Swahili and English official</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>English widely spoken</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Friendly, welcoming people</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
+                            <span>Rich cultural heritage</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="py-20 bg-primary text-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Book Your Tanzania Adventure</h2>
+                <p class="text-xl text-gray-200">Start planning your unforgettable safari experience today</p>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Package Type</label>
+                            <select class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-green-400 pr-8">
+                                <option value="">Select Package</option>
+                                <option value="classic">Classic Serengeti & Ngorongoro</option>
+                                <option value="kilimanjaro">Kilimanjaro Climbing</option>
+                                <option value="luxury">Ultimate Luxury Tanzania</option>
+                                <option value="northern">Complete Northern Circuit</option>
+                                <option value="family">Family Safari Adventure</option>
+                                <option value="photography">Photography Masterclass</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Travel Dates</label>
+                            <input type="date" class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Number of Travelers</label>
+                            <select class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-green-400 pr-8">
+                                <option value="">Select Group Size</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5">5 People</option>
+                                <option value="6+">6+ People</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Budget Range</label>
+                            <select class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-green-400 pr-8">
+                                <option value="">Select Budget</option>
+                                <option value="budget">Under $2,000 per person</option>
+                                <option value="mid">$2,000 - $4,000 per person</option>
+                                <option value="luxury">$4,000+ per person</option>
+                                <option value="custom">Custom Budget</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Special Requirements</label>
+                        <textarea rows="4" placeholder="Tell us about any special requirements, dietary restrictions, or preferences..." class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 text-sm focus:outline-none focus:ring-2 focus:ring-green-400 resize-none"></textarea>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" placeholder="Enter your full name" class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 text-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email Address</label>
+                            <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 text-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 !rounded-button text-lg font-semibold transition-colors duration-300 whitespace-nowrap">
+                            Get Instant Quote
+                        </button>
+                        <p class="text-sm text-gray-300 mt-4">
+                            Free consultation • No obligation • Response within 24 hours
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 flex items-center justify-center bg-secondary rounded-full">
+                            <i class="ri-leaf-line text-white"></i>
+                        </div>
+                        <span class="text-xl font-['Pacifico']">WildMed Safaris</span>
+                    </div>
+                    <p class="text-gray-300 mb-6">Creating meaningful wildlife adventures that combine conservation, education, and unforgettable experiences across East Africa.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+                            <i class="ri-twitter-line"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+                            <i class="ri-youtube-line"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Tanzania Destinations</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Serengeti National Park</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Ngorongoro Crater</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Mount Kilimanjaro</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Tarangire National Park</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Lake Manyara</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Ruaha National Park</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Safari Types</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Classic Safari</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Luxury Safari</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Adventure Safari</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Family Safari</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Photography Safari</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Climbing Expeditions</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="ri-map-pin-line text-green-400 mt-1"></i>
+                            <div class="text-gray-300">
+                                <div>Arusha Office</div>
+                                <div>Tanzania Safari Capital</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="ri-phone-line text-green-400"></i>
+                            <span class="text-gray-300">+255 754 123 456</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="ri-mail-line text-green-400"></i>
+                            <span class="text-gray-300">tanzania@wildmedsafaris.com</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="ri-time-line text-green-400"></i>
+                            <span class="text-gray-300">24/7 Support Available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 WildMed Safaris. All rights reserved. | Privacy Policy | Terms of Service | Tanzania Tourism License: #TZ-001234</p>
+            </div>
+        </div>
+    </footer>
+
+    <script id="filter-functionality">
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const packageCards = document.querySelectorAll('.package-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    filterButtons.forEach(btn => btn.classList.remove('filter-active'));
+                    this.classList.add('filter-active');
+                    
+                    packageCards.forEach(card => {
+                        const categories = card.getAttribute('data-category');
+                        if (filter === 'all' || categories.includes(filter)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <script id="mobile-menu">
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('button[class*="lg:hidden"]');
+            
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    console.log('Mobile menu clicked');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

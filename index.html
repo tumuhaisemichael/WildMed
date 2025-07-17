@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WildMed Safaris - Experience Wildlife Adventure</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#3B2A1B',
+secondary: '#2D5A3D'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+.parallax-bg {
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.image-carousel {
+animation: scroll 20s linear infinite;
+}
+.image-carousel:hover {
+animation-play-state: paused;
+}
+@keyframes scroll {
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
+}
+.dropdown {
+opacity: 0;
+visibility: hidden;
+transform: translateY(-10px);
+transition: all 0.3s ease;
+}
+.dropdown-trigger:hover .dropdown {
+opacity: 1;
+visibility: visible;
+transform: translateY(0);
+}
+.counter {
+font-variant-numeric: tabular-nums;
+}
+</style>
+</head>
+<body class="font-['Inter'] text-gray-800">
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm">
+<nav class="w-full px-6 py-4">
+<div class="flex items-center justify-between">
+<!-- Logo -->
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary rounded-full">
+<i class="ri-leaf-line text-white text-xl"></i>
+</div>
+<span class="text-white text-2xl font-['Pacifico']">WildMed Safaris</span>
+</div>
+<!-- Navigation -->
+<div class="hidden lg:flex items-center space-x-8">
+<a href="#" class="text-white hover:text-green-300 transition-colors duration-300">Home</a>
+<div class="relative dropdown-trigger">
+<button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+<span>Destinations</span>
+<i class="ri-arrow-down-s-line text-sm"></i>
+</button>
+<div class="dropdown absolute top-full left-0 mt-2 w-48 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg">
+<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Kenya Safaris</a>
+<a href="https://readdy.ai/home/c9cda4a4-f52b-448e-ab35-c75de11a9119/454ddf70-ccb0-485b-be1d-32f4c08acb97" data-readdy="true" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Tanzania Adventures</a>
+<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Uganda Expeditions</a>
+<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Rwanda Gorilla Tours</a>
+</div>
+</div>
+<div class="relative dropdown-trigger">
+<button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+<span>Custom Expeditions</span>
+<i class="ri-arrow-down-s-line text-sm"></i>
+</button>
+<div class="dropdown absolute top-full left-0 mt-2 w-48 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg">
+<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Private Safaris</a>
+<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Group Adventures</a>
+<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Photography Tours</a>
+<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Luxury Expeditions</a>
+</div>
+</div>
+<div class="relative dropdown-trigger">
+<button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+<span>Vet Expeditions</span>
+<i class="ri-arrow-down-s-line text-sm"></i>
+</button>
+<div class="dropdown absolute top-full left-0 mt-2 w-48 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg">
+<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Wildlife Conservation</a>
+<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Animal Research</a>
+<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Veterinary Training</a>
+<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Field Studies</a>
+</div>
+</div>
+<a href="#" class="text-white hover:text-green-300 transition-colors duration-300">Med Expeditions</a>
+<a href="#" class="text-white hover:text-green-300 transition-colors duration-300">Gallery</a>
+<a href="#" class="text-white hover:text-green-300 transition-colors duration-300">Review</a>
+</div>
+<!-- Mobile Menu Button -->
+<button class="lg:hidden text-white">
+<i class="ri-menu-line text-2xl"></i>
+</button>
+</div>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 parallax-bg" style="background-image: url('https://readdy.ai/api/search-image?query=Majestic%20African%20safari%20landscape%20with%20acacia%20trees%20silhouetted%20against%20golden%20sunset%20sky%2C%20vast%20savanna%20plains%20stretching%20to%20horizon%2C%20dramatic%20clouds%20painted%20in%20warm%20orange%20and%20purple%20hues%2C%20peaceful%20and%20serene%20wilderness%20atmosphere%2C%20cinematic%20lighting%2C%20professional%20nature%20photography%20style&width=1920&height=1080&seq=hero1&orientation=landscape')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-transparent"></div>
+<div class="relative z-10 w-full max-w-7xl mx-auto px-6 text-white">
+<div class="max-w-3xl">
+<h1 class="text-6xl lg:text-7xl font-bold mb-6 leading-tight">Experience Wildlife Adventure</h1>
+<p class="text-xl lg:text-2xl mb-8 text-gray-200">Discover the untamed beauty of nature with our expertly guided safaris and medical expeditions across East Africa</p>
+<button class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 !rounded-button text-lg font-semibold transition-colors duration-300 whitespace-nowrap">
+Plan Your Safari
+</button>
+</div>
+</div>
+</section>
+<!-- Dynamic Image Gallery -->
+<section class="py-16 bg-gray-50 overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 mb-12">
+<h2 class="text-4xl font-bold text-center mb-4">Unforgettable Moments</h2>
+<p class="text-xl text-gray-600 text-center">Witness the magic of African wildlife in their natural habitat</p>
+</div>
+<div class="relative">
+<div class="flex image-carousel space-x-6">
+<div class="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg">
+<img src="https://readdy.ai/api/search-image?query=Close-up%20portrait%20of%20majestic%20African%20lion%20with%20golden%20mane%20in%20natural%20savanna%20habitat%2C%20intense%20amber%20eyes%2C%20warm%20golden%20hour%20lighting%2C%20shallow%20depth%20of%20field%2C%20professional%20wildlife%20photography%2C%20detailed%20fur%20texture%2C%20regal%20and%20powerful%20expression&width=320&height=256&seq=gallery1&orientation=landscape" alt="African Lion" class="w-full h-full object-cover object-top">
+</div>
+<div class="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg">
+<img src="https://readdy.ai/api/search-image?query=Elegant%20African%20elephant%20family%20walking%20through%20golden%20grassland%20at%20sunset%2C%20baby%20elephant%20staying%20close%20to%20mother%2C%20warm%20atmospheric%20lighting%2C%20dust%20particles%20in%20air%2C%20peaceful%20family%20moment%2C%20cinematic%20wildlife%20photography&width=320&height=256&seq=gallery2&orientation=landscape" alt="Elephant Family" class="w-full h-full object-cover object-top">
+</div>
+<div class="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg">
+<img src="https://readdy.ai/api/search-image?query=Graceful%20giraffe%20reaching%20for%20acacia%20tree%20leaves%20against%20blue%20African%20sky%2C%20long%20elegant%20neck%20extended%2C%20natural%20feeding%20behavior%2C%20beautiful%20contrast%20between%20animal%20and%20landscape%2C%20professional%20nature%20photography&width=320&height=256&seq=gallery3&orientation=landscape" alt="Giraffe Feeding" class="w-full h-full object-cover object-top">
+</div>
+<div class="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg">
+<img src="https://readdy.ai/api/search-image?query=Powerful%20leopard%20resting%20on%20tree%20branch%20in%20dappled%20sunlight%2C%20spotted%20coat%20pattern%20clearly%20visible%2C%20alert%20expression%2C%20natural%20forest%20habitat%2C%20dramatic%20lighting%20through%20leaves%2C%20wildlife%20photography%20masterpiece&width=320&height=256&seq=gallery4&orientation=landscape" alt="Leopard on Branch" class="w-full h-full object-cover object-top">
+</div>
+<div class="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg">
+<img src="https://readdy.ai/api/search-image?query=Herd%20of%20zebras%20grazing%20peacefully%20in%20vast%20African%20plains%2C%20distinctive%20black%20and%20white%20stripes%20creating%20natural%20patterns%2C%20golden%20grassland%20background%2C%20serene%20wildlife%20scene%2C%20professional%20safari%20photography&width=320&height=256&seq=gallery5&orientation=landscape" alt="Zebra Herd" class="w-full h-full object-cover object-top">
+</div>
+<div class="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg">
+<img src="https://readdy.ai/api/search-image?query=Majestic%20African%20buffalo%20standing%20in%20morning%20mist%2C%20powerful%20horns%20and%20muscular%20build%2C%20dramatic%20atmospheric%20lighting%2C%20wild%20and%20untamed%20expression%2C%20professional%20wildlife%20portrait%20photography&width=320&height=256&seq=gallery6&orientation=landscape" alt="African Buffalo" class="w-full h-full object-cover object-top">
+</div>
+<!-- Duplicate for seamless loop -->
+<div class="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg">
+<img src="https://readdy.ai/api/search-image?query=Close-up%20portrait%20of%20majestic%20African%20lion%20with%20golden%20mane%20in%20natural%20savanna%20habitat%2C%20intense%20amber%20eyes%2C%20warm%20golden%20hour%20lighting%2C%20shallow%20depth%20of%20field%2C%20professional%20wildlife%20photography%2C%20detailed%20fur%20texture%2C%20regal%20and%20powerful%20expression&width=320&height=256&seq=gallery1&orientation=landscape" alt="African Lion" class="w-full h-full object-cover object-top">
+</div>
+<div class="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden shadow-lg">
+<img src="https://readdy.ai/api/search-image?query=Elegant%20African%20elephant%20family%20walking%20through%20golden%20grassland%20at%20sunset%2C%20baby%20elephant%20staying%20close%20to%20mother%2C%20warm%20atmospheric%20lighting%2C%20dust%20particles%20in%20air%2C%20peaceful%20family%20moment%2C%20cinematic%20wildlife%20photography&width=320&height=256&seq=gallery2&orientation=landscape" alt="Elephant Family" class="w-full h-full object-cover object-top">
+</div>
+</div>
+</div>
+</section>
+<!-- Our Services Section -->
+<section class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold mb-4">Our Services</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">We offer comprehensive safari experiences combined with specialized medical and veterinary programs</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+<div class="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mb-6">
+<i class="ri-camera-line text-green-600 text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-4">Wildlife Expeditions</h3>
+<p class="text-gray-600 mb-6">Experience the Big Five and countless other species in their natural habitat with expert guides</p>
+<a href="#" class="text-green-600 hover:text-green-700 font-medium">Learn More →</a>
+</div>
+<div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full mb-6">
+<i class="ri-heart-pulse-line text-blue-600 text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-4">Medical Tourism</h3>
+<p class="text-gray-600 mb-6">Combine adventure with medical missions, supporting local communities while exploring</p>
+<a href="#" class="text-green-600 hover:text-green-700 font-medium">Learn More →</a>
+</div>
+<div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6">
+<i class="ri-stethoscope-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-4">Veterinary Programs</h3>
+<p class="text-gray-600 mb-6">Join conservation efforts and wildlife research programs led by veterinary experts</p>
+<a href="#" class="text-green-600 hover:text-green-700 font-medium">Learn More →</a>
+</div>
+<div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+<div class="w-16 h-16 flex items-center justify-center bg-secondary/10 rounded-full mb-6">
+<i class="ri-map-2-line text-secondary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-4">Custom Safari Plans</h3>
+<p class="text-gray-600 mb-6">Tailored adventures designed to match your interests, schedule, and group size</p>
+<a href="#" class="text-green-600 hover:text-green-700 font-medium">Learn More →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Destinations -->
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold mb-4">Featured Destinations</h2>
+<p class="text-xl text-gray-600">Explore the most spectacular wildlife destinations in East Africa</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+<div class="relative h-64">
+<img src="https://readdy.ai/api/search-image?query=Serengeti%20National%20Park%20vast%20plains%20during%20great%20migration%2C%20thousands%20of%20wildebeest%20and%20zebras%20moving%20across%20golden%20grassland%2C%20dramatic%20cloudy%20sky%2C%20iconic%20African%20landscape%2C%20professional%20nature%20photography&width=400&height=256&seq=dest1&orientation=landscape" alt="Serengeti National Park" class="w-full h-full object-cover object-top">
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+<div class="flex items-center space-x-1">
+<i class="ri-star-fill text-yellow-400 text-sm"></i>
+<span class="text-sm font-medium">4.9</span>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Serengeti National Park</h3>
+<p class="text-gray-600 mb-4">Witness the Great Migration and experience the endless plains of Tanzania</p>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-green-600">From $2,450</span>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 !rounded-button text-sm whitespace-nowrap">View Details</button>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+<div class="relative h-64">
+<img src="https://readdy.ai/api/search-image?query=Masai%20Mara%20National%20Reserve%20during%20golden%20hour%2C%20acacia%20trees%20scattered%20across%20rolling%20hills%2C%20wildlife%20silhouettes%20in%20distance%2C%20warm%20African%20sunset%20lighting%2C%20breathtaking%20savanna%20landscape%2C%20professional%20safari%20photography&width=400&height=256&seq=dest2&orientation=landscape" alt="Masai Mara" class="w-full h-full object-cover object-top">
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+<div class="flex items-center space-x-1">
+<i class="ri-star-fill text-yellow-400 text-sm"></i>
+<span class="text-sm font-medium">4.8</span>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Masai Mara Reserve</h3>
+<p class="text-gray-600 mb-4">Kenya's premier game reserve famous for its exceptional Big Five sightings</p>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-green-600">From $1,890</span>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 !rounded-button text-sm whitespace-nowrap">View Details</button>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+<div class="relative h-64">
+<img src="https://readdy.ai/api/search-image?query=Ngorongoro%20Crater%20aerial%20view%20showing%20vast%20caldera%20floor%20with%20diverse%20wildlife%2C%20lush%20green%20vegetation%2C%20pristine%20lake%20in%20center%2C%20dramatic%20crater%20walls%2C%20UNESCO%20World%20Heritage%20site%2C%20stunning%20natural%20wonder%20photography&width=400&height=256&seq=dest3&orientation=landscape" alt="Ngorongoro Crater" class="w-full h-full object-cover object-top">
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+<div class="flex items-center space-x-1">
+<i class="ri-star-fill text-yellow-400 text-sm"></i>
+<span class="text-sm font-medium">4.9</span>
+</div>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Ngorongoro Crater</h3>
+<p class="text-gray-600 mb-4">The world's largest inactive volcanic caldera and UNESCO World Heritage Site</p>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-bold text-green-600">From $2,150</span>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 !rounded-button text-sm whitespace-nowrap">View Details</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-20 bg-green-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-4xl font-bold mb-6">Why Choose WildMed Safaris</h2>
+<p class="text-xl text-gray-600 mb-8">We combine decades of safari expertise with specialized medical and veterinary programs to create unique, meaningful adventures</p>
+<div class="space-y-6">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full flex-shrink-0">
+<i class="ri-shield-check-line text-green-600 text-xl"></i>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-2">Expert Local Guides</h3>
+<p class="text-gray-600">Our certified guides have over 15 years of experience and deep knowledge of local wildlife and culture</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full flex-shrink-0">
+<i class="ri-heart-line text-blue-600 text-xl"></i>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-2">Medical & Vet Programs</h3>
+<p class="text-gray-600">Unique opportunities to contribute to wildlife conservation and community health initiatives</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full flex-shrink-0">
+<i class="ri-award-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-2">Award-Winning Service</h3>
+<p class="text-gray-600">Recognized by National Geographic and Travel + Leisure for exceptional safari experiences</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-gray-200">
+<div class="text-center">
+<div class="text-3xl font-bold text-green-600 counter" data-target="2500">0</div>
+<div class="text-sm text-gray-600 mt-1">Happy Travelers</div>
+</div>
+<div class="text-center">
+<div class="text-3xl font-bold text-green-600 counter" data-target="150">0</div>
+<div class="text-sm text-gray-600 mt-1">Medical Missions</div>
+</div>
+<div class="text-center">
+<div class="text-3xl font-bold text-green-600 counter" data-target="12">0</div>
+<div class="text-sm text-gray-600 mt-1">Years Experience</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=Professional%20safari%20guide%20with%20binoculars%20pointing%20towards%20wildlife%20in%20African%20savanna%2C%20wearing%20khaki%20safari%20outfit%2C%20warm%20golden%20hour%20lighting%2C%20acacia%20trees%20in%20background%2C%20authentic%20safari%20experience%2C%20professional%20tourism%20photography&width=600&height=600&seq=guide1&orientation=squarish" alt="Safari Guide" class="w-full h-96 object-cover object-top rounded-xl shadow-lg">
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold mb-4">What Our Travelers Say</h2>
+<p class="text-xl text-gray-600">Real experiences from our safari adventurers</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-gray-50 rounded-xl p-8">
+<div class="flex items-center mb-4">
+<div class="flex space-x-1">
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+</div>
+<p class="text-gray-700 mb-6 italic">"The veterinary expedition was life-changing. We helped treat injured wildlife while experiencing the most incredible safari. The guides were knowledgeable and passionate about conservation."</p>
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+<span class="text-white font-semibold">DR</span>
+</div>
+<div>
+<div class="font-semibold">Dr. Rachel Martinez</div>
+<div class="text-sm text-gray-600">Veterinarian, California</div>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 rounded-xl p-8">
+<div class="flex items-center mb-4">
+<div class="flex space-x-1">
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+</div>
+<p class="text-gray-700 mb-6 italic">"Our custom family safari exceeded all expectations. The kids loved learning about wildlife conservation, and the medical outreach component added such meaningful purpose to our adventure."</p>
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
+<span class="text-white font-semibold">MJ</span>
+</div>
+<div>
+<div class="font-semibold">Michael Johnson</div>
+<div class="text-sm text-gray-600">Family Traveler, Texas</div>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 rounded-xl p-8">
+<div class="flex items-center mb-4">
+<div class="flex space-x-1">
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+</div>
+<p class="text-gray-700 mb-6 italic">"As a photographer, I was blown away by the opportunities WildMed provided. The guides knew exactly where to find the best wildlife shots, and the medical mission work was incredibly rewarding."</p>
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
+<span class="text-white font-semibold">SC</span>
+</div>
+<div>
+<div class="font-semibold">Sarah Chen</div>
+<div class="text-sm text-gray-600">Photographer, New York</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="relative py-20 overflow-hidden">
+<div class="absolute inset-0" style="background-image: url('https://readdy.ai/api/search-image?query=African%20sunset%20over%20savanna%20with%20silhouettes%20of%20acacia%20trees%2C%20warm%20golden%20and%20orange%20sky%2C%20peaceful%20wilderness%20atmosphere%2C%20cinematic%20landscape%20photography%2C%20inspiring%20and%20adventurous%20mood%2C%20perfect%20for%20travel%20marketing&width=1920&height=600&seq=cta1&orientation=landscape')"></div>
+<div class="absolute inset-0 bg-blue-900/70"></div>
+<div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+<h2 class="text-5xl font-bold mb-6">Ready for Your Adventure?</h2>
+<p class="text-xl mb-8">Join us for an unforgettable journey that combines wildlife adventure with meaningful conservation work</p>
+<div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+<button class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 !rounded-button text-lg font-semibold transition-colors duration-300 whitespace-nowrap">
+Book Your Safari Now
+</button>
+<button class="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 !rounded-button text-lg font-semibold transition-all duration-300 whitespace-nowrap">
+Download Brochure
+</button>
+</div>
+<div class="mt-12 bg-white/10 backdrop-blur-sm rounded-xl p-6 max-w-md mx-auto">
+<h3 class="text-lg font-semibold mb-4">Get Safari Updates</h3>
+<div class="flex space-x-3">
+<input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-green-400">
+<button class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 !rounded-button font-semibold whitespace-nowrap">
+Subscribe
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary text-white">
+<div class="max-w-7xl mx-auto px-6 py-16">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div>
+<div class="flex items-center space-x-3 mb-6">
+<div class="w-10 h-10 flex items-center justify-center bg-secondary rounded-full">
+<i class="ri-leaf-line text-white"></i>
+</div>
+<span class="text-xl font-['Pacifico']">WildMed Safaris</span>
+</div>
+<p class="text-gray-300 mb-6">Creating meaningful wildlife adventures that combine conservation, education, and unforgettable experiences across East Africa.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+<i class="ri-twitter-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+<i class="ri-youtube-line"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">About Us</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Safari Packages</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Medical Expeditions</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Vet Programs</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Gallery</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Reviews</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-6">Destinations</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Kenya Safaris</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Tanzania Adventures</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Uganda Expeditions</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Rwanda Gorilla Tours</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Botswana Wildlife</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Zambia Adventures</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+<div class="space-y-4">
+<div class="flex items-start space-x-3">
+<i class="ri-map-pin-line text-green-400 mt-1"></i>
+<div class="text-gray-300">
+<div>Nairobi Office</div>
+<div>Westlands, Kenya</div>
+</div>
+</div>
+<div class="flex items-center space-x-3">
+<i class="ri-phone-line text-green-400"></i>
+<span class="text-gray-300">+254 700 123 456</span>
+</div>
+<div class="flex items-center space-x-3">
+<i class="ri-mail-line text-green-400"></i>
+<span class="text-gray-300">info@wildmedsafaris.com</span>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-300">
+<p>&copy; 2024 WildMed Safaris. All rights reserved. | Privacy Policy | Terms of Service</p>
+</div>
+</div>
+</footer>
+<script id="counter-animation">
+document.addEventListener('DOMContentLoaded', function() {
+const counters = document.querySelectorAll('.counter');
+const observerOptions = {
+threshold: 0.5,
+rootMargin: '0px 0px -100px 0px'
+};
+const observer = new IntersectionObserver(function(entries) {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+const counter = entry.target;
+const target = parseInt(counter.getAttribute('data-target'));
+let current = 0;
+const increment = target / 100;
+const timer = setInterval(() => {
+current += increment;
+if (current >= target) {
+counter.textContent = target;
+clearInterval(timer);
+} else {
+counter.textContent = Math.floor(current);
+}
+}, 20);
+observer.unobserve(counter);
+}
+});
+}, observerOptions);
+counters.forEach(counter => observer.observe(counter));
+});
+</script>
+<script id="mobile-menu">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuButton = document.querySelector('button[class*="lg:hidden"]');
+const nav = document.querySelector('nav');
+if (mobileMenuButton) {
+mobileMenuButton.addEventListener('click', function() {
+// Mobile menu functionality would be implemented here
+console.log('Mobile menu clicked');
+});
+}
+});
+</script>
+</body>
+</html>
