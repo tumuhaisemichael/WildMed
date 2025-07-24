@@ -61,145 +61,624 @@ transition: transform 0.3s ease, filter 0.3s ease;
 transform: scale(1.05);
 filter: brightness(1.1);
 }
+/* Lightbox styles */
+.lightbox {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.9);
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 1000;
+opacity: 0;
+visibility: hidden;
+transition: all 0.3s ease;
+}
+.lightbox.active {
+opacity: 1;
+visibility: visible;
+}
+.lightbox-content {
+position: relative;
+max-width: 90%;
+max-height: 90%;
+text-align: center;
+}
+.lightbox-img {
+max-height: 80vh;
+max-width: 100%;
+width: auto;
+height: auto;
+object-fit: contain;
+}
+.lightbox-close {
+position: absolute;
+top: -50px;
+right: 0;
+color: white;
+font-size: 2.5rem;
+cursor: pointer;
+background: rgba(0,0,0,0.5);
+border-radius: 50%;
+width: 40px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.lightbox-caption {
+position: absolute;
+bottom: -40px;
+left: 0;
+width: 100%;
+text-align: center;
+color: white;
+padding: 10px;
+background-color: rgba(0, 0, 0, 0.7);
+}
+.gallery-toggle {
+display: flex;
+justify-content: center;
+margin-bottom: 2rem;
+}
+.gallery-toggle button {
+margin: 0 10px;
+padding: 8px 20px;
+border-radius: 20px;
+font-weight: 600;
+transition: all 0.3s ease;
+}
+.gallery-toggle button.active {
+background-color: #2D5A3D;
+color: white;
+}
+.gallery-toggle button:not(.active) {
+background-color: #e2e8f0;
+color: #4a5568;
+}
+.video-gallery {
+display: none;
+}
 </style>
 </head>
 <body class="font-['Inter'] text-gray-800">
 <!-- Header -->
 <header class="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm">
-<nav class="w-full px-6 py-4">
-<div class="flex items-center justify-between">
-<!-- Logo -->
-<div class="flex items-center space-x-4">
-  <!-- Logo Image - Increased size -->
-  <div class="w-16 h-16 flex-shrink-0">
-<img src="img/android-chrome-192x192.png" alt="WildMed Safaris Logo" width="400" height="400">
-  </div>
-  
-  <!-- Text - Normal weight, bold removed, standard font -->
-  <span class="text-white text-2xl font-bold">WildMed Safaris</span>
-</div>
-<!-- Navigation -->
-<div class="hidden lg:flex items-center space-x-8">
-<a href="#" class="text-white hover:text-green-300 transition-colors duration-300">Home</a>
-<div class="relative dropdown-trigger">
-<button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
-<span>Destinations</span>
-<i class="ri-arrow-down-s-line text-sm"></i>
-</button>
-<div class="dropdown absolute top-full left-0 mt-2 w-48 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg">
-<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Kenya Safaris</a>
-<a href="Tanzania-Safari.html" data-readdy="true" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Tanzania Adventures</a>
-<a href="Uganda-Adventures.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Uganda Expeditions</a>
-<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Rwanda Gorilla Tours</a>
-</div>
-</div>
-<div class="relative dropdown-trigger">
-<button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
-<span>Custom Expeditions</span>
-<i class="ri-arrow-down-s-line text-sm"></i>
-</button>
-<div class="dropdown absolute top-full left-0 mt-2 w-48 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg">
-<a href="Custom-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Private Safaris</a>
-<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Group Adventures</a>
-<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Photography Tours</a>
-<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Luxury Expeditions</a>
-</div>
-</div>
-<div class="relative dropdown-trigger">
-<button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
-<span>Vet Expeditions</span>
-<i class="ri-arrow-down-s-line text-sm"></i>
-</button>
-<div class="dropdown absolute top-full left-0 mt-2 w-48 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg">
-<a href="Veterinary-Conservation-.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Wildlife Conservation</a>
-<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Animal Research</a>
-<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Veterinary Training</a>
-<a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Field Studies</a>
-</div>
-</div>
-<a href="Medical-Expedition-Programs.html" class="text-white hover:text-green-300 transition-colors duration-300">Med Expeditions</a>
-<a href="gallery.html" class="text-white hover:text-green-300 transition-colors duration-300">Gallery</a>
-<a href="#" class="text-white hover:text-green-300 transition-colors duration-300">Review</a>
-</div>
-<!-- Mobile Menu Button -->
-<button class="lg:hidden text-white">
-<i class="ri-menu-line text-2xl"></i>
-</button>
-</div>
-</nav>
+  <nav class="w-full px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-4">
+        <div class="w-16 h-16 flex-shrink-0">
+          <img src="img/android-chrome-192x192.png" alt="WildMed Safaris Logo" width="400" height="400">
+        </div>
+        <span class="text-white text-2xl font-bold">WildMed</span>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center space-x-8">
+        <a href="index.html" class="text-white hover:text-green-300 transition-colors duration-300">Home</a>
+        
+        <!-- Destinations Dropdown -->
+        <div class="relative dropdown-trigger group">
+          <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+            <span>Destinations</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="dropdown absolute top-full left-0 mt-2 w-48 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="Kenya-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Kenya Wildlife Safari</a>
+            <a href="Tanzania-Safari.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Tanzania Adventure</a>
+            <a href="Uganda-Adventures.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Uganda Gorilla Trek</a>
+            <a href="Rwanda-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Rwanda Gorilla Experience</a>
+          </div>
+        </div>
+
+        <!-- Custom Expeditions Dropdown -->
+        <div class="relative dropdown-trigger group">
+          <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+            <span>Custom Safaris</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="dropdown absolute top-full left-0 mt-2 w-56 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="Uganda-2-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">2-Day Gorilla Express</a>
+            <a href="Uganda-4-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">4-Day Wildlife Discovery</a>
+            <a href="Uganda-6-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">6-Day Primates & Wildlife</a>
+            <a href="Uganda-8-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">8-Day Ultimate Adventure</a>
+            <a href="Uganda-15-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">15-Day Grand Safari</a>
+            <a href="Rwanda-7-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">7-Day Rwanda Explorer</a>
+          </div>
+        </div>
+
+        <!-- Vet Expeditions Dropdown -->
+        <div class="relative dropdown-trigger group">
+          <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+            <span>Vet Programs</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="dropdown absolute top-full left-0 mt-2 w-56 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="Veterinary-Conservation-.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Wildlife Conservation Program</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Field Veterinary Training</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Animal Research Expedition</a>
+          </div>
+        </div>
+
+        <a href="Medical-Expedition-Programs.html" class="text-white hover:text-green-300 transition-colors duration-300">Medical Missions</a>
+        <a href="Gallery.html" class="text-white hover:text-green-300 transition-colors duration-300">Photo Gallery</a>
+        <a href="Review.html" class="text-white hover:text-green-300 transition-colors duration-300">Client Reviews</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="lg:hidden text-white focus:outline-none">
+        <i id="menu-icon" class="ri-menu-line text-2xl"></i>
+        <i id="close-icon" class="ri-close-line text-2xl hidden"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-primary/95 mt-4 rounded-lg overflow-hidden transition-all duration-300 max-h-0">
+      <div class="px-4 py-2 space-y-2">
+        <a href="index.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Home</a>
+        
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">
+            <span>Destinations</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="hidden dropdown-mobile-content pl-6">
+            <a href="Kenya-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Kenya Wildlife Safari</a>
+            <a href="Tanzania-Safari.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Tanzania Adventure</a>
+            <a href="Uganda-Adventures.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Uganda Gorilla Trek</a>
+            <a href="Rwanda-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Rwanda Gorilla Experience</a>
+          </div>
+        </div>
+
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">
+            <span>Custom Safaris</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="hidden dropdown-mobile-content pl-6">
+            <a href="Uganda-2-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">2-Day Gorilla Express</a>
+            <a href="Uganda-4-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">4-Day Wildlife Discovery</a>
+            <a href="Uganda-6-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">6-Day Primates & Wildlife</a>
+            <a href="Uganda-8-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">8-Day Ultimate Adventure</a>
+            <a href="Uganda-15-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">15-Day Grand Safari</a>
+            <a href="Rwanda-7-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">7-Day Rwanda Explorer</a>
+          </div>
+        </div>
+
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">
+            <span>Vet Programs</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="hidden dropdown-mobile-content pl-6">
+            <a href="Veterinary-Conservation-.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Wildlife Conservation Program</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Field Veterinary Training</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Animal Research Expedition</a>
+          </div>
+        </div>
+
+        <a href="Medical-Expedition-Programs.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Medical Missions</a>
+        <a href="Gallery.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Photo Gallery</a>
+        <a href="Review.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Client Reviews</a>
+      </div>
+    </div>
+  </nav>
 </header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  mobileMenuButton.addEventListener('click', function() {
+    const isExpanded = mobileMenu.classList.toggle('hidden');
+    
+    if (isExpanded) {
+      mobileMenu.style.maxHeight = '0';
+    } else {
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+    }
+    
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+  });
+
+  // Mobile dropdown triggers
+  const mobileDropdownTriggers = document.querySelectorAll('.dropdown-trigger-mobile');
+  
+  mobileDropdownTriggers.forEach(trigger => {
+    const button = trigger.querySelector('button');
+    const dropdown = trigger.querySelector('.dropdown-mobile-content');
+    
+    button.addEventListener('click', function() {
+      dropdown.classList.toggle('hidden');
+      
+      // Close other open dropdowns
+      mobileDropdownTriggers.forEach(otherTrigger => {
+        if (otherTrigger !== trigger) {
+          otherTrigger.querySelector('.dropdown-mobile-content').classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.style.maxHeight = '0';
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+      
+      // Also close all mobile dropdowns
+      document.querySelectorAll('.dropdown-mobile-content').forEach(dropdown => {
+        dropdown.classList.add('hidden');
+      });
+    }
+  });
+});
+</script>
+
 <!-- Hero Section -->
-<section class="relative h-96 flex items-center justify-center overflow-hidden">
-<div class="absolute inset-0 parallax-bg" style="background-image: url('https://readdy.ai/api/search-image?query=African%20savanna%20landscape%20with%20vibrant%20wildlife%20montage%2C%20collage%20of%20lion%2C%20elephant%2C%20giraffe%2C%20and%20zebra%2C%20vibrant%20colors%2C%20professional%20wildlife%20photography%2C%20inspiring%20travel%20gallery%20mood&width=1920&height=600&seq=gallery_hero&orientation=landscape')"></div>
-<div class="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-transparent"></div>
-<div class="relative z-10 text-center text-white">
-<h1 class="text-5xl lg:text-6xl font-bold mb-4">Our Wildlife Gallery</h1>
-<p class="text-xl lg:text-2xl text-gray-200">Explore stunning moments captured from our East African safaris</p>
-</div>
+<!-- Modern Hero Section -->
+<section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden mt-0">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-wildlife-in-the-forest-1583-large.mp4" type="video/mp4">
+    <!-- Fallback image -->
+    <img src="https://readdy.ai/api/search-image?query=African%20savanna%20sunset%20with%20silhouettes%20of%20wildlife%2C%20dramatic%20colors%2C%20professional%20wildlife%20photography&width=1920&height=1080&seq=hero_fallback&orientation=landscape" 
+         alt="African wildlife" class="w-full h-full object-cover">
+  </video>
+  
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/70 via-purple-900/40 to-emerald-900/70 z-1"></div>
+  
+  <!-- Animated Particles -->
+  <div id="particles-js" class="absolute inset-0 z-2"></div>
+  
+  <!-- Content Container -->
+  <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+    <!-- Animated Title -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
+      <span class="inline-block animate-fadeInUp">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-orange-400 to-amber-500">
+          Wildlife Gallery
+        </span>
+      </span>
+    </h1>
+    
+    <!-- Subtitle with Typing Animation -->
+    <p class="text-xl md:text-2xl text-gray-100 mb-10 max-w-3xl mx-auto animate-fadeIn delay-300">
+      <span id="typing-text" class="border-r-2 border-amber-400 pr-1"></span>
+    </p>
+    
+    <!-- Interactive Button -->
+    <div class="animate-fadeIn delay-500">
+      <a href="#gallery" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group">
+        <span>Explore Gallery</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </div>
+  </div>
 </section>
+
+<!-- CSS for Animations -->
+<style>
+  .animate-fadeInUp {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  .animate-fadeIn {
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-20px) translateX(-50%); }
+    60% { transform: translateY(-10px) translateX(-50%); }
+  }
+</style>
+
+<!-- JavaScript for Typing Effect -->
+<script>
+  // Typing animation for subtitle
+  const phrases = [
+    "Explore stunning moments from our safaris",
+    "Witness East Africa's majestic wildlife",
+    "Capturing nature's raw beauty",
+    "Professional wildlife photography gallery"
+  ];
+  let currentPhrase = 0;
+  let currentChar = 0;
+  let isDeleting = false;
+  let typingSpeed = 100;
+  
+  function typeWriter() {
+    const element = document.getElementById('typing-text');
+    const fullText = phrases[currentPhrase];
+    
+    if (isDeleting) {
+      element.textContent = fullText.substring(0, currentChar - 1);
+      currentChar--;
+      typingSpeed = 50;
+    } else {
+      element.textContent = fullText.substring(0, currentChar + 1);
+      currentChar++;
+      typingSpeed = 100;
+    }
+    
+    if (!isDeleting && currentChar === fullText.length) {
+      isDeleting = true;
+      typingSpeed = 1500; // Pause at end
+    } else if (isDeleting && currentChar === 0) {
+      isDeleting = false;
+      currentPhrase = (currentPhrase + 1) % phrases.length;
+      typingSpeed = 500; // Pause before typing next
+    }
+    
+    setTimeout(typeWriter, typingSpeed);
+  }
+  
+  // Initialize particles.js
+  function initParticles() {
+    particlesJS('particles-js', {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": true },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.3, "width": 1 },
+        "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" },
+          "resize": true
+        }
+      }
+    });
+  }
+  
+  // Start effects when page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    typeWriter();
+    initParticles();
+  });
+</script>
+
+<!-- Include particles.js library -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <!-- Gallery Section -->
 <section class="py-20 bg-gray-50">
 <div class="max-w-7xl mx-auto px-6">
-<div class="text-center mb-16">
+<div class="text-center mb-8">
 <h2 class="text-4xl font-bold mb-4">Safari Moments</h2>
 <p class="text-xl text-gray-600 max-w-3xl mx-auto">Browse through our collection of breathtaking wildlife photography and unforgettable safari experiences</p>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- Gallery Toggle -->
+<div class="gallery-toggle">
+<button id="photos-btn" class="active">Photos</button>
+<button id="videos-btn">Videos</button>
+</div>
+
+<!-- Photos Gallery -->
+<div id="photos-gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Images from your content -->
 <div class="relative rounded-xl overflow-hidden shadow-lg group">
-<img src="https://readdy.ai/api/search-image?query=Close-up%20portrait%20of%20majestic%20African%20lion%20 ascend%20with%20golden%20mane%20in%20natural%20savanna%20habitat%2C%20intense%20amber%20eyes%2C%20warm%20golden%20hour%20lighting%2C%20shallow%20depth%20of%20field%2C%20professional%20wildlife%20photography%2C%20detailed%20fur%20texture%2C%20regal%20and%20powerful%20expression&width=400&height=400&seq=gallery1&orientation=squarish" alt="African Lion" class="w-full h-96 object-cover image-hover">
+<img src="assets/15 day trip/15day1.jpg" alt="Safari Expedition" class="w-full h-96 object-cover image-hover cursor-pointer" data-caption="Our team on a 15-day safari expedition in the Masai Mara" data-fullsize="assets/15 day trip/15day1.jpg">
 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
 <div class="p-4 text-white">
-<h3 class="text-lg font-semibold">Majestic Lion</h3>
-<p class="text-sm">Captured in the Serengeti during golden hour, showcasing the lion's regal presence.</p>
+<h3 class="text-lg font-semibold">Safari Expedition</h3>
+<p class="text-sm">Our team on a 15-day safari expedition in the Masai Mara</p>
 </div>
 </div>
 </div>
+
 <div class="relative rounded-xl overflow-hidden shadow-lg group">
-<img src="https://readdy.ai/api/search-image?query=Elegant%20African%20elephant%20family%20walking%20through%20golden%20grassland%20at%20sunset%2C%20baby%20elephant%20staying%20close%20to%20mother%2C%20warm%20atmospheric%20lighting%2C%20dust%20particles%20in%20air%2C%20peaceful%20family%20moment%2C%20cinematic%20wildlife%20photography&width=400&height=400&seq=gallery2&orientation=squarish" alt="Elephant Family" class="w-full h-96 object-cover image-hover">
+<img src="assets/15 day trip/15day10.jpg" alt="Wildlife Research" class="w-full h-96 object-cover image-hover cursor-pointer" data-caption="Conducting wildlife research during our field expedition" data-fullsize="assets/15 day trip/15day10.jpg">
 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
 <div class="p-4 text-white">
-<h3 class="text-lg font-semibold">Elephant Family</h3>
-<p class="text-sm">A serene moment of an elephant family in the Masai Mara at sunset.</p>
+<h3 class="text-lg font-semibold">Wildlife Research</h3>
+<p class="text-sm">Conducting wildlife research during our field expedition</p>
 </div>
 </div>
 </div>
+
 <div class="relative rounded-xl overflow-hidden shadow-lg group">
-<img src="https://readdy.ai/api/search-image?query=Graceful%20giraffe%20reaching%20for%20acacia%20tree%20leaves%20against%20blue%20African%20sky%2C%20long%20elegant%20neck%20extended%2C%20natural%20feeding%20behavior%2C%20beautiful%20contrast%20between%20animal%20and%20landscape%2C%20professional%20nature%20photography&width=400&height=400&seq=gallery3&orientation=squarish" alt="Giraffe Feeding" class="w-full h-96 object-cover image-hover">
+<img src="assets/15 day trip/15day11.jpg" alt="Elephant Encounter" class="w-full h-96 object-cover image-hover cursor-pointer" data-caption="Close encounter with elephants in their natural habitat" data-fullsize="assets/15 day trip/15day11.jpg">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-4 text-white">
+<h3 class="text-lg font-semibold">Elephant Encounter</h3>
+<p class="text-sm">Close encounter with elephants in their natural habitat</p>
+</div>
+</div>
+</div>
+
+<div class="relative rounded-xl overflow-hidden shadow-lg group">
+<img src="assets/15 day trip/15day12.jpg" alt="Sunset Safari" class="w-full h-96 object-cover image-hover cursor-pointer" data-caption="Beautiful sunset during one of our evening game drives" data-fullsize="assets/15 day trip/15day12.jpg">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-4 text-white">
+<h3 class="text-lg font-semibold">Sunset Safari</h3>
+<p class="text-sm">Beautiful sunset during one of our evening game drives</p>
+</div>
+</div>
+</div>
+
+<div class="relative rounded-xl overflow-hidden shadow-lg group">
+<img src="assets/15 day trip/15day13.jpg" alt="Lion Observation" class="w-full h-96 object-cover image-hover cursor-pointer" data-caption="Observing lion behavior in the wild with our expert guides" data-fullsize="assets/15 day trip/15day13.jpg">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-4 text-white">
+<h3 class="text-lg font-semibold">Lion Observation</h3>
+<p class="text-sm">Observing lion behavior in the wild with our expert guides</p>
+</div>
+</div>
+</div>
+
+<div class="relative rounded-xl overflow-hidden shadow-lg group">
+<img src="assets/15 day trip/15day14.jpg" alt="Team Discussion" class="w-full h-96 object-cover image-hover cursor-pointer" data-caption="Team discussion about wildlife conservation strategies" data-fullsize="assets/15 day trip/15day14.jpg">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-4 text-white">
+<h3 class="text-lg font-semibold">Team Discussion</h3>
+<p class="text-sm">Team discussion about wildlife conservation strategies</p>
+</div>
+</div>
+</div>
+
+<div class="relative rounded-xl overflow-hidden shadow-lg group">
+<img src="assets/15 day trip/15day15.jpg" alt="Giraffe Feeding" class="w-full h-96 object-cover image-hover cursor-pointer" data-caption="Documenting giraffe feeding patterns in the savanna" data-fullsize="assets/15 day trip/15day15.jpg">
 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
 <div class="p-4 text-white">
 <h3 class="text-lg font-semibold">Giraffe Feeding</h3>
-<p class="text-sm">A graceful giraffe feeding on acacia leaves in the Ngorongoro Crater.</p>
+<p class="text-sm">Documenting giraffe feeding patterns in the savanna</p>
 </div>
 </div>
 </div>
+
 <div class="relative rounded-xl overflow-hidden shadow-lg group">
-<img src="https://readdy.ai/api/search-image?query=Powerful%20leopard%20resting%20on%20tree%20branch%20in%20dappled%20sunlight%2C%20spotted%20coat%20pattern%20clearly%20visible%2C%20alert%20expression%2C%20natural%20forest%20habitat%2C%20dramatic%20lighting%20through%20leaves%2C%20wildlife%20photography%20masterpiece&width=400&height=400&seq=gallery4&orientation=squarish" alt="Leopard on Branch" class="w-full h-96 object-cover image-hover">
+<img src="assets/15 day trip/15day16.jpg" alt="Field Equipment" class="w-full h-96 object-cover image-hover cursor-pointer" data-caption="Setting up field equipment for wildlife monitoring" data-fullsize="assets/15 day trip/15day16.jpg">
 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
 <div class="p-4 text-white">
-<h3 class="text-lg font-semibold">Leopard on Branch</h3>
-<p class="text-sm">A leopard resting in a tree, captured in the Amboseli National Park.</p>
+<h3 class="text-lg font-semibold">Field Equipment</h3>
+<p class="text-sm">Setting up field equipment for wildlife monitoring</p>
 </div>
 </div>
 </div>
+
 <div class="relative rounded-xl overflow-hidden shadow-lg group">
-<img src="https://readdy.ai/api/search-image?query=Herd%20of%20zebras%20grazing%20peacefully%20in%20vast%20African%20plains%2C%20distinctive%20black%20and%20white%20stripes%20creating%20natural%20patterns%2C%20golden%20grassland%20background%2C%20serene%20wildlife%20scene%2C%20professional%20safari%20photography&width=400&height=400&seq=gallery5&orientation=squarish" alt="Zebra Herd" class="w-full h-96 object-cover image-hover">
+<img src="assets/15 day trip/15day18.jpg" alt="Bird Watching" class="w-full h-96 object-cover image-hover cursor-pointer" data-caption="Bird watching session with our ornithology experts" data-fullsize="assets/15 day trip/15day18.jpg">
 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
 <div class="p-4 text-white">
-<h3 class="text-lg font-semibold">Zebra Herd</h3>
-<p class="text-sm">A peaceful zebra herd grazing in the vast plains of the Serengeti.</p>
+<h3 class="text-lg font-semibold">Bird Watching</h3>
+<p class="text-sm">Bird watching session with our ornithology experts</p>
 </div>
 </div>
 </div>
+
+<!-- More images from your gallery -->
 <div class="relative rounded-xl overflow-hidden shadow-lg group">
-<img src="https://readdy.ai/api/search-image?query=Majestic%20African%20buffalo%20standing%20in%20morning%20mist%2C%20powerful%20horns%20and%20muscular%20build%2C%20dramatic%20atmospheric%20lighting%2C%20wild%20and%20untamed%20expression%2C%20professional%20wildlife%20portrait%20photography&width=400&height=400&seq=gallery6&orientation=squarish" alt="African Buffalo" class="w-full h-96 object-cover image-hover">
+<img src="assets/gallery/EFE (1).jpg" alt="Expert Field Expedition" class="w-full h-96 object-cover image-hover cursor-pointer" data-caption="Our expert team conducting field research in the wild" data-fullsize="assets/gallery/EFE (1).jpg">
 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
 <div class="p-4 text-white">
-<h3 class="text-lg font-semibold">African Buffalo</h3>
-<p class="text-sm">A powerful buffalo in the morning mist of the Masai Mara.</p>
+<h3 class="text-lg font-semibold">Expert Field Expedition</h3>
+<p class="text-sm">Our expert team conducting field research in the wild</p>
+</div>
+</div>
+</div>
+
+<div class="relative rounded-xl overflow-hidden shadow-lg group">
+<img src="assets/gallery/EFE (2).jpg" alt="Wildlife Tracking" class="w-full h-96 object-cover image-hover cursor-pointer" data-caption="Tracking wildlife movements using advanced technology" data-fullsize="assets/gallery/EFE (2).jpg">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-4 text-white">
+<h3 class="text-lg font-semibold">Wildlife Tracking</h3>
+<p class="text-sm">Tracking wildlife movements using advanced technology</p>
+</div>
+</div>
+</div>
+
+<div class="relative rounded-xl overflow-hidden shadow-lg group">
+<img src="assets/gallery/EFE (3).jpg" alt="Conservation Work" class="w-full h-96 object-cover image-hover cursor-pointer" data-caption="Hands-on conservation work in protected areas" data-fullsize="assets/gallery/EFE (3).jpg">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+<div class="p-4 text-white">
+<h3 class="text-lg font-semibold">Conservation Work</h3>
+<p class="text-sm">Hands-on conservation work in protected areas</p>
 </div>
 </div>
 </div>
 </div>
+
+<!-- Videos Gallery (initially hidden) -->
+<div id="videos-gallery" class="video-gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Video thumbnails would go here -->
+<div class="relative rounded-xl overflow-hidden shadow-lg group">
+<div class="w-full h-96 bg-gray-200 flex items-center justify-center cursor-pointer">
+<i class="ri-play-circle-fill text-6xl text-green-600"></i>
+</div>
+<div class="p-4">
+<h3 class="text-lg font-semibold">Gorilla Trekking Adventure</h3>
+<p class="text-sm text-gray-600">Our team's journey through the Rwandan forests</p>
+</div>
+</div>
+
+<div class="relative rounded-xl overflow-hidden shadow-lg group">
+<div class="w-full h-96 bg-gray-200 flex items-center justify-center cursor-pointer">
+<i class="ri-play-circle-fill text-6xl text-green-600"></i>
+</div>
+<div class="p-4">
+<h3 class="text-lg font-semibold">Elephant Research</h3>
+<p class="text-sm text-gray-600">Documenting elephant behavior in Amboseli</p>
+</div>
+</div>
+
+<div class="relative rounded-xl overflow-hidden shadow-lg group">
+<div class="w-full h-96 bg-gray-200 flex items-center justify-center cursor-pointer">
+<i class="ri-play-circle-fill text-6xl text-green-600"></i>
+</div>
+<div class="p-4">
+<h3 class="text-lg font-semibold">Lion Conservation</h3>
+<p class="text-sm text-gray-600">Our lion conservation efforts in the Serengeti</p>
+</div>
+</div>
+
+<div class="relative rounded-xl overflow-hidden shadow-lg group">
+<div class="w-full h-96 bg-gray-200 flex items-center justify-center cursor-pointer">
+<i class="ri-play-circle-fill text-6xl text-green-600"></i>
+</div>
+<div class="p-4">
+<h3 class="text-lg font-semibold">Bird Watching Tour</h3>
+<p class="text-sm text-gray-600">Exploring Kenya's diverse bird species</p>
+</div>
+</div>
+
+<div class="relative rounded-xl overflow-hidden shadow-lg group">
+<div class="w-full h-96 bg-gray-200 flex items-center justify-center cursor-pointer">
+<i class="ri-play-circle-fill text-6xl text-green-600"></i>
+</div>
+<div class="p-4">
+<h3 class="text-lg font-semibold">Veterinary Field Work</h3>
+<p class="text-sm text-gray-600">Our vet team working in the field</p>
+</div>
+</div>
+
+<div class="relative rounded-xl overflow-hidden shadow-lg group">
+<div class="w-full h-96 bg-gray-200 flex items-center justify-center cursor-pointer">
+<i class="ri-play-circle-fill text-6xl text-green-600"></i>
+</div>
+<div class="p-4">
+<h3 class="text-lg font-semibold">Sunset in the Mara</h3>
+<p class="text-sm text-gray-600">Beautiful sunset during our safari</p>
+</div>
+</div>
+</div>
+
 <div class="text-center mt-12">
 <button class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 !rounded-button text-lg font-semibold transition-colors duration-300 whitespace-nowrap">
 View More Photos
@@ -207,6 +686,16 @@ View More Photos
 </div>
 </div>
 </section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+<div class="lightbox-content">
+<span class="lightbox-close" id="lightbox-close"><i class="ri-close-line"></i></span>
+<img src="" alt="" class="lightbox-img" id="lightbox-img">
+<div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+</div>
+
 <!-- Call to Action -->
 <section class="relative py-20 overflow-hidden">
 <div class="absolute inset-0" style="background-image: url('https://readdy.ai/api/search-image?query=African%20sunset%20over%20savanna%20with%20silhouettes%20of%20acacia%20trees%2C%20warm%20golden%20and%20orange%20sky%2C%20peaceful%20wilderness%20atmosphere%2C%20cinematic%20landscape%20photography%2C%20inspiring%20and%20adventurous%20mood%2C%20perfect%20for%20travel%20marketing&width=1920&height=600&seq=cta1&orientation=landscape')"></div>
@@ -224,90 +713,171 @@ Contact Us
 </div>
 </div>
 </section>
+
 <!-- Footer -->
 <footer class="bg-primary text-white">
-<div class="max-w-7xl mx-auto px-6 py-16">
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-<div>
-<div class="flex items-center space-x-3 mb-6">
-<div class="w-10 h-10 flex items-center justify-center bg-secondary rounded-full">
-<i class="ri-leaf-line text-white"></i>
-</div>
-<span class="text-xl font-['Pacifico']">WildMed Safaris</span>
-</div>
-<p class="text-gray-300 mb-6">Creating meaningful wildlife adventures that combine conservation, education, and unforgettable experiences across East Africa.</p>
-<div class="flex space-x-4">
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
-<i class="ri-facebook-fill"></i>
-</a>
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
-<i class="ri-instagram-line"></i>
-</a>
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
-<i class="ri-twitter-line"></i>
-</a>
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
-<i class="ri-youtube-line"></i>
-</a>
-</div>
-</div>
-<div>
-<h3 class="text-lg font-semibold mb-6">Quick Links</h3>
-<ul class="space-y-3">
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">About Us</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Safari Packages</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Medical Expeditions</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Vet Programs</a></li>
-<li><a href="gallery.html" class="text-gray-300 hover:text-white transition-colors duration-300">Gallery</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Reviews</a></li>
-</ul>
-</div>
-<div>
-<h3 class="text-lg font-semibold mb-6">Destinations</h3>
-<ul class="space-y-3">
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Kenya Safaris</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Tanzania Adventures</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Uganda Expeditions</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Rwanda Gorilla Tours</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Botswana Wildlife</a></li>
-<li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Zambia Adventures</a></li>
-</ul>
-</div>
-<div>
-<h3 class="text-lg font-semibold mb-6">Contact Info</h3>
-<div class="space-y-4">
-<div class="flex items-start space-x-3">
-<i class="ri-map-pin-line text-green-400 mt-1"></i>
-<div class="text-gray-300">
-<div>Nairobi Office</div>
-<div>Westlands, Kenya</div>
-</div>
-</div>
-<div class="flex items-center space-x-3">
-<i class="ri-phone-line text-green-400"></i>
-<span class="text-gray-300">+254 700 123 456</span>
-</div>
-<div class="flex items-center space-x-3">
-<i class="ri-mail-line text-green-400"></i>
-<span class="text-gray-300">info@wildmedsafaris.com</span>
-</div>
-</div>
-</div>
-</div>
-<div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-300">
-<p>© 2025 WildMed Safaris. All rights reserved. | Privacy Policy | Terms of Service</p>
-</div>
-</div>
+  <div class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Company Info -->
+      <div>
+        <div class="flex items-center space-x-3 mb-6">
+                <div class="flex items-center space-x-4">
+        <div class="w-16 h-16 flex-shrink-0">
+          <img src="img/android-chrome-192x192.png" alt="WildMed Safaris Logo" width="400" height="400">
+        </div>
+      </div>
+          <span class="text-xl font-['Pacifico']">WildMed</span>
+        </div>
+        <p class="text-gray-300 mb-6">Creating meaningful wildlife adventures that combine conservation, education, and unforgettable experiences across East Africa.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-facebook-fill"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-twitter-line"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-youtube-line"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+        <ul class="space-y-3">
+          <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a></li>
+          <li><a href="About-Us.html" class="text-gray-300 hover:text-white transition-colors duration-300">About Us</a></li>
+          <li><a href="Custom-Safaris.html" class="text-gray-300 hover:text-white transition-colors duration-300">Safari Packages</a></li>
+          <li><a href="Medical-Expedition-Programs.html" class="text-gray-300 hover:text-white transition-colors duration-300">Medical Expeditions</a></li>
+          <li><a href="Veterinary-Conservation-.html" class="text-gray-300 hover:text-white transition-colors duration-300">Vet Programs</a></li>
+          <li><a href="Gallery.html" class="text-gray-300 hover:text-white transition-colors duration-300">Gallery</a></li>
+          <li><a href="Review.html" class="text-gray-300 hover:text-white transition-colors duration-300">Reviews</a></li>
+        </ul>
+      </div>
+
+      <!-- Destinations -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Destinations</h3>
+        <ul class="space-y-3">
+          <li><a href="Kenya-Safaris.html" class="text-gray-300 hover:text-white transition-colors duration-300">Kenya Wildlife Safari</a></li>
+          <li><a href="Tanzania-Safari.html" class="text-gray-300 hover:text-white transition-colors duration-300">Tanzania Adventure</a></li>
+          <li><a href="Uganda-Adventures.html" class="text-gray-300 hover:text-white transition-colors duration-300">Uganda Gorilla Trek</a></li>
+          <li><a href="Rwanda-Safaris.html" class="text-gray-300 hover:text-white transition-colors duration-300">Rwanda Gorilla Experience</a></li>
+          <li><a href="Uganda-15-Days.html" class="text-gray-300 hover:text-white transition-colors duration-300">15-Day Grand Safari</a></li>
+          <li><a href="Rwanda-7-Days.html" class="text-gray-300 hover:text-white transition-colors duration-300">7-Day Rwanda Explorer</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <i class="ri-map-pin-line text-green-400 mt-1"></i>
+            <div class="text-gray-300">
+              <div>WildMed </div>
+              <div>Safaris and Field Projects</div>
+              <div>Plot 626, Seguku Katale</div>
+              <div>P.O.Box 10296</div>
+              <div>Kampala, Uganda</div>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="ri-phone-line text-green-400"></i>
+            <span class="text-gray-300">+256 740 205146</span> 
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="ri-phone-line text-green-400"></i>
+            <span class="text-gray-300">+256 777 370494</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="ri-mail-line text-green-400"></i>
+            <span class="text-gray-300">wildmeduganda@gmail.com</span>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-300">
+      <p>&copy; 2024 WildMed. All rights reserved. | <a href="Privacy-Policy.html" class="hover:text-white">Privacy Policy</a> | <a href="Terms-of-Service.html" class="hover:text-white">Terms of Service</a></p>
+    </div>
+  </div>
 </footer>
-<script id="mobile-menu">
+
+<script>
 document.addEventListener('DOMContentLoaded', function() {
+// Lightbox functionality
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.getElementById('lightbox-caption');
+const lightboxClose = document.getElementById('lightbox-close');
+const galleryImages = document.querySelectorAll('#photos-gallery img');
+
+galleryImages.forEach(img => {
+img.addEventListener('click', function() {
+const fullSizeSrc = this.getAttribute('data-fullsize') || this.src;
+lightboxImg.src = fullSizeSrc;
+lightboxImg.alt = this.alt;
+lightboxCaption.textContent = this.getAttribute('data-caption');
+lightbox.classList.add('active');
+document.body.style.overflow = 'hidden';
+});
+});
+
+lightboxClose.addEventListener('click', function() {
+lightbox.classList.remove('active');
+document.body.style.overflow = 'auto';
+});
+
+lightbox.addEventListener('click', function(e) {
+if (e.target === lightbox) {
+lightbox.classList.remove('active');
+document.body.style.overflow = 'auto';
+}
+});
+
+// Gallery toggle functionality
+const photosBtn = document.getElementById('photos-btn');
+const videosBtn = document.getElementById('videos-btn');
+const photosGallery = document.getElementById('photos-gallery');
+const videosGallery = document.getElementById('videos-gallery');
+
+photosBtn.addEventListener('click', function() {
+photosBtn.classList.add('active');
+videosBtn.classList.remove('active');
+photosGallery.style.display = 'grid';
+videosGallery.style.display = 'none';
+});
+
+videosBtn.addEventListener('click', function() {
+videosBtn.classList.add('active');
+photosBtn.classList.remove('active');
+photosGallery.style.display = 'none';
+videosGallery.style.display = 'grid';
+});
+
+// Mobile menu functionality
 const mobileMenuButton = document.querySelector('button[class*="lg:hidden"]');
-const nav = document.querySelector('nav');
 if (mobileMenuButton) {
 mobileMenuButton.addEventListener('click', function() {
 console.log('Mobile menu clicked');
+// You would add mobile menu toggle logic here
 });
 }
+
+// Preload full-size images
+galleryImages.forEach(img => {
+const fullSizeSrc = img.getAttribute('data-fullsize');
+if (fullSizeSrc) {
+const preloadImg = new Image();
+preloadImg.src = fullSizeSrc;
+}
+});
 });
 </script>
 </body>

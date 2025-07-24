@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uganda Adventures - WildMed Safaris</title>
+    <title>Kenya Safaris - WildMed Safaris</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
         tailwind.config = {
@@ -250,341 +250,338 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
     <!-- Hero Section -->
-<!-- Modern Hero Section -->
-<section class="relative h-screen flex items-center justify-center overflow-hidden">
-    <!-- Background with subtle parallax effect -->
-        <div class="absolute inset-0 parallax-bg" style="background-image: url('https://readdy.ai/api/search-image?query=Breathtaking%20Mount%20Kilimanjaro%20snow-capped%20peak%20rising%20above%20golden%20African%20savanna%20at%20sunrise%2C%20acacia%20trees%20silhouetted%20in%20foreground%2C%20dramatic%20orange%20and%20pink%20sky%2C%20Tanzania%20wilderness%20landscape%2C%20majestic%20and%20inspiring%20natural%20wonder%2C%20professional%20landscape%20photography&width=1920&height=1080&seq=tanzania-hero&orientation=landscape')"></div>
-    
+   <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background with parallax effect -->
+      <div class="absolute inset-0 parallax-bg" style="background-image: url('https://readdy.ai/api/search-image?query=Breathtaking%20Mount%20Kilimanjaro%20snow-capped%20peak%20rising%20above%20golden%20African%20savanna%20at%20sunrise%2C%20acacia%20trees%20silhouetted%20in%20foreground%2C%20dramatic%20orange%20and%20pink%20sky%2C%20Tanzania%20wilderness%20landscape%2C%20majestic%20and%20inspiring%20natural%20wonder%2C%20professional%20landscape%20photography&width=1920&height=1080&seq=tanzania-hero&orientation=landscape')"></div>    
     <!-- Gradient overlay with modern diagonal split -->
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-900/40 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-transparent to-blue-900/70"></div>
     
-    <!-- Diagonal accent element -->
-    <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-green-600 to-transparent opacity-30 transform -skew-y-3 origin-bottom"></div>
+    <!-- Animated decorative elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-green-500/10 mix-blend-overlay filter blur-xl animate-pulse"></div>
+        <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-blue-500/10 mix-blend-overlay filter blur-xl animate-pulse delay-300"></div>
+    </div>
     
-    <!-- Content container with modern typography -->
+    <!-- Content container -->
     <div class="relative z-10 w-full max-w-7xl mx-auto px-6 text-white">
         <div class="max-w-2xl">
-            <!-- Subtle pre-heading -->
-            <div class="flex items-center mb-4">
-                <div class="w-12 h-px bg-green-400 mr-4"></div>
-                <span class="text-green-400 font-medium tracking-wider">WILDLIFE EXPEDITIONS</span>
+            <!-- Tagline with animation -->
+            <div class="overflow-hidden mb-4">
+                <div class="animate-slideUp">
+                    <span class="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium tracking-wider">
+                        WILDLIFE ADVENTURES
+                    </span>
+                </div>
             </div>
             
-            <!-- Main heading with animated gradient text -->
+            <!-- Main heading with animated text reveal -->
             <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-green-300 to-white animate-gradient-x">Uganda's Wild Heart</span>
+                <span class="block overflow-hidden">
+                    <span class="inline-block animate-slideUp delay-100">Discover Kenya's</span>
+                </span>
+                <span class="block overflow-hidden">
+                    <span class="inline-block animate-slideUp delay-200 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-200">Wild Majesty</span>
+                </span>
             </h1>
             
-            <!-- Subheading with modern styling -->
-            <p class="text-xl md:text-2xl mb-8 text-gray-100 font-light max-w-lg">
-                Where misty rainforests meet majestic gorillas in Africa's most biodiverse wilderness
-            </p>
-            
-            <!-- CTA buttons with modern hover effects -->
-            <div class="flex flex-wrap gap-4">
-                <button class="group relative overflow-hidden bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 whitespace-nowrap">
-                    <span class="relative z-10">Explore Gorilla Treks</span>
-                    <span class="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                </button>
-                
-                <button class="group relative overflow-hidden bg-transparent border-2 border-white/30 hover:border-green-400 text-white hover:text-green-100 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 whitespace-nowrap">
-                    <span class="relative z-10 flex items-center">
-                        <i class="ri-play-circle-line mr-2 text-xl"></i> Watch Film
-                    </span>
-                    <span class="absolute inset-0 bg-white/5 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                </button>
+            <!-- Description with fade-in -->
+            <div class="overflow-hidden">
+                <p class="text-lg md:text-xl mb-8 text-gray-100 animate-slideUp delay-300">
+                    Witness the Great Migration, encounter the Big Five, and immerse yourself in the breathtaking landscapes of Maasai Mara.
+                </p>
             </div>
             
-            <!-- Scrolling indicator -->
-            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <div class="w-8 h-14 rounded-full border-2 border-white/50 flex justify-center p-1">
-                    <div class="w-2 h-2 bg-green-400 rounded-full mt-2"></div>
+            <!-- CTA buttons with hover effects -->
+            <div class="flex flex-wrap gap-4">
+                <div class="overflow-hidden">
+                    <button class="animate-slideUp delay-400 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 whitespace-nowrap transform hover:-translate-y-1 shadow-lg hover:shadow-green-500/20">
+                        Explore Packages
+                    </button>
+                </div>
+                <div class="overflow-hidden">
+                    <button class="animate-slideUp delay-500 bg-transparent hover:bg-white/10 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 whitespace-nowrap border-2 border-white/30 backdrop-blur-sm transform hover:-translate-y-1">
+                        Watch Video <i class="ri-play-circle-line ml-2"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- Floating stats overlay -->
-    <div class="absolute bottom-8 left-6 z-10 hidden md:block">
-        <div class="flex items-center space-x-6 text-white/80">
-            <div class="text-center">
-                <div class="text-3xl font-bold text-green-400">450+</div>
-                <div class="text-sm uppercase tracking-wider">Mountain Gorillas</div>
-            </div>
-            <div class="h-12 w-px bg-white/30"></div>
-            <div class="text-center">
-                <div class="text-3xl font-bold text-green-400">13</div>
-                <div class="text-sm uppercase tracking-wider">National Parks</div>
-            </div>
-            <div class="h-12 w-px bg-white/30"></div>
-            <div class="text-center">
-                <div class="text-3xl font-bold text-green-400">1,000+</div>
-                <div class="text-sm uppercase tracking-wider">Bird Species</div>
-            </div>
+    <!-- Scrolling indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div class="w-8 h-12 border-2 border-white/50 rounded-full flex justify-center">
+            <div class="w-1 h-3 bg-white rounded-full mt-2 animate-scrollIndicator"></div>
         </div>
     </div>
 </section>
 
 <style>
-.parallax-bg {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.animate-gradient-x {
-    background-size: 300% 300%;
-    animation: gradient 8s ease infinite;
-}
-
-@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.animate-bounce {
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-    40% { transform: translateY(-20px) translateX(-50%); }
-    60% { transform: translateY(-10px) translateX(-50%); }
-}
+    /* Animation keyframes */
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-20px);
+        }
+        60% {
+            transform: translateY(-10px);
+        }
+    }
+    
+    @keyframes scrollIndicator {
+        0% {
+            transform: translateY(0);
+            opacity: 0.4;
+        }
+        100% {
+            transform: translateY(12px);
+            opacity: 1;
+        }
+    }
+    
+    /* Animation classes */
+    .animate-slideUp {
+        animation: slideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        opacity: 0;
+    }
+    
+    .animate-slideUp.delay-100 { animation-delay: 0.1s; }
+    .animate-slideUp.delay-200 { animation-delay: 0.2s; }
+    .animate-slideUp.delay-300 { animation-delay: 0.3s; }
+    .animate-slideUp.delay-400 { animation-delay: 0.4s; }
+    .animate-slideUp.delay-500 { animation-delay: 0.5s; }
+    
+    .animate-bounce {
+        animation: bounce 2s infinite;
+    }
+    
+    .animate-scrollIndicator {
+        animation: scrollIndicator 1.5s infinite alternate;
+    }
+    
+    /* Modern gradient text */
+    .text-gradient {
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
 </style>
 
     <!-- Featured Destinations -->
-    <!-- Featured Destinations -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">Explore Uganda</h2>
-            <p class="text-xl text-gray-600 mb-6">Discover the Pearl of Africa's spectacular wildlife and academic institutions</p>
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Explore Kenya</h2>
+                <p class="text-xl text-gray-600 mb-6">Discover Africa's most spectacular wildlife and academic institutions</p>
+                
+                <!-- Toggle Switch -->
+                <div class="inline-flex items-center bg-gray-100 rounded-full p-1">
+                    <button id="wildlifeBtn" class="px-6 py-2 rounded-full font-medium text-white bg-green-600 transition-all">
+                        Wildlife Destinations
+                    </button>
+                    <button id="universitiesBtn" class="px-6 py-2 rounded-full font-medium text-gray-600 hover:text-gray-800 transition-all">
+                        Universities
+                    </button>
+                </div>
+            </div>
             
-            <!-- Toggle Switch -->
-            <div class="inline-flex items-center bg-gray-100 rounded-full p-1">
-                <button id="wildlifeBtn" class="px-6 py-2 rounded-full font-medium text-white bg-green-600 transition-all">
-                    Wildlife Destinations
-                </button>
-                <button id="universitiesBtn" class="px-6 py-2 rounded-full font-medium text-gray-600 hover:text-gray-800 transition-all">
-                    Universities
-                </button>
+            <!-- Wildlife Destinations (Default Visible) -->
+            <div id="wildlifeSection" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Maasai Mara Card -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=256" alt="Maasai Mara National Reserve" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Maasai Mara</h3>
+                            <p class="text-sm opacity-90">Great Migration</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Home to the spectacular wildebeest migration and abundant big cats</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-green-600">From $2,350</span>
+                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Amboseli Card -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1589561253898-768105ca91a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=256" alt="Amboseli National Park" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Amboseli</h3>
+                            <p class="text-sm opacity-90">Elephants & Kilimanjaro Views</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Famous for its large elephant herds and stunning views of Mount Kilimanjaro</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-green-600">From $1,950</span>
+                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tsavo Card -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1567599753820-8b44d4fd637d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=256" alt="Tsavo National Park" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Tsavo</h3>
+                            <p class="text-sm opacity-90">Red Elephants & Vast Wilderness</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Kenya's largest national park known for its red elephants and dramatic landscapes</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-green-600">From $1,750</span>
+                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Samburu Card -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=256" alt="Samburu National Reserve" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Samburu</h3>
+                            <p class="text-sm opacity-90">Special Five Species</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Home to unique species like the reticulated giraffe and Grevy's zebra</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-green-600">From $2,050</span>
+                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Universities Section (Initially Hidden) -->
+            <div id="universitiesSection" class="hidden grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- University of Nairobi -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=256" alt="University of Nairobi" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">UoN</h3>
+                            <p class="text-sm opacity-90">Premier University</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Kenya's oldest and most prestigious public university with diverse academic programs</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-green-600">Public University</span>
+                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kenyatta University -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=256" alt="Kenyatta University" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Kenyatta</h3>
+                            <p class="text-sm opacity-90">Comprehensive Programs</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">One of Kenya's leading public universities with a wide range of academic offerings</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-green-600">Public University</span>
+                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Strathmore University -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=256" alt="Strathmore University" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Strathmore</h3>
+                            <p class="text-sm opacity-90">Business & Technology</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Leading private university specializing in business, IT and management education</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-green-600">Private University</span>
+                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Moi University -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=256" alt="Moi University" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-xl font-bold">Moi University</h3>
+                            <p class="text-sm opacity-90">Science & Technology</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">Public university with strong programs in medicine, engineering and sciences</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-bold text-green-600">Public University</span>
+                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <!-- Wildlife Destinations (Default Visible) -->
-        <div id="wildlifeSection" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Bwindi Impenetrable Forest Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <div class="relative h-64">
-                    <img src="https://readdy.ai/api/search-image?query=Bwindi%20Impenetrable%20Forest%20mountain%20gorilla%20trekking%20experience%2C%20lush%20green%20rainforest%20canopy%2C%20silverback%20gorilla%20in%20natural%20habitat%2C%20misty%20jungle%20atmosphere%2C%20UNESCO%20World%20Heritage%20Site%2C%20professional%20wildlife%20photography&width=300&height=256&seq=bwindi-dest&orientation=landscape" alt="Bwindi Impenetrable Forest" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-xl font-bold">Bwindi</h3>
-                        <p class="text-sm opacity-90">Mountain Gorillas</p>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 mb-4">Home to nearly half of the world's remaining mountain gorillas in this ancient rainforest</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-lg font-bold text-green-600">From $1,800</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Queen Elizabeth NP Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <div class="relative h-64">
-                    <img src="https://readdy.ai/api/search-image?query=Queen%20Elizabeth%20National%20Park%20savanna%20landscape%20with%20tree-climbing%20lions%2C%20African%20elephants%20grazing%2C%20Kazinga%20Channel%20boat%20cruise%2C%20diverse%20wildlife%20against%20Rwenzori%20Mountains%20backdrop%2C%20professional%20wildlife%20photography&width=300&height=256&seq=qenp-dest&orientation=landscape" alt="Queen Elizabeth National Park" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-xl font-bold">Queen Elizabeth</h3>
-                        <p class="text-sm opacity-90">Tree-Climbing Lions</p>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 mb-4">Famous for its tree-climbing lions and the scenic Kazinga Channel boat cruise</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-lg font-bold text-green-600">From $1,500</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Murchison Falls Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <div class="relative h-64">
-                    <img src="https://readdy.ai/api/search-image?query=Murchison%20Falls%20National%20Park%20dramatic%20waterfall%20where%20Nile%20forces%20through%20narrow%20gorge%2C%20boat%20cruise%20to%20falls%20base%2C%20savanna%20wildlife%20including%20giraffes%20and%20buffalo%2C%20professional%20landscape%20photography&width=300&height=256&seq=murchison-dest&orientation=landscape" alt="Murchison Falls National Park" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-xl font-bold">Murchison Falls</h3>
-                        <p class="text-sm opacity-90">Power of the Nile</p>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 mb-4">Witness the Nile River squeezing through a 7-meter gap and plunging 43 meters</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-lg font-bold text-green-600">From $1,650</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Kibale Forest Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <div class="relative h-64">
-                    <img src="https://readdy.ai/api/search-image?query=Kibale%20National%20Park%20chimpanzee%20tracking%20experience%2C%20lush%20tropical%20rainforest%20with%20diverse%20primate%20species%2C%20canopy%20walkway%20through%20tall%20trees%2C%20professional%20wildlife%20photography&width=300&height=256&seq=kibale-dest&orientation=landscape" alt="Kibale National Park" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-xl font-bold">Kibale Forest</h3>
-                        <p class="text-sm opacity-90">Chimpanzee Trekking</p>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 mb-4">The primate capital of Africa with 13 species including chimpanzees</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-lg font-bold text-green-600">From $1,400</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Universities Section (Initially Hidden) -->
-        <div id="universitiesSection" class="hidden grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Makerere University -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <div class="relative h-64">
-                    <img src="https://readdy.ai/api/search-image?query=Makerere%20University%20main%20campus%20showing%20iconic%20Main%20Building%20with%20clock%20tower%2C%20lush%20green%20quadrangles%2C%20students%20walking%20between%20classes%2C%20East%20Africas%20oldest%20university%2C%20professional%20campus%20photography&width=300&height=256&seq=mak-dest&orientation=landscape" alt="Makerere University" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-xl font-bold">Makerere</h3>
-                        <p class="text-sm opacity-90">Premier University</p>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 mb-4">Uganda's oldest and most prestigious university, founded in 1922</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-lg font-bold text-green-600">Public University</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Kyambogo University -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <div class="relative h-64">
-                    <img src="https://readdy.ai/api/search-image?query=Kyambogo%20University%20modern%20campus%20buildings%20with%20technical%20and%20teacher%20education%20facilities%2C%20students%20in%20lecture%20halls%2C%20green%20spaces%2C%20professional%20academic%20photography&width=300&height=256&seq=kyu-dest&orientation=landscape" alt="Kyambogo University" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-xl font-bold">Kyambogo</h3>
-                        <p class="text-sm opacity-90">Technical Education</p>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 mb-4">Leading institution for technical, vocational and teacher education</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-lg font-bold text-green-600">Public University</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Mbarara University -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <div class="relative h-64">
-                    <img src="https://readdy.ai/api/search-image?query=Mbarara%20University%20of%20Science%20and%20Technology%20campus%20showing%20medical%20school%20and%20science%20facilities%2C%20students%20in%20laboratories%2C%20western%20Uganda%20landscape%2C%20professional%20academic%20photography&width=300&height=256&seq=must-dest&orientation=landscape" alt="Mbarara University" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-xl font-bold">MUST</h3>
-                        <p class="text-sm opacity-90">Science & Medicine</p>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 mb-4">Premier institution for medical and science education in western Uganda</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-lg font-bold text-green-600">Public University</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Uganda Christian University -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                <div class="relative h-64">
-                    <img src="https://readdy.ai/api/search-image?query=Uganda%20Christian%20University%20main%20campus%20in%20Mukono%20showing%20historic%20buildings%20and%20modern%20facilities%2C%20green%20landscaped%20grounds%2C%20chapel%2C%20students%20on%20campus%2C%20professional%20academic%20photography&width=300&height=256&seq=ucu-dest&orientation=landscape" alt="Uganda Christian University" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div class="absolute bottom-4 left-4 text-white">
-                        <h3 class="text-xl font-bold">UCU</h3>
-                        <p class="text-sm opacity-90">Christian Values</p>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 mb-4">Leading private university with strong emphasis on Christian values and quality education</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-lg font-bold text-green-600">Private University</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script>
-    // Toggle between Wildlife and Universities
-    const wildlifeBtn = document.getElementById('wildlifeBtn');
-    const universitiesBtn = document.getElementById('universitiesBtn');
-    const wildlifeSection = document.getElementById('wildlifeSection');
-    const universitiesSection = document.getElementById('universitiesSection');
-
-    wildlifeBtn.addEventListener('click', () => {
-        wildlifeBtn.classList.add('bg-green-600', 'text-white');
-        wildlifeBtn.classList.remove('text-gray-600');
-        universitiesBtn.classList.remove('bg-green-600', 'text-white');
-        universitiesBtn.classList.add('text-gray-600');
-        wildlifeSection.classList.remove('hidden');
-        universitiesSection.classList.add('hidden');
-    });
-
-    universitiesBtn.addEventListener('click', () => {
-        universitiesBtn.classList.add('bg-green-600', 'text-white');
-        universitiesBtn.classList.remove('text-gray-600');
-        wildlifeBtn.classList.remove('bg-green-600', 'text-white');
-        wildlifeBtn.classList.add('text-gray-600');
-        universitiesSection.classList.remove('hidden');
-        wildlifeSection.classList.add('hidden');
-    });
-</script>
+    </section>
 
     <!-- Safari Packages -->
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Uganda Safari Packages</h2>
+                <h2 class="text-4xl font-bold mb-4">Kenya Safari Packages</h2>
                 <p class="text-xl text-gray-600">Carefully crafted adventures for every type of traveler</p>
             </div>
             
             <!-- Filter Options -->
             <div class="flex flex-wrap justify-center gap-4 mb-12">
                 <button class="filter-btn filter-active px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="all">All Packages</button>
-                <button class="filter-btn bg-white hover:bg-gray-100 px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="gorilla">Gorilla Trekking</button>
-                <button class="filter-btn bg-white hover:bg-gray-100 px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="primate">Primate Safaris</button>
                 <button class="filter-btn bg-white hover:bg-gray-100 px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="classic">Classic Safari</button>
                 <button class="filter-btn bg-white hover:bg-gray-100 px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="adventure">Adventure</button>
+                <button class="filter-btn bg-white hover:bg-gray-100 px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="luxury">Luxury</button>
+                <button class="filter-btn bg-white hover:bg-gray-100 px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="beach">Beach</button>
             </div>
             
             <!-- Package Cards -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Gorilla Trekking -->
-                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="gorilla">
+                <!-- Classic Maasai Mara Safari -->
+                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="classic">
                     <div class="relative h-64">
-                        <img src="https://readdy.ai/api/search-image?query=Mountain%20gorilla%20trekking%20in%20Bwindi%20Impenetrable%20Forest%2C%20Uganda%2C%20silverback%20gorilla%20in%20natural%20habitat%2C%20lush%20green%20rainforest%2C%20trekkers%20observing%20from%20safe%20distance%2C%20once-in-a-lifetime%20wildlife%20experience%2C%20professional%20photography&width=400&height=256&seq=gorilla-trek&orientation=landscape" alt="Gorilla Trekking" class="w-full h-full object-cover object-top">
+                        <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&height=256" alt="Classic Maasai Mara Safari" class="w-full h-full object-cover object-top">
                         <div class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                            3 Days
+                            7 Days
                         </div>
                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
                             <div class="flex items-center space-x-1">
@@ -594,27 +591,27 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Classic Gorilla Trekking</h3>
-                        <p class="text-gray-600 mb-4">An unforgettable encounter with endangered mountain gorillas in Bwindi</p>
+                        <h3 class="text-xl font-bold mb-2">Classic Maasai Mara</h3>
+                        <p class="text-gray-600 mb-4">Experience Kenya's most famous wildlife reserve during the Great Migration</p>
                         
                         <div class="space-y-2 mb-4">
                             <div class="flex items-center text-sm text-gray-600">
                                 <i class="ri-map-pin-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Bwindi Impenetrable Forest</span>
+                                <span>Maasai Mara • Lake Nakuru</span>
                             </div>
                             <div class="flex items-center text-sm text-gray-600">
                                 <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Max 8 people</span>
+                                <span>Max 6 people</span>
                             </div>
                             <div class="flex items-center text-sm text-gray-600">
                                 <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Jun-Sep, Dec-Feb</span>
+                                <span>Available year-round</span>
                             </div>
                         </div>
                         
                         <div class="flex items-center justify-between mb-4">
                             <div>
-                                <span class="text-2xl font-bold text-green-600">$1,800</span>
+                                <span class="text-2xl font-bold text-green-600">$2,450</span>
                                 <span class="text-gray-500 text-sm">/person</span>
                             </div>
                             <div class="text-right">
@@ -629,12 +626,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 
-                <!-- Primate Safari -->
-                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="primate">
+                <!-- Northern Kenya Adventure -->
+                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="adventure">
                     <div class="relative h-64">
-                        <img src="https://readdy.ai/api/search-image?query=Chimpanzee%20trekking%20in%20Kibale%20Forest%2C%20Uganda%2C%20wild%20chimpanzees%20in%20canopy%2C%20lush%20tropical%20rainforest%2C%13%20primate%20species%2C%20professional%20wildlife%20photography&width=400&height=256&seq=primate-safari&orientation=landscape" alt="Primate Safari" class="w-full h-full object-cover object-top">
+                        <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&height=256" alt="Northern Kenya Adventure" class="w-full h-full object-cover object-top">
                         <div class="absolute top-4 left-4 bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                            5 Days
+                            10 Days
                         </div>
                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
                             <div class="flex items-center space-x-1">
@@ -644,13 +641,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Primate Safari Adventure</h3>
-                        <p class="text-gray-600 mb-4">Track chimps in Kibale and see diverse monkeys in multiple parks</p>
+                        <h3 class="text-xl font-bold mb-2">Northern Frontier Adventure</h3>
+                        <p class="text-gray-600 mb-4">Explore Kenya's wild northern frontier with Samburu and Laikipia reserves</p>
                         
                         <div class="space-y-2 mb-4">
                             <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-map-pin-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Kibale • Queen Elizabeth</span>
+                                <i class="ri-road-map-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Samburu • Laikipia • Buffalo Springs</span>
                             </div>
                             <div class="flex items-center text-sm text-gray-600">
                                 <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
@@ -658,13 +655,13 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                             <div class="flex items-center text-sm text-gray-600">
                                 <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Year-round</span>
+                                <span>Jun-Oct, Dec-Mar</span>
                             </div>
                         </div>
                         
                         <div class="flex items-center justify-between mb-4">
                             <div>
-                                <span class="text-2xl font-bold text-green-600">$2,200</span>
+                                <span class="text-2xl font-bold text-green-600">$3,200</span>
                                 <span class="text-gray-500 text-sm">/person</span>
                             </div>
                             <div class="text-right">
@@ -679,42 +676,42 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 
-                <!-- Classic Uganda -->
-                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="classic">
+                <!-- Luxury Kenya Safari -->
+                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="luxury">
                     <div class="relative h-64">
-                        <img src="https://readdy.ai/api/search-image?query=Classic%20Uganda%20safari%20with%20elephants%20in%20Queen%20Elizabeth%20National%20Park%2C%20savanna%20landscape%2C%20Kazinga%20Channel%20boat%20cruise%2C%20tree-climbing%20lions%2C%20diverse%20wildlife%2C%20professional%20photography&width=400&height=256&seq=classic-uganda&orientation=landscape" alt="Classic Uganda" class="w-full h-full object-cover object-top">
-                        <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                            7 Days
+                        <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&height=256" alt="Luxury Kenya Safari" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            8 Days
                         </div>
                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
                             <div class="flex items-center space-x-1">
                                 <i class="ri-star-fill text-yellow-400 text-sm"></i>
-                                <span class="text-sm font-medium">4.8</span>
+                                <span class="text-sm font-medium">5.0</span>
                             </div>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Classic Uganda Safari</h3>
-                        <p class="text-gray-600 mb-4">Experience Uganda's top parks with diverse wildlife and landscapes</p>
+                        <h3 class="text-xl font-bold mb-2">Ultimate Luxury Kenya</h3>
+                        <p class="text-gray-600 mb-4">Experience Kenya's finest with luxury lodges, private guides, and exclusive access</p>
                         
                         <div class="space-y-2 mb-4">
                             <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-map-pin-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Queen Elizabeth • Murchison</span>
+                                <i class="ri-vip-crown-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Luxury Lodges • Private Vehicle</span>
                             </div>
                             <div class="flex items-center text-sm text-gray-600">
                                 <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Max 6 people</span>
+                                <span>Max 4 people</span>
                             </div>
                             <div class="flex items-center text-sm text-gray-600">
                                 <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Jun-Oct, Dec-Feb</span>
+                                <span>Available year-round</span>
                             </div>
                         </div>
                         
                         <div class="flex items-center justify-between mb-4">
                             <div>
-                                <span class="text-2xl font-bold text-green-600">$2,800</span>
+                                <span class="text-2xl font-bold text-green-600">$6,850</span>
                                 <span class="text-gray-500 text-sm">/person</span>
                             </div>
                             <div class="text-right">
@@ -729,42 +726,42 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 
-                <!-- Ultimate Uganda -->
-                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="gorilla primate">
+                <!-- Beach & Bush Combo -->
+                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="beach">
                     <div class="relative h-64">
-                        <img src="https://readdy.ai/api/search-image?query=Ultimate%20Uganda%20safari%20with%20gorillas%2C%20chimps%2C%20and%20savanna%20wildlife%2C%20diverse%20landscapes%20from%20rainforest%20to%20savanna%2C%20professional%20wildlife%20photography&width=400&height=256&seq=ultimate-uganda&orientation=landscape" alt="Ultimate Uganda" class="w-full h-full object-cover object-top">
-                        <div class="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&height=256" alt="Beach & Bush Combo" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                             10 Days
                         </div>
                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
                             <div class="flex items-center space-x-1">
                                 <i class="ri-star-fill text-yellow-400 text-sm"></i>
-                                <span class="text-sm font-medium">5.0</span>
+                                <span class="text-sm font-medium">4.8</span>
                             </div>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Ultimate Uganda</h3>
-                        <p class="text-gray-600 mb-4">Combines gorilla trekking, chimp tracking and classic safaris</p>
+                        <h3 class="text-xl font-bold mb-2">Beach & Bush Combo</h3>
+                        <p class="text-gray-600 mb-4">Combine wildlife safari with relaxation on Kenya's pristine Indian Ocean beaches</p>
                         
                         <div class="space-y-2 mb-4">
                             <div class="flex items-center text-sm text-gray-600">
                                 <i class="ri-map-pin-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Bwindi • Kibale • Queen Elizabeth</span>
+                                <span>Maasai Mara • Diani Beach</span>
                             </div>
                             <div class="flex items-center text-sm text-gray-600">
                                 <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Max 4 people</span>
+                                <span>Max 6 people</span>
                             </div>
                             <div class="flex items-center text-sm text-gray-600">
                                 <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Jun-Sep, Dec-Feb</span>
+                                <span>Jun-Oct, Dec-Mar</span>
                             </div>
                         </div>
                         
                         <div class="flex items-center justify-between mb-4">
                             <div>
-                                <span class="text-2xl font-bold text-green-600">$4,500</span>
+                                <span class="text-2xl font-bold text-green-600">$3,950</span>
                                 <span class="text-gray-500 text-sm">/person</span>
                             </div>
                             <div class="text-right">
@@ -782,7 +779,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Family Safari -->
                 <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="classic">
                     <div class="relative h-64">
-                        <img src="https://readdy.ai/api/search-image?query=Family%20safari%20in%20Uganda%20with%20children%20observing%20wildlife%20from%20vehicle%2C%20educational%20experience%2C%20family-friendly%20accommodations%2C%20professional%20photography&width=400&height=256&seq=family-uganda&orientation=landscape" alt="Family Safari" class="w-full h-full object-cover object-top">
+                        <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&height=256" alt="Family Safari" class="w-full h-full object-cover object-top">
                         <div class="absolute top-4 left-4 bg-yellow-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                             6 Days
                         </div>
@@ -795,12 +792,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Family Safari Adventure</h3>
-                        <p class="text-gray-600 mb-4">Perfect introduction to Uganda's wildlife for families with children</p>
+                        <p class="text-gray-600 mb-4">Perfect introduction to Kenya's wildlife for families with children of all ages</p>
                         
                         <div class="space-y-2 mb-4">
                             <div class="flex items-center text-sm text-gray-600">
                                 <i class="ri-parent-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Family-friendly activities</span>
+                                <span>Family-friendly • Educational</span>
                             </div>
                             <div class="flex items-center text-sm text-gray-600">
                                 <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
@@ -808,7 +805,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                             <div class="flex items-center text-sm text-gray-600">
                                 <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Year-round</span>
+                                <span>Available year-round</span>
                             </div>
                         </div>
                         
@@ -829,12 +826,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 
-                <!-- Adventure Safari -->
+                <!-- Photography Safari -->
                 <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="adventure">
                     <div class="relative h-64">
-                        <img src="https://readdy.ai/api/search-image?query=Adventure%20safari%20in%20Uganda%20with%20white-water%20rafting%20on%20Nile%2C%20hiking%2C%20and%20wildlife%20viewing%2C%20action-packed%20itinerary%2C%20professional%20photography&width=400&height=256&seq=adventure-uganda&orientation=landscape" alt="Adventure Safari" class="w-full h-full object-cover object-top">
-                        <div class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                            8 Days
+                        <img src="https://images.unsplash.com/photo-1550358864-518f202c02ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&height=256" alt="Photography Safari" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-4 left-4 bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            9 Days
                         </div>
                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
                             <div class="flex items-center space-x-1">
@@ -844,27 +841,27 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Uganda Adventure Safari</h3>
-                        <p class="text-gray-600 mb-4">Combine wildlife viewing with adrenaline activities on the Nile</p>
+                        <h3 class="text-xl font-bold mb-2">Photography Masterclass</h3>
+                        <p class="text-gray-600 mb-4">Specialized safari for photographers with expert guidance and prime shooting locations</p>
                         
                         <div class="space-y-2 mb-4">
                             <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-flashlight-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>White-water rafting • Hiking</span>
+                                <i class="ri-camera-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Pro Photography • Workshops</span>
                             </div>
                             <div class="flex items-center text-sm text-gray-600">
                                 <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Max 8 people</span>
+                                <span>Max 4 people</span>
                             </div>
                             <div class="flex items-center text-sm text-gray-600">
                                 <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Jun-Oct, Dec-Feb</span>
+                                <span>Jun-Oct, Jan-Mar</span>
                             </div>
                         </div>
                         
                         <div class="flex items-center justify-between mb-4">
                             <div>
-                                <span class="text-2xl font-bold text-green-600">$3,200</span>
+                                <span class="text-2xl font-bold text-green-600">$3,850</span>
                                 <span class="text-gray-500 text-sm">/person</span>
                             </div>
                             <div class="text-right">
@@ -886,57 +883,57 @@ document.addEventListener('DOMContentLoaded', function() {
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Uganda Wildlife Highlights</h2>
-                <p class="text-xl text-gray-600">Discover the incredible biodiversity of Uganda's ecosystems</p>
+                <h2 class="text-4xl font-bold mb-4">Kenya Wildlife Highlights</h2>
+                <p class="text-xl text-gray-600">Discover the incredible biodiversity of Kenya's ecosystems</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 <div class="text-center">
                     <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=Mountain%20gorilla%20silverback%20in%20Bwindi%20Impenetrable%20Forest%2C%20Uganda%2C%20detailed%20fur%20texture%2C%20expressive%20eyes%2C%20natural%20habitat%2C%20endangered%20species%2C%20professional%20wildlife%20photography&width=96&height=96&seq=gorilla-highlight&orientation=squarish" alt="Mountain Gorilla" class="w-full h-full object-cover object-top">
+                        <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=96&height=96" alt="African Lion" class="w-full h-full object-cover object-top">
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Mountain Gorilla</h3>
-                    <p class="text-gray-600">Half of world's population in Bwindi and Mgahinga parks</p>
+                    <h3 class="text-xl font-bold mb-2">African Lion</h3>
+                    <p class="text-gray-600">The king of the savanna, best spotted in Maasai Mara and Tsavo</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=Chimpanzee%20in%20Kibale%20Forest%2C%20Uganda%2C%20expressive%20face%2C%20natural%20habitat%2C%20professional%20wildlife%20photography&width=96&height=96&seq=chimp-highlight&orientation=squarish" alt="Chimpanzee" class="w-full h-full object-cover object-top">
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Chimpanzee</h3>
-                    <p class="text-gray-600">Our closest relatives in Kibale's primate capital</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=Tree-climbing%20lions%20in%20Ishasha%20sector%20of%20Queen%20Elizabeth%20National%20Park%2C%20Uganda%2C%20resting%20in%20fig%20trees%2C%20rare%20behavior%2C%20professional%20wildlife%20photography&width=96&height=96&seq=lion-highlight&orientation=squarish" alt="Tree-Climbing Lions" class="w-full h-full object-cover object-top">
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Tree-Climbing Lions</h3>
-                    <p class="text-gray-600">Unique to Ishasha sector of Queen Elizabeth NP</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=African%20elephant%20herd%20in%20Murchison%20Falls%20National%20Park%2C%20Uganda%2C%20savanna%20landscape%2C%20professional%20wildlife%20photography&width=96&height=96&seq=elephant-highlight&orientation=squarish" alt="African Elephant" class="w-full h-full object-cover object-top">
+                        <img src="https://images.unsplash.com/photo-1505148230895-d9a785a555fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=96&height=96" alt="African Elephant" class="w-full h-full object-cover object-top">
                     </div>
                     <h3 class="text-xl font-bold mb-2">African Elephant</h3>
-                    <p class="text-gray-600">Large herds in Murchison Falls and Queen Elizabeth</p>
+                    <p class="text-gray-600">Gentle giants roaming freely across Kenya's vast landscapes</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=Shoebill%20stork%20in%20Mabamba%20Swamp%2C%20Uganda%2C%20prehistoric%20appearance%2C%20rare%20bird%20species%2C%20professional%20wildlife%20photography&width=96&height=96&seq=shoebill-highlight&orientation=squarish" alt="Shoebill Stork" class="w-full h-full object-cover object-top">
+                        <img src="https://images.unsplash.com/photo-1561731216-c3f4a9d04940?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=96&height=96" alt="Leopard" class="w-full h-full object-cover object-top">
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Shoebill Stork</h3>
-                    <p class="text-gray-600">Prehistoric-looking bird in Mabamba Swamp</p>
+                    <h3 class="text-xl font-bold mb-2">Leopard</h3>
+                    <p class="text-gray-600">Elusive spotted cats, masters of stealth and climbing</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=Nile%20crocodile%20in%20Murchison%20Falls%20National%20Park%2C%20Uganda%2C%20powerful%20predator%2C%20professional%20wildlife%20photography&width=96&height=96&seq=crocodile-highlight&orientation=squarish" alt="Nile Crocodile" class="w-full h-full object-cover object-top">
+                        <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=96&height=96" alt="Great Migration" class="w-full h-full object-cover object-top">
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Nile Crocodile</h3>
-                    <p class="text-gray-600">Massive reptiles along the Victoria Nile</p>
+                    <h3 class="text-xl font-bold mb-2">Great Migration</h3>
+                    <p class="text-gray-600">Witness 2 million wildebeest and zebras on their epic journey</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1550358864-518f202c02ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=96&height=96" alt="Cheetah" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Cheetah</h3>
+                    <p class="text-gray-600">The world's fastest land animal, built for incredible speed</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1567599753820-8b44d4fd637d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=96&height=96" alt="African Buffalo" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">African Buffalo</h3>
+                    <p class="text-gray-600">Formidable members of the Big Five with impressive horns</p>
                 </div>
             </div>
             
@@ -947,40 +944,40 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div>
                         <h4 class="text-lg font-semibold mb-4 flex items-center">
                             <i class="ri-sun-line w-6 h-6 flex items-center justify-center text-orange-500 mr-3"></i>
-                            Dry Season (June - September)
+                            Dry Season (June - October)
                         </h4>
                         <ul class="space-y-2 text-gray-700">
                             <li class="flex items-start">
                                 <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                                <span>Best for gorilla and chimp trekking</span>
+                                <span>Peak wildlife viewing with animals gathering at water sources</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                                <span>Animals gather at water sources</span>
+                                <span>Great Migration in Maasai Mara (July-October)</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                                <span>Minimal rainfall, easier hiking</span>
+                                <span>Clear skies and minimal rainfall</span>
                             </li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="text-lg font-semibold mb-4 flex items-center">
                             <i class="ri-heavy-showers-line w-6 h-6 flex items-center justify-center text-blue-500 mr-3"></i>
-                            Wet Season (October - May)
+                            Green Season (November - May)
                         </h4>
                         <ul class="space-y-2 text-gray-700">
                             <li class="flex items-start">
                                 <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                                <span>Lush green landscapes</span>
+                                <span>Calving season with thousands of newborn animals</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                                <span>Fewer tourists, lower prices</span>
+                                <span>Lush landscapes and dramatic skies</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                                <span>Bird watching at its best</span>
+                                <span>Fewer crowds and lower prices</span>
                             </li>
                         </ul>
                     </div>
@@ -1001,7 +998,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Luxury Lodges -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <div class="relative h-48">
-                        <img src="https://readdy.ai/api/search-image?query=Luxury%20lodge%20in%20Uganda%20with%20gorgeous%20views%2C%20upscale%20accommodations%2C%20infinity%20pool%2C%20professional%20photography&width=300&height=192&seq=uganda-luxury&orientation=landscape" alt="Luxury Lodge" class="w-full h-full object-cover object-top">
+                        <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=192" alt="Luxury Lodge" class="w-full h-full object-cover object-top">
                         <div class="absolute top-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                             Luxury
                         </div>
@@ -1024,69 +1021,69 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         </div>
                         <div class="mt-4 pt-4 border-t border-gray-200">
-                            <span class="text-lg font-bold text-green-600">$600-1,200/night</span>
+                            <span class="text-lg font-bold text-green-600">$800-1,500/night</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Forest Lodges -->
+                <!-- Tented Camps -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <div class="relative h-48">
-                        <img src="https://readdy.ai/api/search-image?query=Forest%20lodge%20near%20Bwindi%20Impenetrable%20Forest%2C%20Uganda%2C%20eco-friendly%20design%2C%20lush%20surroundings%2C%20professional%20photography&width=300&height=192&seq=forest-lodge&orientation=landscape" alt="Forest Lodge" class="w-full h-full object-cover object-top">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=192" alt="Tented Camp" class="w-full h-full object-cover object-top">
                         <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                             Mid-Range
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-bold mb-2">Forest Lodges</h3>
-                        <p class="text-gray-600 mb-4">Eco-friendly accommodations near gorilla trekking sites</p>
+                        <h3 class="text-lg font-bold mb-2">Tented Camps</h3>
+                        <p class="text-gray-600 mb-4">Comfortable canvas accommodations with authentic safari atmosphere</p>
                         <div class="space-y-2 text-sm text-gray-600">
                             <div class="flex items-center">
-                                <i class="ri-tree-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Rainforest setting</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="ri-leaf-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Sustainable design</span>
+                                <i class="ri-tent-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Canvas tents</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="ri-fire-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Cozy atmosphere</span>
+                                <span>Campfire dinners</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-nature-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Close to nature</span>
                             </div>
                         </div>
                         <div class="mt-4 pt-4 border-t border-gray-200">
-                            <span class="text-lg font-bold text-green-600">$250-500/night</span>
+                            <span class="text-lg font-bold text-green-600">$300-600/night</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Safari Tents -->
+                <!-- Mobile Camping -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <div class="relative h-48">
-                        <img src="https://readdy.ai/api/search-image?query=Safari%20tents%20in%20Uganda%20national%20parks%2C%20comfortable%20canvas%20accommodations%2C%20authentic%20experience%2C%20professional%20photography&width=300&height=192&seq=safari-tents&orientation=landscape" alt="Safari Tents" class="w-full h-full object-cover object-top">
+                        <img src="https://images.unsplash.com/photo-1537905569824-f89f14cceb68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=192" alt="Mobile Camping" class="w-full h-full object-cover object-top">
                         <div class="absolute top-4 right-4 bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                             Adventure
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-lg font-bold mb-2">Safari Tents</h3>
-                        <p class="text-gray-600 mb-4">Comfortable canvas accommodations with authentic safari feel</p>
+                        <h3 class="text-lg font-bold mb-2">Mobile Camping</h3>
+                        <p class="text-gray-600 mb-4">Follow wildlife movements with portable camps in remote locations</p>
                         <div class="space-y-2 text-sm text-gray-600">
                             <div class="flex items-center">
-                                <i class="ri-tent-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Close to nature</span>
+                                <i class="ri-map-2-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Remote locations</span>
                             </div>
                             <div class="flex items-center">
-                                <i class="ri-map-pin-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Park locations</span>
+                                <i class="ri-compass-line w-4 h-4 flex items-center justify-center mr-2"></i>
+                                <span>Follow migration</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="ri-star-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Authentic experience</span>
+                                <span>Stargazing</span>
                             </div>
                         </div>
                         <div class="mt-4 pt-4 border-t border-gray-200">
-                            <span class="text-lg font-bold text-green-600">$150-300/night</span>
+                            <span class="text-lg font-bold text-green-600">$200-400/night</span>
                         </div>
                     </div>
                 </div>
@@ -1094,18 +1091,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 <!-- Budget Options -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <div class="relative h-48">
-                        <img src="https://readdy.ai/api/search-image?query=Budget%20accommodation%20in%20Uganda%2C%20clean%20and%20simple%20rooms%2C%20good%20value%2C%20professional%20photography&width=300&height=192&seq=budget-uganda&orientation=landscape" alt="Budget Lodge" class="w-full h-full object-cover object-top">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=192" alt="Budget Lodge" class="w-full h-full object-cover object-top">
                         <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                             Budget
                         </div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-lg font-bold mb-2">Budget Lodges</h3>
-                        <p class="text-gray-600 mb-4">Clean, comfortable accommodations perfect for budget travelers</p>
+                        <p class="text-gray-600 mb-4">Clean, comfortable accommodations perfect for budget-conscious travelers</p>
                         <div class="space-y-2 text-sm text-gray-600">
                             <div class="flex items-center">
                                 <i class="ri-home-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Basic amenities</span>
+                                <span>Clean rooms</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
@@ -1117,7 +1114,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         </div>
                         <div class="mt-4 pt-4 border-t border-gray-200">
-                            <span class="text-lg font-bold text-green-600">$50-120/night</span>
+                            <span class="text-lg font-bold text-green-600">$50-150/night</span>
                         </div>
                     </div>
                 </div>
@@ -1130,7 +1127,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold mb-4">Essential Travel Information</h2>
-                <p class="text-xl text-gray-600">Everything you need to know for your Uganda adventure</p>
+                <p class="text-xl text-gray-600">Everything you need to know for your Kenya adventure</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1143,11 +1140,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     <ul class="space-y-2 text-gray-700">
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                            <span>eVisa available online</span>
+                            <span>Tourist visa required for most nationalities</span>
                         </li>
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                            <span>$50 single entry visa</span>
+                            <span>Available online (e-Visa) before travel</span>
                         </li>
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
@@ -1169,7 +1166,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <ul class="space-y-2 text-gray-700">
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                            <span>Yellow fever vaccination required</span>
+                            <span>Yellow fever vaccination required if coming from endemic area</span>
                         </li>
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
@@ -1195,11 +1192,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     <ul class="space-y-2 text-gray-700">
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                            <span>Waterproof hiking boots</span>
+                            <span>Neutral colored clothing (khaki, green, beige)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                            <span>Rain jacket and layers</span>
+                            <span>Sun protection (hat, sunscreen, sunglasses)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
@@ -1221,19 +1218,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     <ul class="space-y-2 text-gray-700">
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                            <span>Tropical climate year-round</span>
+                            <span>Tropical climate with warm days and cool nights</span>
                         </li>
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                            <span>Dry seasons: Jun-Sep & Dec-Feb</span>
+                            <span>Dry season: June-October (coolest months)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                            <span>Wet seasons: Mar-May & Oct-Nov</span>
+                            <span>Wet seasons: March-May (long rains) and Nov-Dec (short rains)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                            <span>Temperature: 17-29°C</span>
+                            <span>Temperature: 20-28°C (varies by altitude)</span>
                         </li>
                     </ul>
                 </div>
@@ -1247,19 +1244,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     <ul class="space-y-2 text-gray-700">
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                            <span>Ugandan Shilling (UGX)</span>
+                            <span>Kenyan Shilling (KES)</span>
                         </li>
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                            <span>USD widely accepted</span>
+                            <span>USD widely accepted in tourist areas</span>
                         </li>
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                            <span>Credit cards in major hotels</span>
+                            <span>Credit cards accepted in major hotels and lodges</span>
                         </li>
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                            <span>ATMs available in cities</span>
+                            <span>ATMs widely available in cities and towns</span>
                         </li>
                     </ul>
                 </div>
@@ -1273,11 +1270,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     <ul class="space-y-2 text-gray-700">
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                            <span>English official language</span>
+                            <span>Swahili and English official languages</span>
                         </li>
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                            <span>Swahili widely spoken</span>
+                            <span>English widely spoken in tourist areas</span>
                         </li>
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
@@ -1285,7 +1282,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </li>
                         <li class="flex items-start">
                             <i class="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5"></i>
-                            <span>Rich cultural heritage</span>
+                            <span>Rich cultural heritage with 40+ ethnic groups</span>
                         </li>
                     </ul>
                 </div>
@@ -1297,8 +1294,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <section class="py-20 bg-primary text-white">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4">Book Your Uganda Adventure</h2>
-                <p class="text-xl text-gray-200">Start planning your unforgettable gorilla trekking experience today</p>
+                <h2 class="text-4xl font-bold mb-4">Book Your Kenya Adventure</h2>
+                <p class="text-xl text-gray-200">Start planning your unforgettable safari experience today</p>
             </div>
             
             <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
@@ -1308,12 +1305,12 @@ document.addEventListener('DOMContentLoaded', function() {
                             <label class="block text-sm font-medium mb-2">Package Type</label>
                             <select class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-green-400 pr-8">
                                 <option value="">Select Package</option>
-                                <option value="gorilla">Classic Gorilla Trekking</option>
-                                <option value="primate">Primate Safari Adventure</option>
-                                <option value="classic">Classic Uganda Safari</option>
-                                <option value="ultimate">Ultimate Uganda</option>
+                                <option value="classic">Classic Maasai Mara</option>
+                                <option value="northern">Northern Frontier Adventure</option>
+                                <option value="luxury">Ultimate Luxury Kenya</option>
+                                <option value="beach">Beach & Bush Combo</option>
                                 <option value="family">Family Safari Adventure</option>
-                                <option value="adventure">Uganda Adventure Safari</option>
+                                <option value="photography">Photography Masterclass</option>
                             </select>
                         </div>
                         <div>
@@ -1339,9 +1336,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             <label class="block text-sm font-medium mb-2">Budget Range</label>
                             <select class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-green-400 pr-8">
                                 <option value="">Select Budget</option>
-                                <option value="budget">Under $1,500 per person</option>
-                                <option value="mid">$1,500 - $3,000 per person</option>
-                                <option value="luxury">$3,000+ per person</option>
+                                <option value="budget">Under $2,000 per person</option>
+                                <option value="mid">$2,000 - $4,000 per person</option>
+                                <option value="luxury">$4,000+ per person</option>
                                 <option value="custom">Custom Budget</option>
                             </select>
                         </div>
@@ -1377,7 +1374,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- Footer -->
-  <footer class="bg-primary text-white">
+<footer class="bg-primary text-white">
   <div class="max-w-7xl mx-auto px-6 py-16">
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Company Info -->
@@ -1471,7 +1468,32 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </footer>
 
-    <script id="filter-functionality">
+    <script>
+        // Toggle between Wildlife and Universities
+        const wildlifeBtn = document.getElementById('wildlifeBtn');
+        const universitiesBtn = document.getElementById('universitiesBtn');
+        const wildlifeSection = document.getElementById('wildlifeSection');
+        const universitiesSection = document.getElementById('universitiesSection');
+
+        wildlifeBtn.addEventListener('click', () => {
+            wildlifeBtn.classList.add('bg-green-600', 'text-white');
+            wildlifeBtn.classList.remove('text-gray-600');
+            universitiesBtn.classList.remove('bg-green-600', 'text-white');
+            universitiesBtn.classList.add('text-gray-600');
+            wildlifeSection.classList.remove('hidden');
+            universitiesSection.classList.add('hidden');
+        });
+
+        universitiesBtn.addEventListener('click', () => {
+            universitiesBtn.classList.add('bg-green-600', 'text-white');
+            universitiesBtn.classList.remove('text-gray-600');
+            wildlifeBtn.classList.remove('bg-green-600', 'text-white');
+            wildlifeBtn.classList.add('text-gray-600');
+            universitiesSection.classList.remove('hidden');
+            wildlifeSection.classList.add('hidden');
+        });
+
+        // Filter functionality for safari packages
         document.addEventListener('DOMContentLoaded', function() {
             const filterButtons = document.querySelectorAll('.filter-btn');
             const packageCards = document.querySelectorAll('.package-card');
@@ -1493,18 +1515,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 });
             });
-        });
-    </script>
-
-    <script id="mobile-menu">
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuButton = document.querySelector('button[class*="lg:hidden"]');
-            
-            if (mobileMenuButton) {
-                mobileMenuButton.addEventListener('click', function() {
-                    console.log('Mobile menu clicked');
-                });
-            }
         });
     </script>
 </body>

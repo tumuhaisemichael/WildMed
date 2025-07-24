@@ -26,130 +26,294 @@
 </style>
 </head>
 <body class="bg-gray-50">
-<header class="fixed top-0 w-full z-50" style="background-color: rgba(59, 42, 27, 0.95);">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-16">
-<div class="flex items-center">
-<h1 class="text-white text-xl font-['Pacifico'] tracking-wide">WildMed Safaris</h1>
-</div>
-<nav class="hidden md:flex space-x-8">
-<a href="https://readdy.ai/home/345e607d-4005-4f04-acb2-e79926632841/9a80af20-e47a-457d-bd58-99e8af1e83a9" data-readdy="true" class="text-white hover:text-green-400 transition-colors duration-200">Home</a>
-<div class="relative group">
-<a href="#" class="text-white hover:text-green-400 transition-colors duration-200 flex items-center">
-Destinations
-<div class="w-4 h-4 flex items-center justify-center ml-1">
-<i class="ri-arrow-down-s-line text-sm"></i>
-</div>
-</a>
-<div class="absolute top-full left-0 mt-2 w-48 bg-blue-900 bg-opacity-90 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-t-md">East Africa</a>
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800">Southern Africa</a>
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-b-md">West Africa</a>
-</div>
-</div>
-<div class="relative group">
-<a href="#" class="text-white hover:text-green-400 transition-colors duration-200 flex items-center">
-Custom Expeditions
-<div class="w-4 h-4 flex items-center justify-center ml-1">
-<i class="ri-arrow-down-s-line text-sm"></i>
-</div>
-</a>
-<div class="absolute top-full left-0 mt-2 w-48 bg-blue-900 bg-opacity-90 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-t-md">Wildlife Focus</a>
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800">Photography Tours</a>
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-b-md">Adventure Safaris</a>
-</div>
-</div>
-<div class="relative group">
-<a href="#" class="text-white hover:text-green-400 transition-colors duration-200 flex items-center">
-Vet Expeditions
-<div class="w-4 h-4 flex items-center justify-center ml-1">
-<i class="ri-arrow-down-s-line text-sm"></i>
-</div>
-</a>
-<div class="absolute top-full left-0 mt-2 w-48 bg-blue-900 bg-opacity-90 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-t-md">Conservation Programs</a>
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800">Research Projects</a>
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-b-md">Field Training</a>
-</div>
-</div>
-<a href="#" class="text-green-400 hover:text-green-300 transition-colors duration-200">Med Expeditions</a>
-</nav>
-<button class="md:hidden text-white">
-<div class="w-6 h-6 flex items-center justify-center">
-<i class="ri-menu-line text-xl"></i>
-</div>
-</button>
-</div>
-</div>
+<header class="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm">
+  <nav class="w-full px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-4">
+        <div class="w-16 h-16 flex-shrink-0">
+          <img src="img/android-chrome-192x192.png" alt="WildMed Safaris Logo" width="400" height="400">
+        </div>
+        <span class="text-white text-2xl font-bold">WildMed</span>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center space-x-8">
+        <a href="index.html" class="text-white hover:text-green-300 transition-colors duration-300">Home</a>
+        
+        <!-- Destinations Dropdown -->
+        <div class="relative dropdown-trigger group">
+          <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+            <span>Destinations</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="dropdown absolute top-full left-0 mt-2 w-48 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="Kenya-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Kenya Wildlife Safari</a>
+            <a href="Tanzania-Safari.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Tanzania Adventure</a>
+            <a href="Uganda-Adventures.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Uganda Gorilla Trek</a>
+            <a href="Rwanda-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Rwanda Gorilla Experience</a>
+          </div>
+        </div>
+
+        <!-- Custom Expeditions Dropdown -->
+        <div class="relative dropdown-trigger group">
+          <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+            <span>Custom Safaris</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="dropdown absolute top-full left-0 mt-2 w-56 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="Uganda-2-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">2-Day Gorilla Express</a>
+            <a href="Uganda-4-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">4-Day Wildlife Discovery</a>
+            <a href="Uganda-6-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">6-Day Primates & Wildlife</a>
+            <a href="Uganda-8-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">8-Day Ultimate Adventure</a>
+            <a href="Uganda-15-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">15-Day Grand Safari</a>
+            <a href="Rwanda-7-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">7-Day Rwanda Explorer</a>
+          </div>
+        </div>
+
+        <!-- Vet Expeditions Dropdown -->
+        <div class="relative dropdown-trigger group">
+          <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+            <span>Vet Programs</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="dropdown absolute top-full left-0 mt-2 w-56 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="Veterinary-Conservation-.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Wildlife Conservation Program</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Field Veterinary Training</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Animal Research Expedition</a>
+          </div>
+        </div>
+
+        <a href="Medical-Expedition-Programs.html" class="text-white hover:text-green-300 transition-colors duration-300">Medical Missions</a>
+        <a href="Gallery.html" class="text-white hover:text-green-300 transition-colors duration-300">Photo Gallery</a>
+        <a href="Review.html" class="text-white hover:text-green-300 transition-colors duration-300">Client Reviews</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="lg:hidden text-white focus:outline-none">
+        <i id="menu-icon" class="ri-menu-line text-2xl"></i>
+        <i id="close-icon" class="ri-close-line text-2xl hidden"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-primary/95 mt-4 rounded-lg overflow-hidden transition-all duration-300 max-h-0">
+      <div class="px-4 py-2 space-y-2">
+        <a href="index.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Home</a>
+        
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">
+            <span>Destinations</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="hidden dropdown-mobile-content pl-6">
+            <a href="Kenya-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Kenya Wildlife Safari</a>
+            <a href="Tanzania-Safari.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Tanzania Adventure</a>
+            <a href="Uganda-Adventures.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Uganda Gorilla Trek</a>
+            <a href="Rwanda-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Rwanda Gorilla Experience</a>
+          </div>
+        </div>
+
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">
+            <span>Custom Safaris</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="hidden dropdown-mobile-content pl-6">
+            <a href="Uganda-2-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">2-Day Gorilla Express</a>
+            <a href="Uganda-4-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">4-Day Wildlife Discovery</a>
+            <a href="Uganda-6-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">6-Day Primates & Wildlife</a>
+            <a href="Uganda-8-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">8-Day Ultimate Adventure</a>
+            <a href="Uganda-15-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">15-Day Grand Safari</a>
+            <a href="Rwanda-7-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">7-Day Rwanda Explorer</a>
+          </div>
+        </div>
+
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">
+            <span>Vet Programs</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="hidden dropdown-mobile-content pl-6">
+            <a href="Veterinary-Conservation-.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Wildlife Conservation Program</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Field Veterinary Training</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Animal Research Expedition</a>
+          </div>
+        </div>
+
+        <a href="Medical-Expedition-Programs.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Medical Missions</a>
+        <a href="Gallery.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Photo Gallery</a>
+        <a href="Review.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Client Reviews</a>
+      </div>
+    </div>
+  </nav>
 </header>
 
-<section class="relative h-screen flex items-center justify-center parallax-bg" style="background-image: url('https://readdy.ai/api/search-image?query=Medical%20professionals%20providing%20healthcare%20in%20rural%20African%20village%20setting%20with%20mobile%20clinic%20tent%2C%20doctors%20and%20nurses%20treating%20patients%20outdoors%2C%20medical%20equipment%20and%20supplies%20visible%2C%20community%20members%20receiving%20care%2C%20golden%20hour%20lighting%20over%20savanna%20landscape%2C%20acacia%20trees%20in%20background%2C%20professional%20humanitarian%20medical%20mission%20atmosphere%2C%20warm%20earth%20tones%20and%20natural%20colors&width=1920&height=1080&seq=med-expedition-hero&orientation=landscape');">
-<div class="absolute inset-0 bg-gradient-to-r from-blue-900 via-blue-800 to-transparent opacity-85"></div>
-<div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-<h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">Medical Expeditions</h1>
-<p class="text-xl md:text-2xl mb-8 font-light">Join healthcare volunteer programs that deliver critical medical services to remote African communities</p>
-<button class="bg-secondary hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold !rounded-button transition-colors duration-200 whitespace-nowrap">
-Apply Now
-</button>
-</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  mobileMenuButton.addEventListener('click', function() {
+    const isExpanded = mobileMenu.classList.toggle('hidden');
+    
+    if (isExpanded) {
+      mobileMenu.style.maxHeight = '0';
+    } else {
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+    }
+    
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+  });
+
+  // Mobile dropdown triggers
+  const mobileDropdownTriggers = document.querySelectorAll('.dropdown-trigger-mobile');
+  
+  mobileDropdownTriggers.forEach(trigger => {
+    const button = trigger.querySelector('button');
+    const dropdown = trigger.querySelector('.dropdown-mobile-content');
+    
+    button.addEventListener('click', function() {
+      dropdown.classList.toggle('hidden');
+      
+      // Close other open dropdowns
+      mobileDropdownTriggers.forEach(otherTrigger => {
+        if (otherTrigger !== trigger) {
+          otherTrigger.querySelector('.dropdown-mobile-content').classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.style.maxHeight = '0';
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+      
+      // Also close all mobile dropdowns
+      document.querySelectorAll('.dropdown-mobile-content').forEach(dropdown => {
+        dropdown.classList.add('hidden');
+      });
+    }
+  });
+});
+</script>
+
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background with parallax effect -->
+    <div class="absolute inset-0 parallax-bg bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Medical%20professionals%20providing%20healthcare%20in%20rural%20African%20village%20setting%20with%20mobile%20clinic%20tent%2C%20doctors%20and%20nurses%20treating%20patients%20outdoors%2C%20medical%20equipment%20and%20supplies%20visible%2C%20community%20members%20receiving%20care%2C%20golden%20hour%20lighting%20over%20savanna%20landscape%2C%20acacia%20trees%20in%20background%2C%20professional%20humanitarian%20medical%20mission%20atmosphere%2C%20warm%20earth%20tones%20and%20natural%20colors&width=1920&height=1080&seq=med-expedition-hero&orientation=landscape')"></div>
+    
+    <!-- Gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-800/60 to-transparent"></div>
+    
+    <!-- Content container with proper spacing -->
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-6">
+        <div class="flex flex-col items-center text-center space-y-8">
+            <!-- Header/tagline -->
+            <div class="mb-4">
+                <span class="inline-block px-4 py-2 bg-green-600/30 backdrop-blur-sm rounded-full text-green-300 text-sm font-medium tracking-wider border border-green-400/30">
+                    MEDICAL MISSIONS
+                </span>
+            </div>
+            
+            <!-- Main headline -->
+            <h1 class="text-5xl sm:text-6xl font-bold leading-tight">
+                <span class="block bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-blue-300">
+                    Medical Profession
+                </span>
+                <span class="block text-white mt-4">Expeditions</span>
+            </h1>
+            
+            <!-- Description -->
+            <p class="text-xl md:text-2xl max-w-2xl mx-auto text-gray-200 font-light">
+                For healthcare professionals seeking to expand their knowledge in East Africa
+            </p>
+            
+            <!-- Stats grid - properly spaced -->
+            <div class="grid grid-cols-2 gap-6 w-full max-w-md mt-8 mb-8">
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+                    <div class="text-3xl font-bold text-green-300">100+</div>
+                    <div class="text-sm">Medical Volunteers</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+                    <div class="text-3xl font-bold text-green-300">25+</div>
+                    <div class="text-sm">Communities Served</div>
+                </div>
+            </div>
+            
+            <!-- CTA button -->
+            <button class="bg-gradient-to-r from-green-600 to-green-700 text-white px-10 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transition-all">
+                Apply Now
+            </button>
+        </div>
+    </div>
+    
+    <!-- Bottom gradient fade -->
+    <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/40 to-transparent"></div>
 </section>
 
 <section class="py-16 bg-white">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-16">
 <h2 class="text-4xl font-bold text-gray-900 mb-4">Medical Program Types</h2>
-<p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive healthcare programs that combine medical expertise with community outreach and safari operations</p>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive healthcare programs combining medical expertise with community outreach in East Africa</p>
 </div>
 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Mobile%20medical%20clinic%20vehicle%20in%20African%20rural%20setting%2C%20healthcare%20workers%20setting%20up%20medical%20equipment%20outside%20van%2C%20patients%20waiting%20in%20line%20for%20treatment%2C%20medical%20supplies%20and%20examination%20table%20visible%2C%20dusty%20village%20road%20with%20traditional%20huts%20in%20background%2C%20professional%20mobile%20healthcare%20delivery%20scene&width=400&height=300&seq=mobile-clinic&orientation=landscape');"></div>
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Mobile%20medical%20clinic%20in%20Uganda%20rural%20setting%2C%20healthcare%20workers%20setting%20up%20medical%20equipment%20outside%20van%2C%20patients%20waiting%20in%20line%20for%20treatment%2C%20medical%20supplies%20and%20examination%20table%20visible%2C%20dusty%20village%20road%20with%20traditional%20huts%20in%20background%2C%20professional%20mobile%20healthcare%20delivery%20scene&width=400&height=300&seq=mobile-clinic&orientation=landscape');"></div>
 <div class="p-6">
 <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mb-4">
 <i class="ri-truck-line text-white text-xl"></i>
 </div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3">Mobile Clinics</h3>
-<p class="text-gray-600 mb-4">Deliver essential healthcare services to remote rural communities using fully equipped mobile medical units.</p>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Medical Camps</h3>
+<p class="text-gray-600 mb-4">Bringing essential healthcare to remote rural communities in Uganda through temporary medical camps.</p>
 <div class="text-sm text-gray-500 mb-4">Duration: 2-4 weeks | Requirements: MD/RN</div>
 <button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
 </div>
 </div>
 
 <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Medical%20training%20session%20in%20African%20healthcare%20facility%2C%20experienced%20doctor%20teaching%20local%20healthcare%20workers%2C%20medical%20equipment%20and%20educational%20materials%20on%20table%2C%20engaged%20students%20taking%20notes%2C%20modern%20classroom%20setting%20with%20medical%20charts%20on%20walls%2C%20professional%20medical%20education%20atmosphere&width=400&height=300&seq=medical-training&orientation=landscape');"></div>
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Medical%20training%20session%20in%20Ugandan%20hospital%2C%20experienced%20doctor%20teaching%20local%20healthcare%20workers%2C%20medical%20equipment%20and%20educational%20materials%20on%20table%2C%20engaged%20students%20taking%20notes%2C%20modern%20classroom%20setting%20with%20medical%20charts%20on%20walls%2C%20professional%20medical%20education%20atmosphere&width=400&height=300&seq=medical-training&orientation=landscape');"></div>
 <div class="p-6">
 <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4">
 <i class="ri-graduation-cap-line text-white text-xl"></i>
 </div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3">Medical Training</h3>
-<p class="text-gray-600 mb-4">Train local healthcare workers in advanced medical techniques and emergency response protocols.</p>
-<div class="text-sm text-gray-500 mb-4">Duration: 3-6 weeks | Requirements: Specialist MD</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Hospital & Lab Visits</h3>
+<p class="text-gray-600 mb-4">Organized visits to public and private hospitals and laboratories for experiential learning.</p>
+<div class="text-sm text-gray-500 mb-4">Duration: 1-3 weeks | Requirements: Medical Student+</div>
 <button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
 </div>
 </div>
 
 <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Emergency%20medical%20response%20team%20at%20safari%20camp%2C%20paramedics%20with%20medical%20equipment%20treating%20patient%20in%20wilderness%20setting%2C%20safari%20vehicles%20and%20tents%20in%20background%2C%20professional%20emergency%20medical%20care%20in%20remote%20location%2C%20golden%20savanna%20landscape%2C%20urgent%20medical%20response%20scene&width=400&height=300&seq=emergency-support&orientation=landscape');"></div>
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Traditional%20African%20healer%20in%20Uganda%20preparing%20herbal%20medicine%2C%20displaying%20various%20medicinal%20plants%20and%20roots%2C%20outdoor%20setting%20with%20natural%20lighting%2C%20cultural%20exchange%20between%20western%20doctors%20and%20traditional%20healers%2C%20knowledge%20sharing%20session%2C%20authentic%20African%20traditional%20medicine%20practice&width=400&height=300&seq=traditional-medicine&orientation=landscape');"></div>
 <div class="p-6">
 <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mb-4">
-<i class="ri-first-aid-kit-line text-white text-xl"></i>
+<i class="ri-leaf-line text-white text-xl"></i>
 </div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3">Emergency Support</h3>
-<p class="text-gray-600 mb-4">Provide emergency medical support for safari operations and wilderness expeditions.</p>
-<div class="text-sm text-gray-500 mb-4">Duration: 1-3 weeks | Requirements: Emergency MD</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Traditional Medicine</h3>
+<p class="text-gray-600 mb-4">Learn from African medicine men about traditional healing using local herbs and knowledge.</p>
+<div class="text-sm text-gray-500 mb-4">Duration: 1-2 weeks | Requirements: Open to all</div>
 <button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
 </div>
 </div>
 
 <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Remote%20healthcare%20delivery%20in%20African%20wilderness%2C%20medical%20team%20hiking%20with%20backpack%20medical%20supplies%20to%20isolated%20village%2C%20mountainous%20terrain%20and%20challenging%20landscape%2C%20healthcare%20workers%20carrying%20portable%20medical%20equipment%2C%20adventure%20medical%20mission%20in%20remote%20area&width=400&height=300&seq=remote-healthcare&orientation=landscape');"></div>
+<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=One%20Health%20initiative%20in%20Uganda%2C%20medical%20and%20veterinary%20professionals%20working%20together%20in%20rural%20community%2C%20examining%20both%20patients%20and%20animals%2C%20community%20education%20session%20on%20zoonotic%20diseases%2C%20integrated%20health%20approach%20in%20African%20setting&width=400&height=300&seq=one-health&orientation=landscape');"></div>
 <div class="p-6">
 <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
-<i class="ri-map-pin-line text-white text-xl"></i>
+<i class="ri-heart-pulse-line text-white text-xl"></i>
 </div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3">Remote Healthcare</h3>
-<p class="text-gray-600 mb-4">Deliver healthcare services to the most isolated communities in challenging wilderness environments.</p>
-<div class="text-sm text-gray-500 mb-4">Duration: 2-5 weeks | Requirements: General Practice</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">One Health Initiatives</h3>
+<p class="text-gray-600 mb-4">Collaborative programs addressing animal and human health through the One Health approach.</p>
+<div class="text-sm text-gray-500 mb-4">Duration: 3-6 weeks | Requirements: Health Professionals</div>
 <button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
 </div>
 </div>
@@ -160,56 +324,103 @@ Apply Now
 <section class="py-16 bg-gray-50">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-16">
-<h2 class="text-4xl font-bold text-gray-900 mb-4">Program Destinations</h2>
-<p class="text-xl text-gray-600 max-w-3xl mx-auto">Medical expedition locations across Africa where your expertise is needed most</p>
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Program Focus Areas</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Key medical expedition focus areas in Uganda and East Africa</p>
 </div>
-<div class="relative bg-white rounded-2xl shadow-lg p-8">
-<div class="h-96 relative bg-cover bg-center rounded-lg overflow-hidden" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');">
-<div class="absolute inset-0 bg-black bg-opacity-20"></div>
-<div class="absolute top-8 left-8 map-pin bg-red-500 w-6 h-6 rounded-full flex items-center justify-center" data-location="kenya">
-<i class="ri-hospital-line text-white text-xs"></i>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+<div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+<i class="ri-heart-pulse-line text-white text-2xl"></i>
 </div>
-<div class="absolute top-16 left-20 map-pin bg-blue-500 w-6 h-6 rounded-full flex items-center justify-center" data-location="tanzania">
-<i class="ri-first-aid-kit-line text-white text-xs"></i>
-</div>
-<div class="absolute bottom-20 left-12 map-pin bg-secondary w-6 h-6 rounded-full flex items-center justify-center" data-location="botswana">
-<i class="ri-truck-line text-white text-xs"></i>
-</div>
-<div class="absolute bottom-12 right-16 map-pin bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center" data-location="south-africa">
-<i class="ri-graduation-cap-line text-white text-xs"></i>
-</div>
-<div class="absolute top-1/3 right-1/4 map-pin bg-purple-500 w-6 h-6 rounded-full flex items-center justify-center" data-location="uganda">
-<i class="ri-map-pin-line text-white text-xs"></i>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Tropical Medicine</h3>
+<p class="text-gray-600 mb-4 text-center">Study of disease dynamics at the animal-human-environment interface</p>
+<div class="bg-gray-50 rounded-lg p-4">
+<ul class="text-sm text-gray-700 space-y-1">
+<li>• Neglected Tropical Diseases</li>
+<li>• Communicable diseases</li>
+<li>• Non-communicable diseases</li>
+<li>• Disease surveillance</li>
+</ul>
 </div>
 </div>
-<div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-<div class="flex items-center p-3 bg-gray-50 rounded-lg">
-<div class="w-4 h-4 bg-red-500 rounded-full mr-3"></div>
-<div>
-<div class="font-semibold text-gray-900">Kenya</div>
-<div class="text-sm text-gray-600">Mobile Clinics</div>
+
+<div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+<div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+<i class="ri-community-line text-white text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Public Health</h3>
+<p class="text-gray-600 mb-4 text-center">Community health programs and disease prevention initiatives</p>
+<div class="bg-gray-50 rounded-lg p-4">
+<ul class="text-sm text-gray-700 space-y-1">
+<li>• Rural healthcare access</li>
+<li>• Maternal and child health</li>
+<li>• Health education</li>
+<li>• Medical supply distribution</li>
+</ul>
 </div>
 </div>
-<div class="flex items-center p-3 bg-gray-50 rounded-lg">
-<div class="w-4 h-4 bg-blue-500 rounded-full mr-3"></div>
-<div>
-<div class="font-semibold text-gray-900">Tanzania</div>
-<div class="text-sm text-gray-600">Emergency Support</div>
+
+<div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+<div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-4 mx-auto">
+<i class="ri-flask-line text-white text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Medical Research</h3>
+<p class="text-gray-600 mb-4 text-center">Field research on unique health challenges in East Africa</p>
+<div class="bg-gray-50 rounded-lg p-4">
+<ul class="text-sm text-gray-700 space-y-1">
+<li>• Salt mining health impacts</li>
+<li>• Vitiligo and stigmatized conditions</li>
+<li>• Synaesthesia research</li>
+<li>• Traditional medicine efficacy</li>
+</ul>
 </div>
 </div>
-<div class="flex items-center p-3 bg-gray-50 rounded-lg">
-<div class="w-4 h-4 bg-secondary rounded-full mr-3"></div>
-<div>
-<div class="font-semibold text-gray-900">Botswana</div>
-<div class="text-sm text-gray-600">Remote Healthcare</div>
+
+<div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+<div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+<i class="ri-team-line text-white text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Medical Training</h3>
+<p class="text-gray-600 mb-4 text-center">Capacity building for local healthcare workers</p>
+<div class="bg-gray-50 rounded-lg p-4">
+<ul class="text-sm text-gray-700 space-y-1">
+<li>• Internship programs</li>
+<li>• Student exchanges</li>
+<li>• Clinical skill development</li>
+<li>• Emergency response training</li>
+</ul>
 </div>
 </div>
-<div class="flex items-center p-3 bg-gray-50 rounded-lg">
-<div class="w-4 h-4 bg-orange-500 rounded-full mr-3"></div>
-<div>
-<div class="font-semibold text-gray-900">South Africa</div>
-<div class="text-sm text-gray-600">Medical Training</div>
+
+<div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+<div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+<i class="ri-first-aid-kit-line text-white text-2xl"></i>
 </div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Medical Supplies</h3>
+<p class="text-gray-600 mb-4 text-center">Supporting rural clinics with critical supplies</p>
+<div class="bg-gray-50 rounded-lg p-4">
+<ul class="text-sm text-gray-700 space-y-1">
+<li>• Medicine donations</li>
+<li>• Equipment distribution</li>
+<li>• Supply chain support</li>
+<li>• Infrastructure improvement</li>
+</ul>
+</div>
+</div>
+
+<div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+<div class="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+<i class="ri-leaf-line text-white text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Traditional Medicine</h3>
+<p class="text-gray-600 mb-4 text-center">Documenting and studying African healing practices</p>
+<div class="bg-gray-50 rounded-lg p-4">
+<ul class="text-sm text-gray-700 space-y-1">
+<li>• Herbal medicine research</li>
+<li>• Cultural healing practices</li>
+<li>• Integration with modern medicine</li>
+<li>• Knowledge preservation</li>
+</ul>
 </div>
 </div>
 </div>
@@ -217,6 +428,62 @@ Apply Now
 </section>
 
 <section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Program Destinations</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Medical expedition locations across Uganda and East Africa</p>
+</div>
+<div class="relative bg-white rounded-2xl shadow-lg p-8">
+<div class="h-96 relative bg-cover bg-center rounded-lg overflow-hidden" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');">
+<div class="absolute inset-0 bg-black bg-opacity-20"></div>
+<div class="absolute top-8 left-8 map-pin bg-red-500 w-6 h-6 rounded-full flex items-center justify-center" data-location="uganda">
+<i class="ri-hospital-line text-white text-xs"></i>
+</div>
+<div class="absolute top-16 left-20 map-pin bg-blue-500 w-6 h-6 rounded-full flex items-center justify-center" data-location="kenya">
+<i class="ri-first-aid-kit-line text-white text-xs"></i>
+</div>
+<div class="absolute bottom-20 left-12 map-pin bg-secondary w-6 h-6 rounded-full flex items-center justify-center" data-location="tanzania">
+<i class="ri-truck-line text-white text-xs"></i>
+</div>
+<div class="absolute bottom-12 right-16 map-pin bg-orange-500 w-6 h-6 rounded-full flex items-center justify-center" data-location="rwanda">
+<i class="ri-graduation-cap-line text-white text-xs"></i>
+</div>
+</div>
+<div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="flex items-center p-3 bg-gray-50 rounded-lg">
+<div class="w-4 h-4 bg-red-500 rounded-full mr-3"></div>
+<div>
+<div class="font-semibold text-gray-900">Uganda</div>
+<div class="text-sm text-gray-600">Medical Camps & Training</div>
+</div>
+</div>
+<div class="flex items-center p-3 bg-gray-50 rounded-lg">
+<div class="w-4 h-4 bg-blue-500 rounded-full mr-3"></div>
+<div>
+<div class="font-semibold text-gray-900">Kenya</div>
+<div class="text-sm text-gray-600">One Health Programs</div>
+</div>
+</div>
+<div class="flex items-center p-3 bg-gray-50 rounded-lg">
+<div class="w-4 h-4 bg-secondary rounded-full mr-3"></div>
+<div>
+<div class="font-semibold text-gray-900">Tanzania</div>
+<div class="text-sm text-gray-600">Mobile Clinics</div>
+</div>
+</div>
+<div class="flex items-center p-3 bg-gray-50 rounded-lg">
+<div class="w-4 h-4 bg-orange-500 rounded-full mr-3"></div>
+<div>
+<div class="font-semibold text-gray-900">Rwanda</div>
+<div class="text-sm text-gray-600">Public Health Initiatives</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-16 bg-gray-50">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-16">
 <h2 class="text-4xl font-bold text-gray-900 mb-4">Medical Specialties Required</h2>
@@ -225,52 +492,52 @@ Apply Now
 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 <div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
 <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mb-4 mx-auto">
-<i class="ri-heart-pulse-line text-white text-2xl"></i>
+<i class="ri-stethoscope-line text-white text-2xl"></i>
 </div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Emergency Medicine</h3>
-<p class="text-gray-600 mb-4 text-center">Critical care and trauma management in remote settings</p>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Medical Physicians</h3>
+<p class="text-gray-600 mb-4 text-center">Doctors across all specialties for clinical work and training</p>
 <div class="bg-gray-50 rounded-lg p-4">
 <div class="text-sm text-gray-600 mb-2">Requirements:</div>
 <ul class="text-sm text-gray-700 space-y-1">
-<li>• Board certification in Emergency Medicine</li>
-<li>• Minimum 3 years experience</li>
-<li>• Wilderness medicine training preferred</li>
+<li>• Valid medical license</li>
+<li>• 2+ years clinical experience</li>
+<li>• Tropical medicine knowledge</li>
+</ul>
+<div class="text-sm text-gray-600 mt-3">Commitment: 2-6 weeks</div>
+</div>
+</div>
+
+<div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+<div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+<i class="ri-nurse-line text-white text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Nurses</h3>
+<p class="text-gray-600 mb-4 text-center">RNs for patient care, education and capacity building</p>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="text-sm text-gray-600 mb-2">Requirements:</div>
+<ul class="text-sm text-gray-700 space-y-1">
+<li>• Active nursing license</li>
+<li>• Clinical experience</li>
+<li>• Community health interest</li>
 </ul>
 <div class="text-sm text-gray-600 mt-3">Commitment: 2-4 weeks</div>
 </div>
 </div>
 
 <div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-<div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mb-4 mx-auto">
-<i class="ri-stethoscope-line text-white text-2xl"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">General Practice</h3>
-<p class="text-gray-600 mb-4 text-center">Primary care and preventive medicine for communities</p>
-<div class="bg-gray-50 rounded-lg p-4">
-<div class="text-sm text-gray-600 mb-2">Requirements:</div>
-<ul class="text-sm text-gray-700 space-y-1">
-<li>• MD or equivalent medical degree</li>
-<li>• Family medicine or internal medicine</li>
-<li>• Experience with tropical diseases</li>
-</ul>
-<div class="text-sm text-gray-600 mt-3">Commitment: 3-6 weeks</div>
-</div>
-</div>
-
-<div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
 <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-4 mx-auto">
-<i class="ri-global-line text-white text-2xl"></i>
+<i class="ri-empathize-line text-white text-2xl"></i>
 </div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Public Health</h3>
-<p class="text-gray-600 mb-4 text-center">Community health programs and disease prevention</p>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Paramedics</h3>
+<p class="text-gray-600 mb-4 text-center">Emergency responders for field conditions</p>
 <div class="bg-gray-50 rounded-lg p-4">
 <div class="text-sm text-gray-600 mb-2">Requirements:</div>
 <ul class="text-sm text-gray-700 space-y-1">
-<li>• MPH or equivalent public health degree</li>
-<li>• Community health experience</li>
-<li>• Program development skills</li>
+<li>• Certified paramedic</li>
+<li>• Field experience</li>
+<li>• Emergency response training</li>
 </ul>
-<div class="text-sm text-gray-600 mt-3">Commitment: 4-8 weeks</div>
+<div class="text-sm text-gray-600 mt-3">Commitment: 2-3 weeks</div>
 </div>
 </div>
 
@@ -278,14 +545,14 @@ Apply Now
 <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-4 mx-auto">
 <i class="ri-microscope-line text-white text-2xl"></i>
 </div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Tropical Medicine</h3>
-<p class="text-gray-600 mb-4 text-center">Specialized care for tropical and infectious diseases</p>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Lab Technicians</h3>
+<p class="text-gray-600 mb-4 text-center">For diagnostic support and training</p>
 <div class="bg-gray-50 rounded-lg p-4">
 <div class="text-sm text-gray-600 mb-2">Requirements:</div>
 <ul class="text-sm text-gray-700 space-y-1">
-<li>• Tropical medicine certification</li>
-<li>• Infectious disease experience</li>
-<li>• Research background preferred</li>
+<li>• Laboratory certification</li>
+<li>• Diagnostic experience</li>
+<li>• Equipment maintenance skills</li>
 </ul>
 <div class="text-sm text-gray-600 mt-3">Commitment: 3-5 weeks</div>
 </div>
@@ -293,134 +560,35 @@ Apply Now
 
 <div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
 <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mb-4 mx-auto">
-<i class="ri-surgical-mask-line text-white text-2xl"></i>
+<i class="ri-group-line text-white text-2xl"></i>
 </div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Surgery</h3>
-<p class="text-gray-600 mb-4 text-center">Essential surgical procedures in field conditions</p>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Public Health</h3>
+<p class="text-gray-600 mb-4 text-center">Professionals for community health programs</p>
 <div class="bg-gray-50 rounded-lg p-4">
 <div class="text-sm text-gray-600 mb-2">Requirements:</div>
 <ul class="text-sm text-gray-700 space-y-1">
-<li>• Board certification in surgery</li>
-<li>• General surgery experience</li>
-<li>• Field surgery training preferred</li>
+<li>• Public health background</li>
+<li>• Program development</li>
+<li>• Community engagement</li>
 </ul>
-<div class="text-sm text-gray-600 mt-3">Commitment: 2-3 weeks</div>
+<div class="text-sm text-gray-600 mt-3">Commitment: 4-8 weeks</div>
 </div>
 </div>
 
 <div class="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
 <div class="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center mb-4 mx-auto">
-<i class="ri-nurse-line text-white text-2xl"></i>
+<i class="ri-book-line text-white text-2xl"></i>
 </div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Nursing</h3>
-<p class="text-gray-600 mb-4 text-center">Comprehensive nursing care and patient education</p>
+<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center">Medical Students</h3>
+<p class="text-gray-600 mb-4 text-center">For educational rotations and field experience</p>
 <div class="bg-gray-50 rounded-lg p-4">
 <div class="text-sm text-gray-600 mb-2">Requirements:</div>
 <ul class="text-sm text-gray-700 space-y-1">
-<li>• RN license and BSN degree</li>
-<li>• Minimum 2 years clinical experience</li>
-<li>• Emergency nursing preferred</li>
+<li>• Currently enrolled</li>
+<li>• Clinical rotations completed</li>
+<li>• Letter from institution</li>
 </ul>
-<div class="text-sm text-gray-600 mt-3">Commitment: 2-6 weeks</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="py-16 bg-gray-50">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-bold text-gray-900 mb-4">Accommodation Details</h2>
-<p class="text-xl text-gray-600 max-w-3xl mx-auto">Comfortable and safe accommodations designed for medical professionals</p>
-</div>
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-<div class="accommodation-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Comfortable%20safari%20lodge%20accommodation%20with%20modern%20amenities%2C%20spacious%20bedroom%20with%20mosquito%20nets%20and%20comfortable%20beds%2C%20private%20bathroom%20facilities%2C%20wooden%20furniture%20and%20African%20decor%2C%20natural%20lighting%20through%20large%20windows%2C%20professional%20accommodation%20for%20medical%20volunteers&width=400&height=300&seq=lodge-accommodation&orientation=landscape');"></div>
-<div class="p-6">
-<h3 class="text-lg font-semibold text-gray-900 mb-3">Safari Lodges</h3>
-<p class="text-gray-600 mb-4">Comfortable lodge accommodations with private rooms and modern amenities.</p>
-<ul class="text-sm text-gray-600 space-y-1">
-<li>• Private en-suite bathrooms</li>
-<li>• Air conditioning/fans</li>
-<li>• WiFi access</li>
-<li>• 24/7 security</li>
-</ul>
-</div>
-</div>
-
-<div class="accommodation-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Medical%20field%20station%20accommodation%20in%20African%20setting%2C%20clean%20dormitory%20style%20rooms%20with%20bunk%20beds%2C%20shared%20facilities%20and%20common%20areas%2C%20medical%20equipment%20storage%20visible%2C%20functional%20and%20practical%20living%20space%20for%20healthcare%20workers%2C%20simple%20but%20comfortable%20setup&width=400&height=300&seq=field-station&orientation=landscape');"></div>
-<div class="p-6">
-<h3 class="text-lg font-semibold text-gray-900 mb-3">Field Stations</h3>
-<p class="text-gray-600 mb-4">Purpose-built medical field stations with shared facilities and work spaces.</p>
-<ul class="text-sm text-gray-600 space-y-1">
-<li>• Shared dormitory rooms</li>
-<li>• Common bathrooms</li>
-<li>• Medical equipment storage</li>
-<li>• Generator power</li>
-</ul>
-</div>
-</div>
-
-<div class="accommodation-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Mobile%20camping%20setup%20for%20medical%20expeditions%2C%20high%20quality%20expedition%20tents%20with%20comfortable%20sleeping%20arrangements%2C%20portable%20camp%20furniture%20and%20equipment%2C%20organized%20campsite%20in%20African%20wilderness%2C%20professional%20mobile%20accommodation%20for%20healthcare%20missions&width=400&height=300&seq=mobile-camp&orientation=landscape');"></div>
-<div class="p-6">
-<h3 class="text-lg font-semibold text-gray-900 mb-3">Mobile Camps</h3>
-<p class="text-gray-600 mb-4">Fully equipped mobile camps that move with medical missions to remote areas.</p>
-<ul class="text-sm text-gray-600 space-y-1">
-<li>• Weather-resistant tents</li>
-<li>• Portable facilities</li>
-<li>• Solar power systems</li>
-<li>• Mobile communication</li>
-</ul>
-</div>
-</div>
-
-<div class="accommodation-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Community%20guesthouse%20accommodation%20in%20African%20village%2C%20local%20style%20building%20with%20modern%20amenities%2C%20cultural%20integration%20and%20community%20interaction%2C%20simple%20but%20clean%20rooms%20with%20basic%20facilities%2C%20authentic%20local%20accommodation%20experience%20for%20medical%20volunteers&width=400&height=300&seq=community-guesthouse&orientation=landscape');"></div>
-<div class="p-6">
-<h3 class="text-lg font-semibold text-gray-900 mb-3">Community Guesthouses</h3>
-<p class="text-gray-600 mb-4">Local guesthouses that provide cultural immersion and community integration.</p>
-<ul class="text-sm text-gray-600 space-y-1">
-<li>• Local cultural experience</li>
-<li>• Basic but clean facilities</li>
-<li>• Community meals</li>
-<li>• Cultural exchange</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="mt-12 bg-white rounded-xl p-8 shadow-lg">
-<h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Standard Amenities</h3>
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-<div class="text-center">
-<div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
-<i class="ri-restaurant-line text-white text-xl"></i>
-</div>
-<h4 class="font-semibold text-gray-900 mb-2">Meals Included</h4>
-<p class="text-sm text-gray-600">Three nutritious meals daily with dietary accommodations</p>
-</div>
-<div class="text-center">
-<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-3">
-<i class="ri-wifi-line text-white text-xl"></i>
-</div>
-<h4 class="font-semibold text-gray-900 mb-2">Internet Access</h4>
-<p class="text-sm text-gray-600">WiFi or satellite internet for communication and research</p>
-</div>
-<div class="text-center">
-<div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-3">
-<i class="ri-shield-check-line text-white text-xl"></i>
-</div>
-<h4 class="font-semibold text-gray-900 mb-2">24/7 Security</h4>
-<p class="text-sm text-gray-600">Round-the-clock security and emergency support</p>
-</div>
-<div class="text-center">
-<div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
-<i class="ri-car-line text-white text-xl"></i>
-</div>
-<h4 class="font-semibold text-gray-900 mb-2">Transportation</h4>
-<p class="text-sm text-gray-600">Airport transfers and local transportation included</p>
+<div class="text-sm text-gray-600 mt-3">Commitment: 4-12 weeks</div>
 </div>
 </div>
 </div>
@@ -577,66 +745,16 @@ Documentation Required
 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
 <div class="calendar-card border border-gray-200 rounded-lg p-4 hover:border-primary transition-colors duration-200">
 <div class="text-center">
-<div class="text-2xl font-bold text-primary mb-1">Apr 2024</div>
-<div class="text-sm text-gray-600 mb-3">Kenya Mobile Clinic</div>
+<div class="text-2xl font-bold text-primary mb-1">Jun 2024</div>
+<div class="text-sm text-gray-600 mb-3">Uganda Medical Camps</div>
 <div class="space-y-2 text-xs">
 <div class="flex justify-between">
 <span class="text-gray-500">Application:</span>
-<span class="font-semibold text-red-500">Feb 15</span>
+<span class="font-semibold text-red-500">Apr 15</span>
 </div>
 <div class="flex justify-between">
 <span class="text-gray-500">Program:</span>
-<span class="font-semibold">Apr 8-22</span>
-</div>
-<div class="flex justify-between">
-<span class="text-gray-500">Spots:</span>
-<span class="font-semibold text-secondary">6 available</span>
-</div>
-<div class="flex justify-between">
-<span class="text-gray-500">Specialty:</span>
-<span class="font-semibold">General Practice</span>
-</div>
-</div>
-</div>
-</div>
-
-<div class="calendar-card border border-gray-200 rounded-lg p-4 hover:border-primary transition-colors duration-200">
-<div class="text-center">
-<div class="text-2xl font-bold text-primary mb-1">Jul 2024</div>
-<div class="text-sm text-gray-600 mb-3">Tanzania Emergency</div>
-<div class="space-y-2 text-xs">
-<div class="flex justify-between">
-<span class="text-gray-500">Application:</span>
-<span class="font-semibold text-green-600">May 1</span>
-</div>
-<div class="flex justify-between">
-<span class="text-gray-500">Program:</span>
-<span class="font-semibold">Jul 10-24</span>
-</div>
-<div class="flex justify-between">
-<span class="text-gray-500">Spots:</span>
-<span class="font-semibold text-secondary">4 available</span>
-</div>
-<div class="flex justify-between">
-<span class="text-gray-500">Specialty:</span>
-<span class="font-semibold">Emergency Med</span>
-</div>
-</div>
-</div>
-</div>
-
-<div class="calendar-card border border-gray-200 rounded-lg p-4 hover:border-primary transition-colors duration-200">
-<div class="text-center">
-<div class="text-2xl font-bold text-primary mb-1">Oct 2024</div>
-<div class="text-sm text-gray-600 mb-3">Botswana Training</div>
-<div class="space-y-2 text-xs">
-<div class="flex justify-between">
-<span class="text-gray-500">Application:</span>
-<span class="font-semibold text-green-600">Aug 15</span>
-</div>
-<div class="flex justify-between">
-<span class="text-gray-500">Program:</span>
-<span class="font-semibold">Oct 5-26</span>
+<span class="font-semibold">Jun 10-24</span>
 </div>
 <div class="flex justify-between">
 <span class="text-gray-500">Spots:</span>
@@ -652,8 +770,58 @@ Documentation Required
 
 <div class="calendar-card border border-gray-200 rounded-lg p-4 hover:border-primary transition-colors duration-200">
 <div class="text-center">
+<div class="text-2xl font-bold text-primary mb-1">Aug 2024</div>
+<div class="text-sm text-gray-600 mb-3">Traditional Medicine</div>
+<div class="space-y-2 text-xs">
+<div class="flex justify-between">
+<span class="text-gray-500">Application:</span>
+<span class="font-semibold text-green-600">Jun 1</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Program:</span>
+<span class="font-semibold">Aug 5-19</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Spots:</span>
+<span class="font-semibold text-secondary">12 available</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Specialty:</span>
+<span class="font-semibold">Open to all</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="calendar-card border border-gray-200 rounded-lg p-4 hover:border-primary transition-colors duration-200">
+<div class="text-center">
+<div class="text-2xl font-bold text-primary mb-1">Oct 2024</div>
+<div class="text-sm text-gray-600 mb-3">One Health Initiative</div>
+<div class="space-y-2 text-xs">
+<div class="flex justify-between">
+<span class="text-gray-500">Application:</span>
+<span class="font-semibold text-green-600">Aug 15</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Program:</span>
+<span class="font-semibold">Oct 7-28</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Spots:</span>
+<span class="font-semibold text-secondary">6 available</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-500">Specialty:</span>
+<span class="font-semibold">Vets & MDs</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="calendar-card border border-gray-200 rounded-lg p-4 hover:border-primary transition-colors duration-200">
+<div class="text-center">
 <div class="text-2xl font-bold text-primary mb-1">Jan 2025</div>
-<div class="text-sm text-gray-600 mb-3">Uganda Remote Care</div>
+<div class="text-sm text-gray-600 mb-3">Hospital & Lab Visits</div>
 <div class="space-y-2 text-xs">
 <div class="flex justify-between">
 <span class="text-gray-500">Application:</span>
@@ -661,7 +829,7 @@ Documentation Required
 </div>
 <div class="flex justify-between">
 <span class="text-gray-500">Program:</span>
-<span class="font-semibold">Jan 12-Feb 2</span>
+<span class="font-semibold">Jan 15-30</span>
 </div>
 <div class="flex justify-between">
 <span class="text-gray-500">Spots:</span>
@@ -669,7 +837,7 @@ Documentation Required
 </div>
 <div class="flex justify-between">
 <span class="text-gray-500">Specialty:</span>
-<span class="font-semibold">Public Health</span>
+<span class="font-semibold">Students+</span>
 </div>
 </div>
 </div>
@@ -691,7 +859,7 @@ Apply Now
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-12">
 <h2 class="text-4xl font-bold text-gray-900 mb-4">Start Your Medical Expedition</h2>
-<p class="text-xl text-gray-600 max-w-3xl mx-auto">Ready to make a difference in global healthcare? Apply for our medical expedition programs</p>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Ready to make a difference in East African healthcare? Apply for our medical expedition programs</p>
 </div>
 <div class="bg-gray-50 rounded-2xl p-8">
 <div class="grid lg:grid-cols-2 gap-12">
@@ -756,28 +924,28 @@ Apply Now
 <div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
 <i class="ri-check-line text-white text-xs hidden"></i>
 </div>
-<span class="text-sm text-gray-700">Mobile Clinics</span>
+<span class="text-sm text-gray-700">Medical Camps</span>
 </label>
 <label class="flex items-center">
 <input type="checkbox" class="hidden program-checkbox" data-program="training">
 <div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
 <i class="ri-check-line text-white text-xs hidden"></i>
 </div>
-<span class="text-sm text-gray-700">Medical Training</span>
+<span class="text-sm text-gray-700">Hospital Visits</span>
 </label>
 <label class="flex items-center">
 <input type="checkbox" class="hidden program-checkbox" data-program="emergency">
 <div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
 <i class="ri-check-line text-white text-xs hidden"></i>
 </div>
-<span class="text-sm text-gray-700">Emergency Support</span>
+<span class="text-sm text-gray-700">Traditional Medicine</span>
 </label>
 <label class="flex items-center">
 <input type="checkbox" class="hidden program-checkbox" data-program="remote">
 <div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
 <i class="ri-check-line text-white text-xs hidden"></i>
 </div>
-<span class="text-sm text-gray-700">Remote Healthcare</span>
+<span class="text-sm text-gray-700">One Health</span>
 </label>
 </div>
 </div>
@@ -804,7 +972,7 @@ Submit Application
 <div>
 <h4 class="font-semibold text-gray-900 mb-1">Medical Program Coordinator</h4>
 <p class="text-gray-600 mb-2">Speak with our medical expedition specialists</p>
-<p class="text-primary font-semibold">+254 700 987 654</p>
+<p class="text-primary font-semibold">+256 700 987 654</p>
 <p class="text-sm text-gray-500">Monday - Friday, 8:00 AM - 6:00 PM EAT</p>
 </div>
 </div>
@@ -855,77 +1023,176 @@ Comprehensive Support
 </div>
 </section>
 
-<footer class="bg-brown-900 text-white py-16" style="background-color: rgba(59, 42, 27, 1);">
+<section class="py-16 bg-gray-100">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid md:grid-cols-4 gap-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Medical Supplies Initiative</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Supporting rural clinics with critical medical supplies</p>
+</div>
+<div class="bg-white rounded-2xl shadow-lg p-8">
+<div class="grid md:grid-cols-2 gap-8">
 <div>
-<h3 class="text-xl font-['Pacifico'] mb-4">WildMed Safaris</h3>
-<p class="text-gray-300 mb-4">Creating unforgettable wildlife adventures that combine conservation, education, and cultural exchange.</p>
-<div class="flex space-x-4">
-<div class="w-8 h-8 flex items-center justify-center">
-<i class="ri-facebook-fill text-xl hover:text-green-400 cursor-pointer transition-colors"></i>
+<h3 class="text-2xl font-bold text-gray-900 mb-4">Donate Medical Supplies</h3>
+<p class="text-gray-600 mb-6">We coordinate the collection and distribution of medical supplies to support rural health clinics and laboratories in Uganda that are facing critical shortages.</p>
+<ul class="space-y-3 text-gray-700">
+<li class="flex items-start">
+<div class="w-5 h-5 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
 </div>
-<div class="w-8 h-8 flex items-center justify-center">
-<i class="ri-twitter-fill text-xl hover:text-green-400 cursor-pointer transition-colors"></i>
+<span>Medicines and pharmaceuticals</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
 </div>
-<div class="w-8 h-8 flex items-center justify-center">
-<i class="ri-instagram-fill text-xl hover:text-green-400 cursor-pointer transition-colors"></i>
+<span>Diagnostic equipment and lab supplies</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
 </div>
-<div class="w-8 h-8 flex items-center justify-center">
-<i class="ri-youtube-fill text-xl hover:text-green-400 cursor-pointer transition-colors"></i>
+<span>Surgical instruments and supplies</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
 </div>
+<span>Personal protective equipment (PPE)</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+<i class="ri-check-line text-white text-xs"></i>
 </div>
-</div>
-<div>
-<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-<ul class="space-y-2">
-<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">About Us</a></li>
-<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">Destinations</a></li>
-<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">Custom Expeditions</a></li>
-<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">Medical Programs</a></li>
-<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">Conservation</a></li>
+<span>Medical training materials</span>
+</li>
 </ul>
 </div>
+<div class="bg-gray-50 rounded-xl p-6">
+<h4 class="font-semibold text-gray-900 mb-4">How to Contribute</h4>
+<form class="space-y-4">
 <div>
-<h4 class="text-lg font-semibold mb-4">Contact Info</h4>
-<div class="space-y-2">
-<div class="flex items-center">
-<div class="w-5 h-5 flex items-center justify-center mr-2">
-<i class="ri-phone-line text-green-400"></i>
-</div>
-<span class="text-gray-300">+254 700 123 456</span>
-</div>
-<div class="flex items-center">
-<div class="w-5 h-5 flex items-center justify-center mr-2">
-<i class="ri-mail-line text-green-400"></i>
-</div>
-<span class="text-gray-300">info@wildmedsafaris.com</span>
-</div>
-<div class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center mr-2 mt-1">
-<i class="ri-map-pin-line text-green-400"></i>
-</div>
-<span class="text-gray-300">Nairobi, Kenya<br>East Africa</span>
-</div>
-</div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
+<input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your name">
 </div>
 <div>
-<h4 class="text-lg font-semibold mb-4">Newsletter</h4>
-<p class="text-gray-300 mb-4">Stay updated with our latest expeditions and conservation efforts.</p>
-<div class="flex">
-<input type="email" placeholder="Your email" class="flex-1 px-3 py-2 bg-white text-gray-900 rounded-l-md border-none focus:outline-none focus:ring-2 focus:ring-green-400 text-sm">
-<button class="bg-secondary hover:bg-green-700 px-4 py-2 rounded-r-md transition-colors duration-200">
-<div class="w-5 h-5 flex items-center justify-center">
-<i class="ri-send-plane-line text-white"></i>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+<input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your email">
 </div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Type of Donation</label>
+<select class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm">
+<option>Select donation type</option>
+<option>Medical Equipment</option>
+<option>Medicines</option>
+<option>Financial Contribution</option>
+<option>Other Supplies</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+<textarea rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Tell us about your donation..."></textarea>
+</div>
+<button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white py-3 !rounded-button font-semibold transition-colors duration-200 whitespace-nowrap">
+Submit Donation Inquiry
 </button>
+</form>
 </div>
 </div>
 </div>
-<div class="border-t border-gray-600 mt-8 pt-8 text-center">
-<p class="text-gray-300">&copy; 2024 WildMed Safaris. All rights reserved. | Privacy Policy | Terms of Service</p>
-</div>
-</div>
+</section>
+
+<footer class="bg-primary text-white">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Company Info -->
+      <div>
+        <div class="flex items-center space-x-3 mb-6">
+                <div class="flex items-center space-x-4">
+        <div class="w-16 h-16 flex-shrink-0">
+          <img src="img/android-chrome-192x192.png" alt="WildMed Safaris Logo" width="400" height="400">
+        </div>
+      </div>
+          <span class="text-xl font-['Pacifico']">WildMed</span>
+        </div>
+        <p class="text-gray-300 mb-6">Creating meaningful wildlife adventures that combine conservation, education, and unforgettable experiences across East Africa.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-facebook-fill"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-twitter-line"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-youtube-line"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+        <ul class="space-y-3">
+          <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a></li>
+          <li><a href="About-Us.html" class="text-gray-300 hover:text-white transition-colors duration-300">About Us</a></li>
+          <li><a href="Custom-Safaris.html" class="text-gray-300 hover:text-white transition-colors duration-300">Safari Packages</a></li>
+          <li><a href="Medical-Expedition-Programs.html" class="text-gray-300 hover:text-white transition-colors duration-300">Medical Expeditions</a></li>
+          <li><a href="Veterinary-Conservation-.html" class="text-gray-300 hover:text-white transition-colors duration-300">Vet Programs</a></li>
+          <li><a href="Gallery.html" class="text-gray-300 hover:text-white transition-colors duration-300">Gallery</a></li>
+          <li><a href="Review.html" class="text-gray-300 hover:text-white transition-colors duration-300">Reviews</a></li>
+        </ul>
+      </div>
+
+      <!-- Destinations -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Destinations</h3>
+        <ul class="space-y-3">
+          <li><a href="Kenya-Safaris.html" class="text-gray-300 hover:text-white transition-colors duration-300">Kenya Wildlife Safari</a></li>
+          <li><a href="Tanzania-Safari.html" class="text-gray-300 hover:text-white transition-colors duration-300">Tanzania Adventure</a></li>
+          <li><a href="Uganda-Adventures.html" class="text-gray-300 hover:text-white transition-colors duration-300">Uganda Gorilla Trek</a></li>
+          <li><a href="Rwanda-Safaris.html" class="text-gray-300 hover:text-white transition-colors duration-300">Rwanda Gorilla Experience</a></li>
+          <li><a href="Uganda-15-Days.html" class="text-gray-300 hover:text-white transition-colors duration-300">15-Day Grand Safari</a></li>
+          <li><a href="Rwanda-7-Days.html" class="text-gray-300 hover:text-white transition-colors duration-300">7-Day Rwanda Explorer</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <i class="ri-map-pin-line text-green-400 mt-1"></i>
+            <div class="text-gray-300">
+              <div>WildMed </div>
+              <div>Safaris and Field Projects</div>
+              <div>Plot 626, Seguku Katale</div>
+              <div>P.O.Box 10296</div>
+              <div>Kampala, Uganda</div>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="ri-phone-line text-green-400"></i>
+            <span class="text-gray-300">+256 740 205146</span> 
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="ri-phone-line text-green-400"></i>
+            <span class="text-gray-300">+256 777 370494</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="ri-mail-line text-green-400"></i>
+            <span class="text-gray-300">wildmeduganda@gmail.com</span>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-300">
+      <p>&copy; 2024 WildMed. All rights reserved. | <a href="Privacy-Policy.html" class="hover:text-white">Privacy Policy</a> | <a href="Terms-of-Service.html" class="hover:text-white">Terms of Service</a></p>
+    </div>
+  </div>
 </footer>
 
 <script id="specialty-dropdown">

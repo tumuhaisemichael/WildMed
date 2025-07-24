@@ -22,73 +22,528 @@
 </style>
 </head>
 <body class="bg-gray-50">
-<header class="fixed top-0 w-full z-50" style="background-color: rgba(59, 42, 27, 0.95);">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-16">
-<div class="flex items-center">
-<h1 class="text-white text-xl font-['Pacifico'] tracking-wide">WildMed Safaris</h1>
-</div>
-<nav class="hidden md:flex space-x-8">
-<a href="#" class="text-white hover:text-green-400 transition-colors duration-200">Home</a>
-<div class="relative group">
-<a href="#" class="text-white hover:text-green-400 transition-colors duration-200 flex items-center">
-Destinations
-<div class="w-4 h-4 flex items-center justify-center ml-1">
-<i class="ri-arrow-down-s-line text-sm"></i>
-</div>
-</a>
-<div class="absolute top-full left-0 mt-2 w-48 bg-blue-900 bg-opacity-90 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-t-md">East Africa</a>
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800">Southern Africa</a>
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-b-md">West Africa</a>
-</div>
-</div>
-<div class="relative group">
-<a href="#" class="text-white hover:text-green-400 transition-colors duration-200 flex items-center">
-Custom Expeditions
-<div class="w-4 h-4 flex items-center justify-center ml-1">
-<i class="ri-arrow-down-s-line text-sm"></i>
-</div>
-</a>
-<div class="absolute top-full left-0 mt-2 w-48 bg-blue-900 bg-opacity-90 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-t-md">Wildlife Focus</a>
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800">Photography Tours</a>
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-b-md">Adventure Safaris</a>
-</div>
-</div>
-<div class="relative group">
-<a href="#" class="text-green-400 hover:text-green-300 transition-colors duration-200 flex items-center">
-Vet Expeditions
-<div class="w-4 h-4 flex items-center justify-center ml-1">
-<i class="ri-arrow-down-s-line text-sm"></i>
-</div>
-</a>
-<div class="absolute top-full left-0 mt-2 w-48 bg-blue-900 bg-opacity-90 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-<a href="https://readdy.ai/home/345e607d-4005-4f04-acb2-e79926632841/2c59c689-7e18-4611-b593-c928cb5cd075" data-readdy="true" class="block px-4 py-2 text-green-400 hover:bg-blue-800 rounded-t-md">Conservation Programs</a>
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800">Research Projects</a>
-<a href="#" class="block px-4 py-2 text-white hover:bg-blue-800 rounded-b-md">Field Training</a>
-</div>
-</div>
-<a href="https://readdy.ai/home/345e607d-4005-4f04-acb2-e79926632841/8ca71a30-1eb2-4385-a2e4-8a523cffa694" data-readdy="true" class="text-white hover:text-green-400 transition-colors duration-200">Med Expeditions</a>
-</nav>
-<button class="md:hidden text-white">
-<div class="w-6 h-6 flex items-center justify-center">
-<i class="ri-menu-line text-xl"></i>
-</div>
-</button>
-</div>
-</div>
+<header class="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm">
+  <nav class="w-full px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-4">
+        <div class="w-16 h-16 flex-shrink-0">
+          <img src="img/android-chrome-192x192.png" alt="WildMed Safaris Logo" width="400" height="400">
+        </div>
+        <span class="text-white text-2xl font-bold">WildMed</span>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center space-x-8">
+        <a href="index.html" class="text-white hover:text-green-300 transition-colors duration-300">Home</a>
+        
+        <!-- Destinations Dropdown -->
+        <div class="relative dropdown-trigger group">
+          <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+            <span>Destinations</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="dropdown absolute top-full left-0 mt-2 w-48 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="Kenya-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Kenya Wildlife Safari</a>
+            <a href="Tanzania-Safari.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Tanzania Adventure</a>
+            <a href="Uganda-Adventures.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Uganda Gorilla Trek</a>
+            <a href="Rwanda-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Rwanda Gorilla Experience</a>
+          </div>
+        </div>
+
+        <!-- Custom Expeditions Dropdown -->
+        <div class="relative dropdown-trigger group">
+          <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+            <span>Custom Safaris</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="dropdown absolute top-full left-0 mt-2 w-56 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="Uganda-2-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">2-Day Gorilla Express</a>
+            <a href="Uganda-4-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">4-Day Wildlife Discovery</a>
+            <a href="Uganda-6-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">6-Day Primates & Wildlife</a>
+            <a href="Uganda-8-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">8-Day Ultimate Adventure</a>
+            <a href="Uganda-15-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">15-Day Grand Safari</a>
+            <a href="Rwanda-7-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">7-Day Rwanda Explorer</a>
+          </div>
+        </div>
+
+        <!-- Vet Expeditions Dropdown -->
+        <div class="relative dropdown-trigger group">
+          <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+            <span>Vet Programs</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="dropdown absolute top-full left-0 mt-2 w-56 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="Veterinary-Conservation-.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Wildlife Conservation Program</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Field Veterinary Training</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Animal Research Expedition</a>
+          </div>
+        </div>
+
+        <a href="Medical-Expedition-Programs.html" class="text-white hover:text-green-300 transition-colors duration-300">Medical Missions</a>
+        <a href="Gallery.html" class="text-white hover:text-green-300 transition-colors duration-300">Photo Gallery</a>
+        <a href="Review.html" class="text-white hover:text-green-300 transition-colors duration-300">Client Reviews</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="lg:hidden text-white focus:outline-none">
+        <i id="menu-icon" class="ri-menu-line text-2xl"></i>
+        <i id="close-icon" class="ri-close-line text-2xl hidden"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-primary/95 mt-4 rounded-lg overflow-hidden transition-all duration-300 max-h-0">
+      <div class="px-4 py-2 space-y-2">
+        <a href="index.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Home</a>
+        
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">
+            <span>Destinations</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="hidden dropdown-mobile-content pl-6">
+            <a href="Kenya-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Kenya Wildlife Safari</a>
+            <a href="Tanzania-Safari.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Tanzania Adventure</a>
+            <a href="Uganda-Adventures.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Uganda Gorilla Trek</a>
+            <a href="Rwanda-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Rwanda Gorilla Experience</a>
+          </div>
+        </div>
+
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">
+            <span>Custom Safaris</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="hidden dropdown-mobile-content pl-6">
+            <a href="Uganda-2-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">2-Day Gorilla Express</a>
+            <a href="Uganda-4-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">4-Day Wildlife Discovery</a>
+            <a href="Uganda-6-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">6-Day Primates & Wildlife</a>
+            <a href="Uganda-8-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">8-Day Ultimate Adventure</a>
+            <a href="Uganda-15-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">15-Day Grand Safari</a>
+            <a href="Rwanda-7-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">7-Day Rwanda Explorer</a>
+          </div>
+        </div>
+
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">
+            <span>Vet Programs</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="hidden dropdown-mobile-content pl-6">
+            <a href="Veterinary-Conservation-.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Wildlife Conservation Program</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Field Veterinary Training</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Animal Research Expedition</a>
+          </div>
+        </div>
+
+        <a href="Medical-Expedition-Programs.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Medical Missions</a>
+        <a href="Gallery.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Photo Gallery</a>
+        <a href="Review.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Client Reviews</a>
+      </div>
+    </div>
+  </nav>
 </header>
-<section class="relative h-screen flex items-center justify-center parallax-bg" style="background-image: url('https://readdy.ai/api/search-image?query=Veterinarian%20examining%20wild%20elephant%20in%20African%20savanna%20with%20conservation%20team%20in%20background%2C%20golden%20hour%20lighting%2C%20professional%20wildlife%20conservation%20scene%2C%20medical%20equipment%20and%20research%20tools%20visible%2C%20acacia%20trees%20and%20vast%20plains%20stretching%20to%20horizon%2C%20warm%20natural%20colors%2C%20documentary%20photography%20style%2C%20inspiring%20conservation%20work%20atmosphere&width=1920&height=1080&seq=conservation-hero&orientation=landscape');">
-<div class="absolute inset-0 bg-gradient-to-r from-blue-900 via-blue-800 to-transparent opacity-85"></div>
-<div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-<h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">Conservation Programs</h1>
-<p class="text-xl md:text-2xl mb-8 font-light">Join veterinary conservation initiatives that protect wildlife and support local communities</p>
-<button class="bg-secondary hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold !rounded-button transition-colors duration-200 whitespace-nowrap">
-Apply for Programs
-</button>
-</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  mobileMenuButton.addEventListener('click', function() {
+    const isExpanded = mobileMenu.classList.toggle('hidden');
+    
+    if (isExpanded) {
+      mobileMenu.style.maxHeight = '0';
+    } else {
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+    }
+    
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+  });
+
+  // Mobile dropdown triggers
+  const mobileDropdownTriggers = document.querySelectorAll('.dropdown-trigger-mobile');
+  
+  mobileDropdownTriggers.forEach(trigger => {
+    const button = trigger.querySelector('button');
+    const dropdown = trigger.querySelector('.dropdown-mobile-content');
+    
+    button.addEventListener('click', function() {
+      dropdown.classList.toggle('hidden');
+      
+      // Close other open dropdowns
+      mobileDropdownTriggers.forEach(otherTrigger => {
+        if (otherTrigger !== trigger) {
+          otherTrigger.querySelector('.dropdown-mobile-content').classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.style.maxHeight = '0';
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+      
+      // Also close all mobile dropdowns
+      document.querySelectorAll('.dropdown-mobile-content').forEach(dropdown => {
+        dropdown.classList.add('hidden');
+      });
+    }
+  });
+});
+</script>
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Parallax Background -->
+    <div class="absolute inset-0 parallax-bg bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Veterinarian%20examining%20wild%20elephant%20in%20African%20savanna%20with%20conservation%20team%20in%20background%2C%20golden%20hour%20lighting%2C%20professional%20wildlife%20conservation%20scene%2C%20medical%20equipment%20and%20research%20tools%20visible%2C%20acacia%20trees%20and%20vast%20plains%20stretching%20to%20horizon%2C%20warm%20natural%20colors%2C%20documentary%20photography%20style%2C%20inspiring%20conservation%20work%20atmosphere&width=1920&height=1080&seq=conservation-hero&orientation=landscape')">
+    </div>
+    
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-800/60 to-transparent"></div>
+    
+    <!-- Main Content Container -->
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-6 text-center">
+        <div class="flex flex-col items-center">
+            <!-- Eyebrow Tag -->
+            <div class="mb-6">
+                <span class="inline-block px-4 py-2 bg-green-600/30 backdrop-blur-sm rounded-full text-green-300 text-sm font-medium tracking-wider border border-green-400/30">
+                    VETERINARY CONSERVATION
+                </span>
+            </div>
+            
+            <!-- Headline -->
+            <div class="mb-8">
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-300 via-green-400 to-blue-300">
+                        Conservation
+                    </span>
+                    <span class="block text-white mt-4">Programs</span>
+                </h1>
+            </div>
+            
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-3 gap-6 mb-10 w-full max-w-md mx-auto">
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+                    <div class="text-3xl font-bold text-green-300">50+</div>
+                    <div class="text-sm">Wildlife Species</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+                    <div class="text-3xl font-bold text-green-300">120+</div>
+                    <div class="text-sm">Veterinarians</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+                    <div class="text-3xl font-bold text-green-300">15</div>
+                    <div class="text-sm">Countries</div>
+                </div>
+            </div>
+            
+            <!-- CTA Button -->
+            <button class="relative overflow-hidden group bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white px-10 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/30">
+                <span class="relative z-10 flex items-center justify-center space-x-3">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <span>Apply for Programs</span>
+                </span>
+                <span class="absolute inset-0 bg-white/10 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Bottom Gradient Fade -->
+    <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/40 to-transparent"></div>
 </section>
+
+<!-- Veterinary Ecological Safaris Section -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Veterinary Ecological Safaris</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Experience wildlife veterinary medicine and conservation in East Africa</p>
+    </div>
+    <div class="bg-gray-50 rounded-xl p-8">
+      <p class="text-lg text-gray-700 mb-6">Visit Uganda and East Africa and work with our experienced wildlife and domestic animal veterinarians to study both the practical and theoretical elements of:</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <div class="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+              <i class="ri-check-line text-white text-xs"></i>
+            </div>
+            <span class="text-gray-700">Wildlife veterinary medicine and conservation in Africa</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+              <i class="ri-check-line text-white text-xs"></i>
+            </div>
+            <span class="text-gray-700">Wildlife search, rescue, and rehabilitation (snare removals and treatment)</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+              <i class="ri-check-line text-white text-xs"></i>
+            </div>
+            <span class="text-gray-700">Interaction of wild and domestic animals and their implications</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+              <i class="ri-check-line text-white text-xs"></i>
+            </div>
+            <span class="text-gray-700">Human-wildlife conflicts</span>
+          </li>
+        </ul>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <div class="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+              <i class="ri-check-line text-white text-xs"></i>
+            </div>
+            <span class="text-gray-700">Park management</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+              <i class="ri-check-line text-white text-xs"></i>
+            </div>
+            <span class="text-gray-700">Disease monitoring and surveillance</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+              <i class="ri-check-line text-white text-xs"></i>
+            </div>
+            <span class="text-gray-700">Field laboratory settings</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+              <i class="ri-check-line text-white text-xs"></i>
+            </div>
+            <span class="text-gray-700">Free-living aquatic animal health</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+              <i class="ri-check-line text-white text-xs"></i>
+            </div>
+            <span class="text-gray-700">Herptile management and therapeutics</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wildlife Immobilisation Course Section -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Wildlife Immobilisation Course in Uganda</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Our signature 14-day training course in field techniques for wildlife capture</p>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-12">
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Course Overview</h3>
+        <p class="text-gray-700 mb-6">Designed for veterinary students and veterinarians, our Field Techniques for Zoo and Wildlife Capture course provides hands-on training in wildlife immobilization techniques. The course can be tailored to meet the specific needs of your group.</p>
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+              <i class="ri-check-line text-white text-xs"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800">Comprehensive Training</h4>
+              <p class="text-gray-600 text-sm">Learn safe and effective wildlife capture techniques</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+              <i class="ri-check-line text-white text-xs"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800">Practical Experience</h4>
+              <p class="text-gray-600 text-sm">Hands-on field work with various African wildlife species</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="w-6 h-6 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+              <i class="ri-check-line text-white text-xs"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800">Customizable Content</h4>
+              <p class="text-gray-600 text-sm">Tailored to meet your group's specific learning objectives</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Course Highlights</h3>
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+              <span class="text-white font-bold">1</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800">Drug Delivery Systems</h4>
+              <p class="text-gray-600">Learn various methods for administering immobilizing drugs</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+              <span class="text-white font-bold">2</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800">Safety Protocols</h4>
+              <p class="text-gray-600">Understand safety measures for both animals and handlers</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+              <span class="text-white font-bold">3</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800">Species-Specific Techniques</h4>
+              <p class="text-gray-600">Specialized approaches for different African wildlife</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+              <span class="text-white font-bold">4</span>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800">Monitoring & Recovery</h4>
+              <p class="text-gray-600">Proper procedures for animal monitoring and recovery</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experiential Tourism Section -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Experiential Tourism in Uganda and East Africa</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Unique wildlife encounters through technology-assisted tracking</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Wildlife%20tracking%20team%20using%20satellite%20technology%20in%20African%20savanna%2C%20professional%20equipment%2C%20researchers%20monitoring%20wildlife%20movements%2C%20sunset%20lighting%2C%20documentary%20style%20photography%2C%20conservation%20technology%20in%20action&width=600&height=400&seq=tracking-tech&orientation=landscape');"></div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Predator Tracking</h3>
+          <p class="text-gray-600 mb-4">Join our local veterinarians and researchers to track large predators like lions and leopards using satellite technology. Experience up-close encounters while contributing to conservation research.</p>
+          <button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
+        </div>
+      </div>
+      <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Photographers%20capturing%20wildlife%20in%20African%20national%20park%2C%20professional%20camera%20equipment%2C%20close-up%20of%20elephants%20or%20lions%2C%20golden%20hour%20lighting%2C%20documentary%20style%20photography%2C%20ethical%20wildlife%20photography%20practices&width=600&height=400&seq=wildlife-photo&orientation=landscape');"></div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Photography Expeditions</h3>
+          <p class="text-gray-600 mb-4">Detour inside national parks for unparalleled wildlife photography opportunities. Our experts will help you capture stunning images while ensuring minimal disturbance to animals.</p>
+          <button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Field Projects Section -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Field Projects in Uganda and East Africa</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Conduct research at the interface between animals, humans, and the environment</p>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Research Support</h3>
+          <p class="text-gray-700 mb-6">We welcome individual and group projects addressing critical conservation issues. Our team provides comprehensive support to facilitate your research in Uganda and East Africa.</p>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+                <i class="ri-check-line text-white text-xs"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800">Permit Processing</h4>
+                <p class="text-gray-600 text-sm">Assistance with research permits and national park entry</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+                <i class="ri-check-line text-white text-xs"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800">Community Access</h4>
+                <p class="text-gray-600 text-sm">Introduction letters to community leaders</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1 mr-3">
+                <i class="ri-check-line text-white text-xs"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800">Legal Compliance</h4>
+                <p class="text-gray-600 text-sm">Materials transfer agreements (MTAs) and other necessary documents</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Project Areas</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-blue-50 rounded-lg p-4">
+              <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-2">
+                <i class="ri-leaf-line text-blue-600"></i>
+              </div>
+              <h4 class="font-semibold text-gray-800">Wildlife Health</h4>
+            </div>
+            <div class="bg-green-50 rounded-lg p-4">
+              <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mb-2">
+                <i class="ri-community-line text-green-600"></i>
+              </div>
+              <h4 class="font-semibold text-gray-800">Human-Wildlife Conflict</h4>
+            </div>
+            <div class="bg-purple-50 rounded-lg p-4">
+              <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mb-2">
+                <i class="ri-flask-line text-purple-600"></i>
+              </div>
+              <h4 class="font-semibold text-gray-800">Disease Ecology</h4>
+            </div>
+            <div class="bg-orange-50 rounded-lg p-4">
+              <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mb-2">
+                <i class="ri-map-pin-line text-orange-600"></i>
+              </div>
+              <h4 class="font-semibold text-gray-800">Habitat Conservation</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Section -->
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Featured Videos</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Experience our conservation programs through video</p>
+    </div>
+    <div class="max-w-4xl mx-auto">
+      <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-xl overflow-hidden">
+        <video controls class="w-full h-full object-cover">
+          <source src="assets/VIDS EFE/VID-20210425-WA0013.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Rest of your existing content (Our Conservation Initiatives, Application Process, etc.) -->
 <section class="py-16 bg-white">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-16">
@@ -771,77 +1226,98 @@ Quick Response Guarantee
 </div>
 </div>
 </section>
-<footer class="bg-brown-900 text-white py-16" style="background-color: rgba(59, 42, 27, 1);">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid md:grid-cols-4 gap-8">
-<div>
-<h3 class="text-xl font-['Pacifico'] mb-4">WildMed Safaris</h3>
-<p class="text-gray-300 mb-4">Creating unforgettable wildlife adventures that combine conservation, education, and cultural exchange.</p>
-<div class="flex space-x-4">
-<div class="w-8 h-8 flex items-center justify-center">
-<i class="ri-facebook-fill text-xl hover:text-green-400 cursor-pointer transition-colors"></i>
-</div>
-<div class="w-8 h-8 flex items-center justify-center">
-<i class="ri-twitter-fill text-xl hover:text-green-400 cursor-pointer transition-colors"></i>
-</div>
-<div class="w-8 h-8 flex items-center justify-center">
-<i class="ri-instagram-fill text-xl hover:text-green-400 cursor-pointer transition-colors"></i>
-</div>
-<div class="w-8 h-8 flex items-center justify-center">
-<i class="ri-youtube-fill text-xl hover:text-green-400 cursor-pointer transition-colors"></i>
-</div>
-</div>
-</div>
-<div>
-<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-<ul class="space-y-2">
-<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">About Us</a></li>
-<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">Destinations</a></li>
-<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">Custom Expeditions</a></li>
-<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">Medical Programs</a></li>
-<li><a href="#" class="text-gray-300 hover:text-green-400 transition-colors">Conservation</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-lg font-semibold mb-4">Contact Info</h4>
-<div class="space-y-2">
-<div class="flex items-center">
-<div class="w-5 h-5 flex items-center justify-center mr-2">
-<i class="ri-phone-line text-green-400"></i>
-</div>
-<span class="text-gray-300">+254 700 123 456</span>
-</div>
-<div class="flex items-center">
-<div class="w-5 h-5 flex items-center justify-center mr-2">
-<i class="ri-mail-line text-green-400"></i>
-</div>
-<span class="text-gray-300">info@wildmedsafaris.com</span>
-</div>
-<div class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center mr-2 mt-1">
-<i class="ri-map-pin-line text-green-400"></i>
-</div>
-<span class="text-gray-300">Nairobi, Kenya<br>East Africa</span>
-</div>
-</div>
-</div>
-<div>
-<h4 class="text-lg font-semibold mb-4">Newsletter</h4>
-<p class="text-gray-300 mb-4">Stay updated with our latest expeditions and conservation efforts.</p>
-<div class="flex">
-<input type="email" placeholder="Your email" class="flex-1 px-3 py-2 bg-white text-gray-900 rounded-l-md border-none focus:outline-none focus:ring-2 focus:ring-green-400 text-sm">
-<button class="bg-secondary hover:bg-green-700 px-4 py-2 rounded-r-md transition-colors duration-200">
-<div class="w-5 h-5 flex items-center justify-center">
-<i class="ri-send-plane-line text-white"></i>
-</div>
-</button>
-</div>
-</div>
-</div>
-<div class="border-t border-gray-600 mt-8 pt-8 text-center">
-<p class="text-gray-300">&copy; 2024 WildMed Safaris. All rights reserved. | Privacy Policy | Terms of Service</p>
-</div>
-</div>
+<footer class="bg-primary text-white">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Company Info -->
+      <div>
+        <div class="flex items-center space-x-3 mb-6">
+                <div class="flex items-center space-x-4">
+        <div class="w-16 h-16 flex-shrink-0">
+          <img src="img/android-chrome-192x192.png" alt="WildMed Safaris Logo" width="400" height="400">
+        </div>
+      </div>
+          <span class="text-xl font-['Pacifico']">WildMed</span>
+        </div>
+        <p class="text-gray-300 mb-6">Creating meaningful wildlife adventures that combine conservation, education, and unforgettable experiences across East Africa.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-facebook-fill"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-twitter-line"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-youtube-line"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+        <ul class="space-y-3">
+          <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a></li>
+          <li><a href="About-Us.html" class="text-gray-300 hover:text-white transition-colors duration-300">About Us</a></li>
+          <li><a href="Custom-Safaris.html" class="text-gray-300 hover:text-white transition-colors duration-300">Safari Packages</a></li>
+          <li><a href="Medical-Expedition-Programs.html" class="text-gray-300 hover:text-white transition-colors duration-300">Medical Expeditions</a></li>
+          <li><a href="Veterinary-Conservation-.html" class="text-gray-300 hover:text-white transition-colors duration-300">Vet Programs</a></li>
+          <li><a href="Gallery.html" class="text-gray-300 hover:text-white transition-colors duration-300">Gallery</a></li>
+          <li><a href="Review.html" class="text-gray-300 hover:text-white transition-colors duration-300">Reviews</a></li>
+        </ul>
+      </div>
+
+      <!-- Destinations -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Destinations</h3>
+        <ul class="space-y-3">
+          <li><a href="Kenya-Safaris.html" class="text-gray-300 hover:text-white transition-colors duration-300">Kenya Wildlife Safari</a></li>
+          <li><a href="Tanzania-Safari.html" class="text-gray-300 hover:text-white transition-colors duration-300">Tanzania Adventure</a></li>
+          <li><a href="Uganda-Adventures.html" class="text-gray-300 hover:text-white transition-colors duration-300">Uganda Gorilla Trek</a></li>
+          <li><a href="Rwanda-Safaris.html" class="text-gray-300 hover:text-white transition-colors duration-300">Rwanda Gorilla Experience</a></li>
+          <li><a href="Uganda-15-Days.html" class="text-gray-300 hover:text-white transition-colors duration-300">15-Day Grand Safari</a></li>
+          <li><a href="Rwanda-7-Days.html" class="text-gray-300 hover:text-white transition-colors duration-300">7-Day Rwanda Explorer</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <i class="ri-map-pin-line text-green-400 mt-1"></i>
+            <div class="text-gray-300">
+              <div>WildMed </div>
+              <div>Safaris and Field Projects</div>
+              <div>Plot 626, Seguku Katale</div>
+              <div>P.O.Box 10296</div>
+              <div>Kampala, Uganda</div>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="ri-phone-line text-green-400"></i>
+            <span class="text-gray-300">+256 740 205146</span> 
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="ri-phone-line text-green-400"></i>
+            <span class="text-gray-300">+256 777 370494</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="ri-mail-line text-green-400"></i>
+            <span class="text-gray-300">wildmeduganda@gmail.com</span>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-300">
+      <p>&copy; 2024 WildMed. All rights reserved. | <a href="Privacy-Policy.html" class="hover:text-white">Privacy Policy</a> | <a href="Terms-of-Service.html" class="hover:text-white">Terms of Service</a></p>
+    </div>
+  </div>
 </footer>
 <script id="experience-dropdown">
 document.addEventListener('DOMContentLoaded', function() {

@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Expeditions - WildMed Safaris</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#2563eb',secondary:'#059669'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.timeline-line { background: linear-gradient(to bottom, #059669, #2563eb); }
+.day-card { transition: all 0.3s ease; }
+.day-card:hover { transform: translateY(-4px); }
+.parallax-bg { background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
+</style>
+</head>
+<body class="bg-gray-50">
+<header class="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm">
+  <nav class="w-full px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-4">
+        <div class="w-16 h-16 flex-shrink-0">
+          <img src="img/android-chrome-192x192.png" alt="WildMed Safaris Logo" width="400" height="400">
+        </div>
+        <span class="text-white text-2xl font-bold">WildMed</span>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center space-x-8">
+        <a href="index.html" class="text-white hover:text-green-300 transition-colors duration-300">Home</a>
+        
+        <!-- Destinations Dropdown -->
+        <div class="relative dropdown-trigger group">
+          <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+            <span>Destinations</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="dropdown absolute top-full left-0 mt-2 w-48 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="Kenya-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Kenya Wildlife Safari</a>
+            <a href="Tanzania-Safari.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Tanzania Adventure</a>
+            <a href="Uganda-Adventures.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Uganda Gorilla Trek</a>
+            <a href="Rwanda-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Rwanda Gorilla Experience</a>
+          </div>
+        </div>
+
+        <!-- Custom Expeditions Dropdown -->
+        <div class="relative dropdown-trigger group">
+          <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+            <span>Custom Safaris</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="dropdown absolute top-full left-0 mt-2 w-56 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="Uganda-2-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">2-Day Gorilla Express</a>
+            <a href="Uganda-4-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">4-Day Wildlife Discovery</a>
+            <a href="Uganda-6-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">6-Day Primates & Wildlife</a>
+            <a href="Uganda-8-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">8-Day Ultimate Adventure</a>
+            <a href="Uganda-15-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">15-Day Grand Safari</a>
+            <a href="Rwanda-7-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">7-Day Rwanda Explorer</a>
+          </div>
+        </div>
+
+        <!-- Vet Expeditions Dropdown -->
+        <div class="relative dropdown-trigger group">
+          <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+            <span>Vet Programs</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="dropdown absolute top-full left-0 mt-2 w-56 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="Veterinary-Conservation-.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Wildlife Conservation Program</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Field Veterinary Training</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Animal Research Expedition</a>
+          </div>
+        </div>
+
+        <a href="Medical-Expedition-Programs.html" class="text-white hover:text-green-300 transition-colors duration-300">Medical Missions</a>
+        <a href="Gallery.html" class="text-white hover:text-green-300 transition-colors duration-300">Photo Gallery</a>
+        <a href="Review.html" class="text-white hover:text-green-300 transition-colors duration-300">Client Reviews</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="lg:hidden text-white focus:outline-none">
+        <i id="menu-icon" class="ri-menu-line text-2xl"></i>
+        <i id="close-icon" class="ri-close-line text-2xl hidden"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-primary/95 mt-4 rounded-lg overflow-hidden transition-all duration-300 max-h-0">
+      <div class="px-4 py-2 space-y-2">
+        <a href="index.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Home</a>
+        
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">
+            <span>Destinations</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="hidden dropdown-mobile-content pl-6">
+            <a href="Kenya-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Kenya Wildlife Safari</a>
+            <a href="Tanzania-Safari.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Tanzania Adventure</a>
+            <a href="Uganda-Adventures.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Uganda Gorilla Trek</a>
+            <a href="Rwanda-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Rwanda Gorilla Experience</a>
+          </div>
+        </div>
+
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">
+            <span>Custom Safaris</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="hidden dropdown-mobile-content pl-6">
+            <a href="Uganda-2-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">2-Day Gorilla Express</a>
+            <a href="Uganda-4-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">4-Day Wildlife Discovery</a>
+            <a href="Uganda-6-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">6-Day Primates & Wildlife</a>
+            <a href="Uganda-8-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">8-Day Ultimate Adventure</a>
+            <a href="Uganda-15-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">15-Day Grand Safari</a>
+            <a href="Rwanda-7-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">7-Day Rwanda Explorer</a>
+          </div>
+        </div>
+
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">
+            <span>Vet Programs</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="hidden dropdown-mobile-content pl-6">
+            <a href="Veterinary-Conservation-.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Wildlife Conservation Program</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Field Veterinary Training</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Animal Research Expedition</a>
+          </div>
+        </div>
+
+        <a href="Medical-Expedition-Programs.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Medical Missions</a>
+        <a href="Gallery.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Photo Gallery</a>
+        <a href="Review.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Client Reviews</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  mobileMenuButton.addEventListener('click', function() {
+    const isExpanded = mobileMenu.classList.toggle('hidden');
+    
+    if (isExpanded) {
+      mobileMenu.style.maxHeight = '0';
+    } else {
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+    }
+    
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+  });
+
+  // Mobile dropdown triggers
+  const mobileDropdownTriggers = document.querySelectorAll('.dropdown-trigger-mobile');
+  
+  mobileDropdownTriggers.forEach(trigger => {
+    const button = trigger.querySelector('button');
+    const dropdown = trigger.querySelector('.dropdown-mobile-content');
+    
+    button.addEventListener('click', function() {
+      dropdown.classList.toggle('hidden');
+      
+      // Close other open dropdowns
+      mobileDropdownTriggers.forEach(otherTrigger => {
+        if (otherTrigger !== trigger) {
+          otherTrigger.querySelector('.dropdown-mobile-content').classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.style.maxHeight = '0';
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+      
+      // Also close all mobile dropdowns
+      document.querySelectorAll('.dropdown-mobile-content').forEach(dropdown => {
+        dropdown.classList.add('hidden');
+      });
+    }
+  });
+});
+</script>
+
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Parallax Background with subtle zoom effect -->
+    <div class="absolute inset-0 parallax-bg bg-cover bg-center transition-transform duration-1000 ease-out transform scale-100 hover:scale-105" style="background-image: url('https://readdy.ai/api/search-image?query=African%20safari%20landscape%20with%20acacia%20trees%20at%20golden%20sunset%2C%20vast%20savanna%20plains%20stretching%20to%20horizon%2C%20warm%20orange%20and%20amber%20lighting%2C%20majestic%20wildlife%20silhouettes%20in%20distance%2C%20professional%20nature%20photography%2C%20cinematic%20composition%20with%20dramatic%20sky&width=1920&height=1080&seq=hero-safari&orientation=landscape')">
+    </div>
+    
+    <!-- Gradient Overlay with Diagonal Split -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-800/60 to-transparent"></div>
+    
+    <!-- Floating Wildlife Silhouettes -->
+    <div class="absolute inset-0 opacity-20">
+        <div class="absolute left-10 top-1/4 w-32 h-32">
+            <svg viewBox="0 0 200 200" class="w-full h-full">
+                <path d="M50,100 C70,50 130,50 150,100 C170,150 130,180 100,150 C70,120 30,150 50,100 Z" fill="#059669"/>
+            </svg>
+        </div>
+        <div class="absolute right-20 top-1/3 w-24 h-24">
+            <svg viewBox="0 0 200 200" class="w-full h-full">
+                <path d="M100,50 C150,70 150,130 100,150 C50,170 30,130 50,100 C70,70 50,30 100,50 Z" fill="#059669"/>
+            </svg>
+        </div>
+    </div>
+    
+    <!-- Content Container -->
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-6 text-center">
+        <!-- Eyebrow Text -->
+        <div class="mb-4">
+            <span class="inline-block px-4 py-2 bg-green-600/30 backdrop-blur-sm rounded-full text-green-300 text-sm font-medium tracking-wider border border-green-400/30">
+                WILDLIFE EXPERIENCE
+            </span>
+        </div>
+        
+        <!-- Main Headline with Gradient Text -->
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-tight">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-green-300 to-green-400">
+                Craft Your Perfect
+            </span>
+            <span class="block mt-2 text-white">Safari Adventure</span>
+        </h1>
+        
+        <!-- Description with Animated Underline -->
+        <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-gray-200 relative inline-block group">
+            <span>Design a personalized expedition tailored to your dreams</span>
+            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-amber-400 to-green-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </p>
+        
+        <!-- CTA Button with Glow Effect -->
+        <button class="relative overflow-hidden group bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white px-10 py-5 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/20">
+            <span class="relative z-10 flex items-center justify-center space-x-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <span>Start Planning Your Journey</span>
+            </span>
+            <span class="absolute inset-0 bg-gradient-to-r from-amber-400/30 to-green-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+        </button>
+        
+        <!-- Scrolling Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-8 h-8 text-white">
+                <svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bottom Gradient Fade -->
+    <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/40 to-transparent"></div>
+</section>
+
+<section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Expedition Toggle -->
+    <div class="flex justify-center mb-12">
+      <div class="inline-flex items-center bg-gray-100 rounded-full p-1">
+        <button id="gorillaBtn" class="px-6 py-2 rounded-full font-medium text-white bg-green-600 transition-all">
+          Gorilla Trekking
+        </button>
+        <button id="predatorBtn" class="px-6 py-2 rounded-full font-medium text-gray-600 hover:text-gray-800 transition-all">
+          Predator Expedition
+        </button>
+      </div>
+    </div>
+    
+    <!-- First 2-Day Expedition (Gorilla Trekking) -->
+    <div id="gorillaExpedition">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">2-Day Expedition: Gorilla Trekking</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Experience mountain gorillas in Bwindi Impenetrable National Park</p>
+      </div>
+      
+      <div class="relative">
+        <div class="absolute left-8 top-0 bottom-0 w-1 timeline-line rounded-full"></div>
+        <div class="space-y-12">
+          
+          <!-- Day 1 -->
+          <div class="relative flex items-start">
+            <div class="absolute left-4 w-8 h-8 bg-green-600 rounded-full flex items-center justify-center z-10">
+              <span class="text-white font-bold text-sm">1</span>
+            </div>
+            <div class="ml-20 day-card bg-white rounded-xl shadow-lg p-6 w-full">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-2xl font-bold text-gray-900">Day 1: Journey to Bwindi</h3>
+                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Western Uganda</span>
+              </div>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                      <i class="ri-road-map-line text-green-600"></i>
+                    </div>
+                    Travel Highlights
+                  </h4>
+                  <ul class="text-gray-600 space-y-1">
+                    <li>• Scenic drive through Uganda's highlands</li>
+                    <li>• Stop at Uganda Equator landmark</li>
+                    <li>• Local craft market visits</li>
+                    <li>• Arrival at Bwindi lodge</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                      <i class="ri-information-line text-green-600"></i>
+                    </div>
+                    Preparation
+                  </h4>
+                  <ul class="text-gray-600 space-y-1">
+                    <li>• Gorilla trekking orientation</li>
+                    <li>• Equipment check (hiking boots, rain gear)</li>
+                    <li>• Camera and battery preparation</li>
+                    <li>• Early dinner and rest</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Day 2 -->
+          <div class="relative flex items-start">
+            <div class="absolute left-4 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center z-10">
+              <span class="text-white font-bold text-sm">2</span>
+            </div>
+            <div class="ml-20 day-card bg-white rounded-xl shadow-lg p-6 w-full">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-2xl font-bold text-gray-900">Day 2: Gorilla Trekking Experience</h3>
+                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Bwindi Impenetrable NP</span>
+              </div>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                      <i class="ri-user-star-line text-purple-500"></i>
+                    </div>
+                    Gorilla Trekking
+                  </h4>
+                  <ul class="text-gray-600 space-y-1">
+                    <li>• Early morning briefing with rangers</li>
+                    <li>• 2-6 hour trek through dense forest</li>
+                    <li>• 1 hour with mountain gorilla family</li>
+                    <li>• Optional Gorilla Doctors specialist trek</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                      <i class="ri-community-line text-blue-500"></i>
+                    </div>
+                    Afternoon Options
+                  </h4>
+                  <ul class="text-gray-600 space-y-1">
+                    <li>• Batwa cultural experience</li>
+                    <li>• Community walk and crafts</li>
+                    <li>• Traditional cooking demonstration</li>
+                    <li>• Return transfer to Kampala/Entebbe</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                  <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-shield-check-line text-blue-600"></i>
+                  </div>
+                  Trekking Essentials
+                </h4>
+                <p class="text-gray-600 text-sm">Permits required (included). Physical fitness recommended but multiple difficulty levels available. Porters can be hired locally.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Image Gallery for Gorilla Trekking -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <h3 class="text-2xl font-bold text-center mb-8">Expedition Highlights</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer" onclick="openModal('assets/2 Day expedition/2day1.jpg', 'Bwindi Forest', 'gorilla')">
+            <img src="assets/2 Day expedition/2day1.jpg" alt="Bwindi Forest" class="w-full h-48 object-cover hover:scale-105 transition-transform">
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer" onclick="openModal('assets/2 Day expedition/2day2.jpg', 'Mountain Gorillas', 'gorilla')">
+            <img src="assets/2 Day expedition/2day2.jpg" alt="Mountain Gorillas" class="w-full h-48 object-cover hover:scale-105 transition-transform">
+          </div>
+          <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer" onclick="openModal('assets/2 Day expedition/2day3.jpg', 'Gorilla Family', 'gorilla')">
+            <img src="assets/2 Day expedition/2day3.jpg" alt="Gorilla Family" class="w-full h-48 object-cover hover:scale-105 transition-transform">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Second 2-Day Expedition (Predator) - Initially Hidden -->
+    <div id="predatorExpedition" class="hidden">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">2-Day Expedition: Predator Tracking</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Large Predator (Lion & Leopard) Experiential Expedition</p>
+      </div>
+      
+      <div class="relative">
+        <div class="absolute left-8 top-0 bottom-0 w-1 timeline-line rounded-full"></div>
+        <div class="space-y-12">
+          
+          <!-- Day 1 -->
+          <div class="relative flex items-start">
+            <div class="absolute left-4 w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center z-10">
+              <span class="text-white font-bold text-sm">1</span>
+            </div>
+            <div class="ml-20 day-card bg-white rounded-xl shadow-lg p-6 w-full">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-2xl font-bold text-gray-900">Day 1: Predator Tracking</h3>
+                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Queen Elizabeth NP</span>
+              </div>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                      <i class="ri-radar-line text-orange-500"></i>
+                    </div>
+                    Tracking Experience
+                  </h4>
+                  <ul class="text-gray-600 space-y-1">
+                    <li>• Morning briefing with researchers</li>
+                    <li>• Satellite tracking equipment setup</li>
+                    <li>• Off-road tracking of collared predators</li>
+                    <li>• Behavior observation and data collection</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                      <i class="ri-camera-line text-blue-500"></i>
+                    </div>
+                    Photography
+                  </h4>
+                  <ul class="text-gray-600 space-y-1">
+                    <li>• Professional wildlife photography tips</li>
+                    <li>• Best angles for predator shots</li>
+                    <li>• Low-light photography techniques</li>
+                    <li>• Ethical distance guidelines</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-4 p-4 bg-red-50 rounded-lg">
+                <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                  <div class="w-5 h-5 flex items-center justify-center mr-2">
+                    <i class="ri-shield-star-line text-red-600"></i>
+                  </div>
+                  Special Features
+                </h4>
+                <p class="text-gray-600 text-sm">This unique experience involves following lions and leopards using satellite tracking technology in Queen Elizabeth and Murchison Falls National Parks.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Day 2 -->
+          <div class="relative flex items-start">
+            <div class="absolute left-4 w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center z-10">
+              <span class="text-white font-bold text-sm">2</span>
+            </div>
+            <div class="ml-20 day-card bg-white rounded-xl shadow-lg p-6 w-full">
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="text-2xl font-bold text-gray-900">Day 2: Research & Conservation</h3>
+                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Field Research</span>
+              </div>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                      <i class="ri-file-chart-line text-yellow-500"></i>
+                    </div>
+                    Research Activities
+                  </h4>
+                  <ul class="text-gray-600 space-y-1">
+                    <li>• Data collection and analysis</li>
+                    <li>• Predator movement patterns</li>
+                    <li>• Habitat use documentation</li>
+                    <li>• Conservation strategy discussion</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                      <i class="ri-flight-takeoff-line text-gray-500"></i>
+                    </div>
+                    Return Journey
+                  </h4>
+                  <ul class="text-gray-600 space-y-1">
+                    <li>• Transfer to Entebbe/Kampala</li>
+                    <li>• Research certificate presentation</li>
+                    <li>• Farewell lunch</li>
+                    <li>• Airport drop-off</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Image Gallery for Predator Expedition -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+        <h3 class="text-2xl font-bold text-center mb-8">Expedition Highlights</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer" onclick="openModal('assets/2day experiential predator/2day.jpg', 'Predator Tracking', 'predator')">
+            <img src="assets/2day experiential predator/2day.jpg" alt="Predator Tracking" class="w-full h-48 object-cover hover:scale-105 transition-transform">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- The Modal -->
+  <div id="imageModal" class="fixed inset-0 z-50 hidden w-full h-full bg-black bg-opacity-90 overflow-auto">
+    <div class="relative w-full h-full flex items-center justify-center">
+      <!-- Close Button -->
+      <span class="absolute top-4 right-4 text-white text-4xl font-bold cursor-pointer hover:text-gray-300 transition-colors" onclick="closeModal()">&times;</span>
+      
+      <!-- Modal Content -->
+      <div class="max-w-4xl mx-auto p-4">
+        <img id="modalImage" class="max-h-[80vh] max-w-full mx-auto" src="" alt="">
+        <div id="caption" class="text-white text-center text-xl mt-4"></div>
+      </div>
+      
+      <!-- Navigation Arrows -->
+      <button class="absolute left-4 text-white text-4xl font-bold cursor-pointer hover:text-gray-300 transition-colors" onclick="changeImage(-1)">&#10094;</button>
+      <button class="absolute right-4 text-white text-4xl font-bold cursor-pointer hover:text-gray-300 transition-colors" onclick="changeImage(1)">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Toggle between expeditions
+  const gorillaBtn = document.getElementById('gorillaBtn');
+  const predatorBtn = document.getElementById('predatorBtn');
+  const gorillaExpedition = document.getElementById('gorillaExpedition');
+  const predatorExpedition = document.getElementById('predatorExpedition');
+
+  gorillaBtn.addEventListener('click', () => {
+    gorillaBtn.classList.add('bg-green-600', 'text-white');
+    gorillaBtn.classList.remove('text-gray-600');
+    predatorBtn.classList.remove('bg-green-600', 'text-white');
+    predatorBtn.classList.add('text-gray-600');
+    gorillaExpedition.classList.remove('hidden');
+    predatorExpedition.classList.add('hidden');
+  });
+
+  predatorBtn.addEventListener('click', () => {
+    predatorBtn.classList.add('bg-green-600', 'text-white');
+    predatorBtn.classList.remove('text-gray-600');
+    gorillaBtn.classList.remove('bg-green-600', 'text-white');
+    gorillaBtn.classList.add('text-gray-600');
+    predatorExpedition.classList.remove('hidden');
+    gorillaExpedition.classList.add('hidden');
+  });
+
+  // Modal functionality
+  let currentImageIndex = 0;
+  let currentExpeditionImages = {
+    gorilla: [
+      {src: 'assets/2 Day expedition/2day1.jpg', alt: 'Bwindi Forest'},
+      {src: 'assets/2 Day expedition/2day2.jpg', alt: 'Mountain Gorillas'},
+      {src: 'assets/2 Day expedition/2day3.jpg', alt: 'Gorilla Family'}
+    ],
+    predator: [
+      {src: 'assets/2day experiential predator/2day.jpg', alt: 'Predator Tracking'}
+    ]
+  };
+  let currentExpedition = 'gorilla';
+
+  function openModal(src, alt, expedition) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const captionText = document.getElementById('caption');
+    
+    currentExpedition = expedition;
+    currentImageIndex = currentExpeditionImages[expedition].findIndex(img => img.src === src);
+    
+    modal.style.display = "flex";
+    modalImg.src = src;
+    captionText.innerHTML = alt;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+
+  function changeImage(n) {
+    currentImageIndex += n;
+    
+    // Wrap around if at ends
+    if (currentImageIndex >= currentExpeditionImages[currentExpedition].length) currentImageIndex = 0;
+    if (currentImageIndex < 0) currentImageIndex = currentExpeditionImages[currentExpedition].length - 1;
+    
+    const modalImg = document.getElementById('modalImage');
+    const captionText = document.getElementById('caption');
+    
+    modalImg.src = currentExpeditionImages[currentExpedition][currentImageIndex].src;
+    captionText.innerHTML = currentExpeditionImages[currentExpedition][currentImageIndex].alt;
+  }
+
+  // Close modal when clicking outside image
+  document.getElementById('imageModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeModal();
+    }
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    const modal = document.getElementById('imageModal');
+    if (modal.style.display === "flex") {
+      if (e.key === "Escape") closeModal();
+      if (e.key === "ArrowLeft") changeImage(-1);
+      if (e.key === "ArrowRight") changeImage(1);
+    }
+  });
+</script>
+
+<style>
+  /* Animation for modal */
+  #modalImage {
+    animation: zoom 0.3s;
+  }
+
+  @keyframes zoom {
+    from {transform: scale(0.9); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    #modalImage {
+      max-width: 95%;
+    }
+    
+    .day-card {
+      margin-left: 3rem;
+    }
+    
+    .timeline-line {
+      left: 1.5rem;
+    }
+    
+    /* Toggle button adjustments */
+    #gorillaBtn, #predatorBtn {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+  }
+</style>
+<section class="py-16 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Trip Preparation Guide</h2>
+<p class="text-xl text-gray-600">Everything you need to know before your adventure begins</p>
+</div>
+<div class="space-y-4">
+<div class="bg-white rounded-xl shadow-lg overflow-hidden">
+<button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 preparation-toggle" data-target="documentation">
+<h3 class="text-lg font-semibold text-gray-900">Required Documentation</h3>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line text-gray-400 transition-transform duration-200"></i>
+</div>
+</button>
+<div class="px-6 pb-6 hidden preparation-content" id="documentation">
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<h4 class="font-semibold text-gray-800 mb-2">Essential Documents</h4>
+<ul class="text-gray-600 space-y-1">
+<li>• Valid passport (6+ months remaining)</li>
+<li>• Visa requirements by destination</li>
+<li>• International vaccination certificate</li>
+<li>• Travel insurance documentation</li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800 mb-2">Medical Requirements</h4>
+<ul class="text-gray-600 space-y-1">
+<li>• Yellow fever vaccination (required)</li>
+<li>• Malaria prophylaxis consultation</li>
+<li>• Medical fitness certificate</li>
+<li>• Emergency contact information</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-lg overflow-hidden">
+<button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 preparation-toggle" data-target="packing">
+<h3 class="text-lg font-semibold text-gray-900">Packing Essentials</h3>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line text-gray-400 transition-transform duration-200"></i>
+</div>
+</button>
+<div class="px-6 pb-6 hidden preparation-content" id="packing">
+<div class="grid md:grid-cols-3 gap-6">
+<div>
+<h4 class="font-semibold text-gray-800 mb-2">Clothing</h4>
+<ul class="text-gray-600 space-y-1">
+<li>• Neutral colored safari clothing</li>
+<li>• Long-sleeved shirts and pants</li>
+<li>• Comfortable walking boots</li>
+<li>• Sun hat and sunglasses</li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800 mb-2">Equipment</h4>
+<ul class="text-gray-600 space-y-1">
+<li>• Binoculars (8x32 recommended)</li>
+<li>• Camera with extra batteries</li>
+<li>• Headlamp and flashlight</li>
+<li>• Personal first aid kit</li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800 mb-2">Personal Items</h4>
+<ul class="text-gray-600 space-y-1">
+<li>• Sunscreen (SPF 30+)</li>
+<li>• Insect repellent</li>
+<li>• Personal medications</li>
+<li>• Reusable water bottle</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-lg overflow-hidden">
+<button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 preparation-toggle" data-target="fitness">
+<h3 class="text-lg font-semibold text-gray-900">Fitness & Health</h3>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line text-gray-400 transition-transform duration-200"></i>
+</div>
+</button>
+<div class="px-6 pb-6 hidden preparation-content" id="fitness">
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<h4 class="font-semibold text-gray-800 mb-2">Physical Preparation</h4>
+<ul class="text-gray-600 space-y-1">
+<li>• Regular walking/hiking practice</li>
+<li>• Cardiovascular fitness building</li>
+<li>• Flexibility and stretching routine</li>
+<li>• Altitude acclimatization tips</li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold text-gray-800 mb-2">Health Considerations</h4>
+<ul class="text-gray-600 space-y-1">
+<li>• Pre-travel medical consultation</li>
+<li>• Dietary restrictions planning</li>
+<li>• Mental preparation techniques</li>
+<li>• Emergency medical procedures</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Transparent Pricing</h2>
+<p class="text-xl text-gray-600">Clear breakdown of costs with no hidden fees</p>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8">
+<div class="grid lg:grid-cols-2 gap-8">
+<div>
+<h3 class="text-2xl font-bold text-gray-900 mb-6">7-Day Custom Safari Package</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-3 border-b border-gray-200">
+<span class="text-gray-700">Base safari experience (per person)</span>
+<span class="font-semibold text-gray-900">$2,850</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-gray-200">
+<span class="text-gray-700">Luxury accommodation upgrade</span>
+<span class="font-semibold text-gray-900">$450</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-gray-200">
+<span class="text-gray-700">Medical/conservation activities</span>
+<span class="font-semibold text-gray-900">$320</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-gray-200">
+<span class="text-gray-700">Cultural immersion program</span>
+<span class="font-semibold text-gray-900">$180</span>
+</div>
+<div class="flex justify-between items-center py-3 font-bold text-lg">
+<span class="text-gray-900">Total per person</span>
+<span class="text-secondary">$3,800</span>
+</div>
+</div>
+<div class="mt-8 p-4 bg-green-50 rounded-lg">
+<h4 class="font-semibold text-green-800 mb-2">Early Booking Benefits</h4>
+<ul class="text-green-700 text-sm space-y-1">
+<li>• 15% discount for bookings 6+ months in advance</li>
+<li>• Free airport transfers</li>
+<li>• Complimentary cultural workshop</li>
+<li>• Priority accommodation selection</li>
+</ul>
+</div>
+</div>
+<div>
+<div class="bg-white rounded-xl p-6 shadow-lg mb-6">
+<h4 class="font-semibold text-gray-900 mb-4 flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-check-line text-green-500"></i>
+</div>
+Included in Price
+</h4>
+<ul class="text-gray-600 space-y-2">
+<li>• All accommodation (7 nights)</li>
+<li>• All meals and beverages</li>
+<li>• Professional guide services</li>
+<li>• Transportation and transfers</li>
+<li>• Park entrance fees</li>
+<li>• Medical supervision</li>
+<li>• Equipment and safety gear</li>
+<li>• Certificate of participation</li>
+</ul>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-lg">
+<h4 class="font-semibold text-gray-900 mb-4 flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2">
+<i class="ri-close-line text-red-500"></i>
+</div>
+Not Included
+</h4>
+<ul class="text-gray-600 space-y-2">
+<li>• International flights</li>
+<li>• Visa fees</li>
+<li>• Travel insurance</li>
+<li>• Personal shopping</li>
+<li>• Alcoholic beverages (premium)</li>
+<li>• Gratuities</li>
+<li>• Optional activities</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="text-center mt-8">
+<button class="bg-secondary hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold !rounded-button transition-colors duration-200 whitespace-nowrap mr-4">
+Book Your Adventure
+</button>
+<button class="bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 px-8 py-4 text-lg font-semibold !rounded-button transition-colors duration-200 whitespace-nowrap">
+Request Custom Quote
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">What Our Adventurers Say</h2>
+<p class="text-xl text-gray-600">Real experiences from our custom expedition participants</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white rounded-xl shadow-lg p-6">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-user-fill text-gray-600"></i>
+</div>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Dr. Sarah Mitchell</h4>
+<p class="text-sm text-gray-600">Wildlife Veterinarian, Canada</p>
+</div>
+</div>
+<div class="flex mb-3">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+</div>
+<p class="text-gray-600 italic">"The custom medical expedition exceeded all expectations. Working alongside local veterinarians while experiencing incredible wildlife was transformative. The attention to detail in planning made every day seamless."</p>
+</div>
+<div class="bg-white rounded-xl shadow-lg p-6">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-user-fill text-gray-600"></i>
+</div>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">James Rodriguez</h4>
+<p class="text-sm text-gray-600">Photography Enthusiast, Spain</p>
+</div>
+</div>
+<div class="flex mb-3">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+</div>
+<p class="text-gray-600 italic">"As a wildlife photographer, I needed specific timing and locations. WildMed created a perfect itinerary that captured the great migration at its peak. The guides knew exactly where to position us for the best shots."</p>
+</div>
+<div class="bg-white rounded-xl shadow-lg p-6">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-user-fill text-gray-600"></i>
+</div>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Dr. Amara Okafor</h4>
+<p class="text-sm text-gray-600">Medical Researcher, Nigeria</p>
+</div>
+</div>
+<div class="flex mb-3">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill text-yellow-400"></i>
+</div>
+</div>
+<p class="text-gray-600 italic">"The cultural immersion component was incredible. Living with the Masai community and learning traditional medicine practices while contributing to conservation efforts created memories that will last forever."</p>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-primary text-white">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Company Info -->
+      <div>
+        <div class="flex items-center space-x-3 mb-6">
+                <div class="flex items-center space-x-4">
+        <div class="w-16 h-16 flex-shrink-0">
+          <img src="img/android-chrome-192x192.png" alt="WildMed Safaris Logo" width="400" height="400">
+        </div>
+      </div>
+          <span class="text-xl font-['Pacifico']">WildMed</span>
+        </div>
+        <p class="text-gray-300 mb-6">Creating meaningful wildlife adventures that combine conservation, education, and unforgettable experiences across East Africa.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-facebook-fill"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-twitter-line"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-youtube-line"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+        <ul class="space-y-3">
+          <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a></li>
+          <li><a href="About-Us.html" class="text-gray-300 hover:text-white transition-colors duration-300">About Us</a></li>
+          <li><a href="Custom-Safaris.html" class="text-gray-300 hover:text-white transition-colors duration-300">Safari Packages</a></li>
+          <li><a href="Medical-Expedition-Programs.html" class="text-gray-300 hover:text-white transition-colors duration-300">Medical Expeditions</a></li>
+          <li><a href="Veterinary-Conservation-.html" class="text-gray-300 hover:text-white transition-colors duration-300">Vet Programs</a></li>
+          <li><a href="Gallery.html" class="text-gray-300 hover:text-white transition-colors duration-300">Gallery</a></li>
+          <li><a href="Review.html" class="text-gray-300 hover:text-white transition-colors duration-300">Reviews</a></li>
+        </ul>
+      </div>
+
+      <!-- Destinations -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Destinations</h3>
+        <ul class="space-y-3">
+          <li><a href="Kenya-Safaris.html" class="text-gray-300 hover:text-white transition-colors duration-300">Kenya Wildlife Safari</a></li>
+          <li><a href="Tanzania-Safari.html" class="text-gray-300 hover:text-white transition-colors duration-300">Tanzania Adventure</a></li>
+          <li><a href="Uganda-Adventures.html" class="text-gray-300 hover:text-white transition-colors duration-300">Uganda Gorilla Trek</a></li>
+          <li><a href="Rwanda-Safaris.html" class="text-gray-300 hover:text-white transition-colors duration-300">Rwanda Gorilla Experience</a></li>
+          <li><a href="Uganda-15-Days.html" class="text-gray-300 hover:text-white transition-colors duration-300">15-Day Grand Safari</a></li>
+          <li><a href="Rwanda-7-Days.html" class="text-gray-300 hover:text-white transition-colors duration-300">7-Day Rwanda Explorer</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <i class="ri-map-pin-line text-green-400 mt-1"></i>
+            <div class="text-gray-300">
+              <div>WildMed </div>
+              <div>Safaris and Field Projects</div>
+              <div>Plot 626, Seguku Katale</div>
+              <div>P.O.Box 10296</div>
+              <div>Kampala, Uganda</div>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="ri-phone-line text-green-400"></i>
+            <span class="text-gray-300">+256 740 205146</span> 
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="ri-phone-line text-green-400"></i>
+            <span class="text-gray-300">+256 777 370494</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="ri-mail-line text-green-400"></i>
+            <span class="text-gray-300">wildmeduganda@gmail.com</span>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-300">
+      <p>&copy; 2024 WildMed. All rights reserved. | <a href="Privacy-Policy.html" class="hover:text-white">Privacy Policy</a> | <a href="Terms-of-Service.html" class="hover:text-white">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+<script id="slider-functionality">
+document.addEventListener('DOMContentLoaded', function() {
+const durationSlider = document.querySelector('input[type="range"][min="3"]');
+const groupSlider = document.querySelector('input[type="range"][min="2"]');
+const durationValue = document.getElementById('duration-value');
+const groupValue = document.getElementById('group-value');
+durationSlider.addEventListener('input', function() {
+durationValue.textContent = this.value + ' days';
+});
+groupSlider.addEventListener('input', function() {
+groupValue.textContent = this.value + ' people';
+});
+});
+</script>
+<script id="activity-level-selector">
+document.addEventListener('DOMContentLoaded', function() {
+const activityBtns = document.querySelectorAll('.activity-btn');
+activityBtns.forEach(btn => {
+btn.addEventListener('click', function() {
+activityBtns.forEach(b => {
+b.classList.remove('bg-secondary', 'text-white', 'border-secondary');
+b.classList.add('border-gray-300', 'hover:border-secondary', 'hover:text-secondary');
+});
+this.classList.remove('border-gray-300', 'hover:border-secondary', 'hover:text-secondary');
+this.classList.add('bg-secondary', 'text-white', 'border-secondary');
+});
+});
+});
+</script>
+<script id="accommodation-dropdown">
+document.addEventListener('DOMContentLoaded', function() {
+const accommodationBtn = document.getElementById('accommodation-btn');
+const accommodationDropdown = document.getElementById('accommodation-dropdown');
+const accommodationText = document.getElementById('accommodation-text');
+const accommodationOptions = document.querySelectorAll('.accommodation-option');
+accommodationBtn.addEventListener('click', function() {
+accommodationDropdown.classList.toggle('hidden');
+});
+accommodationOptions.forEach(option => {
+option.addEventListener('click', function() {
+const value = this.dataset.value;
+const text = this.textContent;
+accommodationText.textContent = text;
+accommodationDropdown.classList.add('hidden');
+});
+});
+document.addEventListener('click', function(e) {
+if (!accommodationBtn.contains(e.target) && !accommodationDropdown.contains(e.target)) {
+accommodationDropdown.classList.add('hidden');
+}
+});
+});
+</script>
+<script id="preparation-toggles">
+document.addEventListener('DOMContentLoaded', function() {
+const toggles = document.querySelectorAll('.preparation-toggle');
+toggles.forEach(toggle => {
+toggle.addEventListener('click', function() {
+const targetId = this.dataset.target;
+const content = document.getElementById(targetId);
+const icon = this.querySelector('i');
+content.classList.toggle('hidden');
+icon.classList.toggle('rotate-180');
+});
+});
+});
+</script>
+</body>
+</html>

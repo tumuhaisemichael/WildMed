@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WildMed Safaris - Reviews</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#3B2A1B',
+        secondary: '#2D5A3D'
+      },
+      borderRadius: {
+        'none': '0px',
+        'sm': '4px',
+        DEFAULT: '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '20px',
+        '2xl': '24px',
+        '3xl': '32px',
+        'full': '9999px',
+        'button': '8px'
+      }
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+  :where([class^="ri-"])::before {
+    content: "\f3c2";
+  }
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+  .dropdown-trigger:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .star-rating {
+    color: #FFD700;
+    font-size: 1.2rem;
+  }
+  .review-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+</style>
+</head>
+<body class="font-['Inter'] text-gray-800">
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm">
+  <nav class="w-full px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-4">
+        <div class="w-16 h-16 flex-shrink-0">
+          <img src="img/android-chrome-192x192.png" alt="WildMed Safaris Logo" width="400" height="400">
+        </div>
+        <span class="text-white text-2xl font-bold">WildMed</span>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center space-x-8">
+        <a href="index.html" class="text-white hover:text-green-300 transition-colors duration-300">Home</a>
+        
+        <!-- Destinations Dropdown -->
+        <div class="relative dropdown-trigger group">
+          <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+            <span>Destinations</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="dropdown absolute top-full left-0 mt-2 w-48 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="Kenya-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Kenya Wildlife Safari</a>
+            <a href="Tanzania-Safari.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Tanzania Adventure</a>
+            <a href="Uganda-Adventures.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Uganda Gorilla Trek</a>
+            <a href="Rwanda-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Rwanda Gorilla Experience</a>
+          </div>
+        </div>
+
+        <!-- Custom Expeditions Dropdown -->
+        <div class="relative dropdown-trigger group">
+          <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+            <span>Custom Safaris</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="dropdown absolute top-full left-0 mt-2 w-56 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="Uganda-2-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">2-Day Gorilla Express</a>
+            <a href="Uganda-4-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">4-Day Wildlife Discovery</a>
+            <a href="Uganda-6-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">6-Day Primates & Wildlife</a>
+            <a href="Uganda-8-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">8-Day Ultimate Adventure</a>
+            <a href="Uganda-15-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">15-Day Grand Safari</a>
+            <a href="Rwanda-7-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">7-Day Rwanda Explorer</a>
+          </div>
+        </div>
+
+        <!-- Vet Expeditions Dropdown -->
+        <div class="relative dropdown-trigger group">
+          <button class="text-white hover:text-green-300 transition-colors duration-300 flex items-center space-x-1">
+            <span>Vet Programs</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="dropdown absolute top-full left-0 mt-2 w-56 bg-blue-900/90 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+            <a href="Veterinary-Conservation-.html" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Wildlife Conservation Program</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Field Veterinary Training</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 transition-colors duration-300">Animal Research Expedition</a>
+          </div>
+        </div>
+
+        <a href="Medical-Expedition-Programs.html" class="text-white hover:text-green-300 transition-colors duration-300">Medical Missions</a>
+        <a href="Gallery.html" class="text-white hover:text-green-300 transition-colors duration-300">Photo Gallery</a>
+        <a href="Review.html" class="text-white hover:text-green-300 transition-colors duration-300">Client Reviews</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="lg:hidden text-white focus:outline-none">
+        <i id="menu-icon" class="ri-menu-line text-2xl"></i>
+        <i id="close-icon" class="ri-close-line text-2xl hidden"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-primary/95 mt-4 rounded-lg overflow-hidden transition-all duration-300 max-h-0">
+      <div class="px-4 py-2 space-y-2">
+        <a href="index.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Home</a>
+        
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">
+            <span>Destinations</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="hidden dropdown-mobile-content pl-6">
+            <a href="Kenya-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Kenya Wildlife Safari</a>
+            <a href="Tanzania-Safari.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Tanzania Adventure</a>
+            <a href="Uganda-Adventures.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Uganda Gorilla Trek</a>
+            <a href="Rwanda-Safaris.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Rwanda Gorilla Experience</a>
+          </div>
+        </div>
+
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">
+            <span>Custom Safaris</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="hidden dropdown-mobile-content pl-6">
+            <a href="Uganda-2-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">2-Day Gorilla Express</a>
+            <a href="Uganda-4-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">4-Day Wildlife Discovery</a>
+            <a href="Uganda-6-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">6-Day Primates & Wildlife</a>
+            <a href="Uganda-8-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">8-Day Ultimate Adventure</a>
+            <a href="Uganda-15-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">15-Day Grand Safari</a>
+            <a href="Rwanda-7-Days.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">7-Day Rwanda Explorer</a>
+          </div>
+        </div>
+
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">
+            <span>Vet Programs</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </button>
+          <div class="hidden dropdown-mobile-content pl-6">
+            <a href="Veterinary-Conservation-.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Wildlife Conservation Program</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Field Veterinary Training</a>
+            <a href="#" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Animal Research Expedition</a>
+          </div>
+        </div>
+
+        <a href="Medical-Expedition-Programs.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Medical Missions</a>
+        <a href="Gallery.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Photo Gallery</a>
+        <a href="Review.html" class="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors duration-300">Client Reviews</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  mobileMenuButton.addEventListener('click', function() {
+    const isExpanded = mobileMenu.classList.toggle('hidden');
+    
+    if (isExpanded) {
+      mobileMenu.style.maxHeight = '0';
+    } else {
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+    }
+    
+    menuIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+  });
+
+  // Mobile dropdown triggers
+  const mobileDropdownTriggers = document.querySelectorAll('.dropdown-trigger-mobile');
+  
+  mobileDropdownTriggers.forEach(trigger => {
+    const button = trigger.querySelector('button');
+    const dropdown = trigger.querySelector('.dropdown-mobile-content');
+    
+    button.addEventListener('click', function() {
+      dropdown.classList.toggle('hidden');
+      
+      // Close other open dropdowns
+      mobileDropdownTriggers.forEach(otherTrigger => {
+        if (otherTrigger !== trigger) {
+          otherTrigger.querySelector('.dropdown-mobile-content').classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(event) {
+    if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.style.maxHeight = '0';
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+      
+      // Also close all mobile dropdowns
+      document.querySelectorAll('.dropdown-mobile-content').forEach(dropdown => {
+        dropdown.classList.add('hidden');
+      });
+    }
+  });
+});
+</script>
+<!-- Hero Section -->
+<!-- Modern Hero Section -->
+<section class="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden mt-16 bg-gray-900">
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-70">
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-group-of-friends-eat-and-drink-by-the-campfire-4646-large.mp4" type="video/mp4">
+    <!-- Fallback image -->
+    <img src="https://readdy.ai/api/search-image?query=African%20safari%20sunset%20with%20group%20of%20happy%20travelers%20toasting%20with%20drinks%2C%20golden%20hour%20lighting%2C%20professional%20photography%2C%20authentic%20travel%20experience%2C%20community%20and%20camaraderie%20mood&width=1920&height=600&seq=reviews_hero&orientation=landscape" 
+         alt="Safari sunset" 
+         class="absolute inset-0 w-full h-full object-cover">
+  </video>
+
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-br from-amber-600/30 via-blue-900/70 to-indigo-900/80"></div>
+  
+  <!-- Animated Floating Elements -->
+  <div class="absolute top-20 left-20 w-16 h-16 rounded-full bg-amber-400/20 animate-float1"></div>
+  <div class="absolute top-1/3 right-1/4 w-24 h-24 rounded-full bg-blue-400/20 animate-float2"></div>
+  <div class="absolute bottom-1/4 left-1/3 w-20 h-20 rounded-full bg-white/10 animate-float3"></div>
+
+  <!-- Content Container -->
+  <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+    <!-- Animated Title -->
+    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
+      <span class="inline-block animate-fadeInUp">
+        Guest <span class="text-amber-300">Reviews</span>
+      </span>
+    </h1>
+    
+    <!-- Subtitle with Typing Effect -->
+    <p class="text-xl md:text-2xl text-gray-200 mb-8 animate-fadeInUp delay-100">
+      <span class="typed-text">Hear what travelers say about their WildMed Safaris adventures</span>
+      <span class="cursor">|</span>
+    </p>
+    
+    <!-- Interactive Rating Display -->
+    <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 animate-fadeInUp delay-200">
+      <div class="flex mr-3">
+        <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <svg class="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+      </div>
+      <span class="text-white font-medium">4.9/5 from 127 reviews</span>
+    </div>
+    
+    <!-- Animated Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Animations */
+  @keyframes float1 {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20px) translateX(10px); }
+  }
+  @keyframes float2 {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(15px) translateX(-15px); }
+  }
+  @keyframes float3 {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-10px) translateX(-10px); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+    40% { transform: translateY(-20px) translateX(-50%); }
+    60% { transform: translateY(-10px) translateX(-50%); }
+  }
+  
+  .animate-float1 { animation: float1 8s ease-in-out infinite; }
+  .animate-float2 { animation: float2 10s ease-in-out infinite; }
+  .animate-float3 { animation: float3 12s ease-in-out infinite; }
+  .animate-fadeInUp { animation: fadeInUp 0.8s ease-out forwards; }
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .animate-bounce { animation: bounce 2s infinite; }
+  
+  /* Typing effect */
+  .typed-text { border-right: 2px solid rgba(255,255,255,0.75); }
+  .cursor { animation: blink 1s infinite; }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+</style>
+
+<script>
+  // Typing effect script
+  document.addEventListener('DOMContentLoaded', function() {
+    const typedTextSpan = document.querySelector(".typed-text");
+    const cursorSpan = document.querySelector(".cursor");
+    
+    const textArray = ["Hear what travelers say about their WildMed Safaris adventures", 
+                      "Discover authentic experiences from our guests",
+                      "See why our safaris receive 5-star reviews"];
+    const typingDelay = 100;
+    const erasingDelay = 50;
+    const newTextDelay = 2000;
+    let textArrayIndex = 0;
+    let charIndex = 0;
+    
+    function type() {
+      if (charIndex < textArray[textArrayIndex].length) {
+        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+      } 
+      else {
+        setTimeout(erase, newTextDelay);
+      }
+    }
+    
+    function erase() {
+      if (charIndex > 0) {
+        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+        charIndex--;
+        setTimeout(erase, erasingDelay);
+      } 
+      else {
+        textArrayIndex++;
+        if(textArrayIndex>=textArray.length) textArrayIndex=0;
+        setTimeout(type, typingDelay + 200);
+      }
+    }
+    
+    // Start animation
+    setTimeout(type, 1000);
+  });
+</script>
+<!-- Reviews Section -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4">Traveler Experiences</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Read authentic reviews from our guests who have explored East Africa with us</p>
+    </div>
+
+    <!-- Review Submission Form -->
+    <div class="bg-white rounded-xl shadow-lg p-8 mb-16 max-w-4xl mx-auto">
+      <h3 class="text-2xl font-bold mb-6 text-center">Share Your Experience</h3>
+      <form id="review-form" class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+          </div>
+          <div>
+            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+          </div>
+        </div>
+        <div>
+          <label for="safari" class="block text-gray-700 font-medium mb-2">Safari Package</label>
+          <select id="safari" name="safari" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+            <option value="">Select your safari package</option>
+            <option value="Kenya Wildlife Safari">Kenya Wildlife Safari</option>
+            <option value="Tanzania Adventure">Tanzania Adventure</option>
+            <option value="Uganda Gorilla Trek">Uganda Gorilla Trek</option>
+            <option value="Rwanda Conservation Tour">Rwanda Conservation Tour</option>
+            <option value="Custom Expedition">Custom Expedition</option>
+            <option value="Medical Volunteer Program">Medical Volunteer Program</option>
+            <option value="Veterinary Field Experience">Veterinary Field Experience</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-gray-700 font-medium mb-2">Rating</label>
+          <div class="flex space-x-2">
+            <input type="radio" id="star5" name="rating" value="5" class="hidden">
+            <label for="star5" class="star-rating cursor-pointer text-2xl">★</label>
+            <input type="radio" id="star4" name="rating" value="4" class="hidden">
+            <label for="star4" class="star-rating cursor-pointer text-2xl">★</label>
+            <input type="radio" id="star3" name="rating" value="3" class="hidden">
+            <label for="star3" class="star-rating cursor-pointer text-2xl">★</label>
+            <input type="radio" id="star2" name="rating" value="2" class="hidden">
+            <label for="star2" class="star-rating cursor-pointer text-2xl">★</label>
+            <input type="radio" id="star1" name="rating" value="1" class="hidden">
+            <label for="star1" class="star-rating cursor-pointer text-2xl">★</label>
+          </div>
+        </div>
+        <div>
+          <label for="review" class="block text-gray-700 font-medium mb-2">Your Review</label>
+          <textarea id="review" name="review" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"></textarea>
+        </div>
+        <div>
+          <label for="photos" class="block text-gray-700 font-medium mb-2">Upload Photos (Optional)</label>
+          <input type="file" id="photos" name="photos" multiple accept="image/*" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
+        </div>
+        <div class="flex items-center">
+          <input type="checkbox" id="consent" name="consent" required class="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500">
+          <label for="consent" class="ml-2 text-gray-700">I agree to have my review published on the WildMed Safaris website</label>
+        </div>
+        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-lg text-lg font-semibold transition-colors duration-300">
+          Submit Review
+        </button>
+      </form>
+    </div>
+
+    <!-- Reviews Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Review 1 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden review-card">
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-primary font-bold text-xl">JD</div>
+            <div class="ml-4">
+              <h4 class="font-semibold">James Donovan</h4>
+              <div class="flex items-center">
+                <div class="star-rating">
+                  ★★★★★
+                </div>
+                <span class="text-gray-500 text-sm ml-2">Kenya Wildlife Safari</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4">The Kenya Wildlife Safari exceeded all expectations! Our guide was incredibly knowledgeable about animal behavior and conservation efforts. We saw the Big Five within the first two days. The accommodations were luxurious yet eco-friendly.</p>
+          <div class="flex space-x-2 mb-4">
+            <img src="https://readdy.ai/api/search-image?query=lion%20on%20savanna%20kenya%20professional%20photography&width=200&height=200&seq=review1_1&orientation=squarish" alt="Lion sighting" class="w-16 h-16 object-cover rounded-lg">
+            <img src="https://readdy.ai/api/search-image?query=sunset%20masai%20mara%20kenya&width=200&height=200&seq=review1_2&orientation=squarish" alt="Masai Mara sunset" class="w-16 h-16 object-cover rounded-lg">
+          </div>
+          <p class="text-gray-500 text-sm">Posted: March 15, 2024</p>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden review-card">
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-primary font-bold text-xl">SM</div>
+            <div class="ml-4">
+              <h4 class="font-semibold">Sarah Mitchell</h4>
+              <div class="flex items-center">
+                <div class="star-rating">
+                  ★★★★★
+                </div>
+                <span class="text-gray-500 text-sm ml-2">Medical Volunteer Program</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4">As a medical student, this was the most impactful experience of my education. We provided care in remote communities while learning about tropical medicine. The combination of clinical work and safari was perfect. The WildMed team supported us every step of the way.</p>
+          <div class="flex space-x-2 mb-4">
+            <img src="https://readdy.ai/api/search-image?query=medical%20clinic%20africa%20volunteers&width=200&height=200&seq=review2_1&orientation=squarish" alt="Medical clinic" class="w-16 h-16 object-cover rounded-lg">
+          </div>
+          <p class="text-gray-500 text-sm">Posted: February 28, 2024</p>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden review-card">
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-primary font-bold text-xl">RT</div>
+            <div class="ml-4">
+              <h4 class="font-semibold">Robert Taylor</h4>
+              <div class="flex items-center">
+                <div class="star-rating">
+                  ★★★★☆
+                </div>
+                <span class="text-gray-500 text-sm ml-2">Uganda Gorilla Trek</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4">The gorilla trekking was absolutely magical - worth every challenging step! Our guide was excellent at pacing the hike for our group. The only reason I'm not giving 5 stars is that our lodge had some hot water issues. Otherwise, perfect!</p>
+          <div class="flex space-x-2 mb-4">
+            <img src="https://readdy.ai/api/search-image?query=mountain%20gorilla%20uganda%20closeup&width=200&height=200&seq=review3_1&orientation=squarish" alt="Mountain gorilla" class="w-16 h-16 object-cover rounded-lg">
+            <img src="https://readdy.ai/api/search-image?query=bwindi%20forest%20uganda&width=200&height=200&seq=review3_2&orientation=squarish" alt="Bwindi Forest" class="w-16 h-16 object-cover rounded-lg">
+          </div>
+          <p class="text-gray-500 text-sm">Posted: January 10, 2024</p>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden review-card">
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-primary font-bold text-xl">EC</div>
+            <div class="ml-4">
+              <h4 class="font-semibold">Emma Chen</h4>
+              <div class="flex items-center">
+                <div class="star-rating">
+                  ★★★★★
+                </div>
+                <span class="text-gray-500 text-sm ml-2">Tanzania Adventure</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4">The Serengeti migration was everything I dreamed of and more! Our guide spotted animals I would have completely missed. The mobile camp was surprisingly comfortable with amazing food. The conservation lectures were a great addition to the safari experience.</p>
+          <div class="flex space-x-2 mb-4">
+            <img src="https://readdy.ai/api/search-image?query=wildebeest%20migration%20serengeti&width=200&height=200&seq=review4_1&orientation=squarish" alt="Wildebeest migration" class="w-16 h-16 object-cover rounded-lg">
+          </div>
+          <p class="text-gray-500 text-sm">Posted: December 5, 2023</p>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden review-card">
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-primary font-bold text-xl">DP</div>
+            <div class="ml-4">
+              <h4 class="font-semibold">David Patel</h4>
+              <div class="flex items-center">
+                <div class="star-rating">
+                  ★★★★★
+                </div>
+                <span class="text-gray-500 text-sm ml-2">Veterinary Field Experience</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4">As a veterinarian, this was a career-changing experience. Working alongside wildlife vets in the field gave me skills I couldn't get in my practice back home. The combination of hands-on work and game drives was perfectly balanced. Highly recommend for any vet!</p>
+          <p class="text-gray-500 text-sm">Posted: November 22, 2023</p>
+        </div>
+      </div>
+
+      <!-- Review 6 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden review-card">
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-primary font-bold text-xl">LG</div>
+            <div class="ml-4">
+              <h4 class="font-semibold">Lisa Gonzalez</h4>
+              <div class="flex items-center">
+                <div class="star-rating">
+                  ★★★★☆
+                </div>
+                <span class="text-gray-500 text-sm ml-2">Rwanda Conservation Tour</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4">An incredible cultural and wildlife experience. The gorilla trek was challenging but so rewarding. I wish we had more time at each location, but I understand the schedule is tight. The guides were extremely knowledgeable about both wildlife and local culture.</p>
+          <div class="flex space-x-2 mb-4">
+            <img src="https://readdy.ai/api/search-image?query=rwanda%20gorilla%20family&width=200&height=200&seq=review6_1&orientation=squarish" alt="Gorilla family" class="w-16 h-16 object-cover rounded-lg">
+            <img src="https://readdy.ai/api/search-image?query=rwanda%20cultural%20village&width=200&height=200&seq=review6_2&orientation=squarish" alt="Cultural village" class="w-16 h-16 object-cover rounded-lg">
+          </div>
+          <p class="text-gray-500 text-sm">Posted: October 15, 2023</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <button class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 !rounded-button text-lg font-semibold transition-colors duration-300 whitespace-nowrap">
+        Load More Reviews
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="relative py-20 overflow-hidden">
+  <div class="absolute inset-0" style="background-image: url('https://readdy.ai/api/search-image?query=group%20of%20happy%20travelers%20on%20safari%20vehicle%20african%20sunset&width=1920&height=600&seq=reviews_cta&orientation=landscape')"></div>
+  <div class="absolute inset-0 bg-blue-900/70"></div>
+  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+    <h2 class="text-5xl font-bold mb-6">Ready for Your Adventure?</h2>
+    <p class="text-xl mb-8">Join the hundreds of travelers who've had life-changing experiences with WildMed Safaris</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+      <a href="Custom-Safaris.html" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 !rounded-button text-lg font-semibold transition-colors duration-300 whitespace-nowrap">
+        Book Your Safari Now
+      </a>
+      <a href="#" class="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 !rounded-button text-lg font-semibold transition-all duration-300 whitespace-nowrap">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primary text-white">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Company Info -->
+      <div>
+        <div class="flex items-center space-x-3 mb-6">
+                <div class="flex items-center space-x-4">
+        <div class="w-16 h-16 flex-shrink-0">
+          <img src="img/android-chrome-192x192.png" alt="WildMed Safaris Logo" width="400" height="400">
+        </div>
+      </div>
+          <span class="text-xl font-['Pacifico']">WildMed</span>
+        </div>
+        <p class="text-gray-300 mb-6">Creating meaningful wildlife adventures that combine conservation, education, and unforgettable experiences across East Africa.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-facebook-fill"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-twitter-line"></i>
+          </a>
+          <a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors duration-300">
+            <i class="ri-youtube-line"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+        <ul class="space-y-3">
+          <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a></li>
+          <li><a href="About-Us.html" class="text-gray-300 hover:text-white transition-colors duration-300">About Us</a></li>
+          <li><a href="Custom-Safaris.html" class="text-gray-300 hover:text-white transition-colors duration-300">Safari Packages</a></li>
+          <li><a href="Medical-Expedition-Programs.html" class="text-gray-300 hover:text-white transition-colors duration-300">Medical Expeditions</a></li>
+          <li><a href="Veterinary-Conservation-.html" class="text-gray-300 hover:text-white transition-colors duration-300">Vet Programs</a></li>
+          <li><a href="Gallery.html" class="text-gray-300 hover:text-white transition-colors duration-300">Gallery</a></li>
+          <li><a href="Review.html" class="text-gray-300 hover:text-white transition-colors duration-300">Reviews</a></li>
+        </ul>
+      </div>
+
+      <!-- Destinations -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Destinations</h3>
+        <ul class="space-y-3">
+          <li><a href="Kenya-Safaris.html" class="text-gray-300 hover:text-white transition-colors duration-300">Kenya Wildlife Safari</a></li>
+          <li><a href="Tanzania-Safari.html" class="text-gray-300 hover:text-white transition-colors duration-300">Tanzania Adventure</a></li>
+          <li><a href="Uganda-Adventures.html" class="text-gray-300 hover:text-white transition-colors duration-300">Uganda Gorilla Trek</a></li>
+          <li><a href="Rwanda-Safaris.html" class="text-gray-300 hover:text-white transition-colors duration-300">Rwanda Gorilla Experience</a></li>
+          <li><a href="Uganda-15-Days.html" class="text-gray-300 hover:text-white transition-colors duration-300">15-Day Grand Safari</a></li>
+          <li><a href="Rwanda-7-Days.html" class="text-gray-300 hover:text-white transition-colors duration-300">7-Day Rwanda Explorer</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Contact Info</h3>
+        <div class="space-y-4">
+          <div class="flex items-start space-x-3">
+            <i class="ri-map-pin-line text-green-400 mt-1"></i>
+            <div class="text-gray-300">
+              <div>WildMed </div>
+              <div>Safaris and Field Projects</div>
+              <div>Plot 626, Seguku Katale</div>
+              <div>P.O.Box 10296</div>
+              <div>Kampala, Uganda</div>
+            </div>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="ri-phone-line text-green-400"></i>
+            <span class="text-gray-300">+256 740 205146</span> 
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="ri-phone-line text-green-400"></i>
+            <span class="text-gray-300">+256 777 370494</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="ri-mail-line text-green-400"></i>
+            <span class="text-gray-300">wildmeduganda@gmail.com</span>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-300">
+      <p>&copy; 2024 WildMed. All rights reserved. | <a href="Privacy-Policy.html" class="hover:text-white">Privacy Policy</a> | <a href="Terms-of-Service.html" class="hover:text-white">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Star rating interaction
+  const stars = document.querySelectorAll('.star-rating');
+  stars.forEach(star => {
+    star.addEventListener('click', function() {
+      const ratingInput = document.getElementById(this.htmlFor);
+      if (ratingInput) {
+        ratingInput.checked = true;
+        updateStarDisplay(this.htmlFor);
+      }
+    });
+  });
+
+  function updateStarDisplay(selectedId) {
+    const starsContainer = document.querySelector(`label[for="${selectedId}"]`).parentNode;
+    const stars = starsContainer.querySelectorAll('.star-rating');
+    const selectedValue = document.getElementById(selectedId).value;
+    
+    stars.forEach((star, index) => {
+      if (index < selectedValue) {
+        star.style.color = '#FFD700';
+      } else {
+        star.style.color = '#D1D5DB';
+      }
+    });
+  }
+
+  // Review form submission
+  const reviewForm = document.getElementById('review-form');
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const name = document.getElementById('name').value;
+      const safari = document.getElementById('safari').value;
+      const rating = document.querySelector('input[name="rating"]:checked')?.value;
+      const reviewText = document.getElementById('review').value;
+      
+      if (!name || !safari || !rating || !reviewText) {
+        alert('Please fill in all required fields');
+        return;
+      }
+      
+      // In a real implementation, you would send this data to your server
+      alert('Thank you for your review! It will be published after moderation.');
+      reviewForm.reset();
+      
+      // Reset star display
+      const stars = document.querySelectorAll('.star-rating');
+      stars.forEach(star => {
+        star.style.color = '#D1D5DB';
+      });
+    });
+  }
+
+  // Mobile menu functionality
+  const mobileMenuButton = document.querySelector('button[class*="lg:hidden"]');
+  if (mobileMenuButton) {
+    mobileMenuButton.addEventListener('click', function() {
+      console.log('Mobile menu clicked');
+      // You would add mobile menu toggle logic here
+    });
+  }
+});
+</script>
+</body>
+</html>
