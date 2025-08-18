@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uganda Adventures - WildMed Safaris</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -282,9 +284,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             <!-- CTA buttons with modern hover effects -->
             <div class="flex flex-wrap gap-4">
-                <button class="group relative overflow-hidden bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 whitespace-nowrap">
-                    <span class="relative z-10">Explore Gorilla Treks</span>
-                    <span class="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              <button id="exploreBtn" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-green-600/20 whitespace-nowrap flex items-center justify-center">
+                    <i class="ri-compass-3-line mr-2"></i> Explore Packages
                 </button>
                 
                 <button class="group relative overflow-hidden bg-transparent border-2 border-white/30 hover:border-green-400 text-white hover:text-green-100 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 whitespace-nowrap">
@@ -357,8 +358,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- Featured Destinations -->
     <!-- Featured Destinations -->
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
+<section id="explore-section" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-bold mb-4">Explore Uganda</h2>
             <p class="text-xl text-gray-600 mb-6">Discover the Pearl of Africa's spectacular wildlife and academic institutions</p>
@@ -560,327 +561,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 </script>
 
-    <!-- Safari Packages -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Uganda Safari Packages</h2>
-                <p class="text-xl text-gray-600">Carefully crafted adventures for every type of traveler</p>
-            </div>
-            
-            <!-- Filter Options -->
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <button class="filter-btn filter-active px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="all">All Packages</button>
-                <button class="filter-btn bg-white hover:bg-gray-100 px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="gorilla">Gorilla Trekking</button>
-                <button class="filter-btn bg-white hover:bg-gray-100 px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="primate">Primate Safaris</button>
-                <button class="filter-btn bg-white hover:bg-gray-100 px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="classic">Classic Safari</button>
-                <button class="filter-btn bg-white hover:bg-gray-100 px-6 py-3 !rounded-button font-medium transition-all duration-300 whitespace-nowrap" data-filter="adventure">Adventure</button>
-            </div>
-            
-            <!-- Package Cards -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Gorilla Trekking -->
-                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="gorilla">
-                    <div class="relative h-64">
-                        <img src="https://readdy.ai/api/search-image?query=Mountain%20gorilla%20trekking%20in%20Bwindi%20Impenetrable%20Forest%2C%20Uganda%2C%20silverback%20gorilla%20in%20natural%20habitat%2C%20lush%20green%20rainforest%2C%20trekkers%20observing%20from%20safe%20distance%2C%20once-in-a-lifetime%20wildlife%20experience%2C%20professional%20photography&width=400&height=256&seq=gorilla-trek&orientation=landscape" alt="Gorilla Trekking" class="w-full h-full object-cover object-top">
-                        <div class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                            3 Days
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                            <div class="flex items-center space-x-1">
-                                <i class="ri-star-fill text-yellow-400 text-sm"></i>
-                                <span class="text-sm font-medium">4.9</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Classic Gorilla Trekking</h3>
-                        <p class="text-gray-600 mb-4">An unforgettable encounter with endangered mountain gorillas in Bwindi</p>
-                        
-                        <div class="space-y-2 mb-4">
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-map-pin-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Bwindi Impenetrable Forest</span>
-                            </div>
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Max 8 people</span>
-                            </div>
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Jun-Sep, Dec-Feb</span>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center justify-between mb-4">
-                            <div>
-                                <span class="text-2xl font-bold text-green-600">$1,800</span>
-                                <span class="text-gray-500 text-sm">/person</span>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-sm text-gray-500">Next available</div>
-                                <div class="text-sm font-medium">Mar 15, 2024</div>
-                            </div>
-                        </div>
-                        
-                        <button class="w-full bg-primary hover:bg-primary/90 text-white py-3 !rounded-button font-semibold transition-colors duration-300 whitespace-nowrap">
-                            Book Now
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Primate Safari -->
-                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="primate">
-                    <div class="relative h-64">
-                        <img src="https://readdy.ai/api/search-image?query=Chimpanzee%20trekking%20in%20Kibale%20Forest%2C%20Uganda%2C%20wild%20chimpanzees%20in%20canopy%2C%20lush%20tropical%20rainforest%2C%13%20primate%20species%2C%20professional%20wildlife%20photography&width=400&height=256&seq=primate-safari&orientation=landscape" alt="Primate Safari" class="w-full h-full object-cover object-top">
-                        <div class="absolute top-4 left-4 bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                            5 Days
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                            <div class="flex items-center space-x-1">
-                                <i class="ri-star-fill text-yellow-400 text-sm"></i>
-                                <span class="text-sm font-medium">4.7</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Primate Safari Adventure</h3>
-                        <p class="text-gray-600 mb-4">Track chimps in Kibale and see diverse monkeys in multiple parks</p>
-                        
-                        <div class="space-y-2 mb-4">
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-map-pin-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Kibale • Queen Elizabeth</span>
-                            </div>
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Max 6 people</span>
-                            </div>
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Year-round</span>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center justify-between mb-4">
-                            <div>
-                                <span class="text-2xl font-bold text-green-600">$2,200</span>
-                                <span class="text-gray-500 text-sm">/person</span>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-sm text-gray-500">Next available</div>
-                                <div class="text-sm font-medium">Apr 8, 2024</div>
-                            </div>
-                        </div>
-                        
-                        <button class="w-full bg-primary hover:bg-primary/90 text-white py-3 !rounded-button font-semibold transition-colors duration-300 whitespace-nowrap">
-                            Book Now
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Classic Uganda -->
-                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="classic">
-                    <div class="relative h-64">
-                        <img src="https://readdy.ai/api/search-image?query=Classic%20Uganda%20safari%20with%20elephants%20in%20Queen%20Elizabeth%20National%20Park%2C%20savanna%20landscape%2C%20Kazinga%20Channel%20boat%20cruise%2C%20tree-climbing%20lions%2C%20diverse%20wildlife%2C%20professional%20photography&width=400&height=256&seq=classic-uganda&orientation=landscape" alt="Classic Uganda" class="w-full h-full object-cover object-top">
-                        <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                            7 Days
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                            <div class="flex items-center space-x-1">
-                                <i class="ri-star-fill text-yellow-400 text-sm"></i>
-                                <span class="text-sm font-medium">4.8</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Classic Uganda Safari</h3>
-                        <p class="text-gray-600 mb-4">Experience Uganda's top parks with diverse wildlife and landscapes</p>
-                        
-                        <div class="space-y-2 mb-4">
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-map-pin-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Queen Elizabeth • Murchison</span>
-                            </div>
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Max 6 people</span>
-                            </div>
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Jun-Oct, Dec-Feb</span>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center justify-between mb-4">
-                            <div>
-                                <span class="text-2xl font-bold text-green-600">$2,800</span>
-                                <span class="text-gray-500 text-sm">/person</span>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-sm text-gray-500">Next available</div>
-                                <div class="text-sm font-medium">Mar 22, 2024</div>
-                            </div>
-                        </div>
-                        
-                        <button class="w-full bg-primary hover:bg-primary/90 text-white py-3 !rounded-button font-semibold transition-colors duration-300 whitespace-nowrap">
-                            Book Now
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Ultimate Uganda -->
-                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="gorilla primate">
-                    <div class="relative h-64">
-                        <img src="https://readdy.ai/api/search-image?query=Ultimate%20Uganda%20safari%20with%20gorillas%2C%20chimps%2C%20and%20savanna%20wildlife%2C%20diverse%20landscapes%20from%20rainforest%20to%20savanna%2C%20professional%20wildlife%20photography&width=400&height=256&seq=ultimate-uganda&orientation=landscape" alt="Ultimate Uganda" class="w-full h-full object-cover object-top">
-                        <div class="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                            10 Days
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                            <div class="flex items-center space-x-1">
-                                <i class="ri-star-fill text-yellow-400 text-sm"></i>
-                                <span class="text-sm font-medium">5.0</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Ultimate Uganda</h3>
-                        <p class="text-gray-600 mb-4">Combines gorilla trekking, chimp tracking and classic safaris</p>
-                        
-                        <div class="space-y-2 mb-4">
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-map-pin-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Bwindi • Kibale • Queen Elizabeth</span>
-                            </div>
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Max 4 people</span>
-                            </div>
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Jun-Sep, Dec-Feb</span>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center justify-between mb-4">
-                            <div>
-                                <span class="text-2xl font-bold text-green-600">$4,500</span>
-                                <span class="text-gray-500 text-sm">/person</span>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-sm text-gray-500">Next available</div>
-                                <div class="text-sm font-medium">May 12, 2024</div>
-                            </div>
-                        </div>
-                        
-                        <button class="w-full bg-primary hover:bg-primary/90 text-white py-3 !rounded-button font-semibold transition-colors duration-300 whitespace-nowrap">
-                            Book Now
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Family Safari -->
-                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="classic">
-                    <div class="relative h-64">
-                        <img src="https://readdy.ai/api/search-image?query=Family%20safari%20in%20Uganda%20with%20children%20observing%20wildlife%20from%20vehicle%2C%20educational%20experience%2C%20family-friendly%20accommodations%2C%20professional%20photography&width=400&height=256&seq=family-uganda&orientation=landscape" alt="Family Safari" class="w-full h-full object-cover object-top">
-                        <div class="absolute top-4 left-4 bg-yellow-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                            6 Days
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                            <div class="flex items-center space-x-1">
-                                <i class="ri-star-fill text-yellow-400 text-sm"></i>
-                                <span class="text-sm font-medium">4.8</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Family Safari Adventure</h3>
-                        <p class="text-gray-600 mb-4">Perfect introduction to Uganda's wildlife for families with children</p>
-                        
-                        <div class="space-y-2 mb-4">
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-parent-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Family-friendly activities</span>
-                            </div>
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Families welcome</span>
-                            </div>
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Year-round</span>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center justify-between mb-4">
-                            <div>
-                                <span class="text-2xl font-bold text-green-600">$1,950</span>
-                                <span class="text-gray-500 text-sm">/person</span>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-sm text-gray-500">Next available</div>
-                                <div class="text-sm font-medium">Mar 28, 2024</div>
-                            </div>
-                        </div>
-                        
-                        <button class="w-full bg-primary hover:bg-primary/90 text-white py-3 !rounded-button font-semibold transition-colors duration-300 whitespace-nowrap">
-                            Book Now
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Adventure Safari -->
-                <div class="package-card bg-white rounded-xl overflow-hidden shadow-lg" data-category="adventure">
-                    <div class="relative h-64">
-                        <img src="https://readdy.ai/api/search-image?query=Adventure%20safari%20in%20Uganda%20with%20white-water%20rafting%20on%20Nile%2C%20hiking%2C%20and%20wildlife%20viewing%2C%20action-packed%20itinerary%2C%20professional%20photography&width=400&height=256&seq=adventure-uganda&orientation=landscape" alt="Adventure Safari" class="w-full h-full object-cover object-top">
-                        <div class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                            8 Days
-                        </div>
-                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                            <div class="flex items-center space-x-1">
-                                <i class="ri-star-fill text-yellow-400 text-sm"></i>
-                                <span class="text-sm font-medium">4.9</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Uganda Adventure Safari</h3>
-                        <p class="text-gray-600 mb-4">Combine wildlife viewing with adrenaline activities on the Nile</p>
-                        
-                        <div class="space-y-2 mb-4">
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-flashlight-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>White-water rafting • Hiking</span>
-                            </div>
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-group-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Max 8 people</span>
-                            </div>
-                            <div class="flex items-center text-sm text-gray-600">
-                                <i class="ri-calendar-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                                <span>Jun-Oct, Dec-Feb</span>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center justify-between mb-4">
-                            <div>
-                                <span class="text-2xl font-bold text-green-600">$3,200</span>
-                                <span class="text-gray-500 text-sm">/person</span>
-                            </div>
-                            <div class="text-right">
-                                <div class="text-sm text-gray-500">Next available</div>
-                                <div class="text-sm font-medium">Jun 5, 2024</div>
-                            </div>
-                        </div>
-                        
-                        <button class="w-full bg-primary hover:bg-primary/90 text-white py-3 !rounded-button font-semibold transition-colors duration-300 whitespace-nowrap">
-                            Book Now
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Wildlife Highlights -->
     <section class="py-20 bg-white">
@@ -1294,87 +975,176 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
 
     <!-- Booking Section -->
-    <section class="py-20 bg-primary text-white">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4">Book Your Uganda Adventure</h2>
-                <p class="text-xl text-gray-200">Start planning your unforgettable gorilla trekking experience today</p>
-            </div>
-            
-            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
-                <form class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Package Type</label>
-                            <select class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-green-400 pr-8">
-                                <option value="">Select Package</option>
-                                <option value="gorilla">Classic Gorilla Trekking</option>
-                                <option value="primate">Primate Safari Adventure</option>
-                                <option value="classic">Classic Uganda Safari</option>
-                                <option value="ultimate">Ultimate Uganda</option>
-                                <option value="family">Family Safari Adventure</option>
-                                <option value="adventure">Uganda Adventure Safari</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Travel Dates</label>
-                            <input type="date" class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-green-400">
-                        </div>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Number of Travelers</label>
-                            <select class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-green-400 pr-8">
-                                <option value="">Select Group Size</option>
-                                <option value="1">1 Person</option>
-                                <option value="2">2 People</option>
-                                <option value="3">3 People</option>
-                                <option value="4">4 People</option>
-                                <option value="5">5 People</option>
-                                <option value="6+">6+ People</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Budget Range</label>
-                            <select class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white text-sm focus:outline-none focus:ring-2 focus:ring-green-400 pr-8">
-                                <option value="">Select Budget</option>
-                                <option value="budget">Under $1,500 per person</option>
-                                <option value="mid">$1,500 - $3,000 per person</option>
-                                <option value="luxury">$3,000+ per person</option>
-                                <option value="custom">Custom Budget</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-medium mb-2">Special Requirements</label>
-                        <textarea rows="4" placeholder="Tell us about any special requirements, dietary restrictions, or preferences..." class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 text-sm focus:outline-none focus:ring-2 focus:ring-green-400 resize-none"></textarea>
-                    </div>
-                    
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Full Name</label>
-                            <input type="text" placeholder="Enter your full name" class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 text-sm focus:outline-none focus:ring-2 focus:ring-green-400">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Email Address</label>
-                            <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 text-sm focus:outline-none focus:ring-2 focus:ring-green-400">
-                        </div>
-                    </div>
-                    
-                    <div class="text-center">
-                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 !rounded-button text-lg font-semibold transition-colors duration-300 whitespace-nowrap">
-                            Get Instant Quote
-                        </button>
-                        <p class="text-sm text-gray-300 mt-4">
-                            Free consultation • No obligation • Response within 24 hours
-                        </p>
-                    </div>
-                </form>
-            </div>
+    <!-- Booking Section -->
+<section class="py-20 bg-primary text-white">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Book Your Tanzania Adventure</h2>
+            <p class="text-xl text-gray-200">Start planning your unforgettable safari experience today</p>
         </div>
-    </section>
+        
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+            <form id="bookingForm" class="space-y-6">
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Package Type</label>
+                        <select name="package" class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-black text-sm focus:outline-none focus:ring-2 focus:ring-green-400 pr-8">
+                            <option value="">Select Package</option>
+                            <option value="Classic Serengeti & Ngorongoro">Classic Serengeti & Ngorongoro</option>
+                            <option value="Kilimanjaro Climbing">Kilimanjaro Climbing</option>
+                            <option value="Ultimate Luxury Tanzania">Ultimate Luxury Tanzania</option>
+                            <option value="Complete Northern Circuit">Complete Northern Circuit</option>
+                            <option value="Family Safari Adventure">Family Safari Adventure</option>
+                            <option value="Photography Masterclass">Photography Masterclass</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Destination</label>
+                        <select name="destination" class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-black text-sm focus:outline-none focus:ring-2 focus:ring-green-400 pr-8">
+                            <option value="">Select Destination</option>
+                            <option value="Serengeti">Serengeti National Park</option>
+                            <option value="Ngorongoro">Ngorongoro Crater</option>
+                            <option value="Kilimanjaro">Mount Kilimanjaro</option>
+                            <option value="Tarangire">Tarangire National Park</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Institution</label>
+                        <select name="institution" class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-black text-sm focus:outline-none focus:ring-2 focus:ring-green-400 pr-8">
+                            <option value="">Select Institution</option>
+                            <option value="UDSM">University of Dar es Salaam</option>
+                            <option value="MUHAS">Muhimbili University of Health and Allied Sciences</option>
+                            <option value="SUA">Sokoine University of Agriculture</option>
+                            <option value="NM-AIST">Nelson Mandela African Institution of Science and Technology</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Travel Dates</label>
+                        <div class="relative">
+                            <input type="text" id="travelDates" name="dates" placeholder="Select date range" class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 text-sm focus:outline-none focus:ring-2 focus:ring-green-400 pl-10">
+                            <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/70">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Number of Travelers</label>
+                        <select name="travelers" class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-black text-sm focus:outline-none focus:ring-2 focus:ring-green-400 pr-8">
+                            <option value="">Select Group Size</option>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5">5 People</option>
+                            <option value="6+">6+ People</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Budget Range</label>
+                        <select name="budget" class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-black text-sm focus:outline-none focus:ring-2 focus:ring-green-400 pr-8">
+                            <option value="">Select Budget</option>
+                            <option value="budget">Under $2,000 per person</option>
+                            <option value="mid">$2,000 - $4,000 per person</option>
+                            <option value="luxury">$4,000+ per person</option>
+                            <option value="custom">Custom Budget</option>
+                        </select>
+                    </div>
+                    <div></div> <!-- Empty div to maintain grid layout -->
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium mb-2">Special Requirements</label>
+                    <textarea name="requirements" rows="4" placeholder="Tell us about any special requirements, dietary restrictions, or preferences..." class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 text-sm focus:outline-none focus:ring-2 focus:ring-green-400 resize-none"></textarea>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Full Name</label>
+                        <input type="text" name="name" placeholder="Enter your full name" class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 text-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Email Address</label>
+                        <input type="email" name="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 text-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 !rounded-button !text-lg font-semibold transition-colors duration-300 whitespace-nowrap">
+                        Get Instant Quote
+                    </button>
+                    <p class="text-sm text-gray-300 mt-4">
+                        Free consultation • No obligation • Response within 24 hours
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Flatpickr for date range
+    flatpickr("#travelDates", {
+        mode: "range",
+        dateFormat: "m/d/Y",
+        minDate: "today",
+        maxDate: new Date().fp_incr(365),
+        disableMobile: true,
+        onChange: function(selectedDates, dateStr, instance) {
+            if (selectedDates.length === 2) {
+                instance.close();
+            }
+        }
+    });
+
+    // Form submission to Formspree
+    const bookingForm = document.getElementById('bookingForm');
+    bookingForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(bookingForm);
+        const data = Object.fromEntries(formData);
+
+        fetch('https://formspree.io/f/mldlkwke', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Thank you! Your booking request has been submitted. We will contact you soon.');
+                bookingForm.reset();
+            } else {
+                throw new Error('Submission failed');
+            }
+        })
+        .catch(error => {
+            alert('There was an error submitting your request. Please try again or contact us directly.');
+            console.error('Error:', error);
+        });
+    });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const exploreBtn = document.getElementById('exploreBtn');
+  exploreBtn.addEventListener('click', function() {
+    document.getElementById('explore-section').scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
 
     <!-- Footer -->
   <footer class="bg-primary text-white">

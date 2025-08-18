@@ -10,6 +10,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 .timeline-line { background: linear-gradient(to bottom, #059669, #2563eb); }
@@ -245,15 +247,17 @@ document.addEventListener('DOMContentLoaded', function() {
         </p>
         
         <!-- CTA Button with Glow Effect -->
-        <button class="relative overflow-hidden group bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white px-10 py-5 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/20">
-            <span class="relative z-10 flex items-center justify-center space-x-2">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                </svg>
-                <span>Start Planning Your Journey</span>
-            </span>
-            <span class="absolute inset-0 bg-gradient-to-r from-amber-400/30 to-green-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-        </button>
+<button id="startPlanningBtn" class="relative overflow-hidden group bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white px-10 py-5 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/20">
+  <span class="relative z-10 flex items-center justify-center space-x-2">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+    </svg>
+    <span>Start Planning Your Journey</span>
+  </span>
+  <span class="absolute inset-0 bg-gradient-to-r from-amber-400/30 to-green-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+</button>
+
+
         
         <!-- Scrolling Indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -1083,9 +1087,11 @@ Not Included
 </div>
 </div>
 <div class="text-center mt-8">
-<button class="bg-secondary hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold !rounded-button transition-colors duration-200 whitespace-nowrap mr-4">
-Book Your Adventure
+<button id="bookAdventureBtn" class="bg-secondary hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold !rounded-button transition-colors duration-200 whitespace-nowrap mr-4">
+  Book Your Adventure
 </button>
+
+
 <button class="bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 px-8 py-4 text-lg font-semibold !rounded-button transition-colors duration-200 whitespace-nowrap">
 Request Custom Quote
 </button>
@@ -1196,6 +1202,170 @@ Request Custom Quote
 </div>
 </div>
 </section>
+
+<!-- Modal for Booking Form -->
+<div id="bookingModal" class="fixed inset-0 z-50 hidden w-full h-full bg-black bg-opacity-80 overflow-y-auto">
+  <div class="relative w-full min-h-screen flex items-center justify-center px-4 py-12">
+    <div class="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl relative fade-in">
+      <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-2xl font-bold transition-colors" onclick="closeBookingModal()" aria-label="Close Modal">&times;</button>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Book Your 15-Day Across-Uganda Expedition</h2>
+      <form id="customBookingForm" class="space-y-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+          <input type="text" name="name" placeholder="Enter your full name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary text-black">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+          <input type="email" name="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary text-black">
+        </div>
+        <div class="relative">
+          <label class="block text-sm font-medium text-gray-700 mb-2">Travel Date</label>
+          <input type="text" id="travelDate" name="date" placeholder="Select travel date" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary pl-10 text-black">
+          <span class="absolute left-3 top-10 text-gray-400">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </span>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Group Size</label>
+          <input type="range" min="2" max="10" value="2" class="w-full" name="groupSize" oninput="groupValue.textContent = this.value + ' people'">
+          <span id="groupValue" class="ml-2 text-gray-600">2 people</span>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Activity Level</label>
+          <div class="flex space-x-4">
+            <button type="button" class="activity-btn flex-1 px-4 py-2 border border-gray-300 rounded-lg hover:border-secondary hover:text-secondary text-black" data-level="beginner">Beginner</button>
+            <button type="button" class="activity-btn flex-1 px-4 py-2 border border-gray-300 rounded-lg hover:border-secondary hover:text-secondary text-black" data-level="intermediate">Intermediate</button>
+            <button type="button" class="activity-btn flex-1 px-4 py-2 border border-gray-300 rounded-lg hover:border-secondary hover:text-secondary text-black" data-level="advanced">Advanced</button>
+          </div>
+          <input type="hidden" name="activityLevel" id="activityLevel">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Accommodation Preference</label>
+          <div class="relative">
+            <button id="accommodationBtn" type="button" class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black text-left focus:outline-none focus:ring-2 focus:ring-secondary flex justify-between items-center">
+              <span id="accommodationText">Select Accommodation</span>
+              <span class="text-gray-400">&#9662;</span>
+            </button>
+            <div id="accommodationDropdown" class="absolute w-full bg-white border border-gray-300 rounded-lg mt-1 hidden shadow-lg z-10">
+              <div class="accommodation-option px-4 py-2 hover:bg-gray-50 cursor-pointer" data-value="budget">Budget Camps</div>
+              <div class="accommodation-option px-4 py-2 hover:bg-gray-50 cursor-pointer" data-value="midrange">Midrange Lodges</div>
+              <div class="accommodation-option px-4 py-2 hover:bg-gray-50 cursor-pointer" data-value="luxury">Luxury Tents</div>
+            </div>
+            <input type="hidden" name="accommodation" id="accommodationInput">
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">Special Requests</label>
+          <textarea name="requests" rows="3" placeholder="e.g., dietary needs, medical support" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary text-black"></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="bg-secondary hover:bg-green-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition-colors duration-300">Submit Booking</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Button click handlers
+const bookAdventureBtn = document.getElementById('bookAdventureBtn');
+const startPlanningBtn = document.getElementById('startPlanningBtn');
+  if (bookAdventureBtn) bookAdventureBtn.addEventListener('click', openBookingModal);
+  if (startPlanningBtn) startPlanningBtn.addEventListener('click', openBookingModal);
+
+  // Flatpickr for date selection
+  flatpickr("#travelDate", {
+    dateFormat: "m/d/Y",
+    minDate: "today",
+    maxDate: new Date().fp_incr(365),
+    disableMobile: true,
+    onChange: function(selectedDates, dateStr, instance) {
+      if (selectedDates.length) instance.close();
+    }
+  });
+
+  // Activity level selection
+  const activityBtns = document.querySelectorAll('.activity-btn');
+  activityBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      activityBtns.forEach(b => b.classList.remove('bg-secondary', 'text-white', 'border-secondary'));
+      this.classList.add('bg-secondary', 'text-white', 'border-secondary');
+      document.getElementById('activityLevel').value = this.dataset.level;
+    });
+  });
+
+  // Accommodation dropdown
+  const accommodationBtn = document.getElementById('accommodationBtn');
+  const accommodationDropdown = document.getElementById('accommodationDropdown');
+  const accommodationText = document.getElementById('accommodationText');
+  const accommodationOptions = document.querySelectorAll('.accommodation-option');
+  accommodationBtn.addEventListener('click', function() {
+    accommodationDropdown.classList.toggle('hidden');
+  });
+  accommodationOptions.forEach(option => {
+    option.addEventListener('click', function() {
+      accommodationText.textContent = this.textContent;
+      document.getElementById('accommodationInput').value = this.dataset.value;
+      accommodationDropdown.classList.add('hidden');
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!accommodationBtn.contains(e.target) && !accommodationDropdown.contains(e.target)) {
+      accommodationDropdown.classList.add('hidden');
+    }
+  });
+
+  // Form submission
+  const bookingForm = document.getElementById('customBookingForm');
+  bookingForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(bookingForm);
+    const data = Object.fromEntries(formData);
+
+    fetch('https://formspree.io/f/mldlkwke', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        alert('Thank you! Your booking request has been submitted. We will contact you soon.');
+        bookingForm.reset();
+        closeBookingModal();
+      } else {
+        throw new Error('Submission failed');
+      }
+    })
+    .catch(error => {
+      alert('There was an error submitting your request. Please try again or contact us directly.');
+      console.error('Error:', error);
+    });
+  });
+
+  // Modal controls
+  function openBookingModal() {
+    document.getElementById('bookingModal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeBookingModal() {
+    document.getElementById('bookingModal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  }
+});
+
+// Custom :contains selector polyfill
+HTMLElement.prototype.contains = function(text) {
+  return this.textContent && this.textContent.includes(text);
+};
+</script>
 <footer class="bg-primary text-white">
   <div class="max-w-7xl mx-auto px-6 py-16">
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
