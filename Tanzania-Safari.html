@@ -360,30 +360,31 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
     <!-- Featured Destinations -->
-    <section  id="explore-section" class="py-20 bg-white">
+
+    <section id="explore-section" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">Explore Tanzania</h2>
+            <h2 class="text-4xl font-bold mb-4 text-gray-800">Explore Tanzania</h2>
             <p class="text-xl text-gray-600 mb-6">Discover Africa's most spectacular wildlife and academic institutions</p>
             
             <!-- Toggle Switch -->
             <div class="inline-flex items-center bg-gray-100 rounded-full p-1">
-                <button id="wildlifeBtn" class="px-6 py-2 rounded-full font-medium text-white bg-green-600 transition-all">
+                <button id="wildlifeBtnTz" class="px-6 py-2 rounded-full font-medium text-white bg-green-600 transition-all">
                     Wildlife Destinations
                 </button>
-                <button id="universitiesBtn" class="px-6 py-2 rounded-full font-medium text-gray-600 hover:text-gray-800 transition-all">
+                <button id="universitiesBtnTz" class="px-6 py-2 rounded-full font-medium text-gray-600 hover:text-gray-800 transition-all">
                     Universities
                 </button>
             </div>
         </div>
         
         <!-- Wildlife Destinations (Default Visible) -->
-        <div id="wildlifeSection" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div id="wildlifeSectionTz" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Serengeti Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
                 <div class="relative h-64">
                     <img src="https://readdy.ai/api/search-image?query=Serengeti%20National%20Park%20endless%20plains%20during%20Great%20Migration%2C%20thousands%20of%20wildebeest%20and%20zebras%20crossing%20savanna%2C%20dramatic%20sky%20with%20scattered%20clouds%2C%20golden%20grassland%20stretching%20to%20horizon%2C%20iconic%20African%20wildlife%20spectacle%2C%20professional%20nature%20photography&width=300&height=256&seq=serengeti-dest&orientation=landscape" alt="Serengeti National Park" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
                         <h3 class="text-xl font-bold">Serengeti</h3>
                         <p class="text-sm opacity-90">Great Migration</p>
@@ -393,16 +394,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-gray-600 mb-4">Witness the world's greatest wildlife spectacle in Tanzania's most famous national park</p>
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-green-600">From $2,450</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="serengeti">View Details →</button>
                     </div>
                 </div>
             </div>
             
             <!-- Ngorongoro Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
                 <div class="relative h-64">
                     <img src="https://readdy.ai/api/search-image?query=Ngorongoro%20Crater%20aerial%20panoramic%20view%20showing%20massive%20volcanic%20caldera%20with%20diverse%20wildlife%20on%20crater%20floor%2C%20lush%20green%20vegetation%2C%20pristine%20lake%20reflecting%20sky%2C%20dramatic%20crater%20rim%20walls%2C%20UNESCO%20World%20Heritage%20natural%20wonder&width=300&height=256&seq=ngorongoro-dest&orientation=landscape" alt="Ngorongoro Crater" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
                         <h3 class="text-xl font-bold">Ngorongoro</h3>
                         <p class="text-sm opacity-90">World's Largest Crater</p>
@@ -412,16 +413,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-gray-600 mb-4">Explore the world's largest inactive volcanic caldera, a UNESCO World Heritage Site</p>
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-green-600">From $2,150</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="ngorongoro">View Details →</button>
                     </div>
                 </div>
             </div>
             
             <!-- Kilimanjaro Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
                 <div class="relative h-64">
                     <img src="https://readdy.ai/api/search-image?query=Mount%20Kilimanjaro%20majestic%20snow-capped%20peak%20towering%20above%20African%20plains%2C%20dramatic%20clouds%20surrounding%20summit%2C%20golden%20savanna%20grassland%20in%20foreground%2C%20clear%20blue%20sky%2C%20Africas%20highest%20mountain%2C%20inspiring%20adventure%20landscape%20photography&width=300&height=256&seq=kilimanjaro-dest&orientation=landscape" alt="Mount Kilimanjaro" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
                         <h3 class="text-xl font-bold">Kilimanjaro</h3>
                         <p class="text-sm opacity-90">Africa's Highest Peak</p>
@@ -431,16 +432,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-gray-600 mb-4">Conquer Africa's highest mountain and witness breathtaking views from the roof of Africa</p>
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-green-600">From $3,200</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="kilimanjaro">View Details →</button>
                     </div>
                 </div>
             </div>
             
             <!-- Tarangire Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
                 <div class="relative h-64">
                     <img src="https://readdy.ai/api/search-image?query=Tarangire%20National%20Park%20landscape%20with%20massive%20ancient%20baobab%20trees%20scattered%20across%20golden%20savanna%2C%20elephants%20grazing%20peacefully%20beneath%20giant%20trees%2C%20warm%20afternoon%20lighting%2C%20unique%20African%20wilderness%20scenery%2C%20professional%20wildlife%20photography&width=300&height=256&seq=tarangire-dest&orientation=landscape" alt="Tarangire National Park" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
                         <h3 class="text-xl font-bold">Tarangire</h3>
                         <p class="text-sm opacity-90">Baobab & Elephants</p>
@@ -450,19 +451,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-gray-600 mb-4">Famous for its ancient baobab trees and large elephant herds in pristine wilderness</p>
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-green-600">From $1,850</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="tarangire">View Details →</button>
                     </div>
                 </div>
             </div>
         </div>
         
         <!-- Universities Section (Initially Hidden) -->
-        <div id="universitiesSection" class="hidden grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div id="universitiesSectionTz" class="hidden grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- University of Dar es Salaam -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
                 <div class="relative h-64">
                     <img src="https://readdy.ai/api/search-image?query=University%20of%20Dar%20es%20Salaam%20campus%20showing%20modern%20academic%20buildings%20with%20lush%20green%20landscaping%2C%20students%20walking%20between%20classes%2C%20sunny%20day%20with%20blue%20sky%2C%20Tanzanias%20premier%20university%2C%20professional%20campus%20photography&width=300&height=256&seq=udsm-dest&orientation=landscape" alt="University of Dar es Salaam" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
                         <h3 class="text-xl font-bold">UDSM</h3>
                         <p class="text-sm opacity-90">Premier University</p>
@@ -472,16 +473,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-gray-600 mb-4">Tanzania's oldest and most prestigious public university with diverse academic programs</p>
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-green-600">Public University</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="udsm">View Details →</button>
                     </div>
                 </div>
             </div>
             
             <!-- Muhimbili University -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
                 <div class="relative h-64">
                     <img src="https://readdy.ai/api/search-image?query=Muhimbili%20University%20of%20Health%20and%20Allied%20Sciences%20campus%20showing%20medical%20school%20buildings%2C%20students%20in%20white%20coats%2C%20modern%20hospital%20facilities%2C%20green%20spaces%2C%20professional%20medical%20education%20environment&width=300&height=256&seq=muhas-dest&orientation=landscape" alt="Muhimbili University" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
                         <h3 class="text-xl font-bold">MUHAS</h3>
                         <p class="text-sm opacity-90">Health Sciences</p>
@@ -491,16 +492,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-gray-600 mb-4">Leading institution for medical and health sciences education in Tanzania</p>
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-green-600">Specialized</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="muhas">View Details →</button>
                     </div>
                 </div>
             </div>
             
             <!-- Sokoine University -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
                 <div class="relative h-64">
                     <img src="https://readdy.ai/api/search-image?query=Sokoine%20University%20of%20Agriculture%20campus%20showing%20agricultural%20fields%20and%20research%20facilities%2C%20students%20conducting%20field%20work%2C%20green%20environment%2C%20modern%20laboratories%2C%20professional%20academic%20photography&width=300&height=256&seq=sua-dest&orientation=landscape" alt="Sokoine University" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
                         <h3 class="text-xl font-bold">SUA</h3>
                         <p class="text-sm opacity-90">Agriculture</p>
@@ -510,16 +511,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-gray-600 mb-4">Premier institution for agricultural sciences, veterinary medicine, and related fields</p>
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-green-600">Public University</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="sua">View Details →</button>
                     </div>
                 </div>
             </div>
             
             <!-- Nelson Mandela University -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
                 <div class="relative h-64">
                     <img src="https://readdy.ai/api/search-image?query=Nelson%20Mandela%20African%20Institution%20of%20Science%20and%20Technology%20campus%20showing%20modern%20STEM%20facilities%2C%20students%20in%20laboratories%2C%20research%20equipment%2C%20green%20campus%20environment%2C%20professional%20academic%20photography&width=300&height=256&seq=nm-aist-dest&orientation=landscape" alt="Nelson Mandela University" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
                         <h3 class="text-xl font-bold">NM-AIST</h3>
                         <p class="text-sm opacity-90">Science & Technology</p>
@@ -529,13 +530,548 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-gray-600 mb-4">Postgraduate institution focused on science, engineering and technology innovation</p>
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-green-600">Postgraduate</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="nm-aist">View Details →</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Modal Overlay -->
+    <div id="detailModalTz" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl">
+            <span class="close-modal-tz absolute top-4 right-6 text-4xl text-gray-500 cursor-pointer hover:text-gray-700 z-10">&times;</span>
+            <div id="modalContentTz" class="p-8 pt-16">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
 </section>
+
+<style>
+.modal-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-card {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #10b981;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.feature-list li::before {
+    content: "✓";
+    color: #10b981;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.badge-primary {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.badge-secondary {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.rating {
+    display: inline-flex;
+    align-items: center;
+    background: #fffbeb;
+    color: #d97706;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.modal-header {
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+</style>
+
+<!-- Include jsPDF library for PDF generation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+// Toggle between sections for Tanzania
+document.getElementById('wildlifeBtnTz').addEventListener('click', function() {
+    document.getElementById('wildlifeSectionTz').classList.remove('hidden');
+    document.getElementById('universitiesSectionTz').classList.add('hidden');
+    this.classList.add('bg-green-600', 'text-white');
+    this.classList.remove('text-gray-600', 'bg-transparent');
+    document.getElementById('universitiesBtnTz').classList.remove('bg-green-600', 'text-white');
+    document.getElementById('universitiesBtnTz').classList.add('text-gray-600', 'bg-transparent');
+});
+
+document.getElementById('universitiesBtnTz').addEventListener('click', function() {
+    document.getElementById('universitiesSectionTz').classList.remove('hidden');
+    document.getElementById('wildlifeSectionTz').classList.add('hidden');
+    this.classList.add('bg-green-600', 'text-white');
+    this.classList.remove('text-gray-600', 'bg-transparent');
+    document.getElementById('wildlifeBtnTz').classList.remove('bg-green-600', 'text-white');
+    document.getElementById('wildlifeBtnTz').classList.add('text-gray-600', 'bg-transparent');
+});
+
+// Detailed information data for Tanzania with more content
+const detailsDataTz = {
+    'serengeti': {
+        title: 'Serengeti National Park',
+        image: 'https://readdy.ai/api/search-image?query=Serengeti%20National%20Park%20endless%20plains%20during%20Great%20Migration%2C%20thousands%20of%20wildebeest%20and%20zebras%20crossing%20savanna%2C%20dramatic%20sky%20with%20scattered%20clouds%2C%20golden%20grassland%20stretching%20to%20horizon%2C%20iconic%20African%20wildlife%20spectacle%2C%20professional%20nature%20photography&width=300&height=256&seq=serengeti-dest&orientation=landscape',
+        description: 'The Serengeti National Park is a Tanzanian national park in the Serengeti ecosystem in the Mara and Simiyu regions. It is famous for its annual migration of over 1.5 million white-bearded wildebeest and 250,000 zebra and for its numerous Nile crocodile and honey badger.',
+        highlights: [
+            'Witness the spectacular Great Migration (year-round movement)',
+            'Exceptional Big Five game viewing throughout the year',
+            'Hot air balloon safaris over the vast plains at sunrise',
+            'Diverse ecosystems from riverine forests to kopjes',
+            'Over 500 bird species, including 34 birds of prey'
+        ],
+        details: {
+            'Area': '14,750 km² (5,700 square miles)',
+            'Best Time to Visit': 'June to October for dry season wildlife viewing',
+            'Key Wildlife': 'Lions, Leopards, Elephants, Rhinos, Buffaloes, Cheetahs, Wildebeest',
+            'Activities': 'Game drives, Balloon safaris, Walking safaris, Bird watching',
+            'Accommodation': 'Luxury lodges, Tented camps, Mobile camps',
+            'Conservation Status': 'UNESCO World Heritage Site'
+        },
+        price: 'From $2,450 for 3 nights (all inclusive)',
+        rating: '4.9',
+        climate: 'Warm days (27-31°C) and cool nights, with two rainy seasons (Nov-Dec and Mar-May)',
+        travelTips: 'Book early for migration season, bring binoculars and cameras with zoom lenses'
+    },
+    'ngorongoro': {
+        title: 'Ngorongoro Conservation Area',
+        image: 'https://readdy.ai/api/search-image?query=Ngorongoro%20Crater%20aerial%20panoramic%view%20showing%20massive%20volcanic%20caldera%20with%20diverse%20wildlife%20on%20crater%20floor%2C%20lush%20green%20vegetation%2C%20pristine%20lake%20reflecting%20sky%2C%20dramatic%20crater%20rim%20walls%2C%20UNESCO%20World%20Heritage%20natural%20wonder&width=300&height=256&seq=ngorongoro-dest&orientation=landscape',
+        description: 'The Ngorongoro Conservation Area is a protected area and a UNESCO World Heritage Site located in the Crater Highlands area of Tanzania. The area is named after Ngorongoro Crater, a large volcanic caldera within the area.',
+        highlights: [
+            'World\'s largest intact volcanic caldera (260 km²)',
+            'Highest density of lions in Africa',
+            'One of the best places to see the endangered black rhino',
+            'Maasai pastoralists living in harmony with wildlife',
+            'Archaeological sites with early human footprints'
+        ],
+        details: {
+            'Area': '8,292 km² (3,202 square miles)',
+            'Best Time to Visit': 'June to September (dry season)',
+            'Key Wildlife': 'Black Rhino, Lions, Elephants, Buffaloes, Flamingos, Hippos',
+            'Activities': 'Game drives, Cultural visits, Walking safaris, Photography',
+            'Accommodation': 'Lodges on the crater rim, Tented camps',
+            'Conservation Status': 'UNESCO World Heritage Site, International Biosphere Reserve'
+        },
+        price: 'From $2,150 for 3 nights (all inclusive)',
+        rating: '4.8',
+        climate: 'Temperate on the crater rim (can be chilly at night), warmer in the crater',
+        travelTips: 'Dress in layers for changing temperatures, arrive early to avoid crowds at animal sightings'
+    },
+    'kilimanjaro': {
+        title: 'Mount Kilimanjaro',
+        image: 'https://readdy.ai/api/search-image?query=Mount%20Kilimanjaro%20majestic%20snow-capped%20peak%20towering%20above%20African%20plains%2C%20dramatic%20clouds%20surrounding%20summit%2C%20golden%20savanna%20grassland%20in%20foreground%2C%20clear%20blue%20sky%2C%20Africas%20highest%20mountain%2C%20inspiring%20adventure%20landscape%20photography&width=300&height=256&seq=kilimanjaro-dest&orientation=landscape',
+        description: 'Mount Kilimanjaro is Africa\'s highest mountain at about 5,895 meters (19,341 feet). It is the largest free-standing mountain rise in the world, meaning it is not part of a mountain range. Also called a stratovolcano (a large volcano made of ash, lava, and rock), Kilimanjaro is made up of three cones: Kibo, Mawenzi, and Shira.',
+        highlights: [
+            'Africa\'s highest peak at 5,895 meters (19,341 feet)',
+            'Climb through five distinct ecological zones',
+            'No technical climbing skills required',
+            'Spectacular sunrise views from the summit',
+            'Unique high-altitude ecosystems and landscapes'
+        ],
+        details: {
+            'Elevation': '5,895 m (19,341 ft)',
+            'Best Time to Climb': 'January to March and June to October',
+            'Climbing Routes': 'Marangu, Machame, Lemosho, Rongai, Umbwe',
+            'Duration': '5-9 days depending on route',
+            'Success Rate': '45-65% depending on route and duration',
+            'Conservation Status': 'Kilimanjaro National Park, UNESCO World Heritage Site'
+        },
+        price: 'From $3,200 for 7-day climb (all inclusive)',
+        rating: '4.7',
+        climate: 'Five climatic zones: cultivated land, rainforest, heath, alpine desert, arctic summit',
+        travelTips: 'Choose a longer route for better acclimatization, invest in good quality gear, train adequately before the climb'
+    },
+    'tarangire': {
+        title: 'Tarangire National Park',
+        image: 'https://readdy.ai/api/search-image?query=Tarangire%20National%20Park%20landscape%20with%20massive%20ancient%20baobab%20trees%20scattered%20across%20golden%20savanna%2C%20elephants%20grazing%20peacefully%20beneath%20giant%20trees%2C%20warm%20afternoon%20lighting%2C%20unique%20African%20wilderness%20scenery%2C%20professional%20wildlife%20photography&width=300&height=256&seq=tarangire-dest&orientation=landscape',
+        description: 'Tarangire National Park is known for its large elephant herds and ancient baobab trees. During the dry season, thousands of animals migrate to the Tarangire River, which is the only permanent source of water in the area.',
+        highlights: [
+            'Largest concentration of elephants in Tanzania',
+            'Ancient baobab trees dotting the landscape',
+            'Diverse birdlife with over 550 species',
+            'Silale Swamp - a wildlife magnet during dry season',
+            'Less crowded than northern parks offering more intimate safari experience'
+        ],
+        details: {
+            'Area': '2,850 km² (1,100 square miles)',
+            'Best Time to Visit': 'June to October (dry season)',
+            'Key Wildlife': 'Elephants, Lions, Leopards, African Wild Dogs, Baobab Trees',
+            'Activities': 'Game drives, Walking safaris, Bird watching, Photography',
+            'Accommodation': 'Lodges, Tented camps, Luxury treehouses',
+            'Conservation Status': 'National Park since 1970'
+        },
+        price: 'From $1,850 for 3 nights (all inclusive)',
+        rating: '4.6',
+        climate: 'Hot and dry, especially June to October, with green season November to May',
+        travelTips: 'Visit during dry season for best wildlife viewing, bring binoculars for bird watching'
+    },
+    'udsm': {
+        title: 'University of Dar es Salaam',
+        image: 'https://readdy.ai/api/search-image?query=University%20of%20Dar%20es%20Salaam%20campus%20showing%20modern%20academic%20buildings%20with%20lush%20green%20landscaping%2C%20students%20walking%20between%20classes%2C%20sunny%20day%20with%20blue%20sky%2C%20Tanzanias%20premier%20university%2C%20professional%20campus%20photography&width=300&height=256&seq=udsm-dest&orientation=landscape',
+        description: 'The University of Dar es Salaam is the oldest and premier public university in Tanzania. It is situated on the western side of the city of Dar es Salaam, occupying 1,625 acres on the observation hill, 13 kilometers from the city center.',
+        highlights: [
+            'Established in 1961 as a college of the University of London',
+            'Over 200 academic programs across various disciplines',
+            'Leading research institution in East Africa',
+            'Multiple campuses including College of Engineering and Technology',
+            'Strong international partnerships and exchange programs'
+        ],
+        details: {
+            'Type': 'Public Research University',
+            'Student Population': 'Over 20,000 students',
+            'Faculties': '10 faculties and several institutes',
+            'Ranking': 'Top university in Tanzania, ranked among best in Africa',
+            'Notable Alumni': 'Government ministers, business leaders, academics',
+            'Research Focus': 'Agriculture, Health Sciences, Technology, Social Sciences'
+        },
+        price: 'Public University - varies by program',
+        rating: '4.7',
+        programs: 'Engineering, Medicine, Law, Business, Arts & Sciences, Education',
+        admission: 'Highly competitive, based on Advanced Certificate of Secondary Education Examination results'
+    },
+    'muhas': {
+        title: 'Muhimbili University of Health and Allied Sciences',
+        image: 'https://readdy.ai/api/search-image?query=Muhimbili%20University%20of%20Health%20and%20Allied%20Sciences%20campus%20showing%20medical%20school%20buildings%2C%20students%20in%20white%20coats%2C%20modern%20hospital%20facilities%2C%20green%20spaces%2C%20professional%20medical%20education%20environment&width=300&height=256&seq=muhas-dest&orientation=landscape',
+        description: 'Muhimbili University of Health and Allied Sciences is a public university in Dar es Salaam, Tanzania, specializing in health sciences. It is the oldest and most prestigious health sciences institution in the country.',
+        highlights: [
+            'Established in 1963 as a medical school',
+            'Premier institution for medical education in Tanzania',
+            'Affiliated with Muhimbili National Hospital for clinical training',
+            'Research focus on tropical diseases and public health',
+            'International collaborations with leading medical institutions'
+        ],
+        details: {
+            'Type': 'Public Specialized University',
+            'Student Population': 'Over 5,000 students',
+            'Schools': '6 schools specializing in health sciences',
+            'Programs': 'Medicine, Dentistry, Pharmacy, Nursing, Public Health',
+            'Teaching Hospital': 'Muhimbili National Hospital for medical training',
+            'Research Centers': 'Focus on tropical diseases, HIV/AIDS, maternal health'
+        },
+        price: 'Public University - varies by program',
+        rating: '4.8',
+        programs: 'Medicine, Dentistry, Pharmacy, Nursing, Laboratory Sciences, Public Health',
+        admission: 'Highly competitive, based on Advanced Certificate of Secondary Education Examination results with science focus'
+    },
+    'sua': {
+        title: 'Sokoine University of Agriculture',
+        image: 'https://readdy.ai/api/search-image?query=Sokoine%20University%20of%20Agriculture%20campus%20showing%20agricultural%20fields%20and%20research%20facilities%2C%20students%20conducting%20field%20work%2C%20green%20environment%2C%20modern%20laboratories%2C%20professional%20academic%20photography&width=300&height=256&seq=sua-dest&orientation=landscape',
+        description: 'Sokoine University of Agriculture is a public university in Morogoro, Tanzania, specializing in agriculture, veterinary medicine, and related fields. It is named after the former Prime Minister Edward Sokoine.',
+        highlights: [
+            'Established in 1984 through an Act of Parliament',
+            'Premier agricultural research institution in Tanzania',
+            'Extensive research farms and field stations',
+            'Focus on sustainable agriculture and food security',
+            'Strong community outreach programs'
+        ],
+        details: {
+            'Type': 'Public Specialized University',
+            'Student Population': 'Over 6,000 students',
+            'Faculties': '6 faculties specializing in agriculture and related fields',
+            'Programs': 'Agriculture, Veterinary Medicine, Forestry, Food Science, Rural Development',
+            'Research Farms': 'Multiple research and training farms',
+            'Extension Services': 'Strong focus on community outreach and extension services'
+        },
+        price: 'Public University - varies by program',
+        rating: '4.6',
+        programs: 'Agriculture, Veterinary Medicine, Forestry, Biotechnology, Food Science, Rural Development',
+        admission: 'Based on Advanced Certificate of Secondary Education Examination results with science background'
+    },
+    'nm-aist': {
+        title: 'Nelson Mandela African Institution of Science and Technology',
+        image: 'https://readdy.ai/api/search-image?query=Nelson%20Mandela%20African%20Institution%20of%20Science%20and%20Technology%20campus%20showing%20modern%20STEM%20facilities%2C%20students%20in%20laboratories%2C%20research%20equipment%2C%20green%20campus%20environment%2C%20professional%20academic%20photography&width=300&height=256&seq=nm-aist-dest&orientation=landscape',
+        description: 'The Nelson Mandela African Institution of Science and Technology is a postgraduate research-intensive institution located in Arusha, Tanzania. It is part of the Pan-African Network of Institutions of Science and Technology.',
+        highlights: [
+            'Established in 2010 as a postgraduate institution',
+            'Focus on science, engineering and technology innovation',
+            'State-of-the-art research facilities and laboratories',
+            'International faculty and student body',
+            'Strong industry partnerships for research and innovation'
+        ],
+        details: {
+            'Type': 'Public Postgraduate University',
+            'Student Population': 'Over 1,000 postgraduate students',
+            'Schools': '4 schools focusing on different STEM disciplines',
+            'Programs': 'Masters and PhD programs in science and technology',
+            'Research Focus': 'Sustainable energy, water resources, ICT, biotechnology',
+            'International Links': 'Part of the Pan-African Network of Institutions of Science and Technology'
+        },
+        price: 'Public University - varies by program',
+        rating: '4.5',
+        programs: 'Materials Science, Computational Science, Life Sciences, Environmental Science, Engineering',
+        admission: 'Requires a good first degree in a relevant field for masters programs, and a masters degree for PhD programs'
+    }
+};
+
+// Modal functionality for Tanzania
+const modalTz = document.getElementById('detailModalTz');
+const modalContentTz = document.getElementById('modalContentTz');
+const closeModalTz = document.querySelector('.close-modal-tz');
+
+// Function to generate PDF for Tanzania
+function generatePDFTz(target) {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    const data = detailsDataTz[target];
+    
+    // Add title
+    doc.setFontSize(20);
+    doc.setTextColor(40, 40, 40);
+    doc.text(data.title, 105, 20, { align: 'center' });
+    
+    // Add subtitle/description
+    doc.setFontSize(12);
+    doc.setTextColor(100, 100, 100);
+    const splitDescription = doc.splitTextToSize(data.description, 180);
+    doc.text(splitDescription, 20, 35);
+    
+    let yPosition = 60;
+    
+    // Add highlights
+    doc.setFontSize(16);
+    doc.setTextColor(30, 30, 30);
+    doc.text('Highlights:', 20, yPosition);
+    yPosition += 10;
+    
+    doc.setFontSize(10);
+    data.highlights.forEach(highlight => {
+        if (yPosition > 250) {
+            doc.addPage();
+            yPosition = 20;
+        }
+        doc.setTextColor(50, 50, 50);
+        doc.text('• ' + highlight, 25, yPosition);
+        yPosition += 7;
+    });
+    
+    yPosition += 5;
+    
+    // Add details
+    if (yPosition > 220) {
+        doc.addPage();
+        yPosition = 20;
+    }
+    
+    doc.setFontSize(16);
+    doc.setTextColor(30, 30, 30);
+    doc.text('Details:', 20, yPosition);
+    yPosition += 10;
+    
+    doc.setFontSize(10);
+    Object.entries(data.details).forEach(([key, value]) => {
+        if (yPosition > 250) {
+            doc.addPage();
+            yPosition = 20;
+        }
+        doc.setTextColor(80, 80, 80);
+        doc.text(key + ':', 25, yPosition);
+        doc.setTextColor(50, 50, 50);
+        const splitValue = doc.splitTextToSize(value, 120);
+        doc.text(splitValue, 80, yPosition);
+        yPosition += splitValue.length * 7;
+    });
+    
+    // Add footer
+    const pageCount = doc.internal.getNumberOfPages();
+    for (let i = 1; i <= pageCount; i++) {
+        doc.setPage(i);
+        doc.setFontSize(8);
+        doc.setTextColor(150, 150, 150);
+        doc.text('Generated from Tanzania Tourism Platform - ' + new Date().toLocaleDateString(), 105, 285, { align: 'center' });
+    }
+    
+    // Save the PDF
+    doc.save(`${data.title.replace(/\s+/g, '_')}_Information.pdf`);
+}
+
+// View details button event listeners for Tanzania
+document.querySelectorAll('#wildlifeSectionTz .view-details, #universitiesSectionTz .view-details').forEach(button => {
+    button.addEventListener('click', function() {
+        const target = this.getAttribute('data-target');
+        const data = detailsDataTz[target];
+        const isWildlife = ['serengeti', 'ngorongoro', 'kilimanjaro', 'tarangire'].includes(target);
+        
+        modalContentTz.innerHTML = `
+            <div class="modal-header">
+                <img src="${data.image}" alt="${data.title}" class="modal-image">
+                <h2 class="text-3xl font-bold mb-2 text-gray-800">${data.title}</h2>
+                <div class="flex flex-wrap items-center gap-4">
+                    <span class="rating">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        ${data.rating}/5
+                    </span>
+                    <span class="text-lg font-bold text-green-600">${data.price}</span>
+                </div>
+            </div>
+            
+            <p class="text-lg text-gray-700 mb-6">${data.description}</p>
+            
+            <div class="detail-grid">
+                <div class="info-card">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Key Highlights</h3>
+                    <ul class="feature-list">
+                        ${data.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Detailed Information</h3>
+                    <div class="space-y-3">
+                        ${Object.entries(data.details).map(([key, value]) => `
+                            <div>
+                                <span class="font-medium text-gray-700">${key}:</span>
+                                <p class="text-gray-600">${value}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+            
+            ${isWildlife ? `
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                <h3 class="text-lg font-semibold text-blue-800 mb-2">Travel Information</h3>
+                <p class="text-blue-700"><span class="font-medium">Climate:</span> ${data.climate}</p>
+                <p class="text-blue-700 mt-2"><span class="font-medium">Travel Tips:</span> ${data.travelTips}</p>
+            </div>
+            ` : `
+            <div class="mt-6 p-4 bg-purple-50 rounded-lg border border-purple-100">
+                <h3 class="text-lg font-semibold text-purple-800 mb-2">Academic Information</h3>
+                <p class="text-purple-700"><span class="font-medium">Programs:</span> ${data.programs}</p>
+                <p class="text-purple-700 mt-2"><span class="font-medium">Admission:</span> ${data.admission}</p>
+            </div>
+            `}
+            
+            <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+                <div class="flex flex-wrap gap-2">
+                    ${isWildlife ? `
+                    <span class="badge badge-primary">Wildlife</span>
+                    <span class="badge badge-secondary">Safari</span>
+                    <span class="badge badge-primary">Conservation</span>
+                    ` : `
+                    <span class="badge badge-primary">Education</span>
+                    <span class="badge badge-secondary">Research</span>
+                    <span class="badge badge-primary">Academic</span>
+                    `}
+                </div>
+                <button onclick="generatePDFTz('${target}')" class="download-btn">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                    Download PDF
+                </button>
+            </div>
+        `;
+        
+        modalTz.classList.remove('hidden');
+        modalTz.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+// Close modal for Tanzania
+closeModalTz.addEventListener('click', function() {
+    modalTz.classList.add('hidden');
+    modalTz.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+});
+
+// Close modal when clicking outside for Tanzania
+modalTz.addEventListener('click', function(e) {
+    if (e.target === modalTz) {
+        modalTz.classList.add('hidden');
+        modalTz.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close modal with Escape key for Tanzania
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !modalTz.classList.contains('hidden')) {
+        modalTz.classList.add('hidden');
+        modalTz.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+});
+</script>
 
 <script>
     // Toggle between Wildlife and Universities

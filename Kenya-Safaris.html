@@ -411,185 +411,716 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- Featured Destinations -->
 <section id="explore-section" class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Explore Kenya</h2>
-                <p class="text-xl text-gray-600 mb-6">Discover Africa's most spectacular wildlife and academic institutions</p>
-                
-                <!-- Toggle Switch -->
-                <div class="inline-flex items-center bg-gray-100 rounded-full p-1">
-                    <button id="wildlifeBtn" class="px-6 py-2 rounded-full font-medium text-white bg-green-600 transition-all">
-                        Wildlife Destinations
-                    </button>
-                    <button id="universitiesBtn" class="px-6 py-2 rounded-full font-medium text-gray-600 hover:text-gray-800 transition-all">
-                        Universities
-                    </button>
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4 text-gray-800">Explore Kenya</h2>
+            <p class="text-xl text-gray-600 mb-6">Discover Africa's most spectacular wildlife and academic institutions</p>
+            
+            <!-- Toggle Switch -->
+            <div class="inline-flex items-center bg-gray-100 rounded-full p-1">
+                <button id="wildlifeBtn" class="px-6 py-2 rounded-full font-medium text-white bg-green-600 transition-all">
+                    Wildlife Destinations
+                </button>
+                <button id="universitiesBtn" class="px-6 py-2 rounded-full font-medium text-gray-600 hover:text-gray-800 transition-all">
+                    Universities
+                </button>
+            </div>
+        </div>
+        
+        <!-- Wildlife Destinations (Default Visible) -->
+        <div id="wildlifeSection" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Maasai Mara Card -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+                <div class="relative h-64">
+                    <img src="img/Destination/Kenya/maasi.png" alt="Maasai Mara National Reserve" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Maasai Mara</h3>
+                        <p class="text-sm opacity-90">Great Migration</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Home to the spectacular wildebeest migration and abundant big cats</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-green-600">From $2,350</span>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="maasai-mara">View Details →</button>
+                    </div>
                 </div>
             </div>
             
-            <!-- Wildlife Destinations (Default Visible) -->
-            <div id="wildlifeSection" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Maasai Mara Card -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div class="relative h-64">
-                        <img src="img/Destination/Kenya/maasi.png" alt="Maasai Mara National Reserve" class="w-full h-full object-cover object-top">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">Maasai Mara</h3>
-                            <p class="text-sm opacity-90">Great Migration</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Home to the spectacular wildebeest migration and abundant big cats</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-lg font-bold text-green-600">From $2,350</span>
-                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                        </div>
+            <!-- Amboseli Card -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+                <div class="relative h-64">
+                    <img src="img/Destination/Kenya/Amboseli.png" alt="Amboseli National Park" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Amboseli</h3>
+                        <p class="text-sm opacity-90">Elephants & Kilimanjaro Views</p>
                     </div>
                 </div>
-                
-                <!-- Amboseli Card -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div class="relative h-64">
-                        <img src="img/Destination/Kenya/Amboseli.png" alt="Amboseli National Park" class="w-full h-full object-cover object-top">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">Amboseli</h3>
-                            <p class="text-sm opacity-90">Elephants & Kilimanjaro Views</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Famous for its large elephant herds and stunning views of Mount Kilimanjaro</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-lg font-bold text-green-600">From $1,950</span>
-                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                        </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Famous for its large elephant herds and stunning views of Mount Kilimanjaro</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-green-600">From $1,950</span>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="amboseli">View Details →</button>
                     </div>
                 </div>
-                
-                <!-- Tsavo Card -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div class="relative h-64">
-                        <img src="img/Destination/Kenya/tsavo.png" alt="Tsavo National Park" class="w-full h-full object-cover object-top">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">Tsavo</h3>
-                            <p class="text-sm opacity-90">Red Elephants & Vast Wilderness</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Kenya's largest national park known for its red elephants and dramatic landscapes</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-lg font-bold text-green-600">From $1,750</span>
-                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Samburu Card -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div class="relative h-64">
-                        <img src="img/Destination/Kenya/Samburu.png" alt="Samburu National Reserve" class="w-full h-full object-cover object-top">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">Samburu</h3>
-                            <p class="text-sm opacity-90">Special Five Species</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Home to unique species like the reticulated giraffe and Grevy's zebra</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-lg font-bold text-green-600">From $2,050</span>
-                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                        </div>
-                    </div>
-                </div>
-
-                
-
             </div>
             
-            <!-- Universities Section (Initially Hidden) -->
-            <div id="universitiesSection" class="hidden grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- University of Nairobi -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div class="relative h-64">
-                        <img src="img/Destination/Kenya/UON.jpeg" alt="University of Nairobi" class="w-full h-full object-cover object-top">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">UoN</h3>
-                            <p class="text-sm opacity-90">Premier University</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Kenya's oldest and most prestigious public university with diverse academic programs</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-lg font-bold text-green-600">Public University</span>
-                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                        </div>
+            <!-- Tsavo Card -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+                <div class="relative h-64">
+                    <img src="img/Destination/Kenya/tsavo.png" alt="Tsavo National Park" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Tsavo</h3>
+                        <p class="text-sm opacity-90">Red Elephants & Vast Wilderness</p>
                     </div>
                 </div>
-                
-                <!-- Kenyatta University -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div class="relative h-64">
-                        <img src="img/Destination/Kenya/kenyatta.jpeg" alt="Kenyatta University" class="w-full h-full object-cover object-top">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">Kenyatta</h3>
-                            <p class="text-sm opacity-90">Comprehensive Programs</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">One of Kenya's leading public universities with a wide range of academic offerings</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-lg font-bold text-green-600">Public University</span>
-                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                        </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Kenya's largest national park known for its red elephants and dramatic landscapes</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-green-600">From $1,750</span>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="tsavo">View Details →</button>
                     </div>
                 </div>
-                
-                <!-- Strathmore University -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div class="relative h-64">
-                        <img src="img/Destination/Kenya/strathmore.jpeg" alt="Strathmore University" class="w-full h-full object-cover object-top">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">Strathmore</h3>
-                            <p class="text-sm opacity-90">Business & Technology</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Leading private university specializing in business, IT and management education</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-lg font-bold text-green-600">Private University</span>
-                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                        </div>
+            </div>
+            
+            <!-- Samburu Card -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+                <div class="relative h-64">
+                    <img src="img/Destination/Kenya/Samburu.png" alt="Samburu National Reserve" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Samburu</h3>
+                        <p class="text-sm opacity-90">Special Five Species</p>
                     </div>
                 </div>
-                
-                <!-- Moi University -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div class="relative h-64">
-                        <img src="img/Destination/Kenya/moi.jpeg" alt="Moi University" class="w-full h-full object-cover object-top">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">Moi University</h3>
-                            <p class="text-sm opacity-90">Science & Technology</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Public university with strong programs in medicine, engineering and sciences</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-lg font-bold text-green-600">Public University</span>
-                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                        </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Home to unique species like the reticulated giraffe and Grevy's zebra</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-green-600">From $2,050</span>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="samburu">View Details →</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Universities Section (Initially Hidden) -->
+        <div id="universitiesSection" class="hidden grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- University of Nairobi -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+                <div class="relative h-64">
+                    <img src="img/Destination/Kenya/UON.jpeg" alt="University of Nairobi" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">UoN</h3>
+                        <p class="text-sm opacity-90">Premier University</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Kenya's oldest and most prestigious public university with diverse academic programs</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-green-600">Public University</span>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="uon">View Details →</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Kenyatta University -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+                <div class="relative h-64">
+                    <img src="img/Destination/Kenya/kenyatta.jpeg" alt="Kenyatta University" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Kenyatta</h3>
+                        <p class="text-sm opacity-90">Comprehensive Programs</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">One of Kenya's leading public universities with a wide range of academic offerings</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-green-600">Public University</span>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="kenyatta">View Details →</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Strathmore University -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+                <div class="relative h-64">
+                    <img src="img/Destination/Kenya/strathmore.jpeg" alt="Strathmore University" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Strathmore</h3>
+                        <p class="text-sm opacity-90">Business & Technology</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Leading private university specializing in business, IT and management education</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-green-600">Private University</span>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="strathmore">View Details →</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Moi University -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+                <div class="relative h-64">
+                    <img src="img/Destination/Kenya/moi.jpeg" alt="Moi University" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Moi University</h3>
+                        <p class="text-sm opacity-90">Science & Technology</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Public university with strong programs in medicine, engineering and sciences</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-green-600">Public University</span>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="moi">View Details →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Modal Overlay -->
+    <div id="detailModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl">
+            <span class="close-modal absolute top-4 right-6 text-4xl text-gray-500 cursor-pointer hover:text-gray-700 z-10">&times;</span>
+            <div id="modalContent" class="p-8 pt-16">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.modal-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-card {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #10b981;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.feature-list li::before {
+    content: "✓";
+    color: #10b981;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.badge-primary {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.badge-secondary {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.rating {
+    display: inline-flex;
+    align-items: center;
+    background: #fffbeb;
+    color: #d97706;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.modal-header {
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+</style>
+
+<!-- Include jsPDF library for PDF generation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+// Toggle between sections
+document.getElementById('wildlifeBtn').addEventListener('click', function() {
+    document.getElementById('wildlifeSection').classList.remove('hidden');
+    document.getElementById('universitiesSection').classList.add('hidden');
+    this.classList.add('bg-green-600', 'text-white');
+    this.classList.remove('text-gray-600', 'bg-transparent');
+    document.getElementById('universitiesBtn').classList.remove('bg-green-600', 'text-white');
+    document.getElementById('universitiesBtn').classList.add('text-gray-600', 'bg-transparent');
+});
+
+document.getElementById('universitiesBtn').addEventListener('click', function() {
+    document.getElementById('universitiesSection').classList.remove('hidden');
+    document.getElementById('wildlifeSection').classList.add('hidden');
+    this.classList.add('bg-green-600', 'text-white');
+    this.classList.remove('text-gray-600', 'bg-transparent');
+    document.getElementById('wildlifeBtn').classList.remove('bg-green-600', 'text-white');
+    document.getElementById('wildlifeBtn').classList.add('text-gray-600', 'bg-transparent');
+});
+
+// Detailed information data with more content
+const detailsData = {
+    'maasai-mara': {
+        title: 'Maasai Mara National Reserve',
+        image: 'img/Destination/Kenya/maasi.png',
+        description: 'The Maasai Mara National Reserve is one of Africa\'s greatest wildlife reserves. Bordering Tanzania, the Mara is the northern extension of the Serengeti and forms a wildlife corridor between the two countries. It is named after the Maasai people, the ancestral inhabitants of the area.',
+        highlights: [
+            'Witness the spectacular Great Migration (July-October)',
+            'Exceptional Big Five game viewing throughout the year',
+            'Authentic Maasai cultural experiences and village visits',
+            'Breathtaking hot air balloon safaris at sunrise',
+            'Over 450 bird species, including 53 birds of prey'
+        ],
+        details: {
+            'Area': '1,510 km² (583 square miles)',
+            'Best Time to Visit': 'July to October for migration, year-round for wildlife',
+            'Key Wildlife': 'Lions, Leopards, Elephants, Rhinos, Buffaloes, Cheetahs, Hyenas',
+            'Activities': 'Game drives, Cultural visits, Balloon safaris, Bird watching',
+            'Accommodation': 'Luxury lodges, Tented camps, Budget options available',
+            'Conservation Status': 'UNESCO World Heritage Site (as part of Serengeti ecosystem)'
+        },
+        price: 'From $2,350 for 3 nights (all inclusive)',
+        rating: '4.9',
+        climate: 'Warm days (25-30°C) and cool nights, with two rainy seasons',
+        travelTips: 'Book early for migration season, bring binoculars and cameras with zoom lenses'
+    },
+    'amboseli': {
+        title: 'Amboseli National Park',
+        image: 'img/Destination/Kenya/Amboseli.png',
+        description: 'Amboseli National Park is famous for its spectacular views of Mount Kilimanjaro, Africa\'s highest peak, and its large herds of African elephants. The park\'s ecosystem is typical of the open savannah and provides habitat for numerous wildlife species.',
+        highlights: [
+            'Iconic views of Mount Kilimanjaro, especially at sunrise and sunset',
+            'Large elephant herds with some of the largest tusks in Africa',
+            'Observation Hill for panoramic views of the entire park',
+            'Five different habitats ranging from dried-up lake bed to wetlands',
+            'Maasai culture experiences with authentic village visits'
+        ],
+        details: {
+            'Area': '392 km² (151 square miles)',
+            'Best Time to Visit': 'June to October and January to February',
+            'Key Wildlife': 'Elephants, Lions, Cheetahs, Hyenas, Giraffes, Zebras, Wildebeest',
+            'Activities': 'Game drives, Nature walks, Cultural visits, Photography',
+            'Accommodation': 'Lodges and campsites inside and outside the park',
+            'Conservation Status': 'UNESCO Biosphere Reserve'
+        },
+        price: 'From $1,950 for 3 nights (all inclusive)',
+        rating: '4.7',
+        climate: 'Dry and dusty, with hot days and cool nights',
+        travelTips: 'Visit Observation Hill for best photography opportunities, early morning game drives recommended'
+    },
+    'tsavo': {
+        title: 'Tsavo National Parks',
+        image: 'img/Destination/Kenya/tsavo.png',
+        description: 'Tsavo National Park is Kenya\'s largest protected area, divided into Tsavo East and Tsavo West. Together they form one of the world\'s largest game sanctuaries. The park is famous for its "red" elephants that dust-bathe in the red volcanic soil.',
+        highlights: [
+            'Famous "red elephants" that dust-bathe in volcanic soil',
+            'Mzima Springs with underwater viewing chamber for hippos and fish',
+            'Shetani Lava Flows and Chaimu Crater for geological interest',
+            'Diverse landscapes from arid plains to mountainous terrain',
+            'Rich birdlife with over 500 recorded species'
+        ],
+        details: {
+            'Area': '22,812 km² (8,808 square miles) combined',
+            'Best Time to Visit': 'June to October and January to March',
+            'Key Wildlife': 'Red Elephants, Lions, Leopards, Rhinos, Hippos, Crocodiles',
+            'Activities': 'Game drives, Walking safaris, Photography, Cave exploration',
+            'Accommodation': 'Luxury lodges, Tented camps, Self-catering options',
+            'Conservation Status': 'Important Bird Area (IBA)'
+        },
+        price: 'From $1,750 for 3 nights (all inclusive)',
+        rating: '4.6',
+        climate: 'Hot and dry, especially in Tsavo East',
+        travelTips: 'Visit both Tsavo East and West for complete experience, carry plenty of water'
+    },
+    'samburu': {
+        title: 'Samburu National Reserve',
+        image: 'img/Destination/Kenya/Samburu.png',
+        description: 'Samburu National Reserve is located in northern Kenya and is renowned for its rare northern specialist species known as the "Samburu Special Five". The Ewaso Ng\'iro river flows through the reserve, providing a lifeline for wildlife in this arid region.',
+        highlights: [
+            'The "Samburu Special Five": Grevy\'s zebra, Somali ostrich, reticulated giraffe, gerenuk, and beisa oryx',
+            'Ewaso Ng\'iro River with crocodiles and hippos',
+            'Authentic Samburu cultural experiences',
+            'Excellent birdwatching with over 450 species recorded',
+            'Beautiful rugged landscapes with dramatic backgrounds'
+        ],
+        details: {
+            'Area': '165 km² (64 square miles)',
+            'Best Time to Visit': 'June to October and December to March',
+            'Key Wildlife': 'Reticulated Giraffe, Grevy\'s Zebra, Beisa Oryx, Gerenuk, Elephants',
+            'Activities': 'Game drives, Cultural visits, River walks, Bird watching',
+            'Accommodation': 'Lodges and tented camps along the river',
+            'Conservation Status': 'Part of larger ecosystem with Buffalo Springs and Shaba reserves'
+        },
+        price: 'From $2,050 for 3 nights (all inclusive)',
+        rating: '4.8',
+        climate: 'Hot and dry, with relief along the river',
+        travelTips: 'Look for wildlife along the river, visit local Samburu villages for cultural experience'
+    },
+    'uon': {
+        title: 'University of Nairobi',
+        image: 'img/Destination/Kenya/UON.jpeg',
+        description: 'The University of Nairobi is a world-class university committed to scholarly excellence. As the oldest university in Kenya, it has a rich history and has produced many of the country\'s leaders in various fields. The university offers a wide range of undergraduate and postgraduate programs.',
+        highlights: [
+            'Established in 1956 as Royal Technical College, became university in 1970',
+            'Over 70 academic programs across various disciplines',
+            'Leading research institution with numerous publications',
+            'Multiple campuses located in different parts of Nairobi',
+            'Strong international partnerships with universities worldwide'
+        ],
+        details: {
+            'Type': 'Public Research University',
+            'Student Population': 'Over 84,000 students',
+            'Faculties': '35 faculties and institutes',
+            'Ranking': 'Top university in Kenya, ranked among best in Africa',
+            'Notable Alumni': 'Nobel laureates, presidents, business leaders',
+            'Research Focus': 'Agriculture, Health Sciences, Technology, Social Sciences'
+        },
+        price: 'Public University - varies by program',
+        rating: '4.8',
+        programs: 'Medicine, Law, Engineering, Business, Arts & Sciences',
+        admission: 'Highly competitive, based on Kenya Certificate of Secondary Education results'
+    },
+    'kenyatta': {
+        title: 'Kenyatta University',
+        image: 'img/Destination/Kenya/kenyatta.jpeg',
+        description: 'Kenyatta University is a dynamic institution of higher learning located on a beautiful 1,000-acre campus. The university is named after Kenya\'s first president, Jomo Kenyatta, and has grown to become one of the most respected universities in East Africa.',
+        highlights: [
+            'Established in 1985 as a full-fledged university',
+            'Modern facilities including state-of-the-art library and laboratories',
+            'Strong focus on research and innovation',
+            'Industry partnerships for practical student experience',
+            'Innovation hubs supporting entrepreneurship'
+        ],
+        details: {
+            'Type': 'Public University',
+            'Student Population': 'Over 70,000 students',
+            'Schools': '19 schools offering diverse programs',
+            'Programs': 'Undergraduate, Postgraduate, Diploma and Certificate courses',
+            'Campuses': 'Main campus in Kahawa plus 7 satellite campuses',
+            'Special Programs': 'Evening and weekend classes for working professionals'
+        },
+        price: 'Public University - varies by program',
+        rating: '4.6',
+        programs: 'Education, Business, Environmental Studies, Health Sciences',
+        admission: 'Based on Kenya Certificate of Secondary Education results, with minimum entry requirements'
+    },
+    'strathmore': {
+        title: 'Strathmore University',
+        image: 'img/Destination/Kenya/strathmore.jpeg',
+        description: 'Strathmore University is a leading private university in Kenya known for its excellence in business, information technology, and management education. Founded in 1961, the university maintains strong industry connections and emphasizes ethical leadership.',
+        highlights: [
+            'Established in 1961 as an Advanced Level College',
+            'ACCA gold-approved learning provider',
+            'Strong technology innovation and business incubation',
+            'Industry connections for internships and employment',
+            'International accreditation and partnerships'
+        ],
+        details: {
+            'Type': 'Private University',
+            'Student Population': 'Over 5,000 students',
+            'Schools': '6 schools specializing in business and technology',
+            'Specialization': 'Business, IT, Management, Law, Hospitality',
+            'Accreditations': 'Accredited by Commission for University Education',
+            'Ethical Focus': 'Emphasis on values-based education'
+        },
+        price: 'Private University - higher than public institutions',
+        rating: '4.9',
+        programs: 'Business Administration, Information Technology, Law, International Studies',
+        admission: 'Based on Kenya Certificate of Secondary Education results, plus entrance exams for some programs'
+    },
+    'moi': {
+        title: 'Moi University',
+        image: 'img/Destination/Kenya/moi.jpeg',
+        description: 'Moi University is a public university located in Eldoret, Kenya. It is known for its strong programs in medicine, engineering, and sciences. The university has a main campus in Eldoret and several satellite campuses across the country.',
+        highlights: [
+            'Established in 1984 as Kenya\'s second public university',
+            'Medical school excellence with teaching hospital',
+            'Strong engineering and technology programs',
+            'Research focus with multiple research centers',
+            'Multiple campuses serving different regions'
+        ],
+        details: {
+            'Type': 'Public University',
+            'Student Population': 'Over 45,000 students',
+            'Schools': '18 schools covering various disciplines',
+            'Specialization': 'Medicine, Engineering, Sciences, Education, Arts',
+            'Teaching Hospital': 'Moi Teaching and Referral Hospital for medical training',
+            'Research Centers': 'Focus on agriculture, health, and technology research'
+        },
+        price: 'Public University - varies by program',
+        rating: '4.5',
+        programs: 'Medicine, Engineering, Sciences, Education, Economics',
+        admission: 'Based on Kenya Certificate of Secondary Education results, with program-specific requirements'
+    }
+};
+
+// Modal functionality
+const modal = document.getElementById('detailModal');
+const modalContent = document.getElementById('modalContent');
+const closeModal = document.querySelector('.close-modal');
+
+// Function to generate PDF
+function generatePDF(target) {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    const data = detailsData[target];
+    
+    // Add title
+    doc.setFontSize(20);
+    doc.setTextColor(40, 40, 40);
+    doc.text(data.title, 105, 20, { align: 'center' });
+    
+    // Add subtitle/description
+    doc.setFontSize(12);
+    doc.setTextColor(100, 100, 100);
+    const splitDescription = doc.splitTextToSize(data.description, 180);
+    doc.text(splitDescription, 20, 35);
+    
+    let yPosition = 60;
+    
+    // Add highlights
+    doc.setFontSize(16);
+    doc.setTextColor(30, 30, 30);
+    doc.text('Highlights:', 20, yPosition);
+    yPosition += 10;
+    
+    doc.setFontSize(10);
+    data.highlights.forEach(highlight => {
+        if (yPosition > 250) {
+            doc.addPage();
+            yPosition = 20;
+        }
+        doc.setTextColor(50, 50, 50);
+        doc.text('• ' + highlight, 25, yPosition);
+        yPosition += 7;
+    });
+    
+    yPosition += 5;
+    
+    // Add details
+    if (yPosition > 220) {
+        doc.addPage();
+        yPosition = 20;
+    }
+    
+    doc.setFontSize(16);
+    doc.setTextColor(30, 30, 30);
+    doc.text('Details:', 20, yPosition);
+    yPosition += 10;
+    
+    doc.setFontSize(10);
+    Object.entries(data.details).forEach(([key, value]) => {
+        if (yPosition > 250) {
+            doc.addPage();
+            yPosition = 20;
+        }
+        doc.setTextColor(80, 80, 80);
+        doc.text(key + ':', 25, yPosition);
+        doc.setTextColor(50, 50, 50);
+        const splitValue = doc.splitTextToSize(value, 120);
+        doc.text(splitValue, 80, yPosition);
+        yPosition += splitValue.length * 7;
+    });
+    
+    // Add footer
+    const pageCount = doc.internal.getNumberOfPages();
+    for (let i = 1; i <= pageCount; i++) {
+        doc.setPage(i);
+        doc.setFontSize(8);
+        doc.setTextColor(150, 150, 150);
+        doc.text('Generated from Kenya Tourism Platform - ' + new Date().toLocaleDateString(), 105, 285, { align: 'center' });
+    }
+    
+    // Save the PDF
+    doc.save(`${data.title.replace(/\s+/g, '_')}_Information.pdf`);
+}
+
+// View details button event listeners
+document.querySelectorAll('.view-details').forEach(button => {
+    button.addEventListener('click', function() {
+        const target = this.getAttribute('data-target');
+        const data = detailsData[target];
+        const isWildlife = ['maasai-mara', 'amboseli', 'tsavo', 'samburu'].includes(target);
+        
+        modalContent.innerHTML = `
+            <div class="modal-header">
+                <img src="${data.image}" alt="${data.title}" class="modal-image">
+                <h2 class="text-3xl font-bold mb-2 text-gray-800">${data.title}</h2>
+                <div class="flex flex-wrap items-center gap-4">
+                    <span class="rating">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        ${data.rating}/5
+                    </span>
+                    <span class="text-lg font-bold text-green-600">${data.price}</span>
+                </div>
+            </div>
+            
+            <p class="text-lg text-gray-700 mb-6">${data.description}</p>
+            
+            <div class="detail-grid">
+                <div class="info-card">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Key Highlights</h3>
+                    <ul class="feature-list">
+                        ${data.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Detailed Information</h3>
+                    <div class="space-y-3">
+                        ${Object.entries(data.details).map(([key, value]) => `
+                            <div>
+                                <span class="font-medium text-gray-700">${key}:</span>
+                                <p class="text-gray-600">${value}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+            
+            ${isWildlife ? `
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                <h3 class="text-lg font-semibold text-blue-800 mb-2">Travel Information</h3>
+                <p class="text-blue-700"><span class="font-medium">Climate:</span> ${data.climate}</p>
+                <p class="text-blue-700 mt-2"><span class="font-medium">Travel Tips:</span> ${data.travelTips}</p>
+            </div>
+            ` : `
+            <div class="mt-6 p-4 bg-purple-50 rounded-lg border border-purple-100">
+                <h3 class="text-lg font-semibold text-purple-800 mb-2">Academic Information</h3>
+                <p class="text-purple-700"><span class="font-medium">Programs:</span> ${data.programs}</p>
+                <p class="text-purple-700 mt-2"><span class="font-medium">Admission:</span> ${data.admission}</p>
+            </div>
+            `}
+            
+            <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+                <div class="flex flex-wrap gap-2">
+                    ${isWildlife ? `
+                    <span class="badge badge-primary">Wildlife</span>
+                    <span class="badge badge-secondary">Safari</span>
+                    <span class="badge badge-primary">Conservation</span>
+                    ` : `
+                    <span class="badge badge-primary">Education</span>
+                    <span class="badge badge-secondary">Research</span>
+                    <span class="badge badge-primary">Academic</span>
+                    `}
+                </div>
+                <button onclick="generatePDF('${target}')" class="download-btn">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                    Download PDF
+                </button>
+            </div>
+        `;
+        
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+// Close modal
+closeModal.addEventListener('click', function() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+});
+
+// Close modal when clicking outside
+modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+});
+</script>
     
 
     <!-- Wildlife Highlights -->

@@ -342,181 +342,716 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- Featured Destinations -->
 <section id="explore-section" class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Explore Rwanda</h2>
-                <p class="text-xl text-gray-600 mb-6">Discover Rwanda's spectacular wildlife and academic institutions</p>
-                
-                <!-- Toggle Switch -->
-                <div class="inline-flex items-center bg-gray-100 rounded-full p-1">
-                    <button id="wildlifeBtn" class="px-6 py-2 rounded-full font-medium text-white bg-green-600 transition-all">
-                        Wildlife Destinations
-                    </button>
-                    <button id="universitiesBtn" class="px-6 py-2 rounded-full font-medium text-gray-600 hover:text-gray-800 transition-all">
-                        Universities
-                    </button>
-                </div>
-            </div>
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4 text-gray-800">Explore Rwanda</h2>
+            <p class="text-xl text-gray-600 mb-6">Discover Rwanda's spectacular wildlife and academic institutions</p>
             
-            <!-- Wildlife Destinations (Default Visible) -->
-            <div id="wildlifeSection" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Volcanoes National Park Card -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div class="relative h-64">
-                        <img src="img/Destination/rwanda/volcanoes park.jpeg" alt="Volcanoes National Park" class="w-full h-full object-cover object-top">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">Volcanoes NP</h3>
-                            <p class="text-sm opacity-90">Mountain Gorillas</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Home to Rwanda's famous mountain gorillas in the Virunga Mountains</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-lg font-bold text-green-600">From $1,500</span>
-                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Nyungwe Forest Card -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div class="relative h-64">
-                        <img src="img/Destination/rwanda/nyungwe.jpeg" alt="Nyungwe Forest National Park" class="w-full h-full object-cover object-top">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">Nyungwe Forest</h3>
-                            <p class="text-sm opacity-90">Chimpanzees & Canopy Walk</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Ancient rainforest with chimpanzees, colobus monkeys, and spectacular canopy walks</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-lg font-bold text-green-600">From $1,200</span>
-                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                        </div>
+            <!-- Toggle Switch -->
+            <div class="inline-flex items-center bg-gray-100 rounded-full p-1">
+                <button id="wildlifeBtn" class="px-6 py-2 rounded-full font-medium text-white bg-green-600 transition-all">
+                    Wildlife Destinations
+                </button>
+                <button id="universitiesBtn" class="px-6 py-2 rounded-full font-medium text-gray-600 hover:text-gray-800 transition-all">
+                    Universities
+                </button>
+            </div>
+        </div>
+        
+        <!-- Wildlife Destinations (Default Visible) -->
+        <div id="wildlifeSection" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Volcanoes National Park Card -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+                <div class="relative h-64">
+                    <img src="img/Destination/rwanda/volcanoes park.jpeg" alt="Volcanoes National Park" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Volcanoes NP</h3>
+                        <p class="text-sm opacity-90">Mountain Gorillas</p>
                     </div>
                 </div>
-                
-                <!-- Akagera National Park Card -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div class="relative h-64">
-                        <img src="img/Destination/rwanda/akagera.jpeg" alt="Akagera National Park" class="w-full h-full object-cover object-top">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">Akagera NP</h3>
-                            <p class="text-sm opacity-90">Big Five Safari</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Rwanda's only savanna park with lions, elephants, and diverse wildlife</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-lg font-bold text-green-600">From $950</span>
-                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Lake Kivu Card -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div class="relative h-64">
-                        <img src="img/Destination/rwanda/lakekivu.jpeg" alt="Lake Kivu" class="w-full h-full object-cover object-top">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">Lake Kivu</h3>
-                            <p class="text-sm opacity-90">Scenic Lakeside Retreat</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Beautiful freshwater lake perfect for relaxation after gorilla trekking</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-lg font-bold text-green-600">From $800</span>
-                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                        </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Home to Rwanda's famous mountain gorillas in the Virunga Mountains</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-green-600">From $1,500</span>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="volcanoes">View Details →</button>
                     </div>
                 </div>
             </div>
             
-            <!-- Universities Section (Initially Hidden) -->
-            <div id="universitiesSection" class="hidden grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- University of Rwanda -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div class="relative h-64">
-                        <img src="img/Destination/rwanda/uor.jpeg" alt="University of Rwanda" class="w-full h-full object-cover object-top">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">UR</h3>
-                            <p class="text-sm opacity-90">Premier University</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Rwanda's largest and most prestigious public university with multiple campuses</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-lg font-bold text-green-600">Public University</span>
-                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                        </div>
+            <!-- Nyungwe Forest Card -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+                <div class="relative h-64">
+                    <img src="img/Destination/rwanda/nyungwe.jpeg" alt="Nyungwe Forest National Park" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Nyungwe Forest</h3>
+                        <p class="text-sm opacity-90">Chimpanzees & Canopy Walk</p>
                     </div>
                 </div>
-                
-                <!-- African Leadership University -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div class="relative h-64">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=256" alt="African Leadership University" class="w-full h-full object-cover object-top">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">ALU</h3>
-                            <p class="text-sm opacity-90">Leadership Education</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Innovative pan-African university focused on developing future leaders</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-lg font-bold text-green-600">Private University</span>
-                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                        </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Ancient rainforest with chimpanzees, colobus monkeys, and spectacular canopy walks</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-green-600">From $1,200</span>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="nyungwe">View Details →</button>
                     </div>
                 </div>
-                
-                <!-- University of Global Health Equity -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div class="relative h-64">
-                        <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=256" alt="University of Global Health Equity" class="w-full h-full object-cover object-top">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">UGHE</h3>
-                            <p class="text-sm opacity-90">Health Sciences</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Specialized institution focused on global health education and research</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-lg font-bold text-green-600">Specialized</span>
-                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                        </div>
+            </div>
+            
+            <!-- Akagera National Park Card -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+                <div class="relative h-64">
+                    <img src="img/Destination/rwanda/akagera.jpeg" alt="Akagera National Park" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Akagera NP</h3>
+                        <p class="text-sm opacity-90">Big Five Safari</p>
                     </div>
                 </div>
-                
-                <!-- Carnegie Mellon University Africa -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
-                    <div class="relative h-64">
-                        <img src="img/Destination/rwanda/CMU.jpeg" alt="Carnegie Mellon University Africa" class="w-full h-full object-cover object-top">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <h3 class="text-xl font-bold">CMU-Africa</h3>
-                            <p class="text-sm opacity-90">Technology & Engineering</p>
-                        </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Rwanda's only savanna park with lions, elephants, and diverse wildlife</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-green-600">From $950</span>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="akagera">View Details →</button>
                     </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">Rwanda campus of the prestigious Carnegie Mellon University</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-lg font-bold text-green-600">Postgraduate</span>
-                            <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
-                        </div>
+                </div>
+            </div>
+            
+            <!-- Lake Kivu Card -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+                <div class="relative h-64">
+                    <img src="img/Destination/rwanda/lakekivu.jpeg" alt="Lake Kivu" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">Lake Kivu</h3>
+                        <p class="text-sm opacity-90">Scenic Lakeside Retreat</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Beautiful freshwater lake perfect for relaxation after gorilla trekking</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-green-600">From $800</span>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="lake-kivu">View Details →</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Universities Section (Initially Hidden) -->
+        <div id="universitiesSection" class="hidden grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- University of Rwanda -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+                <div class="relative h-64">
+                    <img src="img/Destination/rwanda/uor.jpeg" alt="University of Rwanda" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">UR</h3>
+                        <p class="text-sm opacity-90">Premier University</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Rwanda's largest and most prestigious public university with multiple campuses</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-green-600">Public University</span>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="ur">View Details →</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- African Leadership University -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+                <div class="relative h-64">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=256" alt="African Leadership University" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">ALU</h3>
+                        <p class="text-sm opacity-90">Leadership Education</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Innovative pan-African university focused on developing future leaders</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-green-600">Private University</span>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="alu">View Details →</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- University of Global Health Equity -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+                <div class="relative h-64">
+                    <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=256" alt="University of Global Health Equity" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">UGHE</h3>
+                        <p class="text-sm opacity-90">Health Sciences</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Specialized institution focused on global health education and research</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-green-600">Specialized</span>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="ughe">View Details →</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Carnegie Mellon University Africa -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+                <div class="relative h-64">
+                    <img src="img/Destination/rwanda/CMU.jpeg" alt="Carnegie Mellon University Africa" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="text-xl font-bold">CMU-Africa</h3>
+                        <p class="text-sm opacity-90">Technology & Engineering</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <p class="text-gray-600 mb-4">Rwanda campus of the prestigious Carnegie Mellon University</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-bold text-green-600">Postgraduate</span>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="cmu">View Details →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div id="detailModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl">
+            <span class="close-modal absolute top-4 right-6 text-4xl text-gray-500 cursor-pointer hover:text-gray-700 z-10">&times;</span>
+            <div id="modalContent" class="p-8 pt-16">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.modal-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-card {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #10b981;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.feature-list li::before {
+    content: "✓";
+    color: #10b981;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.badge-primary {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.badge-secondary {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.rating {
+    display: inline-flex;
+    align-items: center;
+    background: #fffbeb;
+    color: #d97706;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.modal-header {
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+</style>
+
+<!-- Include jsPDF library for PDF generation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+// Toggle between sections
+document.getElementById('wildlifeBtn').addEventListener('click', function() {
+    document.getElementById('wildlifeSection').classList.remove('hidden');
+    document.getElementById('universitiesSection').classList.add('hidden');
+    this.classList.add('bg-green-600', 'text-white');
+    this.classList.remove('text-gray-600', 'bg-transparent');
+    document.getElementById('universitiesBtn').classList.remove('bg-green-600', 'text-white');
+    document.getElementById('universitiesBtn').classList.add('text-gray-600', 'bg-transparent');
+});
+
+document.getElementById('universitiesBtn').addEventListener('click', function() {
+    document.getElementById('universitiesSection').classList.remove('hidden');
+    document.getElementById('wildlifeSection').classList.add('hidden');
+    this.classList.add('bg-green-600', 'text-white');
+    this.classList.remove('text-gray-600', 'bg-transparent');
+    document.getElementById('wildlifeBtn').classList.remove('bg-green-600', 'text-white');
+    document.getElementById('wildlifeBtn').classList.add('text-gray-600', 'bg-transparent');
+});
+
+// Detailed information data with more content
+const detailsData = {
+    'volcanoes': {
+        title: 'Volcanoes National Park',
+        image: 'img/Destination/rwanda/volcanoes park.jpeg',
+        description: 'Volcanoes National Park is a protected area in northwestern Rwanda that covers 160 km² of rainforest and encompasses five of the eight volcanoes in the Virunga Mountains. It is world-renowned as a sanctuary for the critically endangered mountain gorillas.',
+        highlights: [
+            'Home to approximately one-third of the world\'s mountain gorillas',
+            'Made famous by Dian Fossey\'s gorilla research and conservation work',
+            'Stunning volcanic landscapes with elevations from 2,400-4,507 meters',
+            'Golden monkey tracking in addition to gorilla trekking',
+            'Rich biodiversity with 200+ bird species and various mammals'
+        ],
+        details: {
+            'Area': '160 km² (62 square miles)',
+            'Best Time to Visit': 'June to September and December to February (dry seasons)',
+            'Key Wildlife': 'Mountain Gorillas, Golden Monkeys, Spotted Hyena, Buffaloes',
+            'Activities': 'Gorilla trekking, Golden monkey tracking, Hiking the volcanoes',
+            'Permit Cost': '$1,500 per person for gorilla trekking (2023)',
+            'Conservation Status': 'UNESCO World Heritage Site (as part of Virunga Massif)'
+        },
+        price: 'From $1,500 for gorilla trekking permit',
+        rating: '4.9',
+        climate: 'Cool and misty with temperatures ranging from 10-22°C depending on altitude',
+        travelTips: 'Book permits 6-12 months in advance, good physical fitness required for trekking'
+    },
+    'nyungwe': {
+        title: 'Nyungwe Forest National Park',
+        image: 'img/Destination/rwanda/nyungwe.jpeg',
+        description: 'Nyungwe Forest is one of the oldest rainforests in Africa, dating back to before the last Ice Age. This biodiverse montane rainforest is home to 13 primate species including chimpanzees, and features East Africa\'s only canopy walkway.',
+        highlights: [
+            '13 primate species including chimpanzees and Angolan colobus monkeys',
+            'East Africa\'s only canopy walkway suspended 50 meters above the forest floor',
+            'Over 1,000 plant species, 300 bird species, and 120 butterfly species',
+            'Source of both the Nile and Congo rivers within the forest',
+            'Beautiful waterfalls and numerous hiking trails'
+        ],
+        details: {
+            'Area': '1,019 km² (393 square miles)',
+            'Best Time to Visit': 'December to February and June to August (dry seasons)',
+            'Key Wildlife': 'Chimpanzees, L\'Hoest\'s monkeys, Colobus monkeys, Forest birds',
+            'Activities': 'Chimp tracking, Canopy walk, Waterfall hikes, Bird watching',
+            'Accommodation': 'Lodges and campsites available near the park',
+            'Conservation Status': 'Important Bird Area and biodiversity hotspot'
+        },
+        price: 'From $1,200 for 2-night package',
+        rating: '4.7',
+        climate: 'Cool and humid with frequent rainfall, temperatures 10-20°C',
+        travelTips: 'Waterproof clothing essential, good walking shoes required for trails'
+    },
+    'akagera': {
+        title: 'Akagera National Park',
+        image: 'img/Destination/rwanda/akagera.jpeg',
+        description: 'Akagera National Park is Rwanda\'s only savanna reserve, named after the Akagera River that flows along its eastern boundary. After successful conservation efforts, the park now hosts all of the Big Five animals (lion, leopard, rhino, elephant, and buffalo).',
+        highlights: [
+            'Big Five game viewing (lions, leopards, rhinos, elephants, and buffalo)',
+            'Diverse landscapes from savanna to wetlands and lakes',
+            'Boat trips on Lake Ihema to see hippos and water birds',
+            'Over 500 bird species including rare papyrus specialists',
+            'Community-focused conservation success story'
+        ],
+        details: {
+            'Area': '1,122 km² (433 square miles)',
+            'Best Time to Visit': 'June to September (dry season for best game viewing)',
+            'Key Wildlife': 'Lions, Leopards, Rhinos, Elephants, Buffaloes, Hippos, Giraffes',
+            'Activities': 'Game drives, Boat safaris, Bird watching, Fishing',
+            'Accommodation': 'Lodges and tented camps inside the park',
+            'Conservation Status': 'Managed in partnership with African Parks since 2010'
+        },
+        price: 'From $950 for 2-night safari package',
+        rating: '4.6',
+        climate: 'Warm with temperatures 20-30°C, wetter than other Rwandan parks',
+        travelTips: 'Early morning and late afternoon game drives best for wildlife viewing'
+    },
+    'lake-kivu': {
+        title: 'Lake Kivu',
+        image: 'img/Destination/rwanda/lakekivu.jpeg',
+        description: 'Lake Kivu is one of Africa\'s Great Lakes, lying on the border between Rwanda and the Democratic Republic of the Congo. It is Rwanda\'s largest lake and offers beautiful scenery, sandy beaches, and numerous islands. The lake is known for its methane gas reserves and being free of bilharzia.',
+        highlights: [
+            'Beautiful sandy beaches and clear waters safe for swimming',
+            'Island hopping to Napoleon Island and Monkey Island',
+            'Kayaking, boat trips, and fishing experiences',
+            'Lakeside resorts and relaxation after gorilla trekking',
+            'Stunning sunsets over the lake and surrounding hills'
+        ],
+        details: {
+            'Size': '2,700 km² (1,040 square miles), Africa\'s eighth largest lake',
+            'Best Time to Visit': 'Year-round destination',
+            'Key Activities': 'Swimming, Boat trips, Kayaking, Cycling, Coffee tours',
+            'Towns': 'Gisenyi, Kibuye, and Cyangugu are main lakeside towns',
+            'Special Feature': 'Methane gas extraction for power generation',
+            'Safety': 'Bilharzia-free and safe for swimming'
+        },
+        price: 'From $800 for 2-night lakeside stay',
+        rating: '4.5',
+        climate: 'Warm and pleasant with temperatures 20-28°C year-round',
+        travelTips: 'Perfect add-on after gorilla trekking, try local fish from the lake'
+    },
+    'ur': {
+        title: 'University of Rwanda',
+        image: 'img/Destination/rwanda/uor.jpeg',
+        description: 'The University of Rwanda is the largest institution of higher learning in the country, formed in 2013 through the merger of several public higher education institutions. It has multiple campuses across Rwanda and offers a wide range of undergraduate and postgraduate programs.',
+        highlights: [
+            'Formed through merger of 7 public higher education institutions in 2013',
+            'Six colleges offering diverse academic programs',
+            'Strong focus on research and community engagement',
+            'Partnerships with international universities and organizations',
+            'Contribution to Rwanda\'s development goals'
+        ],
+        details: {
+            'Type': 'Public University',
+            'Student Population': 'Over 30,000 students',
+            'Colleges': '6 colleges across multiple disciplines',
+            'Campuses': 'Multiple campuses throughout Rwanda',
+            'Research Focus': 'Agriculture, Health Sciences, Technology, Education',
+            'Vision': 'To be a leading university globally recognized for excellence'
+        },
+        price: 'Public University - varies by program',
+        rating: '4.5',
+        programs: 'Medicine, Engineering, Business, Education, Agriculture, Sciences',
+        admission: 'Based on Rwanda National Examination Council results or equivalent'
+    },
+    'alu': {
+        title: 'African Leadership University',
+        image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=256',
+        description: 'African Leadership University is a pioneering network of universities transforming higher education in Africa. The Rwanda campus focuses on developing entrepreneurial leaders through innovative teaching methods and real-world experiences.',
+        highlights: [
+            'Mission to develop 3 million ethical, entrepreneurial African leaders by 2035',
+            'Innovative curriculum focused on leadership and real-world projects',
+            'Students spend time working on actual business challenges',
+            'Diverse student body from across Africa and beyond',
+            'Strong emphasis on entrepreneurship and innovation'
+        ],
+        details: {
+            'Type': 'Private University',
+            'Founded': '2015 in Mauritius, Rwanda campus opened in 2017',
+            'Programs': 'Undergraduate degrees in International Business, Computer Science',
+            'Learning Model': 'Project-based learning with industry partnerships',
+            'Campuses': 'Kigali Innovation City, Rwanda and Pamplemousses, Mauritius',
+            'Special Feature': 'Each student creates a leadership portfolio'
+        },
+        price: 'Private University - contact for tuition information',
+        rating: '4.7',
+        programs: 'International Business, Computer Science, Leadership Development',
+        admission: 'Holistic admissions process including academic records and leadership potential'
+    },
+    'ughe': {
+        title: 'University of Global Health Equity',
+        image: 'https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=256',
+        description: 'The University of Global Health Equity is a specialized institution focused on training global health professionals who will strive for equity in health care delivery. It was founded by Partners In Health with support from the Rwandan government.',
+        highlights: [
+            'Founded by Partners In Health, a renowned global health organization',
+            'Focus on health equity and social justice in health care',
+            'State-of-the-art campus in Butaro, Northern Rwanda',
+            'Diverse student body from Rwanda and internationally',
+            'Strong emphasis on community-based learning'
+        ],
+        details: {
+            'Type': 'Specialized Private University',
+            'Founded': '2015',
+            'Programs': 'Global Health Delivery, One Health, Nursing, Medical Education',
+            'Campus': 'Butaro campus in Northern Rwanda with modern facilities',
+            'Partnerships': 'Harvard Medical School, Partners In Health, Rwandan Ministry of Health',
+            'Mission': 'To change the way health care is delivered around the world'
+        },
+        price: 'Various scholarship opportunities available',
+        rating: '4.8',
+        programs: 'Global Health, Nursing, Medical Education, One Health',
+        admission: 'Competitive process with emphasis on commitment to health equity'
+    },
+    'cmu': {
+        title: 'Carnegie Mellon University Africa',
+        image: 'img/Destination/rwanda/CMU.jpeg',
+        description: 'Carnegie Mellon University Africa is the first U.S. research university offering its master\'s degrees with full-time faculty, staff, and operations in Africa. Located in Kigali, it is developing the next generation of African technology leaders.',
+        highlights: [
+            'First U.S. research university with a full-scale campus in Africa',
+            'Focus on technology and engineering education at graduate level',
+            'Strong industry connections for internships and employment',
+            'Diverse student body from across Africa',
+            'Research opportunities in African context'
+        ],
+        details: {
+            'Type': 'Postgraduate Campus of U.S. University',
+            'Established': '2011 in Rwanda',
+            'Programs': 'MSc in Information Technology, Electrical and Computer Engineering',
+            'Degree': 'Same Carnegie Mellon degree as Pittsburgh campus',
+            'Location': 'Kigali Innovation City, Rwanda',
+            'Partnership': 'With Rwanda government and support from African Development Bank'
+        },
+        price: 'Contact for tuition information, scholarships available',
+        rating: '4.9',
+        programs: 'Information Technology, Electrical and Computer Engineering',
+        admission: 'Competitive process similar to main campus requirements'
+    }
+};
+
+// Function to generate PDF
+function generatePDF(target) {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    const data = detailsData[target];
+    
+    // Add title
+    doc.setFontSize(20);
+    doc.setTextColor(40, 40, 40);
+    doc.text(data.title, 105, 20, { align: 'center' });
+    
+    // Add subtitle/description
+    doc.setFontSize(12);
+    doc.setTextColor(100, 100, 100);
+    const splitDescription = doc.splitTextToSize(data.description, 180);
+    doc.text(splitDescription, 20, 35);
+    
+    let yPosition = 60;
+    
+    // Add highlights
+    doc.setFontSize(16);
+    doc.setTextColor(30, 30, 30);
+    doc.text('Highlights:', 20, yPosition);
+    yPosition += 10;
+    
+    doc.setFontSize(10);
+    data.highlights.forEach(highlight => {
+        if (yPosition > 250) {
+            doc.addPage();
+            yPosition = 20;
+        }
+        doc.setTextColor(50, 50, 50);
+        doc.text('• ' + highlight, 25, yPosition);
+        yPosition += 7;
+    });
+    
+    yPosition += 5;
+    
+    // Add details
+    if (yPosition > 220) {
+        doc.addPage();
+        yPosition = 20;
+    }
+    
+    doc.setFontSize(16);
+    doc.setTextColor(30, 30, 30);
+    doc.text('Details:', 20, yPosition);
+    yPosition += 10;
+    
+    doc.setFontSize(10);
+    Object.entries(data.details).forEach(([key, value]) => {
+        if (yPosition > 250) {
+            doc.addPage();
+            yPosition = 20;
+        }
+        doc.setTextColor(80, 80, 80);
+        doc.text(key + ':', 25, yPosition);
+        doc.setTextColor(50, 50, 50);
+        const splitValue = doc.splitTextToSize(value, 120);
+        doc.text(splitValue, 80, yPosition);
+        yPosition += splitValue.length * 7;
+    });
+    
+    // Add footer
+    const pageCount = doc.internal.getNumberOfPages();
+    for (let i = 1; i <= pageCount; i++) {
+        doc.setPage(i);
+        doc.setFontSize(8);
+        doc.setTextColor(150, 150, 150);
+        doc.text('Generated from Rwanda Tourism Platform - ' + new Date().toLocaleDateString(), 105, 285, { align: 'center' });
+    }
+    
+    // Save the PDF
+    doc.save(`${data.title.replace(/\s+/g, '_')}_Information.pdf`);
+}
+
+// Modal functionality
+const modal = document.getElementById('detailModal');
+const modalContent = document.getElementById('modalContent');
+const closeModal = document.querySelector('.close-modal');
+
+// View details button event listeners
+document.querySelectorAll('.view-details').forEach(button => {
+    button.addEventListener('click', function() {
+        const target = this.getAttribute('data-target');
+        const data = detailsData[target];
+        const isWildlife = ['volcanoes', 'nyungwe', 'akagera', 'lake-kivu'].includes(target);
+        
+        modalContent.innerHTML = `
+            <div class="modal-header">
+                <img src="${data.image}" alt="${data.title}" class="modal-image">
+                <h2 class="text-3xl font-bold mb-2 text-gray-800">${data.title}</h2>
+                <div class="flex flex-wrap items-center gap-4">
+                    <span class="rating">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        ${data.rating}/5
+                    </span>
+                    <span class="text-lg font-bold text-green-600">${data.price}</span>
+                </div>
+            </div>
+            
+            <p class="text-lg text-gray-700 mb-6">${data.description}</p>
+            
+            <div class="detail-grid">
+                <div class="info-card">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Key Highlights</h3>
+                    <ul class="feature-list">
+                        ${data.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Detailed Information</h3>
+                    <div class="space-y-3">
+                        ${Object.entries(data.details).map(([key, value]) => `
+                            <div>
+                                <span class="font-medium text-gray-700">${key}:</span>
+                                <p class="text-gray-600">${value}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+            
+            ${isWildlife ? `
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                <h3 class="text-lg font-semibold text-blue-800 mb-2">Travel Information</h3>
+                <p class="text-blue-700"><span class="font-medium">Climate:</span> ${data.climate}</p>
+                <p class="text-blue-700 mt-2"><span class="font-medium">Travel Tips:</span> ${data.travelTips}</p>
+            </div>
+            ` : `
+            <div class="mt-6 p-4 bg-purple-50 rounded-lg border border-purple-100">
+                <h3 class="text-lg font-semibold text-purple-800 mb-2">Academic Information</h3>
+                <p class="text-purple-700"><span class="font-medium">Programs:</span> ${data.programs}</p>
+                <p class="text-purple-700 mt-2"><span class="font-medium">Admission:</span> ${data.admission}</p>
+            </div>
+            `}
+            
+            <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+                <div class="flex flex-wrap gap-2">
+                    ${isWildlife ? `
+                    <span class="badge badge-primary">Wildlife</span>
+                    <span class="badge badge-secondary">Adventure</span>
+                    <span class="badge badge-primary">Conservation</span>
+                    ` : `
+                    <span class="badge badge-primary">Education</span>
+                    <span class="badge badge-secondary">Research</span>
+                    <span class="badge badge-primary">Academic</span>
+                    `}
+                </div>
+                <button onclick="generatePDF('${target}')" class="download-btn">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                    Download PDF
+                </button>
+            </div>
+        `;
+        
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+// Close modal
+closeModal.addEventListener('click', function() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+});
+
+// Close modal when clicking outside
+modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+});
+</script>
 
     <!-- Tour Packages -->
     

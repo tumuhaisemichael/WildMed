@@ -387,9 +387,9 @@ document.addEventListener('DOMContentLoaded', function() {
     <!-- Featured Destinations -->
     <!-- Featured Destinations -->
 <section id="explore-section" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">Explore Uganda</h2>
+            <h2 class="text-4xl font-bold mb-4 text-gray-800">Explore Uganda</h2>
             <p class="text-xl text-gray-600 mb-6">Discover the Pearl of Africa's spectacular wildlife and academic institutions</p>
             
             <!-- Toggle Switch -->
@@ -406,10 +406,10 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- Wildlife Destinations (Default Visible) -->
         <div id="wildlifeSection" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Bwindi Impenetrable Forest Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
                 <div class="relative h-64">
                     <img src="img/Destination/UG/bwindi.jpeg" alt="Bwindi Impenetrable Forest" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
                         <h3 class="text-xl font-bold">Bwindi</h3>
                         <p class="text-sm opacity-90">Mountain Gorillas</p>
@@ -419,16 +419,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-gray-600 mb-4">Home to nearly half of the world's remaining mountain gorillas in this ancient rainforest</p>
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-green-600">From $1,800</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="bwindi">View Details →</button>
                     </div>
                 </div>
             </div>
             
             <!-- Queen Elizabeth NP Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
                 <div class="relative h-64">
                     <img src="img/Destination/UG/Queen.jpeg" alt="Queen Elizabeth National Park" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
                         <h3 class="text-xl font-bold">Queen Elizabeth</h3>
                         <p class="text-sm opacity-90">Tree-Climbing Lions</p>
@@ -438,16 +438,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-gray-600 mb-4">Famous for its tree-climbing lions and the scenic Kazinga Channel boat cruise</p>
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-green-600">From $1,500</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="queen-elizabeth">View Details →</button>
                     </div>
                 </div>
             </div>
             
             <!-- Murchison Falls Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
                 <div class="relative h-64">
                     <img src="img/Destination/UG/falls.jpeg" alt="Murchison Falls National Park" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
                         <h3 class="text-xl font-bold">Murchison Falls</h3>
                         <p class="text-sm opacity-90">Power of the Nile</p>
@@ -457,16 +457,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-gray-600 mb-4">Witness the Nile River squeezing through a 7-meter gap and plunging 43 meters</p>
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-green-600">From $1,650</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="murchison-falls">View Details →</button>
                     </div>
                 </div>
             </div>
             
             <!-- Kibale Forest Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
                 <div class="relative h-64">
                     <img src="img/Destination/UG/kiable.jpeg" alt="Kibale National Park" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
                         <h3 class="text-xl font-bold">Kibale Forest</h3>
                         <p class="text-sm opacity-90">Chimpanzee Trekking</p>
@@ -476,7 +476,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-gray-600 mb-4">The primate capital of Africa with 13 species including chimpanzees</p>
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-green-600">From $1,400</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="kibale-forest">View Details →</button>
                     </div>
                 </div>
             </div>
@@ -485,10 +485,10 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- Universities Section (Initially Hidden) -->
         <div id="universitiesSection" class="hidden grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Makerere University -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
                 <div class="relative h-64">
                     <img src="img/Destination/UG/mak.jpeg" alt="Makerere University" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
                         <h3 class="text-xl font-bold">Makerere</h3>
                         <p class="text-sm opacity-90">Premier University</p>
@@ -498,16 +498,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-gray-600 mb-4">Uganda's oldest and most prestigious university, founded in 1922</p>
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-green-600">Public University</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="makerere">View Details →</button>
                     </div>
                 </div>
             </div>
             
             <!-- Kyambogo University -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
                 <div class="relative h-64">
                     <img src="img/Destination/UG/kyu.jpeg" alt="Kyambogo University" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
                         <h3 class="text-xl font-bold">Kyambogo</h3>
                         <p class="text-sm opacity-90">Technical Education</p>
@@ -517,16 +517,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-gray-600 mb-4">Leading institution for technical, vocational and teacher education</p>
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-green-600">Public University</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="kyambogo">View Details →</button>
                     </div>
                 </div>
             </div>
             
             <!-- Mbarara University -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
                 <div class="relative h-64">
                     <img src="img/Destination/UG/must.png" alt="Mbarara University" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
                         <h3 class="text-xl font-bold">MUST</h3>
                         <p class="text-sm opacity-90">Science & Medicine</p>
@@ -536,16 +536,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-gray-600 mb-4">Premier institution for medical and science education in western Uganda</p>
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-green-600">Public University</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="mbarara">View Details →</button>
                     </div>
                 </div>
             </div>
             
             <!-- Uganda Christian University -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
                 <div class="relative h-64">
                     <img src="img/Destination/UG/ucu.jpeg" alt="Uganda Christian University" class="w-full h-full object-cover object-top">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 text-white">
                         <h3 class="text-xl font-bold">UCU</h3>
                         <p class="text-sm opacity-90">Christian Values</p>
@@ -555,13 +555,548 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="text-gray-600 mb-4">Leading private university with strong emphasis on Christian values and quality education</p>
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-green-600">Private University</span>
-                        <button class="text-primary hover:text-primary/80 font-medium">View Details →</button>
+                        <button class="text-primary hover:text-primary/80 font-medium view-details" data-target="ucu">View Details →</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Modal Overlay -->
+    <div id="detailModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl">
+            <span class="close-modal absolute top-4 right-6 text-4xl text-gray-500 cursor-pointer hover:text-gray-700 z-10">&times;</span>
+            <div id="modalContent" class="p-8 pt-16">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
 </section>
+
+<style>
+.modal-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.download-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.info-card {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #10b981;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.feature-list li::before {
+    content: "✓";
+    color: #10b981;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.badge-primary {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.badge-secondary {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.rating {
+    display: inline-flex;
+    align-items: center;
+    background: #fffbeb;
+    color: #d97706;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.modal-header {
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+</style>
+
+<!-- Include jsPDF library for PDF generation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+// Toggle between sections
+document.getElementById('wildlifeBtn').addEventListener('click', function() {
+    document.getElementById('wildlifeSection').classList.remove('hidden');
+    document.getElementById('universitiesSection').classList.add('hidden');
+    this.classList.add('bg-green-600', 'text-white');
+    this.classList.remove('text-gray-600', 'bg-transparent');
+    document.getElementById('universitiesBtn').classList.remove('bg-green-600', 'text-white');
+    document.getElementById('universitiesBtn').classList.add('text-gray-600', 'bg-transparent');
+});
+
+document.getElementById('universitiesBtn').addEventListener('click', function() {
+    document.getElementById('universitiesSection').classList.remove('hidden');
+    document.getElementById('wildlifeSection').classList.add('hidden');
+    this.classList.add('bg-green-600', 'text-white');
+    this.classList.remove('text-gray-600', 'bg-transparent');
+    document.getElementById('wildlifeBtn').classList.remove('bg-green-600', 'text-white');
+    document.getElementById('wildlifeBtn').classList.add('text-gray-600', 'bg-transparent');
+});
+
+// Detailed information data with more content
+const detailsData = {
+    'bwindi': {
+        title: 'Bwindi Impenetrable National Park',
+        image: 'img/Destination/UG/bwindi.jpeg',
+        description: 'Bwindi Impenetrable National Park is a UNESCO World Heritage Site located in southwestern Uganda. The park is home to almost half of the world\'s mountain gorilla population, making it one of the most important conservation areas in Africa. The ancient rainforest dates back over 25,000 years and contains incredibly rich biodiversity.',
+        highlights: [
+            'Home to approximately 459 mountain gorillas (almost half the world\'s population)',
+            '19 habituated gorilla groups available for tracking',
+            'Rich biodiversity with 120 mammal species and 350 bird species',
+            'Ancient rainforest ecosystem dating back 25,000 years',
+            'Cultural experiences with the Batwa pygmy people'
+        ],
+        details: {
+            'Area': '331 km² (128 square miles)',
+            'Best Time to Visit': 'June to August and December to February',
+            'Key Wildlife': 'Mountain Gorillas, Chimpanzees, Elephants, Various Monkeys',
+            'Activities': 'Gorilla Trekking, Bird Watching, Nature Walks, Cultural Visits',
+            'Accommodation': 'Lodges, Tented Camps, Budget Options',
+            'Conservation Status': 'UNESCO World Heritage Site'
+        },
+        price: 'From $1,800 for gorilla trekking permit (1 day)',
+        rating: '4.9',
+        climate: 'Moderate temperatures with frequent rainfall due to rainforest climate',
+        travelTips: 'Book gorilla permits 6-12 months in advance, good physical fitness required for trekking'
+    },
+    'queen-elizabeth': {
+        title: 'Queen Elizabeth National Park',
+        image: 'img/Destination/UG/Queen.jpeg',
+        description: 'Queen Elizabeth National Park is Uganda\'s most popular savanna park and has the highest biodiversity of any protected area in East Africa. The park is famous for its tree-climbing lions in the Ishasha sector and the Kazinga Channel boat cruise which offers incredible wildlife viewing opportunities.',
+        highlights: [
+            'Famous tree-climbing lions in the Ishasha sector',
+            'Kazinga Channel boat cruise with high concentration of hippos and birds',
+            'Over 95 mammal species and 600 bird species',
+            'Crater lakes with stunning scenic views',
+            'Chimpanzee tracking in the Kyambura Gorge'
+        ],
+        details: {
+            'Area': '1,978 km² (764 square miles)',
+            'Best Time to Visit': 'June to August and December to February',
+            'Key Wildlife': 'Lions, Elephants, Buffaloes, Hippos, Chimpanzees, Leopards',
+            'Activities': 'Game Drives, Boat Cruise, Chimpanzee Tracking, Bird Watching',
+            'Accommodation': 'Range from luxury lodges to budget campsites',
+            'Conservation Status': 'Important Bird Area (IBA)'
+        },
+        price: 'From $1,500 for 3-day safari (excluding permits)',
+        rating: '4.7',
+        climate: 'Tropical with two dry seasons (Jun-Aug and Dec-Feb)',
+        travelTips: 'Don\'t miss the Kazinga Channel boat cruise, early morning game drives for best lion sightings'
+    },
+    'murchison-falls': {
+        title: 'Murchison Falls National Park',
+        image: 'img/Destination/UG/falls.jpeg',
+        description: 'Murchison Falls National Park is Uganda\'s largest protected area, where the mighty Nile River explodes through a narrow gorge and plunges 43 meters to create the spectacular Murchison Falls. The park offers excellent wildlife viewing with large populations of elephants, giraffes, and lions.',
+        highlights: [
+            'Spectacular Murchison Falls where the Nile forces through a 7m gap',
+            'Launch trip to the base of the falls with excellent wildlife viewing',
+            'Large populations of Rothschild\'s giraffes and African elephants',
+            'Budongo Forest for chimpanzee tracking experiences',
+            'Excellent bird watching with over 450 species recorded'
+        ],
+        details: {
+            'Area': '3,840 km² (1,483 square miles)',
+            'Best Time to Visit': 'December to February and June to August',
+            'Key Wildlife': 'Elephants, Giraffes, Lions, Buffaloes, Hippos, Chimpanzees',
+            'Activities': 'Game Drives, Nile Cruise, Hiking to Top of Falls, Chimpanzee Tracking',
+            'Accommodation': 'Lodges, Tented Camps, Budget Options',
+            'Conservation Status': 'Important Bird Area (IBA)'
+        },
+        price: 'From $1,650 for 3-day safari (excluding permits)',
+        rating: '4.8',
+        climate: 'Tropical with distinct wet and dry seasons',
+        travelTips: 'Take both the launch cruise and game drives for complete experience, visit the top of the falls'
+    },
+    'kibale-forest': {
+        title: 'Kibale National Park',
+        image: 'img/Destination/UG/kiable.jpeg',
+        description: 'Kibale National Park is known as the primate capital of Africa, containing the highest concentration of primates on the continent. The park is particularly famous for chimpanzee tracking experiences but is also home to 12 other primate species. The diverse ecosystem ranges from tropical forest to grassland and swamp.',
+        highlights: [
+            'Highest concentration of primates in Africa (13 species)',
+            'Excellent chimpanzee tracking with high success rates',
+            'Bigodi Wetland Sanctuary for community-based ecotourism',
+            'Nocturnal primate walks to see bushbabies and pottos',
+            'Rich birdlife with over 375 species recorded'
+        ],
+        details: {
+            'Area': '776 km² (300 square miles)',
+            'Best Time to Visit': 'June to August and December to February',
+            'Key Wildlife': 'Chimpanzees, Red Colobus Monkeys, L\'Hoest\'s Monkeys, Forest Elephants',
+            'Activities': 'Chimpanzee Tracking, Nature Walks, Bird Watching, Community Visits',
+            'Accommodation': 'Forest lodges, Tented camps, Budget options',
+            'Conservation Status': 'Important Bird Area (IBA)'
+        },
+        price: 'From $1,400 for chimpanzee tracking and 2-night stay',
+        rating: '4.7',
+        climate: 'Tropical rainforest climate with consistent rainfall throughout year',
+        travelTips: 'Combine with Queen Elizabeth National Park for a complete primate and wildlife experience'
+    },
+    'makerere': {
+        title: 'Makerere University',
+        image: 'img/Destination/UG/mak.jpeg',
+        description: 'Makerere University is Uganda\'s oldest and most prestigious institution of higher learning, established in 1922. It has grown from a technical school to a world-class university that has produced many of Africa\'s leading thinkers, politicians, and professionals. The university is known for its beautiful campus and academic excellence.',
+        highlights: [
+            'Established in 1922 as a technical school, became university in 1970',
+            'Ranked among top universities in Africa',
+            'Beautiful 300-acre main campus in Kampala',
+            'Strong research programs with international collaborations',
+            'Notable alumni include several African presidents and Nobel laureates'
+        ],
+        details: {
+            'Type': 'Public Research University',
+            'Student Population': 'Over 35,000 students',
+            'Colleges': '9 colleges offering diverse programs',
+            'Ranking': 'Top university in Uganda, ranked among best in Africa',
+            'Notable Alumni': '5 African presidents, Nobel laureates, renowned academics',
+            'Research Focus': 'Agriculture, Health Sciences, Technology, Social Sciences'
+        },
+        price: 'Public University - varies by program',
+        rating: '4.8',
+        programs: 'Medicine, Law, Engineering, Business, Social Sciences, Agriculture',
+        admission: 'Highly competitive, based on Uganda Advanced Certificate of Education results'
+    },
+    'kyambogo': {
+        title: 'Kyambogo University',
+        image: 'img/Destination/UG/kyu.jpeg',
+        description: 'Kyambogo University is one of Uganda\'s leading public universities with a strong focus on technical, vocational, and teacher education. Formed through the merger of three institutions, it offers practical-oriented education that prepares students for the job market. The university has a diverse academic portfolio and modern facilities.',
+        highlights: [
+            'Formed in 2003 through merger of three institutions',
+            'Strong emphasis on technical and vocational education',
+            'Teacher training programs with practical teaching experience',
+            'Industry partnerships for student internships and placements',
+            'Modern facilities including well-equipped workshops and laboratories'
+        ],
+        details: {
+            'Type': 'Public University',
+            'Student Population': 'Over 30,000 students',
+            'Faculties': '7 faculties offering diverse programs',
+            'Specialization': 'Technical Education, Vocational Training, Teacher Education',
+            'Campuses': 'Main campus in Kyambogo plus several satellite locations',
+            'Industry Links': 'Strong connections with employers for graduate placement'
+        },
+        price: 'Public University - varies by program',
+        rating: '4.5',
+        programs: 'Education, Engineering, Business, Social Sciences, Special Needs Education',
+        admission: 'Based on Uganda Advanced Certificate of Education results, with program-specific requirements'
+    },
+    'mbarara': {
+        title: 'Mbarara University of Science and Technology',
+        image: 'img/Destination/UG/must.png',
+        description: 'Mbarara University of Science and Technology (MUST) is a public university in western Uganda with a strong focus on science, technology, and health sciences. The university has made significant contributions to healthcare in the region through its teaching hospital and community outreach programs. MUST is known for its innovative approach to education.',
+        highlights: [
+            'Established in 1989 to address shortage of healthcare professionals',
+            'Strong focus on science, technology and health sciences',
+            'Teaching hospital providing clinical training and community service',
+            'Community-based education and research approach',
+            'Innovation hub supporting technology and healthcare startups'
+        ],
+        details: {
+            'Type': 'Public University',
+            'Student Population': 'Over 4,000 students',
+            'Faculties': '4 faculties specializing in science and health',
+            'Teaching Hospital': 'Mbarara Regional Referral Hospital for medical training',
+            'Research Focus': 'Infectious diseases, Maternal health, Technology innovation',
+            'Community Service': 'Strong emphasis on serving rural communities'
+        },
+        price: 'Public University - varies by program',
+        rating: '4.6',
+        programs: 'Medicine, Nursing, Computer Science, Engineering, Business',
+        admission: 'Based on Uganda Advanced Certificate of Education results, with emphasis on science subjects'
+    },
+    'ucu': {
+        title: 'Uganda Christian University',
+        image: 'img/Destination/UG/ucu.jpeg',
+        description: 'Uganda Christian University (UCU) is a private university founded on the principles of the Anglican Church of Uganda. It has grown to become one of Uganda\'s leading private universities, known for its quality education and strong ethical foundation. The university maintains a balance between academic excellence and Christian values.',
+        highlights: [
+            'Founded in 1997 by the Anglican Church of Uganda',
+            'Multiple campuses across Uganda with main campus in Mukono',
+            'Strong emphasis on ethics and values-based education',
+            'International partnerships with universities worldwide',
+            'Community outreach and mission programs'
+        ],
+        details: {
+            'Type': 'Private University',
+            'Student Population': 'Over 12,000 students',
+            'Faculties': '8 faculties offering diverse programs',
+            'Campuses': 'Main campus in Mukono plus 9 regional campuses',
+            'Ethical Focus': 'Integration of Christian values in all programs',
+            'Accreditations': 'Fully accredited by Uganda National Council for Higher Education'
+        },
+        price: 'Private University - higher than public institutions',
+        rating: '4.7',
+        programs: 'Theology, Law, Business, Education, Social Work, Journalism',
+        admission: 'Based on Uganda Advanced Certificate of Education results, plus interview for some programs'
+    }
+};
+
+// Modal functionality
+const modal = document.getElementById('detailModal');
+const modalContent = document.getElementById('modalContent');
+const closeModal = document.querySelector('.close-modal');
+
+// Function to generate PDF
+function generatePDF(target) {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    const data = detailsData[target];
+    
+    // Add title
+    doc.setFontSize(20);
+    doc.setTextColor(40, 40, 40);
+    doc.text(data.title, 105, 20, { align: 'center' });
+    
+    // Add subtitle/description
+    doc.setFontSize(12);
+    doc.setTextColor(100, 100, 100);
+    const splitDescription = doc.splitTextToSize(data.description, 180);
+    doc.text(splitDescription, 20, 35);
+    
+    let yPosition = 60;
+    
+    // Add highlights
+    doc.setFontSize(16);
+    doc.setTextColor(30, 30, 30);
+    doc.text('Highlights:', 20, yPosition);
+    yPosition += 10;
+    
+    doc.setFontSize(10);
+    data.highlights.forEach(highlight => {
+        if (yPosition > 250) {
+            doc.addPage();
+            yPosition = 20;
+        }
+        doc.setTextColor(50, 50, 50);
+        doc.text('• ' + highlight, 25, yPosition);
+        yPosition += 7;
+    });
+    
+    yPosition += 5;
+    
+    // Add details
+    if (yPosition > 220) {
+        doc.addPage();
+        yPosition = 20;
+    }
+    
+    doc.setFontSize(16);
+    doc.setTextColor(30, 30, 30);
+    doc.text('Details:', 20, yPosition);
+    yPosition += 10;
+    
+    doc.setFontSize(10);
+    Object.entries(data.details).forEach(([key, value]) => {
+        if (yPosition > 250) {
+            doc.addPage();
+            yPosition = 20;
+        }
+        doc.setTextColor(80, 80, 80);
+        doc.text(key + ':', 25, yPosition);
+        doc.setTextColor(50, 50, 50);
+        const splitValue = doc.splitTextToSize(value, 120);
+        doc.text(splitValue, 80, yPosition);
+        yPosition += splitValue.length * 7;
+    });
+    
+    // Add footer
+    const pageCount = doc.internal.getNumberOfPages();
+    for (let i = 1; i <= pageCount; i++) {
+        doc.setPage(i);
+        doc.setFontSize(8);
+        doc.setTextColor(150, 150, 150);
+        doc.text('Generated from Uganda Tourism Platform - ' + new Date().toLocaleDateString(), 105, 285, { align: 'center' });
+    }
+    
+    // Save the PDF
+    doc.save(`${data.title.replace(/\s+/g, '_')}_Information.pdf`);
+}
+
+// View details button event listeners
+document.querySelectorAll('.view-details').forEach(button => {
+    button.addEventListener('click', function() {
+        const target = this.getAttribute('data-target');
+        const data = detailsData[target];
+        const isWildlife = ['bwindi', 'queen-elizabeth', 'murchison-falls', 'kibale-forest'].includes(target);
+        
+        modalContent.innerHTML = `
+            <div class="modal-header">
+                <img src="${data.image}" alt="${data.title}" class="modal-image">
+                <h2 class="text-3xl font-bold mb-2 text-gray-800">${data.title}</h2>
+                <div class="flex flex-wrap items-center gap-4">
+                    <span class="rating">
+                        <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        ${data.rating}/5
+                    </span>
+                    <span class="text-lg font-bold text-green-600">${data.price}</span>
+                </div>
+            </div>
+            
+            <p class="text-lg text-gray-700 mb-6">${data.description}</p>
+            
+            <div class="detail-grid">
+                <div class="info-card">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Key Highlights</h3>
+                    <ul class="feature-list">
+                        ${data.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Detailed Information</h3>
+                    <div class="space-y-3">
+                        ${Object.entries(data.details).map(([key, value]) => `
+                            <div>
+                                <span class="font-medium text-gray-700">${key}:</span>
+                                <p class="text-gray-600">${value}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+            
+            ${isWildlife ? `
+            <div class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                <h3 class="text-lg font-semibold text-blue-800 mb-2">Travel Information</h3>
+                <p class="text-blue-700"><span class="font-medium">Climate:</span> ${data.climate}</p>
+                <p class="text-blue-700 mt-2"><span class="font-medium">Travel Tips:</span> ${data.travelTips}</p>
+            </div>
+            ` : `
+            <div class="mt-6 p-4 bg-purple-50 rounded-lg border border-purple-100">
+                <h3 class="text-lg font-semibold text-purple-800 mb-2">Academic Information</h3>
+                <p class="text-purple-700"><span class="font-medium">Programs:</span> ${data.programs}</p>
+                <p class="text-purple-700 mt-2"><span class="font-medium">Admission:</span> ${data.admission}</p>
+            </div>
+            `}
+            
+            <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+                <div class="flex flex-wrap gap-2">
+                    ${isWildlife ? `
+                    <span class="badge badge-primary">Wildlife</span>
+                    <span class="badge badge-secondary">Adventure</span>
+                    <span class="badge badge-primary">Conservation</span>
+                    ` : `
+                    <span class="badge badge-primary">Education</span>
+                    <span class="badge badge-secondary">Research</span>
+                    <span class="badge badge-primary">Academic</span>
+                    `}
+                </div>
+                <button onclick="generatePDF('${target}')" class="download-btn">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                    Download PDF
+                </button>
+            </div>
+        `;
+        
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+// Close modal
+closeModal.addEventListener('click', function() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+});
+
+// Close modal when clicking outside
+modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+});
+</script>
 
 <script>
     // Toggle between Wildlife and Universities
