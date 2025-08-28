@@ -450,33 +450,469 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <!-- Experiential Tourism Section -->
-<section id="experiential-tourism" class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-gray-900 mb-4">Experiential Tourism in Uganda and East Africa</h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Unique wildlife encounters through technology-assisted tracking</p>
-    </div>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
-        <div class="h-64 bg-cover bg-center" style="background-image: url('img/predator.jpg');"></div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">Predator Tracking</h3>
-          <p class="text-gray-600 mb-4">Join our local veterinarians and researchers to track large predators like lions and leopards using satellite technology. Experience up-close encounters while contributing to conservation research.</p>
-          <button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
-        </div>
-      </div>
-      <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
-        <div class="h-64 bg-cover bg-center" style="background-image: url('img/photo.jpeg');"></div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-900 mb-3">Photography Expeditions</h3>
-          <p class="text-gray-600 mb-4">Detour inside national parks for unparalleled wildlife photography opportunities. Our experts will help you capture stunning images while ensuring minimal disturbance to animals.</p>
-          <button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiential Tourism in Uganda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Include jsPDF library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
 
+        .download-btn {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .download-btn:hover {
+            background: linear-gradient(135deg, #059669, #047857);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .info-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #10b981;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .badge-primary {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        .badge-secondary {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        .rating {
+            display: inline-flex;
+            align-items: center;
+            background: #fffbeb;
+            color: #d97706;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .modal-header {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .program-highlight {
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 4px solid #0284c7;
+        }
+
+        .itinerary-day {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 3px solid #10b981;
+        }
+        
+        .program-card {
+            transition: all 0.3s ease;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <section id="experiential-tourism" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Experiential Tourism in Uganda and East Africa</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Unique wildlife encounters through technology-assisted tracking</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1562552078-7c76c1339d03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Predator Tracking</h3>
+                        <p class="text-gray-600 mb-4">Join our local veterinarians and researchers to track large predators like lions and leopards using satellite technology. Experience up-close encounters while contributing to conservation research.</p>
+                        <button class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 whitespace-nowrap view-details" data-target="predator-tracking">Learn More</button>
+                    </div>
+                </div>
+                <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1505250469679-203ad9ced0cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Photography Expeditions</h3>
+                        <p class="text-gray-600 mb-4">Detour inside national parks for unparalleled wildlife photography opportunities. Our experts will help you capture stunning images while ensuring minimal disturbance to animals.</p>
+                        <button class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 whitespace-nowrap view-details" data-target="photography-expeditions">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Overlay -->
+        <div id="tourismModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50 p-4">
+            <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl">
+                <span class="close-modal absolute top-4 right-6 text-4xl text-gray-500 cursor-pointer hover:text-gray-700 z-10">&times;</span>
+                <div id="tourismModalContent" class="p-8 pt-16">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Wait for the jsPDF library to load
+        window.jsPDF = window.jspdf.jsPDF;
+
+        // Detailed information data for experiential tourism
+        const tourismDetails = {
+            'predator-tracking': {
+                title: 'Predator Tracking Experience',
+                image: 'https://images.unsplash.com/photo-1562552078-7c76c1339d03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+                description: 'Our predator tracking program offers a unique opportunity to work alongside conservation researchers and veterinarians to track and monitor large predators in their natural habitats. Using cutting-edge satellite technology, you\'ll participate in real conservation efforts while experiencing thrilling up-close encounters with Africa\'s most iconic predators.',
+                highlights: [
+                    'Track lions, leopards, and hyenas using satellite collars and telemetry equipment',
+                    'Work alongside experienced conservation researchers and local veterinarians',
+                    'Learn about predator behavior, ecology, and conservation challenges',
+                    'Participate in data collection for ongoing research projects',
+                    'Experience night tracking sessions for nocturnal predator activity'
+                ],
+                details: {
+                    'Duration': '3-7 days (customizable)',
+                    'Group Size': 'Maximum 6 participants per expedition',
+                    'Best Time': 'Year-round, with peak sightings in dry seasons (June-October)',
+                    'Location': 'Queen Elizabeth National Park, Murchison Falls, and Kidepo Valley',
+                    'Fitness Level': 'Moderate - includes walking in bush terrain',
+                    'Conservation Impact': 'Data contributes to predator conservation strategies'
+                },
+                itinerary: [
+                    'Day 1: Arrival and orientation, introduction to tracking technology',
+                    'Day 2: Morning tracking session, data recording, afternoon analysis',
+                    'Day 3: Field work with researchers, evening/night tracking expedition',
+                    'Day 4: Community engagement, understanding human-wildlife conflict',
+                    'Day 5: Conservation discussion, departure'
+                ],
+                price: 'From $1,200 for 3-day program (all inclusive)',
+                rating: '4.9',
+                includes: [
+                    'All tracking equipment and technology',
+                    'Expert guides and researchers',
+                    'Accommodation in field camps',
+                    'All meals and drinking water',
+                    'Park entrance fees and permits',
+                    'Transportation during the program'
+                ]
+            },
+            'photography-expeditions': {
+                title: 'Wildlife Photography Expeditions',
+                image: 'https://images.unsplash.com/photo-1505250469679-203ad9ced0cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80',
+                description: 'Our specialized photography expeditions are designed for both amateur and professional photographers seeking to capture East Africa\'s incredible wildlife. With expert guides who understand both animal behavior and photographic techniques, we take you to prime locations at optimal times for breathtaking shots while prioritizing ethical wildlife encounters.',
+                highlights: [
+                    'Guided by professional wildlife photographers and behavior experts',
+                    'Access to exclusive photography hides and blinds for intimate shots',
+                    'Golden hour and blue hour photography sessions for optimal lighting',
+                    'Technical workshops on camera settings, composition, and editing',
+                    'Focus on ethical photography practices that minimize disturbance'
+                ],
+                details: {
+                    'Duration': '5-10 days (various packages available)',
+                    'Group Size': 'Maximum 4 photographers per guide',
+                    'Best Time': 'Dry seasons for wildlife concentrations (June-October, December-February)',
+                    'Locations': 'Multiple national parks based on migratory patterns and seasons',
+                    'Skill Level': 'All levels welcome, with personalized instruction',
+                    'Equipment': 'DSLR/mirrorless cameras with telephoto lenses recommended'
+                },
+                itinerary: [
+                    'Day 1: Arrival, gear check, and introductory session',
+                    'Day 2: Early morning game drive, afternoon lighting techniques workshop',
+                    'Day 3: Full day in field with focus on bird and landscape photography',
+                    'Day 4: Specialized session (predators, primates, or elephants)',
+                    'Day 5: Editing workshop, portfolio review, departure'
+                ],
+                price: 'From $1,800 for 5-day program (accommodation and guidance)',
+                rating: '4.8',
+                includes: [
+                    'Professional photography guide',
+                    'Specialized photography vehicle with roof hatches',
+                    'Post-processing instruction and software guidance',
+                    'All park fees and permits',
+                    'Accommodation in photography-friendly lodges',
+                    'Meals and beverages during expeditions'
+                ]
+            }
+        };
+
+        // Function to generate PDF for tourism experiences
+        function generateTourismPDF(target) {
+            // Check if jsPDF is available
+            if (typeof jsPDF !== 'undefined') {
+                const doc = new jsPDF();
+                const data = tourismDetails[target];
+                
+                // Add title
+                doc.setFontSize(20);
+                doc.setTextColor(40, 40, 40);
+                doc.text(data.title, 105, 20, { align: 'center' });
+                
+                // Add description
+                doc.setFontSize(12);
+                doc.setTextColor(100, 100, 100);
+                const splitDescription = doc.splitTextToSize(data.description, 180);
+                doc.text(splitDescription, 20, 35);
+                
+                let yPosition = 60;
+                
+                // Add highlights
+                doc.setFontSize(16);
+                doc.setTextColor(30, 30, 30);
+                doc.text('Program Highlights:', 20, yPosition);
+                yPosition += 10;
+                
+                doc.setFontSize(10);
+                data.highlights.forEach(highlight => {
+                    if (yPosition > 250) {
+                        doc.addPage();
+                        yPosition = 20;
+                    }
+                    doc.setTextColor(50, 50, 50);
+                    doc.text('• ' + highlight, 25, yPosition);
+                    yPosition += 7;
+                });
+                
+                yPosition += 5;
+                
+                // Add details
+                if (yPosition > 220) {
+                    doc.addPage();
+                    yPosition = 20;
+                }
+                
+                doc.setFontSize(16);
+                doc.setTextColor(30, 30, 30);
+                doc.text('Program Details:', 20, yPosition);
+                yPosition += 10;
+                
+                doc.setFontSize(10);
+                Object.entries(data.details).forEach(([key, value]) => {
+                    if (yPosition > 250) {
+                        doc.addPage();
+                        yPosition = 20;
+                    }
+                    doc.setTextColor(80, 80, 80);
+                    doc.text(key + ':', 25, yPosition);
+                    doc.setTextColor(50, 50, 50);
+                    const splitValue = doc.splitTextToSize(value, 120);
+                    doc.text(splitValue, 80, yPosition);
+                    yPosition += splitValue.length * 7;
+                });
+                
+                // Add footer
+                const pageCount = doc.internal.getNumberOfPages();
+                for (let i = 1; i <= pageCount; i++) {
+                    doc.setPage(i);
+                    doc.setFontSize(8);
+                    doc.setTextColor(150, 150, 150);
+                    doc.text('Generated from Uganda Tourism Platform - ' + new Date().toLocaleDateString(), 105, 285, { align: 'center' });
+                }
+                
+                // Save the PDF
+                doc.save(`${data.title.replace(/\s+/g, '_')}_Information.pdf`);
+            } else {
+                alert('PDF generation library not loaded. Please try again.');
+            }
+        }
+
+        // Modal functionality for tourism experiences
+        const tourismModal = document.getElementById('tourismModal');
+        const tourismModalContent = document.getElementById('tourismModalContent');
+        const closeTourismModal = document.querySelector('#tourismModal .close-modal');
+
+        // View details button event listeners for tourism experiences
+        document.querySelectorAll('#experiential-tourism .view-details').forEach(button => {
+            button.addEventListener('click', function() {
+                const target = this.getAttribute('data-target');
+                const data = tourismDetails[target];
+                
+                tourismModalContent.innerHTML = `
+                    <div class="modal-header">
+                        <div class="h-64 w-full bg-cover bg-center rounded-lg mb-4" style="background-image: url('${data.image}')"></div>
+                        <h2 class="text-3xl font-bold mb-2 text-gray-800">${data.title}</h2>
+                        <div class="flex flex-wrap items-center gap-4">
+                            <span class="rating">
+                                <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                ${data.rating}/5
+                            </span>
+                            <span class="text-lg font-bold text-green-600">${data.price}</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-lg text-gray-700 mb-6">${data.description}</p>
+                    
+                    <div class="program-highlight">
+                        <h3 class="text-xl font-semibold mb-3 text-blue-800">What Makes This Experience Special</h3>
+                        <ul class="feature-list">
+                            ${data.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-grid">
+                        <div class="info-card">
+                            <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Program Details</h3>
+                            <div class="space-y-3">
+                                ${Object.entries(data.details).map(([key, value]) => `
+                                    <div>
+                                        <span class="font-medium text-gray-700">${key}:</span>
+                                        <p class="text-gray-600">${value}</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">What's Included</h3>
+                            <ul class="feature-list">
+                                ${data.includes.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Sample Itinerary</h3>
+                        <div class="space-y-3">
+                            ${data.itinerary.map((day, index) => `
+                                <div class="itinerary-day">
+                                    <span class="font-medium text-green-700">${day.split(':')[0]}:</span>
+                                    <span class="text-gray-600">${day.split(':')[1]}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="badge badge-primary">Wildlife</span>
+                            <span class="badge badge-secondary">Adventure</span>
+                            <span class="badge badge-primary">Conservation</span>
+                            <span class="badge badge-secondary">Photography</span>
+                        </div>
+                        <button onclick="generateTourismPDF('${target}')" class="download-btn">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                            Download Program Details
+                        </button>
+                    </div>
+                `;
+                
+                tourismModal.classList.remove('hidden');
+                tourismModal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close modal
+        closeTourismModal.addEventListener('click', function() {
+            tourismModal.classList.add('hidden');
+            tourismModal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        tourismModal.addEventListener('click', function(e) {
+            if (e.target === tourismModal) {
+                tourismModal.classList.add('hidden');
+                tourismModal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !tourismModal.classList.contains('hidden')) {
+                tourismModal.classList.add('hidden');
+                tourismModal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
 <!-- Field Projects Section -->
 <section id="field-projects" class="py-16 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -573,81 +1009,507 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- Rest of your existing content (Our Conservation Initiatives, Application Process, etc.) -->
 <section id="conservation-initiatives" class="py-16 bg-white">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-bold text-gray-900 mb-4">Our Conservation Initiatives</h2>
-<p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive programs that combine veterinary expertise with field conservation work to protect Africa's wildlife</p>
-</div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Wildlife%20health%20monitoring%20equipment%20and%20veterinary%20tools%20in%20African%20field%20station%2C%20medical%20charts%20and%20data%20collection%20devices%2C%20professional%20conservation%20workspace%2C%20clean%20modern%20setup%20with%20natural%20lighting%2C%20scientific%20research%20atmosphere%2C%20organized%20medical%20supplies%20and%20monitoring%20technology&width=400&height=300&seq=health-monitoring&orientation=landscape');"></div>
-<div class="p-6">
-<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
-<i class="ri-heart-pulse-line text-white text-xl"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3">Wildlife Health Monitoring</h3>
-<p class="text-gray-600 mb-4">Conduct comprehensive health assessments of wild animal populations, track disease patterns, and implement preventive care strategies.</p>
-<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
-</div>
-</div>
-<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Anti-poaching%20rangers%20and%20veterinary%20team%20working%20together%20in%20African%20wilderness%2C%20protective%20gear%20and%20communication%20equipment%2C%20serious%20conservation%20mission%20atmosphere%2C%20professional%20teamwork%20scene%2C%20sunset%20lighting%20over%20savanna%2C%20wildlife%20protection%20operations&width=400&height=300&seq=anti-poaching&orientation=landscape');"></div>
-<div class="p-6">
-<div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mb-4">
-<i class="ri-shield-check-line text-white text-xl"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3">Anti-Poaching Support</h3>
-<p class="text-gray-600 mb-4">Provide medical support to anti-poaching units, treat injured wildlife, and assist in rescue operations for endangered species.</p>
-<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
-</div>
-</div>
-<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Research%20laboratory%20setup%20in%20African%20field%20station%2C%20microscopes%20and%20scientific%20equipment%2C%20data%20analysis%20workstation%2C%20professional%20research%20environment%2C%20clean%20modern%20laboratory%20with%20natural%20light%2C%20wildlife%20research%20samples%20and%20documentation&width=400&height=300&seq=research-lab&orientation=landscape');"></div>
-<div class="p-6">
-<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
-<i class="ri-microscope-line text-white text-xl"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3">Research Opportunities</h3>
-<p class="text-gray-600 mb-4">Participate in cutting-edge wildlife research projects, contribute to scientific publications, and advance conservation medicine.</p>
-<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
-</div>
-</div>
-<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Mobile%20veterinary%20clinic%20in%20African%20village%20setting%2C%20medical%20tent%20with%20equipment%2C%20veterinarians%20treating%20animals%2C%20community%20members%20observing%2C%20rural%20healthcare%20scene%2C%20professional%20medical%20service%20delivery%2C%20warm%20community%20atmosphere&width=400&height=300&seq=field-clinic&orientation=landscape');"></div>
-<div class="p-6">
-<div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mb-4">
-<i class="ri-hospital-line text-white text-xl"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3">Field Veterinary Clinics</h3>
-<p class="text-gray-600 mb-4">Establish and operate mobile veterinary clinics in remote areas, providing essential medical care to wildlife and domestic animals.</p>
-<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
-</div>
-</div>
-<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Community%20education%20session%20in%20African%20village%2C%20veterinarian%20teaching%20local%20people%20about%20wildlife%20conservation%2C%20outdoor%20classroom%20setting%2C%20engaged%20audience%20of%20adults%20and%20children%2C%20educational%20materials%20and%20visual%20aids%2C%20collaborative%20learning%20atmosphere&width=400&height=300&seq=education&orientation=landscape');"></div>
-<div class="p-6">
-<div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mb-4">
-<i class="ri-graduation-cap-line text-white text-xl"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3">Community Education</h3>
-<p class="text-gray-600 mb-4">Deliver educational programs to local communities about wildlife conservation, animal health, and sustainable coexistence practices.</p>
-<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
-</div>
-</div>
-<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Partnership%20meeting%20between%20conservation%20organizations%20in%20modern%20conference%20room%2C%20diverse%20team%20of%20professionals%20collaborating%2C%20maps%20and%20conservation%20plans%20on%20table%2C%20professional%20business%20atmosphere%2C%20teamwork%20and%20collaboration%20focus%2C%20natural%20lighting&width=400&height=300&seq=partnership&orientation=landscape');"></div>
-<div class="p-6">
-<div class="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center mb-4">
-<i class="ri-team-line text-white text-xl"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3">Partnership Programs</h3>
-<p class="text-gray-600 mb-4">Collaborate with leading conservation organizations, research institutions, and government agencies on large-scale conservation initiatives.</p>
-<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
-</div>
-</div>
-</div>
-</div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Conservation Initiatives</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive programs that combine veterinary expertise with field conservation work to protect Africa's wildlife</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Wildlife Health Monitoring -->
+      <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4">
+            <i class="ri-heart-pulse-line text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Wildlife Health Monitoring</h3>
+          <p class="text-gray-600 mb-4">Conduct comprehensive health assessments of wild animal populations, track disease patterns, and implement preventive care strategies.</p>
+          <button class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 whitespace-nowrap view-details" data-target="wildlife-health">Learn More</button>
+        </div>
+      </div>
+      
+      <!-- Anti-Poaching Support -->
+      <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1547981609-4b6bfc67c272?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mb-4">
+            <i class="ri-shield-check-line text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Anti-Poaching Support</h3>
+          <p class="text-gray-600 mb-4">Provide medical support to anti-poaching units, treat injured wildlife, and assist in rescue operations for endangered species.</p>
+          <button class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 whitespace-nowrap view-details" data-target="anti-poaching">Learn More</button>
+        </div>
+      </div>
+      
+      <!-- Research Opportunities -->
+      <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4">
+            <i class="ri-microscope-line text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Research Opportunities</h3>
+          <p class="text-gray-600 mb-4">Participate in cutting-edge wildlife research projects, contribute to scientific publications, and advance conservation medicine.</p>
+          <button class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 whitespace-nowrap view-details" data-target="research-opportunities">Learn More</button>
+        </div>
+      </div>
+      
+      <!-- Field Veterinary Clinics -->
+      <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1576765608623-940a017202b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mb-4">
+            <i class="ri-hospital-line text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Field Veterinary Clinics</h3>
+          <p class="text-gray-600 mb-4">Establish and operate mobile veterinary clinics in remote areas, providing essential medical care to wildlife and domestic animals.</p>
+          <button class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 whitespace-nowrap view-details" data-target="field-clinics">Learn More</button>
+        </div>
+      </div>
+      
+      <!-- Community Education -->
+      <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center mb-4">
+            <i class="ri-graduation-cap-line text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Community Education</h3>
+          <p class="text-gray-600 mb-4">Deliver educational programs to local communities about wildlife conservation, animal health, and sustainable coexistence practices.</p>
+          <button class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 whitespace-nowrap view-details" data-target="community-education">Learn More</button>
+        </div>
+      </div>
+      
+      <!-- Partnership Programs -->
+      <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center mb-4">
+            <i class="ri-team-line text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Partnership Programs</h3>
+          <p class="text-gray-600 mb-4">Collaborate with leading conservation organizations, research institutions, and government agencies on large-scale conservation initiatives.</p>
+          <button class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 whitespace-nowrap view-details" data-target="partnership-programs">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Overlay -->
+  <div id="conservationModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl">
+      <span class="close-modal absolute top-4 right-6 text-4xl text-gray-500 cursor-pointer hover:text-gray-700 z-10">&times;</span>
+      <div id="conservationModalContent" class="p-8 pt-16">
+        <!-- Dynamic content will be inserted here -->
+      </div>
+    </div>
+  </div>
 </section>
+
+<script>
+  // Detailed information data for conservation initiatives
+  const conservationDetails = {
+    'wildlife-health': {
+      title: 'Wildlife Health Monitoring Program',
+      image: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+      description: 'Our Wildlife Health Monitoring program conducts comprehensive health assessments of wild animal populations across East Africa. We track disease patterns, implement preventive care strategies, and maintain detailed health records to support conservation efforts and ensure the long-term wellbeing of wildlife species.',
+      highlights: [
+        'Comprehensive health assessments of diverse wildlife species',
+        'Disease surveillance and outbreak response protocols',
+        'Advanced diagnostic capabilities in field conditions',
+        'Long-term health monitoring and data collection',
+        'Collaboration with international veterinary experts'
+      ],
+      details: {
+        'Program Scope': 'Multi-species health monitoring across 5 national parks',
+        'Key Species': 'Elephants, lions, giraffes, rhinos, and endangered species',
+        'Technology Used': 'Remote monitoring collars, drone surveillance, mobile labs',
+        'Team Composition': 'Veterinarians, ecologists, research assistants, local guides',
+        'Impact To Date': 'Over 2,000 animals monitored, 12 disease outbreaks contained',
+        'Partners': 'International Wildlife Foundation, University of Veterinary Science'
+      },
+      achievements: [
+        'Developed early warning system for zoonotic diseases',
+        'Reduced wildlife mortality from preventable diseases by 45%',
+        'Trained 50 local community members as wildlife health monitors',
+        'Published 15 research papers on wildlife health trends'
+      ],
+      involvement: [
+        'Field data collection and health assessments',
+        'Sample processing and laboratory analysis',
+        'Data entry and health record maintenance',
+        'Community education on wildlife health'
+      ],
+      duration: '1-4 week programs available year-round',
+      rating: '4.8'
+    },
+    'anti-poaching': {
+      title: 'Anti-Poaching Support Initiative',
+      image: 'https://images.unsplash.com/photo-1547981609-4b6bfc67c272?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+      description: 'Our Anti-Poaching Support initiative provides critical medical assistance to anti-poaching units and treats animals affected by poaching activities. We work closely with ranger teams to provide emergency medical care, rehabilitation services, and support for rescued wildlife.',
+      highlights: [
+        'Emergency medical response for injured wildlife',
+        '24/7 veterinary support for anti-poaching operations',
+        'Wildlife rehabilitation and release programs',
+        'Training for rangers in basic animal first aid',
+        'Coordination with law enforcement agencies'
+      ],
+      details: {
+        'Response Time': 'Emergency teams on call 24/7',
+        'Coverage Area': '8 conservation areas across East Africa',
+        'Specialized Equipment': 'Mobile surgical units, night vision, tracking technology',
+        'Team Composition': 'Veterinarians, veterinary technicians, rehabilitation specialists',
+        'Impact To Date': 'Over 300 animals treated, 45 successful releases back to wild',
+        'Partners': 'National Parks Service, Wildlife Protection Agency'
+      },
+      achievements: [
+        'Reduced poaching-related mortality by 60% in target areas',
+        'Established 3 wildlife rehabilitation centers',
+        'Trained 120 rangers in emergency animal care',
+        'Developed rapid response protocols for poaching incidents'
+      ],
+      involvement: [
+        'Assisting in emergency medical procedures',
+        'Animal monitoring during rehabilitation',
+        'Data collection on poaching incidents',
+        'Community awareness programs'
+      ],
+      duration: '2-8 week programs with flexible scheduling',
+      rating: '4.9'
+    },
+    'research-opportunities': {
+      title: 'Wildlife Research Opportunities',
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+      description: 'Our Research Opportunities program enables participants to contribute to cutting-edge wildlife conservation research. Work alongside field researchers and conservation scientists on projects ranging from behavioral studies to ecosystem health assessments.',
+      highlights: [
+        'Participate in ongoing wildlife research projects',
+        'Learn advanced field research techniques',
+        'Contribute to data collection and analysis',
+        'Opportunity to co-author scientific publications',
+        'Access to specialized research equipment and technology'
+      ],
+      details: {
+        'Research Areas': 'Animal behavior, ecology, genetics, conservation medicine',
+        'Field Sites': 'Multiple research stations across diverse ecosystems',
+        'Methodologies': 'GPS tracking, camera traps, drone surveys, genetic sampling',
+        'Team Composition': 'PhD researchers, field biologists, data analysts',
+        'Publications': '12 peer-reviewed papers in the last 2 years',
+        'Partners': 'Global Wildlife Research Institute, University Conservation Program'
+      },
+      achievements: [
+        'Discovered 3 new wildlife behavioral patterns',
+        'Developed improved population monitoring techniques',
+        'Identified key wildlife corridors for protection',
+        'Created database of 10,000+ wildlife sightings'
+      ],
+      involvement: [
+        'Field data collection and observation',
+        'Laboratory sample processing',
+        'Data entry and preliminary analysis',
+        'Research report preparation'
+      ],
+      duration: '4-12 week programs, with extended options available',
+      rating: '4.7'
+    },
+    'field-clinics': {
+      title: 'Field Veterinary Clinics Program',
+      image: 'https://images.unsplash.com/photo-1576765608623-940a017202b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+      description: 'Our Field Veterinary Clinics program establishes mobile medical units in remote areas to provide essential healthcare to wildlife and domestic animals. These clinics serve both conservation and community needs, promoting harmonious human-wildlife coexistence.',
+      highlights: [
+        'Mobile veterinary clinics serving remote areas',
+        'Comprehensive care for wildlife and domestic animals',
+        'Community outreach and education programs',
+        'Emergency response capabilities',
+        'Disease prevention and vaccination campaigns'
+      ],
+      details: {
+        'Clinic Coverage': '15 remote communities across 3 countries',
+        'Services Provided': 'Treatment, vaccination, sterilization, emergency care',
+        'Equipment': 'Fully equipped mobile clinics with surgical capabilities',
+        'Team Composition': 'Veterinarians, veterinary nurses, community liaisons',
+        'Impact To Date': 'Over 5,000 animals treated, 25 communities served',
+        'Partners': 'Ministry of Agriculture, International Animal Welfare Foundation'
+      },
+      achievements: [
+        'Reduced human-wildlife conflict by 40% in target areas',
+        'Vaccinated over 3,000 animals against common diseases',
+        'Trained 80 local community animal health workers',
+        'Established ongoing veterinary services in 10 remote locations'
+      ],
+      involvement: [
+        'Assisting in clinical procedures and treatments',
+        'Community education and outreach',
+        'Maintaining medical records',
+        'Logistics and clinic setup'
+      ],
+      duration: '2-6 week programs with rotating clinic locations',
+      rating: '4.8'
+    },
+    'community-education': {
+      title: 'Community Conservation Education',
+      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+      description: 'Our Community Education program delivers essential knowledge about wildlife conservation, animal health, and sustainable practices to local communities. We believe that education is the foundation of successful long-term conservation efforts.',
+      highlights: [
+        'Interactive educational programs for all ages',
+        'Curriculum tailored to local context and needs',
+        'Focus on practical conservation solutions',
+        'Engagement with schools and community groups',
+        'Development of local conservation champions'
+      ],
+      details: {
+        'Program Reach': '35 communities, 60 schools, over 10,000 participants',
+        'Educational Materials': 'Multilingual resources, visual aids, practical demonstrations',
+        'Approach': 'Participatory learning, hands-on activities, long-term engagement',
+        'Team Composition': 'Educators, conservation specialists, community facilitators',
+        'Impact To Date': '85% of participants report positive behavior change',
+        'Partners': 'Ministry of Education, Local Community Organizations'
+      },
+      achievements: [
+        'Developed conservation curriculum adopted by 20 schools',
+        'Trained 150 community conservation ambassadors',
+        'Established 12 wildlife clubs in local schools',
+        'Reduced retaliatory killing of wildlife by 65% in program areas'
+      ],
+      involvement: [
+        'Assisting in educational program delivery',
+        'Developing educational materials',
+        'Community engagement activities',
+        'Monitoring and evaluation of program impact'
+      ],
+      duration: '2-8 week programs, with focus on specific communities',
+      rating: '4.9'
+    },
+    'partnership-programs': {
+      title: 'Conservation Partnership Programs',
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+      description: 'Our Partnership Programs facilitate collaboration between conservation organizations, research institutions, government agencies, and local communities to implement large-scale conservation initiatives with lasting impact.',
+      highlights: [
+        'Multi-stakeholder conservation projects',
+        'Resource sharing and collaborative planning',
+        'Integrated approach to complex conservation challenges',
+        'Knowledge exchange between international and local experts',
+        'Scalable solutions with measurable impact'
+      ],
+      details: {
+        'Partner Network': '25+ organizations across 8 countries',
+        'Focus Areas': 'Habitat protection, species conservation, community development',
+        'Project Scale': 'Regional initiatives with local implementation',
+        'Team Composition': 'Project managers, field coordinators, partnership specialists',
+        'Impact To Date': '12 major conservation projects implemented',
+        'Key Partners': 'Global Conservation Fund, National Wildlife Authorities'
+      },
+      achievements: [
+        'Secured $5M in funding for conservation projects',
+        'Established 3 new protected areas through collaborative efforts',
+        'Developed cross-border conservation strategies',
+        'Created unified monitoring framework for regional conservation'
+      ],
+      involvement: [
+        'Participating in partnership meetings and planning',
+        'Assisting with project coordination and documentation',
+        'Stakeholder engagement and communication',
+        'Monitoring and reporting on project progress'
+      ],
+      duration: '4-12 week programs, with potential for extended involvement',
+      rating: '4.7'
+    }
+  };
+
+  // Function to generate PDF for conservation initiatives
+  function generateConservationPDF(target) {
+    // Check if jsPDF is available
+    if (typeof jsPDF !== 'undefined') {
+      const doc = new jsPDF();
+      const data = conservationDetails[target];
+      
+      // Add title
+      doc.setFontSize(20);
+      doc.setTextColor(40, 40, 40);
+      doc.text(data.title, 105, 20, { align: 'center' });
+      
+      // Add description
+      doc.setFontSize(12);
+      doc.setTextColor(100, 100, 100);
+      const splitDescription = doc.splitTextToSize(data.description, 180);
+      doc.text(splitDescription, 20, 35);
+      
+      let yPosition = 60;
+      
+      // Add highlights
+      doc.setFontSize(16);
+      doc.setTextColor(30, 30, 30);
+      doc.text('Program Highlights:', 20, yPosition);
+      yPosition += 10;
+      
+      doc.setFontSize(10);
+      data.highlights.forEach(highlight => {
+        if (yPosition > 250) {
+          doc.addPage();
+          yPosition = 20;
+        }
+        doc.setTextColor(50, 50, 50);
+        doc.text('• ' + highlight, 25, yPosition);
+        yPosition += 7;
+      });
+      
+      yPosition += 5;
+      
+      // Add details
+      if (yPosition > 220) {
+        doc.addPage();
+        yPosition = 20;
+      }
+      
+      doc.setFontSize(16);
+      doc.setTextColor(30, 30, 30);
+      doc.text('Program Details:', 20, yPosition);
+      yPosition += 10;
+      
+      doc.setFontSize(10);
+      Object.entries(data.details).forEach(([key, value]) => {
+        if (yPosition > 250) {
+          doc.addPage();
+          yPosition = 20;
+        }
+        doc.setTextColor(80, 80, 80);
+        doc.text(key + ':', 25, yPosition);
+        doc.setTextColor(50, 50, 50);
+        const splitValue = doc.splitTextToSize(value, 120);
+        doc.text(splitValue, 80, yPosition);
+        yPosition += splitValue.length * 7;
+      });
+      
+      // Add footer
+      const pageCount = doc.internal.getNumberOfPages();
+      for (let i = 1; i <= pageCount; i++) {
+        doc.setPage(i);
+        doc.setFontSize(8);
+        doc.setTextColor(150, 150, 150);
+        doc.text('Generated from Conservation Initiatives - ' + new Date().toLocaleDateString(), 105, 285, { align: 'center' });
+      }
+      
+      // Save the PDF
+      doc.save(`${data.title.replace(/\s+/g, '_')}_Information.pdf`);
+    } else {
+      alert('PDF generation library not loaded. Please try again.');
+    }
+  }
+
+  // Modal functionality for conservation initiatives
+  const conservationModal = document.getElementById('conservationModal');
+  const conservationModalContent = document.getElementById('conservationModalContent');
+  const closeConservationModal = document.querySelector('#conservationModal .close-modal');
+
+  // View details button event listeners for conservation initiatives
+  document.querySelectorAll('#conservation-initiatives .view-details').forEach(button => {
+    button.addEventListener('click', function() {
+      const target = this.getAttribute('data-target');
+      const data = conservationDetails[target];
+      
+      conservationModalContent.innerHTML = `
+        <div class="modal-header">
+          <div class="h-64 w-full bg-cover bg-center rounded-lg mb-4" style="background-image: url('${data.image}')"></div>
+          <h2 class="text-3xl font-bold mb-2 text-gray-800">${data.title}</h2>
+          <div class="flex flex-wrap items-center gap-4">
+            <span class="rating">
+              <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              ${data.rating}/5
+            </span>
+            <span class="text-lg font-bold text-green-600">${data.duration}</span>
+          </div>
+        </div>
+        
+        <p class="text-lg text-gray-700 mb-6">${data.description}</p>
+        
+        <div class="program-highlight">
+          <h3 class="text-xl font-semibold mb-3 text-blue-800">Program Highlights</h3>
+          <ul class="feature-list">
+            ${data.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+          </ul>
+        </div>
+        
+        <div class="detail-grid">
+          <div class="info-card">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Program Details</h3>
+            <div class="space-y-3">
+              ${Object.entries(data.details).map(([key, value]) => `
+                <div>
+                  <span class="font-medium text-gray-700">${key}:</span>
+                  <p class="text-gray-600">${value}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Key Achievements</h3>
+            <ul class="feature-list">
+              ${data.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-6">
+          <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Participation Opportunities</h3>
+          <div class="space-y-3">
+            ${data.involvement.map((item, index) => `
+              <div class="itinerary-day">
+                <span class="font-medium text-green-700">Activity ${index + 1}:</span>
+                <span class="text-gray-600">${item}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+        
+        <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+          <div class="flex flex-wrap gap-2">
+            <span class="badge badge-primary">Conservation</span>
+            <span class="badge badge-secondary">Community</span>
+            <span class="badge badge-primary">Research</span>
+            <span class="badge badge-secondary">Education</span>
+          </div>
+          <button onclick="generateConservationPDF('${target}')" class="download-btn">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+            Download Program Details
+          </button>
+        </div>
+      `;
+      
+      conservationModal.classList.remove('hidden');
+      conservationModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Close modal
+  closeConservationModal.addEventListener('click', function() {
+    conservationModal.classList.add('hidden');
+    conservationModal.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+  });
+
+  // Close modal when clicking outside
+  conservationModal.addEventListener('click', function(e) {
+    if (e.target === conservationModal) {
+      conservationModal.classList.add('hidden');
+      conservationModal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !conservationModal.classList.contains('hidden')) {
+      conservationModal.classList.add('hidden');
+      conservationModal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+  });
+</script>
 <section id="application-timeline" class="py-16 bg-gray-50">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-16">

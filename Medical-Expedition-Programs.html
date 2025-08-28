@@ -288,66 +288,459 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 
 <section id="medical-types" class="py-16 bg-white">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-bold text-gray-900 mb-4">Medical Program Types</h2>
-<p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive healthcare programs combining medical expertise with community outreach in East Africa</p>
-</div>
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('img/m3.jpg');"></div>
-<div class="p-6">
-<div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mb-4">
-<i class="ri-truck-line text-white text-xl"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3">Medical Camps</h3>
-<p class="text-gray-600 mb-4">Bringing essential healthcare to remote rural communities in Uganda through temporary medical camps.</p>
-<div class="text-sm text-gray-500 mb-4">Duration: 2-4 weeks | Requirements: MD/RN</div>
-<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
-</div>
-</div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Medical Program Types</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive healthcare programs combining medical expertise with community outreach in East Africa</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Medical Camps -->
+      <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mb-4">
+            <i class="ri-truck-line text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Medical Camps</h3>
+          <p class="text-gray-600 mb-4">Bringing essential healthcare to remote rural communities in Uganda through temporary medical camps.</p>
+          <div class="text-sm text-gray-500 mb-4">Duration: 2-4 weeks | Requirements: MD/RN</div>
+          <button class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 whitespace-nowrap view-details" data-target="medical-camps">Learn More</button>
+        </div>
+      </div>
 
-<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('img/m2.jpg');"></div>
-<div class="p-6">
-<div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4">
-<i class="ri-graduation-cap-line text-white text-xl"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3">Hospital & Lab Visits</h3>
-<p class="text-gray-600 mb-4">Organized visits to public and private hospitals and laboratories for experiential learning.</p>
-<div class="text-sm text-gray-500 mb-4">Duration: 1-3 weeks | Requirements: Medical Student+</div>
-<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
-</div>
-</div>
+      <!-- Hospital & Lab Visits -->
+      <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4">
+            <i class="ri-graduation-cap-line text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Hospital & Lab Visits</h3>
+          <p class="text-gray-600 mb-4">Organized visits to public and private hospitals and laboratories for experiential learning.</p>
+          <div class="text-sm text-gray-500 mb-4">Duration: 1-3 weeks | Requirements: Medical Student+</div>
+          <button class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 whitespace-nowrap view-details" data-target="hospital-lab-visits">Learn More</button>
+        </div>
+      </div>
 
-<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('img/a2.JPG');"></div>
-<div class="p-6">
-<div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mb-4">
-<i class="ri-leaf-line text-white text-xl"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3">Traditional Medicine</h3>
-<p class="text-gray-600 mb-4">Learn from African medicine men about traditional healing using local herbs and knowledge.</p>
-<div class="text-sm text-gray-500 mb-4">Duration: 1-2 weeks | Requirements: Open to all</div>
-<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
-</div>
-</div>
+      <!-- Traditional Medicine -->
+      <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1588286840104-8957b019727f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mb-4">
+            <i class="ri-leaf-line text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Traditional Medicine</h3>
+          <p class="text-gray-600 mb-4">Learn from African medicine men about traditional healing using local herbs and knowledge.</p>
+          <div class="text-sm text-gray-500 mb-4">Duration: 1-2 weeks | Requirements: Open to all</div>
+          <button class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 whitespace-nowrap view-details" data-target="traditional-medicine">Learn More</button>
+        </div>
+      </div>
 
-<div class="program-card bg-white rounded-xl shadow-lg overflow-hidden">
-<div class="h-48 bg-cover bg-center" style="background-image: url('img/s2.jpg');"></div>
-<div class="p-6">
-<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
-<i class="ri-heart-pulse-line text-white text-xl"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3">One Health Initiatives</h3>
-<p class="text-gray-600 mb-4">Collaborative programs addressing animal and human health through the One Health approach.</p>
-<div class="text-sm text-gray-500 mb-4">Duration: 3-6 weeks | Requirements: Health Professionals</div>
-<button class="text-primary hover:text-blue-700 font-semibold transition-colors duration-200 whitespace-nowrap">Learn More</button>
-</div>
-</div>
-</div>
-</div>
+      <!-- One Health Initiatives -->
+      <div class="program-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 transform hover:-translate-y-1 transition-transform">
+        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');"></div>
+        <div class="p-6">
+          <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4">
+            <i class="ri-heart-pulse-line text-white text-xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">One Health Initiatives</h3>
+          <p class="text-gray-600 mb-4">Collaborative programs addressing animal and human health through the One Health approach.</p>
+          <div class="text-sm text-gray-500 mb-4">Duration: 3-6 weeks | Requirements: Health Professionals</div>
+          <button class="text-blue-600 hover:text-blue-800 font-semibold transition-colors duration-200 whitespace-nowrap view-details" data-target="one-health-initiatives">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Overlay -->
+  <div id="medicalModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl">
+      <span class="close-modal absolute top-4 right-6 text-4xl text-gray-500 cursor-pointer hover:text-gray-700 z-10">&times;</span>
+      <div id="medicalModalContent" class="p-8 pt-16">
+        <!-- Dynamic content will be inserted here -->
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- Load jsPDF with proper error handling -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  // Initialize jsPDF with proper error handling
+  let jsPDF;
+  try {
+    // Try to access the library through the expected global object
+    jsPDF = window.jspdf.jsPDF;
+    
+    // If that doesn't work, try the alternative global object
+    if (typeof jsPDF === 'undefined' && typeof window.jsPDF !== 'undefined') {
+      jsPDF = window.jsPDF;
+    }
+  } catch (e) {
+    console.error("Error initializing jsPDF:", e);
+  }
+
+  // Detailed information data for medical programs
+  const medicalDetails = {
+    'medical-camps': {
+      title: 'Medical Camps Program',
+      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+      description: 'Our Medical Camps program brings essential healthcare services to remote rural communities across Uganda. We establish temporary medical facilities in underserved areas, providing diagnosis, treatment, and preventive care to populations with limited access to healthcare services.',
+      highlights: [
+        'Mobile medical clinics serving remote communities',
+        'Comprehensive health screenings and treatments',
+        'Preventive care and health education programs',
+        'Collaboration with local healthcare workers',
+        'Medication distribution and follow-up care'
+      ],
+      details: {
+        'Program Scope': 'Serves 15+ remote communities quarterly',
+        'Services Provided': 'General consultations, vaccinations, maternal health, pediatric care',
+        'Medical Team': 'Doctors, nurses, pharmacists, community health workers',
+        'Equipment': 'Portable diagnostic tools, basic laboratory equipment, mobile pharmacy',
+        'Impact To Date': 'Over 8,000 patients treated, 25+ communities served',
+        'Partners': 'Ministry of Health, Local District Hospitals, International Health Organizations'
+      },
+      activities: [
+        'Patient consultations and diagnoses',
+        'Medication dispensing and health education',
+        'Vaccination campaigns',
+        'Maternal and child health services',
+        'Community health worker training'
+      ],
+      requirements: [
+        'Medical degree or nursing qualification',
+        'Current professional license',
+        'Experience in primary care or relevant specialty',
+        'Adaptability to resource-limited settings',
+        'Cultural sensitivity and communication skills'
+      ],
+      duration: '2-4 week programs, with extension options',
+      rating: '4.8'
+    },
+    'hospital-lab-visits': {
+      title: 'Hospital & Laboratory Visits Program',
+      image: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+      description: 'Our Hospital & Laboratory Visits program offers unique experiential learning opportunities in diverse healthcare settings across East Africa. Participants gain exposure to different medical systems, practices, and challenges while shadowing local healthcare professionals.',
+      highlights: [
+        'Guided tours of public and private healthcare facilities',
+        'Observation of diverse medical procedures and practices',
+        'Interactive sessions with local healthcare professionals',
+        'Exposure to tropical medicine and unique health challenges',
+        'Cultural immersion in healthcare delivery systems'
+      ],
+      details: {
+        'Facilities Visited': '5+ hospitals, 3+ specialized clinics, 2+ research laboratories',
+        'Specialties Covered': 'Internal medicine, surgery, pediatrics, obstetrics, public health',
+        'Educational Approach': 'Structured observation, case discussions, hands-on learning',
+        'Team Composition': 'Medical educators, local specialists, program coordinators',
+        'Impact To Date': '300+ students hosted, 15+ healthcare facilities partnered with',
+        'Partners': 'National Referral Hospital, University Teaching Hospitals, Research Institutes'
+      },
+      activities: [
+        'Hospital ward rounds and case observations',
+        'Specialist clinic shadowing',
+        'Laboratory techniques demonstration',
+        'Medical case discussions and presentations',
+        'Healthcare system overview sessions'
+      ],
+      requirements: [
+        'Current medical or nursing student (2nd year+)',
+        'Health professional in training or practice',
+        'Letter of recommendation from institution',
+        'Malpractice insurance (if applicable)',
+        'Openness to diverse medical practices and cultures'
+      ],
+      duration: '1-3 week programs, customizable to interests',
+      rating: '4.7'
+    },
+    'traditional-medicine': {
+      title: 'Traditional Medicine Program',
+      image: 'https://images.unsplash.com/photo-1588286840104-8957b019727f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+      description: 'Our Traditional Medicine program offers a unique opportunity to learn from respected African traditional healers about indigenous healing practices, herbal medicine, and holistic approaches to health that have been preserved for generations.',
+      highlights: [
+        'Direct learning from experienced traditional healers',
+        'Hands-on experience with medicinal plant identification',
+        'Understanding holistic healing approaches',
+        'Cultural immersion in traditional healing practices',
+        'Documentation and preservation of indigenous knowledge'
+      ],
+      details: {
+        'Program Scope': 'Works with 10+ traditional healers across 3 regions',
+        'Learning Approach': 'Apprenticeship model, participatory learning, field excursions',
+        'Knowledge Areas': 'Herbal medicine, spiritual healing, bone setting, midwifery',
+        'Team Composition': 'Traditional healers, ethnobotanists, cultural interpreters',
+        'Impact To Date': 'Documented 150+ medicinal plants, trained 80+ participants',
+        'Partners': 'Traditional Healers Association, Cultural Institutions, Ethnobotany Researchers'
+      },
+      activities: [
+        'Medicinal plant identification and harvesting',
+        'Preparation of traditional remedies',
+        'Observation of healing ceremonies and rituals',
+        'Documentation of traditional knowledge',
+        'Cultural exchange with healing communities'
+      ],
+      requirements: [
+        'Open to all interested participants',
+        'Respect for cultural traditions and practices',
+        'Interest in alternative healing approaches',
+        'Physical ability for nature walks and fieldwork',
+        'Openness to different worldviews and belief systems'
+      ],
+      duration: '1-2 week programs, with cultural immersion options',
+      rating: '4.9'
+    },
+    'one-health-initiatives': {
+      title: 'One Health Initiatives Program',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+      description: 'Our One Health Initiatives program addresses the interconnectedness of human, animal, and environmental health through collaborative, cross-disciplinary approaches. Participants work on projects that bridge human medicine, veterinary science, and environmental conservation.',
+      highlights: [
+        'Integrated approach to human and animal health',
+        'Zoonotic disease surveillance and prevention',
+        'Community-based health interventions',
+        'Environmental health assessments',
+        'Interprofessional collaboration and training'
+      ],
+      details: {
+        'Program Focus': 'Zoonotic diseases, antimicrobial resistance, food safety, ecosystem health',
+        'Approach': 'Multidisciplinary teams, community engagement, research-informed practice',
+        'Team Composition': 'Physicians, veterinarians, ecologists, public health specialists',
+        'Technologies': 'Field diagnostics, GIS mapping, data analysis tools',
+        'Impact To Date': '5 community health projects implemented, 3 research studies conducted',
+        'Partners': 'World Health Organization, Food and Agriculture Organization, Environmental Agencies'
+      },
+      activities: [
+        'Zoonotic disease surveillance activities',
+        'Community health and hygiene education',
+        'Animal health vaccination campaigns',
+        'Environmental sampling and analysis',
+        'One Health research project participation'
+      ],
+      requirements: [
+        'Background in health sciences, veterinary medicine, or environmental science',
+        'Interest in interdisciplinary approaches',
+        'Fieldwork readiness and adaptability',
+        'Collaborative mindset and teamwork skills',
+        'Understanding of public health principles'
+      ],
+      duration: '3-6 week programs, with research extension options',
+      rating: '4.8'
+    }
+  };
+
+  // Function to generate PDF for medical programs
+  function generateMedicalPDF(target) {
+    // Check if jsPDF is available
+    if (typeof jsPDF !== 'undefined') {
+      try {
+        const doc = new jsPDF();
+        const data = medicalDetails[target];
+        
+        // Add title
+        doc.setFontSize(20);
+        doc.setTextColor(40, 40, 40);
+        doc.text(data.title, 105, 20, { align: 'center' });
+        
+        // Add description
+        doc.setFontSize(12);
+        doc.setTextColor(100, 100, 100);
+        const splitDescription = doc.splitTextToSize(data.description, 180);
+        doc.text(splitDescription, 20, 35);
+        
+        let yPosition = 60;
+        
+        // Add highlights
+        doc.setFontSize(16);
+        doc.setTextColor(30, 30, 30);
+        doc.text('Program Highlights:', 20, yPosition);
+        yPosition += 10;
+        
+        doc.setFontSize(10);
+        data.highlights.forEach(highlight => {
+          if (yPosition > 250) {
+            doc.addPage();
+            yPosition = 20;
+          }
+          doc.setTextColor(50, 50, 50);
+          doc.text('• ' + highlight, 25, yPosition);
+          yPosition += 7;
+        });
+        
+        yPosition += 5;
+        
+        // Add details
+        if (yPosition > 220) {
+          doc.addPage();
+          yPosition = 20;
+        }
+        
+        doc.setFontSize(16);
+        doc.setTextColor(30, 30, 30);
+        doc.text('Program Details:', 20, yPosition);
+        yPosition += 10;
+        
+        doc.setFontSize(10);
+        Object.entries(data.details).forEach(([key, value]) => {
+          if (yPosition > 250) {
+            doc.addPage();
+            yPosition = 20;
+          }
+          doc.setTextColor(80, 80, 80);
+          doc.text(key + ':', 25, yPosition);
+          doc.setTextColor(50, 50, 50);
+          const splitValue = doc.splitTextToSize(value, 120);
+          doc.text(splitValue, 80, yPosition);
+          yPosition += splitValue.length * 7;
+        });
+        
+        // Add footer
+        const pageCount = doc.internal.getNumberOfPages();
+        for (let i = 1; i <= pageCount; i++) {
+          doc.setPage(i);
+          doc.setFontSize(8);
+          doc.setTextColor(150, 150, 150);
+          doc.text('Generated from Medical Programs - ' + new Date().toLocaleDateString(), 105, 285, { align: 'center' });
+        }
+        
+        // Save the PDF
+        doc.save(`${data.title.replace(/\s+/g, '_')}_Information.pdf`);
+      } catch (error) {
+        console.error("Error generating PDF:", error);
+        alert('Error generating PDF. Please check the console for details.');
+      }
+    } else {
+      // Try to load the library dynamically if not available
+      alert('PDF generation library is still loading. Please wait a moment and try again.');
+      
+      // Attempt to reload the library
+      const script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+      script.onload = function() {
+        // Retry after library loads
+        setTimeout(() => {
+          window.jsPDF = window.jspdf.jsPDF;
+          generateMedicalPDF(target);
+        }, 500);
+      };
+      document.head.appendChild(script);
+    }
+  }
+
+  // Modal functionality for medical programs
+  const medicalModal = document.getElementById('medicalModal');
+  const medicalModalContent = document.getElementById('medicalModalContent');
+  const closeMedicalModal = document.querySelector('#medicalModal .close-modal');
+
+  // View details button event listeners for medical programs
+  document.querySelectorAll('#medical-types .view-details').forEach(button => {
+    button.addEventListener('click', function() {
+      const target = this.getAttribute('data-target');
+      const data = medicalDetails[target];
+      
+      medicalModalContent.innerHTML = `
+        <div class="modal-header">
+          <div class="h-64 w-full bg-cover bg-center rounded-lg mb-4" style="background-image: url('${data.image}')"></div>
+          <h2 class="text-3xl font-bold mb-2 text-gray-800">${data.title}</h2>
+          <div class="flex flex-wrap items-center gap-4">
+            <span class="rating">
+              <svg class="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 极l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 极 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              ${data.rating}/5
+            </span>
+            <span class="text-lg font-bold text-green-600">${data.duration}</span>
+          </div>
+        </div>
+        
+        <p class="text-lg text-gray-700 mb-6">${data.description}</p>
+        
+        <div class="program-highlight">
+          <h3 class="text-xl font-semibold mb-3 text-blue-800">Program Highlights</h3>
+          <ul class="feature-list">
+            ${data.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+          </ul>
+        </div>
+        
+        <div class="detail-grid">
+          <div class="info-card">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Program Details</h3>
+            <div class="space-y-3">
+              ${Object.entries(data.details).map(([key, value]) => `
+                <div>
+                  <span class="font-medium text-gray-700">${key}:</span>
+                  <p class="text-gray-600">${value}</p>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Key Activities</h3>
+            <ul class="feature-list">
+              ${data.activities.map(activity => `<li>${activity}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mt-6">
+          <h3 class="text-xl font-semibold mb-4 text-gray-800 border-b pb-2">Participation Requirements</h3>
+          <div class="space-y-3">
+            ${data.requirements.map((requirement, index) => `
+              <div class="itinerary-day">
+                <span class="font-medium text-green-700">Requirement ${index + 1}:</span>
+                <span class="text-gray-600">${requirement}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+        
+        <div class="flex justify-between items-center mt-8 pt-6 border-t border-gray-200">
+          <div class="flex flex-wrap gap-2">
+            <span class="badge badge-primary">Healthcare</span>
+            <span class="badge badge-secondary">Education</span>
+            <span class="badge badge-primary">Community</span>
+            <span class="badge badge-secondary">Research</span>
+          </div>
+          <button onclick="generateMedicalPDF('${target}')" class="download-btn">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 极v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+            </svg>
+            Download Program Details
+          </button>
+        </div>
+      `;
+      
+      medicalModal.classList.remove('hidden');
+      medicalModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Close modal
+  closeMedicalModal.addEventListener('click', function() {
+    medicalModal.classList.add('hidden');
+    medicalModal.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+  });
+
+  // Close modal when clicking outside
+  medicalModal.addEventListener('click', function(e) {
+    if (e.target === medicalModal) {
+      medicalModal.classList.add('hidden');
+      medicalModal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !medicalModal.classList.contains('hidden')) {
+      medicalModal.classList.add('hidden');
+      medicalModal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+  });
+</script>
 
 <section id="focus-areas" class="py-16 bg-gray-50">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
