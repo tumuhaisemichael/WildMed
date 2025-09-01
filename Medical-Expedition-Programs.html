@@ -1286,102 +1286,96 @@ Apply Now
 <div class="grid lg:grid-cols-2 gap-12">
 <div>
 <h3 class="text-2xl font-bold text-gray-900 mb-6">Application Inquiry Form</h3>
-<form class="space-y-6">
-<div class="grid md:grid-cols-2 gap-4">
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
-<input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your first name">
-</div>
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
-<input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your last name">
-</div>
-</div>
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-<input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your email">
-</div>
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">Medical Specialty</label>
-<div class="relative">
-<button type="button" class="w-full bg-white border border-gray-300 rounded-md px-4 py-3 text-left text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary specialty-btn">
-<span class="specialty-text">Select your medical specialty</span>
-<div class="w-4 h-4 flex items-center justify-center absolute right-3 top-1/2 transform -translate-y-1/2">
-<i class="ri-arrow-down-s-line text-gray-400"></i>
-</div>
-</button>
-<div class="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-300 rounded-md shadow-lg z-10 hidden specialty-dropdown">
-<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 specialty-option" data-value="emergency">Emergency Medicine</button>
-<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 specialty-option" data-value="general">General Practice</button>
-<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 specialty-option" data-value="public-health">Public Health</button>
-<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 specialty-option" data-value="tropical">Tropical Medicine</button>
-<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 specialty-option" data-value="surgery">Surgery</button>
-<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 specialty-option" data-value="nursing">Nursing</button>
-</div>
-</div>
-</div>
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">Years of Experience</label>
-<div class="relative">
-<button type="button" class="w-full bg-white border border-gray-300 rounded-md px-4 py-3 text-left text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary experience-btn">
-<span class="experience-text">Select your experience level</span>
-<div class="w-4 h-4 flex items-center justify-center absolute right-3 top-1/2 transform -translate-y-1/2">
-<i class="ri-arrow-down-s-line text-gray-400"></i>
-</div>
-</button>
-<div class="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-300 rounded-md shadow-lg z-10 hidden experience-dropdown">
-<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 experience-option" data-value="2-5">2-5 years</button>
-<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 experience-option" data-value="6-10">6-10 years</button>
-<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 experience-option" data-value="11-15">11-15 years</button>
-<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 experience-option" data-value="15+">15+ years</button>
-</div>
-</div>
-</div>
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">Program Interest</label>
-<div class="grid grid-cols-2 gap-3">
-<label class="flex items-center">
-<input type="checkbox" class="hidden program-checkbox" data-program="mobile-clinic">
-<div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
-<i class="ri-check-line text-white text-xs hidden"></i>
-</div>
-<span class="text-sm text-gray-700">Medical Camps</span>
-</label>
-<label class="flex items-center">
-<input type="checkbox" class="hidden program-checkbox" data-program="training">
-<div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
-<i class="ri-check-line text-white text-xs hidden"></i>
-</div>
-<span class="text-sm text-gray-700">Hospital Visits</span>
-</label>
-<label class="flex items-center">
-<input type="checkbox" class="hidden program-checkbox" data-program="emergency">
-<div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
-<i class="ri-check-line text-white text-xs hidden"></i>
-</div>
-<span class="text-sm text-gray-700">Traditional Medicine</span>
-</label>
-<label class="flex items-center">
-<input type="checkbox" class="hidden program-checkbox" data-program="remote">
-<div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
-<i class="ri-check-line text-white text-xs hidden"></i>
-</div>
-<span class="text-sm text-gray-700">One Health</span>
-</label>
-</div>
-</div>
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">Availability</label>
-<textarea rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Please describe your availability and preferred program dates..."></textarea>
-</div>
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">Additional Information</label>
-<textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Tell us about your motivation for joining medical expeditions and any relevant experience..."></textarea>
-</div>
-<button type="submit" class="w-full bg-secondary hover:bg-green-700 text-white py-3 !rounded-button font-semibold transition-colors duration-200 whitespace-nowrap">
-Submit Application
-</button>
+<form id="expedition-form" class="space-y-6" action="https://formspree.io/f/mldlkwke" method="POST">
+    <div class="grid md:grid-cols-2 gap-4">
+        <div>
+            <label for="expedition_first_name" class="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
+            <input id="expedition_first_name" name="first_name" type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your first name" required>
+        </div>
+        <div>
+            <label for="expedition_last_name" class="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
+            <input id="expedition_last_name" name="last_name" type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your last name" required>
+        </div>
+    </div>
+    <div>
+        <label for="expedition_email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+        <input id="expedition_email" name="email" type="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your email" required>
+    </div>
+    <div>
+        <label for="medical_specialty" class="block text-sm font-semibold text-gray-700 mb-2">Medical Specialty</label>
+        <select id="medical_specialty" name="medical_specialty" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" required>
+            <option value="">Select your medical specialty</option>
+            <option value="Emergency Medicine">Emergency Medicine</option>
+            <option value="General Practice">General Practice</option>
+            <option value="Public Health">Public Health</option>
+            <option value="Tropical Medicine">Tropical Medicine</option>
+            <option value="Surgery">Surgery</option>
+            <option value="Nursing">Nursing</option>
+        </select>
+    </div>
+    <div>
+        <label for="years_experience" class="block text-sm font-semibold text-gray-700 mb-2">Years of Experience</label>
+        <select id="years_experience" name="years_experience" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" required>
+            <option value="">Select your experience level</option>
+            <option value="2-5">2-5 years</option>
+            <option value="6-10">6-10 years</option>
+            <option value="11-15">11-15 years</option>
+            <option value="15+">15+ years</option>
+        </select>
+    </div>
+    <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-2">Program Interest</label>
+        <div class="grid grid-cols-2 gap-3">
+            <label for="program_interest_camps" class="flex items-center cursor-pointer">
+                <input id="program_interest_camps" name="program_interest[]" value="Medical Camps" type="checkbox" class="hidden program-checkbox">
+                <div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
+                    <i class="ri-check-line text-white text-xs hidden"></i>
+                </div>
+                <span class="text-sm text-gray-700">Medical Camps</span>
+            </label>
+            <label for="program_interest_visits" class="flex items-center cursor-pointer">
+                <input id="program_interest_visits" name="program_interest[]" value="Hospital Visits" type="checkbox" class="hidden program-checkbox">
+                <div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
+                    <i class="ri-check-line text-white text-xs hidden"></i>
+                </div>
+                <span class="text-sm text-gray-700">Hospital Visits</span>
+            </label>
+            <label for="program_interest_traditional" class="flex items-center cursor-pointer">
+                <input id="program_interest_traditional" name="program_interest[]" value="Traditional Medicine" type="checkbox" class="hidden program-checkbox">
+                <div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
+                    <i class="ri-check-line text-white text-xs hidden"></i>
+                </div>
+                <span class="text-sm text-gray-700">Traditional Medicine</span>
+            </label>
+            <label for="program_interest_one_health" class="flex items-center cursor-pointer">
+                <input id="program_interest_one_health" name="program_interest[]" value="One Health" type="checkbox" class="hidden program-checkbox">
+                <div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
+                    <i class="ri-check-line text-white text-xs hidden"></i>
+                </div>
+                <span class="text-sm text-gray-700">One Health</span>
+            </label>
+        </div>
+    </div>
+    <div>
+        <label for="availability" class="block text-sm font-semibold text-gray-700 mb-2">Availability</label>
+        <textarea id="availability" name="availability" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Please describe your availability and preferred program dates..." required></textarea>
+    </div>
+    <div>
+        <label for="additional_info" class="block text-sm font-semibold text-gray-700 mb-2">Additional Information</label>
+        <textarea id="additional_info" name="additional_info" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Tell us about your motivation for joining medical expeditions and any relevant experience..."></textarea>
+    </div>
+    <button type="submit" class="w-full bg-secondary hover:bg-green-700 text-white py-3 !rounded-button font-semibold transition-colors duration-200 whitespace-nowrap">
+        Submit Application
+    </button>
 </form>
+<div id="expedition-success-message" class="hidden mt-6 p-6 bg-green-50 border border-green-300 text-green-800 rounded-lg shadow-md">
+    <h4 class="text-lg font-bold mb-2">Application Submitted!</h4>
+    <p>Thank you for your interest. We have received your application and will be in touch shortly.</p>
+</div>
+<div id="expedition-error-message" class="hidden mt-6 p-6 bg-red-50 border border-red-300 text-red-800 rounded-lg shadow-md">
+    <h4 class="text-lg font-bold mb-2">Submission Failed</h4>
+    <p>We're sorry, but there was a problem submitting your application. Please try again later.</p>
+</div>
 </div>
 <div>
 <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
@@ -1490,33 +1484,39 @@ Comprehensive Support
 </div>
 <div class="bg-gray-50 rounded-xl p-6">
 <h4 class="font-semibold text-gray-900 mb-4">How to Contribute</h4>
-<form class="space-y-4">
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
-<input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your name">
-</div>
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-<input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your email">
-</div>
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">Type of Donation</label>
-<select class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm">
-<option>Select donation type</option>
-<option>Medical Equipment</option>
-<option>Medicines</option>
-<option>Financial Contribution</option>
-<option>Other Supplies</option>
-</select>
-</div>
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
-<textarea rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Tell us about your donation..."></textarea>
-</div>
-<button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white py-3 !rounded-button font-semibold transition-colors duration-200 whitespace-nowrap">
-Submit Donation Inquiry
-</button>
+<form id="supplies-form" class="space-y-4" action="https://formspree.io/f/mldlkwke" method="POST">
+    <div>
+        <label for="donor_name" class="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
+        <input id="donor_name" name="donor_name" type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your name" required>
+    </div>
+    <div>
+        <label for="donor_email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+        <input id="donor_email" name="donor_email" type="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your email" required>
+    </div>
+    <div>
+        <label for="donation_type" class="block text-sm font-semibold text-gray-700 mb-2">Type of Donation</label>
+        <select id="donation_type" name="donation_type" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" required>
+            <option value="">Select donation type</option>
+            <option value="Medical Equipment">Medical Equipment</option>
+            <option value="Medicines">Medicines</option>
+            <option value="Financial Contribution">Financial Contribution</option>
+            <option value="Other Supplies">Other Supplies</option>
+        </select>
+    </div>
+    <div>
+        <label for="donor_message" class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+        <textarea id="donor_message" name="donor_message" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Tell us about your donation..." required></textarea>
+    </div>
+    <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white py-3 !rounded-button font-semibold transition-colors duration-200 whitespace-nowrap">
+        Submit Donation Inquiry
+    </button>
 </form>
+<div id="supplies-success-message" class="hidden mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-md">
+    Your donation inquiry has been sent successfully. Thank you for your support!
+</div>
+<div id="supplies-error-message" class="hidden mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-md">
+    There was a problem submitting your inquiry. Please try again later.
+</div>
 </div>
 </div>
 </div>
@@ -1707,6 +1707,66 @@ const location = this.dataset.location;
 console.log('Hovering over:', location);
 });
 });
+});
+</script>
+
+<script id="form-submission-handler">
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to handle form submission
+    function handleFormSubmit(formId, successMessageId, errorMessageId) {
+        const form = document.getElementById(formId);
+        if (!form) return;
+
+        const successMessage = document.getElementById(successMessageId);
+        const errorMessage = document.getElementById(errorMessageId);
+        const submitButton = form.querySelector('button[type="submit"]');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.reset();
+                    form.style.display = 'none';
+                    successMessage.classList.remove('hidden');
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            console.log(data.errors.map(error => error.message).join(", "));
+                        }
+                        errorMessage.classList.remove('hidden');
+                        submitButton.disabled = false;
+                        submitButton.textContent = formId === 'supplies-form' ? 'Submit Donation Inquiry' : 'Submit Application';
+                    }).catch(() => {
+                        errorMessage.classList.remove('hidden');
+                        submitButton.disabled = false;
+                        submitButton.textContent = formId === 'supplies-form' ? 'Submit Donation Inquiry' : 'Submit Application';
+                    });
+                }
+            }).catch(error => {
+                errorMessage.classList.remove('hidden');
+                submitButton.disabled = false;
+                submitButton.textContent = formId === 'supplies-form' ? 'Submit Donation Inquiry' : 'Submit Application';
+            });
+        });
+    }
+
+    // Handle the supplies form
+    handleFormSubmit('supplies-form', 'supplies-success-message', 'supplies-error-message');
+
+    // Handle the expedition form
+    handleFormSubmit('expedition-form', 'expedition-success-message', 'expedition-error-message');
 });
 </script>
 

@@ -1991,79 +1991,80 @@ Apply Now
 <div class="grid lg:grid-cols-2 gap-12">
 <div>
 <h3 class="text-2xl font-bold text-gray-900 mb-6">Program Inquiry Form</h3>
-<form class="space-y-6">
-<div class="grid md:grid-cols-2 gap-4">
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
-<input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your first name">
-</div>
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
-<input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your last name">
-</div>
-</div>
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-<input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your email">
-</div>
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">Veterinary Experience</label>
-<div class="relative">
-<button type="button" class="w-full bg-white border border-gray-300 rounded-md px-4 py-3 text-left text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary experience-btn">
-<span class="experience-text">Select your experience level</span>
-<div class="w-4 h-4 flex items-center justify-center absolute right-3 top-1/2 transform -translate-y-1/2">
-<i class="ri-arrow-down-s-line text-gray-400"></i>
-</div>
-</button>
-<div class="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-300 rounded-md shadow-lg z-10 hidden experience-dropdown">
-<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 experience-option" data-value="0-2">0-2 years</button>
-<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 experience-option" data-value="3-5">3-5 years</button>
-<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 experience-option" data-value="6-10">6-10 years</button>
-<button type="button" class="w-full text-left px-4 py-2 text-sm hover:bg-gray-50 experience-option" data-value="10+">10+ years</button>
-</div>
-</div>
-</div>
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">Program Interest</label>
-<div class="grid grid-cols-2 gap-3">
-<label class="flex items-center">
-<input type="checkbox" class="hidden program-checkbox" data-program="health">
-<div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
-<i class="ri-check-line text-white text-xs hidden"></i>
-</div>
-<span class="text-sm text-gray-700">Health Monitoring</span>
-</label>
-<label class="flex items-center">
-<input type="checkbox" class="hidden program-checkbox" data-program="research">
-<div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
-<i class="ri-check-line text-white text-xs hidden"></i>
-</div>
-<span class="text-sm text-gray-700">Research</span>
-</label>
-<label class="flex items-center">
-<input type="checkbox" class="hidden program-checkbox" data-program="anti-poaching">
-<div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
-<i class="ri-check-line text-white text-xs hidden"></i>
-</div>
-<span class="text-sm text-gray-700">Anti-Poaching</span>
-</label>
-<label class="flex items-center">
-<input type="checkbox" class="hidden program-checkbox" data-program="education">
-<div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
-<i class="ri-check-line text-white text-xs hidden"></i>
-</div>
-<span class="text-sm text-gray-700">Education</span>
-</label>
-</div>
-</div>
-<div>
-<label class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
-<textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Tell us about your interest in conservation programs..."></textarea>
-</div>
-<button type="submit" class="w-full bg-secondary hover:bg-green-700 text-white py-3 !rounded-button font-semibold transition-colors duration-200 whitespace-nowrap">
-Send Inquiry
-</button>
+<form id="inquiry-form" class="space-y-6" action="https://formspree.io/f/mldlkwke" method="POST">
+    <div class="grid md:grid-cols-2 gap-4">
+        <div>
+            <label for="first_name" class="block text-sm font-semibold text-gray-700 mb-2">First Name</label>
+            <input id="first_name" name="first_name" type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your first name" required>
+        </div>
+        <div>
+            <label for="last_name" class="block text-sm font-semibold text-gray-700 mb-2">Last Name</label>
+            <input id="last_name" name="last_name" type="text" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your last name" required>
+        </div>
+    </div>
+    <div>
+        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+        <input id="email" name="email" type="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Enter your email" required>
+    </div>
+    <div>
+        <label for="experience" class="block text-sm font-semibold text-gray-700 mb-2">Veterinary Experience</label>
+        <select id="experience" name="experience" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" required>
+            <option value="">Select your experience level</option>
+            <option value="0-2">0-2 years</option>
+            <option value="3-5">3-5 years</option>
+            <option value="6-10">6-10 years</option>
+            <option value="10+">10+ years</option>
+        </select>
+    </div>
+    <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-2">Program Interest</label>
+        <div class="grid grid-cols-2 gap-3">
+            <label for="health_monitoring" class="flex items-center cursor-pointer">
+                <input id="health_monitoring" name="program_interest[]" value="Health Monitoring" type="checkbox" class="hidden program-checkbox">
+                <div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
+                    <i class="ri-check-line text-white text-xs hidden"></i>
+                </div>
+                <span class="text-sm text-gray-700">Health Monitoring</span>
+            </label>
+            <label for="research" class="flex items-center cursor-pointer">
+                <input id="research" name="program_interest[]" value="Research" type="checkbox" class="hidden program-checkbox">
+                <div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
+                    <i class="ri-check-line text-white text-xs hidden"></i>
+                </div>
+                <span class="text-sm text-gray-700">Research</span>
+            </label>
+            <label for="anti-poaching" class="flex items-center cursor-pointer">
+                <input id="anti-poaching" name="program_interest[]" value="Anti-Poaching" type="checkbox" class="hidden program-checkbox">
+                <div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
+                    <i class="ri-check-line text-white text-xs hidden"></i>
+                </div>
+                <span class="text-sm text-gray-700">Anti-Poaching</span>
+            </label>
+            <label for="education" class="flex items-center cursor-pointer">
+                <input id="education" name="program_interest[]" value="Education" type="checkbox" class="hidden program-checkbox">
+                <div class="w-5 h-5 border-2 border-gray-300 rounded flex items-center justify-center mr-2 checkbox-custom">
+                    <i class="ri-check-line text-white text-xs hidden"></i>
+                </div>
+                <span class="text-sm text-gray-700">Education</span>
+            </label>
+        </div>
+    </div>
+    <div>
+        <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" placeholder="Tell us about your interest in conservation programs..." required></textarea>
+    </div>
+    <button type="submit" class="w-full bg-secondary hover:bg-green-700 text-white py-3 !rounded-button font-semibold transition-colors duration-200 whitespace-nowrap">
+        Send Inquiry
+    </button>
 </form>
+<div id="success-message" class="hidden mt-6 p-6 bg-green-50 border border-green-300 text-green-800 rounded-lg shadow-md">
+    <h4 class="text-lg font-bold mb-2">Thank you!</h4>
+    <p>Your inquiry has been sent successfully. We will get back to you shortly.</p>
+</div>
+<div id="error-message" class="hidden mt-6 p-6 bg-red-50 border border-red-300 text-red-800 rounded-lg shadow-md">
+    <h4 class="text-lg font-bold mb-2">Oops!</h4>
+    <p>There was a problem submitting your form. Please try again later.</p>
+</div>
 </div>
 <div>
 <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
@@ -2235,25 +2236,88 @@ experienceDropdown.classList.add('hidden');
 </script>
 <script id="checkbox-functionality">
 document.addEventListener('DOMContentLoaded', function() {
-const checkboxes = document.querySelectorAll('.program-checkbox');
-checkboxes.forEach(checkbox => {
-const customBox = checkbox.nextElementSibling;
-const checkIcon = customBox.querySelector('i');
-checkbox.addEventListener('change', function() {
-if (this.checked) {
-customBox.classList.add('bg-secondary', 'border-secondary');
-customBox.classList.remove('border-gray-300');
-checkIcon.classList.remove('hidden');
-} else {
-customBox.classList.remove('bg-secondary', 'border-secondary');
-customBox.classList.add('border-gray-300');
-checkIcon.classList.add('hidden');
-}
-});
-customBox.addEventListener('click', function() {
-checkbox.click();
-});
-});
+    const checkboxes = document.querySelectorAll('.program-checkbox');
+    checkboxes.forEach(checkbox => {
+        const customBox = checkbox.nextElementSibling;
+        const checkIcon = customBox.querySelector('i');
+        
+        // Function to update visual state
+        function updateVisualState() {
+            if (checkbox.checked) {
+                customBox.classList.add('bg-secondary', 'border-secondary');
+                customBox.classList.remove('border-gray-300');
+                checkIcon.classList.remove('hidden');
+            } else {
+                customBox.classList.remove('bg-secondary', 'border-secondary');
+                customBox.classList.add('border-gray-300');
+                checkIcon.classList.add('hidden');
+            }
+        }
+
+        // Initial state update
+        updateVisualState();
+
+        // Event listener for changes
+        checkbox.addEventListener('change', updateVisualState);
+
+        // Make the whole label clickable
+        if (checkbox.parentElement.tagName === 'LABEL') {
+            checkbox.parentElement.addEventListener('click', function(e) {
+                // Prevent double-toggling if the click is on the input itself
+                if (e.target !== checkbox) {
+                    checkbox.checked = !checkbox.checked;
+                    // Manually trigger change event
+                    const event = new Event('change', { bubbles: true });
+                    checkbox.dispatchEvent(event);
+                }
+            });
+        }
+    });
+
+    // AJAX Form Submission
+    const form = document.getElementById('inquiry-form');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(form);
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                form.reset();
+                form.style.display = 'none';
+                successMessage.classList.remove('hidden');
+            } else {
+                response.json().then(data => {
+                    if (Object.hasOwn(data, 'errors')) {
+                        console.log(data.errors.map(error => error.message).join(", "));
+                    }
+                    errorMessage.classList.remove('hidden');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Send Inquiry';
+                }).catch(() => {
+                    errorMessage.classList.remove('hidden');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Send Inquiry';
+                });
+            }
+        }).catch(error => {
+            errorMessage.classList.remove('hidden');
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send Inquiry';
+        });
+    });
 });
 </script>
 </body>
