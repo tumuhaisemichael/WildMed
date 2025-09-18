@@ -70,14 +70,12 @@ tailwind.config = {
 </head>
 <body class="font-['Inter'] text-gray-800">
 <!-- Header -->
-  <!-- Header -->
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
   <nav class="w-full px-6 py-2">
     <div class="flex items-center justify-between">
       <!-- Logo -->
       <div class="flex items-center space-x-3">
         <img src="/img/logo.png" alt="WildMed Logo" class="object-contain" style="height: 110px; width: auto;">
-
         <span class="text-blue-900 text-xl font-bold italic tracking-wide hover:text-blue-700 transition-colors duration-300">
           WildMed
         </span>
@@ -134,7 +132,7 @@ tailwind.config = {
           </div>
         </div>
 
-        <!-- Medical Missions -->
+        <!-- Medical Missions Dropdown -->
         <div class="relative dropdown-trigger group">
           <a href="Medical-Expedition-Programs.html" class="text-blue-900 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 font-medium">
             <span>Medical Missions</span>
@@ -165,16 +163,17 @@ tailwind.config = {
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="lg:hidden hidden bg-white mt-4 rounded-lg overflow-hidden transition-all duration-300 max-h-0 shadow-lg border border-gray-200">
-      <div class="px-4 py-2 space-y-2">
+    <div id="mobile-menu" class="lg:hidden bg-white/95 backdrop-blur-sm mt-2 rounded-lg shadow-lg border border-gray-200 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+      <div class="px-4 py-4 space-y-2">
         <a href="index.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Home</a>
         
+        <!-- Destinations Dropdown -->
         <div class="dropdown-trigger-mobile">
-          <a href="destinations.html" class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
             <span>Destinations</span>
-            <i class="ri-arrow-down-s-line text-sm"></i>
-          </a>
-          <div class="hidden dropdown-mobile-content pl-6">
+            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+          </button>
+          <div class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <a href="Kenya-Safaris.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Kenya Wildlife Safari</a>
             <a href="Tanzania-Safari.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Tanzania Adventure</a>
             <a href="Uganda-Adventures.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Uganda Gorilla Trek</a>
@@ -182,27 +181,29 @@ tailwind.config = {
           </div>
         </div>
 
+        <!-- Custom Safaris Dropdown -->
         <div class="dropdown-trigger-mobile">
-          <a href="custom-safaris.html" class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
             <span>Custom Safaris</span>
-            <i class="ri-arrow-down-s-line text-sm"></i>
-          </a>
-          <div class="hidden dropdown-mobile-content pl-6">
+            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+          </button>
+          <div class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <a href="Uganda-2-Days.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">2-Day Gorilla Express</a>
             <a href="Uganda-4-Days.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">4-Day Wildlife Discovery</a>
             <a href="Uganda-6-Days.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">6-Day Primates & Wildlife</a>
+            <a href="Rwanda-7-Days.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">7-Day Rwanda Explorer</a>
             <a href="Uganda-8-Days.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">8-Day Ultimate Adventure</a>
             <a href="Uganda-15-Days.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">15-Day Grand Safari</a>
-            <a href="Rwanda-7-Days.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">7-Day Rwanda Explorer</a>
           </div>
         </div>
 
+        <!-- Vet Programs Dropdown -->
         <div class="dropdown-trigger-mobile">
-          <a href="Veterinary-Conservation-.html" class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
             <span>Vet Programs</span>
-            <i class="ri-arrow-down-s-line text-sm"></i>
-          </a>
-          <div class="hidden dropdown-mobile-content pl-6">
+            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+          </button>
+          <div class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <a href="Veterinary-Conservation-.html#vet-safaris" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Veterinary Ecological Safaris</a>
             <a href="Veterinary-Conservation-.html#immobilisation-course" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Wildlife Immobilisation Course</a>
             <a href="Veterinary-Conservation-.html#experiential-tourism" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Experiential Tourism</a>
@@ -213,7 +214,24 @@ tailwind.config = {
           </div>
         </div>
 
-        <a href="Medical-Expedition-Programs.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Medical Missions</a>
+        <!-- Medical Missions Dropdown -->
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+            <span>Medical Missions</span>
+            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+          </button>
+          <div class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <a href="Medical-Expedition-Programs.html#medical-types" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Medical Program Types</a>
+            <a href="Medical-Expedition-Programs.html#focus-areas" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Program Focus Areas</a>
+            <a href="Medical-Expedition-Programs.html#destinations" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Program Destinations</a>
+            <a href="Medical-Expedition-Programs.html#specialties-required" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Medical Specialties Required</a>
+            <a href="Medical-Expedition-Programs.html#application-requirements" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Application Requirements</a>
+            <a href="Medical-Expedition-Programs.html#program-calendar" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Program Calendar</a>
+            <a href="Medical-Expedition-Programs.html#start-expedition" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Start Your Medical Expedition</a>
+            <a href="Medical-Expedition-Programs.html#supplies-initiative" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Medical Supplies Initiative</a>
+          </div>
+        </div>
+
         <a href="Study-Aboard.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Study Aboard</a>
         <a href="Gallery.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Gallery</a>
         <a href="Review.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Reviews</a>
@@ -221,6 +239,49 @@ tailwind.config = {
     </div>
   </nav>
 </header>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  mobileMenuButton.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('max-h-0');
+    if (isOpen) {
+      mobileMenu.classList.add('max-h-0');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    } else {
+      mobileMenu.classList.remove('max-h-0');
+      mobileMenu.classList.add('max-h-screen');
+      menuIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+    }
+  });
+
+  // Mobile dropdown toggle
+  const dropdownTriggers = document.querySelectorAll('.dropdown-trigger-mobile button');
+  dropdownTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const dropdownContent = trigger.nextElementSibling;
+      const isOpen = !dropdownContent.classList.contains('max-h-0');
+      const icon = trigger.querySelector('.dropdown-icon');
+
+      if (isOpen) {
+        dropdownContent.classList.add('max-h-0');
+        icon.classList.remove('ri-arrow-up-s-line');
+        icon.classList.add('ri-arrow-down-s-line');
+      } else {
+        dropdownContent.classList.remove('max-h-0');
+        dropdownContent.classList.add('max-h-screen');
+        icon.classList.remove('ri-arrow-down-s-line');
+        icon.classList.add('ri-arrow-up-s-line');
+      }
+    });
+  });
+</script>
 
 
 
@@ -617,162 +678,166 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const reviewsGrid = document.getElementById('reviews-grid');
     const reviewForm = document.getElementById('review-form');
+    const starInputs = document.querySelectorAll('input[name="rating"]');
+    const starLabels = document.querySelectorAll('label.star-rating');
+
+    // Initialize star rating display
+    function initStarRating() {
+        starLabels.forEach((label, index) => {
+            label.addEventListener('click', () => {
+                // Reset all stars to default
+                starLabels.forEach(l => l.style.color = '#D1D5DB');
+                
+                // Color stars up to the clicked one
+                for (let i = 0; i <= index; i++) {
+                    starLabels[i].style.color = '#FFD700';
+                }
+            });
+        });
+    }
 
     // Fetch and display reviews
     function fetchReviews() {
+        console.log('Fetching reviews...');
         fetch('get_reviews.php')
             .then(response => {
                 if (!response.ok) {
-                    return response.json().then(errorInfo => {
-                        throw new Error(errorInfo.message || `Server error: ${response.status}`);
-                    });
+                    throw new Error(`Server error: ${response.status}`);
                 }
                 return response.json();
             })
             .then(data => {
-                if (!data.success) {
-                    throw new Error(data.message || 'Backend returned an error.');
-                }
-                const reviews = data.reviews;
-                reviewsGrid.innerHTML = '';
-                if (reviews && Array.isArray(reviews)) {
-                    reviews.forEach(review => {
-                        const reviewCard = `
-                            <div class="bg-white rounded-xl shadow-md overflow-hidden review-card">
-                                <div class="p-6">
-                                    <div class="flex items-center mb-4">
-                                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-primary font-bold text-xl">${review.name.charAt(0)}</div>
-                                        <div class="ml-4">
-                                            <h4 class="font-semibold">${review.name}</h4>
-                                            <div class="flex items-center">
-                                                <div class="star-rating">${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</div>
-                                                <span class="text-gray-500 text-sm ml-2">${review.safari}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="text-gray-700 mb-4">${review.review}</p>
-                                    ${review.image_path ? `<img src="${review.image_path}" alt="Review image" class="w-full h-auto object-cover rounded-lg mb-4">` : ''}
-                                    <div class="flex items-center justify-between text-gray-500 text-sm">
-                                        <span>Posted: ${new Date(review.created_at).toLocaleDateString()}</span>
-                                        <div class="flex items-center">
-                                            <button data-id="${review.id}" class="like-btn text-blue-500 hover:text-blue-700">
-                                                <i class="ri-thumb-up-line"></i>
-                                            </button>
-                                            <span class="ml-1 likes-count">${review.likes || 0}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        reviewsGrid.innerHTML += reviewCard;
-                    });
-                } else if(reviews && reviews.message) {
-                    // Handle cases where the PHP script returns a JSON error message but a 200 OK status
-                    throw new Error(reviews.message);
+                console.log('Reviews data:', data);
+                if (data.success && Array.isArray(data.reviews)) {
+                    displayReviews(data.reviews);
+                } else {
+                    throw new Error(data.message || 'Failed to load reviews');
                 }
             })
             .catch(error => {
                 console.error('Error fetching reviews:', error);
-                alert('Could not fetch reviews. ' + error.message);
+                reviewsGrid.innerHTML = `
+                    <div class="col-span-full text-center py-8">
+                        <p class="text-red-500">Error loading reviews: ${error.message}</p>
+                        <button onclick="fetchReviews()" class="mt-4 bg-green-600 text-white px-4 py-2 rounded">
+                            Try Again
+                        </button>
+                    </div>
+                `;
             });
+    }
+
+    // Display reviews in the grid
+    function displayReviews(reviews) {
+        if (!reviews || reviews.length === 0) {
+            reviewsGrid.innerHTML = `
+                <div class="col-span-full text-center py-8">
+                    <p class="text-gray-500">No reviews yet. Be the first to share your experience!</p>
+                </div>
+            `;
+            return;
+        }
+
+        reviewsGrid.innerHTML = reviews.map(review => `
+            <div class="bg-white rounded-xl shadow-md overflow-hidden review-card">
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center text-primary font-bold text-xl">
+                            ${review.name ? review.name.charAt(0).toUpperCase() : 'U'}
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">${review.name || 'Anonymous'}</h4>
+                            <div class="flex items-center">
+                                <div class="star-rating" style="color: #FFD700;">
+                                    ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}
+                                </div>
+                                <span class="text-gray-500 text-sm ml-2">${review.safari || 'Safari Experience'}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">${review.review || 'No review text provided.'}</p>
+                    ${review.image_path ? `<img src="${review.image_path}" alt="Review image" class="w-full h-48 object-cover rounded-lg mb-4">` : ''}
+                    <div class="flex items-center justify-between text-gray-500 text-sm">
+                        <span>Posted: ${review.created_at ? new Date(review.created_at).toLocaleDateString() : 'Unknown date'}</span>
+                        <div class="flex items-center">
+                            <button data-id="${review.id}" class="like-btn text-blue-500 hover:text-blue-700">
+                                <i class="ri-thumb-up-line"></i>
+                            </button>
+                            <span class="ml-1 likes-count">${review.likes || 0}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
     }
 
     // Handle review submission
     if (reviewForm) {
         reviewForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            const submitBtn = reviewForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            
             const formData = new FormData(reviewForm);
-
+            
+            // Add rating value to form data
+            const selectedRating = document.querySelector('input[name="rating"]:checked');
+            if (selectedRating) {
+                formData.append('rating', selectedRating.value);
+            }
+            
             fetch('submit_review.php', {
                 method: 'POST',
                 body: formData
             })
             .then(response => {
                 if (!response.ok) {
-                    return response.json().then(errorInfo => {
-                        throw new Error(errorInfo.message || `Server error: ${response.status}`);
-                    });
+                    throw new Error(`Server error: ${response.status}`);
                 }
                 return response.json();
             })
             .then(data => {
-                alert(data.message);
                 if (data.success) {
+                    alert('Review submitted successfully!');
                     reviewForm.reset();
+                    // Reset star rating display
+                    starLabels.forEach(label => label.style.color = '#D1D5DB');
                     fetchReviews();
+                } else {
+                    throw new Error(data.message || 'Failed to submit review');
                 }
             })
             .catch(error => {
                 console.error('Error submitting review:', error);
-                alert('Could not submit review. ' + error.message);
+                alert('Error: ' + error.message);
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
             });
         });
     }
 
-    // Handle liking a review
-    reviewsGrid.addEventListener('click', function(e) {
-        if (e.target.closest('.like-btn')) {
+    // Handle liking a review (delegated event)
+    if (reviewsGrid) {
+        reviewsGrid.addEventListener('click', function(e) {
             const likeBtn = e.target.closest('.like-btn');
-            const reviewId = likeBtn.dataset.id;
-
-            fetch('like_review.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ id: reviewId })
-            })
-            .then(response => {
-                if (!response.ok) {
-                    return response.json().then(errorInfo => {
-                        throw new Error(errorInfo.message || `Server error: ${response.status}`);
-                    });
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.success) {
-                    fetchReviews();
-                } else {
-                    alert(data.message);
-                }
-            })
-            .catch(error => {
-                console.error('Error liking review:', error);
-                alert('Could not like review. ' + error.message);
-            });
-        }
-    });
-
-    // Star rating interaction
-    const starLabels = document.querySelectorAll('label.star-rating');
-    starLabels.forEach(label => {
-        label.addEventListener('click', function() {
-            const ratingInput = document.getElementById(this.htmlFor);
-            if (ratingInput) {
-                ratingInput.checked = true;
-                updateStarDisplay(this.htmlFor);
-            }
-        });
-    });
-
-    function updateStarDisplay(selectedId) {
-        const starsContainer = document.querySelector(`label[for="${selectedId}"]`).parentNode;
-        const allStarLabels = starsContainer.querySelectorAll('.star-rating');
-        const selectedValue = document.getElementById(selectedId).value;
-
-        allStarLabels.forEach((label, index) => {
-            // The stars are in descending order in the HTML (5, 4, 3, 2, 1)
-            // So we need to reverse the logic.
-            if (index < (5 - selectedValue)) {
-                label.style.color = '#D1D5DB'; // unselected color
-            } else {
-                label.style.color = '#FFD700'; // selected color
+            if (likeBtn) {
+                const reviewId = likeBtn.dataset.id;
+                // Implement like functionality here
+                console.log('Liking review:', reviewId);
+                // You'll need to create a like_review.php endpoint
             }
         });
     }
 
-    // Initial fetch of reviews
+    // Initialize and fetch reviews
+    initStarRating();
     fetchReviews();
 });
 </script>

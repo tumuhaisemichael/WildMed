@@ -27,7 +27,6 @@
       <!-- Logo -->
       <div class="flex items-center space-x-3">
         <img src="/img/logo.png" alt="WildMed Logo" class="object-contain" style="height: 110px; width: auto;">
-
         <span class="text-blue-900 text-xl font-bold italic tracking-wide hover:text-blue-700 transition-colors duration-300">
           WildMed
         </span>
@@ -84,7 +83,7 @@
           </div>
         </div>
 
-        <!-- Medical Missions -->
+        <!-- Medical Missions Dropdown -->
         <div class="relative dropdown-trigger group">
           <a href="Medical-Expedition-Programs.html" class="text-blue-900 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 font-medium">
             <span>Medical Missions</span>
@@ -115,16 +114,17 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="lg:hidden hidden bg-white mt-4 rounded-lg overflow-hidden transition-all duration-300 max-h-0 shadow-lg border border-gray-200">
-      <div class="px-4 py-2 space-y-2">
+    <div id="mobile-menu" class="lg:hidden bg-white/95 backdrop-blur-sm mt-2 rounded-lg shadow-lg border border-gray-200 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+      <div class="px-4 py-4 space-y-2">
         <a href="index.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Home</a>
         
+        <!-- Destinations Dropdown -->
         <div class="dropdown-trigger-mobile">
-          <a href="destinations.html" class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
             <span>Destinations</span>
-            <i class="ri-arrow-down-s-line text-sm"></i>
-          </a>
-          <div class="hidden dropdown-mobile-content pl-6">
+            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+          </button>
+          <div class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <a href="Kenya-Safaris.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Kenya Wildlife Safari</a>
             <a href="Tanzania-Safari.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Tanzania Adventure</a>
             <a href="Uganda-Adventures.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Uganda Gorilla Trek</a>
@@ -132,27 +132,29 @@
           </div>
         </div>
 
+        <!-- Custom Safaris Dropdown -->
         <div class="dropdown-trigger-mobile">
-          <a href="custom-safaris.html" class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
             <span>Custom Safaris</span>
-            <i class="ri-arrow-down-s-line text-sm"></i>
-          </a>
-          <div class="hidden dropdown-mobile-content pl-6">
+            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+          </button>
+          <div class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <a href="Uganda-2-Days.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">2-Day Gorilla Express</a>
             <a href="Uganda-4-Days.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">4-Day Wildlife Discovery</a>
             <a href="Uganda-6-Days.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">6-Day Primates & Wildlife</a>
+            <a href="Rwanda-7-Days.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">7-Day Rwanda Explorer</a>
             <a href="Uganda-8-Days.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">8-Day Ultimate Adventure</a>
             <a href="Uganda-15-Days.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">15-Day Grand Safari</a>
-            <a href="Rwanda-7-Days.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">7-Day Rwanda Explorer</a>
           </div>
         </div>
 
+        <!-- Vet Programs Dropdown -->
         <div class="dropdown-trigger-mobile">
-          <a href="Veterinary-Conservation-.html" class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
             <span>Vet Programs</span>
-            <i class="ri-arrow-down-s-line text-sm"></i>
-          </a>
-          <div class="hidden dropdown-mobile-content pl-6">
+            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+          </button>
+          <div class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <a href="Veterinary-Conservation-.html#vet-safaris" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Veterinary Ecological Safaris</a>
             <a href="Veterinary-Conservation-.html#immobilisation-course" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Wildlife Immobilisation Course</a>
             <a href="Veterinary-Conservation-.html#experiential-tourism" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Experiential Tourism</a>
@@ -163,7 +165,24 @@
           </div>
         </div>
 
-        <a href="Medical-Expedition-Programs.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Medical Missions</a>
+        <!-- Medical Missions Dropdown -->
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+            <span>Medical Missions</span>
+            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+          </button>
+          <div class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <a href="Medical-Expedition-Programs.html#medical-types" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Medical Program Types</a>
+            <a href="Medical-Expedition-Programs.html#focus-areas" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Program Focus Areas</a>
+            <a href="Medical-Expedition-Programs.html#destinations" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Program Destinations</a>
+            <a href="Medical-Expedition-Programs.html#specialties-required" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Medical Specialties Required</a>
+            <a href="Medical-Expedition-Programs.html#application-requirements" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Application Requirements</a>
+            <a href="Medical-Expedition-Programs.html#program-calendar" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Program Calendar</a>
+            <a href="Medical-Expedition-Programs.html#start-expedition" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Start Your Medical Expedition</a>
+            <a href="Medical-Expedition-Programs.html#supplies-initiative" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Medical Supplies Initiative</a>
+          </div>
+        </div>
+
         <a href="Study-Aboard.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Study Aboard</a>
         <a href="Gallery.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Gallery</a>
         <a href="Review.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Reviews</a>
@@ -171,6 +190,49 @@
     </div>
   </nav>
 </header>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  mobileMenuButton.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('max-h-0');
+    if (isOpen) {
+      mobileMenu.classList.add('max-h-0');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    } else {
+      mobileMenu.classList.remove('max-h-0');
+      mobileMenu.classList.add('max-h-screen');
+      menuIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+    }
+  });
+
+  // Mobile dropdown toggle
+  const dropdownTriggers = document.querySelectorAll('.dropdown-trigger-mobile button');
+  dropdownTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const dropdownContent = trigger.nextElementSibling;
+      const isOpen = !dropdownContent.classList.contains('max-h-0');
+      const icon = trigger.querySelector('.dropdown-icon');
+
+      if (isOpen) {
+        dropdownContent.classList.add('max-h-0');
+        icon.classList.remove('ri-arrow-up-s-line');
+        icon.classList.add('ri-arrow-down-s-line');
+      } else {
+        dropdownContent.classList.remove('max-h-0');
+        dropdownContent.classList.add('max-h-screen');
+        icon.classList.remove('ri-arrow-down-s-line');
+        icon.classList.add('ri-arrow-up-s-line');
+      }
+    });
+  });
+</script>
 
 
 <script>
