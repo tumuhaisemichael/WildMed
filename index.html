@@ -167,7 +167,17 @@ font-variant-numeric: tabular-nums;
 
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center space-x-8">
-        <a href="index.html" class="text-blue-900 hover:text-green-600 transition-colors duration-300 font-medium">Home</a>
+        <!-- Home Dropdown -->
+        <div class="relative dropdown-trigger group">
+          <a href="index.html" class="text-blue-900 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 font-medium">
+            <span>Home</span>
+            <i class="ri-arrow-down-s-line text-sm"></i>
+          </a>
+          <div class="dropdown absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200">
+            <a href="index.html#team" class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Team</a>
+            <a href="index.html#partners" class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Partners</a>
+          </div>
+        </div>
         
         <!-- Destinations Dropdown -->
         <div class="relative dropdown-trigger group">
@@ -249,7 +259,17 @@ font-variant-numeric: tabular-nums;
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="lg:hidden bg-white/95 backdrop-blur-sm mt-2 rounded-lg shadow-lg border border-gray-200 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
       <div class="px-4 py-4 space-y-2">
-        <a href="index.html" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Home</a>
+        <!-- Home Dropdown -->
+        <div class="dropdown-trigger-mobile">
+          <button class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+            <span>Home</span>
+            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+          </button>
+          <div class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <a href="index.html#team" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Team</a>
+            <a href="index.html#partners" class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Partners</a>
+          </div>
+        </div>
         
         <!-- Destinations Dropdown -->
         <div class="dropdown-trigger-mobile">
@@ -906,6 +926,103 @@ modal.addEventListener('click', e => {
 </div>
 </div>
 </section>
+<!-- Team Section -->
+<section id="team" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4">Our Team</h2>
+      <p class="text-xl text-gray-600">The dedicated professionals behind our success</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100 text-center">
+        <div class="relative w-32 h-32 mx-auto mb-6">
+          <img src="https://readdy.ai/api/search-image?query=professional%20microbiologist%20epidemiologist%20in%20lab%20coat%20with%20a%20friendly%20smile%2C%20headshot%20style%2C%20bright%20lighting&width=128&height=128&seq=team1&orientation=square" alt="Dr. Benigna G. Namara" class="w-full h-full object-cover rounded-full shadow-md">
+        </div>
+        <h4 class="text-xl font-semibold mb-2">Dr. Benigna G. Namara</h4>
+        <span class="text-gray-600">Microbiologist | Epidemiologist | M&E</span>
+        <p class="text-sm text-gray-500 mt-2">MBChB | MMED Microbiology | MPH | |Field Epidemiology | M&E</p>
+        <div class="flex justify-center space-x-4 mt-4">
+          <a href="#" class="text-gray-400 hover:text-blue-500"><i class="ri-twitter-fill"></i></a>
+          <a href="#" class="text-gray-400 hover:text-blue-500"><i class="ri-facebook-fill"></i></a>
+          <a href="https://www.linkedin.com/in/benigna-namara-3aba7952/" class="text-gray-400 hover:text-blue-500"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100 text-center">
+        <div class="relative w-32 h-32 mx-auto mb-6">
+          <img src="https://readdy.ai/api/search-image?query=professional%20graduate%20research%20assistant%2C%20headshot%20style%2C%20friendly%20and%20approachable%2C%20university%20background&width=128&height=128&seq=team2&orientation=square" alt="Mary Lisa Kasakamu" class="w-full h-full object-cover rounded-full shadow-md">
+        </div>
+        <h4 class="text-xl font-semibold mb-2">Mary Lisa Kasakamu</h4>
+        <span class="text-gray-600">Graduate Research Assistant</span>
+        <p class="text-sm text-gray-500 mt-2">Stress Physiology, Animal behavior and Welfare with emphasis on swine</p>
+        <div class="flex justify-center space-x-4 mt-4">
+          <a href="#" class="text-gray-400 hover:text-blue-500"><i class="ri-twitter-fill"></i></a>
+          <a href="#" class="text-gray-400 hover:text-blue-500"><i class="ri-facebook-fill"></i></a>
+          <a href="https://www.linkedin.com/in/mary-lisa-kasakamu-499098167/" class="text-gray-400 hover:text-blue-500"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100 text-center">
+        <div class="relative w-32 h-32 mx-auto mb-6">
+          <img src="https://readdy.ai/api/search-image?query=professional%20european%20representative%2C%20headshot%20style%2C%20corporate%20attire%2C%20confident%20expression&width=128&height=128&seq=team3&orientation=square" alt="Carol Namae" class="w-full h-full object-cover rounded-full shadow-md">
+        </div>
+        <h4 class="text-xl font-semibold mb-2">Carol Namae</h4>
+        <span class="text-gray-600">Finland European representative</span>
+        <p class="text-sm text-gray-500 mt-2">Illum minima ea autem doloremque ipsum quidem quas aspernatur modi ut praesentium vel tque sed facilis at qui</p>
+        <div class="flex justify-center space-x-4 mt-4">
+          <a href="#" class="text-gray-400 hover:text-blue-500"><i class="ri-twitter-fill"></i></a>
+          <a href="#" class="text-gray-400 hover:text-blue-500"><i class="ri-facebook-fill"></i></a>
+          <a href="#" class="text-gray-400 hover:text-blue-500"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-100 text-center">
+        <div class="relative w-32 h-32 mx-auto mb-6">
+          <img src="https://readdy.ai/api/search-image?query=cool%20web%20developer%20and%20IT%20person%2C%20modern%20and%20stylish%2C%20headshot%2C%20creative%20background&width=128&height=128&seq=team4&orientation=square" alt="Michael Tumuhaise" class="w-full h-full object-cover rounded-full shadow-md">
+        </div>
+        <h4 class="text-xl font-semibold mb-2">Michael Tumuhaise</h4>
+        <span class="text-gray-600">Web Developer & IT</span>
+        <p class="text-sm text-gray-500 mt-2">Cool, calm, and collected. Ready to tackle any tech challenge.</p>
+        <div class="flex justify-center space-x-4 mt-4">
+          <a href="#" class="text-gray-400 hover:text-blue-500"><i class="ri-twitter-fill"></i></a>
+          <a href="#" class="text-gray-400 hover:text-blue-500"><i class="ri-facebook-fill"></i></a>
+          <a href="#" class="text-gray-400 hover:text-blue-500"><i class="ri-linkedin-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partners Section -->
+<section id="partners" class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4">Our Partners</h2>
+      <p class="text-xl text-gray-600">We are proud to collaborate with these amazing organizations</p>
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-8">
+      <a href="https://www.mak.ac.ug/" target="_blank" rel="noopener noreferrer" class="grayscale hover:grayscale-0 transition duration-300">
+        <img src="https://readdy.ai/api/search-image?query=Makerere%20University%20logo&width=150&height=80&seq=partner1" alt="Makerere University" class="h-20">
+      </a>
+      <a href="https://ugandawildlife.org/" target="_blank" rel="noopener noreferrer" class="grayscale hover:grayscale-0 transition duration-300">
+        <img src="https://readdy.ai/api/search-image?query=Uganda%20Wildlife%20Authority%20logo&width=150&height=80&seq=partner2" alt="Uganda Wildlife Authority" class="h-20">
+      </a>
+      <a href="https://uwec.ug/" target="_blank" rel="noopener noreferrer" class="grayscale hover:grayscale-0 transition duration-300">
+        <img src="https://readdy.ai/api/search-image?query=UWEC%20logo&width=150&height=80&seq=partner3" alt="UWEC" class="h-20">
+      </a>
+      <a href="https://ngambaisland.org/" target="_blank" rel="noopener noreferrer" class="grayscale hover:grayscale-0 transition duration-300">
+        <img src="https://readdy.ai/api/search-image?query=Ngamba%20Island%20Chimpanzee%20Sanctuary%20logo&width=150&height=80&seq=partner4" alt="Ngamba Island" class="h-20">
+      </a>
+      <a href="https://afrucaafrica.org/" target="_blank" rel="noopener noreferrer" class="grayscale hover:grayscale-0 transition duration-300">
+        <img src="https://readdy.ai/api/search-image?query=AFRUCA%20Africa%20logo&width=150&height=80&seq=partner5" alt="AFRUCA Africa" class="h-20">
+      </a>
+      <a href="https://www.gorilladoctors.org/" target="_blank" rel="noopener noreferrer" class="grayscale hover:grayscale-0 transition duration-300">
+        <img src="https://readdy.ai/api/search-image?query=Gorilla%20Doctors%20logo&width=150&height=80&seq=partner6" alt="Gorilla Doctors" class="h-20">
+      </a>
+      <a href="https://ugasaf.org/" target="_blank" rel="noopener noreferrer" class="grayscale hover:grayscale-0 transition duration-300">
+        <img src="https://readdy.ai/api/search-image?query=UGASAF%20logo&width=150&height=80&seq=partner7" alt="UGASAF" class="h-20">
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- Testimonials -->
 <section class="py-20 bg-white">
 <div class="max-w-7xl mx-auto px-6">
