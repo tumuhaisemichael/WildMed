@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             // Insert review into database
-            $stmt = $conn->prepare("INSERT INTO reviews (name, email, safari, rating, review, image_path, created_at) VALUES (?, ?, ?, ?, ?, ?, NOW())");
+            $stmt = $conn->prepare("INSERT INTO wildmed_reviews (name, email, safari, rating, review, image_path, created_at) VALUES (?, ?, ?, ?, ?, ?, NOW())");
             
             if (!$stmt) {
                 $response['message'] = 'Database prepare error: ' . $conn->error;

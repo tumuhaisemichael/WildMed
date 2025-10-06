@@ -3,9 +3,9 @@
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 $servername = "153.92.7.151";
-$username = "u612858265_Wildmedug";
-$password = "Wildmedug@1.";
-$dbname = "u612858265_Reviews";
+$username = "u612858265_birds";
+$password = "R3iEpE21";
+$dbname = "u612858265_Birds";
 $port = 3306;
 
 try {

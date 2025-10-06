@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $review_id = isset($data['id']) ? (int)$data['id'] : 0;
 
         if ($review_id > 0) {
-            $stmt = $conn->prepare("UPDATE reviews SET likes = likes + 1 WHERE id = ?");
+            $stmt = $conn->prepare("UPDATE wildmed_reviews SET likes = likes + 1 WHERE id = ?");
             $stmt->bind_param("i", $review_id);
 
             if ($stmt->execute()) {

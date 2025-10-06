@@ -26,7 +26,7 @@ $response = [
 
 try {
     // Prepare and execute query
-    $sql = "SELECT id, name, safari, rating, review, image_path, likes, created_at FROM reviews ORDER BY created_at DESC";
+    $sql = "SELECT id, name, safari, rating, review, image_path, likes, created_at FROM wildmed_reviews ORDER BY created_at DESC";
     $result = $conn->query($sql);
 
     if (!$result) {
