@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Field Gallery | WildMed Safaris - Latest Moments</title>
+    <meta name="description"
+        content="Experience the latest field moments from WildMed Safaris. Brows our recent images and videos of wildlife conservation, medical expeditions, and safari adventures across East Africa.">
+
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&family=Dancing+Script&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B2A1B',
+                        secondary: '#2D5A3D'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gallery-item {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .tab-active {
+            color: #2D5A3D;
+            border-bottom: 2px solid #2D5A3D;
+        }
+
+        .video-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-gallery {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1010;
+        }
+
+        .lightbox-close:hover {
+            color: #fbbf24;
+        }
+
+        .lightbox-caption {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            transform: translateY(20px);
+        }
+
+        #backToTop.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="font-['Inter'] text-gray-800 bg-gray-50">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <nav class="w-full px-6 py-2">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="/img/logo.png" alt="WildMed Logo" class="object-contain"
+                        style="height: 110px; width: auto;">
+                    <span
+                        class="text-blue-900 text-xl font-bold italic tracking-wide hover:text-blue-700 transition-colors duration-300">
+                        WildMed
+                    </span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-blue-900 hover:text-green-600 transition-colors duration-300 font-medium">Home</a>
+
+                    <!-- Destinations Dropdown -->
+                    <div class="relative dropdown-trigger group">
+                        <a href="Destinations.html"
+                            class="text-blue-900 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 font-medium">
+                            <span>Destinations</span>
+                            <i class="ri-arrow-down-s-line text-sm"></i>
+                        </a>
+                        <div
+                            class="dropdown absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200">
+                             <a href="Destinations.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">All
+                                Destinations</a>
+              <a href="Uganda-Adventures.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Uganda
+                                Gorilla Trek</a>
+                            <a href="Rwanda-Safaris.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Rwanda
+                                Gorilla Experience</a><a href="Kenya-Safaris.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Kenya
+                                Wildlife Safari</a>
+                            <a href="Tanzania-Safari.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Tanzania
+                                Adventure</a>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Custom Expeditions Dropdown -->
+                    <div class="relative dropdown-trigger group">
+                        <a href="Custom-Safaris.html"
+                            class="text-blue-900 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 font-medium">
+                            <span>Custom Safaris</span>
+                            <i class="ri-arrow-down-s-line text-sm"></i>
+                        </a>
+                        <div
+                            class="dropdown absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] bg-white/95 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200 p-4">
+                            <div class="grid grid-cols-3 gap-4">
+                                <!-- Short Safaris -->
+                                <div>
+                                    <h4
+                                        class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-gray-100 mb-2">
+                                        Short Adventures</h4>
+                                    <a href="Custom-Safaris.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">All
+                                        Custom Safaris</a>
+                                    <a href="Ugandan-3Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">3-Day
+                                        Gorilla Trekking</a>
+                                    <a href="Ugandan-4Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">4-Day
+                                        Uganda Express</a>
+                                    <a href="Ugandan-4Days2.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">4-Day
+                                        Luxury Fly-in</a>
+                                </div>
+
+                                <!-- Medium Duration -->
+                                <div>
+                                    <h4
+                                        class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-gray-100 mb-2">
+                                        Explorer Packages</h4>
+                                    <a href="Ugandan-5-Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">5-Day
+                                        Best of Kisoro</a>
+                                    <a href="Ugandan-5Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">5-Day
+                                        Short Holiday</a>
+                                    <a href="Ugandan-6Days2.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">6-Day
+                                        Kisoro Adventure</a>
+                                    <a href="Rwanda-7-Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">7-Day
+                                        Rwanda Explorer</a>
+                                </div>
+
+                                <!-- Long Duration -->
+                                <div>
+                                    <h4
+                                        class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-gray-100 mb-2">
+                                        Grand Tours</h4>
+                                    <a href="Ugandan-8days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">8-Day
+                                        Chimps & Gorillas</a>
+                                    <a href="Ugandan-8days2.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">8-Day
+                                        Uganda & Rwanda</a>
+                                    <a href="Ugandan-8days3.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">8-Day
+                                        Luxury Big Five</a>
+                                    <a href="Ugandan-11-Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">11-Day
+                                        Uganda & Rwanda</a>
+                                    <a href="Ugandan-11Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">11-Day
+                                        Luxury Safari</a>
+                                    <a href="Ugandan-14-Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">14-Day
+                                        Luxury Safari</a>
+                                </div>
+                            </div>
+                            <!-- Bottom Banner (Optional visual enhancement) -->
+                            <div class="mt-4 pt-4 border-t border-gray-100">
+                                <a href="Uganda-Adventures.html"
+                                    class="flex items-center justify-between p-3 rounded-lg bg-green-50 hover:bg-green-100 transition-colors group/banner">
+                                    <span class="text-sm font-semibold text-green-800">View All Packages</span>
+                                    <i
+                                        class="ri-arrow-right-line text-green-600 group-hover/banner:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vet Expeditions Dropdown -->
+                    <div class="relative dropdown-trigger group">
+                        <a href="Veterinary-Conservation-.html"
+                            class="text-blue-900 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 font-medium">
+                            <span>Vet Programs</span>
+                            <i class="ri-arrow-down-s-line text-sm"></i>
+                        </a>
+                        <div
+                            class="dropdown absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200">
+                            <a href="Veterinary-Conservation-.html#vet-safaris"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Veterinary
+                                Ecological Safaris</a>
+                            <a href="Veterinary-Conservation-.html#immobilisation-course"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Wildlife
+                                Immobilisation Course</a>
+                            <a href="Veterinary-Conservation-.html#experiential-tourism"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Experiential
+                                Tourism</a>
+                            <a href="Veterinary-Conservation-.html#field-projects"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Field
+                                Projects</a>
+                            <a href="Veterinary-Conservation-.html#conservation-initiatives"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Conservation
+                                Initiatives</a>
+                            <a href="Veterinary-Conservation-.html#application-timeline"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Application
+                                Timeline</a>
+                            <a href="Veterinary-Conservation-.html#qualifications"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Required
+                                Qualifications</a>
+                        </div>
+                    </div>
+
+                    <!-- Medical Missions Dropdown -->
+                    <div class="relative dropdown-trigger group">
+                        <a href="Medical-Expedition-Programs.html"
+                            class="text-blue-900 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 font-medium">
+                            <span>Medical Missions</span>
+                            <i class="ri-arrow-down-s-line text-sm"></i>
+                        </a>
+                        <div
+                            class="dropdown absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200">
+                            <a href="Medical-Expedition-Programs.html#medical-types"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Medical
+                                Program Types</a>
+                            <a href="Medical-Expedition-Programs.html#focus-areas"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Program
+                                Focus Areas</a>
+                            <a href="Medical-Expedition-Programs.html#destinations"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Program
+                                Destinations</a>
+                            <a href="Medical-Expedition-Programs.html#specialties-required"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Medical
+                                Specialties Required</a>
+                            <a href="Medical-Expedition-Programs.html#application-requirements"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Application
+                                Requirements</a>
+                            <a href="Medical-Expedition-Programs.html#program-calendar"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Program
+                                Calendar</a>
+                            <a href="Medical-Expedition-Programs.html#start-expedition"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Start
+                                Your Medical Expedition</a>
+                            <a href="Medical-Expedition-Programs.html#supplies-initiative"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Medical
+                                Supplies Initiative</a>
+                        </div>
+                    </div>
+
+                    <a href="Study-Aboard.html"
+                        class="text-blue-900 hover:text-green-600 transition-colors duration-300 font-medium">Study
+                        Aboard</a>
+                    <div class="relative dropdown-trigger group">
+                        <a href="gallery.html"
+                            class="text-blue-900 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 font-medium">
+                            <span>Gallery</span>
+                            <i class="ri-arrow-down-s-line text-sm"></i>
+                        </a>
+                        <div
+                            class="dropdown absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200">
+                            <a href="gallery.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Photo
+                                Gallery</a>
+                            <a href="recentgallery.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Recent
+                                Clips</a>
+                        </div>
+                    </div>
+                    <a href="Review.html"
+                        class="text-blue-900 hover:text-green-600 transition-colors duration-300 font-medium">Reviews</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="lg:hidden text-blue-900 focus:outline-none">
+                    <i id="menu-icon" class="ri-menu-line text-2xl"></i>
+                    <i id="close-icon" class="ri-close-line text-2xl hidden"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="lg:hidden bg-white/95 backdrop-blur-sm mt-2 rounded-lg shadow-lg border border-gray-200 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                <div class="px-4 py-4 space-y-2">
+                    <a href="index.html"
+                        class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Home</a>
+
+                    <!-- Destinations Dropdown -->
+                    <div class="dropdown-trigger-mobile">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+                            <span>Destinations</span>
+                            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+                        </button>
+                        <div
+                            class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                             <a href="Destinations.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">All
+                                Destinations</a>
+                            <a href="Uganda-Adventures.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Uganda
+                                Gorilla Trek</a>
+                            <a href="Rwanda-Safaris.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Rwanda
+                                Gorilla Experience</a><a href="Kenya-Safaris.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Kenya
+                                Wildlife Safari</a>
+                            <a href="Tanzania-Safari.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Tanzania
+                                Adventure</a>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Custom Safaris Dropdown -->
+                    <div class="dropdown-trigger-mobile">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+                            <span>Custom Safaris</span>
+                            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+                        </button>
+                        <div
+                            class="dropdown-mobile-content pl-2 max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50/50 rounded-lg my-1">
+
+                            <!-- Short Adventures -->
+                            <div class="px-2 py-2">
+                                <h4 class="px-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 mt-1">
+                                    Short Adventures</h4>
+                                <a href="Custom-Safaris.html"
+                                class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">All
+                                Custom Safaris</a>
+                            <a href="Ugandan-3Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">3-Day
+                                    Gorilla Trekking</a>
+                                <a href="Ugandan-4Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">4-Day
+                                    Uganda Express</a>
+                                <a href="Ugandan-4Days2.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">4-Day
+                                    Luxury Fly-in</a>
+                            </div>
+
+                            <!-- Explorer Packages -->
+                            <div class="px-2 py-2 border-t border-gray-200/50">
+                                <h4 class="px-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 mt-1">
+                                    Explorer Packages</h4>
+                                <a href="Ugandan-5-Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">5-Day
+                                    Best of Kisoro</a>
+                                <a href="Ugandan-5Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">5-Day
+                                    Short Holiday</a>
+                                <a href="Ugandan-6Days2.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">6-Day
+                                    Kisoro Adventure</a>
+                                <a href="Rwanda-7-Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">7-Day
+                                    Rwanda Explorer</a>
+                            </div>
+
+                            <!-- Grand Tours -->
+                            <div class="px-2 py-2 border-t border-gray-200/50">
+                                <h4 class="px-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 mt-1">
+                                    Grand Tours</h4>
+                                <a href="Ugandan-8days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">8-Day
+                                    Chimps & Gorillas</a>
+                                <a href="Ugandan-8days2.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">8-Day
+                                    Uganda & Rwanda</a>
+                                <a href="Ugandan-8days3.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">8-Day
+                                    Luxury Big Five</a>
+                                <a href="Ugandan-11-Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">11-Day
+                                    Uganda & Rwanda</a>
+                                <a href="Ugandan-11Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">11-Day
+                                    Luxury Safari</a>
+                                <a href="Ugandan-14-Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">14-Day
+                                    Luxury Safari</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vet Programs Dropdown -->
+                    <div class="dropdown-trigger-mobile">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+                            <span>Vet Programs</span>
+                            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+                        </button>
+                        <div
+                            class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <a href="Veterinary-Conservation-.html#vet-safaris"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Veterinary
+                                Ecological Safaris</a>
+                            <a href="Veterinary-Conservation-.html#immobilisation-course"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Wildlife
+                                Immobilisation Course</a>
+                            <a href="Veterinary-Conservation-.html#experiential-tourism"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Experiential
+                                Tourism</a>
+                            <a href="Veterinary-Conservation-.html#field-projects"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Field
+                                Projects</a>
+                            <a href="Veterinary-Conservation-.html#conservation-initiatives"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Conservation
+                                Initiatives</a>
+                            <a href="Veterinary-Conservation-.html#application-timeline"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Application
+                                Timeline</a>
+                            <a href="Veterinary-Conservation-.html#qualifications"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Required
+                                Qualifications</a>
+                        </div>
+                    </div>
+
+                    <!-- Medical Missions Dropdown -->
+                    <div class="dropdown-trigger-mobile">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+                            <span>Medical Missions</span>
+                            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+                        </button>
+                        <div
+                            class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <a href="Medical-Expedition-Programs.html#medical-types"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Medical
+                                Program Types</a>
+                            <a href="Medical-Expedition-Programs.html#focus-areas"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Program
+                                Focus Areas</a>
+                            <a href="Medical-Expedition-Programs.html#destinations"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Program
+                                Destinations</a>
+                            <a href="Medical-Expedition-Programs.html#specialties-required"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Medical
+                                Specialties Required</a>
+                            <a href="Medical-Expedition-Programs.html#application-requirements"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Application
+                                Requirements</a>
+                            <a href="Medical-Expedition-Programs.html#program-calendar"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Program
+                                Calendar</a>
+                            <a href="Medical-Expedition-Programs.html#start-expedition"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Start
+                                Your Medical Expedition</a>
+                            <a href="Medical-Expedition-Programs.html#supplies-initiative"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Medical
+                                Supplies Initiative</a>
+                        </div>
+                    </div>
+
+                    <a href="Study-Aboard.html"
+                        class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Study
+                        Aboard</a>
+                    <div class="dropdown-trigger-mobile">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+                            <span>Gallery</span>
+                            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+                        </button>
+                        <div
+                            class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <a href="gallery.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Photo
+                                Gallery</a>
+                            <a href="recentgallery.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Recent
+                                Clips</a>
+                        </div>
+                    </div>
+                    <a href="Review.html"
+                        class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Reviews</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] flex items-center justify-center overflow-hidden pt-32">
+        <div class="absolute inset-0 z-0">
+            <img src="https://readdy.ai/api/search-image?query=professional%20wildlife%20photographer%20in%20african%20savanna%20with%20large%20lens%20golden%20hour%2C%20cinematic%20lighting%2C%20adventure%20atmosphere&width=1920&height=1080&seq=recent_hero&orientation=landscape"
+                alt="Field Photography" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                <span class="italic text-amber-500">Recent</span> Field Moments
+            </h1>
+            <p class="text-xl text-gray-200 max-w-2xl mx-auto mb-8 font-light">
+                A curated collection of the latest wildlife sightings, team field work, and medical expeditions directly
+                from our current missions.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <div class="flex items-center text-white/80 text-sm">
+                    <i class="ri-calendar-line mr-2 text-amber-500"></i>
+                    <span>Updated: Jan 2026</span>
+                </div>
+                <div class="flex items-center text-white/80 text-sm border-l border-white/30 pl-4">
+                    <i class="ri-map-pin-line mr-2 text-amber-500"></i>
+                    <span>Uganda & Rwanda</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Content -->
+    <main class="max-w-7xl mx-auto px-6 py-16">
+
+        <!-- Tab Controls -->
+        <div class="flex flex-col items-center mb-16">
+            <div class="inline-flex p-1 bg-gray-200/50 rounded-full mb-8">
+                <button onclick="switchTab('images')" id="tab-images"
+                    class="px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300 bg-white shadow-sm text-green-700">
+                    <i class="ri-image-line mr-2"></i> Recent Photos
+                </button>
+                <button onclick="switchTab('videos')" id="tab-videos"
+                    class="px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300 text-gray-600 hover:text-green-700">
+                    <i class="ri-video-line mr-2"></i> Recent Clips
+                </button>
+            </div>
+            <p class="text-gray-500 text-center max-w-xl">
+                Select a category to view our latest updates from the field expeditions. All media captured by our
+                professional guides and researchers.
+            </p>
+        </div>
+
+        <div id="gallery-images" class="animate-gallery">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Image 1 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.27.38 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.27.39 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.28.11 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 4 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.30.31 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 5 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.30.34 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 6 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.30.37 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 7 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.30.42 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 8 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.30.46 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 9 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.30.47 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 10 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.30.49 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 11 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.30.50 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 12 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.30.51 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 13 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.00 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 14 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.02 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 15 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.03 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 16 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.05 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 17 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.06 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 18 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.08 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 19 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.09 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 20 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.10 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 21 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.12 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 22 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.13 AM (1).jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 23 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.13 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 24 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.15 AM (1).jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 25 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.15 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 26 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.16 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 27 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.17 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 28 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.19 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 29 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image 2026-01-29 at 8.31.20 AM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 30 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/Image1.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 30 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/newimage4 PM.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+
+                <!-- Image 30 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/newimage6.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 30 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/newimage7.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 30 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/newimage8.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+                <!-- Image 30 -->
+                <div class="gallery-item group relative rounded-2xl overflow-hidden shadow-lg aspect-[4/5]">
+                    <img src="assets/recent/imgs/newimage9.jpeg" alt="Field Moment"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                        <span class="text-amber-400 text-xs font-bold uppercase tracking-widest mb-2">WildMed</span>
+                        <h3 class="text-white text-2xl font-bold">Field Moment</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gallery-videos" class="hidden animate-gallery">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Video 1 -->
+                <div class="gallery-item bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <div class="relative aspect-video">
+                        <video class="w-full h-full object-cover" controls>
+                            <source src="assets/recent/clips/WhatsApp Video 2026-01-29 at 8.28.23 AM.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div
+                            class="absolute top-4 right-4 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg uppercase animate-pulse">
+                            Recent Clip</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-blue-900">Wildlife Action</h3>
+                        <p class="text-gray-600">Fresh footage from our latest field expedition.</p>
+                    </div>
+                </div>
+                <!-- Video 2 -->
+                <div class="gallery-item bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <div class="relative aspect-video">
+                        <video class="w-full h-full object-cover" controls>
+                            <source src="assets/recent/clips/WhatsApp Video 2026-01-29 at 8.34.30 AM (1).mp4"
+                                type="video/mp4">
+                        </video>
+                        <div
+                            class="absolute top-4 right-4 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg uppercase animate-pulse">
+                            Recent Clip</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-blue-900">Wildlife Action</h3>
+                        <p class="text-gray-600">Fresh footage from our latest field expedition.</p>
+                    </div>
+                </div>
+                <!-- Video 3 -->
+                <div class="gallery-item bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <div class="relative aspect-video">
+                        <video class="w-full h-full object-cover" controls>
+                            <source src="assets/recent/clips/WhatsApp Video 2026-01-29 at 8.34.30 AM.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div
+                            class="absolute top-4 right-4 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg uppercase animate-pulse">
+                            Recent Clip</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-blue-900">Wildlife Action</h3>
+                        <p class="text-gray-600">Fresh footage from our latest field expedition.</p>
+                    </div>
+                </div>
+                <!-- Video 4 -->
+                <div class="gallery-item bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <div class="relative aspect-video">
+                        <video class="w-full h-full object-cover" controls>
+                            <source src="assets/recent/clips/WhatsApp Video 2026-01-29 at 8.35.37 AM.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div
+                            class="absolute top-4 right-4 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg uppercase animate-pulse">
+                            Recent Clip</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-blue-900">Wildlife Action</h3>
+                        <p class="text-gray-600">Fresh footage from our latest field expedition.</p>
+                    </div>
+                </div>
+                <!-- Video 5 -->
+                <div class="gallery-item bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <div class="relative aspect-video">
+                        <video class="w-full h-full object-cover" controls>
+                            <source src="assets/recent/clips/WhatsApp Video 2026-01-29 at 8.38.21 AM.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div
+                            class="absolute top-4 right-4 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg uppercase animate-pulse">
+                            Recent Clip</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-blue-900">Wildlife Action</h3>
+                        <p class="text-gray-600">Fresh footage from our latest field expedition.</p>
+                    </div>
+                </div>
+                <!-- Video 6 -->
+                <div class="gallery-item bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <div class="relative aspect-video">
+                        <video class="w-full h-full object-cover" controls>
+                            <source src="assets/recent/clips/WhatsApp Video 2026-01-29 at 8.38.28 AM.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div
+                            class="absolute top-4 right-4 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg uppercase animate-pulse">
+                            Recent Clip</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-blue-900">Wildlife Action</h3>
+                        <p class="text-gray-600">Fresh footage from our latest field expedition.</p>
+                    </div>
+                </div>
+                <!-- Video 7 -->
+                <div class="gallery-item bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <div class="relative aspect-video">
+                        <video class="w-full h-full object-cover" controls>
+                            <source src="assets/recent/clips/WhatsApp Video 2026-01-29 at 8.38.38 AM.mp4"
+                                type="video/mp4">
+                        </video>
+                        <div
+                            class="absolute top-4 right-4 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg uppercase animate-pulse">
+                            Recent Clip</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-blue-900">Wildlife Action</h3>
+                        <p class="text-gray-600">Fresh footage from our latest field expedition.</p>
+                    </div>
+                </div>
+                <!-- Video 7 -->
+                <div class="gallery-item bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <div class="relative aspect-video">
+                        <video class="w-full h-full object-cover" controls>
+                            <source src="assets/recent/clips/video.mp4" type="video/mp4">
+                        </video>
+                        <div
+                            class="absolute top-4 right-4 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded shadow-lg uppercase animate-pulse">
+                            Recent Clip</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-blue-900">Wildlife Action</h3>
+                        <p class="text-gray-600">Fresh footage from our latest field expedition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" id="lightbox-close"><i class="ri-close-line"></i></span>
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-900 text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6 italic">Want to capture your own moments?</h2>
+            <p class="text-xl text-blue-100 mb-10">Join our upcoming expeditions and experience the thrill of the
+                African wilderness firsthand.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="index.html#planExpedition"
+                    class="bg-amber-500 hover:bg-amber-600 text-blue-900 px-10 py-4 rounded-xl font-bold text-lg shadow-lg transition-all">Book
+                    Your Safari</a>
+                <a href="Medical-Expedition-Programs.html"
+                    class="border-2 border-white/30 hover:border-white text-white px-10 py-4 rounded-xl font-bold text-lg transition-all">Apply
+                    for Professional Field Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white text-gray-800 shadow-lg border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="img/android-chrome-192x192.png" alt="WildMed Safaris Logo" width="60" height="60"
+                            class="rounded-lg">
+                        <span class="text-xl font-['Pacifico'] text-blue-900">WildMed</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">Creating meaningful wildlife adventures that combine conservation,
+                        education, and unforgettable experiences across East Africa.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full hover:bg-blue-200 transition-colors text-blue-900"><i
+                                class="ri-facebook-fill"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full hover:bg-blue-200 transition-colors text-blue-900"><i
+                                class="ri-instagram-line"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full hover:bg-blue-200 transition-colors text-blue-900"><i
+                                class="ri-twitter-line"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-blue-900">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-600 hover:text-blue-700 transition-colors">Home</a>
+                        </li>
+                        <li><a href="gallery.html"
+                                class="text-gray-600 hover:text-blue-700 transition-colors">Gallery</a></li>
+                        <li><a href="Review.html"
+                                class="text-gray-600 hover:text-blue-700 transition-colors">Reviews</a></li>
+                        <li><a href="Veterinary-Conservation-.html"
+                                class="text-gray-600 hover:text-blue-700 transition-colors">Vet Programs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="lg:col-span-2">
+                    <h3 class="text-lg font-semibold mb-6 text-blue-900">Reach Out</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="ri-map-pin-line text-green-600 mt-1"></i>
+                            <span class="text-gray-600 text-sm">Plot 626, Seguku Katale,<br>P.O.Box 10296, Kampala,
+                                Uganda</span>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-3 text-sm text-gray-600"><i
+                                    class="ri-phone-line text-green-600"></i><span>+256 740 205146</span></div>
+                            <div class="flex items-center space-x-3 text-sm text-gray-600"><i
+                                    class="ri-mail-line text-green-600"></i><span>wildmeduganda@gmail.com</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-300 mt-12 pt-8 text-center text-gray-600 text-sm">
+                <p>&copy; 2026 WildMed Safaris. All rights reserved. | <a href="Privacy-Policy.html"
+                        class="hover:text-blue-700">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="bg-amber-500 hover:bg-amber-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center group transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2">
+        <i class="ri-arrow-up-line text-2xl group-hover:-translate-y-1 transition-transform block"></i>
+    </button>
+
+    <script>
+        function switchTab(tabId) {
+            const imgTab = document.getElementById('tab-images');
+            const vidTab = document.getElementById('tab-videos');
+            const imgContent = document.getElementById('gallery-images');
+            const vidContent = document.getElementById('gallery-videos');
+
+            if (tabId === 'images') {
+                imgTab.classList.add('bg-white', 'shadow-sm', 'text-green-700');
+                imgTab.classList.remove('text-gray-600');
+                vidTab.classList.remove('bg-white', 'shadow-sm', 'text-green-700');
+                vidTab.classList.add('text-gray-600');
+
+                imgContent.classList.remove('hidden');
+                vidContent.classList.add('hidden');
+            } else {
+                vidTab.classList.add('bg-white', 'shadow-sm', 'text-green-700');
+                vidTab.classList.remove('text-gray-600');
+                imgTab.classList.remove('bg-white', 'shadow-sm', 'text-green-700');
+                imgTab.classList.add('text-gray-600');
+
+                vidContent.classList.remove('hidden');
+                imgContent.classList.add('hidden');
+            }
+        }
+
+        // Lightbox functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const galleryItems = document.querySelectorAll('#gallery-images .gallery-item');
+
+            galleryItems.forEach(item => {
+                item.style.cursor = 'pointer';
+                item.addEventListener('click', function () {
+                    const img = this.querySelector('img');
+                    if (img) {
+                        lightboxImg.src = img.src;
+                        lightboxImg.alt = img.alt;
+                        lightboxCaption.textContent = img.alt;
+                        lightbox.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            lightboxClose.addEventListener('click', function () {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Mobile menu logic
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+
+                    const isClosed = mobileMenu.classList.contains('max-h-0');
+                    if (isClosed) {
+                        mobileMenu.classList.remove('max-h-0', 'overflow-hidden');
+                        mobileMenu.classList.add('max-h-[85vh]', 'overflow-y-auto');
+                        if (menuIcon) menuIcon.classList.add('hidden');
+                        if (closeIcon) closeIcon.classList.remove('hidden');
+                    } else {
+                        mobileMenu.classList.add('max-h-0', 'overflow-hidden');
+                        mobileMenu.classList.remove('max-h-[85vh]', 'overflow-y-auto');
+                        if (menuIcon) menuIcon.classList.remove('hidden');
+                        if (closeIcon) closeIcon.classList.add('hidden');
+
+                        document.querySelectorAll('.dropdown-mobile-content').forEach(dropdown => {
+                            dropdown.classList.add('max-h-0');
+                            const btn = dropdown.previousElementSibling;
+                            if (btn) {
+                                const icon = btn.querySelector('.dropdown-icon');
+                                if (icon) {
+                                    icon.classList.remove('ri-arrow-up-s-line');
+                                    icon.classList.add('ri-arrow-down-s-line');
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Mobile dropdown triggers
+            const mobileDropdownTriggers = document.querySelectorAll('.dropdown-trigger-mobile');
+            mobileDropdownTriggers.forEach(trigger => {
+                const button = trigger.querySelector('button');
+                const dropdown = trigger.querySelector('.dropdown-mobile-content');
+                if (button && dropdown) {
+                    button.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        const isClosed = dropdown.classList.contains('max-h-0');
+                        const icon = button.querySelector('.dropdown-icon');
+
+                        if (isClosed) {
+                            dropdown.classList.remove('max-h-0');
+                            dropdown.classList.add('max-h-[1500px]');
+                            if (icon) {
+                                icon.classList.remove('ri-arrow-down-s-line');
+                                icon.classList.add('ri-arrow-up-s-line');
+                            }
+                        } else {
+                            dropdown.classList.add('max-h-0');
+                            if (icon) {
+                                icon.classList.remove('ri-arrow-up-s-line');
+                                icon.classList.add('ri-arrow-down-s-line');
+                            }
+                        }
+                    });
+                }
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (mobileMenu && !mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                    if (!mobileMenu.classList.contains('max-h-0')) {
+                        mobileMenu.classList.add('max-h-0', 'overflow-hidden');
+                        mobileMenu.classList.remove('max-h-[85vh]', 'overflow-y-auto');
+                        if (menuIcon) menuIcon.classList.remove('hidden');
+                        if (closeIcon) closeIcon.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Back to Top Button Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const backToTopBtn = document.getElementById('backToTop');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

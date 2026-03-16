@@ -1,0 +1,2205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>8-Day Gorilla Safari | Uganda & Rwanda Adventure | WildMed Safaris</title>
+    <meta name="description"
+        content="8-day cross-border safari exploring the best of Uganda and Rwanda. Gorilla trekking in two countries and cultural insights.">
+    <!-- Keywords: 5 day kisoro tour, gorilla trekking uganda, batwa culture, lake bunyonyi, mgahinga national park -->
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#2563eb', secondary: '#059669' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        .timeline-line {
+            background: linear-gradient(to bottom, #059669, #2563eb);
+        }
+
+        .day-card {
+            transition: all 0.3s ease;
+        }
+
+        .day-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <nav class="w-full px-6 py-2">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="/img/logo.png" alt="WildMed Logo" class="object-contain"
+                        style="height: 110px; width: auto;">
+                    <span
+                        class="text-blue-900 text-xl font-bold italic tracking-wide hover:text-blue-700 transition-colors duration-300">
+                        WildMed
+                    </span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-blue-900 hover:text-green-600 transition-colors duration-300 font-medium">Home</a>
+
+                    <!-- Destinations Dropdown -->
+                    <div class="relative dropdown-trigger group">
+                        <a href="Destinations.html"
+                            class="text-blue-900 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 font-medium">
+                            <span>Destinations</span>
+                            <i class="ri-arrow-down-s-line text-sm"></i>
+                        </a>
+                        <div
+                            class="dropdown absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200">
+                             <a href="Destinations.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">All
+                                Destinations</a>
+              <a href="Uganda-Adventures.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Uganda
+                                Gorilla Trek</a>
+                            <a href="Rwanda-Safaris.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Rwanda
+                                Gorilla Experience</a><a href="Kenya-Safaris.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Kenya
+                                Wildlife Safari</a>
+                            <a href="Tanzania-Safari.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Tanzania
+                                Adventure</a>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Custom Expeditions Dropdown -->
+                    <div class="relative dropdown-trigger group">
+                        <a href="Custom-Safaris.html"
+                            class="text-blue-900 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 font-medium">
+                            <span>Custom Safaris</span>
+                            <i class="ri-arrow-down-s-line text-sm"></i>
+                        </a>
+                        <div
+                            class="dropdown absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] bg-white/95 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200 p-4">
+                            <div class="grid grid-cols-3 gap-4">
+                                <!-- Short Safaris -->
+                                <div>
+                                    <h4
+                                        class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-gray-100 mb-2">
+                                        Short Adventures</h4>
+                                    <a href="Custom-Safaris.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">All
+                                        Custom Safaris</a>
+                                    <a href="Ugandan-3Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">3-Day
+                                        Gorilla Trekking</a>
+                                    <a href="Ugandan-4Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">4-Day
+                                        Uganda Express</a>
+                                    <a href="Ugandan-4Days2.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">4-Day
+                                        Luxury Fly-in</a>
+                                </div>
+
+                                <!-- Medium Duration -->
+                                <div>
+                                    <h4
+                                        class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-gray-100 mb-2">
+                                        Explorer Packages</h4>
+                                    <a href="Ugandan-5-Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">5-Day
+                                        Best of Kisoro</a>
+                                    <a href="Ugandan-5Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">5-Day
+                                        Short Holiday</a>
+                                    <a href="Ugandan-6Days2.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">6-Day
+                                        Kisoro Adventure</a>
+                                    <a href="Rwanda-7-Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">7-Day
+                                        Rwanda Explorer</a>
+                                </div>
+
+                                <!-- Long Duration -->
+                                <div>
+                                    <h4
+                                        class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-gray-100 mb-2">
+                                        Grand Tours</h4>
+                                    <a href="Ugandan-8days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">8-Day
+                                        Chimps & Gorillas</a>
+                                    <a href="Ugandan-8days2.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">8-Day
+                                        Uganda & Rwanda</a>
+                                    <a href="Ugandan-8days3.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">8-Day
+                                        Luxury Big Five</a>
+                                    <a href="Ugandan-11-Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">11-Day
+                                        Uganda & Rwanda</a>
+                                    <a href="Ugandan-11Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">11-Day
+                                        Luxury Safari</a>
+                                    <a href="Ugandan-14-Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">14-Day
+                                        Luxury Safari</a>
+                                </div>
+                            </div>
+                            <!-- Bottom Banner (Optional visual enhancement) -->
+                            <div class="mt-4 pt-4 border-t border-gray-100">
+                                <a href="Uganda-Adventures.html"
+                                    class="flex items-center justify-between p-3 rounded-lg bg-green-50 hover:bg-green-100 transition-colors group/banner">
+                                    <span class="text-sm font-semibold text-green-800">View All Packages</span>
+                                    <i
+                                        class="ri-arrow-right-line text-green-600 group-hover/banner:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vet Expeditions Dropdown -->
+                    <div class="relative dropdown-trigger group">
+                        <a href="Veterinary-Conservation-.html"
+                            class="text-blue-900 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 font-medium">
+                            <span>Vet Programs</span>
+                            <i class="ri-arrow-down-s-line text-sm"></i>
+                        </a>
+                        <div
+                            class="dropdown absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200">
+                            <a href="Veterinary-Conservation-.html#vet-safaris"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Veterinary
+                                Ecological Safaris</a>
+                            <a href="Veterinary-Conservation-.html#immobilisation-course"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Wildlife
+                                Immobilisation Course</a>
+                            <a href="Veterinary-Conservation-.html#experiential-tourism"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Experiential
+                                Tourism</a>
+                            <a href="Veterinary-Conservation-.html#field-projects"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Field
+                                Projects</a>
+                            <a href="Veterinary-Conservation-.html#conservation-initiatives"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Conservation
+                                Initiatives</a>
+                            <a href="Veterinary-Conservation-.html#application-timeline"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Application
+                                Timeline</a>
+                            <a href="Veterinary-Conservation-.html#qualifications"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Required
+                                Qualifications</a>
+                        </div>
+                    </div>
+
+                    <!-- Medical Missions Dropdown -->
+                    <div class="relative dropdown-trigger group">
+                        <a href="Medical-Expedition-Programs.html"
+                            class="text-blue-900 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 font-medium">
+                            <span>Medical Missions</span>
+                            <i class="ri-arrow-down-s-line text-sm"></i>
+                        </a>
+                        <div
+                            class="dropdown absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200">
+                            <a href="Medical-Expedition-Programs.html#medical-types"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Medical
+                                Program Types</a>
+                            <a href="Medical-Expedition-Programs.html#focus-areas"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Program
+                                Focus Areas</a>
+                            <a href="Medical-Expedition-Programs.html#destinations"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Program
+                                Destinations</a>
+                            <a href="Medical-Expedition-Programs.html#specialties-required"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Medical
+                                Specialties Required</a>
+                            <a href="Medical-Expedition-Programs.html#application-requirements"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Application
+                                Requirements</a>
+                            <a href="Medical-Expedition-Programs.html#program-calendar"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Program
+                                Calendar</a>
+                            <a href="Medical-Expedition-Programs.html#start-expedition"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Start
+                                Your Medical Expedition</a>
+                            <a href="Medical-Expedition-Programs.html#supplies-initiative"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Medical
+                                Supplies Initiative</a>
+                        </div>
+                    </div>
+
+                    <a href="Study-Aboard.html"
+                        class="text-blue-900 hover:text-green-600 transition-colors duration-300 font-medium">Study
+                        Aboard</a>
+                    <a href="gallery.html"
+                        class="text-blue-900 hover:text-green-600 transition-colors duration-300 font-medium">Gallery</a>
+                    <a href="Review.html"
+                        class="text-blue-900 hover:text-green-600 transition-colors duration-300 font-medium">Reviews</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="lg:hidden text-blue-900 focus:outline-none">
+                    <i id="menu-icon" class="ri-menu-line text-2xl"></i>
+                    <i id="close-icon" class="ri-close-line text-2xl hidden"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="lg:hidden bg-white/95 backdrop-blur-sm mt-2 rounded-lg shadow-lg border border-gray-200 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                <div class="px-4 py-4 space-y-2">
+                    <a href="index.html"
+                        class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Home</a>
+
+                    <!-- Destinations Dropdown -->
+                    <div class="dropdown-trigger-mobile">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+                            <span>Destinations</span>
+                            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+                        </button>
+                        <div
+                            class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                             <a href="Destinations.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">All
+                                Destinations</a>
+                            <a href="Uganda-Adventures.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Uganda
+                                Gorilla Trek</a>
+                            <a href="Rwanda-Safaris.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Rwanda
+                                Gorilla Experience</a><a href="Kenya-Safaris.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Kenya
+                                Wildlife Safari</a>
+                            <a href="Tanzania-Safari.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Tanzania
+                                Adventure</a>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Custom Safaris Dropdown -->
+                    <div class="dropdown-trigger-mobile">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+                            <span>Custom Safaris</span>
+                            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+                        </button>
+                        <div
+                            class="dropdown-mobile-content pl-2 max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50/50 rounded-lg my-1">
+
+                            <!-- Short Adventures -->
+                            <div class="px-2 py-2">
+                                <h4 class="px-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 mt-1">
+                                    Short Adventures</h4>
+                                <a href="Custom-Safaris.html"
+                                class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">All
+                                Custom Safaris</a>
+                            <a href="Ugandan-3Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">3-Day
+                                    Gorilla Trekking</a>
+                                <a href="Ugandan-4Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">4-Day
+                                    Uganda Express</a>
+                                <a href="Ugandan-4Days2.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">4-Day
+                                    Luxury Fly-in</a>
+                            </div>
+
+                            <!-- Explorer Packages -->
+                            <div class="px-2 py-2 border-t border-gray-200/50">
+                                <h4 class="px-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 mt-1">
+                                    Explorer Packages</h4>
+                                <a href="Ugandan-5-Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">5-Day
+                                    Best of Kisoro</a>
+                                <a href="Ugandan-5Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">5-Day
+                                    Short Holiday</a>
+                                <a href="Ugandan-6Days2.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">6-Day
+                                    Kisoro Adventure</a>
+                                <a href="Rwanda-7-Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">7-Day
+                                    Rwanda Explorer</a>
+                            </div>
+
+                            <!-- Grand Tours -->
+                            <div class="px-2 py-2 border-t border-gray-200/50">
+                                <h4 class="px-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 mt-1">
+                                    Grand Tours</h4>
+                                <a href="Ugandan-8days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">8-Day
+                                    Chimps & Gorillas</a>
+                                <a href="Ugandan-8days2.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">8-Day
+                                    Uganda & Rwanda</a>
+                                <a href="Ugandan-8days3.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">8-Day
+                                    Luxury Big Five</a>
+                                <a href="Ugandan-11-Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">11-Day
+                                    Uganda & Rwanda</a>
+                                <a href="Ugandan-11Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">11-Day
+                                    Luxury Safari</a>
+                                <a href="Ugandan-14-Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">14-Day
+                                    Luxury Safari</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vet Programs Dropdown -->
+                    <div class="dropdown-trigger-mobile">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+                            <span>Vet Programs</span>
+                            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+                        </button>
+                        <div
+                            class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <a href="Veterinary-Conservation-.html#vet-safaris"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Veterinary
+                                Ecological Safaris</a>
+                            <a href="Veterinary-Conservation-.html#immobilisation-course"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Wildlife
+                                Immobilisation Course</a>
+                            <a href="Veterinary-Conservation-.html#experiential-tourism"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Experiential
+                                Tourism</a>
+                            <a href="Veterinary-Conservation-.html#field-projects"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Field
+                                Projects</a>
+                            <a href="Veterinary-Conservation-.html#conservation-initiatives"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Conservation
+                                Initiatives</a>
+                            <a href="Veterinary-Conservation-.html#application-timeline"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Application
+                                Timeline</a>
+                            <a href="Veterinary-Conservation-.html#qualifications"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Required
+                                Qualifications</a>
+                        </div>
+                    </div>
+
+                    <!-- Medical Missions Dropdown -->
+                    <div class="dropdown-trigger-mobile">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+                            <span>Medical Missions</span>
+                            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+                        </button>
+                        <div
+                            class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <a href="Medical-Expedition-Programs.html#medical-types"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Medical
+                                Program Types</a>
+                            <a href="Medical-Expedition-Programs.html#focus-areas"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Program
+                                Focus Areas</a>
+                            <a href="Medical-Expedition-Programs.html#destinations"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Program
+                                Destinations</a>
+                            <a href="Medical-Expedition-Programs.html#specialties-required"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Medical
+                                Specialties Required</a>
+                            <a href="Medical-Expedition-Programs.html#application-requirements"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Application
+                                Requirements</a>
+                            <a href="Medical-Expedition-Programs.html#program-calendar"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Program
+                                Calendar</a>
+                            <a href="Medical-Expedition-Programs.html#start-expedition"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Start
+                                Your Medical Expedition</a>
+                            <a href="Medical-Expedition-Programs.html#supplies-initiative"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Medical
+                                Supplies Initiative</a>
+                        </div>
+                    </div>
+
+                    <a href="Study-Aboard.html"
+                        class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Study
+                        Aboard</a>
+                    <a href="gallery.html"
+                        class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Gallery</a>
+                    <a href="Review.html"
+                        class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Reviews</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+
+
+
+    <!-- Updated Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Parallax Background with subtle zoom effect -->
+        <div class="absolute inset-0 parallax-bg bg-cover bg-center transition-transform duration-1000 ease-out transform scale-100 hover:scale-105"
+            style="background-image: url('https://readdy.ai/api/search-image?query=bwindi%20gorilla%20trekking%20volcanoes%20national%20park%20rwanda%20murchison%20falls%20nile%20river%20kibale%20chimpanzees%20east%20africa%20wildlife%20safari%20dramatic%20landscape&width=1920&height=1080&seq=8day-hero&orientation=landscape')">
+        </div>
+
+        <!-- Gradient Overlay with Diagonal Split -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-800/60 to-transparent"></div>
+
+        <!-- Floating Wildlife Silhouettes -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute left-10 top-1/4 w-32 h-32">
+                <svg viewBox="0 0 200 200" class="w-full h-full">
+                    <path d="M50,100 C70,50 130,50 150,100 C170,150 130,180 100,150 C70,120 30,150 50,100 Z"
+                        fill="#059669" />
+                </svg>
+            </div>
+            <div class="absolute right-20 top-1/3 w-24 h-24">
+                <svg viewBox="0 0 200 200" class="w-full h-full">
+                    <path d="M100,50 C150,70 150,130 100,150 C50,170 30,130 50,100 C70,70 50,30 100,50 Z"
+                        fill="#059669" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Content Container -->
+        <div class="relative z-10 w-full max-w-6xl mx-auto px-6 text-center">
+            <!-- Eyebrow Text -->
+            <div class="mb-4">
+                <span
+                    class="inline-block px-4 py-2 bg-green-600/30 backdrop-blur-sm rounded-full text-green-300 text-sm font-medium tracking-wider border border-green-400/30">
+                    2-COUNTRY EXPEDITION
+                </span>
+            </div>
+
+            <!-- Main Headline with Gradient Text -->
+            <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-tight">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-green-300 to-green-400">
+                    Embark on a Life-Changing Journey
+                </span>
+                <span class="block mt-2 text-white">Through Two Countries!</span>
+            </h1>
+
+            <!-- Description with Animated Underline -->
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-gray-200 relative inline-block group">
+                <span>8-Day Gorilla Safari: Uganda & Rwanda Adventure</span>
+                <span
+                    class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-amber-400 to-green-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            </p>
+
+            <!-- CTA Button with Glow Effect -->
+            <button id="startPlanningBtn"
+                class="relative overflow-hidden group bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white px-10 py-5 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-green-500/20">
+                <span class="relative z-10 flex items-center justify-center space-x-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <span>Start Your 2-Country Adventure</span>
+                </span>
+                <span
+                    class="absolute inset-0 bg-gradient-to-r from-amber-400/30 to-green-400/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            </button>
+
+            <!-- Scrolling Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <div class="w-8 h-8 text-white">
+                    <svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Gradient Fade -->
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/40 to-transparent"></div>
+    </section>
+
+    <!-- Updated Itinerary Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">8-Day Gorilla Safari: Uganda & Rwanda</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Experience the best of East Africa with gorilla
+                    trekking in two countries, chimpanzee tracking, game drives, and cultural encounters</p>
+            </div>
+
+            <div class="relative">
+                <div class="absolute left-8 top-0 bottom-0 w-1 timeline-line rounded-full"></div>
+                <div class="space-y-12">
+
+                    <!-- Day 1 -->
+                    <div class="relative flex items-start">
+                        <div
+                            class="absolute left-4 w-8 h-8 bg-secondary rounded-full flex items-center justify-center z-10">
+                            <span class="text-white font-bold text-sm">1</span>
+                        </div>
+                        <div class="ml-20 day-card bg-white rounded-xl shadow-lg p-6 w-full">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-2xl font-bold text-gray-900">Day 1: Arrival in Entebbe → Kampala</h3>
+                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Entebbe to
+                                    Kampala</span>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-plane-line text-secondary"></i>
+                                        </div>
+                                        Arrival & Transfer
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Arrive at Entebbe International Airport</li>
+                                        <li>• Warm greeting by your private guide</li>
+                                        <li>• Transfer to Uganda's capital, Kampala</li>
+                                        <li>• Settle into your accommodation</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-hotel-line text-secondary"></i>
+                                        </div>
+                                        Evening & Accommodation
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Check into Marie's Royale Hotel</li>
+                                        <li>• Briefing about your safari adventure</li>
+                                        <li>• Dinner at the hotel</li>
+                                        <li>• Rest after your journey</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                        <i class="ri-lightbulb-flash-line text-blue-600"></i>
+                                    </div>
+                                    First Night Insight
+                                </h4>
+                                <p class="text-gray-600 text-sm">Kampala is Uganda's vibrant capital, blending modern
+                                    development with rich cultural heritage. A perfect gentle introduction to East
+                                    Africa.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 -->
+                    <div class="relative flex items-start">
+                        <div
+                            class="absolute left-4 w-8 h-8 bg-primary rounded-full flex items-center justify-center z-10">
+                            <span class="text-white font-bold text-sm">2</span>
+                        </div>
+                        <div class="ml-20 day-card bg-white rounded-xl shadow-lg p-6 w-full">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-2xl font-bold text-gray-900">Day 2: Ziwa Rhino Sanctuary → Murchison
+                                    Falls</h3>
+                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Kampala to
+                                    Murchison Falls NP</span>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-git-repository-line text-orange-500"></i>
+                                        </div>
+                                        Rhino Encounter
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Visit Ziwa Rhino Sanctuary</li>
+                                        <li>• See Uganda's only wild rhinos</li>
+                                        <li>• Guided walk with rangers</li>
+                                        <li>• Photography opportunities</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-landscape-line text-blue-500"></i>
+                                        </div>
+                                        Murchison Falls Journey
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Continue to Murchison Falls NP</li>
+                                        <li>• Check into Nkundwa Nile View Lodge</li>
+                                        <li>• Evening views of the Nile</li>
+                                        <li>• Dinner with sunset backdrop</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-4 p-4 bg-green-50 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                        <i class="ri-team-line text-green-600"></i>
+                                    </div>
+                                    Conservation Insight
+                                </h4>
+                                <p class="text-gray-600 text-sm">Ziwa Rhino Sanctuary is a successful conservation
+                                    project working to reintroduce rhinos to Uganda's national parks after their
+                                    extinction in the 1980s.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 3 -->
+                    <div class="relative flex items-start">
+                        <div
+                            class="absolute left-4 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center z-10">
+                            <span class="text-white font-bold text-sm">3</span>
+                        </div>
+                        <div class="ml-20 day-card bg-white rounded-xl shadow-lg p-6 w-full">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-2xl font-bold text-gray-900">Day 3: Game Drive & Boat Cruise at
+                                    Murchison Falls</h3>
+                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Murchison Falls
+                                    NP</span>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-safari-line text-red-500"></i>
+                                        </div>
+                                        Morning Game Drive
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Early morning game drive</li>
+                                        <li>• Search for elephants, giraffes</li>
+                                        <li>• Antelope and buffalo viewing</li>
+                                        <li>• Birdwatching opportunities</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-ship-line text-blue-500"></i>
+                                        </div>
+                                        Afternoon Boat Cruise
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Relaxing boat cruise on the Nile</li>
+                                        <li>• Cruise to base of Murchison Falls</li>
+                                        <li>• Spot hippos and crocodiles</li>
+                                        <li>• Photography of the waterfall</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-4 p-4 bg-yellow-50 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                        <i class="ri-water-flash-line text-yellow-600"></i>
+                                    </div>
+                                    Natural Wonder
+                                </h4>
+                                <p class="text-gray-600 text-sm">Murchison Falls is where the Nile River forces through
+                                    a 7-meter gap and plunges 43 meters. The boat cruise offers the best views of this
+                                    spectacular natural wonder.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 4 -->
+                    <div class="relative flex items-start">
+                        <div
+                            class="absolute left-4 w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center z-10">
+                            <span class="text-white font-bold text-sm">4</span>
+                        </div>
+                        <div class="ml-20 day-card bg-white rounded-xl shadow-lg p-6 w-full">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-2xl font-bold text-gray-900">Day 4: Chimpanzee Tracking in Kibale Forest
+                                </h3>
+                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Murchison Falls
+                                    to Kibale Forest</span>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-user-smile-line text-yellow-500"></i>
+                                        </div>
+                                        Journey to Kibale
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Scenic drive to Kibale National Park</li>
+                                        <li>• Arrive at Kibale Forest Lodge</li>
+                                        <li>• Lunch and preparation briefing</li>
+                                        <li>• Afternoon chimpanzee tracking</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-monkey-line text-green-500"></i>
+                                        </div>
+                                        Primate Experience
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Track chimpanzees in dense forest</li>
+                                        <li>• 1 hour with chimp family</li>
+                                        <li>• See other primate species</li>
+                                        <li>• Evening relaxation at lodge</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-4 p-4 bg-purple-50 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                        <i class="ri-leaf-line text-purple-600"></i>
+                                    </div>
+                                    Primate Capital
+                                </h4>
+                                <p class="text-gray-600 text-sm">Kibale Forest has one of the highest primate densities
+                                    in the world, with 13 species including the chimpanzees you'll track. The forest is
+                                    also home to 375 bird species.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 5 -->
+                    <div class="relative flex items-start">
+                        <div
+                            class="absolute left-4 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center z-10">
+                            <span class="text-white font-bold text-sm">5</span>
+                        </div>
+                        <div class="ml-20 day-card bg-white rounded-xl shadow-lg p-6 w-full">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-2xl font-bold text-gray-900">Day 5: Game Drive in Queen Elizabeth
+                                    National Park</h3>
+                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Kibale to Queen
+                                    Elizabeth NP</span>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-car-line text-green-500"></i>
+                                        </div>
+                                        Transfer & Arrival
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Morning drive to Queen Elizabeth NP</li>
+                                        <li>• Check into Pumba Safari Cottages</li>
+                                        <li>• Lunch with park views</li>
+                                        <li>• Afternoon relaxation</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-lion-line text-orange-500"></i>
+                                        </div>
+                                        Evening Game Drive
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Late afternoon game drive</li>
+                                        <li>• Explore savannah plains</li>
+                                        <li>• Look for tree-climbing lions</li>
+                                        <li>• Buffalo herds and warthogs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                        <i class="ri-tree-line text-blue-600"></i>
+                                    </div>
+                                    Unique Wildlife
+                                </h4>
+                                <p class="text-gray-600 text-sm">Queen Elizabeth NP is famous for its tree-climbing
+                                    lions found in the Ishasha sector. These lions are unique as they rest in fig trees
+                                    during the day.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 6 -->
+                    <div class="relative flex items-start">
+                        <div
+                            class="absolute left-4 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center z-10">
+                            <span class="text-white font-bold text-sm">6</span>
+                        </div>
+                        <div class="ml-20 day-card bg-white rounded-xl shadow-lg p-6 w-full">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-2xl font-bold text-gray-900">Day 6: Ishasha Sector & Scenic Drive to
+                                    Bwindi</h3>
+                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Queen Elizabeth
+                                    to Bwindi</span>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-lion-line text-purple-500"></i>
+                                        </div>
+                                        Ishasha Sector Exploration
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Morning game drive in Ishasha</li>
+                                        <li>• Search for tree-climbing lions</li>
+                                        <li>• Photography of unique behavior</li>
+                                        <li>• Other wildlife spotting</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-road-map-line text-gray-500"></i>
+                                        </div>
+                                        Scenic Highlands Drive
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Journey to Bwindi Impenetrable Forest</li>
+                                        <li>• Drive through scenic highlands</li>
+                                        <li>• Check into Rushaga Gorilla Lodge</li>
+                                        <li>• Gorilla trekking briefing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-4 p-4 bg-yellow-50 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                        <i class="ri-folder-shield-line text-yellow-600"></i>
+                                    </div>
+                                    Gorilla Preparation
+                                </h4>
+                                <p class="text-gray-600 text-sm">Tonight's briefing prepares you for tomorrow's gorilla
+                                    trekking. Learn about gorilla behavior, trekking rules, and what to expect in
+                                    Bwindi's misty forests.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 7 -->
+                    <div class="relative flex items-start">
+                        <div
+                            class="absolute left-4 w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center z-10">
+                            <span class="text-white font-bold text-sm">7</span>
+                        </div>
+                        <div class="ml-20 day-card bg-white rounded-xl shadow-lg p-6 w-full">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-2xl font-bold text-gray-900">Day 7: Gorilla Trekking in Bwindi → Lake
+                                    Bunyonyi</h3>
+                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Bwindi to Lake
+                                    Bunyonyi</span>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-user-star-line text-indigo-500"></i>
+                                        </div>
+                                        Gorilla Trekking Experience
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Morning gorilla trekking in Bwindi</li>
+                                        <li>• Find a mountain gorilla family</li>
+                                        <li>• 1 hour with the gentle giants</li>
+                                        <li>• Return to lodge for lunch</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-sailboat-line text-blue-500"></i>
+                                        </div>
+                                        Lake Bunyonyi Transfer
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Travel to Lake Bunyonyi</li>
+                                        <li>• Check into Itambira Island Resort</li>
+                                        <li>• Relaxing evening by the lake</li>
+                                        <li>• Reflect on gorilla experience</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-4 p-4 bg-green-50 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                        <i class="ri-heart-line text-green-600"></i>
+                                    </div>
+                                    Life-Changing Experience
+                                </h4>
+                                <p class="text-gray-600 text-sm">Gorilla trekking in Bwindi is often described as a
+                                    life-changing experience. The connection with these endangered primates in their
+                                    natural habitat is unforgettable.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 8 -->
+                    <div class="relative flex items-start">
+                        <div
+                            class="absolute left-4 w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center z-10">
+                            <span class="text-white font-bold text-sm">8</span>
+                        </div>
+                        <div class="ml-20 day-card bg-white rounded-xl shadow-lg p-6 w-full">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-2xl font-bold text-gray-900">Day 8: Cross to Rwanda → Kigali Genocide
+                                    Memorial</h3>
+                                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Uganda to
+                                    Rwanda</span>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-globe-line text-pink-500"></i>
+                                        </div>
+                                        Border Crossing
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Breakfast with lake views</li>
+                                        <li>• Cross border into Rwanda</li>
+                                        <li>• Scenic drive to Kigali</li>
+                                        <li>• Experience Rwanda's cleanliness</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-history-line text-gray-500"></i>
+                                        </div>
+                                        Kigali & Memorial Visit
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Visit Kigali Genocide Memorial</li>
+                                        <li>• Learn about Rwanda's history</li>
+                                        <li>• Lunch in Kigali city</li>
+                                        <li>• Airport transfer or hotel drop-off</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2 flex items-center">
+                                    <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                        <i class="ri-flight-takeoff-line text-blue-600"></i>
+                                    </div>
+                                    Journey Conclusion
+                                </h4>
+                                <p class="text-gray-600 text-sm">Your 8-day adventure ends in Rwanda. Schedule flights
+                                    from Kigali International Airport for evening. The memorial visit offers important
+                                    historical context to Rwanda's remarkable recovery.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+            <h3 class="text-2xl font-bold text-center mb-8">Expedition Highlights</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Thumbnail Images -->
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer"
+                    onclick="openModal('assets/8day-safari/day1.png', 'Marie\'s Royale Hotel Kampala')">
+                    <img src="assets/8day-safari/day1.png" alt="Marie's Royale Hotel Kampala"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer"
+                    onclick="openModal('assets/8day-safari/day2.png', 'Ziwa Rhino Sanctuary')">
+                    <img src="assets/8day-safari/day2.png" alt="Ziwa Rhino Sanctuary"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer"
+                    onclick="openModal('assets/8day-safari/day3.png', 'Murchison Falls Boat Cruise')">
+                    <img src="assets/8day-safari/day3.png" alt="Murchison Falls Boat Cruise"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer"
+                    onclick="openModal('assets/8day-safari/day4.png', 'Kibale Chimpanzee Tracking')">
+                    <img src="assets/8day-safari/day4.png" alt="Kibale Chimpanzee Tracking"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer"
+                    onclick="openModal('assets/8day-safari/day5.png', 'Queen Elizabeth Game Drive')">
+                    <img src="assets/8day-safari/day5.png" alt="Queen Elizabeth Game Drive"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer"
+                    onclick="openModal('assets/8day-safari/day6.png', 'Ishasha Tree-Climbing Lions')">
+                    <img src="assets/8day-safari/day6.png" alt="Ishasha Tree-Climbing Lions"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer"
+                    onclick="openModal('assets/8day-safari/day7.png', 'Bwindi Gorilla Trekking')">
+                    <img src="assets/8day-safari/day7.png" alt="Bwindi Gorilla Trekking"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer"
+                    onclick="openModal('assets/8day-safari/day8.png', 'Kigali Genocide Memorial')">
+                    <img src="assets/8day-safari/day8.png" alt="Kigali Genocide Memorial"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform">
+                </div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="imageModal" class="fixed inset-0 z-50 hidden w-full h-full bg-black bg-opacity-90 overflow-auto">
+            <div class="relative w-full h-full flex items-center justify-center">
+                <!-- Close Button -->
+                <span
+                    class="absolute top-4 right-4 text-white text-4xl font-bold cursor-pointer hover:text-gray-300 transition-colors"
+                    onclick="closeModal()">&times;</span>
+
+                <!-- Modal Content -->
+                <div class="max-w-4xl mx-auto p-4">
+                    <img id="modalImage" class="max-h-[80vh] max-w-full mx-auto" src="" alt="">
+                    <div id="caption" class="text-white text-center text-xl mt-4"></div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button
+                    class="absolute left-4 text-white text-4xl font-bold cursor-pointer hover:text-gray-300 transition-colors"
+                    onclick="changeImage(-1)">&#10094;</button>
+                <button
+                    class="absolute right-4 text-white text-4xl font-bold cursor-pointer hover:text-gray-300 transition-colors"
+                    onclick="changeImage(1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Tour Details & Accommodations Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Tour Details & Accommodations</h2>
+                <p class="text-xl text-gray-600">Handpicked mid-range accommodations across Uganda and Rwanda</p>
+            </div>
+
+            <!-- Accommodations Highlight -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Your Comfortable Stays Across Two
+                    Countries</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Marie's Royale Hotel -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="assets/8day-safari/maries-royale.jpg" alt="Marie's Royale Hotel"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-gray-900">Marie's Royale Hotel</h4>
+                                <span
+                                    class="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-medium">Kampala</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Mid-range hotel in Uganda's capital • Night 1</p>
+                            <div class="flex items-center text-gray-600 text-xs">
+                                <i class="ri-wifi-line mr-1 text-green-600"></i>
+                                <span>WiFi • Restaurant • Comfort</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nkundwa Nile View Lodge -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="assets/8day-safari/nkundwa-lodge.jpg" alt="Nkundwa Nile View Lodge"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-gray-900">Nkundwa Nile View Lodge</h4>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium">Murchison
+                                    Falls</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Mid-range lodge • Nights 2-3 • Nile views</p>
+                            <div class="flex items-center text-gray-600 text-xs">
+                                <i class="ri-landscape-line mr-1 text-blue-600"></i>
+                                <span>River Views • Restaurant • Bar</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kibale Forest Lodge -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="assets/8day-safari/kibale-lodge.jpg" alt="Kibale Forest Lodge"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-gray-900">Kibale Forest Lodge</h4>
+                                <span
+                                    class="px-2 py-1 bg-purple-100 text-purple-800 rounded text-xs font-medium">Kibale</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Mid-range forest lodge • Night 4</p>
+                            <div class="flex items-center text-gray-600 text-xs">
+                                <i class="ri-leaf-line mr-1 text-purple-600"></i>
+                                <span>Forest Setting • Chimpanzee Access</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pumba Safari Cottages -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="assets/8day-safari/pumba-cottages.jpg" alt="Pumba Safari Cottages"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-gray-900">Pumba Safari Cottages</h4>
+                                <span class="px-2 py-1 bg-amber-100 text-amber-800 rounded text-xs font-medium">Queen
+                                    Elizabeth</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Budget lodge • Night 5 • Park access</p>
+                            <div class="flex items-center text-gray-600 text-xs">
+                                <i class="ri-safari-line mr-1 text-amber-600"></i>
+                                <span>Game Drive Access • Basic Comfort</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rushaga Gorilla Lodge -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="assets/8day-safari/rushaga-lodge.png" alt="Rushaga Gorilla Lodge"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-gray-900">Rushaga Gorilla Lodge</h4>
+                                <span
+                                    class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded text-xs font-medium">Bwindi</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Mid-range lodge • Night 6 • Gorilla access</p>
+                            <div class="flex items-center text-gray-600 text-xs">
+                                <i class="ri-user-star-line mr-1 text-indigo-600"></i>
+                                <span>Gorilla Trek Base • Mountain Views</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Itambira Island Resort -->
+                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                        <div class="h-48 overflow-hidden">
+                            <img src="assets/8day-safari/itambira-resort.jpg" alt="Itambira Island Resort"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-gray-900">Itambira Island Resort</h4>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium">Lake
+                                    Bunyonyi</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-2">Mid-range lakeside resort • Night 7</p>
+                            <div class="flex items-center text-gray-600 text-xs">
+                                <i class="ri-sailboat-line mr-1 text-blue-600"></i>
+                                <span>Lake Views • Relaxation • Scenery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour Features Grid -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">8-Day Safari Features</h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-globe-line text-green-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Two Countries</h4>
+                        <p class="text-gray-600 text-sm">Uganda & Rwanda experience</p>
+                    </div>
+                    <div
+                        class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-user-star-line text-blue-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Double Gorilla Trek</h4>
+                        <p class="text-gray-600 text-sm">Bwindi & Volcanoes permits included</p>
+                    </div>
+                    <div
+                        class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-car-line text-purple-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">Luxury Transport</h4>
+                        <p class="text-gray-600 text-sm">Pop-up roof 4x4 vehicle</p>
+                    </div>
+                    <div
+                        class="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-user-heart-line text-amber-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-2">All-Inclusive</h4>
+                        <p class="text-gray-600 text-sm">Permits, meals, accommodation</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What's Included/Excluded -->
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="bg-green-50 rounded-2xl p-6 shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="ri-check-line text-green-600"></i>
+                        </div>
+                        What's Included
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Airport transfers in Uganda & Rwanda</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">All transport in luxury pop-up roof 4x4</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Experienced English-speaking driver/guide</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Gorilla trekking permits (Bwindi & Volcanoes)*</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Chimpanzee tracking permit (Kibale)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">All accommodation (7 nights as listed)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">All meals according to itinerary</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">All park fees, boat cruise & cultural visits</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-checkbox-circle-fill text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Bottled water during all drives</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 p-4 bg-white rounded-lg">
+                        <p class="text-sm text-gray-600"><span class="font-semibold">Note:</span> Gorilla and chimpanzee
+                            permits are limited and must be booked early. Minimum age: 15 years for gorilla trekking.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-red-50 rounded-2xl p-6 shadow-sm">
+                    <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+                        <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                            <i class="ri-close-line text-red-600"></i>
+                        </div>
+                        What's Not Included
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="ri-close-circle-fill text-red-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">International flights to/from East Africa</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-close-circle-fill text-red-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Uganda & Rwanda visa fees</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-close-circle-fill text-red-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Travel and medical insurance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-close-circle-fill text-red-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Alcoholic and premium beverages</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-close-circle-fill text-red-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Personal shopping and souvenirs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-close-circle-fill text-red-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Tips for guides and lodge staff</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-close-circle-fill text-red-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Optional activities not mentioned</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-close-circle-fill text-red-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Personal expenses (laundry, phone calls)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated Preparation Guide -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Luxury Safari Preparation Guide</h2>
+                <p class="text-xl text-gray-600">Everything you need for your ultimate 14-day luxury Ugandan adventure
+                </p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <button
+                        class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 preparation-toggle"
+                        data-target="documentation">
+                        <h3 class="text-lg font-semibold text-gray-900">Required Documentation</h3>
+                        <div class="w-5 h-5 flex items-center justify-center">
+                            <i class="ri-arrow-down-s-line text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                    </button>
+                    <div class="px-6 pb-6 hidden preparation-content" id="documentation">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Essential Documents</h4>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• Valid passport (6+ months remaining)</li>
+                                    <li>• Uganda visa (available on arrival USD $50)</li>
+                                    <li>• Yellow fever vaccination certificate</li>
+                                    <li>• Travel insurance with medical evacuation</li>
+                                    <li>• Gorilla permit confirmation copy</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Medical Requirements</h4>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• Yellow fever vaccination (mandatory)</li>
+                                    <li>• Malaria prophylaxis recommended</li>
+                                    <li>• COVID-19 vaccination recommended</li>
+                                    <li>• Medical fitness for hiking at altitude</li>
+                                    <li>• Emergency contact information</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <button
+                        class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 preparation-toggle"
+                        data-target="packing">
+                        <h3 class="text-lg font-semibold text-gray-900">Gorilla Trekking Packing List</h3>
+                        <div class="w-5 h-5 flex items-center justify-center">
+                            <i class="ri-arrow-down-s-line text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                    </button>
+                    <div class="px-6 pb-6 hidden preparation-content" id="packing">
+                        <div class="grid md:grid-cols-3 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Trekking Gear</h4>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• Sturdy waterproof hiking boots</li>
+                                    <li>• Garden gloves (for vegetation)</li>
+                                    <li>• Walking sticks (provided)</li>
+                                    <li>• Waterproof daypack</li>
+                                    <li>• Rain poncho or jacket</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Clothing</h4>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• Long-sleeved shirts (neutral colors)</li>
+                                    <li>• Long pants (quick-dry material)</li>
+                                    <li>• Warm layers (fleece/jacket)</li>
+                                    <li>• Hat with brim for sun/rain</li>
+                                    <li>• Extra socks (wool recommended)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Essential Items</h4>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• High SPF sunscreen</li>
+                                    <li>• Insect repellent (DEET based)</li>
+                                    <li>• Camera with extra batteries</li>
+                                    <li>• Binoculars (8x32 ideal)</li>
+                                    <li>• Personal first aid kit</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <button
+                        class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 preparation-toggle"
+                        data-target="fitness">
+                        <h3 class="text-lg font-semibold text-gray-900">Fitness & Gorilla Trekking Rules</h3>
+                        <div class="w-5 h-5 flex items-center justify-center">
+                            <i class="ri-arrow-down-s-line text-gray-400 transition-transform duration-200"></i>
+                        </div>
+                    </button>
+                    <div class="px-6 pb-6 hidden preparation-content" id="fitness">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Physical Preparation</h4>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• Moderate fitness level required</li>
+                                    <li>• Trekking can be 2-6 hours round trip</li>
+                                    <li>• Altitude: 2,200-4,000 meters</li>
+                                    <li>• Practice hiking with daypack</li>
+                                    <li>• Stay hydrated before trek</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-2">Gorilla Trekking Rules</h4>
+                                <ul class="text-gray-600 space-y-1">
+                                    <li>• Maximum 1 hour with gorillas</li>
+                                    <li>• Stay 7 meters from gorillas</li>
+                                    <li>• No flash photography</li>
+                                    <li>• Keep voices low</li>
+                                    <li>• Follow guide instructions</li>
+                                    <li>• If sick, do not trek</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated Pricing Section -->
+    <!-- Updated Pricing Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Transparent Pricing</h2>
+                <p class="text-xl text-gray-600">Comprehensive 8-day, 2-country safari with all major permits included
+                </p>
+            </div>
+            <div class="bg-gray-50 rounded-2xl p-8">
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">8-Day Gorilla Safari: Uganda & Rwanda</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                <span class="text-gray-700">Base safari package (per person)</span>
+                                <span class="font-semibold text-gray-900">$2,200</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                <span class="text-gray-700">Gorilla trekking permits (2 countries)*</span>
+                                <span class="font-semibold text-gray-900">$1,100</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                <span class="text-gray-700">Chimpanzee tracking permit</span>
+                                <span class="font-semibold text-gray-900">$200</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                <span class="text-gray-700">All park fees & activities</span>
+                                <span class="font-semibold text-gray-900">$280</span>
+                            </div>
+                            <div
+                                class="flex justify-between items-center py-3 font-bold text-lg bg-green-50 px-4 rounded-lg">
+                                <span class="text-gray-900">Total per person (double occupancy)</span>
+                                <span class="text-secondary text-2xl">$3,780 USD*</span>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-xs text-gray-500 italic">*Prices are subject to change based on season,
+                            availability, and exchange rates.</p>
+                        <div class="mt-8 p-4 bg-blue-50 rounded-lg">
+                            <h4 class="font-semibold text-blue-800 mb-2">Early Booking Benefits</h4>
+                            <ul class="text-blue-700 text-sm space-y-1">
+                                <li>• 12% discount for bookings 5+ months in advance</li>
+                                <li>• Free souvenir safari hat and water bottle</li>
+                                <li>• Complimentary border assistance</li>
+                                <li>• Priority permit allocation for both countries</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white rounded-xl p-6 shadow-lg mb-6">
+                            <h4 class="font-semibold text-gray-900 mb-4 flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                    <i class="ri-check-line text-green-500"></i>
+                                </div>
+                                Tour Inclusions Summary
+                            </h4>
+                            <ul class="text-gray-600 space-y-2">
+                                <li>• All accommodation (7 nights mid-range)</li>
+                                <li>• All meals as specified in itinerary</li>
+                                <li>• Professional English-speaking guide</li>
+                                <li>• Private 4x4 pop-up roof transportation</li>
+                                <li>• Gorilla permits (Uganda & Rwanda)</li>
+                                <li>• Chimpanzee tracking permit</li>
+                                <li>• All park entrance fees</li>
+                                <li>• Murchison Falls boat cruise</li>
+                                <li>• Kigali Genocide Memorial visit</li>
+                                <li>• Bottled water throughout</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-lg">
+                            <h4 class="font-semibold text-gray-900 mb-4 flex items-center">
+                                <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                    <i class="ri-information-line text-blue-500"></i>
+                                </div>
+                                Important Notes
+                            </h4>
+                            <ul class="text-gray-600 space-y-2">
+                                <li>• Price based on double occupancy</li>
+                                <li>• Single supplement: $420</li>
+                                <li>• Gorilla permits non-refundable</li>
+                                <li>• Minimum age: 15 years</li>
+                                <li>• Maximum group: 6 people</li>
+                                <li>• 35% deposit to confirm booking</li>
+                                <li>• Cross-border documentation assistance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <button
+                        class="bg-secondary hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold !rounded-button transition-colors duration-200 whitespace-nowrap mr-4 book-adventure-btn">
+                        Book Your 2-Country Safari
+                    </button>
+                    <button
+                        class="bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 px-8 py-4 text-lg font-semibold !rounded-button transition-colors duration-200 whitespace-nowrap">
+                        Request Custom Itinerary
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated Testimonials -->
+    <!-- Updated Testimonials -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Traveler Experiences</h2>
+                <p class="text-xl text-gray-600">What adventurers say about our 8-day Uganda-Rwanda safari</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-user-fill text-gray-600"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Robert & Jennifer Chen</h4>
+                            <p class="text-sm text-gray-600">Couple from Singapore</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"The two-country experience was seamless. From the rhinos at Ziwa to
+                        gorillas in Bwindi, every day brought new wonders. The Kigali Memorial was profoundly moving.
+                        Perfect balance of wildlife and culture."</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-user-fill text-gray-600"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Dr. Marcus Weber</h4>
+                            <p class="text-sm text-gray-600">Photographer, Germany</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"As a wildlife photographer, this safari delivered everything:
+                        chimpanzees in Kibale, tree-climbing lions in Ishasha, and of course the gorillas. The pop-up
+                        roof vehicle was perfect for photography. Lake Bunyonyi provided stunning landscape shots."</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-user-fill text-gray-600"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Sarah Thompson & Family</h4>
+                            <p class="text-sm text-gray-600">Family from Canada</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                        <div class="w-4 h-4 flex items-center justify-center">
+                            <i class="ri-star-fill text-yellow-400"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Our family of four had the adventure of a lifetime. The
+                        accommodations were comfortable, the guide was fantastic with our teenagers, and seeing gorillas
+                        in two different countries was incredible. The border crossing was smooth and well-organized."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Booking Form -->
+    <div id="bookingModal" class="fixed inset-0 z-50 hidden w-full h-full bg-black bg-opacity-80 overflow-y-auto">
+        <div class="relative w-full min-h-screen flex items-center justify-center px-4 py-12">
+            <div class="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl relative fade-in">
+                <button
+                    class="absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-2xl font-bold transition-colors"
+                    onclick="closeBookingModal()" aria-label="Close Modal">&times;</button>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Book Your 8-Day Uganda-Rwanda Gorilla
+                    Safari</h2>
+                </h2>
+                <form id="customBookingForm" class="space-y-6">
+                    <input type="hidden" name="safari" value="8-Day Uganda-Rwanda Gorilla Safari">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                        <input type="text" name="name" placeholder="Enter your full name"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary text-black">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <input type="email" name="email" placeholder="Enter your email"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary text-black">
+                    </div>
+                    <div class="relative">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Travel Date</label>
+                        <input type="text" id="travelDate" name="date" placeholder="Select travel date"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary pl-10 text-black">
+                        <span class="absolute left-3 top-10 text-gray-400">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Group Size</label>
+                        <input type="range" min="1" max="6" value="2" class="w-full" name="groupSize"
+                            oninput="groupValue.textContent = this.value + ' person(s)'">
+                        <span id="groupValue" class="ml-2 text-gray-600">2 person(s)</span>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Activity Level Preference</label>
+                        <div class="flex space-x-4">
+                            <button type="button"
+                                class="activity-btn flex-1 px-4 py-2 border border-gray-300 rounded-lg hover:border-secondary hover:text-secondary text-black"
+                                data-level="moderate">Moderate</button>
+                            <button type="button"
+                                class="activity-btn flex-1 px-4 py-2 border border-gray-300 rounded-lg hover:border-secondary hover:text-secondary text-black"
+                                data-level="intermediate">Intermediate</button>
+                            <button type="button"
+                                class="activity-btn flex-1 px-4 py-2 border border-gray-300 rounded-lg hover:border-secondary hover:text-secondary text-black"
+                                data-level="advanced">Advanced</button>
+                        </div>
+                        <input type="hidden" name="activityLevel" id="activityLevel" value="moderate">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Accommodation Level</label>
+                        <div class="relative">
+                            <button id="accommodationBtn" type="button"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-black text-left focus:outline-none focus:ring-2 focus:ring-secondary flex justify-between items-center">
+                                <span id="accommodationText">Luxury Lodges (Included)</span>
+                                <input type="hidden" name="accommodation" id="accommodationInput" value="luxury"> <span
+                                    class="text-gray-400">&#9662;</span>
+                            </button>
+                            <div id="accommodationDropdown"
+                                class="absolute w-full bg-white border border-gray-300 rounded-lg mt-1 hidden shadow-lg z-10">
+                                <div class="accommodation-option px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                                    data-value="luxury">Luxury Lodges (Included)</div>
+                                <div class="accommodation-option px-4 py-2 hover:bg-gray-50 cursor-pointer"
+                                    data-value="premium">Premium Luxury Upgrade (+$1,000)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Special Requests</label>
+                        <textarea name="requests" rows="3"
+                            placeholder="e.g., dietary needs, photography focus, cultural interests"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary text-black"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit"
+                            class="bg-secondary hover:bg-green-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition-colors duration-300">Submit
+                            Booking Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Modal controls
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeBookingModal() {
+            const modal = document.getElementById('bookingModal');
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Button click handlers
+            const bookAdventureBtn = document.querySelector('.book-adventure-btn');
+            const startPlanningBtn = document.getElementById('startPlanningBtn');
+
+            if (bookAdventureBtn) {
+                bookAdventureBtn.addEventListener('click', openBookingModal);
+            }
+            if (startPlanningBtn) {
+                startPlanningBtn.addEventListener('click', openBookingModal);
+            }
+
+            // Flatpickr for date selection
+            flatpickr("#travelDate", {
+                dateFormat: "m/d/Y",
+                minDate: "today",
+                maxDate: new Date().fp_incr(365),
+                disableMobile: true,
+                onChange: function (selectedDates, dateStr, instance) {
+                    if (selectedDates.length) instance.close();
+                }
+            });
+
+            // Activity level selection - set moderate as default
+            const activityBtns = document.querySelectorAll('.activity-btn');
+            // Set moderate as active by default
+            activityBtns[0].classList.add('bg-secondary', 'text-white', 'border-secondary');
+
+            activityBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    activityBtns.forEach(b => b.classList.remove('bg-secondary', 'text-white', 'border-secondary'));
+                    this.classList.add('bg-secondary', 'text-white', 'border-secondary');
+                    document.getElementById('activityLevel').value = this.dataset.level;
+                });
+            });
+
+            // Accommodation dropdown
+            const accommodationBtn = document.getElementById('accommodationBtn');
+            const accommodationDropdown = document.getElementById('accommodationDropdown');
+            const accommodationText = document.getElementById('accommodationText');
+            const accommodationOptions = document.querySelectorAll('.accommodation-option');
+
+            if (accommodationBtn) {
+                accommodationBtn.addEventListener('click', function () {
+                    accommodationDropdown.classList.toggle('hidden');
+                });
+            }
+
+            accommodationOptions.forEach(option => {
+                option.addEventListener('click', function () {
+                    accommodationText.textContent = this.textContent;
+                    document.getElementById('accommodationInput').value = this.dataset.value;
+                    accommodationDropdown.classList.add('hidden');
+                });
+            });
+
+            document.addEventListener('click', function (e) {
+                if (accommodationBtn && !accommodationBtn.contains(e.target) && accommodationDropdown && !accommodationDropdown.contains(e.target)) {
+                    accommodationDropdown.classList.add('hidden');
+                }
+            });
+
+            // Form submission
+            const bookingForm = document.getElementById('customBookingForm');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const formData = new FormData(bookingForm);
+                    const data = Object.fromEntries(formData);
+
+                    fetch('https://formspree.io/f/mldlkwke', {
+                        method: 'POST',
+                        body: JSON.stringify(data),
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                alert('Thank you! Your booking request for the 5-Day Kisoro Tour has been submitted. We will contact you within 24 hours to confirm gorilla permit availability.');
+                                bookingForm.reset();
+                                closeBookingModal();
+                            } else {
+                                throw new Error('Submission failed');
+                            }
+                        })
+                        .catch(error => {
+                            alert('There was an error submitting your request. Please try again or contact us directly at wildmeduganda@gmail.com');
+                            console.error('Error:', error);
+                        });
+                });
+            }
+
+            // Preparation toggles
+            const toggles = document.querySelectorAll('.preparation-toggle');
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', function () {
+                    const targetId = this.dataset.target;
+                    const content = document.getElementById(targetId);
+                    const icon = this.querySelector('i');
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+
+            // Image modal functionality
+            let currentImageIndex = 0;
+            const images = [
+                { src: 'assets/8day-safari/day1.png', alt: 'Marie\'s Royale Hotel Kampala' },
+                { src: 'assets/8day-safari/day2.png', alt: 'Ziwa Rhino Sanctuary' },
+                { src: 'assets/8day-safari/day3.png', alt: 'Murchison Falls Boat Cruise' },
+                { src: 'assets/8day-safari/day4.png', alt: 'Kibale Chimpanzee Tracking' },
+                { src: 'assets/8day-safari/day5.png', alt: 'Queen Elizabeth Game Drive' },
+                { src: 'assets/8day-safari/day6.png', alt: 'Ishasha Tree-Climbing Lions' },
+                { src: 'assets/8day-safari/day7.png', alt: 'Bwindi Gorilla Trekking' },
+                { src: 'assets/8day-safari/day8.png', alt: 'Kigali Genocide Memorial' }
+            ];
+
+            window.openModal = function (src, alt) {
+                const modal = document.getElementById('imageModal');
+                const modalImg = document.getElementById('modalImage');
+                const captionText = document.getElementById('caption');
+
+                currentImageIndex = images.findIndex(img => img.src === src);
+
+                modal.style.display = "flex";
+                modalImg.src = src;
+                captionText.innerHTML = alt;
+                document.body.style.overflow = "hidden";
+            }
+
+            window.closeModal = function () {
+                const modal = document.getElementById('imageModal');
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+
+            window.changeImage = function (n) {
+                currentImageIndex += n;
+
+                if (currentImageIndex >= images.length) currentImageIndex = 0;
+                if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+
+                const modalImg = document.getElementById('modalImage');
+                const captionText = document.getElementById('caption');
+
+                modalImg.src = images[currentImageIndex].src;
+                captionText.innerHTML = images[currentImageIndex].alt;
+            }
+
+            // Close modal when clicking outside image
+            document.getElementById('imageModal').addEventListener('click', function (e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function (e) {
+                const modal = document.getElementById('imageModal');
+                if (modal.style.display === "flex") {
+                    if (e.key === "Escape") closeModal();
+                    if (e.key === "ArrowLeft") changeImage(-1);
+                    if (e.key === "ArrowRight") changeImage(1);
+                }
+            });
+        });
+    </script>
+
+    <footer class="bg-white text-gray-800 shadow-lg border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 flex-shrink-0">
+                                <img src="img/android-chrome-192x192.png" alt="WildMed Safaris Logo" width="400"
+                                    height="400" class="rounded-lg">
+                            </div>
+                        </div>
+                        <span class="text-xl font-['Pacifico'] text-blue-900">WildMed</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">Creating meaningful wildlife adventures that combine conservation,
+                        education, and unforgettable experiences across East Africa.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full hover:bg-blue-200 transition-colors duration-300 text-blue-900">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full hover:bg-blue-200 transition-colors duration-300 text-blue-900">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full hover:bg-blue-200 transition-colors duration-300 text-blue-900">
+                            <i class="ri-twitter-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full hover:bg-blue-200 transition-colors duration-300 text-blue-900">
+                            <i class="ri-youtube-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-blue-900">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html"
+                                class="text-gray-600 hover:text-blue-700 transition-colors duration-300">Home</a></li>
+                        <li><a href="About-Us.html"
+                                class="text-gray-600 hover:text-blue-700 transition-colors duration-300">About Us</a>
+                        </li>
+                        <li><a href="Custom-Safaris.html"
+                                class="text-gray-600 hover:text-blue-700 transition-colors duration-300">Safari
+                                Packages</a></li>
+                        <li><a href="Medical-Expedition-Programs.html"
+                                class="text-gray-600 hover:text-blue-700 transition-colors duration-300">Medical
+                                Expeditions</a></li>
+                        <li><a href="Veterinary-Conservation-.html"
+                                class="text-gray-600 hover:text-blue-700 transition-colors duration-300">Vet
+                                Programs</a></li>
+                        <li><a href="gallery.html"
+                                class="text-gray-600 hover:text-blue-700 transition-colors duration-300">Gallery</a>
+                        </li>
+                        <li><a href="Review.html"
+                                class="text-gray-600 hover:text-blue-700 transition-colors duration-300">Reviews</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Destinations -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-blue-900">Destinations</h3>
+                    <ul class="space-y-3">
+                        <li><a href="Uganda-Adventures.html"
+                                class="text-gray-600 hover:text-blue-700 transition-colors duration-300">Uganda Gorilla
+                                Trek</a></li>
+                        <li><a href="Kenya-Safaris.html"
+                                class="text-gray-600 hover:text-blue-700 transition-colors duration-300">Kenya Wildlife
+                                Safari</a></li>
+                        <li><a href="Tanzania-Safari.html"
+                                class="text-gray-600 hover:text-blue-700 transition-colors duration-300">Tanzania
+                                Adventure</a></li>
+                        <li><a href="Rwanda-Safaris.html"
+                                class="text-gray-600 hover:text-blue-700 transition-colors duration-300">Rwanda Gorilla
+                                Experience</a></li>
+                        <li><a href="Uganda-15-Days.html"
+                                class="text-gray-600 hover:text-blue-700 transition-colors duration-300">15-Day Grand
+                                Safari</a></li>
+                        <li><a href="Rwanda-7-Days.html"
+                                class="text-gray-600 hover:text-blue-700 transition-colors duration-300">7-Day Rwanda
+                                Explorer</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-blue-900">Contact Info</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="ri-map-pin-line text-green-600 mt-1"></i>
+                            <div class="text-gray-600">
+                                <div>WildMed </div>
+                                <div>Safaris and Field Projects</div>
+                                <div>Plot 626, Seguku Katale</div>
+                                <div>P.O.Box 10296</div>
+                                <div>Kampala, Uganda</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="ri-phone-line text-green-600"></i>
+                            <span class="text-gray-600">+256 740 205146</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="ri-phone-line text-green-600"></i>
+                            <span class="text-gray-600">+256 777 370494</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="ri-mail-line text-green-600"></i>
+                            <span class="text-gray-600">wildmeduganda@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-300 mt-12 pt-8 text-center text-gray-600">
+                <p>&copy; 2026 WildMed. All rights reserved. | <a href="Privacy-Policy.html"
+                        class="hover:text-blue-700 text-blue-900 font-medium">Privacy Policy</a> | <a
+                        href="Terms-of-Service.html" class="hover:text-blue-700 text-blue-900 font-medium">Terms of
+                        Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/spotlight.js"></script>
+</body>
+
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function (e) {
+                e.stopPropagation(); // Prevent closing immediately due to document click listener
+
+                const isClosed = mobileMenu.classList.contains('max-h-0');
+                if (isClosed) {
+                    // OPEN MENU
+                    mobileMenu.classList.remove('max-h-0', 'overflow-hidden');
+                    mobileMenu.classList.add('max-h-[85vh]', 'overflow-y-auto');
+                    if (menuIcon) menuIcon.classList.add('hidden');
+                    if (closeIcon) closeIcon.classList.remove('hidden');
+                } else {
+                    // CLOSE MENU
+                    mobileMenu.classList.add('max-h-0', 'overflow-hidden');
+                    mobileMenu.classList.remove('max-h-[85vh]', 'overflow-y-auto');
+                    if (menuIcon) menuIcon.classList.remove('hidden');
+                    if (closeIcon) closeIcon.classList.add('hidden');
+
+                    // Also close all sub-dropdowns
+                    document.querySelectorAll('.dropdown-mobile-content').forEach(dropdown => {
+                        dropdown.classList.add('max-h-0');
+                        dropdown.classList.add('hidden'); // Ensure hidden is applied if used
+                        // Reset icons if possible
+                        const btn = dropdown.previousElementSibling;
+                        if (btn) {
+                            const icon = btn.querySelector('.dropdown-icon');
+                            if (icon) {
+                                icon.classList.remove('ri-arrow-up-s-line');
+                                icon.classList.add('ri-arrow-down-s-line');
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+        // Mobile dropdown triggers
+        const mobileDropdownTriggers = document.querySelectorAll('.dropdown-trigger-mobile');
+        mobileDropdownTriggers.forEach(trigger => {
+            const button = trigger.querySelector('button');
+            const dropdown = trigger.querySelector('.dropdown-mobile-content');
+            if (button && dropdown) {
+                button.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    // Toggle this dropdown
+                    const isClosed = dropdown.classList.contains('max-h-0');
+
+                    // Close all unrelated dropdowns first (optional: mimicking accordion behavior)
+                    // mobileDropdownTriggers.forEach(other => {
+                    //    if(other !== trigger) {
+                    //        const d = other.querySelector('.dropdown-mobile-content');
+                    //        if(d) d.classList.add('max-h-0');
+                    //        const i = other.querySelector('.dropdown-icon');
+                    //        if(i) { i.classList.remove('ri-arrow-up-s-line'); i.classList.add('ri-arrow-down-s-line'); }
+                    //    }
+                    // });
+
+                    const icon = button.querySelector('.dropdown-icon');
+
+                    if (isClosed) {
+                        dropdown.classList.remove('max-h-0');
+                        dropdown.classList.remove('hidden'); // Just in case
+                        dropdown.classList.add('max-h-[1500px]'); // Large enough
+                        if (icon) {
+                            icon.classList.remove('ri-arrow-down-s-line');
+                            icon.classList.add('ri-arrow-up-s-line');
+                        }
+                    } else {
+                        dropdown.classList.add('max-h-0');
+                        if (icon) {
+                            icon.classList.remove('ri-arrow-up-s-line');
+                            icon.classList.add('ri-arrow-down-s-line');
+                        }
+                    }
+                });
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (event) {
+            if (mobileMenu && !mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                if (!mobileMenu.classList.contains('max-h-0')) {
+                    mobileMenu.classList.add('max-h-0', 'overflow-hidden');
+                    mobileMenu.classList.remove('max-h-[85vh]', 'overflow-y-auto');
+                    if (menuIcon) menuIcon.classList.remove('hidden');
+                    if (closeIcon) closeIcon.classList.add('hidden');
+                }
+            }
+        });
+    });
+</script>

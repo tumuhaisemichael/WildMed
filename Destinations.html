@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <title>All Destinations | WildMed Safaris</title>
+    <meta name="description"
+        content="Explore all WildMed destinations in Uganda, Rwanda, Kenya, and Tanzania. Discover wildlife highlights, academic institutions, and curated safari experiences.">
+    <!-- Keywords: destinations, uganda safari, rwanda gorilla, kenya safari, tanzania safari -->
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#2563eb', secondary: '#059669' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0f172a;
+            --mist: #eef2f7;
+            --savanna: #c58b3a;
+            --river: #1b6ca8;
+            --leaf: #2e8b57;
+            --ember: #d95d39;
+        }
+
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--ink);
+        }
+
+        .headline {
+            font-family: 'Fraunces', serif;
+        }
+
+        .hero-texture {
+            background-image:
+                radial-gradient(circle at top left, rgba(255, 214, 165, 0.35), transparent 55%),
+                radial-gradient(circle at 15% 70%, rgba(46, 139, 87, 0.35), transparent 55%),
+                radial-gradient(circle at 80% 30%, rgba(27, 108, 168, 0.35), transparent 50%);
+        }
+
+        .hero-grid {
+            background-image: linear-gradient(to right, rgba(15, 23, 42, 0.07) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(15, 23, 42, 0.07) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+
+        .floating-card {
+            backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.82);
+        }
+
+        .country-card {
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .country-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
+        }
+
+        .pulse-ring {
+            animation: pulse 2.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: scale(1.08);
+                opacity: 0.35;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+        }
+
+        .slide-up {
+            opacity: 0;
+            transform: translateY(24px);
+            animation: slideUp 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.15s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.45s;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-md">
+        <nav class="w-full px-6 py-2">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="/img/logo.png" alt="WildMed Logo" class="object-contain"
+                        style="height: 110px; width: auto;">
+                    <span
+                        class="text-blue-900 text-xl font-bold italic tracking-wide hover:text-blue-700 transition-colors duration-300">
+                        WildMed
+                    </span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-blue-900 hover:text-green-600 transition-colors duration-300 font-medium">Home</a>
+
+                    <!-- Destinations Dropdown -->
+                    <div class="relative dropdown-trigger group">
+                        <a href="Destinations.html"
+                            class="text-blue-900 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 font-medium">
+                            <span>Destinations</span>
+                            <i class="ri-arrow-down-s-line text-sm"></i>
+                        </a>
+                        <div
+                            class="dropdown absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200">
+                            <a href="Destinations.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">All
+                                Destinations</a>
+                            <a href="Uganda-Adventures.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Uganda
+                                Gorilla Trek</a>
+                            <a href="Rwanda-Safaris.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Rwanda
+                                Gorilla Experience</a>
+                            <a href="Kenya-Safaris.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Kenya
+                                Wildlife Safari</a>
+                            <a href="Tanzania-Safari.html"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Tanzania
+                                Adventure</a>
+                        </div>
+                    </div>
+
+                    <!-- Custom Expeditions Dropdown -->
+                    <div class="relative dropdown-trigger group">
+                        <a href="Custom-Safaris.html"
+                            class="text-blue-900 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 font-medium">
+                            <span>Custom Safaris</span>
+                            <i class="ri-arrow-down-s-line text-sm"></i>
+                        </a>
+                        <div
+                            class="dropdown absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] bg-white/95 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200 p-4">
+                            <div class="grid grid-cols-3 gap-4">
+                                <!-- Short Safaris -->
+                                <div>
+                                    <h4
+                                        class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-gray-100 mb-2">
+                                        Short Adventures</h4>
+                                    <a href="Custom-Safaris.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">All
+                                        Custom Safaris</a>
+                                    <a href="Ugandan-3Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">3-Day
+                                        Gorilla Trekking</a>
+                                    <a href="Ugandan-4Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">4-Day
+                                        Uganda Express</a>
+                                    <a href="Ugandan-4Days2.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">4-Day
+                                        Luxury Fly-in</a>
+                                </div>
+
+                                <!-- Medium Duration -->
+                                <div>
+                                    <h4
+                                        class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-gray-100 mb-2">
+                                        Explorer Packages</h4>
+                                    <a href="Ugandan-5-Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">5-Day
+                                        Best of Kisoro</a>
+                                    <a href="Ugandan-5Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">5-Day
+                                        Short Holiday</a>
+                                    <a href="Ugandan-6Days2.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">6-Day
+                                        Kisoro Adventure</a>
+                                    <a href="Rwanda-7-Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">7-Day
+                                        Rwanda Explorer</a>
+                                </div>
+
+                                <!-- Long Duration -->
+                                <div>
+                                    <h4
+                                        class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider border-b border-gray-100 mb-2">
+                                        Grand Tours</h4>
+                                    <a href="Ugandan-8days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">8-Day
+                                        Chimps & Gorillas</a>
+                                    <a href="Ugandan-8days2.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">8-Day
+                                        Uganda & Rwanda</a>
+                                    <a href="Ugandan-8days3.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">8-Day
+                                        Luxury Big Five</a>
+                                    <a href="Ugandan-11-Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">11-Day
+                                        Uganda & Rwanda</a>
+                                    <a href="Ugandan-11Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">11-Day
+                                        Luxury Safari</a>
+                                    <a href="Ugandan-14-Days.html"
+                                        class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-50 hover:text-green-600 rounded-md transition-colors duration-200">14-Day
+                                        Luxury Safari</a>
+                                </div>
+                            </div>
+                            <!-- Bottom Banner (Optional visual enhancement) -->
+                            <div class="mt-4 pt-4 border-t border-gray-100">
+                                <a href="Uganda-Adventures.html"
+                                    class="flex items-center justify-between p-3 rounded-lg bg-green-50 hover:bg-green-100 transition-colors group/banner">
+                                    <span class="text-sm font-semibold text-green-800">View All Packages</span>
+                                    <i
+                                        class="ri-arrow-right-line text-green-600 group-hover/banner:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vet Expeditions Dropdown -->
+                    <div class="relative dropdown-trigger group">
+                        <a href="Veterinary-Conservation-.html"
+                            class="text-blue-900 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 font-medium">
+                            <span>Vet Programs</span>
+                            <i class="ri-arrow-down-s-line text-sm"></i>
+                        </a>
+                        <div
+                            class="dropdown absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200">
+                            <a href="Veterinary-Conservation-.html#vet-safaris"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Veterinary
+                                Ecological Safaris</a>
+                            <a href="Veterinary-Conservation-.html#immobilisation-course"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Wildlife
+                                Immobilisation Course</a>
+                            <a href="Veterinary-Conservation-.html#experiential-tourism"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Experiential
+                                Tourism</a>
+                            <a href="Veterinary-Conservation-.html#field-projects"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Field
+                                Projects</a>
+                            <a href="Veterinary-Conservation-.html#conservation-initiatives"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Conservation
+                                Initiatives</a>
+                            <a href="Veterinary-Conservation-.html#application-timeline"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Application
+                                Timeline</a>
+                            <a href="Veterinary-Conservation-.html#qualifications"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Required
+                                Qualifications</a>
+                        </div>
+                    </div>
+
+                    <!-- Medical Missions Dropdown -->
+                    <div class="relative dropdown-trigger group">
+                        <a href="Medical-Expedition-Programs.html"
+                            class="text-blue-900 hover:text-green-600 transition-colors duration-300 flex items-center space-x-1 font-medium">
+                            <span>Medical Missions</span>
+                            <i class="ri-arrow-down-s-line text-sm"></i>
+                        </a>
+                        <div
+                            class="dropdown absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200">
+                            <a href="Medical-Expedition-Programs.html#medical-types"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Medical
+                                Program Types</a>
+                            <a href="Medical-Expedition-Programs.html#focus-areas"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Program
+                                Focus Areas</a>
+                            <a href="Medical-Expedition-Programs.html#destinations"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Program
+                                Destinations</a>
+                            <a href="Medical-Expedition-Programs.html#specialties-required"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Medical
+                                Specialties Required</a>
+                            <a href="Medical-Expedition-Programs.html#application-requirements"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Application
+                                Requirements</a>
+                            <a href="Medical-Expedition-Programs.html#program-calendar"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Program
+                                Calendar</a>
+                            <a href="Medical-Expedition-Programs.html#start-expedition"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Start
+                                Your Medical Expedition</a>
+                            <a href="Medical-Expedition-Programs.html#supplies-initiative"
+                                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Medical
+                                Supplies Initiative</a>
+                        </div>
+                    </div>
+
+                    <a href="Study-Aboard.html"
+                        class="text-blue-900 hover:text-green-600 transition-colors duration-300 font-medium">Study
+                        Aboard</a>
+                    <a href="gallery.html"
+                        class="text-blue-900 hover:text-green-600 transition-colors duration-300 font-medium">Gallery</a>
+                    <a href="Review.html"
+                        class="text-blue-900 hover:text-green-600 transition-colors duration-300 font-medium">Reviews</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="lg:hidden text-blue-900 focus:outline-none">
+                    <i id="menu-icon" class="ri-menu-line text-2xl"></i>
+                    <i id="close-icon" class="ri-close-line text-2xl hidden"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="lg:hidden bg-white/95 backdrop-blur-sm mt-2 rounded-lg shadow-lg border border-gray-200 max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                <div class="px-4 py-4 space-y-2">
+                    <a href="index.html"
+                        class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Home</a>
+
+                    <!-- Destinations Dropdown -->
+                    <div class="dropdown-trigger-mobile">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+                            <span>Destinations</span>
+                            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+                        </button>
+                        <div class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <a href="Destinations.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">All
+                                Destinations</a>
+                            <a href="Uganda-Adventures.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Uganda
+                                Gorilla Trek</a>
+                            <a href="Rwanda-Safaris.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Rwanda
+                                Gorilla Experience</a>
+                            <a href="Kenya-Safaris.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Kenya
+                                Wildlife Safari</a>
+                            <a href="Tanzania-Safari.html"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Tanzania
+                                Adventure</a>
+                        </div>
+                    </div>
+
+                    <!-- Custom Safaris Dropdown -->
+                    <div class="dropdown-trigger-mobile">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+                            <span>Custom Safaris</span>
+                            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+                        </button>
+                        <div
+                            class="dropdown-mobile-content pl-2 max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50/50 rounded-lg my-1">
+
+                            <!-- Short Adventures -->
+                            <div class="px-2 py-2">
+                                <h4 class="px-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 mt-1">
+                                    Short Adventures</h4>
+                                <a href="Custom-Safaris.html"
+                                class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">All
+                                Custom Safaris</a>
+                            <a href="Ugandan-3Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">3-Day
+                                    Gorilla Trekking</a>
+                                <a href="Ugandan-4Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">4-Day
+                                    Uganda Express</a>
+                                <a href="Ugandan-4Days2.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">4-Day
+                                    Luxury Fly-in</a>
+                            </div>
+
+                            <!-- Explorer Packages -->
+                            <div class="px-2 py-2 border-t border-gray-200/50">
+                                <h4 class="px-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 mt-1">
+                                    Explorer Packages</h4>
+                                <a href="Ugandan-5-Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">5-Day
+                                    Best of Kisoro</a>
+                                <a href="Ugandan-5Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">5-Day
+                                    Short Holiday</a>
+                                <a href="Ugandan-6Days2.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">6-Day
+                                    Kisoro Adventure</a>
+                                <a href="Rwanda-7-Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">7-Day
+                                    Rwanda Explorer</a>
+                            </div>
+
+                            <!-- Grand Tours -->
+                            <div class="px-2 py-2 border-t border-gray-200/50">
+                                <h4 class="px-2 text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 mt-1">
+                                    Grand Tours</h4>
+                                <a href="Ugandan-8days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">8-Day
+                                    Chimps & Gorillas</a>
+                                <a href="Ugandan-8days2.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">8-Day
+                                    Uganda & Rwanda</a>
+                                <a href="Ugandan-8days3.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">8-Day
+                                    Luxury Big Five</a>
+                                <a href="Ugandan-11-Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">11-Day
+                                    Uganda & Rwanda</a>
+                                <a href="Ugandan-11Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">11-Day
+                                    Luxury Safari</a>
+                                <a href="Ugandan-14-Days.html"
+                                    class="block px-4 py-2 text-sm text-blue-900 hover:bg-blue-100/50 hover:text-green-600 rounded-lg transition-colors">14-Day
+                                    Luxury Safari</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vet Programs Dropdown -->
+                    <div class="dropdown-trigger-mobile">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+                            <span>Vet Programs</span>
+                            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+                        </button>
+                        <div
+                            class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <a href="Veterinary-Conservation-.html#vet-safaris"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Veterinary
+                                Ecological Safaris</a>
+                            <a href="Veterinary-Conservation-.html#immobilisation-course"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Wildlife
+                                Immobilisation Course</a>
+                            <a href="Veterinary-Conservation-.html#experiential-tourism"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Experiential
+                                Tourism</a>
+                            <a href="Veterinary-Conservation-.html#field-projects"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Field
+                                Projects</a>
+                            <a href="Veterinary-Conservation-.html#conservation-initiatives"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Conservation
+                                Initiatives</a>
+                            <a href="Veterinary-Conservation-.html#application-timeline"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Application
+                                Timeline</a>
+                            <a href="Veterinary-Conservation-.html#qualifications"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Required
+                                Qualifications</a>
+                        </div>
+                    </div>
+
+                    <!-- Medical Missions Dropdown -->
+                    <div class="dropdown-trigger-mobile">
+                        <button
+                            class="w-full flex justify-between items-center px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">
+                            <span>Medical Missions</span>
+                            <i class="ri-arrow-down-s-line text-sm dropdown-icon"></i>
+                        </button>
+                        <div
+                            class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                            <a href="Medical-Expedition-Programs.html#medical-types"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Medical
+                                Program Types</a>
+                            <a href="Medical-Expedition-Programs.html#focus-areas"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Program
+                                Focus Areas</a>
+                            <a href="Medical-Expedition-Programs.html#destinations"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Program
+                                Destinations</a>
+                            <a href="Medical-Expedition-Programs.html#specialties-required"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Medical
+                                Specialties Required</a>
+                            <a href="Medical-Expedition-Programs.html#application-requirements"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Application
+                                Requirements</a>
+                            <a href="Medical-Expedition-Programs.html#program-calendar"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Program
+                                Calendar</a>
+                            <a href="Medical-Expedition-Programs.html#start-expedition"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Start
+                                Your Medical Expedition</a>
+                            <a href="Medical-Expedition-Programs.html#supplies-initiative"
+                                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Medical
+                                Supplies Initiative</a>
+                        </div>
+                    </div>
+
+                    <a href="Study-Aboard.html"
+                        class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Study
+                        Aboard</a>
+                    <a href="gallery.html"
+                        class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Gallery</a>
+                    <a href="Review.html"
+                        class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300 font-medium">Reviews</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[80vh] flex items-center overflow-hidden bg-slate-950 text-white">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 hero-texture"></div>
+            <div class="absolute inset-0 hero-grid opacity-40"></div>
+            <div class="absolute -top-24 -right-24 w-72 h-72 bg-orange-500/30 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-120px] left-[-80px] w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-20 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="slide-up">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 text-sm uppercase tracking-[0.3em]">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-ring"></span>
+                    East Africa Expedition Atlas
+                </div>
+                <h1 class="headline text-5xl md:text-6xl mt-6 mb-6">Choose Your Wildmed Adventure Trail</h1>
+                <p class="text-lg text-white/80 max-w-xl">From gorilla trekking in misty forests to the Serengeti
+                    migration and the crater wonderlands, every destination is a different rhythm of the wild.</p>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="#expedition-map"
+                        class="bg-emerald-500 hover:bg-emerald-600 text-slate-900 px-6 py-3 rounded-lg font-semibold transition-colors">Browse
+                        the Atlas</a>
+                    <a href="Review.html"
+                        class="border border-white/30 hover:border-white/60 px-6 py-3 rounded-lg font-semibold transition-colors">Hear
+                        From Travelers</a>
+                </div>
+            </div>
+
+            <div class="slide-up delay-2">
+                <div class="floating-card rounded-3xl p-8 border border-white/30 shadow-2xl">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Explorer Snapshot</p>
+                            <h2 class="headline text-3xl text-slate-900">Your Adventure Mix</h2>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-sm font-semibold">Live</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div class="rounded-2xl bg-white p-4 border border-slate-100">
+                            <p class="text-slate-500">Wildlife Parks</p>
+                            <p class="text-2xl font-semibold text-slate-900">16+</p>
+                        </div>
+                        <div class="rounded-2xl bg-white p-4 border border-slate-100">
+                            <p class="text-slate-500">University Partners</p>
+                            <p class="text-2xl font-semibold text-slate-900">12+</p>
+                        </div>
+                        <div class="rounded-2xl bg-white p-4 border border-slate-100">
+                            <p class="text-slate-500">Signature Experiences</p>
+                            <p class="text-2xl font-semibold text-slate-900">40+</p>
+                        </div>
+                        <div class="rounded-2xl bg-white p-4 border border-slate-100">
+                            <p class="text-slate-500">Best Travel Months</p>
+                            <p class="text-2xl font-semibold text-slate-900">12</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex items-center gap-3 text-sm text-slate-600">
+                        <i class="ri-compass-3-line text-emerald-500"></i>
+                        New itineraries can be tailored within 24 hours.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destination Showcase -->
+    <section id="expedition-map" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-sm uppercase tracking-[0.3em] text-emerald-700">Choose a Trail</p>
+                <h2 class="headline text-4xl md:text-5xl mt-4">Destinations Built for Bold Travelers</h2>
+                <p class="text-lg text-slate-600 mt-4">Each country blends wildlife, culture, and academic immersion.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+                <!-- Uganda -->
+                <div class="country-card bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100">
+                    <div class="relative h-52">
+                        <img src="img/Destination/UG/bwindi.jpeg" alt="Uganda" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <p class="text-xs uppercase tracking-[0.3em] text-emerald-200">Uganda</p>
+                            <h3 class="text-2xl font-semibold text-white">Misty Forest Kingdom</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <p class="text-slate-600">Gorillas, crater lakes, and Nile adventures wrap into one wild
+                            corridor.</p>
+                        <div class="rounded-2xl bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
+                            Signature: Bwindi gorilla trekking + Queen Elizabeth lions.
+                        </div>
+                        <div class="text-sm text-slate-600">
+                            Wildlife: Bwindi, Murchison Falls, Kibale.
+                        </div>
+                        <div class="text-sm text-slate-600">
+                            Academics: Makerere, Kyambogo.
+                        </div>
+                        <a href="Uganda-Adventures.html"
+                            class="inline-flex items-center text-emerald-700 font-semibold hover:text-emerald-600">Explore
+                            Uganda <i class="ri-arrow-right-line ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Rwanda -->
+                <div class="country-card bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100">
+                    <div class="relative h-52">
+                        <img src="img/Destination/rwanda/volcanoes park.jpeg" alt="Rwanda" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <p class="text-xs uppercase tracking-[0.3em] text-emerald-200">Rwanda</p>
+                            <h3 class="text-2xl font-semibold text-white">Volcanic Escapes</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <p class="text-slate-600">Soft hills, bold culture, and intimate primate encounters await.</p>
+                        <div class="rounded-2xl bg-amber-50 px-4 py-3 text-sm text-amber-900">
+                            Signature: Volcanoes gorillas + Lake Kivu sunsets.
+                        </div>
+                        <div class="text-sm text-slate-600">
+                            Wildlife: Volcanoes, Nyungwe, Akagera.
+                        </div>
+                        <div class="text-sm text-slate-600">
+                            Academics: University of Rwanda, CMU-Africa.
+                        </div>
+                        <a href="Rwanda-Safaris.html"
+                            class="inline-flex items-center text-emerald-700 font-semibold hover:text-emerald-600">Explore
+                            Rwanda <i class="ri-arrow-right-line ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Kenya -->
+                <div class="country-card bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100">
+                    <div class="relative h-52">
+                        <img src="img/Destination/Kenya/greatmig.webp" alt="Kenya" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <p class="text-xs uppercase tracking-[0.3em] text-emerald-200">Kenya</p>
+                            <h3 class="text-2xl font-semibold text-white">Savanna Legends</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <p class="text-slate-600">The classic safari stage: big cats, bold sunsets, and Maasai culture.
+                        </p>
+                        <div class="rounded-2xl bg-orange-50 px-4 py-3 text-sm text-orange-900">
+                            Signature: Maasai Mara migration + Amboseli elephants.
+                        </div>
+                        <div class="text-sm text-slate-600">
+                            Wildlife: Maasai Mara, Amboseli, Lake Nakuru.
+                        </div>
+                        <div class="text-sm text-slate-600">
+                            Academics: UON, Strathmore.
+                        </div>
+                        <a href="Kenya-Safaris.html"
+                            class="inline-flex items-center text-emerald-700 font-semibold hover:text-emerald-600">Explore
+                            Kenya <i class="ri-arrow-right-line ml-2"></i></a>
+                    </div>
+                </div>
+
+                <!-- Tanzania -->
+                <div class="country-card bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100">
+                    <div class="relative h-52">
+                        <img src="img/Destination/TZ/mbalageti-serengeti.jpg" alt="Tanzania" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <p class="text-xs uppercase tracking-[0.3em] text-emerald-200">Tanzania</p>
+                            <h3 class="text-2xl font-semibold text-white">Wild Horizon</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <p class="text-slate-600">Migration drama, crater safaris, and Kilimanjaro in one epic arc.</p>
+                        <div class="rounded-2xl bg-blue-50 px-4 py-3 text-sm text-blue-900">
+                            Signature: Serengeti plains + Ngorongoro crater.
+                        </div>
+                        <div class="text-sm text-slate-600">
+                            Wildlife: Serengeti, Tarangire, Ngorongoro.
+                        </div>
+                        <div class="text-sm text-slate-600">
+                            Academics: UDSM, MUHAS, SUA.
+                        </div>
+                        <a href="Tanzania-Safari.html"
+                            class="inline-flex items-center text-emerald-700 font-semibold hover:text-emerald-600">Explore
+                            Tanzania <i class="ri-arrow-right-line ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Builder -->
+    <section class="py-20 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+            <div class="space-y-6 slide-up delay-1">
+                <p class="text-sm uppercase tracking-[0.3em] text-emerald-300">Adventure Builder</p>
+                <h2 class="headline text-4xl">Mix Wildlife, Culture, and Academia</h2>
+                <p class="text-white/80">Our expeditions blend conservation, university placements, and immersive
+                    cultural experiences. Tell us your pace and we will craft the perfect route.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="Uganda-Adventures.html"
+                        class="bg-emerald-500 hover:bg-emerald-600 text-slate-900 px-6 py-3 rounded-lg font-semibold transition-colors">Start
+                        Planning</a>
+                    <a href="Review.html"
+                        class="border border-white/30 hover:border-white/60 px-6 py-3 rounded-lg font-semibold transition-colors">See
+                        Reviews</a>
+                </div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4 slide-up delay-3">
+                <div class="rounded-2xl bg-white/10 p-6">
+                    <p class="text-sm text-white/60">Core Experiences</p>
+                    <p class="text-2xl font-semibold mt-2">Gorillas, Big Five, Crater Safaris</p>
+                </div>
+                <div class="rounded-2xl bg-white/10 p-6">
+                    <p class="text-sm text-white/60">Academic Tracks</p>
+                    <p class="text-2xl font-semibold mt-2">Medicine, Conservation, Ecology</p>
+                </div>
+                <div class="rounded-2xl bg-white/10 p-6">
+                    <p class="text-sm text-white/60">Seasonal Sweet Spots</p>
+                    <p class="text-2xl font-semibold mt-2">Jun-Oct, Dec-Feb</p>
+                </div>
+                <div class="rounded-2xl bg-white/10 p-6">
+                    <p class="text-sm text-white/60">Personalized Support</p>
+                    <p class="text-2xl font-semibold mt-2">24/7 Guide Access</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white text-gray-800 shadow-lg border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 flex-shrink-0">
+                                <img src="img/android-chrome-192x192.png" alt="WildMed Safaris Logo" width="400"
+                                    height="400" class="rounded-lg">
+                            </div>
+                        </div>
+                        <span class="text-xl font-['Pacifico'] text-blue-900">WildMed</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">Creating meaningful wildlife adventures that combine conservation,
+                        education, and unforgettable experiences across East Africa.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full hover:bg-blue-200 transition-colors duration-300 text-blue-900">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full hover:bg-blue-200 transition-colors duration-300 text-blue-900">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full hover:bg-blue-200 transition-colors duration-300 text-blue-900">
+                            <i class="ri-twitter-line"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full hover:bg-blue-200 transition-colors duration-300 text-blue-900">
+                            <i class="ri-youtube-line"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-blue-900">Quick Links</h3>
+                    <div class="space-y-3 text-gray-600">
+                        <a href="index.html" class="block hover:text-blue-700 transition-colors duration-300">Home</a>
+                        <a href="About-Us.html" class="block hover:text-blue-700 transition-colors duration-300">About Us</a>
+                        <a href="Custom-Safaris.html" class="block hover:text-blue-700 transition-colors duration-300">Safari
+                            Packages</a>
+                        <a href="Medical-Expedition-Programs.html"
+                            class="block hover:text-blue-700 transition-colors duration-300">Medical Expeditions</a>
+                        <a href="Veterinary-Conservation-.html"
+                            class="block hover:text-blue-700 transition-colors duration-300">Vet Programs</a>
+                        <a href="gallery.html" class="block hover:text-blue-700 transition-colors duration-300">Gallery</a>
+                        <a href="Review.html" class="block hover:text-blue-700 transition-colors duration-300">Reviews</a>
+                    </div>
+                </div>
+
+                <!-- Destinations -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-blue-900">Destinations</h3>
+                    <div class="space-y-3 text-gray-600">
+                        <a href="Destinations.html" class="block hover:text-blue-700 transition-colors duration-300">All
+                            Destinations</a>
+                        <a href="Uganda-Adventures.html" class="block hover:text-blue-700 transition-colors duration-300">Uganda
+                            Gorilla Trek</a>
+                        <a href="Rwanda-Safaris.html" class="block hover:text-blue-700 transition-colors duration-300">Rwanda
+                            Gorilla Experience</a>
+                        <a href="Kenya-Safaris.html" class="block hover:text-blue-700 transition-colors duration-300">Kenya
+                            Wildlife Safari</a>
+                        <a href="Tanzania-Safari.html" class="block hover:text-blue-700 transition-colors duration-300">Tanzania
+                            Adventure</a>
+                        <a href="Rwanda-7-Days.html" class="block hover:text-blue-700 transition-colors duration-300">7-Day
+                            Rwanda Explorer</a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-blue-900">Contact Info</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="ri-map-pin-line text-green-600 mt-1"></i>
+                            <div class="text-gray-600">
+                                <div>WildMed </div>
+                                <div>Safaris and Field Projects</div>
+                                <div>Plot 626, Seguku Katale</div>
+                                <div>P.O.Box 10296</div>
+                                <div>Kampala, Uganda</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="ri-phone-line text-green-600"></i>
+                            <span class="text-gray-600">+256 740 205146</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="ri-phone-line text-green-600"></i>
+                            <span class="text-gray-600">+256 777 370494</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="ri-mail-line text-green-600"></i>
+                            <span class="text-gray-600">wildmeduganda@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-300 mt-12 pt-8 text-center text-gray-600">
+                <p>&copy; 2026 WildMed. All rights reserved. | <a href="Privacy-Policy.html"
+                        class="hover:text-blue-700 text-blue-900 font-medium">Privacy Policy</a> | <a
+                        href="Terms-of-Service.html" class="hover:text-blue-700 text-blue-900 font-medium">Terms of
+                        Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function (e) {
+                    e.stopPropagation();
+
+                    const isClosed = mobileMenu.classList.contains('max-h-0');
+                    if (isClosed) {
+                        mobileMenu.classList.remove('max-h-0', 'overflow-hidden');
+                        mobileMenu.classList.add('max-h-[85vh]', 'overflow-y-auto');
+                        if (menuIcon) menuIcon.classList.add('hidden');
+                        if (closeIcon) closeIcon.classList.remove('hidden');
+                    } else {
+                        mobileMenu.classList.add('max-h-0', 'overflow-hidden');
+                        mobileMenu.classList.remove('max-h-[85vh]', 'overflow-y-auto');
+                        if (menuIcon) menuIcon.classList.remove('hidden');
+                        if (closeIcon) closeIcon.classList.add('hidden');
+
+                        document.querySelectorAll('.dropdown-mobile-content').forEach(dropdown => {
+                            dropdown.classList.add('max-h-0');
+                            dropdown.classList.add('hidden');
+                            const btn = dropdown.previousElementSibling;
+                            if (btn) {
+                                const icon = btn.querySelector('.dropdown-icon');
+                                if (icon) {
+                                    icon.classList.remove('ri-arrow-up-s-line');
+                                    icon.classList.add('ri-arrow-down-s-line');
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+
+            // Mobile dropdown triggers
+            const mobileDropdownTriggers = document.querySelectorAll('.dropdown-trigger-mobile');
+            mobileDropdownTriggers.forEach(trigger => {
+                const button = trigger.querySelector('button');
+                const dropdown = trigger.querySelector('.dropdown-mobile-content');
+                if (button && dropdown) {
+                    button.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        const isClosed = dropdown.classList.contains('max-h-0');
+                        const icon = button.querySelector('.dropdown-icon');
+
+                        if (isClosed) {
+                            dropdown.classList.remove('max-h-0');
+                            dropdown.classList.remove('hidden');
+                            dropdown.classList.add('max-h-[1500px]');
+                            if (icon) {
+                                icon.classList.remove('ri-arrow-down-s-line');
+                                icon.classList.add('ri-arrow-up-s-line');
+                            }
+                        } else {
+                            dropdown.classList.add('max-h-0');
+                            if (icon) {
+                                icon.classList.remove('ri-arrow-up-s-line');
+                                icon.classList.add('ri-arrow-down-s-line');
+                            }
+                        }
+                    });
+                }
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (mobileMenu && !mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                    if (!mobileMenu.classList.contains('max-h-0')) {
+                        mobileMenu.classList.add('max-h-0', 'overflow-hidden');
+                        mobileMenu.classList.remove('max-h-[85vh]', 'overflow-y-auto');
+                        if (menuIcon) menuIcon.classList.remove('hidden');
+                        if (closeIcon) closeIcon.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
