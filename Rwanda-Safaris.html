@@ -2002,6 +2002,35 @@
         });
     </script>
     <script src="assets/spotlight.js"></script>
+
+<style>
+  body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  input, textarea, select {
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+  }
+</style>
+<script>
+  // Prevent copying, cutting, dragging
+  document.addEventListener('copy', function(e) { e.preventDefault(); });
+  document.addEventListener('cut', function(e) { e.preventDefault(); });
+  document.addEventListener('dragstart', function(e) { e.preventDefault(); });
+
+  // Prevent right click (context menu) except on links to preserve navigation
+  document.addEventListener('contextmenu', function(e) {
+    if(e.target.tagName !== 'A' && e.target.parentElement.tagName !== 'A') {
+      e.preventDefault();
+    }
+  });
+</script>
+
 </body>
 
 </html>
