@@ -10,7 +10,7 @@
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <title>Biological Field Research Expeditions | WildMed Safaris</title>
   <meta name="description"
-    content="Professional biological field research expeditions in East Africa. Explore habitat studies, species monitoring, and practical field learning with WildMed.">
+    content="Professional Biological Field Research Expeditions in East Africa. Explore habitat studies, species monitoring, and practical field learning with WildMed.">
   <script src="https://cdn.tailwindcss.com/3.4.16"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script>tailwind.config = { theme: { extend: { colors: { primary: '#2563eb', secondary: '#059669' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
@@ -72,6 +72,32 @@
 
     .feature-list li:last-child {
       border-bottom: none;
+    }
+
+    .science-gallery-frame {
+      border-radius: 22px;
+      overflow: hidden;
+      border: 4px solid #ffffff;
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.18);
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+      position: relative;
+    }
+
+    .science-gallery-frame:hover {
+      transform: translateY(-6px) rotate(0deg) !important;
+      box-shadow: 0 20px 44px rgba(15, 23, 42, 0.24);
+      z-index: 3;
+    }
+
+    .science-gallery-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .science-gallery-frame:hover img {
+      transform: scale(1.06);
     }
   </style>
 </head>
@@ -205,8 +231,7 @@
             <div
               class="dropdown absolute top-full left-0 mt-2 w-72 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-gray-200">
               <a href="Biological-Field-Research-Expeditions.html"
-                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Biological
-                Field Research Expeditions</a>
+                class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Tailored Science Driven Field Expedition</a>
               <a href="Veterinary-Conservation-.html"
                 class="block px-4 py-2 text-blue-900 hover:bg-blue-50 transition-colors duration-300">Veterinary and
                 Conservation Field Expeditions</a>
@@ -334,8 +359,7 @@
             </button>
             <div class="dropdown-mobile-content pl-6 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
               <a href="Biological-Field-Research-Expeditions.html"
-                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Biological
-                Field Research Expeditions</a>
+                class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Tailored Science Driven Field Expedition</a>
               <a href="Veterinary-Conservation-.html"
                 class="block px-4 py-3 text-blue-900 hover:bg-blue-50 rounded-lg transition-colors duration-300">Veterinary
                 and Conservation Field Expeditions</a>
@@ -358,7 +382,7 @@
 
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 parallax-bg bg-cover bg-center"
-      style="background-image: url('https://readdy.ai/api/search-image?query=biologists%20conducting%20wildlife%20field%20research%20in%20East%20Africa%2C%20savanna%20landscape%2C%20research%20equipment%2C%20binoculars%2C%20notebooks%2C%20professional%20documentary%20photography%2C%20warm%20golden%20light&width=1920&height=1080&seq=bio-expedition-hero-2&orientation=landscape')">
+      style="background-image: url('assets/15 day trip/15day9.jpg')">
     </div>
     <div class="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-blue-900/75 to-emerald-900/40"></div>
 
@@ -366,10 +390,10 @@
       <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
         <div class="text-white">
           <span
-            class="inline-flex items-center px-4 py-2 rounded-full bg-green-600/20 border border-green-300/30 text-green-200 text-sm font-medium tracking-[0.2em]">
-            BIOLOGICAL FIELD RESEARCH EXPEDITIONS
+            class="inline-flex items-center px-6 py-4 rounded-full bg-green-600/20 border border-green-300/30 text-green-200 text-3xl sm:text-4xl font-bold tracking-[0.04em] leading-tight">
+            Tailored Science Driven Field Expeditions
           </span>
-          <h1 class="mt-6 text-5xl sm:text-6xl font-bold leading-tight">
+          <h1 class="mt-6 text-2xl sm:text-3xl font-bold leading-tight">
             Scientific field expeditions for
             <span class="block text-green-300">research, training, and conservation</span>
           </h1>
@@ -483,9 +507,9 @@
   <section id="activities" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-3xl mx-auto mb-14">
-        <h2 class="text-4xl font-bold text-gray-900">Activities for biological field research expeditions</h2>
+        <h2 class="text-4xl font-bold text-gray-900">Activities for Tailored Science Driven Field Expeditions</h2>
         <p class="mt-4 text-lg text-gray-600">
-          Activities may include one or several practical modules depending on the expedition design, location, and
+          Activities may include one or several practical sessions depending on the expedition design, location, and
           season.
         </p>
       </div>
@@ -580,7 +604,7 @@
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <img
-            src="img/modern_techniques.png"
+            src="img/Science driven field work/Field work.jpg"
             alt="Biological research tools and fieldwork" class="rounded-[2rem] shadow-xl object-cover w-full h-full min-h-[400px]">
         </div>
         <div>
@@ -660,7 +684,7 @@
 
       <div class="grid lg:grid-cols-3 gap-8">
         <div class="program-card bg-white rounded-[2rem] shadow-lg overflow-hidden border border-gray-100">
-          <div class="h-56 bg-cover bg-center" style="background-image: url('img/photography.jpeg');"></div>
+          <div class="h-56 bg-cover bg-center" style="background-image: url('img/home/IMG-20150902-WA0011.jpg');"></div>
           <div class="p-7">
             <h3 class="text-2xl font-semibold text-gray-900 mb-3">Photography Expeditions</h3>
             <p class="text-gray-600 mb-5">Detour inside national parks for unparalleled wildlife photography
@@ -675,7 +699,7 @@
 
         <div class="program-card bg-white rounded-[2rem] shadow-lg overflow-hidden border border-gray-100">
           <div class="h-56 bg-cover bg-center"
-            style="background-image: url('img/bio_research_ops.png')">
+            style="background-image: url('img/Vet science/Research_slide6.jpg')">
           </div>
           <div class="p-7">
             <h3 class="text-2xl font-semibold text-gray-900 mb-3">Research Opportunities</h3>
@@ -691,7 +715,7 @@
 
         <div class="program-card bg-white rounded-[2rem] shadow-lg overflow-hidden border border-gray-100">
           <div class="h-56 bg-cover bg-center"
-            style="background-image: url('img/bio_community_edu.png')">
+            style="background-image: url('img/Vet science/Research_slide7.jpg')">
           </div>
           <div class="p-7">
             <h3 class="text-2xl font-semibold text-gray-900 mb-3">Community Education</h3>
@@ -721,12 +745,83 @@
     </div>
   </section>
 
+  <section class="py-20 bg-gradient-to-br from-sky-100 via-emerald-50 to-amber-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <span class="inline-block px-4 py-2 rounded-full bg-white/80 text-slate-700 font-semibold text-sm tracking-wide shadow">
+          Field Archive
+        </span>
+        <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mt-4">Science Driven Field Work Gallery</h2>
+        <p class="text-lg text-slate-600 max-w-3xl mx-auto mt-4">Tap any frame to view the image at full display size</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[210px] md:auto-rows-[230px]">
+        <button type="button" class="science-gallery-item science-gallery-frame lg:col-span-2 lg:row-span-2 rotate-[-1.5deg]" data-index="0" data-src="img/Science driven field work/20150611_180903.jpg" data-caption="Tailored Science Driven Field Expedition">
+          <img src="img/Science driven field work/20150611_180903.jpg" alt="Science driven field work image 1">
+        </button>
+        <button type="button" class="science-gallery-item science-gallery-frame rotate-[1.2deg]" data-index="1" data-src="img/Science driven field work/20150611_180914.jpg" data-caption="Tailored Science Driven Field Expedition">
+          <img src="img/Science driven field work/20150611_180914.jpg" alt="Science driven field work image 2">
+        </button>
+        <button type="button" class="science-gallery-item science-gallery-frame rotate-[-0.8deg]" data-index="2" data-src="img/Science driven field work/20150611_183602.jpg" data-caption="Tailored Science Driven Field Expedition">
+          <img src="img/Science driven field work/20150611_183602.jpg" alt="Science driven field work image 3">
+        </button>
+        <button type="button" class="science-gallery-item science-gallery-frame lg:row-span-2 rotate-[1.4deg]" data-index="3" data-src="img/Science driven field work/20160726_113328.jpg" data-caption="Tailored Science Driven Field Expedition">
+          <img src="img/Science driven field work/20160726_113328.jpg" alt="Science driven field work image 4">
+        </button>
+        <!-- <button type="button" class="science-gallery-item science-gallery-frame rotate-[-1.1deg]" data-index="4" data-src="img/Science driven field work/20160726_114220.jpg" data-caption="Tailored Science Driven Field Expedition">
+          <img src="img/Science driven field work/20160726_114220.jpg" alt="Science driven field work image 5">
+        </button> -->
+        <button type="button" class="science-gallery-item science-gallery-frame rotate-[0.9deg]" data-index="5" data-src="img/Science driven field work/20160726_114450.jpg" data-caption="Tailored Science Driven Field Expedition">
+          <img src="img/Science driven field work/20160726_114450.jpg" alt="Science driven field work image 6">
+        </button>
+        <button type="button" class="science-gallery-item science-gallery-frame rotate-[-1.4deg]" data-index="6" data-src="img/Science driven field work/Field work.jpg" data-caption="Tailored Science Driven Field Expedition">
+          <img src="img/Science driven field work/Field work.jpg" alt="Science driven field work image 7">
+        </button>
+        <button type="button" class="science-gallery-item science-gallery-frame rotate-[1.1deg]" data-index="7" data-src="img/Science driven field work/IMG_6565.JPG" data-caption="Tailored Science Driven Field Expedition">
+          <img src="img/Science driven field work/IMG_6565.JPG" alt="Science driven field work image 8">
+        </button>
+        <button type="button" class="science-gallery-item science-gallery-frame lg:col-span-2 rotate-[-0.9deg]" data-index="8" data-src="img/Science driven field work/LIvestock_Wildlife Interaction1.jpg" data-caption="Tailored Science Driven Field Expedition">
+          <img src="img/Science driven field work/LIvestock_Wildlife Interaction1.jpg" alt="Science driven field work image 9">
+        </button>
+        <button type="button" class="science-gallery-item science-gallery-frame rotate-[1.5deg]" data-index="9" data-src="img/Science driven field work/Livestock_wildlife interaction2.jpg" data-caption="Tailored Science Driven Field Expedition">
+          <img src="img/Science driven field work/Livestock_wildlife interaction2.jpg" alt="Science driven field work image 10">
+        </button>
+        <button type="button" class="science-gallery-item science-gallery-frame rotate-[-1deg]" data-index="10" data-src="img/Science driven field work/Researc.jpg" data-caption="Tailored Science Driven Field Expedition">
+          <img src="img/Science driven field work/Researc.jpg" alt="Science driven field work image 11">
+        </button>
+        <button type="button" class="science-gallery-item science-gallery-frame rotate-[0.7deg]" data-index="11" data-src="img/Science driven field work/Rodent cap 2.jpg" data-caption="Tailored Science Driven Field Expedition">
+          <img src="img/Science driven field work/Rodent cap 2.jpg" alt="Science driven field work image 12">
+        </button>
+        <button type="button" class="science-gallery-item science-gallery-frame rotate-[-1.2deg]" data-index="12" data-src="img/Science driven field work/Rodent capture.jpg" data-caption="Tailored Science Driven Field Expedition">
+          <img src="img/Science driven field work/Rodent capture.jpg" alt="Science driven field work image 13">
+        </button>
+        <button type="button" class="science-gallery-item science-gallery-frame rotate-[1.3deg]" data-index="13" data-src="img/Science driven field work/biometrics.jpg" data-caption="Tailored Science Driven Field Expedition">
+          <img src="img/Science driven field work/biometrics.jpg" alt="Science driven field work image 14">
+        </button>
+        <button type="button" class="science-gallery-item science-gallery-frame rotate-[-0.6deg]" data-index="14" data-src="img/Science driven field work/capture1.jpg" data-caption="Tailored Science Driven Field Expedition">
+          <img src="img/Science driven field work/capture1.jpg" alt="Science driven field work image 15">
+        </button>
+        <button type="button" class="science-gallery-item science-gallery-frame rotate-[1deg]" data-index="15" data-src="img/Science driven field work/slide staining.jpg" data-caption="Tailored Science Driven Field Expedition">
+          <img src="img/Science driven field work/slide staining.jpg" alt="Science driven field work image 16">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div id="science-lightbox" class="fixed inset-0 z-[120] hidden items-center justify-center bg-black/90 p-4">
+    <button id="science-lightbox-close" type="button" class="absolute top-4 right-4 md:top-6 md:right-8 w-11 h-11 rounded-full bg-white/20 hover:bg-white/30 text-white text-3xl leading-none">&times;</button>
+    <button id="science-lightbox-prev" type="button" class="absolute left-3 md:left-6 w-11 h-11 rounded-full bg-white/20 hover:bg-white/30 text-white text-2xl leading-none">&#10094;</button>
+    <img id="science-lightbox-image" src="" alt="Full display science field image" class="max-w-[96vw] max-h-[90vh] object-contain rounded-lg shadow-2xl">
+    <button id="science-lightbox-next" type="button" class="absolute right-3 md:right-6 w-11 h-11 rounded-full bg-white/20 hover:bg-white/30 text-white text-2xl leading-none">&#10095;</button>
+    <p id="science-lightbox-caption" class="absolute bottom-4 md:bottom-6 text-white text-sm md:text-base bg-black/40 px-3 py-1 rounded-full"></p>
+  </div>
+
   <section id="start-research-expedition" class="py-20 bg-gray-50">
     <div class="max-w-5xl mx-auto px-6">
       <div class="rounded-[2rem] bg-gradient-to-r from-blue-900 to-green-700 p-10 md:p-14 text-white shadow-2xl">
         <div class="grid lg:grid-cols-2 gap-10 items-start">
           <div>
-            <h2 class="text-4xl font-bold">Interested in joining a biological field research expedition?</h2>
+            <h2 class="text-4xl font-bold">Interested in joining Tailored Science Driven Field Expeditions?</h2>
             <p class="mt-5 text-blue-50 leading-relaxed">
               This programme is designed for participants who want structured scientific exposure, practical field
               skills, and a stronger understanding of biodiversity, wildlife health, and ecosystem conservation.
@@ -786,7 +881,7 @@
           <ul class="space-y-3">
             <li><a href="index.html" class="text-gray-600 hover:text-blue-700 transition-colors duration-300">Home</a></li>
             <li><a href="About-Us.html" class="text-gray-600 hover:text-blue-700 transition-colors duration-300">About Us</a></li>
-            <li><a href="Biological-Field-Research-Expeditions.html" class="text-gray-600 hover:text-blue-700 transition-colors duration-300">Biological Field Research</a></li>
+            <li><a href="Biological-Field-Research-Expeditions.html" class="text-gray-600 hover:text-blue-700 transition-colors duration-300">Tailored Science Driven Field Expeditions</a></li>
             <li><a href="Veterinary-Conservation-.html" class="text-gray-600 hover:text-blue-700 transition-colors duration-300">Vet & Conservation</a></li>
             <li><a href="Medical-Expedition-Programs.html" class="text-gray-600 hover:text-blue-700 transition-colors duration-300">Medical Expeditions</a></li>
           </ul>
@@ -831,7 +926,7 @@
     const experienceDetails = {
       'photography-expeditions': {
         title: 'Photography Expeditions',
-        image: 'img/photography.jpeg',
+        image: 'img/home/IMG-20150902-WA0011.jpg',
         description: 'Detour inside national parks for unparalleled wildlife photography opportunities. With support from field experts, participants can work on timing, wildlife behaviour, and ethical photography practices while exploring some of East Africa\'s strongest wildlife destinations.',
         highlights: [
           'Guided wildlife photography sessions inside national parks',
@@ -848,7 +943,7 @@
       },
       'research-opportunities': {
         title: 'Research Opportunities',
-        image: 'img/bio_research_ops.png',
+        image: 'img/Vet science/Research_slide6.jpg',
         description: 'This option enables participants to contribute to active wildlife and conservation research efforts. It is designed for people who want stronger exposure to field science, data collection, and applied conservation medicine in East African landscapes.',
         highlights: [
           'Support field research linked to wildlife conservation and ecosystem health',
@@ -865,7 +960,7 @@
       },
       'community-education': {
         title: 'Community Education',
-        image: 'img/bio_community_edu.png',
+        image: 'img/Vet science/Research_slide7.jpg',
         description: 'Community education experiences focus on sharing practical knowledge about wildlife conservation, animal health, and sustainable coexistence. They help participants understand how local people and conservation work together around shared landscapes.',
         highlights: [
           'Support educational outreach on wildlife conservation and animal health',
@@ -997,6 +1092,66 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      const scienceItems = Array.from(document.querySelectorAll('.science-gallery-item'));
+      const scienceLightbox = document.getElementById('science-lightbox');
+      const scienceLightboxImage = document.getElementById('science-lightbox-image');
+      const scienceLightboxCaption = document.getElementById('science-lightbox-caption');
+      const scienceClose = document.getElementById('science-lightbox-close');
+      const sciencePrev = document.getElementById('science-lightbox-prev');
+      const scienceNext = document.getElementById('science-lightbox-next');
+
+      let scienceIndex = 0;
+
+      function openScienceLightbox(index) {
+        if (!scienceItems.length || !scienceLightbox || !scienceLightboxImage) return;
+        scienceIndex = (index + scienceItems.length) % scienceItems.length;
+        const item = scienceItems[scienceIndex];
+        scienceLightboxImage.src = item.dataset.src || '';
+        scienceLightboxImage.alt = item.dataset.caption || 'Full display science field image';
+        if (scienceLightboxCaption) {
+          scienceLightboxCaption.textContent = item.dataset.caption || '';
+        }
+        scienceLightbox.classList.remove('hidden');
+        scienceLightbox.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeScienceLightbox() {
+        if (!scienceLightbox || !scienceLightboxImage) return;
+        scienceLightbox.classList.add('hidden');
+        scienceLightbox.classList.remove('flex');
+        scienceLightboxImage.src = '';
+        document.body.style.overflow = '';
+      }
+
+      if (scienceItems.length && scienceLightbox && scienceLightboxImage) {
+        scienceItems.forEach((item, index) => {
+          item.addEventListener('click', () => openScienceLightbox(index));
+        });
+
+        if (scienceClose) {
+          scienceClose.addEventListener('click', closeScienceLightbox);
+        }
+        if (sciencePrev) {
+          sciencePrev.addEventListener('click', function (e) {
+            e.stopPropagation();
+            openScienceLightbox(scienceIndex - 1);
+          });
+        }
+        if (scienceNext) {
+          scienceNext.addEventListener('click', function (e) {
+            e.stopPropagation();
+            openScienceLightbox(scienceIndex + 1);
+          });
+        }
+
+        scienceLightbox.addEventListener('click', function (e) {
+          if (e.target === scienceLightbox) {
+            closeScienceLightbox();
+          }
+        });
+      }
+
       const mobileMenuButton = document.getElementById('mobile-menu-button');
       const mobileMenu = document.getElementById('mobile-menu');
       const menuIcon = document.getElementById('menu-icon');
@@ -1071,6 +1226,17 @@
             if (menuIcon) menuIcon.classList.remove('hidden');
             if (closeIcon) closeIcon.classList.add('hidden');
           }
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (!scienceLightbox || scienceLightbox.classList.contains('hidden')) return;
+        if (e.key === 'Escape') {
+          closeScienceLightbox();
+        } else if (e.key === 'ArrowLeft') {
+          openScienceLightbox(scienceIndex - 1);
+        } else if (e.key === 'ArrowRight') {
+          openScienceLightbox(scienceIndex + 1);
         }
       });
     });
