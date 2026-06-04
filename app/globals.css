@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.headline {
+  font-family: 'Fraunces', serif;
+}
+
+.hero-texture {
+  background-image:
+    radial-gradient(circle at top left, rgba(255, 214, 165, 0.35), transparent 55%),
+    radial-gradient(circle at 15% 70%, rgba(46, 139, 87, 0.35), transparent 55%),
+    radial-gradient(circle at 80% 30%, rgba(27, 108, 168, 0.35), transparent 50%);
+}
+
+.hero-grid {
+  background-image: linear-gradient(to right, rgba(15, 23, 42, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.07) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+.floating-card {
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: slide-up 0.9s ease-out forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.15s;
+}
+
+.delay-2 {
+  animation-delay: 0.3s;
+}
+
+.delay-3 {
+  animation-delay: 0.45s;
+}
+
+.trip-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.trip-card:hover {
+  transform: translateY(-6px);
+}
+
+.rounded-button {
+  border-radius: 9999px;
+}
+
+.pulse-ring {
+  position: relative;
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.35);
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 3s ease infinite;
+}
+
+@keyframes slide-up {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Global scrollbar hide utility */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }
+body {
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* Scroll-triggered fade-in helper used by WhyChooseUs */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.scroll-fade.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Destination page motion helpers */
+.motion-reveal {
+  animation: slide-up 0.7s ease-out both;
+}
+
+.motion-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.motion-card:hover {
+  transform: translateY(-6px);
+}
+
+.overlay-fade-in {
+  animation: overlay-fade-in 0.25s ease-out both;
+}
+
+.overlay-pop-in {
+  animation: overlay-pop-in 0.3s ease-out both;
+}
+
+@keyframes overlay-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes overlay-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Light theme overrides */
+html[data-theme="light"] body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] [class*="bg-slate-950"] {
+  background-color: #f8fafc !important;
+}
+
+html[data-theme="light"] [class*="bg-slate-900"] {
+  background-color: #eef2ff !important;
+}
+
+html[data-theme="light"] [class*="text-white"] {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] [class*="text-slate-100"] {
+  color: #1e293b !important;
+}
+
+html[data-theme="light"] [class*="text-slate-200"] {
+  color: #334155 !important;
+}
+
+html[data-theme="light"] [class*="text-slate-300"] {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] [class*="text-slate-400"] {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] [class*="text-slate-500"] {
+  color: #64748b !important;
+}
+
+html[data-theme="light"] [class*="border-white/5"],
+html[data-theme="light"] [class*="border-white/10"],
+html[data-theme="light"] [class*="border-white/15"],
+html[data-theme="light"] [class*="border-white/20"] {
+  border-color: rgba(15, 23, 42, 0.14) !important;
+}
+
+html[data-theme="light"] [class*="bg-white/5"] {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+}
+
+html[data-theme="light"] [class*="bg-white/10"] {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+html[data-theme="light"] .bg-black\/70 {
+  background-color: rgba(15, 23, 42, 0.58) !important;
+}
