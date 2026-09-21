@@ -1,4 +1,9 @@
+node_modules/
+
 /assets/
 /img/
-/uplaods/
 /uploads/
+
+# Ignore all files and folders inside the public directory
+/public/*
+
