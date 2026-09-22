@@ -216,3 +216,79 @@ html[data-theme="light"] [class*="bg-white/10"] {
 html[data-theme="light"] .bg-black\/70 {
   background-color: rgba(15, 23, 42, 0.58) !important;
 }
+
+/* Keep text over dark gallery photography legible in both themes. */
+html[data-theme="light"] .gallery-hero,
+html[data-theme="light"] .gallery-hero [class*="text-white"],
+html[data-theme="light"] .gallery-lightbox,
+html[data-theme="light"] .gallery-lightbox [class*="text-white"] {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .gallery-hero [class*="text-slate-200"] {
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .gallery-hero [class*="bg-white\/10"],
+html[data-theme="light"] .gallery-lightbox [class*="bg-white\/10"] {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="light"] .gallery-hero [class*="border-white"],
+html[data-theme="light"] .gallery-lightbox [class*="border-white"] {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+html[data-theme="light"] .gallery-media [class*="text-white"] {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .gallery-media [class*="text-slate-300"] {
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .gallery-media [class*="border-white"] {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+html[data-theme="light"] .gallery-media [class*="bg-black"] {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+html[data-theme="light"] .immersive-hero,
+html[data-theme="light"] .immersive-hero [class*="text-white"] {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .immersive-hero [class*="text-slate-200"],
+html[data-theme="light"] .immersive-hero [class*="text-slate-300"] {
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .immersive-hero [class*="bg-white\/10"] {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+html[data-theme="light"] .immersive-hero [class*="border-white"] {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+html[data-theme="light"] .immersive-hero [class*="bg-slate-950/"] {
+  background-color: rgba(2, 6, 23, 0.88) !important;
+}
+
+html[data-theme="light"] .gallery-lightbox[class*="bg-slate-950/"] {
+  background-color: rgba(2, 6, 23, 0.95) !important;
+}
+
+html[data-theme="light"] .study-abroad-page > section:not(.immersive-hero) [class*="text-sunset-gold"] {
+  color: #b45309 !important;
+}
+
+html[data-theme="light"] .study-abroad-page > section:not(.immersive-hero) [class*="text-sunset-orange"] {
+  color: #c2410c !important;
+}
+
+html[data-theme="light"] .study-abroad-page .gallery-media [class*="text-sunset-gold"] {
+  color: #ffb830 !important;
+}

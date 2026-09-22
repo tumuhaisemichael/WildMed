@@ -1,446 +1,143 @@
-"use client";
+'use client';
 
-import React, { useEffect } from 'react';
 import Link from 'next/link';
+import { FormEvent, useEffect, useState } from 'react';
 
-export default function StudyAboardPage() {
+const heroImage =
+  'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=2000&q=85';
+
+const focusAreas = [
+  { icon: 'ri-heart-pulse-line', title: 'Human health', text: 'Public health systems, clinical exposure, nutrition, and community health.' },
+  { icon: 'ri-bear-smile-line', title: 'Animal health', text: 'Veterinary public health, wildlife management, and diagnostic laboratories.' },
+  { icon: 'ri-leaf-line', title: 'Environment', text: 'Ecosystem health, food systems, conservation, and the human–wildlife interface.' },
+];
+
+const gallery = [
+  heroImage,
+  heroImage,
+  heroImage,
+  heroImage,
+  heroImage,
+  heroImage,
+];
+
+const disciplines = [
+  'Biological Sciences', 'Environmental Sciences', 'Medical Sciences',
+  'Veterinary Sciences', 'Pre-Medicine', 'Pre-Veterinary Medicine',
+  'Biotechnology & Biolab Sciences', 'Public Health', 'Animal Production',
+  'Wildlife Sciences', 'Aquatic Sciences', 'Food Sciences',
+];
+
+const prices = [
+  { duration: '14 days', small: '$3,600', medium: '$3,200', large: '$2,800' },
+  { duration: '21 days', small: '$4,200', medium: '$3,800', large: '$3,400' },
+  { duration: '28 days', small: '$4,600', medium: '$4,000', large: '$3,600' },
+  { duration: '35 days', small: '$4,600', medium: '$4,000', large: '$3,600' },
+];
+
+const partners = [
+  'Makerere University COVAB', 'Uganda Wildlife Authority', 'Gorilla Doctors',
+  'Uganda Virus Research Institute', 'Central Public Health Laboratories',
+  'Uganda Wildlife Conservation Education Centre', 'Kiruddu Hospital',
+  'Makerere University Biological Field Station', 'Ndere Cultural Centre',
+];
+
+export default function StudyAbroadPage() {
+  const [applicationOpen, setApplicationOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (!applicationOpen && !selectedImage) return;
+    const close = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setApplicationOpen(false);
+        setSelectedImage(null);
+      }
+    };
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', close);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', close);
+    };
+  }, [applicationOpen, selectedImage]);
+
+  const submitApplication = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
-    <div className="bg-white">
-      
-  {/*  Header  */}
-  
-
-
-
-
-
-
-
-  <section className="relative h-screen flex items-center justify-center overflow-hidden">
-    <div className="absolute inset-0 parallax-bg bg-cover bg-center" style={{"backgroundImage":"url('https://readdy.ai/api/search-image?query=International%20students%20in%20Uganda%20studying%20One%20Health%20program%2C%20group%20of%20students%20in%20field%20training%2C%20outdoor%20classroom%20with%20savanna%20landscape%2C%20instructors%20teaching%20about%20human-animal-environment%20interface%2C%20cultural%20diversity%2C%20golden%20hour%20lighting%2C%20acacia%20trees%20in%20background%2C%20professional%20study%20abroad%20atmosphere&width=1920&height=1080&seq=study-abroad-hero&orientation=landscape')"}}>
-    </div>
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-800/60 to-transparent"></div>
-    <div className="relative z-10 w-full max-w-6xl mx-auto px-6">
-      <div className="flex flex-col items-center text-center space-y-8">
-        <div className="mb-4">
-          <span className="inline-block px-4 py-2 bg-green-600/30 backdrop-blur-sm rounded-full text-green-300 text-sm font-medium tracking-wider border border-green-400/30">
-            STUDY ABROAD
-          </span>
-        </div>
-        <h1 className="text-5xl sm:text-6xl font-bold leading-tight">
-          <span className="block bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-blue-300">
-            Study Abroad
-          </span>
-          <span className="block text-white mt-4">Field Rotations</span>
-        </h1>
-        <p className="text-xl md:text-2xl max-w-2xl mx-auto text-gray-200 font-light">
-          Explore health and cultural diversity in Uganda and East Africa
-        </p>
-        <div className="grid grid-cols-2 gap-6 w-full max-w-md mt-8 mb-8">
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-            <div className="text-3xl font-bold text-green-300">50+</div>
-            <div className="text-sm">Annual Participants</div>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-            <div className="text-3xl font-bold text-green-300">10+</div>
-            <div className="text-sm">Partner Institutions</div>
+    <main className="study-abroad-page min-h-screen overflow-hidden bg-slate-950 text-white">
+      <section className="immersive-hero relative isolate min-h-[92vh] overflow-hidden">
+        <div className="absolute inset-0 -z-20 bg-cover bg-center" style={{ backgroundImage: 'url("' + heroImage + '")' }} />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/20" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/50" />
+        <div className="mx-auto flex min-h-[92vh] max-w-7xl items-end px-6 pb-20 pt-40 sm:px-8 lg:pb-28">
+          <div className="max-w-4xl">
+            <p className="mb-6 flex items-center gap-3 text-xs font-black uppercase tracking-[0.32em] text-sunset-gold"><span className="h-px w-10 bg-sunset-gold" />One Health · East Africa</p>
+            <h1 className="headline text-5xl font-bold leading-[0.95] text-white sm:text-7xl lg:text-8xl">Study beyond<br /><span className="italic text-sunset-gold">the classroom.</span></h1>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200">Immersive field rotations connecting human, animal, and environmental health across Uganda and East Africa.</p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <button onClick={() => setApplicationOpen(true)} className="bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Apply for the programme</button>
+              <a href="#programme" className="border border-white/25 bg-white/10 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:border-sunset-gold hover:text-sunset-gold">Explore the experience</a>
+            </div>
+            <dl className="mt-12 flex flex-wrap gap-8 border-t border-white/15 pt-7">
+              <div><dt className="text-3xl font-black text-sunset-gold">50+</dt><dd className="text-xs uppercase tracking-widest text-slate-300">Annual participants</dd></div>
+              <div><dt className="text-3xl font-black text-sunset-gold">10+</dt><dd className="text-xs uppercase tracking-widest text-slate-300">Partner institutions</dd></div>
+              <div><dt className="text-3xl font-black text-sunset-gold">14–35</dt><dd className="text-xs uppercase tracking-widest text-slate-300">Programme days</dd></div>
+            </dl>
           </div>
         </div>
-        <button id="applyNowBtn" className="bg-gradient-to-r from-green-600 to-green-700 text-white px-10 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transition-all">
-          Apply Now
-        </button>
-      </div>
-    </div>
-    <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/40 to-transparent"></div>
-  </section>
+      </section>
 
-  <section className="py-16 bg-white">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">One Health Annual Study Abroad Program</h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">Immersive learning experiences in Uganda and East Africa</p>
-      </div>
-      <div className="program-card bg-white rounded-xl shadow-lg p-8">
-        <h3 className="text-2xl font-semibold text-gray-900 mb-6">Program Description</h3>
-        <p className="text-gray-600 mb-4">This program exposes students to a One Health approach in a tropical and
-          developing country setting, focusing on:</p>
-        <ul className="text-gray-600 mb-4 space-y-2">
-          <li className="flex items-start">
-            <i className="ri-check-line text-secondary mr-2 mt-1"></i>
-            Human public health systems and animal health
-          </li>
-          <li className="flex items-start">
-            <i className="ri-check-line text-secondary mr-2 mt-1"></i>
-            Wildlife health and management
-          </li>
-          <li className="flex items-start">
-            <i className="ri-check-line text-secondary mr-2 mt-1"></i>
-            Veterinary public health and diagnostic laboratories
-          </li>
-          <li className="flex items-start">
-            <i className="ri-check-line text-secondary mr-2 mt-1"></i>
-            Food science, nutrition, and environmental conservation
-          </li>
-          <li className="flex items-start">
-            <i className="ri-check-line text-secondary mr-2 mt-1"></i>
-            Cultural diversity and natural ecosystems
-          </li>
-        </ul>
-        <p className="text-gray-600 mb-4">Running from June to July annually, with customizable schedules for winter,
-          spring, or autumn programs. International students train alongside local Ugandan and East African students in
-          settings emphasizing the Human-Animal-Environment interface.</p>
-        <p className="text-gray-600 mb-4">Coordinated by Expert Expeditions, Africa, Muse Safaris, Muse Wildlife Industry
-          (MWI), and the Department of Wildlife and Aquatic Animal Resources at Makerere University’s College of
-          Veterinary Medicine, Animal Resources, and Biosecurity (COVAB).</p>
-      </div>
-    </div>
-  </section>
-
-  <section className="py-16 bg-gray-50">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">Program Gallery</h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">Discover the experiences awaiting you</p>
-      </div>
-
-      <div className="gallery-grid bg-white rounded-2xl shadow-lg p-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/*  Image 1  */}
-          <div className="gallery-item group cursor-pointer transform transition-transform duration-300 hover:scale-105">
-            <div className="relative overflow-hidden rounded-lg">
-              <img src="assets/Study Abroad Program/bleed.jpg" alt="Study Abroad Image 1" className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/*  Image 2  */}
-          <div className="gallery-item group cursor-pointer transform transition-transform duration-300 hover:scale-105">
-            <div className="relative overflow-hidden rounded-lg">
-              <img src="assets/Study Abroad Program/IMG-20240629-WA0043.jpg" alt="Study Abroad Image 2" className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/*  Image 3  */}
-          <div className="gallery-item group cursor-pointer transform transition-transform duration-300 hover:scale-105">
-            <div className="relative overflow-hidden rounded-lg">
-              <img src="assets/Study Abroad Program/move13.jpeg" alt="Study Abroad Image 3" className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/*  Image 4  */}
-          <div className="gallery-item group cursor-pointer transform transition-transform duration-300 hover:scale-105">
-            <div className="relative overflow-hidden rounded-lg">
-              <img src="assets/Study Abroad Program/IMG-20240630-WA0027.jpg" alt="Study Abroad Image 4" className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/*  Image 5  */}
-          <div className="gallery-item group cursor-pointer transform transition-transform duration-300 hover:scale-105">
-            <div className="relative overflow-hidden rounded-lg">
-              <img src="assets/Study Abroad Program/Nshaara1.jpg" alt="Study Abroad Image 5" className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/*  Image 6  */}
-          <div className="gallery-item group cursor-pointer transform transition-transform duration-300 hover:scale-105">
-            <div className="relative overflow-hidden rounded-lg">
-              <img src="assets/Study Abroad Program/PHOTO-2024-05-14-22-08-49.jpg" alt="Study Abroad Image 6" className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                  </svg>
-                </div>
-              </div>
+      <section id="programme" className="px-6 py-20 sm:px-8 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+            <div><p className="text-xs font-black uppercase tracking-[0.3em] text-sunset-orange">The programme</p><h2 className="headline mt-4 text-4xl font-bold sm:text-5xl">One world.<br />One shared health.</h2><p className="mt-6 leading-7 text-slate-400">Train alongside Ugandan and international students in settings that reveal how human wellbeing, animal health, and the environment are inseparable.</p><p className="mt-4 leading-7 text-slate-400">The annual programme runs from June to July, with flexible winter, spring, and autumn schedules available for university groups.</p></div>
+            <div className="grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-3">
+              {focusAreas.map((area) => <article key={area.title} className="bg-slate-900 p-7 sm:p-8"><i className={area.icon + ' text-3xl text-sunset-gold'} /><h3 className="headline mt-8 text-2xl font-bold">{area.title}</h3><p className="mt-4 text-sm leading-6 text-slate-400">{area.text}</p></article>)}
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    {/*  Lightbox Modal  */}
-    <div id="lightbox" className="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center z-50 p-4">
-      <div className="max-w-4xl w-full max-h-full relative">
-        <span className="close-lightbox absolute -top-12 right-0 text-4xl text-white cursor-pointer hover:text-gray-300 z-10">×</span>
-        <div className="lightbox-content">
-          <img id="lightbox-img" className="w-full h-auto max-h-[80vh] object-contain rounded-lg" src="" alt="" />
-          <div className="text-white text-center mt-4 text-xl" id="lightbox-caption"></div>
-        </div>
-        <button className="lightbox-arrow prev-arrow absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-4xl bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-70">◀</button>
-        <button className="lightbox-arrow next-arrow absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-4xl bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-70">▶</button>
-      </div>
-    </div>
-  </section>
-
-  
-
-  
-
-  <section className="py-16 bg-white">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">Participating Entities</h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">Collaborating institutions and organizations</p>
-      </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div className="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-          <ul className="text-sm text-gray-700 space-y-1">
-            <li>College of Health Sciences (CHS)</li>
-            <li>Uganda Wildlife Authority (UWA)</li>
-            <li>College of Agricultural and Environmental Sciences (CAES)</li>
-            <li>Makerere University Biological Field Station (MUBFS)</li>
-            <li>Uganda Wildlife Conservation Education Centre (UWEC)</li>
-          </ul>
-        </div>
-        <div className="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-          <ul className="text-sm text-gray-700 space-y-1">
-            <li>African Union of Conservationists (AUC)</li>
-            <li>Reform Africa (RA)</li>
-            <li>JESA Farm</li>
-            <li>The Uganda Society for the Protection and Care of Animals (USPCA)</li>
-            <li>Dr. Naluyima's One Acre Farm</li>
-          </ul>
-        </div>
-        <div className="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-          <ul className="text-sm text-gray-700 space-y-1">
-            <li>Victoria Treasures Fish Farm</li>
-            <li>Central Public Health Laboratories (CPHLs)</li>
-            <li>Kirudu Hospital, Kampala</li>
-            <li>National Animal Diseases and Epidemiology Centre (NADDEC)</li>
-            <li>Uganda Virus Research Institute (UVRI)</li>
-          </ul>
-        </div>
-        <div className="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-          <ul className="text-sm text-gray-700 space-y-1">
-            <li>National Animal Genetics Resources and Data Bank (NAGR&DB)</li>
-            <li>Gorilla Doctors</li>
-            <li>Ndere Cultural Centre</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section className="py-16 bg-gray-50">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">Eligible Disciplines</h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">Fields of study for program enrollment</p>
-      </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div className="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-          <ul className="text-sm text-gray-700 space-y-1">
-            <li>Biological Sciences</li>
-            <li>Environmental Sciences</li>
-            <li>Medical Sciences</li>
-            <li>Veterinary Sciences</li>
-            <li>Pre-Meds</li>
-          </ul>
-        </div>
-        <div className="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-          <ul className="text-sm text-gray-700 space-y-1">
-            <li>Pre-Vets</li>
-            <li>Veterinary Medicine</li>
-            <li>Biotechnology and Biolab Sciences</li>
-            <li>Public Health</li>
-          </ul>
-        </div>
-        <div className="specialty-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-          <ul className="text-sm text-gray-700 space-y-1">
-            <li>Animal Production</li>
-            <li>Wildlife Sciences</li>
-            <li>Aquatic Sciences</li>
-            <li>Food Sciences</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section className="py-16 bg-white">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">Program Costs</h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">Pricing details for the One Health Study Abroad Program</p>
-      </div>
-      <div className="bg-gray-50 rounded-xl p-8">
-        <table className="w-full border-collapse">
-          <thead>
-            <tr>
-              <th className="border border-gray-300 p-4 bg-secondary text-white">Program Duration</th>
-              <th className="border border-gray-300 p-4 bg-secondary text-white">1-4 Participants</th>
-              <th className="border border-gray-300 p-4 bg-secondary text-white">4-6 Participants</th>
-              <th className="border border-gray-300 p-4 bg-secondary text-white">≥7 Participants</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="border border-gray-300 p-4 text-center">14 days</td>
-              <td className="border border-gray-300 p-4 text-center">$3,600 per head</td>
-              <td className="border border-gray-300 p-4 text-center">$3,200 per head</td>
-              <td className="border border-gray-300 p-4 text-center">$2,800 per head</td>
-            </tr>
-            <tr>
-              <td className="border border-gray-300 p-4 text-center">21 days</td>
-              <td className="border border-gray-300 p-4 text-center">$4,200</td>
-              <td className="border border-gray-300 p-4 text-center">$3,800</td>
-              <td className="border border-gray-300 p-4 text-center">$3,400</td>
-            </tr>
-            <tr>
-              <td className="border border-gray-300 p-4 text-center">28 days</td>
-              <td className="border border-gray-300 p-4 text-center">$4,600</td>
-              <td className="border border-gray-300 p-4 text-center">$4,000</td>
-              <td className="border border-gray-300 p-4 text-center">$3,600</td>
-            </tr>
-            <tr>
-              <td className="border border-gray-300 p-4 text-center">35 days</td>
-              <td className="border border-gray-300 p-4 text-center">$4,600</td>
-              <td className="border border-gray-300 p-4 text-center">$4,000</td>
-              <td className="border border-gray-300 p-4 text-center">$3,600</td>
-            </tr>
-            <tr>
-              <td colSpan={4} className="border border-gray-300 p-4 text-left">
-                <strong>Includes:</strong>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>Airport pickup and drop off</li>
-                  <li>Local transport</li>
-                  <li>Accommodation</li>
-                  <li>Meals (Breakfast, lunch, and supper)</li>
-                  <li>Payment of field training personnel</li>
-                  <li>Entrance fees to facilities</li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td colSpan={4} className="border border-gray-300 p-4 text-left">
-                <strong>Excludes:</strong>
-                <ul className="text-sm text-gray-700 space-y-1">
-                  <li>Any private expenses</li>
-                  <li>Medical insurance</li>
-                  <li>Air ticket</li>
-                  <li>Alcohol</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <p className="text-gray-600 mt-4">Note: For participants wishing to attend for less than 2 weeks, a budget quote can
-          be provided based on the number of activities accommodated within the chosen timeframe.</p>
-      </div>
-    </div>
-  </section>
-
-
-
-
-  {/*  Modal for Booking Form  */}
-  <div id="bookingModal" className="fixed inset-0 z-50 hidden w-full h-full bg-black bg-opacity-80 overflow-y-auto">
-    <div className="relative w-full min-h-screen flex items-center justify-center px-4 py-12">
-      <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl relative modal-fade-in">
-        <button className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-2xl font-bold transition-colors" aria-label="Close Modal">×</button>
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">One Health Study Abroad Application</h2>
-
-        {/*  Success Message (initially hidden)  */}
-        <div id="successMessage" className="hidden text-center py-8 modal-fade-in">
-          <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i className="ri-checkbox-circle-fill text-5xl text-green-600"></i>
+      <section className="bg-slate-900 px-6 py-20 sm:px-8 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><p className="text-xs font-black uppercase tracking-[0.3em] text-sunset-gold">Life in the field</p><h2 className="headline mt-4 text-4xl font-bold sm:text-5xl">Learning that stays with you</h2></div><p className="max-w-md leading-7 text-slate-400">Clinical visits, conservation fieldwork, community learning, and cultural exchange—captured by programme participants.</p></div>
+          <div className="grid auto-rows-[260px] gap-4 md:grid-cols-3">
+            {gallery.map((image, index) => (
+              <button key={index} onClick={() => setSelectedImage(image)} className={'gallery-media group relative overflow-hidden text-left ' + (index === 0 ? 'md:col-span-2 md:row-span-2' : index === 3 ? 'md:row-span-2' : '')}>
+                <img src={image} alt={'Study Abroad field experience ' + (index + 1)} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-6"><p className="text-[10px] font-black uppercase tracking-[0.24em] text-sunset-gold">Field rotation</p><p className="headline mt-2 text-xl font-bold text-white">{index % 2 ? 'Learning across disciplines' : 'One Health in practice'}</p></div>
+              </button>
+            ))}
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Application Sent!</h3>
-          <p className="text-gray-600 mb-8">Thank you for your interest in the One Health Study Abroad program. We've
-            received your details and our team will contact you via email within 24 hours.</p>
-          <button className="bg-primary hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300">
-            Close
-          </button>
         </div>
+      </section>
 
-        <form id="studyAbroadForm" className="space-y-6">
-          <input type="hidden" name="program" defaultValue="One Health Study Abroad Program" />
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
-            <input type="text" name="name" required placeholder="Enter your full name" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary text-black" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-            <input type="email" name="email" required placeholder="Enter your email" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary text-black" />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">University / Institution</label>
-            <input type="text" name="institution" required placeholder="Enter your university" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary text-black" />
-          </div>
-          <div className="relative">
-            <label className="block text-sm font-medium text-gray-700 mb-2">Preferred Start Date</label>
-            <input type="text" id="travelDate" name="date" required placeholder="Select start date" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary pl-10 text-black" />
-            <span className="absolute left-3 top-10 text-gray-400">
-              <i className="ri-calendar-line"></i>
-            </span>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Program Duration</label>
-            <select name="duration" required className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary text-black">
-              <option value="14 days">14 Days</option>
-              <option value="21 days">21 Days</option>
-              <option value="28 days">28 Days</option>
-              <option value="35 days">35 Days</option>
-            </select>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Special Interests / Major</label>
-            <textarea name="interests" rows={3} placeholder="e.g., Veterinary, Medical, Wildlife Conservation, Public Health" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary text-black"></textarea>
-          </div>
-          <div className="text-center">
-            <button type="submit" className="bg-secondary hover:bg-green-700 text-white px-6 py-3 rounded-lg text-lg font-semibold transition-colors duration-300 w-full">Submit
-              Application Request</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+      <section className="px-6 py-20 sm:px-8 lg:py-28">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2">
+          <div><p className="text-xs font-black uppercase tracking-[0.3em] text-sunset-orange">Who can join</p><h2 className="headline mt-4 text-4xl font-bold">Built for curious minds</h2><div className="mt-8 grid gap-3 sm:grid-cols-2">{disciplines.map((discipline) => <div key={discipline} className="flex items-center gap-3 border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-300"><i className="ri-check-line text-sunset-gold" />{discipline}</div>)}</div></div>
+          <div><p className="text-xs font-black uppercase tracking-[0.3em] text-sunset-orange">Our network</p><h2 className="headline mt-4 text-4xl font-bold">Learn with institutions shaping the region</h2><div className="mt-8 divide-y divide-white/10 border-y border-white/10">{partners.map((partner, index) => <div key={partner} className="flex items-center gap-4 py-4"><span className="text-xs font-black text-sunset-gold">{String(index + 1).padStart(2, '0')}</span><span className="text-sm text-slate-300">{partner}</span></div>)}</div></div>
+        </div>
+      </section>
 
-  
-  
+      <section className="bg-slate-900 px-6 py-20 sm:px-8 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10"><p className="text-xs font-black uppercase tracking-[0.3em] text-sunset-gold">Programme investment</p><h2 className="headline mt-4 text-4xl font-bold sm:text-5xl">Choose your field rotation</h2><p className="mt-4 max-w-2xl text-slate-400">Per-person pricing decreases for larger cohorts. Custom quotations are available for programmes shorter than two weeks.</p></div>
+          <div className="overflow-x-auto border border-white/10"><table className="w-full min-w-[720px] text-left"><thead className="bg-sunset-gold text-slate-950"><tr><th className="p-5">Duration</th><th className="p-5">1–4 participants</th><th className="p-5">4–6 participants</th><th className="p-5">7+ participants</th></tr></thead><tbody className="divide-y divide-white/10">{prices.map((price) => <tr key={price.duration} className="transition hover:bg-white/5"><th className="p-5 text-white">{price.duration}</th><td className="p-5 text-slate-300">{price.small}</td><td className="p-5 text-slate-300">{price.medium}</td><td className="p-5 font-bold text-sunset-gold">{price.large}</td></tr>)}</tbody></table></div>
+          <div className="mt-6 grid gap-4 md:grid-cols-2"><div className="border border-white/10 bg-white/5 p-6"><p className="font-bold text-white">Included</p><p className="mt-3 text-sm leading-6 text-slate-400">Airport transfers, local transport, accommodation, three meals daily, field personnel, and facility entrance fees.</p></div><div className="border border-white/10 bg-white/5 p-6"><p className="font-bold text-white">Not included</p><p className="mt-3 text-sm leading-6 text-slate-400">International flights, medical insurance, alcohol, and personal expenses.</p></div></div>
+        </div>
+      </section>
 
+      <section className="immersive-hero relative isolate px-6 py-24 text-center"><div className="absolute inset-0 -z-20 bg-cover bg-center" style={{ backgroundImage: 'url("' + heroImage + '")' }} /><div className="absolute inset-0 -z-10 bg-slate-950/90" /><div className="mx-auto max-w-3xl"><p className="text-xs font-black uppercase tracking-[0.3em] text-sunset-gold">Applications open</p><h2 className="headline mt-4 text-4xl font-bold text-white sm:text-6xl">Take your education into the field</h2><p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-300">Build a programme around your discipline, academic calendar, and learning objectives.</p><button onClick={() => setApplicationOpen(true)} className="mt-9 bg-sunset-gold px-9 py-4 font-black text-slate-950 transition hover:bg-white">Start your application</button></div></section>
 
+      {selectedImage && <div className="gallery-lightbox fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/95 p-5 backdrop-blur-xl" onClick={() => setSelectedImage(null)} role="dialog" aria-modal="true"><button onClick={() => setSelectedImage(null)} className="absolute right-5 top-5 text-3xl text-white" aria-label="Close image">×</button><img src={selectedImage} alt="Expanded Study Abroad field experience" className="max-h-[85vh] max-w-full object-contain" onClick={(event) => event.stopPropagation()} /></div>}
 
-
-
-
-
-
-
-    </div>
+      {applicationOpen && <div className="fixed inset-0 z-[100] overflow-y-auto bg-slate-950/90 p-5 backdrop-blur-xl" role="dialog" aria-modal="true" onClick={() => setApplicationOpen(false)}><div className="mx-auto my-10 max-w-xl bg-[#fff7e8] p-7 text-slate-900 shadow-2xl sm:p-10" onClick={(event) => event.stopPropagation()}><div className="flex items-start justify-between gap-5"><div><p className="text-xs font-black uppercase tracking-[0.25em] text-orange-700">One Health programme</p><h2 className="headline mt-2 text-3xl font-bold">Begin your application</h2></div><button onClick={() => setApplicationOpen(false)} className="text-3xl" aria-label="Close application">×</button></div>{submitted ? <div className="py-14 text-center"><i className="ri-checkbox-circle-fill text-6xl text-secondary" /><h3 className="headline mt-5 text-3xl font-bold">Application received</h3><p className="mt-3 text-slate-600">Our team will contact you with the next steps.</p><button onClick={() => { setApplicationOpen(false); setSubmitted(false); }} className="mt-7 bg-slate-950 px-7 py-3 font-bold text-white">Close</button></div> : <form onSubmit={submitApplication} className="mt-8 grid gap-5 sm:grid-cols-2"><label className="text-sm text-slate-600">Full name<input required name="name" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600">Email address<input required type="email" name="email" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600 sm:col-span-2">University or institution<input required name="institution" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600">Preferred start date<input required type="date" name="date" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600">Duration<select name="duration" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange">{prices.map((price) => <option key={price.duration}>{price.duration}</option>)}</select></label><label className="text-sm text-slate-600 sm:col-span-2">Special interests<textarea name="interests" rows={3} className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><button type="submit" className="bg-slate-950 px-7 py-4 font-black text-white transition hover:bg-sunset-orange sm:col-span-2">Submit application request</button></form>}</div></div>}
+    </main>
   );
 }

@@ -117,7 +117,6 @@ const Header = () => {
       ],
     },
     { name: 'Study Abroad', href: '/Study-Aboard' },
-    { name: 'Course', href: '/Course' },
     {
       name: 'Gallery',
       href: '/gallery',
