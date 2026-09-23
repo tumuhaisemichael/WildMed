@@ -292,3 +292,347 @@ html[data-theme="light"] .study-abroad-page > section:not(.immersive-hero) [clas
 html[data-theme="light"] .study-abroad-page .gallery-media [class*="text-sunset-gold"] {
   color: #ffb830 !important;
 }
+
+html[data-theme="light"] .professional-expeditions-page > section:not(.immersive-hero) [class*="text-sunset-gold"] {
+  color: #b45309 !important;
+}
+
+html[data-theme="light"] .professional-expeditions-page > section:not(.immersive-hero) [class*="text-sunset-orange"] {
+  color: #c2410c !important;
+}
+
+html[data-theme="light"] .professional-expeditions-page .gallery-media [class*="text-sunset-gold"] {
+  color: #ffb830 !important;
+}
+
+html[data-theme="light"] .professional-expeditions-page .professional-table-head {
+  background-color: #0f172a !important;
+  color: #fff7e8 !important;
+}
+
+html[data-theme="light"] .professional-detail-page > section:not(.immersive-hero) [class*="text-sunset-gold"] {
+  color: #b45309 !important;
+}
+
+html[data-theme="light"] .professional-detail-page > section:not(.immersive-hero) [class*="text-sunset-orange"] {
+  color: #c2410c !important;
+}
+
+html[data-theme="light"] .professional-detail-page .gallery-media [class*="text-sunset-gold"],
+html[data-theme="light"] .professional-detail-page .gallery-media [class*="text-white"] {
+  color: #ffffff !important;
+}
+
+/* Full-content professional programme pages */
+.professional-content-page {
+  --programme-accent: #ffb830;
+  --programme-accent-soft: rgba(255, 184, 48, 0.13);
+}
+
+.science-program-page {
+  --programme-accent: #22c55e;
+  --programme-accent-soft: rgba(34, 197, 94, 0.12);
+}
+
+.veterinary-program-page {
+  --programme-accent: #14b8a6;
+  --programme-accent-soft: rgba(20, 184, 166, 0.12);
+}
+
+.medical-program-page {
+  --programme-accent: #f97316;
+  --programme-accent-soft: rgba(249, 115, 22, 0.12);
+}
+
+.professional-content-page .professional-content-hero {
+  min-height: 88vh;
+}
+
+.professional-content-page .professional-content-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.16;
+  background-image: linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.professional-content-page h1,
+.professional-content-page h2,
+.professional-content-page h3 {
+  font-family: 'Fraunces', serif;
+  letter-spacing: -0.02em;
+}
+
+.professional-content-page > section:not(.professional-content-hero) {
+  position: relative;
+  overflow: hidden;
+}
+
+.professional-content-page > section:not(.professional-content-hero)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(80rem, calc(100% - 3rem));
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, var(--programme-accent), transparent);
+  opacity: 0.25;
+}
+
+.professional-content-page .program-card,
+.professional-content-page .specialty-card {
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.professional-content-page .program-card:hover,
+.professional-content-page .specialty-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--programme-accent);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
+}
+
+.professional-content-page section a,
+.professional-content-page section button {
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.professional-content-page section a:hover,
+.professional-content-page section button:hover {
+  transform: translateY(-2px);
+}
+
+.professional-content-page table {
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.professional-content-page input,
+.professional-content-page select,
+.professional-content-page textarea {
+  border-radius: 0.75rem;
+  background: rgba(255,255,255,0.88);
+}
+
+html[data-theme="light"] .professional-content-page .professional-content-hero,
+html[data-theme="light"] .professional-content-page .professional-content-hero [class*="text-white"] {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .professional-content-page .professional-content-hero [class*="text-slate-100"],
+html[data-theme="light"] .professional-content-page .professional-content-hero [class*="text-slate-200"] {
+  color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .professional-content-page [class*="bg-slate-950"][class*="text-white"],
+html[data-theme="light"] .professional-content-page [class*="bg-blue-900"][class*="text-white"] {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+}
+
+/* Dark editorial redesign while retaining all original programme content. */
+.professional-content-page {
+  background: #020617 !important;
+  color: #f8fafc;
+}
+
+.professional-content-page > section:not(.professional-content-hero) {
+  background: #07111f !important;
+  color: #f8fafc;
+  padding-top: 6.5rem;
+  padding-bottom: 6.5rem;
+}
+
+.professional-content-page > section:not(.professional-content-hero):nth-of-type(odd) {
+  background: #0f172a !important;
+}
+
+.professional-content-page > section:not(.professional-content-hero) h2,
+.professional-content-page > section:not(.professional-content-hero) h3,
+.professional-content-page > section:not(.professional-content-hero) h4,
+.professional-content-page > section:not(.professional-content-hero) [class*="text-gray-900"],
+.professional-content-page > section:not(.professional-content-hero) [class*="text-slate-900"] {
+  color: #f8fafc !important;
+}
+
+.professional-content-page > section:not(.professional-content-hero) [class*="text-gray-600"],
+.professional-content-page > section:not(.professional-content-hero) [class*="text-gray-700"],
+.professional-content-page > section:not(.professional-content-hero) [class*="text-slate-600"],
+.professional-content-page > section:not(.professional-content-hero) [class*="text-slate-700"] {
+  color: #94a3b8 !important;
+}
+
+.professional-content-page > section:not(.professional-content-hero) [class*="bg-white"],
+.professional-content-page > section:not(.professional-content-hero) [class*="bg-gray-50"],
+.professional-content-page > section:not(.professional-content-hero) [class*="bg-gray-100"],
+.professional-content-page > section:not(.professional-content-hero) [class*="bg-emerald-50"],
+.professional-content-page > section:not(.professional-content-hero) [class*="bg-blue-50"] {
+  background-color: rgba(15, 23, 42, 0.88) !important;
+}
+
+.professional-content-page > section:not(.professional-content-hero) .program-card,
+.professional-content-page > section:not(.professional-content-hero) .specialty-card,
+.professional-content-page > section:not(.professional-content-hero) [class*="shadow-lg"],
+.professional-content-page > section:not(.professional-content-hero) [class*="shadow-xl"] {
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(15, 23, 42, 0.92) !important;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.28) !important;
+}
+
+.professional-content-page > section:not(.professional-content-hero) .program-card:hover,
+.professional-content-page > section:not(.professional-content-hero) .specialty-card:hover {
+  border-color: var(--programme-accent) !important;
+  box-shadow: 0 28px 70px var(--programme-accent-soft) !important;
+}
+
+.professional-content-page > section:not(.professional-content-hero) [class*="bg-secondary"],
+.professional-content-page > section:not(.professional-content-hero) [class*="bg-primary"] {
+  background-color: var(--programme-accent) !important;
+}
+
+.professional-content-page > section:not(.professional-content-hero) [class*="text-green-300"],
+.professional-content-page > section:not(.professional-content-hero) [class*="text-green-600"],
+.professional-content-page > section:not(.professional-content-hero) [class*="text-green-700"],
+.professional-content-page > section:not(.professional-content-hero) [class*="text-blue-700"],
+.professional-content-page > section:not(.professional-content-hero) [class*="text-primary"],
+.professional-content-page > section:not(.professional-content-hero) [class*="text-secondary"] {
+  color: var(--programme-accent) !important;
+}
+
+.professional-content-page > section:not(.professional-content-hero) input,
+.professional-content-page > section:not(.professional-content-hero) select,
+.professional-content-page > section:not(.professional-content-hero) textarea {
+  border: 1px solid rgba(148, 163, 184, 0.35) !important;
+  background: rgba(2, 6, 23, 0.72) !important;
+  color: #f8fafc !important;
+  padding: 0.9rem 1rem;
+}
+
+.professional-content-page > section:not(.professional-content-hero) input::placeholder,
+.professional-content-page > section:not(.professional-content-hero) textarea::placeholder {
+  color: #64748b;
+}
+
+.professional-content-page > section:not(.professional-content-hero) label {
+  color: #cbd5e1 !important;
+}
+
+.professional-content-page > section:not(.professional-content-hero) table {
+  border: 1px solid rgba(255,255,255,.1);
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.professional-content-page > section:not(.professional-content-hero) th,
+.professional-content-page > section:not(.professional-content-hero) td {
+  border-color: rgba(255,255,255,.1) !important;
+}
+
+.professional-content-page > section:not(.professional-content-hero) img {
+  transition: transform 0.7s ease, filter 0.4s ease;
+}
+
+.professional-content-page > section:not(.professional-content-hero) button:hover img,
+.professional-content-page > section:not(.professional-content-hero) .group:hover img {
+  transform: scale(1.045);
+}
+
+.science-program-page > section:not(.professional-content-hero) h2::after,
+.veterinary-program-page > section:not(.professional-content-hero) h2::after,
+.medical-program-page > section:not(.professional-content-hero) h2::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin-top: 1rem;
+  border-radius: 999px;
+  background: var(--programme-accent);
+}
+
+html[data-theme="light"] .professional-content-page {
+  background: #f8fafc !important;
+  color: #0f172a;
+}
+
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero) {
+  background: #f8fafc !important;
+  color: #0f172a;
+}
+
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero):nth-of-type(odd) {
+  background: #eef2f7 !important;
+}
+
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero) h2,
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero) h3,
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero) h4,
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero) [class*="text-gray-900"],
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero) [class*="text-slate-900"] {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero) [class*="bg-white"],
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero) [class*="bg-gray"],
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero) .program-card,
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero) .specialty-card,
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero) [class*="shadow-lg"],
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero) [class*="shadow-xl"] {
+  background-color: #ffffff !important;
+  color: #0f172a;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero) input,
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero) select,
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero) textarea {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(15, 23, 42, 0.2) !important;
+}
+
+html[data-theme="light"] .professional-content-page > section:not(.professional-content-hero) label {
+  color: #334155 !important;
+}
+
+html[data-theme="light"] .biological-research-page > section:not(.immersive-hero) [class*="text-sunset-gold"] {
+  color: #b45309 !important;
+}
+
+html[data-theme="light"] .biological-research-page > section:not(.immersive-hero) [class*="text-sunset-orange"] {
+  color: #c2410c !important;
+}
+
+html[data-theme="light"] .biological-research-page .gallery-media [class*="text-white"] {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .veterinary-detail-page > section:not(.immersive-hero) [class*="text-sunset-gold"] {
+  color: #0f766e !important;
+}
+
+html[data-theme="light"] .veterinary-detail-page > section:not(.immersive-hero) [class*="text-sunset-orange"] {
+  color: #c2410c !important;
+}
+
+html[data-theme="light"] .veterinary-detail-page .gallery-media [class*="text-white"] {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .medical-detail-page > section:not(.immersive-hero) [class*="text-sunset-gold"] {
+  color: #b45309 !important;
+}
+
+html[data-theme="light"] .medical-detail-page > section:not(.immersive-hero) [class*="text-sunset-orange"] {
+  color: #c2410c !important;
+}
+
+html[data-theme="light"] .medical-detail-page .gallery-media [class*="text-white"] {
+  color: #ffffff !important;
+}

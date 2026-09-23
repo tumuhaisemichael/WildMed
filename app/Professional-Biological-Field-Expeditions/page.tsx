@@ -1,305 +1,135 @@
-"use client";
+'use client';
 
-import React, { useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
+const placeholder =
+  'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=2000&q=85';
+
+const pathways = [
+  {
+    number: '01',
+    icon: 'ri-microscope-line',
+    title: 'Biological Field Research',
+    audience: 'Biologists, ecologists, researchers, and students',
+    description: 'Structured scientific expeditions studying living organisms and their relationship with East African ecosystems.',
+    activities: ['Biodiversity surveys', 'Wildlife monitoring', 'Ecological sampling', 'Habitat assessment'],
+    href: '/Biological-Field-Research-Expeditions',
+  },
+  {
+    number: '02',
+    icon: 'ri-stethoscope-line',
+    title: 'Veterinary & Conservation',
+    audience: 'Veterinarians, wildlife professionals, and conservation students',
+    description: 'Field programmes connecting wildlife health, conservation medicine, and communities surrounding protected areas.',
+    activities: ['Disease surveillance', 'Primate health', 'Predator tracking', 'Conservation technology'],
+    href: '/Veterinary-Conservation-',
+  },
+  {
+    number: '03',
+    icon: 'ri-heart-pulse-line',
+    title: 'Medical Professional Expeditions',
+    audience: 'Healthcare professionals, medical students, and public-health teams',
+    description: 'Practical health and outreach experiences in diverse communities near important wildlife landscapes.',
+    activities: ['Medical outreach', 'Public health', 'Zoonotic surveillance', 'Community education'],
+    href: '/Medical-Expedition-Programs',
+  },
+];
+
+const methods = [
+  { icon: 'ri-footprint-line', title: 'Wildlife tracking', text: 'Observe movement, behaviour, and population indicators.' },
+  { icon: 'ri-test-tube-line', title: 'Field sampling', text: 'Practice responsible ecological and biological sampling.' },
+  { icon: 'ri-radar-line', title: 'Habitat assessment', text: 'Read landscapes through structured environmental surveys.' },
+  { icon: 'ri-health-book-line', title: 'Disease surveillance', text: 'Explore health at the human–animal–environment interface.' },
+  { icon: 'ri-team-line', title: 'Community exchange', text: 'Learn with local professionals and neighbouring communities.' },
+  { icon: 'ri-file-chart-line', title: 'Documentation', text: 'Turn field observations into useful scientific records.' },
+];
+
+const comparisons = [
+  ['Biological research', 'Biologists & ecology students', 'Species, habitats, and ecosystems'],
+  ['Veterinary conservation', 'Veterinary & wildlife teams', 'Animal and ecosystem health'],
+  ['Medical expeditions', 'Medical & public-health teams', 'Community health and One Health'],
+];
+
 export default function ProfessionalBiologicalFieldExpeditionsPage() {
+  const openEnquiry = () => window.dispatchEvent(new CustomEvent('openExpeditionModal'));
+
   return (
-    <div className="bg-white">
-      
-  
+    <main className="professional-expeditions-page min-h-screen overflow-hidden bg-slate-950 text-white">
+      <section className="immersive-hero relative isolate min-h-[92vh] overflow-hidden">
+        <Image src={placeholder} alt="Professional field expedition in East Africa" fill priority sizes="100vw" className="-z-20 object-cover" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/25" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/50" />
+        <div className="absolute inset-0 -z-10 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:72px_72px]" />
 
-  <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <div className="absolute inset-0 parallax-bg bg-cover bg-center" style={{"backgroundImage":"url('https://readdy.ai/api/search-image?query=biologists%20conducting%20wildlife%20field%20research%20in%20East%20Africa%2C%20savanna%20landscape%2C%20research%20equipment%2C%20binoculars%2C%20notebooks%2C%20professional%20documentary%20photography%2C%20warm%20golden%20light&width=1920&height=1080&seq=bio-expedition-hero-2&orientation=landscape')"}}>
-    </div>
-    <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-blue-900/75 to-emerald-900/40"></div>
-
-    <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-28">
-      <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
-        <div className="text-white">
-          {/*  <span
-            className="inline-flex items-center px-4 py-2 rounded-full bg-green-600/20 border border-green-300/30 text-green-200 text-sm font-medium tracking-[0.2em]">
-            Tailored Science Driven Field Expeditions
-          </span>  */}
-          <h1 className="mt-6 text-5xl sm:text-6xl font-bold leading-tight">
-            Professional Biological
-            <span className="block text-green-300">Field Expeditions</span>
-          </h1>
-          <p className="mt-6 text-lg text-slate-100 max-w-3xl leading-relaxed">
-            Participate in our unique, specialised field programs designed to provide immersive, hands-on experiences
-            in wildlife biology, ecology, conservation, veterinary science, OneHealth, and other areas of the
-            biological sciences.
-          </p>
-          <p className="mt-4 text-lg text-slate-200 max-w-3xl leading-relaxed">
-            Designed for scientists, students, conservation professionals, and nature enthusiasts who want to combine
-            field learning, research, and responsible travel in East Africa.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a href="#expedition-pathways" className="bg-green-600 hover:bg-green-500 text-white px-8 py-4 rounded-xl font-semibold transition-colors">
-              Explore Pathways
-            </a>
-            <Link href="/Biological-Field-Research-Expeditions" className="border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-xl font-semibold transition-colors">
-              View Research Page
-            </Link>
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 text-white">
-            <p className="text-sm uppercase tracking-[0.2em] text-green-200 mb-2">Three expedition streams</p>
-            <p className="text-slate-100">Choose the pathway that best fits your background, whether your interest is
-              field research, wildlife health and conservation, or medical outreach and professional service.</p>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 text-white">
-              <div className="text-3xl font-bold text-green-300">3</div>
-              <p className="mt-2 text-sm text-slate-100">Expedition categories</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 text-white">
-              <div className="text-3xl font-bold text-green-300">East</div>
-              <p className="mt-2 text-sm text-slate-100">Africa field settings</p>
+        <div className="mx-auto flex min-h-[92vh] max-w-7xl items-end px-6 pb-20 pt-40 sm:px-8 lg:pb-28">
+          <div className="max-w-5xl">
+            <p className="mb-6 flex items-center gap-3 text-xs font-black uppercase tracking-[0.32em] text-sunset-gold"><span className="h-px w-10 bg-sunset-gold" />Professional field expeditions</p>
+            <h1 className="headline text-5xl font-bold leading-[0.95] text-white sm:text-7xl lg:text-8xl">Science in the field.<br /><span className="italic text-sunset-gold">Impact on the ground.</span></h1>
+            <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-200">Immersive programmes connecting biological research, veterinary conservation, medical practice, and One Health across East Africa.</p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row"><a href="#pathways" className="bg-sunset-gold px-8 py-4 text-center font-black text-slate-950 transition hover:bg-white">Explore pathways</a><button onClick={openEnquiry} className="border border-white/25 bg-white/10 px-8 py-4 font-black text-white backdrop-blur transition hover:border-sunset-gold hover:text-sunset-gold">Tailor an expedition</button></div>
+            <div className="mt-12 flex flex-wrap gap-x-10 gap-y-5 border-t border-white/15 pt-7">
+              {['Researchers & students', 'Three professional streams', 'East African field settings'].map((item, index) => <div key={item} className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-slate-300"><span className="text-sunset-gold">0{index + 1}</span>{item}</div>)}
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section className="py-20 bg-gradient-to-b from-white to-slate-50">
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
-        <div>
-          <span className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-semibold mb-6">
-            Why These Expeditions Matter
-          </span>
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Scientific travel with stronger field value</h2>
-          <div className="space-y-5 text-lg text-gray-600 leading-relaxed">
-            <p>
-              These expeditions bring together scientists, students, conservation professionals, and nature
-              enthusiasts to explore natural ecosystems while actively participating in biological research, wildlife
-              monitoring, and conservation activities.
-            </p>
-            <p>
-              In Uganda and East Africa, participants may track animals, assess different species, use satellite
-              technology to monitor wildlife, observe primate health, assess ecosystems, and work with local
-              communities on conservation efforts.
-            </p>
-            <p>
-              They also create hands-on exposure to field methods used in biological sciences, including species
-              identification, data collection, habitat assessment, and wildlife disease monitoring.
-            </p>
+      <section className="px-6 py-20 sm:px-8 lg:py-28">
+        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+          <div><p className="text-xs font-black uppercase tracking-[0.3em] text-sunset-orange">Why the field matters</p><h2 className="headline mt-4 text-4xl font-bold sm:text-5xl">Knowledge becomes useful when it meets a landscape.</h2></div>
+          <div className="grid gap-8 sm:grid-cols-2"><p className="leading-7 text-slate-400">These expeditions bring scientists, students, conservation professionals, and health practitioners into natural ecosystems where theory becomes direct observation, measurement, and responsible action.</p><p className="leading-7 text-slate-400">Participants work alongside local expertise—tracking wildlife, assessing habitats, monitoring health, and understanding how conservation and community wellbeing shape one another.</p></div>
+        </div>
+      </section>
+
+      <section id="pathways" className="bg-slate-900 px-6 py-20 sm:px-8 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-14 max-w-3xl"><p className="text-xs font-black uppercase tracking-[0.3em] text-sunset-gold">Choose your pathway</p><h2 className="headline mt-4 text-4xl font-bold sm:text-5xl">Three disciplines. One field context.</h2><p className="mt-5 leading-7 text-slate-400">Select the stream that fits your training and goals. Every programme can be adapted for individuals, institutions, or multidisciplinary teams.</p></div>
+
+          <div className="space-y-7">
+            {pathways.map((pathway, index) => (
+              <article key={pathway.title} className="grid overflow-hidden border border-white/10 bg-slate-950 lg:grid-cols-2">
+                <div className={'gallery-media relative min-h-[360px] overflow-hidden ' + (index % 2 ? 'lg:order-2' : '')}>
+                  <Image src={placeholder} alt={pathway.title} fill sizes="(min-width: 1024px) 50vw, 100vw" className={'object-cover ' + (index === 1 ? 'object-left' : index === 2 ? 'object-right' : 'object-center')} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+                  <span className="absolute left-6 top-6 text-5xl font-black text-white/30">{pathway.number}</span>
+                  <p className="absolute bottom-6 left-6 text-xs font-black uppercase tracking-[0.2em] text-sunset-gold">{pathway.audience}</p>
+                </div>
+                <div className={'flex flex-col justify-center p-7 sm:p-10 lg:p-12 ' + (index % 2 ? 'lg:order-1' : '')}>
+                  <i className={pathway.icon + ' text-4xl text-sunset-gold'} aria-hidden="true" />
+                  <h3 className="headline mt-6 text-3xl font-bold sm:text-4xl">{pathway.title}</h3>
+                  <p className="mt-5 leading-7 text-slate-400">{pathway.description}</p>
+                  <ul className="mt-7 grid gap-3 sm:grid-cols-2">{pathway.activities.map((activity) => <li key={activity} className="flex items-center gap-2 text-sm text-slate-300"><i className="ri-check-line text-sunset-orange" />{activity}</li>)}</ul>
+                  <Link href={pathway.href} className="mt-9 inline-flex w-fit items-center gap-2 font-black text-sunset-gold transition hover:text-sunset-orange">Explore programme <i className="ri-arrow-right-line" /></Link>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
+      </section>
 
-        <div className="space-y-5">
-          <div className="rounded-[2rem] bg-white border border-slate-200 p-7 shadow-sm">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">Field Methods</h3>
-            <p className="text-gray-600">
-              Learn through direct experience in ecology, wildlife monitoring, conservation practice, and health-linked
-              field science.
-            </p>
-          </div>
-          <div className="rounded-[2rem] bg-slate-900 text-white p-7 shadow-sm">
-            <h3 className="text-xl font-semibold mb-3 text-green-300">Conservation Awareness</h3>
-            <p className="text-slate-300">
-              Professional biological field expeditions promote conservation awareness and responsible wildlife tourism
-              by combining scientific inquiry with experiential travel.
-            </p>
-          </div>
-          <div className="rounded-[2rem] bg-emerald-50 border border-emerald-100 p-7 shadow-sm">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">Shared Impact</h3>
-            <p className="text-gray-600">
-              The three expedition pages below show different ways this work connects research, veterinary
-              conservation, medical outreach, and One Health learning in East Africa.
-            </p>
-          </div>
+      <section className="px-6 py-20 sm:px-8 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><p className="text-xs font-black uppercase tracking-[0.3em] text-sunset-orange">Field methods</p><h2 className="headline mt-4 text-4xl font-bold sm:text-5xl">Learn by doing</h2></div><p className="max-w-md leading-7 text-slate-400">Methods are selected around programme goals, local conditions, permits, and participant experience.</p></div>
+          <div className="no-scrollbar flex snap-x gap-4 overflow-x-auto pb-4">{methods.map((method, index) => <article key={method.title} className="min-w-[280px] snap-start border border-white/10 bg-white/5 p-7 sm:min-w-[330px]"><div className="flex items-center justify-between"><i className={method.icon + ' text-3xl text-sunset-gold'} /><span className="text-xs font-black text-slate-600">0{index + 1}</span></div><h3 className="headline mt-12 text-2xl font-bold">{method.title}</h3><p className="mt-3 text-sm leading-6 text-slate-400">{method.text}</p></article>)}</div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section id="expedition-pathways" className="py-20 bg-white">
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="text-center max-w-3xl mx-auto mb-14">
-        <h2 className="text-4xl font-bold text-gray-900">Summary of our three expedition pages</h2>
-        <p className="mt-4 text-lg text-gray-600">
-          Start here, then move into the page that best matches your interests, training, and field goals.
-        </p>
-      </div>
-
-      <div className="space-y-10">
-        <div className="program-card rounded-[2rem] border border-gray-100 bg-gray-50 overflow-hidden shadow-sm">
-          <div className="grid lg:grid-cols-[0.9fr_1.1fr] items-stretch">
-            <div className="min-h-[280px] bg-cover bg-center" style={{"backgroundImage":"url('img/home/DSC_0974.JPG')"}}>
-            </div>
-            <div className="p-8 lg:p-10">
-              <div className="w-14 h-14 rounded-2xl bg-green-100 text-green-700 flex items-center justify-center mb-6">
-                <i className="ri-leaf-line text-2xl"></i>
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Tailored Science Driven Field Expeditions</h3>
-              <p className="text-gray-600 mb-4">
-                This page focuses on structured scientific expeditions designed to study living organisms and their
-                interaction with the environment in natural settings.
-              </p>
-              <p className="text-gray-600 mb-6">
-                It covers biodiversity surveys, wildlife monitoring, habitat and ecosystem assessments, disease
-                surveillance, ecological sampling, species identification training, conservation research, and
-                scientific documentation in East African ecosystems.
-              </p>
-              <Link href="/Biological-Field-Research-Expeditions" className="inline-flex items-center text-blue-700 font-semibold hover:text-blue-900">
-                Go to Tailored Science Driven Field Expeditions
-              </Link>
-            </div>
-          </div>
+      <section className="bg-[#fff7e8] px-6 py-20 text-slate-900 sm:px-8 lg:py-28">
+        <div className="mx-auto max-w-7xl">
+          <p className="text-xs font-black uppercase tracking-[0.3em] text-orange-700">Quick route guide</p><h2 className="headline mt-4 text-4xl font-bold sm:text-5xl">Find your professional fit</h2>
+          <div className="mt-10 overflow-x-auto border border-slate-300/70"><table className="w-full min-w-[720px] text-left"><thead className="professional-table-head bg-slate-950 text-[#fff7e8]"><tr><th className="p-5">Pathway</th><th className="p-5">Best suited for</th><th className="p-5">Primary focus</th></tr></thead><tbody className="divide-y divide-slate-300/70">{comparisons.map((row) => <tr key={row[0]} className="transition hover:bg-white/60"><th className="p-5">{row[0]}</th><td className="p-5 text-slate-600">{row[1]}</td><td className="p-5 text-slate-600">{row[2]}</td></tr>)}</tbody></table></div>
         </div>
+      </section>
 
-        <div className="program-card rounded-[2rem] border border-gray-100 bg-gray-50 overflow-hidden shadow-sm">
-          <div className="grid lg:grid-cols-[0.9fr_1.1fr] items-stretch">
-            <div className="min-h-[280px] bg-cover bg-center" style={{"backgroundImage":"url('img/home/move9.jpg')"}}>
-            </div>
-            <div className="p-8 lg:p-10">
-              <div className="w-14 h-14 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center mb-6">
-                <i className="ri-stethoscope-line text-2xl"></i>
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Veterinary and Conservation Field Expeditions</h3>
-              <p className="text-gray-600 mb-4">
-                This page brings together specialist field programmes that combine wildlife health management with
-                conservation science, including work with domestic animals in communities close to protected areas.
-              </p>
-              <p className="text-gray-600 mb-6">
-                It includes signature veterinary experiences such as disease surveillance, conservation medicine,
-                gorilla and chimpanzee health work, rhino monitoring, predator tracking, wildlife rescue and
-                rehabilitation, One Health investigations, and conservation technology.
-              </p>
-              <Link href="/Veterinary-Conservation-" className="inline-flex items-center text-blue-700 font-semibold hover:text-blue-900">
-                Go to Veterinary and Conservation Field Expeditions
-              </Link>
-            </div>
-          </div>
+      <section className="px-6 py-20 sm:px-8 lg:py-28">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <div><p className="text-xs font-black uppercase tracking-[0.3em] text-sunset-gold">Built around your objectives</p><h2 className="headline mt-4 text-4xl font-bold sm:text-5xl">From research question to field itinerary</h2><p className="mt-5 leading-7 text-slate-400">We coordinate the practical context around your academic, institutional, or professional goals.</p></div>
+          <ol className="grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2">{['Define objectives', 'Build the itinerary', 'Coordinate the field', 'Travel and contribute'].map((step, index) => <li key={step} className="bg-slate-900 p-7"><span className="text-xs font-black text-sunset-orange">0{index + 1}</span><h3 className="headline mt-7 text-xl font-bold">{step}</h3><p className="mt-3 text-sm leading-6 text-slate-400">{index === 0 ? 'Share your discipline, interests, and intended outcomes.' : index === 1 ? 'Match locations, partners, methods, and timing.' : index === 2 ? 'Align logistics, access, equipment, and local expertise.' : 'Enter the field prepared to learn and participate responsibly.'}</p></li>)}</ol>
         </div>
+      </section>
 
-        <div className="program-card rounded-[2rem] border border-gray-100 bg-gray-50 overflow-hidden shadow-sm">
-          <div className="grid lg:grid-cols-[0.9fr_1.1fr] items-stretch">
-            <div className="min-h-[280px] bg-cover bg-center" style={{"backgroundImage":"url('img/home/move16.jfif')"}}>
-            </div>
-            <div className="p-8 lg:p-10">
-              <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mb-6">
-                <i className="ri-heart-pulse-line text-2xl"></i>
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Medical Professional Expeditions</h3>
-              <p className="text-gray-600 mb-4">
-                This page is built for healthcare professionals, medical students, and public health experts working
-                in diverse and often remote environments in and around wildlife protected areas.
-              </p>
-              <p className="text-gray-600 mb-6">
-                It covers medical outreach clinics, public health education, zoonotic disease surveillance, tropical
-                and travel medicine exposure, environmental health assessments, screening programmes, medical
-                research, local facility collaboration, cultural exchange, and vector-borne disease monitoring.
-              </p>
-              <Link href="/Medical-Expedition-Programs" className="inline-flex items-center text-blue-700 font-semibold hover:text-blue-900">
-                Go to Medical Professional Expeditions
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section className="py-20 bg-slate-950 text-white">
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/10 text-green-200 text-sm font-semibold mb-6">
-            East Africa Focus
-          </span>
-          <h2 className="text-4xl font-bold mb-6">Three pages, one shared field context</h2>
-          <p className="text-lg text-slate-300 leading-relaxed">
-            Across savannahs, forests, wetlands, mountain habitats, and surrounding communities, these three pages
-            show different ways professionals can engage with science, conservation, health, and practical field
-            learning in East Africa.
-          </p>
-        </div>
-        <div className="grid sm:grid-cols-2 gap-4">
-          <div className="rounded-3xl bg-white/5 border border-white/10 p-6">
-            <h3 className="text-xl font-semibold mb-2 text-green-300">Biological Research</h3>
-            <p className="text-slate-300 text-sm">Field methods, biodiversity science, ecological sampling, and species
-              monitoring.</p>
-          </div>
-          <div className="rounded-3xl bg-white/5 border border-white/10 p-6">
-            <h3 className="text-xl font-semibold mb-2 text-green-300">Veterinary Conservation</h3>
-            <p className="text-slate-300 text-sm">Wildlife health, domestic animal health, rescue support, and conservation
-              action.</p>
-          </div>
-          <div className="rounded-3xl bg-white/5 border border-white/10 p-6">
-            <h3 className="text-xl font-semibold mb-2 text-green-300">Medical Outreach</h3>
-            <p className="text-slate-300 text-sm">Community health services, education, screening, research, and local
-              system collaboration.</p>
-          </div>
-          <div className="rounded-3xl bg-white/5 border border-white/10 p-6">
-            <h3 className="text-xl font-semibold mb-2 text-green-300">One Health</h3>
-            <p className="text-slate-300 text-sm">Connections between wildlife, people, domestic animals, ecosystems, and
-              health systems.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="start-research-expedition" className="py-20 bg-gray-50">
-    <div className="max-w-5xl mx-auto px-6">
-      <div className="rounded-[2rem] bg-gradient-to-r from-blue-900 to-green-700 p-10 md:p-14 text-white shadow-2xl">
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
-          <div>
-            <h2 className="text-4xl font-bold">Start with the right professional page</h2>
-            <p className="mt-5 text-blue-50 leading-relaxed">
-              Use this summary page as a starting point, then open the specific expedition page that best matches your
-              goals, training, and professional interests.
-            </p>
-            <div className="mt-8 space-y-4 text-blue-50">
-              <div className="flex items-center gap-3">
-                <i className="ri-mail-line text-green-300"></i>
-                <span>wildmeduganda@gmail.com</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <i className="ri-phone-line text-green-300"></i>
-                <span>+256 740 205146 / +256 777 370494</span>
-              </div>
-            </div>
-          </div>
-          <div className="rounded-3xl bg-white/10 border border-white/10 p-8">
-            <h3 className="text-2xl font-semibold mb-4">Quick route guide</h3>
-            <ul className="space-y-3 text-blue-50">
-              <li className="flex items-start gap-3">
-                <i className="ri-arrow-right-s-line mt-1 text-green-300"></i>
-                <span>Choose `Biological Field Research` for science-led field investigations and ecological study.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <i className="ri-arrow-right-s-line mt-1 text-green-300"></i>
-                <span>Choose `Veterinary and Conservation` for wildlife health, rescue, monitoring, and conservation practice.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <i className="ri-arrow-right-s-line mt-1 text-green-300"></i>
-                <span>Choose `Medical Professional Expeditions` for medical outreach, public health work, and service experiences.</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-
-  
-
-
-
-
-
-
-
-
-    </div>
+      <section className="immersive-hero relative isolate px-6 py-24 text-center"><Image src={placeholder} alt="" fill sizes="100vw" className="-z-20 object-cover" /><div className="absolute inset-0 -z-10 bg-slate-950/90" /><div className="mx-auto max-w-3xl"><p className="text-xs font-black uppercase tracking-[0.3em] text-sunset-gold">Professional enquiry</p><h2 className="headline mt-4 text-4xl font-bold text-white sm:text-6xl">Build an expedition with purpose</h2><p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-300">Tell us your discipline, institution, dates, group size, and field objectives. We will help shape the right programme.</p><button onClick={openEnquiry} className="mt-9 bg-sunset-gold px-9 py-4 font-black text-slate-950 transition hover:bg-white">Discuss your expedition</button></div></section>
+    </main>
   );
 }
