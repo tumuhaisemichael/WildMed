@@ -1,0 +1,6 @@
+import ItineraryPage from "@/components/itinerary/ItineraryPage";
+import { uganda11DayCrossBorder } from "@/lib/itineraries";
+
+export default function Page() {
+  return <ItineraryPage trip={uganda11DayCrossBorder} />;
+}

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import UnifiedHero from '@/components/layout/UnifiedHero';
 
 const destinations = [
   {
@@ -73,45 +74,10 @@ export default function DestinationsPage() {
 
   return (
     <div className="bg-slate-950 min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <Image
-          src="/img/home/DSC_0112.JPG"
-          alt="East Africa Landscape"
-          fill
-          className="object-cover opacity-60 scale-110 animate-slow-zoom"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/40 to-slate-950" />
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6 animate-fade-in">
-            <span className="w-2 h-2 rounded-full bg-sunset-gold animate-pulse" />
-            <span className="text-xs uppercase tracking-[0.4em] text-sunset-gold font-bold">The Expedition Atlas</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter text-white mb-6 drop-shadow-2xl">
-            Choose Your <span className="bg-gradient-to-r from-sunset-orange to-sunset-gold bg-clip-text text-transparent">Wild Trail</span>
-          </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed drop-shadow-lg">
-            From the misty gorilla sanctuaries of the Albertine Rift to the golden savannas of the Mara, every destination is a different rhythm of the wild.
-          </p>
-        </div>
-      </section>
-
-      {/* Stats Ribbon */}
-      <section className="relative z-20 -mt-16 max-w-6xl mx-auto px-6 mb-24">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-8 rounded-3xl bg-slate-900/80 backdrop-blur-xl border border-white/10 shadow-2xl">
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-center md:border-r last:border-0 border-white/5">
-              <div className={`text-3xl font-black ${stat.color} mb-1`}>{stat.value}</div>
-              <div className="text-[10px] uppercase tracking-widest text-slate-500 font-bold">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <UnifiedHero eyebrow="The Expedition Atlas" title={<>Choose Your <span className="block italic text-sunset-gold">Wild Trail</span></>} description="From the misty gorilla sanctuaries of the Albertine Rift to the golden savannas of the Mara, every destination carries a different rhythm of the wild." backgroundImage="/img/home/DSC_0112.JPG" mainImage="/img/Destination/UG/bwindi.jpeg" secondaryImage="/img/Destination/Kenya/greatmig.webp" imageAlt="East African wildlife destination" trustText="Four countries, one expert team" note="Find your wild" stats={stats.map(({value,label,icon})=>({value,label,icon}))} actions={<><a href="#destination-grid" className="rounded-2xl bg-sunset-gold px-8 py-4 text-center font-black text-slate-950 transition hover:bg-white">Explore destinations <i className="ri-arrow-right-line" /></a><Link href="/Custom-Safaris" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Plan a custom trip</Link></>} />
 
       {/* Main Destination Grid */}
-      <section className="py-20 relative">
+      <section id="destination-grid" className="py-20 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
             <div className="max-w-2xl">

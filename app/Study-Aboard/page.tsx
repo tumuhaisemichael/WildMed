@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { FormEvent, useEffect, useState } from 'react';
+import UnifiedHero from '@/components/layout/UnifiedHero';
 
 const heroImage =
   'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=2000&q=85';
@@ -70,27 +71,7 @@ export default function StudyAbroadPage() {
 
   return (
     <main className="study-abroad-page min-h-screen overflow-hidden bg-slate-950 text-white">
-      <section className="immersive-hero relative isolate min-h-[92vh] overflow-hidden">
-        <div className="absolute inset-0 -z-20 bg-cover bg-center" style={{ backgroundImage: 'url("' + heroImage + '")' }} />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/20" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/50" />
-        <div className="mx-auto flex min-h-[92vh] max-w-7xl items-end px-6 pb-20 pt-40 sm:px-8 lg:pb-28">
-          <div className="max-w-4xl">
-            <p className="mb-6 flex items-center gap-3 text-xs font-black uppercase tracking-[0.32em] text-sunset-gold"><span className="h-px w-10 bg-sunset-gold" />One Health · East Africa</p>
-            <h1 className="headline text-5xl font-bold leading-[0.95] text-white sm:text-7xl lg:text-8xl">Study beyond<br /><span className="italic text-sunset-gold">the classroom.</span></h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200">Immersive field rotations connecting human, animal, and environmental health across Uganda and East Africa.</p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <button onClick={() => setApplicationOpen(true)} className="bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Apply for the programme</button>
-              <a href="#programme" className="border border-white/25 bg-white/10 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:border-sunset-gold hover:text-sunset-gold">Explore the experience</a>
-            </div>
-            <dl className="mt-12 flex flex-wrap gap-8 border-t border-white/15 pt-7">
-              <div><dt className="text-3xl font-black text-sunset-gold">50+</dt><dd className="text-xs uppercase tracking-widest text-slate-300">Annual participants</dd></div>
-              <div><dt className="text-3xl font-black text-sunset-gold">10+</dt><dd className="text-xs uppercase tracking-widest text-slate-300">Partner institutions</dd></div>
-              <div><dt className="text-3xl font-black text-sunset-gold">14–35</dt><dd className="text-xs uppercase tracking-widest text-slate-300">Programme days</dd></div>
-            </dl>
-          </div>
-        </div>
-      </section>
+      <UnifiedHero eyebrow="One Health · East Africa" title={<>Study beyond <span className="block italic text-sunset-gold">the classroom.</span></>} description="Immersive field rotations connecting human, animal, and environmental health across Uganda and East Africa." backgroundImage="/assets/heroes/study-abroad-hero.png" mainImage="/assets/heroes/study-abroad-hero.png" secondaryImage="/img/Destination/Rwensori.png" imageAlt="Students conducting field research with a Ugandan instructor" trustText="Supported by partner institutions" note="Education with purpose" stats={[{value:'50+',label:'Annual participants',icon:'ri-group-line'},{value:'10+',label:'Partner institutions',icon:'ri-government-line'},{value:'14–35',label:'Programme days',icon:'ri-calendar-event-line'},{value:'12',label:'Disciplines',icon:'ri-book-open-line'}]} actions={<><button onClick={() => setApplicationOpen(true)} className="rounded-2xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Apply for the programme</button><a href="#programme" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Explore the experience</a></>} />
 
       <section id="programme" className="px-6 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">

@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import Link from 'next/link';
+import UnifiedHero from '@/components/layout/UnifiedHero';
 
 export default function CoursePage() {
   return (
@@ -9,54 +10,7 @@ export default function CoursePage() {
       
   
 
-  <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <div className="absolute inset-0 parallax-bg bg-cover bg-center" style={{"backgroundImage":"url('https://readdy.ai/api/search-image?query=students%20and%20professionals%20attending%20wildlife%20conservation%20field%20lecture%20in%20East%20Africa%2C%20outdoor%20classroom%20with%20notebooks%20and%20binoculars%2C%20scientific%20training%20environment%2C%20warm%20natural%20light&width=1920&height=1080&seq=course-hero-1&orientation=landscape')"}}>
-    </div>
-    <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-blue-900/75 to-emerald-900/40"></div>
-
-    <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-28">
-      <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
-        <div className="text-white">
-          <h1 className="mt-6 text-5xl sm:text-6xl font-bold leading-tight">
-            Course Methods
-            <span className="block text-green-300">& Lectures</span>
-          </h1>
-          <p className="mt-6 text-lg text-slate-100 max-w-3xl leading-relaxed">
-            A practical learning page for participants who want structured course methods, lecture tracks, and
-            hands-on sessions in field biology, veterinary conservation, medical outreach, and One Health.
-          </p>
-          <p className="mt-4 text-lg text-slate-200 max-w-3xl leading-relaxed">
-            Content is built from WildMed's current expedition streams across Uganda and East Africa.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a href="#course-methods" className="bg-green-600 hover:bg-green-500 text-white px-8 py-4 rounded-xl font-semibold transition-colors">
-              Explore Methods
-            </a>
-            <a href="#lecture-series" className="border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-xl font-semibold transition-colors">
-              View Lectures
-            </a>
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 text-white">
-            <p className="text-sm uppercase tracking-[0.2em] text-green-200 mb-2">Learning Streams</p>
-            <p className="text-slate-100">Field Biology, Veterinary and Conservation, and Medical One Health modules.</p>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 text-white">
-              <div className="text-3xl font-bold text-green-300">3</div>
-              <p className="mt-2 text-sm text-slate-100">Course tracks</p>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-3xl p-6 text-white">
-              <div className="text-3xl font-bold text-green-300">10+</div>
-              <p className="mt-2 text-sm text-slate-100">Lecture themes</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <UnifiedHero eyebrow="Learning in the field" title={<>Course Methods <span className="block italic text-sunset-gold">& Lectures</span></>} description="Structured course methods, lecture tracks, and hands-on sessions in field biology, veterinary conservation, medical outreach, and One Health." backgroundImage="/assets/heroes/course-field-learning-hero.png" mainImage="/assets/heroes/course-field-learning-hero.png" secondaryImage="/img/Destination/Rwensori.png" imageAlt="Outdoor conservation field lesson in Uganda" trustText="Built with field professionals" note="Learn beyond the classroom" curveClassName="text-white" stats={[{value:'3',label:'Course tracks',icon:'ri-book-open-line'},{value:'10+',label:'Lecture themes',icon:'ri-presentation-line'},{value:'4',label:'Field disciplines',icon:'ri-microscope-line'},{value:'1',label:'One Health approach',icon:'ri-heart-pulse-line'}]} actions={<><a href="#course-methods" className="rounded-2xl bg-sunset-gold px-8 py-4 text-center font-black text-slate-950 transition hover:bg-white">Explore methods</a><a href="#lecture-series" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">View lectures</a></>} />
 
   <section id="lecture-announcement" className="py-16 bg-white">
     <div className="max-w-6xl mx-auto px-6">

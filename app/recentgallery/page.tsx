@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import UnifiedHero from '@/components/layout/UnifiedHero';
 
 const testImage =
   'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=2000&q=85';
@@ -66,48 +67,7 @@ export default function RecentGalleryPage() {
 
   return (
     <main className="gallery-page min-h-screen overflow-hidden bg-slate-950 text-white">
-      <section className="gallery-hero relative isolate min-h-[82vh] overflow-hidden">
-        <Image
-          src={testImage}
-          alt="Elephant walking through the East African wilderness"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/75 to-slate-950/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/45" />
-        <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:72px_72px]" />
-
-        <div className="relative mx-auto flex min-h-[82vh] max-w-7xl items-end px-6 pb-16 pt-36 sm:px-8 lg:pb-24">
-          <div className="max-w-3xl">
-            <div className="mb-6 flex flex-wrap items-center gap-3 text-xs font-black uppercase tracking-[0.25em] text-sunset-gold">
-              <span className="h-px w-10 bg-sunset-gold" />
-              Latest from the field
-            </div>
-            <h1 className="headline text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl lg:text-8xl">
-              Field notes,
-              <span className="block italic text-sunset-gold">fresh from the wild.</span>
-            </h1>
-            <p className="mt-7 max-w-2xl text-base leading-7 text-slate-200 sm:text-lg">
-              Recent wildlife sightings, conservation work, and expedition moments
-              shared by the WildMed team across East Africa.
-            </p>
-            <a
-              href="#latest"
-              className="mt-9 inline-flex items-center gap-3 border border-white/25 bg-white/10 px-6 py-3 text-sm font-bold backdrop-blur-md transition hover:border-sunset-gold hover:bg-sunset-gold hover:text-slate-950"
-            >
-              View latest dispatch
-              <i className="ri-arrow-down-line text-lg" aria-hidden="true" />
-            </a>
-          </div>
-        </div>
-
-        <div className="absolute bottom-6 right-6 hidden items-center gap-5 border-l border-white/25 pl-5 text-xs text-slate-300 md:flex">
-          <span><i className="ri-map-pin-line mr-2 text-sunset-orange" />East Africa</span>
-          <span><i className="ri-camera-3-line mr-2 text-sunset-orange" />Field archive</span>
-        </div>
-      </section>
+      <UnifiedHero eyebrow="Latest from the field" title={<>Field notes, <span className="block italic text-sunset-gold">fresh from the wild.</span></>} description="Recent wildlife sightings, conservation work, and expedition moments shared by the WildMed team across East Africa." backgroundImage="/assets/heroes/recent-field-hero.png" mainImage="/assets/heroes/recent-field-hero.png" secondaryImage="/assets/8day-safari/day3.png" imageAlt="Wildlife rangers documenting elephants" trustText="Shared by our field team" note="Fresh from East Africa" stats={[{value:'4',label:'Latest stories',icon:'ri-file-list-3-line'},{value:'3',label:'Field videos',icon:'ri-video-line'},{value:'1',label:'Photo story',icon:'ri-camera-line'},{value:'Live',label:'Field archive',icon:'ri-signal-wifi-line'}]} actions={<><a href="#latest" className="rounded-2xl bg-sunset-gold px-8 py-4 text-center font-black text-slate-950 transition hover:bg-white">View latest dispatch</a><Link href="/gallery" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Open full gallery</Link></>} />
 
       <section id="latest" className="relative px-6 py-20 sm:px-8 lg:py-28">
         <div className="pointer-events-none absolute left-0 top-28 h-72 w-72 rounded-full bg-sunset-orange/10 blur-[110px]" />

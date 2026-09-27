@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import UnifiedHero from '@/components/layout/UnifiedHero';
 
 const placeholder =
   'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=2000&q=85';
@@ -89,19 +90,7 @@ export default function CustomSafarisPage() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-slate-950 text-white">
-      <section className="immersive-hero relative isolate min-h-[88vh] overflow-hidden">
-        <Image src={placeholder} alt="Elephant in the East African wilderness" fill priority sizes="100vw" className="-z-20 object-cover" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/20" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40" />
-        <div className="mx-auto flex min-h-[88vh] max-w-7xl items-end px-6 pb-20 pt-40 sm:px-8 lg:pb-28">
-          <div className="max-w-4xl">
-            <p className="mb-5 flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-sunset-gold"><span className="h-px w-10 bg-sunset-gold" />Tailored East African journeys</p>
-            <h1 className="headline text-5xl font-bold leading-[0.95] text-white sm:text-7xl lg:text-8xl">Your pace.<br /><span className="italic text-sunset-gold">Your wild.</span></h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200">Begin with one of our field-tested routes, then shape every detail around your interests, dates, and travel style.</p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row"><a href="#safaris" className="bg-sunset-gold px-8 py-4 text-center font-black text-slate-950 transition hover:bg-white">Browse journeys</a><button onClick={() => window.dispatchEvent(new CustomEvent('openExpeditionModal'))} className="border border-white/25 bg-white/10 px-8 py-4 font-black text-white backdrop-blur transition hover:border-sunset-gold hover:text-sunset-gold">Build a custom route</button></div>
-          </div>
-        </div>
-      </section>
+      <UnifiedHero eyebrow="Tailored East African journeys" title={<>Your pace. <span className="block italic text-sunset-gold">Your wild.</span></>} description="Begin with one of our field-tested routes, then shape every detail around your interests, dates, and travel style." backgroundImage="/assets/heroes/custom-safari-hero.png" mainImage="/assets/uganda-rwanda-11day/day6-bwindi-gorillas.png" secondaryImage="/img/Destination/Kenya/greatmig.webp" imageAlt="Custom East African safari" trustText="Planned by local specialists" note="Your journey, your way" stats={[{value:'13',label:'Signature journeys',icon:'ri-route-line'},{value:'3–14',label:'Tour days',icon:'ri-calendar-line'},{value:'4',label:'Travel styles',icon:'ri-compass-3-line'},{value:'100%',label:'Customizable',icon:'ri-settings-3-line'}]} actions={<><a href="#safaris" className="rounded-2xl bg-sunset-gold px-8 py-4 text-center font-black text-slate-950 transition hover:bg-white">Browse journeys</a><button onClick={() => window.dispatchEvent(new CustomEvent('openExpeditionModal'))} className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Build a custom route</button></>} />
 
       <section id="safaris" className="px-6 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">

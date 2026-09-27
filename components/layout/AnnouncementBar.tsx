@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const AnnouncementBar = () => {
   return (
-    <div className="bg-gradient-to-r from-sunset-purple via-sunset-brown/80 to-slate-950 text-white text-center py-2 px-4 text-xs sm:text-sm font-medium relative overflow-hidden group">
+    <div className="relative overflow-hidden bg-gradient-to-r from-sunset-purple via-sunset-brown/80 to-slate-950 px-4 py-1 text-center text-[10px] font-medium text-white sm:text-xs">
       <div className="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out"></div>
       <Link
         href="/About-Us"

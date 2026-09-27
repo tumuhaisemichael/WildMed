@@ -28,7 +28,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${dancingScript.variable} ${pacifico.variable} font-sans text-gray-800`}>
         <Header />
-        <main className="pt-[140px] lg:pt-[150px]">
+        <main className="pt-[96px] lg:pt-[104px]">
           {children}
         </main>
         <Footer />

@@ -1,3 +1,5 @@
+import UnifiedHero from '@/components/layout/UnifiedHero';
+
 export const metadata = {
   title: 'About WildMed Safaris',
   description: 'Learn about WildMed Safaris, our mission, team, and East Africa conservation and education programs.',
@@ -6,84 +8,7 @@ export const metadata = {
 export default function AboutUsPage() {
   return (
     <div className="bg-slate-950 text-white min-h-screen">
-      <section className="relative min-h-[88vh] flex items-center overflow-hidden bg-slate-950 text-white">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-center opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-slate-950/20" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(251,191,36,0.20),transparent_40%),radial-gradient(circle_at_80%_75%,rgba(249,115,22,0.14),transparent_38%)]" />
-        <div className="absolute inset-0 hero-grid opacity-20" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-20 grid lg:grid-cols-2 gap-12 items-end">
-          <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/5 backdrop-blur text-sm uppercase tracking-[0.3em]">
-              <span className="w-2 h-2 rounded-full bg-sunset-gold animate-ping" />
-              About WildMed Safaris
-            </div>
-            <h1 className="text-5xl md:text-7xl mt-6 mb-6 font-black tracking-tight leading-[0.95]">
-              Built For <span className="italic bg-gradient-to-r from-sunset-orange via-sunset-gold to-sunset-amber bg-clip-text text-transparent">Impact</span>, <br />
-              Driven By Adventure
-            </h1>
-            <p className="text-lg md:text-xl text-slate-200 max-w-xl">
-              We design wildlife experiences and professional programs that connect people to East Africa’s most extraordinary ecosystems.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a href="#mission" className="bg-sunset-gold hover:bg-white text-black px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-1">
-                Our Mission
-              </a>
-              <a href="/Destinations" className="border border-white/30 hover:border-sunset-gold px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:text-sunset-gold">
-                Explore Destinations
-              </a>
-            </div>
-            <div className="mt-10 grid grid-cols-3 gap-3 max-w-lg">
-              <div className="rounded-xl border border-white/15 bg-white/10 backdrop-blur px-4 py-3">
-                <p className="text-xs uppercase tracking-widest text-slate-300">Countries</p>
-                <p className="text-xl font-black text-sunset-gold">4</p>
-              </div>
-              <div className="rounded-xl border border-white/15 bg-white/10 backdrop-blur px-4 py-3">
-                <p className="text-xs uppercase tracking-widest text-slate-300">Programs</p>
-                <p className="text-xl font-black text-sunset-orange">30+</p>
-              </div>
-              <div className="rounded-xl border border-white/15 bg-white/10 backdrop-blur px-4 py-3">
-                <p className="text-xs uppercase tracking-widest text-slate-300">Years</p>
-                <p className="text-xl font-black text-sunset-amber">12+</p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div className="motion-card rounded-3xl p-8 border border-white/20 bg-slate-950/60 backdrop-blur-2xl shadow-2xl">
-              <div className="flex items-center justify-between mb-6">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Impact Snapshot</p>
-                  <h2 className="headline text-3xl text-white">WildMed at a Glance</h2>
-                </div>
-                <span className="inline-flex items-center px-3 py-1 rounded-full bg-sunset-gold/20 text-sunset-gold text-sm font-semibold border border-sunset-gold/40">Live</span>
-              </div>
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div className="motion-card rounded-2xl bg-white/10 p-4 border border-white/10">
-                  <p className="text-slate-400">Years Experience</p>
-                  <p className="text-2xl font-semibold text-white">12+</p>
-                </div>
-                <div className="motion-card rounded-2xl bg-white/10 p-4 border border-white/10">
-                  <p className="text-slate-400">Programs</p>
-                  <p className="text-2xl font-semibold text-white">30+</p>
-                </div>
-                <div className="motion-card rounded-2xl bg-white/10 p-4 border border-white/10">
-                  <p className="text-slate-400">Partners</p>
-                  <p className="text-2xl font-semibold text-white">20+</p>
-                </div>
-                <div className="motion-card rounded-2xl bg-white/10 p-4 border border-white/10">
-                  <p className="text-slate-400">Countries</p>
-                  <p className="text-2xl font-semibold text-white">4</p>
-                </div>
-              </div>
-              <div className="mt-6 flex items-center gap-3 text-sm text-slate-300">
-                <i className="ri-compass-3-line text-sunset-gold" />
-                Every expedition supports conservation and community projects.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <UnifiedHero eyebrow="Our story" title={<>People, Wildlife and Communities <span className="block italic text-sunset-gold">at the Heart of Our Journeys</span></>} description="We design meaningful wildlife experiences that protect nature, support local communities, and connect travelers to East Africa’s extraordinary ecosystems." backgroundImage="/img/Destination/Rwensori.png" mainImage="/img/Destination/UG/bwindi.jpeg" secondaryImage="/img/home/DSC_0112.JPG" imageAlt="Mountain gorilla in Uganda" trustText="Trusted across East Africa" note="Conserving today for tomorrow" stats={[{value:'12+',label:'Years experience',icon:'ri-time-line'},{value:'30+',label:'Programs',icon:'ri-compass-3-line'},{value:'20+',label:'Partners',icon:'ri-team-line'},{value:'4',label:'Countries',icon:'ri-earth-line'}]} actions={<><a href="#mission" className="rounded-2xl bg-sunset-gold px-8 py-4 text-center font-black text-slate-950 transition hover:bg-white">Our story <i className="ri-arrow-right-line" /></a><a href="#team" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Meet our team</a></>} />
 
       <section id="mission" className="motion-reveal py-20 bg-slate-900/40">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">

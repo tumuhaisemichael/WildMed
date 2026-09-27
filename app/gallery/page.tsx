@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import UnifiedHero from '@/components/layout/UnifiedHero';
 
 const galleryImage =
   'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=2000&q=85';
@@ -43,23 +44,7 @@ export default function GalleryPage() {
 
   return (
     <main className="gallery-page min-h-screen overflow-hidden bg-slate-950 text-white">
-      <section className="gallery-hero relative isolate min-h-[88vh] overflow-hidden">
-        <Image src={galleryImage} alt="Elephant in the East African wilderness" fill priority sizes="100vw" className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/75 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40" />
-
-        <div className="relative mx-auto flex min-h-[88vh] max-w-7xl items-end px-6 pb-20 pt-36 sm:px-8 lg:pb-28">
-          <div className="max-w-4xl">
-            <p className="mb-5 flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-sunset-gold"><span className="h-px w-10 bg-sunset-gold" />The WildMed archive</p>
-            <h1 className="headline text-5xl font-bold leading-[0.95] text-white sm:text-7xl lg:text-8xl">Stories written<span className="block italic text-sunset-gold">in the wild.</span></h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200">An evolving visual record of wildlife, conservation, research, and the people who make every expedition meaningful.</p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a href="#archive" className="bg-sunset-gold px-7 py-3.5 text-center text-sm font-black text-slate-950 transition hover:bg-white">Explore the archive</a>
-              <Link href="/recentgallery" className="border border-white/25 bg-white/10 px-7 py-3.5 text-center text-sm font-black text-white backdrop-blur transition hover:border-sunset-gold hover:text-sunset-gold">See recent moments</Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <UnifiedHero eyebrow="The WildMed archive" title={<>Stories written <span className="block italic text-sunset-gold">in the wild.</span></>} description="An evolving visual record of wildlife, conservation, research, and the people who make every expedition meaningful." backgroundImage="/assets/heroes/gallery-conservation-hero.png" mainImage="/assets/heroes/gallery-conservation-hero.png" secondaryImage="/assets/14day-luxury/luxury2.png" imageAlt="Responsible gorilla photography in Uganda" trustText="Captured across East Africa" note="Every image has a story" stats={[{value:'30',label:'Field moments',icon:'ri-camera-3-line'},{value:'3',label:'Collections',icon:'ri-gallery-line'},{value:'4',label:'Countries',icon:'ri-earth-line'},{value:'1',label:'Shared purpose',icon:'ri-leaf-line'}]} actions={<><a href="#archive" className="rounded-2xl bg-sunset-gold px-8 py-4 text-center font-black text-slate-950 transition hover:bg-white">Explore the archive</a><Link href="/recentgallery" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">See recent moments</Link></>} />
 
       <section id="archive" className="px-6 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">

@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import UnifiedHero from '@/components/layout/UnifiedHero';
 
 const defaultImage =
   'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=2000&q=85';
@@ -23,27 +23,9 @@ const stats = [
 export default function ReviewPage() {
   return (
     <main className="overflow-hidden bg-slate-950 text-white">
-      <section className="immersive-hero relative isolate min-h-[82vh] overflow-hidden">
-        <Image src={defaultImage} alt="Elephant in the East African wilderness" fill priority sizes="100vw" className="-z-20 object-cover" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/25" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40" />
-        <div className="mx-auto flex min-h-[82vh] max-w-7xl items-end px-6 pb-20 pt-40 sm:px-8 lg:pb-24">
-          <div className="max-w-4xl">
-            <p className="mb-5 flex items-center gap-3 text-xs font-black uppercase tracking-[0.32em] text-sunset-gold"><span className="h-px w-10 bg-sunset-gold" />Real journeys · Real perspectives</p>
-            <h1 className="headline text-5xl font-bold leading-[0.95] text-white sm:text-7xl lg:text-8xl">Stories from<br /><span className="italic text-sunset-gold">the field.</span></h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200">Hear from travelers, students, and professionals whose East African experiences became stories worth bringing home.</p>
-            <div className="mt-8 flex items-center gap-4"><span className="text-xl tracking-wider text-sunset-gold" aria-label="Five stars">★★★★★</span><span className="text-sm font-bold text-white">4.9 from 127 reviews</span></div>
-          </div>
-        </div>
-      </section>
+      <UnifiedHero eyebrow="Real journeys · Real perspectives" title={<>Stories from <span className="block italic text-sunset-gold">the field.</span></>} description="Hear from travelers, students, and professionals whose East African experiences became stories worth bringing home." backgroundImage="/assets/heroes/traveler-reviews-hero.png" mainImage="/assets/heroes/traveler-reviews-hero.png" secondaryImage="/assets/uganda-rwanda-11day/day7-lake-bunyonyi.png" imageAlt="Travelers with a WildMed safari guide" trustText="4.9 from 127 reviews" note="Memories worth sharing" stats={stats.map((stat,index)=>({...stat,icon:['ri-emotion-happy-line','ri-star-line','ri-suitcase-3-line','ri-repeat-line'][index]}))} actions={<><a href="#traveler-stories" className="rounded-2xl bg-sunset-gold px-8 py-4 text-center font-black text-slate-950 transition hover:bg-white">Read their stories</a><Link href="/Custom-Safaris" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Plan your journey</Link></>} />
 
-      <section className="relative z-10 -mt-1 border-y border-white/10 bg-slate-900 px-6 py-8 sm:px-8">
-        <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden bg-white/10 md:grid-cols-4">
-          {stats.map((stat) => <div key={stat.label} className="bg-slate-900 p-6 text-center"><dt className="text-3xl font-black text-sunset-gold">{stat.value}</dt><dd className="mt-2 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">{stat.label}</dd></div>)}
-        </dl>
-      </section>
-
-      <section className="relative isolate overflow-hidden px-5 py-20 sm:px-8 lg:py-28">
+      <section id="traveler-stories" className="relative isolate overflow-hidden px-5 py-20 sm:px-8 lg:py-28">
         <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_15%_12%,rgba(251,191,36,0.16),transparent_24%),radial-gradient(circle_at_83%_6%,rgba(249,115,22,0.14),transparent_27%),linear-gradient(135deg,#020617_0%,#0f172a_52%,#111827_100%)]" />
         <div className="absolute inset-0 -z-10 opacity-30 [background-image:linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] [background-size:32px_32px]" />
 

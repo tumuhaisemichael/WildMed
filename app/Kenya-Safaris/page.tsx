@@ -6,6 +6,7 @@ import Link from 'next/link';
 import DestinationModal from '../../components/modals/DestinationModal';
 import BookingForm from '../../components/sections/BookingForm';
 import { kenyaDetailsData } from '../../lib/destinationModals';
+import UnifiedHero from '@/components/layout/UnifiedHero';
 
 const stats = [
   { label: 'Maasai Mara Size', value: '1,510', color: 'text-sunset-gold' },
@@ -92,65 +93,10 @@ export default function KenyaSafarisPage() {
         id={selectedDestId || ''} 
       />
 
-      {/* Cinematic Hero */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
-        <Image
-          src="/img/Destination/MountKenya.jpeg"
-          alt="Mount Kenya"
-          fill
-          className="object-cover opacity-60 scale-105 animate-slow-zoom"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(2,6,23,0.8)_100%)]" />
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl mb-8 animate-fade-in">
-            <span className="w-2 h-2 rounded-full bg-sunset-orange animate-ping" />
-            <span className="text-xs uppercase tracking-[0.6em] text-sunset-gold font-black">The Classic Safari Stage</span>
-          </div>
-          <h1 className="text-4xl md:text-6xl font-black italic tracking-tighter text-white mb-8 leading-none">
-            Kenya's <br />
-            <span className="bg-gradient-to-r from-sunset-orange via-sunset-gold to-sunset-amber bg-clip-text text-transparent">Wild Majesty</span>
-          </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-light italic drop-shadow-2xl">
-            "Witness the world's greatest wildlife spectacle and explore the legendary savannas of the Maasai Mara."
-          </p>
-          
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
-            <button 
-              onClick={handleApply}
-              className="px-10 py-5 rounded-2xl bg-sunset-gold text-black font-black text-lg hover:bg-white transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(251,191,36,0.35)] shadow-[0_0_50px_rgba(255,165,0,0.2)]"
-            >
-              Start Planning
-            </button>
-            <div className="flex items-center gap-4 text-slate-400 font-bold uppercase tracking-widest text-xs">
-              <span className="w-12 h-[1px] bg-white/20"></span>
-              Scroll to Discover
-              <span className="w-12 h-[1px] bg-white/20"></span>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-          <div className="w-[2px] h-12 bg-gradient-to-b from-sunset-orange to-transparent"></div>
-        </div>
-      </section>
-
-      {/* Stats Ribbon */}
-      <section className="motion-reveal relative z-20 -mt-20 max-w-7xl mx-auto px-6 mb-32">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-1 md:p-2 rounded-[3rem] bg-white/5 border border-white/10 backdrop-blur-2xl shadow-3xl">
-          {stats.map((stat) => (
-            <div key={stat.label} className="motion-card group p-8 md:p-12 text-center rounded-[2.5rem] hover:bg-white/5 transition-all duration-500">
-              <div className={`text-2xl md:text-3xl font-black ${stat.color} mb-2 group-hover:scale-110 transition-transform`}>{stat.value}</div>
-              <div className="text-[10px] uppercase tracking-[0.3em] text-slate-500 font-black">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <UnifiedHero eyebrow="The Classic Safari Stage" title={<>Kenya&apos;s <span className="block italic text-sunset-gold">Wild Majesty</span></>} description="Witness the world's greatest wildlife spectacle and explore the legendary savannas of the Maasai Mara." backgroundImage="/img/Destination/MountKenya.jpeg" mainImage="/img/Destination/Kenya/greatmig.webp" secondaryImage="/img/Destination/MountKenya.jpeg" imageAlt="Kenya safari landscape" trustText="Planned by Kenya specialists" note="Follow the great migration" stats={stats.map((stat,index)=>({value:stat.value,label:stat.label,icon:['ri-bear-smile-line','ri-landscape-line','ri-group-line','ri-earth-line'][index]}))} actions={<><button onClick={handleApply} className="rounded-2xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Start planning</button><a href="#highlights" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Explore Kenya</a></>} />
 
       {/* Exploration Grid */}
-      <section className="motion-reveal py-24 relative overflow-hidden">
+      <section id="highlights" className="motion-reveal py-24 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1000px] bg-[radial-gradient(circle_at_center,rgba(255,165,0,0.03)_0%,transparent_70%)] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-6">
