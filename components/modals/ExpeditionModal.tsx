@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import FormSuccess from '@/components/forms/FormSuccess';
 
 const ExpeditionModal = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     const handleOpen = () => setIsOpen(true);
@@ -12,14 +14,24 @@ const ExpeditionModal = () => {
     return () => window.removeEventListener('openExpeditionModal', handleOpen);
   }, []);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsOpen(false);
+    };
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', closeOnEscape);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [isOpen]);
+
   const closeModal = () => {
     setIsOpen(false);
+    setSubmitted(false);
     document.body.style.overflow = '';
   };
-
-  if (isOpen) {
-    document.body.style.overflow = 'hidden';
-  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,9 +51,8 @@ const ExpeditionModal = () => {
       });
 
       if (response.ok) {
-        alert('Thank you! Your expedition request has been submitted. We will contact you soon.');
-        closeModal();
         (e.target as HTMLFormElement).reset();
+        setSubmitted(true);
       } else {
         throw new Error('Submission failed');
       }
@@ -56,32 +67,45 @@ const ExpeditionModal = () => {
   if (!isOpen) return null;
 
   return (
-    <div 
-      className="fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
+    <div
+      className="fixed inset-0 z-[220] overflow-y-auto bg-slate-950/90 p-4 backdrop-blur-xl sm:p-6"
       onClick={(e) => e.target === e.currentTarget && closeModal()}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="expedition-modal-title"
     >
-      <div className="bg-white rounded-xl p-6 max-w-md w-full mx-auto relative shadow-2xl">
-        <h2 className="text-2xl font-bold mb-4 text-gray-900">Plan Your Expedition</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="relative mx-auto my-4 w-full max-w-3xl overflow-hidden rounded-[2rem] border border-white/10 bg-slate-900 text-white shadow-[0_32px_90px_rgba(0,0,0,0.55)] sm:my-8">
+        {submitted ? <div className="p-5 sm:p-8"><FormSuccess title="Expedition request received" message="Thank you for sharing your plans. Our expedition team will review your request and contact you to shape the next steps." onClose={closeModal} /></div> : <>
+        <div className="relative overflow-hidden border-b border-white/10 px-6 py-8 sm:px-10">
+          <div className="absolute -right-20 -top-28 h-64 w-64 rounded-full bg-sunset-gold/15 blur-3xl" />
+          <p className="relative flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.3em] text-sunset-gold"><span className="h-px w-8 bg-sunset-gold" />Tailored East African journeys</p>
+          <h2 id="expedition-modal-title" className="headline relative mt-3 text-3xl font-bold sm:text-4xl">Plan your expedition</h2>
+          <p className="relative mt-3 max-w-xl text-sm leading-6 text-slate-400">Share the essentials and our local team will shape a journey around your dates, interests, and travel style.</p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="grid gap-5 p-6 sm:grid-cols-2 sm:p-10">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
+            <label htmlFor="name" className="mb-2 block text-xs font-black uppercase tracking-wider text-slate-400">Full name</label>
             <input type="text" id="name" name="name" required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" />
+              autoComplete="name"
+              className="w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3.5 text-white outline-none transition placeholder:text-slate-600 focus:border-sunset-gold focus:ring-1 focus:ring-sunset-gold" />
           </div>
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+            <label htmlFor="email" className="mb-2 block text-xs font-black uppercase tracking-wider text-slate-400">Email address</label>
             <input type="email" id="email" name="email" required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" />
+              autoComplete="email"
+              className="w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3.5 text-white outline-none transition focus:border-sunset-gold focus:ring-1 focus:ring-sunset-gold" />
           </div>
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone</label>
+            <label htmlFor="phone" className="mb-2 block text-xs font-black uppercase tracking-wider text-slate-400">Phone</label>
             <input type="tel" id="phone" name="phone" required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" />
+              autoComplete="tel"
+              className="w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3.5 text-white outline-none transition focus:border-sunset-gold focus:ring-1 focus:ring-sunset-gold" />
           </div>
           <div>
-            <label htmlFor="destination" className="block text-sm font-medium text-gray-700">Destination</label>
+            <label htmlFor="destination" className="mb-2 block text-xs font-black uppercase tracking-wider text-slate-400">Destination</label>
             <select id="destination" name="destination" required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+              className="w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3.5 text-white outline-none transition focus:border-sunset-gold focus:ring-1 focus:ring-sunset-gold">
               <option value="">Select a destination</option>
               <option value="kenya">Kenya</option>
               <option value="tanzania">Tanzania</option>
@@ -90,14 +114,14 @@ const ExpeditionModal = () => {
             </select>
           </div>
           <div>
-            <label htmlFor="dates" className="block text-sm font-medium text-gray-700">Travel Dates</label>
+            <label htmlFor="dates" className="mb-2 block text-xs font-black uppercase tracking-wider text-slate-400">Travel dates</label>
             <input type="text" id="dates" name="dates" placeholder="MM/DD/YYYY - MM/DD/YYYY" required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" />
+              className="w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3.5 text-white outline-none transition placeholder:text-slate-600 focus:border-sunset-gold focus:ring-1 focus:ring-sunset-gold" />
           </div>
           <div>
-            <label htmlFor="type" className="block text-sm font-medium text-gray-700">Expedition Type</label>
+            <label htmlFor="type" className="mb-2 block text-xs font-black uppercase tracking-wider text-slate-400">Expedition type</label>
             <select id="type" name="type" required
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+              className="w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3.5 text-white outline-none transition focus:border-sunset-gold focus:ring-1 focus:ring-sunset-gold">
               <option value="">Select type</option>
               <option value="custom">Custom Safari</option>
               <option value="vet">Veterinary Program</option>
@@ -105,26 +129,31 @@ const ExpeditionModal = () => {
               <option value="study">Study Abroad</option>
             </select>
           </div>
-          <div>
-            <label htmlFor="notes" className="block text-sm font-medium text-gray-700">Special Requests</label>
+          <div className="sm:col-span-2">
+            <label htmlFor="notes" className="mb-2 block text-xs font-black uppercase tracking-wider text-slate-400">Special requests</label>
             <textarea id="notes" name="notes" rows={3}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"></textarea>
+              placeholder="Tell us what would make this journey meaningful for you..."
+              className="w-full resize-none rounded-xl border border-white/10 bg-slate-950 px-4 py-3.5 text-white outline-none transition placeholder:text-slate-600 focus:border-sunset-gold focus:ring-1 focus:ring-sunset-gold"></textarea>
           </div>
-          <button 
-            type="submit" 
+          <div className="flex flex-col gap-4 border-t border-white/10 pt-6 sm:col-span-2 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-xs leading-5 text-slate-500"><i className="ri-shield-check-line mr-2 text-sunset-gold" />Private enquiry · Response within 24 hours</p>
+          <button
+            type="submit"
             disabled={isSubmitting}
-            className="w-full bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-300 disabled:bg-gray-400"
+            className="rounded-xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-60"
           >
             {isSubmitting ? 'Submitting...' : 'Submit Request'}
           </button>
+          </div>
         </form>
-        <button 
+        <button
           onClick={closeModal}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+          className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-slate-950/50 text-slate-300 transition hover:border-sunset-gold hover:text-sunset-gold"
           aria-label="Close Modal"
         >
           <i className="ri-close-line text-2xl"></i>
         </button>
+        </>}
       </div>
     </div>
   );

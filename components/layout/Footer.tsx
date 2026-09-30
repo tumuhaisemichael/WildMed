@@ -142,7 +142,7 @@ const Footer = () => {
                   <i className="ri-mail-send-line text-sunset-amber" />
                 </div>
                 <div className="text-sm text-slate-400 truncate">
-                  wildmeduganda@gmail.com
+                  info@wildmedug.com
                 </div>
               </div>
             </div>

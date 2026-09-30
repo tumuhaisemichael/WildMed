@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import FormSuccess from '@/components/forms/FormSuccess';
 
 interface BookingFormProps {
   country: string;
@@ -45,18 +46,8 @@ export default function BookingForm({ country, destinations, universities }: Boo
   if (submitted) {
     return (
       <section id="booking-section" className="py-24 bg-slate-900">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="bg-emerald-500/10 border border-emerald-500/20 p-12 rounded-[3rem]">
-            <i className="ri-checkbox-circle-fill text-6xl text-emerald-500 mb-6 block"></i>
-            <h2 className="text-3xl font-bold text-white mb-4">Request Received!</h2>
-            <p className="text-slate-300 mb-8">Thank you for your interest in {country}. Our team will review your requirements and get back to you within 24 hours.</p>
-            <button 
-              onClick={() => setSubmitted(false)}
-              className="bg-white text-black px-8 py-3 rounded-xl font-bold hover:bg-emerald-500 transition-all"
-            >
-              Send Another Request
-            </button>
-          </div>
+        <div className="mx-auto max-w-3xl px-6">
+          <FormSuccess title="Journey request received" message={`Thank you for your interest in ${country}. Our travel team will review your requirements and contact you with the next steps.`} onClose={() => setSubmitted(false)} actionLabel="Send another request" />
         </div>
       </section>
     );

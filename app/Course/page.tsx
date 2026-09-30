@@ -205,7 +205,7 @@ export default function CoursePage() {
             <div className="mt-8 space-y-4 text-blue-50">
               <div className="flex items-center gap-3">
                 <i className="ri-mail-line text-green-300"></i>
-                <span>wildmeduganda@gmail.com</span>
+                <span>info@wildmedug.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <i className="ri-phone-line text-green-300"></i>

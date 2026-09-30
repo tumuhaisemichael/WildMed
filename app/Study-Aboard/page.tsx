@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { FormEvent, useEffect, useState } from 'react';
 import UnifiedHero from '@/components/layout/UnifiedHero';
+import FormSuccess from '@/components/forms/FormSuccess';
 
 const heroImage =
   'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=2000&q=85';
@@ -64,9 +65,32 @@ export default function StudyAbroadPage() {
     };
   }, [applicationOpen, selectedImage]);
 
-  const submitApplication = (event: FormEvent<HTMLFormElement>) => {
+  const submitApplication = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    const form = event.currentTarget;
+    const data = {
+      programme: 'Study Abroad — One Health East Africa',
+      ...Object.fromEntries(new FormData(form)),
+    };
+
+    try {
+      const response = await fetch('https://formspree.io/f/mldlkwke', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) throw new Error('Application submission failed');
+
+      form.reset();
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Study Abroad application error:', error);
+      alert('There was an error submitting your application. Please try again or contact us at info@wildmedug.com.');
+    }
   };
 
   return (
@@ -118,7 +142,7 @@ export default function StudyAbroadPage() {
 
       {selectedImage && <div className="gallery-lightbox fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/95 p-5 backdrop-blur-xl" onClick={() => setSelectedImage(null)} role="dialog" aria-modal="true"><button onClick={() => setSelectedImage(null)} className="absolute right-5 top-5 text-3xl text-white" aria-label="Close image">×</button><img src={selectedImage} alt="Expanded Study Abroad field experience" className="max-h-[85vh] max-w-full object-contain" onClick={(event) => event.stopPropagation()} /></div>}
 
-      {applicationOpen && <div className="fixed inset-0 z-[100] overflow-y-auto bg-slate-950/90 p-5 backdrop-blur-xl" role="dialog" aria-modal="true" onClick={() => setApplicationOpen(false)}><div className="mx-auto my-10 max-w-xl bg-[#fff7e8] p-7 text-slate-900 shadow-2xl sm:p-10" onClick={(event) => event.stopPropagation()}><div className="flex items-start justify-between gap-5"><div><p className="text-xs font-black uppercase tracking-[0.25em] text-orange-700">One Health programme</p><h2 className="headline mt-2 text-3xl font-bold">Begin your application</h2></div><button onClick={() => setApplicationOpen(false)} className="text-3xl" aria-label="Close application">×</button></div>{submitted ? <div className="py-14 text-center"><i className="ri-checkbox-circle-fill text-6xl text-secondary" /><h3 className="headline mt-5 text-3xl font-bold">Application received</h3><p className="mt-3 text-slate-600">Our team will contact you with the next steps.</p><button onClick={() => { setApplicationOpen(false); setSubmitted(false); }} className="mt-7 bg-slate-950 px-7 py-3 font-bold text-white">Close</button></div> : <form onSubmit={submitApplication} className="mt-8 grid gap-5 sm:grid-cols-2"><label className="text-sm text-slate-600">Full name<input required name="name" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600">Email address<input required type="email" name="email" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600 sm:col-span-2">University or institution<input required name="institution" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600">Preferred start date<input required type="date" name="date" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600">Duration<select name="duration" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange">{prices.map((price) => <option key={price.duration}>{price.duration}</option>)}</select></label><label className="text-sm text-slate-600 sm:col-span-2">Special interests<textarea name="interests" rows={3} className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><button type="submit" className="bg-slate-950 px-7 py-4 font-black text-white transition hover:bg-sunset-orange sm:col-span-2">Submit application request</button></form>}</div></div>}
+      {applicationOpen && <div className="fixed inset-0 z-[100] overflow-y-auto bg-slate-950/90 p-5 backdrop-blur-xl" role="dialog" aria-modal="true" onClick={() => setApplicationOpen(false)}><div className="mx-auto my-10 max-w-xl bg-[#fff7e8] p-7 text-slate-900 shadow-2xl sm:p-10" onClick={(event) => event.stopPropagation()}><div className="flex items-start justify-between gap-5"><div><p className="text-xs font-black uppercase tracking-[0.25em] text-orange-700">One Health programme</p><h2 className="headline mt-2 text-3xl font-bold">Begin your application</h2></div><button onClick={() => setApplicationOpen(false)} className="text-3xl" aria-label="Close application">×</button></div>{submitted ? <FormSuccess title="Study Abroad application received" message="Our programme team will review your academic interests and contact you with the next steps." onClose={() => { setApplicationOpen(false); setSubmitted(false); }} /> : <form onSubmit={submitApplication} className="mt-8 grid gap-5 sm:grid-cols-2"><label className="text-sm text-slate-600">Full name<input required name="name" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600">Email address<input required type="email" name="email" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600 sm:col-span-2">University or institution<input required name="institution" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600">Preferred start date<input required type="date" name="date" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600">Duration<select name="duration" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange">{prices.map((price) => <option key={price.duration}>{price.duration}</option>)}</select></label><label className="text-sm text-slate-600 sm:col-span-2">Special interests<textarea name="interests" rows={3} className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><button type="submit" className="bg-slate-950 px-7 py-4 font-black text-white transition hover:bg-sunset-orange sm:col-span-2">Submit application request</button></form>}</div></div>}
     </main>
   );
 }

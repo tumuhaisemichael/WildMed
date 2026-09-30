@@ -636,3 +636,132 @@ html[data-theme="light"] .medical-detail-page > section:not(.immersive-hero) [cl
 html[data-theme="light"] .medical-detail-page .gallery-media [class*="text-white"] {
   color: #ffffff !important;
 }
+
+/* Professional programme application forms */
+.veterinary-detail-page #inquiry > div > div:last-child,
+.medical-detail-page #apply > div > div:last-child {
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 28px 70px rgba(2, 6, 23, 0.32);
+}
+
+.veterinary-detail-page #inquiry form,
+.medical-detail-page #apply form {
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  background: #0f172a !important;
+}
+
+.veterinary-detail-page #inquiry form label,
+.veterinary-detail-page #inquiry form legend,
+.medical-detail-page #apply form label,
+.medical-detail-page #apply form legend {
+  color: #cbd5e1 !important;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.veterinary-detail-page #inquiry form input:not([type="checkbox"]),
+.veterinary-detail-page #inquiry form select,
+.veterinary-detail-page #inquiry form textarea,
+.medical-detail-page #apply form input:not([type="checkbox"]),
+.medical-detail-page #apply form select,
+.medical-detail-page #apply form textarea {
+  width: 100%;
+  margin-top: 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0.75rem;
+  background: #020617 !important;
+  color: #ffffff !important;
+  outline: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.veterinary-detail-page #inquiry form input:not([type="checkbox"]),
+.veterinary-detail-page #inquiry form select,
+.medical-detail-page #apply form input:not([type="checkbox"]),
+.medical-detail-page #apply form select {
+  min-height: 3.25rem;
+}
+
+.veterinary-detail-page #inquiry form textarea,
+.medical-detail-page #apply form textarea {
+  resize: vertical;
+}
+
+.veterinary-detail-page #inquiry form input:focus,
+.veterinary-detail-page #inquiry form select:focus,
+.veterinary-detail-page #inquiry form textarea:focus,
+.medical-detail-page #apply form input:focus,
+.medical-detail-page #apply form select:focus,
+.medical-detail-page #apply form textarea:focus {
+  border-color: #ffb830 !important;
+  box-shadow: 0 0 0 1px #ffb830;
+}
+
+.veterinary-detail-page #inquiry form option,
+.medical-detail-page #apply form option {
+  background: #020617;
+  color: #ffffff;
+}
+
+.veterinary-detail-page #inquiry form input[type="checkbox"],
+.medical-detail-page #apply form input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #ffb830;
+}
+
+.veterinary-detail-page #inquiry form fieldset label,
+.medical-detail-page #apply form fieldset label {
+  align-items: center;
+  color: #94a3b8 !important;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.veterinary-detail-page #inquiry form button,
+.medical-detail-page #apply form button {
+  min-height: 3.75rem;
+  border-radius: 0.75rem;
+  background: #ffb830 !important;
+  color: #020617 !important;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.veterinary-detail-page #inquiry form button:hover,
+.medical-detail-page #apply form button:hover {
+  background: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.veterinary-detail-page #inquiry form + div,
+.medical-detail-page #apply form + div {
+  background: #020617 !important;
+}
+
+.veterinary-detail-page #inquiry form + div h3,
+.medical-detail-page #apply form + div h3 {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .veterinary-detail-page #inquiry form,
+html[data-theme="light"] .medical-detail-page #apply form,
+html[data-theme="light"] .veterinary-detail-page #inquiry form + div,
+html[data-theme="light"] .medical-detail-page #apply form + div {
+  color-scheme: dark;
+}
+
+@media (max-width: 639px) {
+  .veterinary-detail-page #inquiry > div > div:last-child,
+  .medical-detail-page #apply > div > div:last-child {
+    border-radius: 1.25rem;
+  }
+}

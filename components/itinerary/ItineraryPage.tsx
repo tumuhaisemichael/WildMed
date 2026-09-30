@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { FormEvent, useEffect, useState } from "react";
 import UnifiedHero from "@/components/layout/UnifiedHero";
+import FormSuccess from "@/components/forms/FormSuccess";
 
 export type ItinerarySegment = { title: string; icon?: string; items: string[] };
 export type ItineraryDay = { label: string; title: string; route: string; image: string; segments: ItinerarySegment[]; note?: { title: string; text: string } };

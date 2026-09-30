@@ -42,7 +42,7 @@ const CTA = () => {
             Book Your Safari Now
           </button>
           <Link
-            href="mailto:wildmeduganda@gmail.com?subject=Brochure Request - WildMed Safaris"
+            href="mailto:info@wildmedug.com?subject=Brochure Request - WildMed Safaris"
             className="w-full sm:w-auto border-2 border-sunset-gold/60 hover:border-sunset-gold text-sunset-honey hover:bg-sunset-gold/10 px-10 py-4 rounded-full text-lg font-bold transition-all duration-300"
           >
             Request Brochure
@@ -62,11 +62,11 @@ const CTA = () => {
           </Link>
           <span className="text-white/20">|</span>
           <Link
-            href="mailto:wildmeduganda@gmail.com"
+            href="mailto:info@wildmedug.com"
             className="flex items-center gap-2 hover:text-sunset-honey transition-colors"
           >
             <i className="ri-mail-line text-sunset-gold text-lg" />
-            wildmeduganda@gmail.com
+            info@wildmedug.com
           </Link>
         </div>
 

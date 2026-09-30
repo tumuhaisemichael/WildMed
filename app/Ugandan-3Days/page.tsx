@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { FormEvent, useEffect, useState } from "react";
 import UnifiedHero from "@/components/layout/UnifiedHero";
+import FormSuccess from "@/components/forms/FormSuccess";
 
 const itinerary = [
   {
@@ -379,7 +380,7 @@ export default function Ugandan3DaysPage() {
             </div>
 
             {submitted ? (
-              <div className="py-14 text-center"><i className="ri-checkbox-circle-fill text-6xl text-emerald-400" /><h3 className="headline mt-5 text-3xl font-bold text-white">Request received</h3><p className="mx-auto mt-3 max-w-md text-sm leading-6 text-slate-400">Thank you. The WildMed team will confirm permit availability and contact you with the next steps.</p><button type="button" onClick={() => setBookingOpen(false)} className="mt-7 bg-sunset-gold px-7 py-3 font-black text-slate-950">Close</button></div>
+              <FormSuccess title="Gorilla adventure request received" message="Thank you. The WildMed team will confirm permit availability and contact you with the next steps." onClose={() => setBookingOpen(false)} />
             ) : (
               <form onSubmit={submitBooking} className="mt-8 grid gap-5 sm:grid-cols-2">
                 <input type="hidden" name="safari" value="3-Day Gorilla Trekking & Batwa Experience" />
