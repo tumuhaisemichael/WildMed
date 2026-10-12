@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import FormSuccess from '@/components/forms/FormSuccess';
+import { Skeleton } from '@/components/ui/Skeleton';
 
 interface BookingFormProps {
   country: string;
@@ -169,7 +170,7 @@ export default function BookingForm({ country, destinations, universities }: Boo
                 disabled={isSubmitting}
                 className="w-full md:w-auto bg-sunset-gold text-black px-12 py-5 rounded-2xl font-black text-xl hover:bg-white hover:scale-105 transition-all duration-300 shadow-2xl disabled:opacity-50 disabled:scale-100"
               >
-                {isSubmitting ? 'Sending Request...' : 'Get My Bespoke Quote'}
+                {isSubmitting ? <Skeleton className="mx-auto h-5 w-36 bg-slate-950/25" /> : 'Get My Bespoke Quote'}
               </button>
               <p className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mt-6">
                 Free Consultation • Secure & Private • Response in 24h

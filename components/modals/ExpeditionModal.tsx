@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import FormSuccess from '@/components/forms/FormSuccess';
+import { Skeleton } from '@/components/ui/Skeleton';
 
 const ExpeditionModal = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -142,7 +143,7 @@ const ExpeditionModal = () => {
             disabled={isSubmitting}
             className="rounded-xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {isSubmitting ? 'Submitting...' : 'Submit Request'}
+            {isSubmitting ? <Skeleton className="mx-auto h-5 w-28 bg-slate-950/25" /> : 'Submit Request'}
           </button>
           </div>
         </form>

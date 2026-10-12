@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, useEffect, useState } from 'react';
+import { Skeleton } from '@/components/ui/Skeleton';
 
 type Review = { id: number; name: string; tripType: string; review: string; rating: number; createdAt: string };
 
@@ -42,11 +43,12 @@ export default function AdminReviewsPage() {
 
         <form onSubmit={loadReviews} className="mt-10 flex max-w-2xl flex-col gap-3 rounded-2xl border border-white/10 bg-slate-900 p-5 sm:flex-row">
           <label className="flex-1 text-xs font-bold uppercase tracking-wider text-slate-400">Admin token<input type="password" value={token} onChange={(event) => setToken(event.target.value)} required className="mt-2 w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-white outline-none focus:border-sunset-gold" /></label>
-          <button disabled={loading} className="self-end rounded-xl bg-sunset-gold px-7 py-3 font-black text-slate-950 disabled:opacity-60">{loading ? 'Loading…' : 'Open reviews'}</button>
+          <button disabled={loading} className="self-end rounded-xl bg-sunset-gold px-7 py-3 font-black text-slate-950 disabled:opacity-60">{loading ? <Skeleton className="h-5 w-24 bg-slate-950/25" /> : 'Open reviews'}</button>
         </form>
         {error && <p role="alert" className="mt-5 max-w-2xl rounded-xl border border-red-400/20 bg-red-400/10 px-5 py-4 text-sm text-red-300">{error}</p>}
 
         <div className="mt-10 space-y-4">
+          {loading && [0, 1, 2].map((item) => <div key={item} className="rounded-2xl border border-white/10 bg-slate-900 p-6"><Skeleton className="h-7 w-48" /><Skeleton className="mt-5 h-4 w-full" /><Skeleton className="mt-3 h-4 w-4/5" /><Skeleton className="mt-6 h-3 w-32" /></div>)}
           {reviews.map((review) => <article key={review.id} className="grid gap-6 rounded-2xl border border-white/10 bg-slate-900 p-6 md:grid-cols-[1fr_auto] md:items-start"><div><div className="flex flex-wrap items-center gap-3"><h2 className="headline text-2xl font-bold">{review.name}</h2><span className="rounded-full border border-sunset-gold/30 px-3 py-1 text-xs text-sunset-gold">{review.tripType}</span><span className="text-sm text-sunset-gold" aria-label={`${review.rating} out of 5 stars`}>{'★'.repeat(review.rating)}{'☆'.repeat(5-review.rating)}</span></div><p className="mt-4 leading-7 text-slate-300">{review.review}</p><p className="mt-4 text-xs text-slate-500">Submitted {new Date(review.createdAt).toLocaleString()}</p></div><button onClick={() => removeReview(review)} className="rounded-xl border border-red-400/25 bg-red-400/10 px-5 py-3 text-sm font-bold text-red-300 hover:bg-red-400 hover:text-slate-950"><i className="ri-delete-bin-line mr-2" />Remove</button></article>)}
           {!loading && token && !error && reviews.length === 0 && <div className="rounded-2xl border border-white/10 bg-white/5 p-10 text-center text-slate-400">No reviews are currently stored.</div>}
         </div>

@@ -2,6 +2,7 @@
 
 import { FormEvent, ReactNode, useState } from 'react';
 import FormSuccess from './FormSuccess';
+import { Skeleton } from '@/components/ui/Skeleton';
 
 type FormspreeFormProps = {
   children: ReactNode;
@@ -38,5 +39,5 @@ export default function FormspreeForm({ children, className, formName, successTi
 
   if (submitted) return <div className="bg-slate-900 p-5 sm:p-8"><FormSuccess title={successTitle} message={successMessage} onClose={() => setSubmitted(false)} actionLabel="Send another request" /></div>;
 
-  return <form onSubmit={submit} className={className} aria-busy={submitting}>{children}<input type="hidden" name="submission_status" value={submitting ? 'submitting' : 'ready'} /></form>;
+  return <form onSubmit={submit} className={`${className || ''} relative`} aria-busy={submitting}>{children}{submitting && <div className="absolute inset-0 z-20 grid place-items-center rounded-xl bg-[rgba(15,23,42,0.22)] backdrop-blur-[1px]"><div className="w-40 space-y-3"><Skeleton className="h-4 w-2/3 bg-slate-500/60" /><Skeleton className="h-10 w-full bg-slate-500/60" /></div></div>}<input type="hidden" name="submission_status" value={submitting ? 'submitting' : 'ready'} /></form>;
 }

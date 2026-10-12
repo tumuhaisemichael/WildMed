@@ -1,4 +1,4 @@
-// File: /home/michael/Sente/WildMed/app/page.tsx
+// File: /home/baisoft/michael/WildMed/app/page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

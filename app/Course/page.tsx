@@ -111,9 +111,9 @@ export default function CoursePage() {
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Field Biology Lectures</h3>
               <p className="text-gray-600 mb-6">Biodiversity surveys, habitat and ecosystem assessment, species
                 identification, ecological sampling, and conservation research documentation.</p>
-              <a href="Biological-Field-Research-Expeditions.html" className="inline-flex items-center text-blue-700 font-semibold hover:text-blue-900">
+              <Link href="/Biological-Field-Research-Expeditions" className="inline-flex items-center text-blue-700 font-semibold hover:text-blue-900">
                 Open Field Biology Source Page
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -129,9 +129,9 @@ export default function CoursePage() {
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Veterinary and Conservation Lectures</h3>
               <p className="text-gray-600 mb-6">Disease surveillance, conservation medicine, wildlife immobilisation,
                 rehabilitation operations, predator ecology, and conservation technology monitoring.</p>
-              <a href="Veterinary-Conservation-.html" className="inline-flex items-center text-blue-700 font-semibold hover:text-blue-900">
+              <Link href="/Veterinary-Conservation-" className="inline-flex items-center text-blue-700 font-semibold hover:text-blue-900">
                 Open Veterinary Source Page
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -147,9 +147,9 @@ export default function CoursePage() {
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Medical and One Health Lectures</h3>
               <p className="text-gray-600 mb-6">Community outreach clinics, zoonotic disease surveillance, tropical and
                 travel medicine, environmental health, screening programmes, and vector-borne disease monitoring.</p>
-              <a href="Medical-Expedition-Programs.html" className="inline-flex items-center text-blue-700 font-semibold hover:text-blue-900">
+              <Link href="/Medical-Expedition-Programs" className="inline-flex items-center text-blue-700 font-semibold hover:text-blue-900">
                 Open Medical Source Page
-              </a>
+              </Link>
             </div>
           </div>
         </div>

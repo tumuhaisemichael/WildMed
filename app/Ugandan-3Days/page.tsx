@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FormEvent, useEffect, useState } from "react";
 import UnifiedHero from "@/components/layout/UnifiedHero";
 import FormSuccess from "@/components/forms/FormSuccess";
+import { Skeleton } from "@/components/ui/Skeleton";
 
 const itinerary = [
   {
@@ -393,7 +394,7 @@ export default function Ugandan3DaysPage() {
                 <fieldset className="sm:col-span-2"><legend className="text-sm font-bold text-slate-300">Activity level preference</legend><div className="mt-3 grid grid-cols-3 gap-2">{["Moderate", "Intermediate", "Advanced"].map((level) => <button type="button" key={level} onClick={() => setActivityLevel(level)} className={`rounded-xl border px-3 py-3 text-xs font-bold transition ${activityLevel === level ? "border-sunset-gold bg-sunset-gold text-slate-950" : "border-white/10 bg-slate-950 text-slate-300 hover:border-sunset-gold/60"}`}>{level}</button>)}</div></fieldset>
                 <label className="text-sm font-bold text-slate-300 sm:col-span-2">Accommodation level<select value={accommodation} onChange={(event) => setAccommodation(event.target.value)} className="mt-2 w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3 font-normal text-white outline-none focus:border-sunset-gold"><option>Mid-range Lodges (Included)</option><option>Upgrade to Luxury (+$500)</option></select></label>
                 <label className="text-sm font-bold text-slate-300 sm:col-span-2">Special requests<textarea name="requests" rows={3} placeholder="Dietary needs, photography focus, cultural interests..." className="mt-2 w-full resize-none rounded-xl border border-white/10 bg-slate-950 px-4 py-3 font-normal text-white outline-none focus:border-sunset-gold" /></label>
-                <button type="submit" disabled={submitting} className="bg-sunset-gold px-7 py-4 font-black text-slate-950 transition hover:bg-white disabled:opacity-50 sm:col-span-2">{submitting ? "Submitting request..." : "Submit booking request"}</button>
+                <button type="submit" disabled={submitting} className="bg-sunset-gold px-7 py-4 font-black text-slate-950 transition hover:bg-white disabled:opacity-50 sm:col-span-2">{submitting ? <Skeleton className="mx-auto h-5 w-36 bg-slate-950/25" /> : "Submit booking request"}</button>
               </form>
             )}
           </div>

@@ -128,6 +128,11 @@ const Header = () => {
     { name: 'Reviews', href: '/Review' },
   ];
 
+  const isActiveLink = (link: (typeof navLinks)[number]) =>
+    pathname === link.href ||
+    link.dropdown?.some((subLink) => pathname === subLink.href) ||
+    link.sections?.some((section) => section.links.some((subLink) => pathname === subLink.href));
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
@@ -186,14 +191,14 @@ const Header = () => {
                       className={`relative px-1 transition-all duration-300 flex items-center space-x-1 font-medium ${
                         scrolled ? 'text-xs' : 'text-sm'
                       } ${
-                        pathname === link.href ? 'text-sunset-gold' : 'text-slate-100 hover:text-sunset-gold'
+                        isActiveLink(link) ? 'text-sunset-gold drop-shadow-[0_0_8px_rgba(251,191,36,0.72)]' : 'text-slate-100 hover:text-sunset-gold'
                       }`}
                     >
+                      <i className={`ri-arrow-right-s-line transition-all duration-300 ${
+                        isActiveLink(link) ? 'mr-1 opacity-100' : 'opacity-0 -ml-4 group-hover:ml-0 group-hover:mr-1 group-hover:opacity-100'
+                      }`} />
                       <span>{link.name}</span>
                       <i className="ri-arrow-down-s-line text-[10px] opacity-50 group-hover:rotate-180 transition-transform duration-300"></i>
-                      {pathname === link.href && (
-                        <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-sunset-gold rounded-full" />
-                      )}
                     </Link>
                     
                     {link.mega ? (
@@ -209,9 +214,13 @@ const Header = () => {
                                   <Link
                                     key={subLink.name}
                                     href={subLink.href}
-                                    className="text-sm text-slate-300 hover:text-sunset-gold hover:translate-x-1 transition-all duration-200 flex items-center space-x-2"
+                                    className={`group/item text-sm transition-all duration-300 flex items-center ${
+                                      pathname === subLink.href ? 'text-sunset-gold drop-shadow-[0_0_7px_rgba(251,191,36,0.68)]' : 'text-slate-300 hover:text-sunset-gold hover:drop-shadow-[0_0_7px_rgba(251,191,36,0.58)]'
+                                    }`}
                                   >
-                                    <span className="w-1 h-1 rounded-full bg-sunset-brown/40" />
+                                    <i className={`ri-arrow-right-s-line transition-all duration-300 ${
+                                      pathname === subLink.href ? 'mr-2 opacity-100' : 'opacity-0 -ml-4 group-hover/item:ml-0 group-hover/item:mr-2 group-hover/item:opacity-100'
+                                    }`} />
                                     <span>{subLink.name}</span>
                                   </Link>
                                 ))}
@@ -242,8 +251,15 @@ const Header = () => {
                             <Link
                               key={subLink.name}
                               href={subLink.href}
-                              className="block px-6 py-3 text-sm text-slate-300 hover:bg-white/5 hover:text-sunset-gold transition-all duration-300 border-l-2 border-transparent hover:border-sunset-gold"
+                              className={`group/item flex items-center px-6 py-3 text-sm transition-all duration-300 border-l-2 ${
+                                pathname === subLink.href
+                                  ? 'border-sunset-gold bg-white/5 text-sunset-gold shadow-[inset_0_0_18px_rgba(251,191,36,0.12)]'
+                                  : 'border-transparent text-slate-300 hover:bg-white/5 hover:text-sunset-gold hover:border-sunset-gold hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]'
+                              }`}
                             >
+                              <i className={`ri-arrow-right-s-line transition-all duration-300 ${
+                                pathname === subLink.href ? 'mr-2 opacity-100' : 'opacity-0 -ml-4 group-hover/item:ml-0 group-hover/item:mr-2 group-hover/item:opacity-100'
+                              }`} />
                               {subLink.name}
                             </Link>
                           ))}
@@ -254,16 +270,16 @@ const Header = () => {
                 ) : (
                   <Link
                     href={link.href}
-                    className={`relative px-1 transition-all duration-300 font-medium ${
+                    className={`group relative px-1 transition-all duration-300 font-medium flex items-center ${
                       scrolled ? 'text-xs' : 'text-sm'
                     } ${
-                      pathname === link.href ? 'text-sunset-gold' : 'text-slate-100 hover:text-sunset-gold'
+                      pathname === link.href ? 'text-sunset-gold drop-shadow-[0_0_8px_rgba(251,191,36,0.72)]' : 'text-slate-100 hover:text-sunset-gold'
                     }`}
                   >
+                    <i className={`ri-arrow-right-s-line transition-all duration-300 ${
+                      pathname === link.href ? 'mr-1 opacity-100' : 'opacity-0 -ml-4 group-hover:ml-0 group-hover:mr-1 group-hover:opacity-100'
+                    }`} />
                     {link.name}
-                    {pathname === link.href && (
-                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-sunset-gold rounded-full" />
-                    )}
                   </Link>
                 )}
               </div>
@@ -299,13 +315,20 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu Overlay */}
+      </nav>
+
+      {/*
+        This must be a sibling of the blurred nav, rather than a child of it.
+        A backdrop filter creates a containing block for fixed descendants,
+        which otherwise restricts the drawer to the header's height.
+      */}
+      {/* Mobile Menu Overlay */}
         <div
           className={`lg:hidden fixed inset-0 z-[100] transition-all duration-500 ease-in-out ${
             isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
           }`}
         >
-          <div className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm" onClick={toggleMobileMenu} />
+          <div className="absolute inset-0" onClick={toggleMobileMenu} />
           <div 
             className={`absolute top-0 right-0 h-full w-[80%] max-w-sm bg-slate-950 shadow-2xl border-l border-white/10 transition-transform duration-500 ease-in-out ${
               isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
@@ -336,11 +359,18 @@ const Header = () => {
                       <>
                         <button
                           onClick={() => toggleMobileDropdown(link.name)}
-                          className={`w-full flex justify-between items-center px-4 py-3 rounded-xl transition-all duration-300 font-medium ${
-                            openMobileDropdown === link.name ? 'bg-white/5 text-sunset-gold' : 'text-slate-100 hover:bg-white/5'
+                          className={`group/item w-full flex justify-between items-center px-4 py-3 rounded-xl transition-all duration-300 font-medium ${
+                            openMobileDropdown === link.name || isActiveLink(link)
+                              ? 'bg-sunset-gold/10 text-sunset-gold shadow-[inset_0_0_20px_rgba(251,191,36,0.16),0_0_14px_rgba(251,191,36,0.12)]'
+                              : 'text-slate-100 hover:bg-white/5'
                           }`}
                         >
-                          <span>{link.name}</span>
+                          <span className="flex items-center">
+                            <i className={`ri-arrow-right-s-line transition-all duration-300 ${
+                              isActiveLink(link) ? 'mr-2 opacity-100' : 'opacity-0 -ml-4 group-hover/item:ml-0 group-hover/item:mr-2 group-hover/item:opacity-100'
+                            }`} />
+                            {link.name}
+                          </span>
                           <i className={`ri-arrow-${openMobileDropdown === link.name ? 'up' : 'down'}-s-line text-sm`}></i>
                         </button>
                         <div
@@ -359,8 +389,13 @@ const Header = () => {
                                       <Link
                                         key={subLink.name}
                                         href={subLink.href}
-                                        className="block px-4 py-2 text-sm text-slate-400 hover:text-sunset-gold transition-colors"
+                                        className={`group/item flex items-center px-4 py-2 text-sm transition-all duration-300 ${
+                                          pathname === subLink.href ? 'text-sunset-gold drop-shadow-[0_0_7px_rgba(251,191,36,0.68)]' : 'text-slate-400 hover:text-sunset-gold hover:drop-shadow-[0_0_7px_rgba(251,191,36,0.58)]'
+                                        }`}
                                       >
+                                        <i className={`ri-arrow-right-s-line transition-all duration-300 ${
+                                          pathname === subLink.href ? 'mr-2 opacity-100' : 'opacity-0 -ml-4 group-hover/item:ml-0 group-hover/item:mr-2 group-hover/item:opacity-100'
+                                        }`} />
                                         {subLink.name}
                                       </Link>
                                     ))}
@@ -371,8 +406,13 @@ const Header = () => {
                                 <Link
                                   key={subLink.name}
                                   href={subLink.href}
-                                  className="block px-4 py-2.5 text-sm text-slate-400 hover:text-sunset-gold transition-colors"
+                                  className={`group/item flex items-center px-4 py-2.5 text-sm transition-all duration-300 ${
+                                    pathname === subLink.href ? 'text-sunset-gold drop-shadow-[0_0_7px_rgba(251,191,36,0.68)]' : 'text-slate-400 hover:text-sunset-gold hover:drop-shadow-[0_0_7px_rgba(251,191,36,0.58)]'
+                                  }`}
                                 >
+                                  <i className={`ri-arrow-right-s-line transition-all duration-300 ${
+                                    pathname === subLink.href ? 'mr-2 opacity-100' : 'opacity-0 -ml-4 group-hover/item:ml-0 group-hover/item:mr-2 group-hover/item:opacity-100'
+                                  }`} />
                                   {subLink.name}
                                 </Link>
                               ))}
@@ -381,10 +421,15 @@ const Header = () => {
                     ) : (
                       <Link
                         href={link.href}
-                        className={`block px-4 py-3 rounded-xl transition-all duration-300 font-medium ${
-                          pathname === link.href ? 'bg-sunset-gold/10 text-sunset-gold' : 'text-slate-100 hover:bg-white/5'
+                        className={`group/item flex items-center px-4 py-3 rounded-xl transition-all duration-300 font-medium ${
+                          pathname === link.href
+                            ? 'bg-sunset-gold/10 text-sunset-gold shadow-[inset_0_0_20px_rgba(251,191,36,0.16),0_0_14px_rgba(251,191,36,0.12)]'
+                            : 'text-slate-100 hover:bg-white/5'
                         }`}
                       >
+                        <i className={`ri-arrow-right-s-line transition-all duration-300 ${
+                          pathname === link.href ? 'mr-2 opacity-100' : 'opacity-0 -ml-4 group-hover/item:ml-0 group-hover/item:mr-2 group-hover/item:opacity-100'
+                        }`} />
                         {link.name}
                       </Link>
                     )}
@@ -412,7 +457,6 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </nav>
 
       <style jsx>{`
         .custom-scrollbar::-webkit-scrollbar {
