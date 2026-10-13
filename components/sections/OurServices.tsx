@@ -62,7 +62,7 @@ const OurServices = () => {
           {services.map((service) => (
             <div
               key={service.title}
-              className={`relative bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl shadow-xl hover:shadow-2xl ${service.glow} transition-all duration-500 p-10 border ${service.border} flex flex-col group overflow-hidden`}
+              className={`home-service-card relative bg-gradient-to-br from-slate-900 to-slate-950 rounded-3xl shadow-xl hover:shadow-2xl ${service.glow} transition-all duration-500 p-10 border ${service.border} flex flex-col group overflow-hidden`}
             >
               {/* Background glow blob */}
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-current opacity-5 rounded-full blur-3xl group-hover:opacity-10 transition-opacity duration-500 pointer-events-none" />

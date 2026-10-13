@@ -50,7 +50,7 @@ const Gallery = () => {
   if (!mounted) return null;
 
   return (
-    <section className="py-20 bg-slate-950 overflow-hidden relative border-t border-white/5">
+    <section className="pb-10 pt-16 bg-slate-950 overflow-hidden relative border-t border-white/5">
       {/* Soft edge masks */}
       <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-slate-950 to-transparent z-20 pointer-events-none" />
       <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-slate-950 to-transparent z-20 pointer-events-none" />
@@ -119,7 +119,7 @@ const Gallery = () => {
         </div>
       </div>
 
-      <div className="mt-12 text-center relative z-10">
+      <div className="mt-9 text-center relative z-10">
         <Link
           href="/gallery"
           className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-6 py-3 rounded-xl text-slate-300 font-bold hover:bg-sunset-gold hover:text-black hover:border-sunset-gold transition-all duration-300 shadow-lg"

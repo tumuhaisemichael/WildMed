@@ -80,7 +80,7 @@ const Testimonials = () => {
             {/* Avatar */}
             <div className="flex-shrink-0">
               <div className="w-20 h-20 rounded-2xl overflow-hidden border-2 border-sunset-gold/40 shadow-lg">
-                <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
+                <img src="/partners/profileicon.jpeg" alt={`${t.name} profile`} className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -149,7 +149,7 @@ const Testimonials = () => {
               >
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-8 h-8 rounded-lg overflow-hidden flex-shrink-0">
-                    <img src={t.img} alt={t.name} className="w-full h-full object-cover" />
+                    <img src="/partners/profileicon.jpeg" alt={`${t.name} profile`} className="w-full h-full object-cover" />
                   </div>
                   <span className="text-xs font-semibold text-gray-300 truncate group-hover:text-sunset-honey transition-colors">{t.name}</span>
                 </div>

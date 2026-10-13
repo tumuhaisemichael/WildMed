@@ -42,7 +42,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gray-900">
+    <section className="relative min-h-[720px] flex flex-col items-center justify-center overflow-hidden bg-gray-900">
       {/* Background Images — crossfade */}
       {heroImages.map((img, idx) => (
         <div
@@ -79,10 +79,10 @@ const Hero = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text content */}
-          <div className="space-y-8 text-white max-w-2xl">
+          <div className="home-hero-copy space-y-8 text-white max-w-2xl">
             <div className="overflow-hidden">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
                 <span className="italic text-sunset-orange">Wild</span>
@@ -120,7 +120,7 @@ const Hero = () => {
           </div>
 
           {/* Services card */}
-          <div className="safari-card animate-float bg-gradient-to-br from-slate-900/85 via-slate-950/90 to-black/90 p-8 rounded-3xl backdrop-blur-md border border-sunset-brown/30 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+          <div className="hero-services-card safari-card animate-float bg-gradient-to-br from-slate-900/85 via-slate-950/90 to-black/90 p-8 rounded-3xl backdrop-blur-md border border-sunset-brown/30 shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
             <h3 className="text-2xl font-bold mb-6 text-sunset-orange flex items-center">
               <i className="ri-map-pin-2-line mr-3" />
               Our Services
@@ -191,7 +191,7 @@ const Hero = () => {
       </div>
 
       {/* Stats Bar */}
-      <div className="relative z-10 w-full border-t border-white/10 bg-black/40 backdrop-blur-md mt-auto">
+      <div className="home-hero-stats relative z-10 w-full border-t border-white/10 bg-black/40 backdrop-blur-md mt-auto">
         <div className="max-w-7xl mx-auto px-6 py-5">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x md:divide-white/15">
             {stats.map((stat) => (

@@ -72,6 +72,17 @@
   animation: gradient-x 3s ease infinite;
 }
 
+/* Home-page partner logo wall */
+.partner-grid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse at center, black, transparent 72%);
+}
+
+.partner-card {
+  animation: partner-enter 700ms both cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 @keyframes slide-up {
   to {
     transform: translateY(0);
@@ -100,6 +111,15 @@
   50% {
     background-position: 100% 50%;
   }
+}
+
+@keyframes partner-enter {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-card { animation: none; }
 }
 
 /* Global scrollbar hide utility */
@@ -764,4 +784,35 @@ html[data-theme="light"] .medical-detail-page #apply form + div {
   .medical-detail-page #apply > div > div:last-child {
     border-radius: 1.25rem;
   }
+}
+
+/* Targeted Home-page light-mode contrast for copy over imagery and service cards. */
+html[data-theme="light"] .home-hero-copy,
+html[data-theme="light"] .home-hero-copy [class*="text-white"],
+html[data-theme="light"] .home-service-card [class*="text-white"] {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .home-hero-copy [class*="text-gray-200"],
+html[data-theme="light"] .home-hero-copy [class*="text-gray-400"],
+html[data-theme="light"] .home-service-card [class*="text-gray-400"] {
+  color: #e2e8f0 !important;
+}
+
+/* The service panel sits over the dark Home hero in both themes. */
+html[data-theme="light"] .hero-services-card [class*="text-white"] {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .hero-services-card [class*="text-gray-400"] {
+  color: #cbd5e1 !important;
+}
+
+/* The statistic strip remains dark over the Home hero in either theme. */
+html[data-theme="light"] .home-hero-stats [class*="text-white"] {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .home-hero-stats [class*="text-gray-400"] {
+  color: #cbd5e1 !important;
 }

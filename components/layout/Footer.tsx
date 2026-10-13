@@ -4,6 +4,11 @@ import Image from 'next/image';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const socialLinks = [
+    { name: 'Instagram', icon: 'instagram-line', href: 'https://www.instagram.com/wildmedsafaris?srtk=bXVxY2JqeWdoODMz&utm_source=qr' },
+    { name: 'TikTok', icon: 'tiktok-line', href: 'https://www.tiktok.com/@wildmed.safarisfie?_r=1&_t=ZS-9AUFQas6KP7' },
+    // Facebook, X, and WhatsApp social profiles will be added when their official links are available.
+  ];
 
   const footerLinks = {
     company: [
@@ -64,13 +69,16 @@ const Footer = () => {
               Crafting meaningful wildlife adventures that combine expert conservation science, professional education, and unforgettable wilderness experiences across East Africa.
             </p>
             <div className="flex space-x-3">
-              {['facebook-fill', 'instagram-line', 'twitter-x-line', 'whatsapp-line'].map((icon) => (
+              {socialLinks.map((social) => (
                 <a
-                  key={icon}
-                  href="#"
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit WildMed on ${social.name}`}
                   className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:bg-sunset-gold hover:text-black hover:border-sunset-gold transition-all duration-300 shadow-xl"
                 >
-                  <i className={`ri-${icon} text-lg`}></i>
+                  <i className={`ri-${social.icon} text-lg`}></i>
                 </a>
               ))}
             </div>

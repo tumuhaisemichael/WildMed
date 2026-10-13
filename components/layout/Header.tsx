@@ -448,10 +448,13 @@ const Header = () => {
                   Plan Your Trip
                 </button>
                 <div className="flex justify-center space-x-6 text-slate-400">
-                  <i className="ri-facebook-fill hover:text-sunset-gold transition-colors"></i>
-                  <i className="ri-instagram-line hover:text-sunset-gold transition-colors"></i>
-                  <i className="ri-twitter-x-fill hover:text-sunset-gold transition-colors"></i>
-                  <i className="ri-whatsapp-line hover:text-sunset-gold transition-colors"></i>
+                  <a href="https://www.instagram.com/wildmedsafaris?srtk=bXVxY2JqeWdoODMz&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Visit WildMed on Instagram" className="hover:text-sunset-gold transition-colors">
+                    <i className="ri-instagram-line"></i>
+                  </a>
+                  <a href="https://www.tiktok.com/@wildmed.safarisfie?_r=1&_t=ZS-9AUFQas6KP7" target="_blank" rel="noopener noreferrer" aria-label="Visit WildMed on TikTok" className="hover:text-sunset-gold transition-colors">
+                    <i className="ri-tiktok-line"></i>
+                  </a>
+                  {/* Facebook, X, and WhatsApp social profiles will be added when their official links are available. */}
                 </div>
               </div>
             </div>
