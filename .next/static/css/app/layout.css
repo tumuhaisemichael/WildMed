@@ -4251,6 +4251,15 @@ html[data-theme="light"] .home-hero-stats [class*="text-gray-400"] {
   color: #cbd5e1 !important;
 }
 
+/* This call-to-action keeps its dark surface in both themes. */
+html[data-theme="light"] .destinations-experience-cta [class*="text-white"] {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .destinations-experience-cta [class*="text-slate-400"] {
+  color: #cbd5e1 !important;
+}
+
 .first-letter\:float-left::first-letter {
   float: left;
 }

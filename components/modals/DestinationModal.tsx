@@ -29,47 +29,230 @@ export default function DestinationModal({ isOpen, onClose, data, id }: Destinat
   const handleDownloadPDF = async () => {
     if (!data) return;
     const { jsPDF } = await import('jspdf');
-    const doc = new jsPDF();
-    doc.setFontSize(22);
-    doc.setTextColor(40, 40, 40);
-    doc.text(data.title, 105, 20, { align: 'center' });
-    doc.setFontSize(12);
-    doc.setTextColor(100, 100, 100);
-    const splitDescription = doc.splitTextToSize(data.description, 170);
-    doc.text(splitDescription, 20, 35);
-    let yPos = 35 + (splitDescription.length * 7) + 10;
-    doc.setFontSize(16);
-    doc.setTextColor(30, 30, 30);
-    doc.text('Highlights:', 20, yPos);
-    yPos += 10;
-    doc.setFontSize(11);
-    doc.setTextColor(80, 80, 80);
-    data.highlights.forEach(h => {
-      if (yPos > 270) { doc.addPage(); yPos = 20; }
-      doc.text(`• ${h}`, 25, yPos);
-      yPos += 7;
-    });
-    yPos += 5;
-    doc.setFontSize(16);
-    doc.setTextColor(30, 30, 30);
-    doc.text('Specifications:', 20, yPos);
-    yPos += 10;
-    doc.setFontSize(11);
-    Object.entries(data.details).forEach(([key, val]) => {
-      if (yPos > 270) { doc.addPage(); yPos = 20; }
-      doc.setTextColor(50, 50, 50);
-      doc.text(`${key}:`, 25, yPos);
-      doc.setTextColor(100, 100, 100);
-      doc.text(val, 70, yPos);
-      yPos += 7;
-    });
-    const pageCount = (doc as any).internal.getNumberOfPages();
-    for (let i = 1; i <= pageCount; i++) {
-      doc.setPage(i);
+    const doc = new jsPDF({ unit: 'mm', format: 'a4' });
+    const pageWidth = 210;
+    const pageHeight = 297;
+    const margin = 18;
+    const imageSource = data.image.startsWith('http') ? data.image : `/${data.image}`;
+
+    const loadCover = async () => {
+      try {
+        const response = await fetch(imageSource);
+        if (!response.ok) return null;
+        const imageBlob = await response.blob();
+        const imageData = await new Promise<string>((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(String(reader.result));
+          reader.onerror = reject;
+          reader.readAsDataURL(imageBlob);
+        });
+        return { imageData, format: imageBlob.type.includes('png') ? 'PNG' : 'JPEG' } as const;
+      } catch {
+        return null;
+      }
+    };
+
+    const cover = await loadCover();
+    const addFooter = (page: number) => {
+      doc.setDrawColor(214, 162, 50);
+      doc.setLineWidth(0.35);
+      doc.line(margin, 282, pageWidth - margin, 282);
+      doc.setFont('helvetica', 'normal');
       doc.setFontSize(8);
-      doc.setTextColor(150, 150, 150);
-      doc.text(`Generated from WildMed - ${new Date().toLocaleDateString()}`, 105, 285, { align: 'center' });
+      doc.setTextColor(100, 116, 139);
+      doc.text('WILDMED SAFARIS & FIELD PROJECTS  ·  EAST AFRICA', margin, 288);
+      doc.text(`FIELD GUIDE  /  ${page}`, pageWidth - margin, 288, { align: 'right' });
+    };
+
+    const addSectionHeader = (title: string, subtitle: string) => {
+      doc.setFillColor(2, 8, 23);
+      doc.rect(0, 0, pageWidth, 35, 'F');
+      doc.setFillColor(255, 184, 48);
+      doc.rect(margin, 15, 18, 1, 'F');
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(15);
+      doc.setTextColor(255, 255, 255);
+      doc.text(title.toUpperCase(), margin, 25);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(8);
+      doc.setTextColor(203, 213, 225);
+      doc.text(subtitle, pageWidth - margin, 25, { align: 'right' });
+    };
+
+    const addWrappedText = (text: string, x: number, y: number, width: number, fontSize = 10, colour: [number, number, number] = [71, 85, 105]) => {
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(fontSize);
+      doc.setTextColor(...colour);
+      const lines = doc.splitTextToSize(text, width);
+      doc.text(lines, x, y);
+      return y + lines.length * (fontSize * 0.48);
+    };
+
+    const limitedLines = (text: string, width: number, maximum: number) => {
+      const lines = doc.splitTextToSize(text, width) as string[];
+      if (lines.length <= maximum) return lines;
+      const clipped = lines.slice(0, maximum);
+      clipped[maximum - 1] = `${clipped[maximum - 1].replace(/[.…\s]+$/, '')}…`;
+      return clipped;
+    };
+
+    // Cover page
+    doc.setFillColor(2, 8, 23);
+    doc.rect(0, 0, pageWidth, pageHeight, 'F');
+    if (cover) {
+      doc.addImage(cover.imageData, cover.format, 0, 0, pageWidth, pageHeight);
+      doc.setFillColor(2, 8, 23);
+      doc.setGState(new (doc as any).GState({ opacity: 0.64 }));
+      doc.rect(0, 0, pageWidth, pageHeight, 'F');
+      doc.setGState(new (doc as any).GState({ opacity: 1 }));
     }
+    doc.setFillColor(255, 184, 48);
+    doc.rect(margin, 28, 38, 1.4, 'F');
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(10);
+    doc.setTextColor(255, 184, 48);
+    doc.text('WILDMED  /  DESTINATION FIELD GUIDE', margin, 42);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(30);
+    doc.setTextColor(255, 255, 255);
+    const titleLines = doc.splitTextToSize(data.title, 160);
+    doc.text(titleLines, margin, 72);
+    const titleBottom = 72 + titleLines.length * 13;
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(11);
+    doc.setTextColor(226, 232, 240);
+    doc.text('A considered guide for your next East African experience.', margin, titleBottom + 12);
+    const coverDescription = limitedLines(data.description, 154, 3);
+    doc.setFontSize(10);
+    doc.setTextColor(203, 213, 225);
+    doc.text(coverDescription, margin, titleBottom + 26);
+    doc.setFillColor(255, 255, 255);
+    doc.roundedRect(margin, 166, 174, 48, 4, 4, 'F');
+    doc.setDrawColor(226, 232, 240);
+    doc.line(margin + 104, 174, margin + 104, 206);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(9);
+    doc.setTextColor(100, 116, 139);
+    doc.text('EXPERIENCE VALUE', margin + 10, 180);
+    doc.text('TRAVELLER RATING', margin + 114, 180);
+    doc.setFontSize(13);
+    doc.setTextColor(15, 23, 42);
+    doc.text(limitedLines(data.price, 86, 2), margin + 10, 191);
+    doc.setTextColor(217, 119, 6);
+    doc.text(`${data.rating} / 5`, margin + 114, 191);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    doc.setTextColor(71, 85, 105);
+    doc.text('Indicative rate; tailored on request.', margin + 10, 204);
+    doc.text('Based on recent traveller feedback', margin + 114, 204);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(8);
+    doc.setTextColor(203, 213, 225);
+    doc.text('WILDMED SAFARIS & FIELD PROJECTS  ·  UGANDA, RWANDA, KENYA & TANZANIA', margin, 266);
+    doc.text('wildmedug.com  ·  info@wildmedug.com', margin, 272);
+    addFooter(1);
+
+    // A single, information-dense planning page keeps every guide to two pages.
+    doc.addPage();
+    addSectionHeader('Plan the experience', data.title);
+    const left = margin;
+    const right = 111;
+    const columnWidth = 81;
+    let leftY = 51;
+    let rightY = 51;
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(16);
+    doc.setTextColor(15, 23, 42);
+    doc.text('Why it stays with you', left, leftY);
+    leftY = addWrappedText(data.description, left, leftY + 10, columnWidth, 9, [71, 85, 105]) + 9;
+    doc.setFillColor(255, 247, 232);
+    doc.roundedRect(left, leftY, columnWidth, 1, 0.5, 0.5, 'F');
+    leftY += 11;
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(13);
+    doc.setTextColor(15, 23, 42);
+    doc.text('What makes it memorable', left, leftY);
+    leftY += 8;
+    data.highlights.forEach((highlight, index) => {
+      const lines = limitedLines(highlight, columnWidth - 13, 3);
+      const itemHeight = Math.max(13, lines.length * 4 + 5);
+      doc.setFillColor(255, 184, 48);
+      doc.circle(left + 3.5, leftY - 2.2, 3.5, 'F');
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(7);
+      doc.setTextColor(15, 23, 42);
+      doc.text(String(index + 1), left + 3.5, leftY + 0.2, { align: 'center' });
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(8.5);
+      doc.setTextColor(51, 65, 85);
+      doc.text(lines, left + 11, leftY);
+      leftY += itemHeight;
+    });
+
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(16);
+    doc.setTextColor(15, 23, 42);
+    doc.text('Destination snapshot', right, rightY);
+    rightY += 10;
+    Object.entries(data.details).forEach(([key, value]) => {
+      const valueLines = limitedLines(value, columnWidth - 12, 3);
+      const rowHeight = Math.max(15, valueLines.length * 4 + 7);
+      doc.setFillColor(248, 250, 252);
+      doc.roundedRect(right, rightY - 5, columnWidth, rowHeight, 2, 2, 'F');
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(8);
+      doc.setTextColor(180, 83, 9);
+      doc.text(key.toUpperCase(), right + 6, rightY + 0.5);
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(8);
+      doc.setTextColor(51, 65, 85);
+      doc.text(valueLines, right + 6, rightY + 5.5);
+      rightY += rowHeight + 3;
+    });
+
+    const planningNotes = [
+      ['Climate & season', data.climate],
+      ['Travel tip', data.travelTips],
+      ['Available programmes', data.programs],
+      ['Admission guidance', data.admission],
+    ].filter((note): note is [string, string] => Boolean(note[1]));
+
+    // Keep the guide strictly two pages. The destination snapshot is always
+    // complete; one concise practical note is included when there is room.
+    if (planningNotes.length && rightY < 215) {
+      rightY += 3;
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(13);
+      doc.setTextColor(15, 23, 42);
+      doc.text('Useful planning notes', right, rightY);
+      rightY += 8;
+      planningNotes.slice(0, 1).forEach(([label, value]) => {
+        const noteLines = limitedLines(value, columnWidth - 12, 3);
+        const noteHeight = Math.max(18, noteLines.length * 4 + 9);
+        doc.setFillColor(255, 247, 232);
+        doc.roundedRect(right, rightY - 5, columnWidth, noteHeight, 3, 3, 'F');
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(9);
+        doc.setTextColor(180, 83, 9);
+        doc.text(label.toUpperCase(), right + 6, rightY + 0.5);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(8);
+        doc.setTextColor(71, 85, 105);
+        doc.text(noteLines, right + 6, rightY + 5.5);
+        rightY += noteHeight + 3;
+      });
+    }
+    doc.setFillColor(2, 8, 23);
+    doc.roundedRect(margin, 252, 174, 17, 3, 3, 'F');
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(9);
+    doc.setTextColor(255, 184, 48);
+    doc.text('READY TO SHAPE YOUR EXPERIENCE?', margin + 7, 259);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(226, 232, 240);
+    doc.text('Talk to the WildMed team at info@wildmedug.com', margin + 7, 265);
+    addFooter(2);
+
     doc.save(`${data.title.replace(/\s+/g, '_')}_WildMed.pdf`);
   };
 

@@ -145,7 +145,7 @@ export default function DestinationsPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,165,0,0.05)_0%,transparent_70%)]" />
         
         <div className="max-w-5xl mx-auto px-6 relative z-10">
-          <div className="p-12 md:p-20 rounded-[3rem] bg-gradient-to-br from-slate-900 to-slate-950 border border-white/10 shadow-3xl text-center">
+          <div className="destinations-experience-cta p-12 md:p-20 rounded-[3rem] bg-gradient-to-br from-slate-900 to-slate-950 border border-white/10 shadow-3xl text-center">
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">Ready to <span className="text-sunset-gold italic">Mix</span> Your Experience?</h2>
             <p className="text-slate-400 text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
               Our expeditions blend professional wildlife conservation, university placements, and immersive cultural discovery. Tell us your pace, and we'll craft the perfect route.
