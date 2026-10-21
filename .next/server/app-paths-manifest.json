@@ -1,8 +1,4 @@
 {
-  "/Uganda-Adventures/page": "app/Uganda-Adventures/page.js",
-  "/About-Us/page": "app/About-Us/page.js",
-  "/Custom-Safaris/page": "app/Custom-Safaris/page.js",
-  "/Ugandan-6Days2/page": "app/Ugandan-6Days2/page.js",
-  "/Kenya-Safaris/page": "app/Kenya-Safaris/page.js",
+  "/page": "app/page.js",
   "/_not-found/page": "app/_not-found/page.js"
 }

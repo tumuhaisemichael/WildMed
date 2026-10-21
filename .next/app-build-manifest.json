@@ -30,36 +30,6 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/_not-found/page.js"
-    ],
-    "/Destinations/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/Destinations/page.js"
-    ],
-    "/Uganda-Adventures/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/Uganda-Adventures/page.js"
-    ],
-    "/About-Us/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/About-Us/page.js"
-    ],
-    "/Custom-Safaris/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/Custom-Safaris/page.js"
-    ],
-    "/Ugandan-6Days2/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/Ugandan-6Days2/page.js"
-    ],
-    "/Kenya-Safaris/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/Kenya-Safaris/page.js"
     ]
   }
 }

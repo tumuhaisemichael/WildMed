@@ -9,5 +9,8 @@ node_modules/
 
 # Ignore all files and folders inside the public directory
 /public/*
+!/public/img/
+/public/img/*
+!/public/img/logo.png
 .codex
 .vscode/

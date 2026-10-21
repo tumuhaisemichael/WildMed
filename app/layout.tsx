@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   title: "WildMed - WildMed Safaris and Field Projects",
   description: "Experience unforgettable wildlife safaris, veterinary programs, and medical expeditions across Kenya, Tanzania, Uganda, and Rwanda with WildMed Safaris.",
   keywords: "Uganda gorilla trekking, vet volunteer Africa, medical mission Tanzania, custom East Africa safari, wildlife immobilization course, Rwanda gorilla trekking, Kenya wildlife safari",
+  applicationName: "WildMed",
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png" }],
+    shortcut: "/icon.png",
+  },
 };
 
 export default function RootLayout({
