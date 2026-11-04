@@ -16,8 +16,8 @@ const stats = [
 ];
 
 const highlights = [
-  { title: 'African Lion', desc: 'The king of the savanna, best spotted in Maasai Mara and Tsavo', image: 'https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=400' },
-  { title: 'African Elephant', desc: 'Gentle giants roaming freely across Kenya\'s vast landscapes', image: 'https://images.unsplash.com/photo-1505148230895-d9a785a555fa?auto=format&fit=crop&w=400' },
+  { title: 'African Lion', desc: 'The king of the savanna, best spotted in Maasai Mara and Tsavo', image: '/img/Destination/common/african-lion.jpg' },
+  { title: 'African Elephant', desc: 'Gentle giants roaming freely across Kenya\'s vast landscapes', image: '/img/Destination/common/african-elephant.jpg' },
   { title: 'Leopard', desc: 'Elusive spotted cats, masters of stealth and climbing', image: '/img/Destination/Kenya/leopand.jpeg' },
   { title: 'Great Migration', desc: 'Witness 2 million wildebeest and zebras on their epic journey', image: '/img/Destination/Kenya/greatmig.webp' },
   { title: 'Cheetah', desc: 'The world\'s fastest land animal, built for incredible speed', image: '/img/Destination/Kenya/cheetah.jpeg' },
@@ -25,17 +25,17 @@ const highlights = [
 ];
 
 const wildlifeDestinations = [
-  { id: 'maasai-mara', name: 'Maasai Mara', type: 'Great Migration', price: '$2,350', image: '/img/Destination/Kenya/maasi.png', desc: 'Home to the spectacular wildebeest migration and abundant big cats.' },
-  { id: 'amboseli', name: 'Amboseli NP', type: 'Kilimanjaro Views', price: '$1,950', image: '/img/Destination/Kenya/Amboseli.png', desc: 'Famous for its large elephant herds and stunning views of Mount Kilimanjaro.' },
-  { id: 'tsavo', name: 'Tsavo National Park', type: 'Red Elephants', price: '$1,750', image: '/img/Destination/Kenya/tsavo.png', desc: 'Kenya\'s largest national park known for its red elephants and dramatic landscapes.' },
-  { id: 'samburu', name: 'Samburu Reserve', type: 'Rare Species', price: '$2,050', image: '/img/Destination/Kenya/Samburu.png', desc: 'Home to unique species like the reticulated giraffe and Grevy\'s zebra.' },
+  { id: 'maasai-mara', name: 'Maasai Mara', type: 'Great Migration', price: '$2,350', image: '/img/Destination/Kenya/maasai-mara-crossing.jpg', desc: 'Home to the spectacular wildebeest migration and abundant big cats.' },
+  { id: 'amboseli', name: 'Amboseli NP', type: 'Kilimanjaro Views', price: '$1,950', image: '/img/Destination/Kenya/amboseli-elephants.jpg', desc: 'Famous for its large elephant herds and stunning views of Mount Kilimanjaro.' },
+  { id: 'tsavo', name: 'Tsavo National Park', type: 'Red Elephants', price: '$1,750', image: '/img/Destination/Kenya/tsavo-red-elephants.jpg', desc: 'Kenya\'s largest national park known for its red elephants and dramatic landscapes.' },
+  { id: 'samburu', name: 'Samburu Reserve', type: 'Rare Species', price: '$2,050', image: '/img/Destination/Kenya/samburu-elephant.jpg', desc: 'Home to unique species like the reticulated giraffe and Grevy\'s zebra.' },
 ];
 
 const universities = [
   { id: 'uon', name: 'University of Nairobi', type: 'Premier University', price: 'Public University', image: '/img/Destination/Kenya/UON.jpeg', desc: 'Kenya\'s oldest and most prestigious public university with diverse academic programs.' },
   { id: 'kenyatta', name: 'Kenyatta University', type: 'Comprehensive Hub', price: 'Public University', image: '/img/Destination/Kenya/kenyatta.jpeg', desc: 'One of Kenya\'s leading public universities with a wide range of academic offerings.' },
   { id: 'strathmore', name: 'Strathmore University', type: 'Business & Tech', price: 'Private University', image: '/img/Destination/Kenya/strathmore.jpeg', desc: 'Leading private university specializing in business, IT and management education.' },
-  { id: 'moi', name: 'Moi University', type: 'Public University', price: 'Public University', image: '/img/Destination/Kenya/moi.jpeg', desc: 'Public university with strong programs in medicine, engineering and sciences.' },
+  { id: 'moi', name: 'Moi University', type: 'Public University', price: 'Public University', image: '/img/Destination/Kenya/moi-graduation.jpg', desc: 'Public university with strong programs in medicine, engineering and sciences.' },
 ];
 
 const accommodations = [
@@ -47,13 +47,11 @@ const accommodations = [
 
 export default function KenyaSafarisPage() {
   const [activeTab, setActiveTab] = useState<'wildlife' | 'universities'>('wildlife');
-  const [mounted, setMounted] = useState(false);
   const [selectedDestId, setSelectedDestId] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [featuredStayIndex, setFeaturedStayIndex] = useState(0);
 
-  useEffect(() => setMounted(true), []);
   useEffect(() => {
     const timer = setInterval(() => {
       setFeaturedStayIndex((prev) => (prev + 1) % accommodations.length);
@@ -79,7 +77,6 @@ export default function KenyaSafarisPage() {
     setShowBookingForm(true);
   };
 
-  if (!mounted) return null;
 
   const activeDestData = selectedDestId ? kenyaDetailsData[selectedDestId] : null;
   const featuredStay = accommodations[featuredStayIndex];
@@ -93,7 +90,7 @@ export default function KenyaSafarisPage() {
         id={selectedDestId || ''} 
       />
 
-      <UnifiedHero eyebrow="The Classic Safari Stage" title={<>Kenya&apos;s <span className="block italic text-sunset-gold">Wild Majesty</span></>} description="Witness the world's greatest wildlife spectacle and explore the legendary savannas of the Maasai Mara." backgroundImage="/img/Destination/MountKenya.jpeg" mainImage="/img/Destination/Kenya/greatmig.webp" secondaryImage="/img/Destination/MountKenya.jpeg" imageAlt="Kenya safari landscape" trustText="Planned by Kenya specialists" note="Follow the great migration" stats={stats.map((stat,index)=>({value:stat.value,label:stat.label,icon:['ri-bear-smile-line','ri-landscape-line','ri-group-line','ri-earth-line'][index]}))} actions={<><button onClick={handleApply} className="rounded-2xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Start planning</button><a href="#highlights" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Explore Kenya</a></>} />
+      <UnifiedHero title={<>Kenya&apos;s <span className="block italic text-sunset-gold">Wild Majesty</span></>} description="Witness the world's greatest wildlife spectacle and explore the legendary savannas of the Maasai Mara." backgroundImage="/img/Destination/MountKenya.jpeg" mainImage="/img/Destination/Kenya/greatmig.webp" secondaryImage="/img/Destination/MountKenya.jpeg" imageAlt="Kenya safari landscape" trustText="Planned by Kenya specialists" note="Follow the great migration" stats={stats.map((stat,index)=>({value:stat.value,label:stat.label,icon:['ri-bear-smile-line','ri-landscape-line','ri-group-line','ri-earth-line'][index]}))} actions={<><button onClick={handleApply} className="rounded-2xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Start planning</button><a href="#highlights" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Explore Kenya</a></>} />
 
       {/* Exploration Grid */}
       <section id="highlights" className="motion-reveal py-24 relative overflow-hidden">
@@ -120,9 +117,9 @@ export default function KenyaSafarisPage() {
 
           <div className="grid md:grid-cols-2 gap-10">
             {(activeTab === 'wildlife' ? wildlifeDestinations : universities).map(item => (
-              <div key={item.id} className="motion-card group relative rounded-[3rem] overflow-hidden bg-slate-900 border border-white/5 shadow-2xl h-[600px] transition-all duration-700 hover:border-sunset-gold/30">
-                <Image src={item.image} alt={item.name} fill className="object-cover transition-transform duration-[2s] group-hover:scale-110 opacity-60" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+              <div key={item.id} className="photo-card motion-card group relative rounded-[3rem] overflow-hidden bg-slate-900 border border-white/5 shadow-2xl h-[600px] transition-all duration-700 hover:border-sunset-gold/30">
+                <Image src={item.image} alt={item.name} fill sizes="(min-width: 768px) 50vw, 100vw" quality={85} className="object-cover transition-transform duration-[2s] group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
                 
                 <div className="absolute inset-0 p-12 flex flex-col justify-end">
                   <div className="mb-6 transform transition-transform duration-500 group-hover:-translate-y-4">
@@ -130,7 +127,7 @@ export default function KenyaSafarisPage() {
                       {item.type}
                     </span>
                     <h3 className="text-2xl md:text-3xl font-black text-white mb-4 italic leading-none">{item.name}</h3>
-                    <p className="text-slate-400 text-lg leading-relaxed max-w-md line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
+                    <p className="text-white/90 text-lg leading-relaxed max-w-md line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
                       {item.desc}
                     </p>
                   </div>
@@ -322,7 +319,7 @@ export default function KenyaSafarisPage() {
       {/* Booking Form Section */}
       {showBookingForm && (
         <div className="fixed inset-0 z-[120] overlay-fade-in">
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={closeBookingForm} />
+          <div className="form-modal-backdrop absolute inset-0" onClick={closeBookingForm} />
           <div className="relative h-full w-full flex items-center justify-center p-4 md:p-6">
             <div id="booking-section" className="overlay-pop-in w-full max-w-5xl max-h-[92vh] overflow-y-auto rounded-3xl border border-white/15 bg-slate-950 shadow-2xl">
               <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-slate-950/95 backdrop-blur border-b border-white/10">

@@ -5,8 +5,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import UnifiedHero from '@/components/layout/UnifiedHero';
 
-const testImage =
-  'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=2000&q=85';
+const featuredPhoto = '/assets/recent/imgs/newimage9.jpeg';
 
 type MediaItem = {
   type: 'photo' | 'video';
@@ -18,9 +17,9 @@ type MediaItem = {
 const recentMedia: MediaItem[] = [
   {
     type: 'photo',
-    src: testImage,
+    src: featuredPhoto,
     title: 'Quiet giants of the savanna',
-    location: 'East Africa',
+    location: 'Queen Elizabeth NP',
   },
   {
     type: 'video',
@@ -67,7 +66,7 @@ export default function RecentGalleryPage() {
 
   return (
     <main className="gallery-page min-h-screen overflow-hidden bg-slate-950 text-white">
-      <UnifiedHero eyebrow="Latest from the field" title={<>Field notes, <span className="block italic text-sunset-gold">fresh from the wild.</span></>} description="Recent wildlife sightings, conservation work, and expedition moments shared by the WildMed team across East Africa." backgroundImage="/assets/heroes/recent-field-hero.png" mainImage="/assets/heroes/recent-field-hero.png" secondaryImage="/assets/8day-safari/day3.png" imageAlt="Wildlife rangers documenting elephants" trustText="Shared by our field team" note="Fresh from East Africa" stats={[{value:'4',label:'Latest stories',icon:'ri-file-list-3-line'},{value:'3',label:'Field videos',icon:'ri-video-line'},{value:'1',label:'Photo story',icon:'ri-camera-line'},{value:'Live',label:'Field archive',icon:'ri-signal-wifi-line'}]} actions={<><a href="#latest" className="rounded-2xl bg-sunset-gold px-8 py-4 text-center font-black text-slate-950 transition hover:bg-white">View latest dispatch</a><Link href="/gallery" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Open full gallery</Link></>} />
+      <UnifiedHero title={<>Field notes, <span className="block italic text-sunset-gold">fresh from the wild.</span></>} description="Recent wildlife sightings, conservation work, and expedition moments shared by the WildMed team across East Africa." backgroundImage="/assets/heroes/recent-field-hero.png" mainImage="/assets/heroes/recent-field-hero.png" secondaryImage="/assets/8day-uganda-rwanda/day3.png" imageAlt="Wildlife rangers documenting elephants" trustText="Shared by our field team" note="Fresh from East Africa" stats={[{value:'4',label:'Latest stories',icon:'ri-file-list-3-line'},{value:'3',label:'Field videos',icon:'ri-video-line'},{value:'1',label:'Photo story',icon:'ri-camera-line'},{value:'Live',label:'Field archive',icon:'ri-signal-wifi-line'}]} actions={<><a href="#latest" className="rounded-2xl bg-sunset-gold px-8 py-4 text-center font-black text-slate-950 transition hover:bg-white">View latest dispatch</a><Link href="/gallery" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Open full gallery</Link></>} />
 
       <section id="latest" className="relative px-6 py-20 sm:px-8 lg:py-28">
         <div className="pointer-events-none absolute left-0 top-28 h-72 w-72 rounded-full bg-sunset-orange/10 blur-[110px]" />
@@ -91,8 +90,8 @@ export default function RecentGalleryPage() {
               aria-label="Open photograph in full screen"
             >
               <Image
-                src={testImage}
-                alt="Elephant walking through the East African wilderness"
+                src={featuredPhoto}
+                alt="Two elephants grazing in Queen Elizabeth National Park"
                 fill
                 sizes="(min-width: 1024px) 70vw, 100vw"
                 className="object-cover transition duration-700 group-hover:scale-[1.03]"
@@ -223,8 +222,8 @@ export default function RecentGalleryPage() {
           </button>
           <div className="relative h-[82vh] w-full max-w-6xl" onClick={(event) => event.stopPropagation()}>
             <Image
-              src={testImage}
-              alt="Elephant walking through the East African wilderness"
+              src={featuredPhoto}
+              alt="Two elephants grazing in Queen Elizabeth National Park"
               fill
               sizes="100vw"
               className="object-contain"

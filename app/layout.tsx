@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Dancing_Script, Pacifico } from "next/font/google";
+import { DEFAULT_SHARE_IMAGE, SITE_NAME, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -11,8 +12,11 @@ const dancingScript = Dancing_Script({ subsets: ["latin"], variable: "--font-dan
 const pacifico = Pacifico({ weight: "400", subsets: ["latin"], variable: "--font-pacifico" });
 
 export const metadata: Metadata = {
-  title: "WildMed - WildMed Safaris and Field Projects",
+  metadataBase: new URL(SITE_URL),
+  title: { default: SITE_NAME, template: "%s | WildMed" },
   description: "Experience unforgettable wildlife safaris, veterinary programs, and medical expeditions across Kenya, Tanzania, Uganda, and Rwanda with WildMed Safaris.",
+  openGraph: { siteName: SITE_NAME, type: "website", locale: "en_GB", images: [{ url: DEFAULT_SHARE_IMAGE }] },
+  twitter: { card: "summary_large_image", images: [DEFAULT_SHARE_IMAGE] },
   keywords: "Uganda gorilla trekking, vet volunteer Africa, medical mission Tanzania, custom East Africa safari, wildlife immobilization course, Rwanda gorilla trekking, Kenya wildlife safari",
   applicationName: "WildMed",
   icons: {

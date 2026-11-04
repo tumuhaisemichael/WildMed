@@ -2,6 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import FormSuccess from '@/components/forms/FormSuccess';
+import SpamTrap from '@/components/forms/SpamTrap';
+import DateField from '@/components/forms/DateField';
+import { sendEnquiry } from '@/lib/enquiry';
 import { Skeleton } from '@/components/ui/Skeleton';
 
 const ExpeditionModal = () => {
@@ -38,25 +41,12 @@ const ExpeditionModal = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData);
+    const form = e.currentTarget;
 
     try {
-      const response = await fetch('https://formspree.io/f/mldlkwke', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        (e.target as HTMLFormElement).reset();
-        setSubmitted(true);
-      } else {
-        throw new Error('Submission failed');
-      }
+      await sendEnquiry(form, 'Expedition planning request');
+      form.reset();
+      setSubmitted(true);
     } catch (error) {
       alert('There was an error submitting your request. Please try again or contact us directly.');
       console.error('Error:', error);
@@ -69,7 +59,7 @@ const ExpeditionModal = () => {
 
   return (
     <div
-      className="fixed inset-0 z-[220] overflow-y-auto bg-slate-950/90 p-4 backdrop-blur-xl sm:p-6"
+      className="form-modal-backdrop fixed inset-0 z-[220] overflow-y-auto p-4 sm:p-6"
       onClick={(e) => e.target === e.currentTarget && closeModal()}
       role="dialog"
       aria-modal="true"
@@ -79,12 +69,11 @@ const ExpeditionModal = () => {
         {submitted ? <div className="p-5 sm:p-8"><FormSuccess title="Expedition request received" message="Thank you for sharing your plans. Our expedition team will review your request and contact you to shape the next steps." onClose={closeModal} /></div> : <>
         <div className="relative overflow-hidden border-b border-white/10 px-6 py-8 sm:px-10">
           <div className="absolute -right-20 -top-28 h-64 w-64 rounded-full bg-sunset-gold/15 blur-3xl" />
-          <p className="relative flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.3em] text-sunset-gold"><span className="h-px w-8 bg-sunset-gold" />Tailored East African journeys</p>
-          <h2 id="expedition-modal-title" className="headline relative mt-3 text-3xl font-bold sm:text-4xl">Plan your expedition</h2>
+          <h2 id="expedition-modal-title" className="headline relative text-3xl font-bold sm:text-4xl">Plan your expedition</h2>
           <p className="relative mt-3 max-w-xl text-sm leading-6 text-slate-400">Share the essentials and our local team will shape a journey around your dates, interests, and travel style.</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="grid gap-5 p-6 sm:grid-cols-2 sm:p-10">
+        <form onSubmit={handleSubmit} className="grid gap-5 p-6 sm:grid-cols-2 sm:p-10"><SpamTrap />
           <div>
             <label htmlFor="name" className="mb-2 block text-xs font-black uppercase tracking-wider text-slate-400">Full name</label>
             <input type="text" id="name" name="name" required
@@ -115,9 +104,14 @@ const ExpeditionModal = () => {
             </select>
           </div>
           <div>
-            <label htmlFor="dates" className="mb-2 block text-xs font-black uppercase tracking-wider text-slate-400">Travel dates</label>
-            <input type="text" id="dates" name="dates" placeholder="MM/DD/YYYY - MM/DD/YYYY" required
-              className="w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3.5 text-white outline-none transition placeholder:text-slate-600 focus:border-sunset-gold focus:ring-1 focus:ring-sunset-gold" />
+            <label htmlFor="travel_start" className="mb-2 block text-xs font-black uppercase tracking-wider text-slate-400">Travel dates</label>
+            <div className="grid grid-cols-2 gap-3">
+              <DateField id="travel_start" name="travel_start" required placeholder="Start date" buttonClassName="text-slate-400"
+                inputClassName="w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3.5 text-white outline-none transition placeholder:text-slate-600 focus:border-sunset-gold focus:ring-1 focus:ring-sunset-gold" />
+              <DateField name="travel_end" placeholder="End date" buttonClassName="text-slate-400"
+                inputClassName="w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3.5 text-white outline-none transition placeholder:text-slate-600 focus:border-sunset-gold focus:ring-1 focus:ring-sunset-gold" />
+            </div>
+            <p className="mt-1.5 text-xs text-slate-500">Type DD/MM/YYYY or use the calendar.</p>
           </div>
           <div>
             <label htmlFor="type" className="mb-2 block text-xs font-black uppercase tracking-wider text-slate-400">Expedition type</label>

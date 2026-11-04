@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import FormSuccess from '@/components/forms/FormSuccess';
+import SpamTrap from '@/components/forms/SpamTrap';
+import { sendEnquiry } from '@/lib/enquiry';
 import { Skeleton } from '@/components/ui/Skeleton';
 
 interface BookingFormProps {
@@ -18,25 +20,12 @@ export default function BookingForm({ country, destinations, universities }: Boo
     e.preventDefault();
     setIsSubmitting(true);
 
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData);
+    const form = e.currentTarget;
 
     try {
-      const response = await fetch('https://formspree.io/f/mldlkwke', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        setSubmitted(true);
-        (e.target as HTMLFormElement).reset();
-      } else {
-        alert('There was an error submitting your request. Please try again.');
-      }
+      await sendEnquiry(form, `Booking request – ${country}`);
+      setSubmitted(true);
+      form.reset();
     } catch (error) {
       alert('There was an error submitting your request. Please try again.');
     } finally {
@@ -68,7 +57,7 @@ export default function BookingForm({ country, destinations, universities }: Boo
         </div>
 
         <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[3rem] shadow-2xl">
-          <form onSubmit={handleSubmit} className="space-y-8">
+          <form onSubmit={handleSubmit} className="relative space-y-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-2">
                 <label className="text-xs uppercase tracking-widest text-slate-500 font-black ml-1">Preferred Destination</label>
@@ -176,6 +165,7 @@ export default function BookingForm({ country, destinations, universities }: Boo
                 Free Consultation • Secure & Private • Response in 24h
               </p>
             </div>
+            <SpamTrap />
           </form>
         </div>
       </div>

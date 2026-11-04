@@ -17,7 +17,7 @@ export type DestinationDetails = Record<string, DestinationDetail>;
 export const kenyaDetailsData: DestinationDetails = {
   'maasai-mara': {
     title: 'Maasai Mara National Reserve',
-    image: 'img/Destination/Kenya/maasi.png',
+    image: 'img/Destination/Kenya/maasai-mara-crossing.jpg',
     description: 'The Maasai Mara National Reserve is one of Africa\'s greatest wildlife reserves. Bordering Tanzania, the Mara is the northern extension of the Serengeti and forms a wildlife corridor between the two countries. It is named after the Maasai people, the ancestral inhabitants of the area.',
     highlights: [
       'Witness the spectacular Great Migration (July-October)',
@@ -41,7 +41,7 @@ export const kenyaDetailsData: DestinationDetails = {
   },
   amboseli: {
     title: 'Amboseli National Park',
-    image: 'img/Destination/Kenya/Amboseli.png',
+    image: 'img/Destination/Kenya/amboseli-elephants.jpg',
     description: 'Amboseli National Park is famous for its spectacular views of Mount Kilimanjaro, Africa\'s highest peak, and its large herds of African elephants. The park\'s ecosystem is typical of the open savannah and provides habitat for numerous wildlife species.',
     highlights: [
       'Iconic views of Mount Kilimanjaro, especially at sunrise and sunset',
@@ -65,7 +65,7 @@ export const kenyaDetailsData: DestinationDetails = {
   },
   tsavo: {
     title: 'Tsavo National Parks',
-    image: 'img/Destination/Kenya/tsavo.png',
+    image: 'img/Destination/Kenya/tsavo-red-elephants.jpg',
     description: 'Tsavo National Park is Kenya\'s largest protected area, divided into Tsavo East and Tsavo West. Together they form one of the world\'s largest game sanctuaries. The park is famous for its "red" elephants that dust-bathe in the red volcanic soil.',
     highlights: [
       'Famous "red elephants" that dust-bathe in volcanic soil',
@@ -89,7 +89,7 @@ export const kenyaDetailsData: DestinationDetails = {
   },
   samburu: {
     title: 'Samburu National Reserve',
-    image: 'img/Destination/Kenya/Samburu.png',
+    image: 'img/Destination/Kenya/samburu-elephant.jpg',
     description: 'Samburu National Reserve is located in northern Kenya and is renowned for its rare northern specialist species known as the "Samburu Special Five". The Ewaso Ng\'iro river flows through the reserve, providing a lifeline for wildlife in this arid region.',
     highlights: [
       'The "Samburu Special Five": Grevy\'s zebra, Somali ostrich, reticulated giraffe, gerenuk, and beisa oryx',
@@ -185,7 +185,7 @@ export const kenyaDetailsData: DestinationDetails = {
   },
   moi: {
     title: 'Moi University',
-    image: 'img/Destination/Kenya/moi.jpeg',
+    image: 'img/Destination/Kenya/moi-graduation.jpg',
     description: 'Moi University is a public university located in Eldoret, Kenya. It is known for its strong programs in medicine, engineering, and sciences. The university has a main campus in Eldoret and several satellite campuses across the country.',
     highlights: [
       'Established in 1984 as Kenya\'s second public university',
@@ -233,7 +233,7 @@ export const ugandaDetailsData: DestinationDetails = {
   },
   'queen-elizabeth': {
     title: 'Queen Elizabeth National Park',
-    image: 'img/Destination/UG/Queen.jpeg',
+    image: 'assets/8day-luxury/queen-elizabeth-elephants.jpg',
     rating: '4.7',
     price: 'From $1,500',
     description: 'Uganda\'s most popular savanna park, known for tree-climbing lions, crater lakes, and boat safaris on the Kazinga Channel.',
@@ -275,7 +275,7 @@ export const ugandaDetailsData: DestinationDetails = {
   },
   'kibale-forest': {
     title: 'Kibale National Park',
-    image: 'img/Destination/UG/kiable.jpeg',
+    image: 'assets/4day-express/kibale-chimpanzee.jpg',
     rating: '4.6',
     price: 'From $1,400',
     description: 'Known as the primate capital of Africa, Kibale offers the best chimpanzee tracking in Uganda.',
@@ -338,7 +338,7 @@ export const ugandaDetailsData: DestinationDetails = {
   },
   mbarara: {
     title: 'Mbarara University of Science and Technology (MUST)',
-    image: 'img/Destination/UG/must.png',
+    image: 'img/Destination/UG/must-campus.jpg',
     rating: '4.4',
     price: 'Public University',
     description: 'A premier institution for medical and science education in western Uganda.',
@@ -359,7 +359,7 @@ export const ugandaDetailsData: DestinationDetails = {
   },
   ucu: {
     title: 'Uganda Christian University (UCU)',
-    image: 'img/Destination/UG/ucu.jpeg',
+    image: 'img/Destination/UG/ucu-campus.jpg',
     rating: '4.2',
     price: 'Private University',
     description: 'A leading private university with strong Christian values and academic excellence.',
@@ -407,7 +407,7 @@ export const rwandaDetailsData: DestinationDetails = {
   },
   nyungwe: {
     title: 'Nyungwe Forest National Park',
-    image: 'img/Destination/rwanda/nyungwe.jpeg',
+    image: 'img/Destination/rwanda/nyungwe-canopy-walk.jpg',
     description: 'Nyungwe Forest is one of the oldest rainforests in Africa, dating back to before the last Ice Age. This biodiverse montane rainforest is home to 13 primate species including chimpanzees, and features East Africa\'s only canopy walkway.',
     highlights: [
       '13 primate species including chimpanzees and Angolan colobus monkeys',
@@ -431,7 +431,7 @@ export const rwandaDetailsData: DestinationDetails = {
   },
   akagera: {
     title: 'Akagera National Park',
-    image: 'img/Destination/rwanda/akagera.jpeg',
+    image: 'img/Destination/rwanda/akagera-giraffes.jpg',
     description: 'Akagera National Park is Rwanda\'s only savanna reserve, named after the Akagera River that flows along its eastern boundary. After successful conservation efforts, the park now hosts all of the Big Five animals (lion, leopard, rhino, elephant, and buffalo).',
     highlights: [
       'Big Five game viewing (lions, leopards, rhinos, elephants, and buffalo)',
@@ -455,7 +455,7 @@ export const rwandaDetailsData: DestinationDetails = {
   },
   'lake-kivu': {
     title: 'Lake Kivu',
-    image: 'img/Destination/rwanda/lakekivu.jpeg',
+    image: 'img/Destination/rwanda/lake-kivu.jpg',
     description: 'Lake Kivu is one of Africa\'s Great Lakes, lying on the border between Rwanda and the Democratic Republic of the Congo. It is Rwanda\'s largest lake and offers beautiful scenery, sandy beaches, and numerous islands. The lake is known for its methane gas reserves and being free of bilharzia.',
     highlights: [
       'Beautiful sandy beaches and clear waters safe for swimming',
@@ -479,7 +479,7 @@ export const rwandaDetailsData: DestinationDetails = {
   },
   ur: {
     title: 'University of Rwanda',
-    image: 'img/Destination/rwanda/uor.jpeg',
+    image: 'img/Destination/rwanda/university-of-rwanda.jpg',
     description: 'The University of Rwanda is the largest institution of higher learning in the country, formed in 2013 through the merger of several public higher education institutions. It has multiple campuses across Rwanda and offers a wide range of undergraduate and postgraduate programs.',
     highlights: [
       'Formed through merger of 7 public higher education institutions in 2013',
@@ -503,7 +503,7 @@ export const rwandaDetailsData: DestinationDetails = {
   },
   alu: {
     title: 'African Leadership University',
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=256',
+    image: 'img/Destination/rwanda/alu-campus.jpg',
     description: 'African Leadership University is a pioneering network of universities transforming higher education in Africa. The Rwanda campus focuses on developing entrepreneurial leaders through innovative teaching methods and real-world experiences.',
     highlights: [
       'Mission to develop 3 million ethical, entrepreneurial African leaders by 2035',
@@ -527,7 +527,7 @@ export const rwandaDetailsData: DestinationDetails = {
   },
   ughe: {
     title: 'University of Global Health Equity',
-    image: 'https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&height=256',
+    image: 'img/Destination/rwanda/ughe-graduation.jpg',
     description: 'The University of Global Health Equity is a specialized institution focused on training global health professionals who will strive for equity in health care delivery. It was founded by Partners In Health with support from the Rwandan government.',
     highlights: [
       'Founded by Partners In Health, a renowned global health organization',
@@ -578,7 +578,7 @@ export const rwandaDetailsData: DestinationDetails = {
 export const tanzaniaDetailsData: DestinationDetails = {
   serengeti: {
     title: 'Serengeti National Park',
-    image: 'https://readdy.ai/api/search-image?query=Serengeti%20National%20Park%20endless%20plains%20during%20Great%20Migration%2C%20thousands%20of%20wildebeest%20and%20zebras%20crossing%20savanna%2C%20dramatic%20sky%20with%20scattered%20clouds%2C%20golden%20grassland%20stretching%20to%20horizon%2C%20iconic%20African%20wildlife%20spectacle%2C%20professional%20nature%20photography&width=1200&height=600&seq=serengeti-modal&orientation=landscape',
+    image: 'img/Destination/TZ/serengeti-herds.jpg',
     rating: '4.9',
     price: 'From $2,450',
     description: 'The Serengeti is Tanzania\'s most iconic safari destination, famed for endless plains, abundant predators, and the Great Migration of wildebeest and zebra.',
@@ -599,7 +599,7 @@ export const tanzaniaDetailsData: DestinationDetails = {
   },
   ngorongoro: {
     title: 'Ngorongoro Crater',
-    image: 'https://readdy.ai/api/search-image?query=Ngorongoro%20Crater%20aerial%20panoramic%20view%20showing%20massive%20volcanic%20caldera%20with%20diverse%20wildlife%20on%20crater%20floor%2C%20lush%20green%20vegetation%2C%20pristine%20lake%20reflecting%20sky%2C%20dramatic%20crater%20rim%20walls%2C%20UNESCO%20World%20Heritage%20natural%20wonder&width=1200&height=600&seq=ngorongoro-modal&orientation=landscape',
+    image: 'img/Destination/TZ/ngorongoro-caldera.jpg',
     rating: '4.8',
     price: 'From $2,150',
     description: 'A UNESCO World Heritage Site and the world\'s largest intact volcanic caldera, packed with wildlife including black rhino, lions, and flamingos.',
@@ -620,7 +620,7 @@ export const tanzaniaDetailsData: DestinationDetails = {
   },
   kilimanjaro: {
     title: 'Mount Kilimanjaro',
-    image: 'https://readdy.ai/api/search-image?query=Mount%20Kilimanjaro%20majestic%20snow-capped%20peak%20towering%20above%20African%20plains%2C%20dramatic%20clouds%20surrounding%20summit%2C%20golden%20savanna%20grassland%20in%20foreground%2C%20clear%20blue%20sky%2C%20Africas%20highest%20mountain%2C%20inspiring%20adventure%20landscape%20photography&width=1200&height=600&seq=kilimanjaro-modal&orientation=landscape',
+    image: 'img/Destination/TZ/kilimanjaro.jpg',
     rating: '4.7',
     price: 'From $3,200',
     description: 'Africa\'s highest peak and the world\'s tallest free-standing mountain, offering legendary trekking routes and dramatic alpine scenery.',
@@ -641,7 +641,7 @@ export const tanzaniaDetailsData: DestinationDetails = {
   },
   tarangire: {
     title: 'Tarangire National Park',
-    image: 'https://readdy.ai/api/search-image?query=Tarangire%20National%20Park%20landscape%20with%20massive%20ancient%20baobab%20trees%20scattered%20across%20golden%20savanna%2C%20elephants%20grazing%20peacefully%20beneath%20giant%20trees%2C%20warm%20afternoon%20lighting%2C%20unique%20African%20wilderness%20scenery%2C%20professional%20wildlife%20photography&width=1200&height=600&seq=tarangire-modal&orientation=landscape',
+    image: 'img/Destination/TZ/tarangire-baobab.jpg',
     rating: '4.6',
     price: 'From $1,850',
     description: 'Tarangire is famous for its ancient baobab trees, large elephant herds, and excellent birdlife, especially during the dry season.',
@@ -704,7 +704,7 @@ export const tanzaniaDetailsData: DestinationDetails = {
   },
   sua: {
     title: 'Sokoine University of Agriculture (SUA)',
-    image: 'img/Destination/TZ/sokoine.jpeg',
+    image: 'img/Destination/TZ/sokoine-campus.jpg',
     rating: '4.4',
     price: 'Public University',
     description: 'A leading institution in agriculture, veterinary medicine, and environmental sciences with extensive field research.',
@@ -725,7 +725,7 @@ export const tanzaniaDetailsData: DestinationDetails = {
   },
   'nm-aist': {
     title: 'Nelson Mandela African Institution of Science and Technology (NM-AIST)',
-    image: 'img/Destination/TZ/nelson.jpeg',
+    image: 'img/Destination/TZ/nm-aist-campus.jpg',
     rating: '4.5',
     price: 'Postgraduate Institution',
     description: 'A postgraduate science and technology institute focused on innovation, research, and advanced engineering.',

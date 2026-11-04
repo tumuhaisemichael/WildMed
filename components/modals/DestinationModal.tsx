@@ -33,7 +33,9 @@ export default function DestinationModal({ isOpen, onClose, data, id }: Destinat
     const pageWidth = 210;
     const pageHeight = 297;
     const margin = 18;
-    const imageSource = data.image.startsWith('http') ? data.image : `/${data.image}`;
+    // Local images go through Next's optimiser so the PDF cover is a ~1200px JPEG/WebP, not the full-size original.
+    const localPath = data.image.startsWith('/') ? data.image : `/${data.image}`;
+    const imageSource = data.image.startsWith('http') ? data.image : `/_next/image?url=${encodeURIComponent(localPath)}&w=1200&q=75`;
 
     const loadCover = async () => {
       try {

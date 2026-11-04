@@ -6,6 +6,7 @@ node_modules/
 /assets/
 /img/
 /uploads/
+/data/
 
 # Ignore all files and folders inside the public directory
 /public/*

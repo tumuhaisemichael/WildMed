@@ -160,6 +160,14 @@ body {
   animation: overlay-fade-in 0.25s ease-out both;
 }
 
+/* Form popups: keep the page they were opened from visible behind them. */
+.form-modal-backdrop {
+  background-color: rgba(2, 6, 23, 0.45);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  animation: overlay-fade-in 0.25s ease-out both;
+}
+
 .overlay-pop-in {
   animation: overlay-pop-in 0.3s ease-out both;
 }
@@ -261,6 +269,19 @@ html[data-theme="light"] .gallery-lightbox [class*="border-white"] {
 
 html[data-theme="light"] .gallery-media [class*="text-white"] {
   color: #ffffff !important;
+}
+
+/* Text laid over photos (destination cards) stays light in every theme. */
+html[data-theme="light"] .photo-card [class*="text-white"]:not(:hover) {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .photo-card [class*="text-white/90"] {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+html[data-theme="light"] .photo-card [class*="border-white/10"] {
+  border-color: rgba(255, 255, 255, 0.15) !important;
 }
 
 html[data-theme="light"] .gallery-media [class*="text-slate-300"] {

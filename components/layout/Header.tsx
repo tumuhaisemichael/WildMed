@@ -108,7 +108,7 @@ const Header = () => {
       ],
     },
     {
-      name: 'Pro.Exp',
+      name: 'One Health Tourism',
       href: '/Professional-Biological-Field-Expeditions',
       dropdown: [
         { name: 'Tailored Science Driven Field Expedition', href: '/Biological-Field-Research-Expeditions' },
@@ -152,7 +152,7 @@ const Header = () => {
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group relative">
+          <Link href="/" className="flex shrink-0 items-center space-x-3 group relative">
             <div className={`relative transition-all duration-500 ${scrolled ? 'scale-90' : 'scale-100'}`}>
               <div className="relative rounded-xl bg-white p-1.5 shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
                 <Image
@@ -167,7 +167,7 @@ const Header = () => {
               </div>
             </div>
             {!scrolled && (
-              <div className="flex flex-col">
+              <div className="flex flex-col lg:hidden min-[1400px]:flex">
                 <span className="bg-gradient-to-r from-sunset-orange via-sunset-gold to-sunset-orange bg-[length:200%_auto] bg-clip-text text-xl font-black italic tracking-wider text-transparent animate-gradient-x">
                   WildMed
                 </span>
@@ -178,27 +178,28 @@ const Header = () => {
             )}
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className={`hidden lg:flex items-center transition-all duration-500 ${
-            scrolled ? 'space-x-3 xl:space-x-4' : 'space-x-4 xl:space-x-6'
+          {/* Desktop Navigation: links stay on one line and truncate with an ellipsis when space runs out */}
+          <div className={`hidden lg:flex min-w-0 flex-1 items-center justify-end pl-4 transition-all duration-500 ${
+            scrolled ? 'space-x-2 xl:space-x-3' : 'space-x-2 xl:space-x-3 2xl:space-x-6'
           }`}>
             {navLinks.map((link) => (
-              <div key={link.name} className="relative group">
+              <div key={link.name} className="relative group min-w-0">
                 {link.dropdown || link.mega ? (
                   <>
                     <Link
                       href={link.href}
-                      className={`relative px-1 transition-all duration-300 flex items-center space-x-1 font-medium ${
+                      title={link.name}
+                      className={`relative px-1 transition-all duration-300 flex min-w-0 items-center space-x-1 whitespace-nowrap font-medium ${
                         scrolled ? 'text-xs' : 'text-sm'
                       } ${
                         isActiveLink(link) ? 'text-sunset-gold drop-shadow-[0_0_8px_rgba(251,191,36,0.72)]' : 'text-slate-100 hover:text-sunset-gold'
                       }`}
                     >
-                      <i className={`ri-arrow-right-s-line transition-all duration-300 ${
+                      <i className={`ri-arrow-right-s-line shrink-0 transition-all duration-300 ${
                         isActiveLink(link) ? 'mr-1 opacity-100' : 'opacity-0 -ml-4 group-hover:ml-0 group-hover:mr-1 group-hover:opacity-100'
                       }`} />
-                      <span>{link.name}</span>
-                      <i className="ri-arrow-down-s-line text-[10px] opacity-50 group-hover:rotate-180 transition-transform duration-300"></i>
+                      <span className="truncate">{link.name}</span>
+                      <i className="ri-arrow-down-s-line shrink-0 text-[10px] opacity-50 group-hover:rotate-180 transition-transform duration-300"></i>
                     </Link>
                     
                     {link.mega ? (
@@ -270,16 +271,17 @@ const Header = () => {
                 ) : (
                   <Link
                     href={link.href}
-                    className={`group relative px-1 transition-all duration-300 font-medium flex items-center ${
+                    title={link.name}
+                    className={`group relative px-1 transition-all duration-300 font-medium flex min-w-0 items-center whitespace-nowrap ${
                       scrolled ? 'text-xs' : 'text-sm'
                     } ${
                       pathname === link.href ? 'text-sunset-gold drop-shadow-[0_0_8px_rgba(251,191,36,0.72)]' : 'text-slate-100 hover:text-sunset-gold'
                     }`}
                   >
-                    <i className={`ri-arrow-right-s-line transition-all duration-300 ${
+                    <i className={`ri-arrow-right-s-line shrink-0 transition-all duration-300 ${
                       pathname === link.href ? 'mr-1 opacity-100' : 'opacity-0 -ml-4 group-hover:ml-0 group-hover:mr-1 group-hover:opacity-100'
                     }`} />
-                    {link.name}
+                    <span className="truncate">{link.name}</span>
                   </Link>
                 )}
               </div>
@@ -288,7 +290,7 @@ const Header = () => {
             {/* Action CTA */}
             <button
               onClick={toggleTheme}
-              className={`ml-2 w-10 h-10 rounded-full border border-white/20 text-slate-100 hover:text-sunset-gold hover:border-sunset-gold/60 bg-white/5 hover:bg-white/10 transition-all duration-300 ${scrolled ? 'scale-90' : 'scale-100'}`}
+              className={`ml-2 w-10 h-10 shrink-0 rounded-full border border-white/20 text-slate-100 hover:text-sunset-gold hover:border-sunset-gold/60 bg-white/5 hover:bg-white/10 transition-all duration-300 ${scrolled ? 'scale-90' : 'scale-100'}`}
               aria-label="Toggle light and dark theme"
               title={theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
             >
@@ -297,7 +299,7 @@ const Header = () => {
 
             <button 
               onClick={() => window.dispatchEvent(new CustomEvent('openExpeditionModal'))}
-              className={`ml-4 px-6 py-2.5 rounded-full bg-gradient-to-r from-sunset-gold to-sunset-orange text-black font-bold text-sm shadow-lg hover:shadow-sunset-gold/20 hover:-translate-y-0.5 transition-all duration-300 ${scrolled ? 'scale-90' : 'scale-100'}`}
+              className={`ml-3 shrink-0 whitespace-nowrap px-5 py-2.5 rounded-full bg-gradient-to-r from-sunset-gold to-sunset-orange text-black font-bold text-sm shadow-lg hover:shadow-sunset-gold/20 hover:-translate-y-0.5 transition-all duration-300 ${scrolled ? 'scale-90' : 'scale-100'}`}
             >
               Plan Trip
             </button>

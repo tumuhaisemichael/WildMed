@@ -1,58 +1,43 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { Skeleton } from '@/components/ui/Skeleton';
 
-const testimonials = [
-  {
-    name: 'Dr. Sarah Mitchell',
-    role: 'Veterinary Medicine Student, UK',
-    text: 'The Veterinary Conservation Expedition completely changed my perspective on wildlife medicine. Working alongside local vets in Uganda was an experience I\'ll carry throughout my career.',
-    rating: 5,
-    img: '/img/home/move4.jpg',
-  },
-  {
-    name: 'James Okafor',
-    role: 'Conservation Biologist, Nigeria',
-    text: 'WildMed organized the most seamless and scientifically enriching expedition I\'ve ever attended. The gorilla trekking in Bwindi was absolutely phenomenal.',
-    rating: 5,
-    img: '/img/home/move6.jpg',
-  },
-  {
-    name: 'Prof. Anna Bergström',
-    role: 'University of Stockholm',
-    text: 'We brought a group of 18 students and the logistics were flawless. The One Health programme exceeded our curriculum expectations in every way.',
-    rating: 5,
-    img: '/img/home/move8.jpg',
-  },
-  {
-    name: 'Dr. Kwame Asante',
-    role: 'Medical Professional, Ghana',
-    text: 'The Medical Expedition Programme in Tanzania gave me hands-on experience in tropical medicine I simply could not get at home. Highly recommended.',
-    rating: 5,
-    img: '/img/home/move2.jpg',
-  },
-  {
-    name: 'Emily Chen',
-    role: 'Wildlife Photographer, Canada',
-    text: 'From Kidepo to Queen Elizabeth Park, WildMed\'s custom safari was beautifully curated. Every detail was thoughtful and the wildlife encounters were breathtaking.',
-    rating: 5,
-    img: '/img/home/move9.jpg',
-  },
-];
+type Testimonial = { name: string; role: string; text: string; rating: number };
+type ApiReview = { name: string; tripType: string; review: string; rating: number };
+
+const MAX_TESTIMONIALS = 5;
+const DEFAULT_AVATAR = '/img/default-avatar.svg';
 
 const Testimonials = () => {
-  const trackRef = useRef<HTMLDivElement>(null);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [loading, setLoading] = useState(true);
   const [active, setActive] = useState(0);
 
+  // Published (approved) reviews only; highest rated first, newest first within a rating.
+  useEffect(() => {
+    fetch('/api/reviews', { cache: 'no-store' })
+      .then(async (response) => {
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error);
+        const reviews = [...(data.reviews as ApiReview[])].sort((a, b) => b.rating - a.rating).slice(0, MAX_TESTIMONIALS);
+        setTestimonials(reviews.map((review) => ({ name: review.name, role: review.tripType, text: review.review, rating: review.rating })));
+      })
+      .catch(console.error)
+      .finally(() => setLoading(false));
+  }, []);
+
   const scroll = (dir: number) => {
-    const next = (active + dir + testimonials.length) % testimonials.length;
-    setActive(next);
+    if (!testimonials.length) return;
+    setActive((current) => (current + dir + testimonials.length) % testimonials.length);
   };
 
   useEffect(() => {
+    if (testimonials.length < 2) return;
     const interval = setInterval(() => scroll(1), 6000);
     return () => clearInterval(interval);
-  }, [active]);
+  }, [active, testimonials.length]);
 
   const t = testimonials[active];
 
@@ -71,6 +56,22 @@ const Testimonials = () => {
           <p className="text-gray-400 text-lg">Real experiences from travellers, researchers, and professionals</p>
         </div>
 
+        {loading && (
+          <div className="rounded-3xl border border-sunset-brown/20 bg-slate-800/60 p-10">
+            <Skeleton className="h-4 w-24" /><Skeleton className="mt-6 h-5 w-full" /><Skeleton className="mt-3 h-5 w-4/5" /><Skeleton className="mt-8 h-4 w-40" />
+          </div>
+        )}
+
+        {!loading && !t && (
+          <div className="rounded-3xl border border-dashed border-sunset-brown/30 bg-slate-800/40 p-10 text-center">
+            <i className="ri-chat-quote-line text-4xl text-sunset-gold/60" />
+            <p className="headline mt-4 text-2xl font-bold text-white">Be the first to share your story</p>
+            <p className="mx-auto mt-3 max-w-xl text-gray-400">Travelled, studied, or worked in the field with WildMed? Your experience helps the next traveller.</p>
+            <Link href="/Review#share-your-story" className="mt-7 inline-block rounded-full bg-sunset-gold px-7 py-3 font-bold text-slate-950 transition hover:bg-white">Write a review</Link>
+          </div>
+        )}
+
+        {!loading && t && <>
         {/* Testimonial card */}
         <div className="relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-md rounded-3xl p-10 border border-sunset-brown/20 shadow-2xl transition-all duration-500">
           {/* Quote mark */}
@@ -80,7 +81,7 @@ const Testimonials = () => {
             {/* Avatar */}
             <div className="flex-shrink-0">
               <div className="w-20 h-20 rounded-2xl overflow-hidden border-2 border-sunset-gold/40 shadow-lg">
-                <img src="/partners/profileicon.jpeg" alt={`${t.name} profile`} className="w-full h-full object-cover" />
+                <img src={DEFAULT_AVATAR} alt="" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -149,7 +150,7 @@ const Testimonials = () => {
               >
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-8 h-8 rounded-lg overflow-hidden flex-shrink-0">
-                    <img src="/partners/profileicon.jpeg" alt={`${t.name} profile`} className="w-full h-full object-cover" />
+                    <img src={DEFAULT_AVATAR} alt="" className="w-full h-full object-cover" />
                   </div>
                   <span className="text-xs font-semibold text-gray-300 truncate group-hover:text-sunset-honey transition-colors">{t.name}</span>
                 </div>
@@ -157,6 +158,7 @@ const Testimonials = () => {
               </button>
             ))}
         </div>
+        </>}
       </div>
     </section>
   );

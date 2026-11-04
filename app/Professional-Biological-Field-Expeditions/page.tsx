@@ -3,8 +3,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const placeholder =
-  'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=2000&q=85';
+const heroImage = '/assets/programs/professional/hero-giraffe-capture-team.jpg';
+const ctaImage = '/assets/programs/professional/cta-lakeshore-fieldwork.jpg';
 
 const pathways = [
   {
@@ -15,6 +15,7 @@ const pathways = [
     description: 'Structured scientific expeditions studying living organisms and their relationship with East African ecosystems.',
     activities: ['Biodiversity surveys', 'Wildlife monitoring', 'Ecological sampling', 'Habitat assessment'],
     href: '/Biological-Field-Research-Expeditions',
+    image: '/assets/programs/professional/pathway-biological-research.jpg',
   },
   {
     number: '02',
@@ -24,6 +25,7 @@ const pathways = [
     description: 'Field programmes connecting wildlife health, conservation medicine, and communities surrounding protected areas.',
     activities: ['Disease surveillance', 'Primate health', 'Predator tracking', 'Conservation technology'],
     href: '/Veterinary-Conservation-',
+    image: '/assets/programs/professional/pathway-veterinary-giraffe.jpg',
   },
   {
     number: '03',
@@ -33,6 +35,7 @@ const pathways = [
     description: 'Practical health and outreach experiences in diverse communities near important wildlife landscapes.',
     activities: ['Medical outreach', 'Public health', 'Zoonotic surveillance', 'Community education'],
     href: '/Medical-Expedition-Programs',
+    image: '/assets/programs/professional/pathway-medical-ward.jpg',
   },
 ];
 
@@ -57,14 +60,13 @@ export default function ProfessionalBiologicalFieldExpeditionsPage() {
   return (
     <main className="professional-expeditions-page min-h-screen overflow-hidden bg-slate-950 text-white">
       <section className="immersive-hero relative isolate min-h-[92vh] overflow-hidden">
-        <Image src={placeholder} alt="Professional field expedition in East Africa" fill priority sizes="100vw" className="-z-20 object-cover" />
+        <Image src={heroImage} alt="Field team working around an immobilised giraffe in the savanna" fill priority sizes="100vw" className="-z-20 object-cover" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/25" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/50" />
         <div className="absolute inset-0 -z-10 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:72px_72px]" />
 
         <div className="mx-auto flex min-h-[92vh] max-w-7xl items-end px-6 pb-20 pt-40 sm:px-8 lg:pb-28">
           <div className="max-w-5xl">
-            <p className="mb-6 flex items-center gap-3 text-xs font-black uppercase tracking-[0.32em] text-sunset-gold"><span className="h-px w-10 bg-sunset-gold" />Professional field expeditions</p>
             <h1 className="headline text-5xl font-bold leading-[0.95] text-white sm:text-7xl lg:text-8xl">Science in the field.<br /><span className="italic text-sunset-gold">Impact on the ground.</span></h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-200">Immersive programmes connecting biological research, veterinary conservation, medical practice, and One Health across East Africa.</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row"><a href="#pathways" className="bg-sunset-gold px-8 py-4 text-center font-black text-slate-950 transition hover:bg-white">Explore pathways</a><button onClick={openEnquiry} className="border border-white/25 bg-white/10 px-8 py-4 font-black text-white backdrop-blur transition hover:border-sunset-gold hover:text-sunset-gold">Tailor an expedition</button></div>
@@ -90,7 +92,7 @@ export default function ProfessionalBiologicalFieldExpeditionsPage() {
             {pathways.map((pathway, index) => (
               <article key={pathway.title} className="grid overflow-hidden border border-white/10 bg-slate-950 lg:grid-cols-2">
                 <div className={'gallery-media relative min-h-[360px] overflow-hidden ' + (index % 2 ? 'lg:order-2' : '')}>
-                  <Image src={placeholder} alt={pathway.title} fill sizes="(min-width: 1024px) 50vw, 100vw" className={'object-cover ' + (index === 1 ? 'object-left' : index === 2 ? 'object-right' : 'object-center')} />
+                  <Image src={pathway.image} alt={pathway.title} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
                   <span className="absolute left-6 top-6 text-5xl font-black text-white/30">{pathway.number}</span>
                   <p className="absolute bottom-6 left-6 text-xs font-black uppercase tracking-[0.2em] text-sunset-gold">{pathway.audience}</p>
@@ -129,7 +131,7 @@ export default function ProfessionalBiologicalFieldExpeditionsPage() {
         </div>
       </section>
 
-      <section className="immersive-hero relative isolate px-6 py-24 text-center"><Image src={placeholder} alt="" fill sizes="100vw" className="-z-20 object-cover" /><div className="absolute inset-0 -z-10 bg-slate-950/90" /><div className="mx-auto max-w-3xl"><p className="text-xs font-black uppercase tracking-[0.3em] text-sunset-gold">Professional enquiry</p><h2 className="headline mt-4 text-4xl font-bold text-white sm:text-6xl">Build an expedition with purpose</h2><p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-300">Tell us your discipline, institution, dates, group size, and field objectives. We will help shape the right programme.</p><button onClick={openEnquiry} className="mt-9 bg-sunset-gold px-9 py-4 font-black text-slate-950 transition hover:bg-white">Discuss your expedition</button></div></section>
+      <section className="immersive-hero relative isolate px-6 py-24 text-center"><Image src={ctaImage} alt="" fill sizes="100vw" className="-z-20 object-cover" /><div className="absolute inset-0 -z-10 bg-slate-950/90" /><div className="mx-auto max-w-3xl"><p className="text-xs font-black uppercase tracking-[0.3em] text-sunset-gold">Professional enquiry</p><h2 className="headline mt-4 text-4xl font-bold text-white sm:text-6xl">Build an expedition with purpose</h2><p className="mx-auto mt-5 max-w-2xl leading-7 text-slate-300">Tell us your discipline, institution, dates, group size, and field objectives. We will help shape the right programme.</p><button onClick={openEnquiry} className="mt-9 bg-sunset-gold px-9 py-4 font-black text-slate-950 transition hover:bg-white">Discuss your expedition</button></div></section>
     </main>
   );
 }

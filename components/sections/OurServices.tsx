@@ -13,7 +13,7 @@ const services = [
     glow: 'hover:shadow-sunset-gold/10',
   },
   {
-    title: 'Professional Biological Field Expeditions',
+    title: 'One Health Tourism',
     desc: 'Science driven expeditions including Veterinary, Conservation, and Medical professional programs.',
     href: '/Professional-Biological-Field-Expeditions',
     icon: 'ri-stethoscope-line',

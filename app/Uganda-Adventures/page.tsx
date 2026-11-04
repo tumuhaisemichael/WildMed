@@ -26,16 +26,16 @@ const highlights = [
 
 const wildlifeDestinations = [
   { id: 'bwindi', name: 'Bwindi Impenetrable', type: 'Mountain Gorillas', price: '$1,800', image: '/img/Destination/UG/bwindi.jpeg', desc: 'Home to nearly half of the world\'s remaining mountain gorillas in this ancient rainforest.' },
-  { id: 'queen-elizabeth', name: 'Queen Elizabeth', type: 'Tree-Climbing Lions', price: '$1,500', image: '/img/Destination/UG/Queen.jpeg', desc: 'Famous for its tree-climbing lions and the scenic Kazinga Channel boat cruise.' },
+  { id: 'queen-elizabeth', name: 'Queen Elizabeth', type: 'Tree-Climbing Lions', price: '$1,500', image: '/assets/8day-luxury/queen-elizabeth-elephants.jpg', desc: 'Famous for its tree-climbing lions and the scenic Kazinga Channel boat cruise.' },
   { id: 'murchison-falls', name: 'Murchison Falls', type: 'Power of the Nile', price: '$1,650', image: '/img/Destination/UG/falls.jpeg', desc: 'Witness the Nile River squeezing through a 7-meter gap and plunging 43 meters.' },
-  { id: 'kibale-forest', name: 'Kibale Forest', type: 'Chimpanzee Trekking', price: '$1,400', image: '/img/Destination/UG/kiable.jpeg', desc: 'The primate capital of Africa with 13 species including chimpanzees.' },
+  { id: 'kibale-forest', name: 'Kibale Forest', type: 'Chimpanzee Trekking', price: '$1,400', image: '/assets/4day-express/kibale-chimpanzee.jpg', desc: 'The primate capital of Africa with 13 species including chimpanzees.' },
 ];
 
 const universities = [
   { id: 'makerere', name: 'Makerere University', type: 'Premier University', price: 'Public University', image: '/img/Destination/UG/mak.jpeg', desc: 'Uganda\'s oldest and most prestigious university, founded in 1922.' },
   { id: 'kyambogo', name: 'Kyambogo University', type: 'Technical Education', price: 'Public University', image: '/img/Destination/UG/kyu.jpeg', desc: 'Leading institution for technical, vocational and teacher education.' },
-  { id: 'mbarara', name: 'Mbarara (MUST)', type: 'Science & Medicine', price: 'Public University', image: '/img/Destination/UG/must.png', desc: 'Premier institution for medical and science education in western Uganda.' },
-  { id: 'ucu', name: 'Uganda Christian University', type: 'Private University', price: 'Private University', image: '/img/Destination/UG/ucu.jpeg', desc: 'Leading private university with strong emphasis on Christian values and academic excellence.' },
+  { id: 'mbarara', name: 'Mbarara (MUST)', type: 'Science & Medicine', price: 'Public University', image: '/img/Destination/UG/must-campus.jpg', desc: 'Premier institution for medical and science education in western Uganda.' },
+  { id: 'ucu', name: 'Uganda Christian University', type: 'Private University', price: 'Private University', image: '/img/Destination/UG/ucu-campus.jpg', desc: 'Leading private university with strong emphasis on Christian values and academic excellence.' },
 ];
 
 const accommodations = [
@@ -47,13 +47,11 @@ const accommodations = [
 
 export default function UgandaAdventuresPage() {
   const [activeTab, setActiveTab] = useState<'wildlife' | 'universities'>('wildlife');
-  const [mounted, setMounted] = useState(false);
   const [selectedDestId, setSelectedDestId] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [featuredStayIndex, setFeaturedStayIndex] = useState(0);
 
-  useEffect(() => setMounted(true), []);
   useEffect(() => {
     const timer = setInterval(() => {
       setFeaturedStayIndex((prev) => (prev + 1) % accommodations.length);
@@ -79,7 +77,6 @@ export default function UgandaAdventuresPage() {
     setShowBookingForm(true);
   };
 
-  if (!mounted) return null;
 
   const activeDestData = selectedDestId ? ugandaDetailsData[selectedDestId] : null;
   const featuredStay = accommodations[featuredStayIndex];
@@ -93,7 +90,7 @@ export default function UgandaAdventuresPage() {
         id={selectedDestId || ''} 
       />
 
-      <UnifiedHero eyebrow="The Pearl of Africa" title={<>Uganda&apos;s <span className="block italic text-sunset-gold">Wild Heart</span></>} description="Where misty rainforests meet majestic gorillas and the Nile carves its path through ancient savannas." backgroundImage="/img/Destination/Rwensori.png" mainImage="/img/Destination/UG/gorilla.jpeg" secondaryImage="/img/Destination/UG/bwindi.jpeg" imageAlt="Mountain gorilla in Uganda" trustText="Guided by Uganda specialists" note="Explore the Pearl of Africa" stats={stats.map((stat,index)=>({value:stat.value,label:stat.label,icon:['ri-bear-smile-line','ri-landscape-line','ri-bird-line','ri-footprint-line'][index]}))} actions={<><button onClick={handleApply} className="rounded-2xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Begin your journey</button><a href="#highlights" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Explore Uganda</a></>} />
+      <UnifiedHero title={<>Uganda&apos;s <span className="block italic text-sunset-gold">Wild Heart</span></>} description="Where misty rainforests meet majestic gorillas and the Nile carves its path through ancient savannas." backgroundImage="/img/Destination/Rwensori.png" mainImage="/img/Destination/UG/gorilla.jpeg" secondaryImage="/img/Destination/UG/bwindi.jpeg" imageAlt="Mountain gorilla in Uganda" trustText="Guided by Uganda specialists" note="Explore the Pearl of Africa" stats={stats.map((stat,index)=>({value:stat.value,label:stat.label,icon:['ri-bear-smile-line','ri-landscape-line','ri-bird-line','ri-footprint-line'][index]}))} actions={<><button onClick={handleApply} className="rounded-2xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Begin your journey</button><a href="#highlights" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Explore Uganda</a></>} />
 
       {/* Exploration Grid - Redesigned */}
       <section id="highlights" className="motion-reveal py-24 relative overflow-hidden">
@@ -120,9 +117,9 @@ export default function UgandaAdventuresPage() {
 
           <div className="grid md:grid-cols-2 gap-10">
             {(activeTab === 'wildlife' ? wildlifeDestinations : universities).map(item => (
-              <div key={item.id} className="motion-card group relative rounded-[3rem] overflow-hidden bg-slate-900 border border-white/5 shadow-2xl h-[600px] transition-all duration-700 hover:border-sunset-gold/30">
-                <Image src={item.image} alt={item.name} fill className="object-cover transition-transform duration-[2s] group-hover:scale-110 opacity-60" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+              <div key={item.id} className="photo-card motion-card group relative rounded-[3rem] overflow-hidden bg-slate-900 border border-white/5 shadow-2xl h-[600px] transition-all duration-700 hover:border-sunset-gold/30">
+                <Image src={item.image} alt={item.name} fill sizes="(min-width: 768px) 50vw, 100vw" quality={85} className="object-cover transition-transform duration-[2s] group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
                 
                 <div className="absolute inset-0 p-12 flex flex-col justify-end">
                   <div className="mb-6 transform transition-transform duration-500 group-hover:-translate-y-4">
@@ -130,7 +127,7 @@ export default function UgandaAdventuresPage() {
                       {item.type}
                     </span>
                     <h3 className="text-2xl md:text-3xl font-black text-white mb-4 italic leading-none">{item.name}</h3>
-                    <p className="text-slate-400 text-lg leading-relaxed max-w-md line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
+                    <p className="text-white/90 text-lg leading-relaxed max-w-md line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
                       {item.desc}
                     </p>
                   </div>
@@ -325,7 +322,7 @@ export default function UgandaAdventuresPage() {
       {/* Booking Form Section */}
       {showBookingForm && (
         <div className="fixed inset-0 z-[120] overlay-fade-in">
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={closeBookingForm} />
+          <div className="form-modal-backdrop absolute inset-0" onClick={closeBookingForm} />
           <div className="relative h-full w-full flex items-center justify-center p-4 md:p-6">
             <div id="booking-section" className="overlay-pop-in w-full max-w-5xl max-h-[92vh] overflow-y-auto rounded-3xl border border-white/15 bg-slate-950 shadow-2xl">
               <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-slate-950/95 backdrop-blur border-b border-white/10">

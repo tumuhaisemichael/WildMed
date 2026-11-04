@@ -1,10 +1,43 @@
 import Image from 'next/image';
 
-const partners = [
-  { name: 'Makerere University', detail: 'Academic partner', logo: '/partners/makerere.png', href: 'https://www.mak.ac.ug/' },
-  { name: 'Uganda Wildlife Authority', detail: 'Conservation partner', logo: '/partners/uganda-wildlife-authority.png', href: 'https://ugandawildlife.org/' },
-  { name: 'African Union of Conservationists', detail: 'Regional partner', logo: '/partners/african_union_of_conservationists_logo.jpeg', href: 'https://afrucafrica.org/' },
+type Partner = { name: string; role: string; description: string; logo?: string; href?: string };
+
+const partners: Partner[] = [
+  { name: 'Uganda Tourism Board', role: 'Tourism', description: 'Uganda’s national body for promoting and developing tourism.', logo: '/assets/partners/uganda-tourism-board.png', href: 'https://utb.go.ug/' },
+  { name: 'Strevolt Foundation', role: 'Foundation', description: 'Healthy communities, thriving ecosystems.', logo: '/assets/partners/strevolt-logo.png' },
+  { name: 'Makerere University', role: 'Academic', description: 'Uganda’s oldest university, supporting field training and research.', logo: '/assets/partners/makerere-university.png', href: 'https://www.mak.ac.ug/' },
+  { name: 'EduPartnershipsGlobal (EPG Consult)', role: 'Education', description: 'Systems and services in education.', logo: '/assets/partners/EPG.jpg' },
+  { name: 'Lovy Adventures', role: 'Travel', description: 'Adventure travel partner for journeys across East Africa.' },
+  { name: 'African Union of Conservationists', role: 'Regional network', description: 'A pan-African network of conservation practitioners.', logo: '/assets/partners/african-union-of-conservationists.png' },
 ];
+
+const cardClass = 'partner-card group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-900/80 shadow-xl shadow-black/20 transition duration-300';
+const interactiveClass = 'hover:-translate-y-1 hover:border-sunset-gold/60 hover:shadow-[0_18px_45px_rgba(251,191,36,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sunset-gold';
+
+function initials(name: string) {
+  return name.split(/\s+/).map((word) => word[0]).join('').slice(0, 3).toUpperCase();
+}
+
+function PartnerContent({ partner }: { partner: Partner }) {
+  return (
+    <>
+      <div className="relative h-40 bg-white">
+        {partner.logo ? (
+          <Image src={partner.logo} alt={`${partner.name} logo`} fill sizes="(min-width: 1024px) 280px, (min-width: 640px) 45vw, 90vw" className="object-contain p-6 transition duration-300 group-hover:scale-105" />
+        ) : (
+          // Shown until the partner's logo is added to /assets/partners.
+          <span className="flex h-full items-center justify-center text-4xl font-black tracking-wider text-slate-300" aria-hidden="true">{initials(partner.name)}</span>
+        )}
+      </div>
+      <div className="flex flex-1 flex-col p-5">
+        <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-sunset-orange">{partner.role}</p>
+        <h3 className="mt-2 font-bold leading-snug text-white">{partner.name}</h3>
+        <p className="mt-2 flex-1 text-sm leading-6 text-slate-400">{partner.description}</p>
+        {partner.href && <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-sunset-gold">Visit website <i className="ri-arrow-right-up-line" aria-hidden="true" /></span>}
+      </div>
+    </>
+  );
+}
 
 export default function Partners() {
   return (
@@ -17,30 +50,34 @@ export default function Partners() {
 
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="flex items-center justify-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-sunset-gold"><span className="h-px w-8 bg-sunset-gold" />Trusted collaborators<span className="h-px w-8 bg-sunset-gold" /></p>
-          <h2 className="headline mt-5 text-4xl font-bold text-white sm:text-5xl">Together in the field.</h2>
+          <h2 className="headline text-4xl font-bold text-white sm:text-5xl">Together in the field.</h2>
           <p className="mt-5 text-base leading-7 text-slate-400 sm:text-lg">We work alongside institutions advancing wildlife conservation, practical learning, and healthier communities across East Africa.</p>
         </div>
 
-        <div className="mx-auto mt-14 grid max-w-5xl gap-5 md:grid-cols-3 sm:gap-6">
+        <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {partners.map((partner, index) => (
-            <a key={partner.name} href={partner.href} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${partner.name}`} className="partner-card group relative grid min-h-[250px] place-items-center overflow-hidden border border-white/10 bg-slate-900/80 p-7 shadow-2xl shadow-black/20 transition duration-500 hover:-translate-y-2 hover:border-sunset-gold/60 hover:shadow-[0_20px_55px_rgba(251,191,36,0.14)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sunset-gold" style={{ animationDelay: `${index * 130}ms` }}>
-              <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-sunset-gold/10 blur-2xl transition duration-500 group-hover:bg-sunset-gold/25" />
-              <div className="absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-gradient-to-r from-transparent via-sunset-gold to-transparent transition duration-500 group-hover:scale-x-100" />
-              <div className="relative grid h-full w-full place-items-center overflow-hidden border border-white/10 bg-white p-7 shadow-inner">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(251,191,36,0.16),transparent_62%)]" />
-                <Image src={partner.logo} alt={`${partner.name} logo`} width={240} height={135} className="relative max-h-[132px] w-auto max-w-full object-contain transition duration-500 group-hover:scale-110 group-focus-visible:scale-110" />
-              </div>
-              <div className="absolute inset-x-0 bottom-0 translate-y-3 bg-gradient-to-t from-slate-950 via-slate-950/95 to-transparent px-6 pb-6 pt-14 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
-                <p className="text-[10px] font-black uppercase tracking-[0.22em] text-sunset-orange">{partner.detail}</p>
-                <div className="mt-2 flex items-end justify-between gap-3"><h3 className="headline text-xl font-bold leading-tight text-white">{partner.name}</h3><i className="ri-arrow-up-right-line text-lg text-sunset-gold" /></div>
-              </div>
-            </a>
+            <li key={partner.name} className="flex">
+              {partner.href ? (
+                <a href={partner.href} target="_blank" rel="noopener noreferrer" className={`${cardClass} ${interactiveClass} w-full`} style={{ animationDelay: `${index * 90}ms` }}>
+                  <PartnerContent partner={partner} />
+                </a>
+              ) : (
+                <div className={`${cardClass} w-full`} style={{ animationDelay: `${index * 90}ms` }}>
+                  <PartnerContent partner={partner} />
+                </div>
+              )}
+            </li>
           ))}
-        </div>
-        <p className="mt-10 text-center text-xs font-medium uppercase tracking-[0.2em] text-slate-500">Collaboration that leaves a lasting impact</p>
+          <li className="flex">
+            <a href="mailto:info@wildmedug.com?subject=Partnership%20with%20WildMed" className={`partner-card flex w-full flex-col items-center justify-center rounded-2xl border border-dashed border-sunset-gold/40 bg-sunset-gold/5 p-8 text-center transition duration-300 ${interactiveClass}`} style={{ animationDelay: `${partners.length * 90}ms` }}>
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-sunset-gold/15 text-2xl text-sunset-gold"><i className="ri-hand-heart-line" aria-hidden="true" /></span>
+              <h3 className="headline mt-5 text-2xl font-bold text-white">Partner with WildMed</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-400">Universities, conservation bodies, and health organisations: let’s build field programmes together.</p>
+              <span className="mt-5 inline-flex items-center gap-1 text-sm font-bold text-sunset-gold">Get in touch <i className="ri-arrow-right-line" aria-hidden="true" /></span>
+            </a>
+          </li>
+        </ul>
       </div>
-
     </section>
   );
 }

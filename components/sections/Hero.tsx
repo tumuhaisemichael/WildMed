@@ -1,16 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
-const heroImages = [
-  '/img/home/move1.jpg',
-  '/img/home/move3.jpg',
-  '/img/home/kibale.webp',
-  '/img/home/kidapo.webp',
-  '/img/home/lakemburo.webp',
-  '/img/home/elephant heard.webp',
-];
+const heroImage = '/img/home/hero-sunset.jpg';
 
 const stats = [
   { icon: 'ri-earth-line', value: '4', label: 'Countries' },
@@ -20,22 +13,6 @@ const stats = [
 ];
 
 const Hero = () => {
-  const [currentImage, setCurrentImage] = useState(0);
-  const [prevImage, setPrevImage] = useState<number | null>(null);
-  const [fading, setFading] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFading(true);
-      setTimeout(() => {
-        setPrevImage(currentImage);
-        setCurrentImage((prev) => (prev + 1) % heroImages.length);
-        setFading(false);
-      }, 700);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [currentImage]);
-
   const openExpeditionModal = () => {
     const event = new CustomEvent('openExpeditionModal');
     window.dispatchEvent(event);
@@ -43,40 +20,19 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[720px] flex flex-col items-center justify-center overflow-hidden bg-gray-900">
-      {/* Background Images — crossfade */}
-      {heroImages.map((img, idx) => (
-        <div
-          key={img}
-          className="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
-          style={{
-            backgroundImage: `url('${img}')`,
-            opacity: idx === currentImage ? (fading ? 0 : 1) : idx === prevImage ? (fading ? 1 : 0) : 0,
-            backgroundAttachment: 'fixed',
-          }}
-        />
-      ))}
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url('${heroImage}')`, backgroundAttachment: 'fixed' }}
+      />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-sunset-purple/30 to-black/85" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
 
       {/* Ambient blobs */}
       <div className="absolute top-20 left-10 w-20 h-20 rounded-full bg-sunset-orange/15 blur-2xl" />
       <div className="absolute bottom-32 right-20 w-32 h-32 rounded-full bg-sunset-gold/15 blur-2xl" />
       <div className="absolute top-1/3 right-1/4 w-16 h-16 rounded-full bg-white/10 blur-xl" />
-
-      {/* Slide indicator dots */}
-      <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-        {heroImages.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => setCurrentImage(idx)}
-            className={`h-1.5 rounded-full transition-all duration-500 ${
-              idx === currentImage ? 'w-8 bg-sunset-gold' : 'w-2 bg-white/40'
-            }`}
-            aria-label={`Slide ${idx + 1}`}
-          />
-        ))}
-      </div>
 
       {/* Main content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
@@ -88,8 +44,7 @@ const Hero = () => {
                 <span className="italic text-sunset-orange">Wild</span>
                 <span className="italic text-sunset-gold">Med</span>
                 <span
-                  className="block text-3xl md:text-4xl font-light tracking-wide text-sunset-honey mt-2"
-                  style={{ fontFamily: "'Dancing Script', cursive" }}
+                  className="block font-dancing text-3xl md:text-4xl font-normal not-italic tracking-wide text-sunset-honey mt-2"
                 >
                   Safaris and Field Projects
                 </span>
@@ -150,7 +105,7 @@ const Hero = () => {
                 <div>
                   <Link href="/Professional-Biological-Field-Expeditions" className="block">
                     <h4 className="font-semibold text-white group-hover:text-sunset-peach transition-colors">
-                      Professional Biological Field Expeditions
+                      One Health Tourism
                     </h4>
                   </Link>
                   <ul className="mt-2 space-y-1 text-sm text-gray-400 list-disc list-inside">

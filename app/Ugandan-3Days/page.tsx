@@ -4,6 +4,9 @@ import Image from "next/image";
 import { FormEvent, useEffect, useState } from "react";
 import UnifiedHero from "@/components/layout/UnifiedHero";
 import FormSuccess from "@/components/forms/FormSuccess";
+import SpamTrap from "@/components/forms/SpamTrap";
+import DateField from "@/components/forms/DateField";
+import { sendEnquiry } from "@/lib/enquiry";
 import { Skeleton } from "@/components/ui/Skeleton";
 
 const itinerary = [
@@ -24,7 +27,7 @@ const itinerary = [
     title: "Gorilla Trekking & Batwa Culture",
     route: "Bwindi Impenetrable Forest",
     icon: "ri-footprint-line",
-    image: "/assets/3day-gorilla/gorilla1.png",
+    image: "/assets/3day-gorilla/bwindi-gorilla-juvenile.jpg",
     segments: [
       { heading: "Gorilla trekking", icon: "ri-user-star-line", items: ["Early morning briefing at park headquarters", "Guided trek into the impenetrable forest", "Find and observe a mountain gorilla family", "One unforgettable hour with the gorillas", "Return to the lodge for lunch"] },
       { heading: "Batwa cultural experience", icon: "ri-community-line", items: ["Afternoon visit to the Batwa community", "Learn about the indigenous forest lifestyle", "Traditional dances and storytelling", "Cultural exchange with Batwa people", "Understand their conservation role"] },
@@ -46,7 +49,7 @@ const itinerary = [
 ];
 
 const highlights = [
-  { title: "Mountain Gorilla Encounter", category: "Wildlife", text: "Spend a remarkable hour with a mountain gorilla family in its natural habitat.", image: "/assets/3day-gorilla/gorilla1.png", layout: "lg:col-span-2 lg:row-span-2" },
+  { title: "Mountain Gorilla Encounter", category: "Wildlife", text: "Spend a remarkable hour with a mountain gorilla family in its natural habitat.", image: "/assets/3day-gorilla/bwindi-gorilla-resting.jpg", layout: "lg:col-span-2 lg:row-span-2" },
   { title: "Bwindi Impenetrable Forest", category: "Landscape", text: "Follow forest trails through one of Africa's most biologically rich landscapes.", image: "/assets/3day-gorilla/gorilla2.png", layout: "" },
   { title: "Batwa Cultural Experience", category: "Culture", text: "Meet an indigenous community and learn about its deep relationship with the forest.", image: "/assets/3day-gorilla/gorilla3.png", layout: "" },
   { title: "Gorilla Trekking Group", category: "Expedition", text: "Travel with an experienced guide who handles the route, timing and park formalities.", image: "/assets/3day-gorilla/gorilla4.png", layout: "lg:col-span-2" },
@@ -58,7 +61,7 @@ const lodges = [
     location: "Bwindi Impenetrable Forest",
     nights: "2 nights",
     level: "Mid-range",
-    image: "/assets/3day-gorilla/rushaga-lodge.png",
+    image: "/assets/8day-uganda-rwanda/lodge-rushaga-gorilla-lodge.jpg",
     description: "A comfortable lodge near the park headquarters, offering modern amenities with stunning forest views. It is the perfect base for a gorilla trekking adventure.",
     amenities: [["ri-wifi-line", "Free WiFi"], ["ri-restaurant-line", "On-site restaurant"], ["ri-fire-line", "Hot showers"], ["ri-landscape-line", "Forest views"]],
   },
@@ -188,14 +191,8 @@ export default function Ugandan3DaysPage() {
     event.preventDefault();
     setSubmitting(true);
     const form = event.currentTarget;
-    const data = Object.fromEntries(new FormData(form));
     try {
-      const response = await fetch("https://formspree.io/f/mldlkwke", {
-        method: "POST",
-        headers: { Accept: "application/json", "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!response.ok) throw new Error("Submission failed");
+      await sendEnquiry(form, "Trip enquiry – 3-Day Gorilla Trekking & Batwa Experience");
       form.reset();
       setSubmitted(true);
     } catch {
@@ -209,7 +206,7 @@ export default function Ugandan3DaysPage() {
 
   return (
     <div className="overflow-hidden bg-slate-950 text-white">
-      <UnifiedHero eyebrow="Express gorilla adventure" title={<>3-Day Gorilla Trekking <span className="block italic text-sunset-gold">& Batwa Experience</span></>} description="Experience the magic of mountain gorillas on a compact journey pairing intimate wildlife encounters with meaningful cultural immersion in Uganda's magnificent Bwindi Impenetrable Forest." backgroundImage="/assets/3day-gorilla/gorilla1.png" mainImage="/assets/3day-gorilla/gorilla2.png" secondaryImage="/assets/3day-gorilla/gorilla4.png" imageAlt="Mountain gorilla in Bwindi Impenetrable Forest" trustText="4.9/5 traveler rating" note="One journey, lifelong memories" stats={[{value:'3 days',label:'2 nights',icon:'ri-calendar-check-line'},{value:'Bwindi',label:'Destination',icon:'ri-map-pin-2-line'},{value:'Private',label:'Your own group',icon:'ri-group-line'},{value:'USD 2,540',label:'Per person',icon:'ri-price-tag-3-line'}]} actions={<><button onClick={openBooking} className="rounded-2xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Book this journey <i className="ri-arrow-right-line" /></button><button onClick={openBooking} className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Check permit availability</button></>} />
+      <UnifiedHero title={<>3-Day Gorilla Trekking <span className="block italic text-sunset-gold">& Batwa Experience</span></>} description="Experience the magic of mountain gorillas on a compact journey pairing intimate wildlife encounters with meaningful cultural immersion in Uganda's magnificent Bwindi Impenetrable Forest." backgroundImage="/assets/3day-gorilla/gorilla1.png" mainImage="/assets/3day-gorilla/gorilla2.png" secondaryImage="/assets/3day-gorilla/gorilla4.png" imageAlt="Mountain gorilla in Bwindi Impenetrable Forest" trustText="4.9/5 traveler rating" note="One journey, lifelong memories" stats={[{value:'3 days',label:'2 nights',icon:'ri-calendar-check-line'},{value:'Bwindi',label:'Destination',icon:'ri-map-pin-2-line'},{value:'Private',label:'Your own group',icon:'ri-group-line'},{value:'USD 2,540',label:'Per person',icon:'ri-price-tag-3-line'}]} actions={<><button onClick={openBooking} className="rounded-2xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Book this journey <i className="ri-arrow-right-line" /></button><button onClick={openBooking} className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Check permit availability</button></>} />
 
       <section className="bg-slate-950 px-6 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
@@ -373,7 +370,7 @@ export default function Ugandan3DaysPage() {
       )}
 
       {bookingOpen && (
-        <div className="fixed inset-0 z-[210] overflow-y-auto bg-slate-950/95 p-4 backdrop-blur-xl" role="dialog" aria-modal="true" aria-label="Book the 3-day gorilla trekking adventure" onClick={() => setBookingOpen(false)}>
+        <div className="form-modal-backdrop fixed inset-0 z-[210] overflow-y-auto p-4" role="dialog" aria-modal="true" aria-label="Book the 3-day gorilla trekking adventure" onClick={() => setBookingOpen(false)}>
           <div className="mx-auto my-8 max-w-2xl rounded-[2rem] border border-white/10 bg-slate-900 p-6 shadow-2xl sm:p-9" onClick={(event) => event.stopPropagation()}>
             <div className="flex items-start justify-between gap-5">
               <div><p className="text-xs font-black uppercase tracking-[0.22em] text-sunset-gold">Trip request</p><h2 className="headline mt-2 text-3xl font-bold text-white">Book your 3-day gorilla adventure</h2></div>
@@ -383,13 +380,13 @@ export default function Ugandan3DaysPage() {
             {submitted ? (
               <FormSuccess title="Gorilla adventure request received" message="Thank you. The WildMed team will confirm permit availability and contact you with the next steps." onClose={() => setBookingOpen(false)} />
             ) : (
-              <form onSubmit={submitBooking} className="mt-8 grid gap-5 sm:grid-cols-2">
+              <form onSubmit={submitBooking} className="mt-8 grid gap-5 sm:grid-cols-2"><SpamTrap />
                 <input type="hidden" name="safari" value="3-Day Gorilla Trekking & Batwa Experience" />
                 <input type="hidden" name="activityLevel" value={activityLevel} />
                 <input type="hidden" name="accommodation" value={accommodation} />
                 <label className="text-sm font-bold text-slate-300">Full name<input type="text" name="name" required placeholder="Enter your full name" className="mt-2 w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3 font-normal text-white outline-none focus:border-sunset-gold" /></label>
                 <label className="text-sm font-bold text-slate-300">Email address<input type="email" name="email" required placeholder="Enter your email" className="mt-2 w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3 font-normal text-white outline-none focus:border-sunset-gold" /></label>
-                <label className="text-sm font-bold text-slate-300">Preferred travel date<input type="date" name="date" required className="mt-2 w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3 font-normal text-white outline-none focus:border-sunset-gold" /></label>
+                <label className="text-sm font-bold text-slate-300">Preferred travel date<span className="mt-2 block font-normal"><DateField name="date" required inputClassName="w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3 font-normal text-white outline-none placeholder:text-slate-600 focus:border-sunset-gold" buttonClassName="text-slate-400" /></span></label>
                 <label className="text-sm font-bold text-slate-300">Group size: <span className="text-sunset-gold">{groupSize} person{groupSize === 1 ? "" : "s"}</span><input type="range" min="1" max="6" value={groupSize} onChange={(event) => setGroupSize(Number(event.target.value))} name="groupSize" className="mt-4 w-full accent-[#FFB830]" /></label>
                 <fieldset className="sm:col-span-2"><legend className="text-sm font-bold text-slate-300">Activity level preference</legend><div className="mt-3 grid grid-cols-3 gap-2">{["Moderate", "Intermediate", "Advanced"].map((level) => <button type="button" key={level} onClick={() => setActivityLevel(level)} className={`rounded-xl border px-3 py-3 text-xs font-bold transition ${activityLevel === level ? "border-sunset-gold bg-sunset-gold text-slate-950" : "border-white/10 bg-slate-950 text-slate-300 hover:border-sunset-gold/60"}`}>{level}</button>)}</div></fieldset>
                 <label className="text-sm font-bold text-slate-300 sm:col-span-2">Accommodation level<select value={accommodation} onChange={(event) => setAccommodation(event.target.value)} className="mt-2 w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3 font-normal text-white outline-none focus:border-sunset-gold"><option>Mid-range Lodges (Included)</option><option>Upgrade to Luxury (+$500)</option></select></label>

@@ -16,26 +16,26 @@ const stats = [
 ];
 
 const highlights = [
-  { title: 'African Lion', desc: 'Pride lands across Serengeti plains and the Ngorongoro Crater floor', image: 'https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=400' },
-  { title: 'African Elephant', desc: 'Large herds roam Tarangire and Serengeti during the dry season', image: 'https://images.unsplash.com/photo-1505148230895-d9a785a555fa?auto=format&fit=crop&w=400' },
-  { title: 'Cheetah', desc: 'Spot the fastest land animal on Serengeti\'s open plains', image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400' },
-  { title: 'Great Migration', desc: 'Over a million wildebeest and zebra trek across the Serengeti', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400' },
-  { title: 'Masai Giraffe', desc: 'Elegant giants browsing acacia trees across the savanna', image: 'https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=400' },
-  { title: 'Plains Zebra', desc: 'Iconic striped herds travel with wildebeest during migration', image: 'https://images.unsplash.com/photo-1474511320723-9a56873867b5?auto=format&fit=crop&w=400' },
+  { title: 'African Lion', desc: 'Pride lands across Serengeti plains and the Ngorongoro Crater floor', image: '/img/Destination/common/african-lion.jpg' },
+  { title: 'African Elephant', desc: 'Large herds roam Tarangire and Serengeti during the dry season', image: '/img/Destination/common/african-elephant.jpg' },
+  { title: 'Cheetah', desc: 'Spot the fastest land animal on Serengeti\'s open plains', image: '/img/Destination/TZ/serengeti-cheetah.jpg' },
+  { title: 'Great Migration', desc: 'Over a million wildebeest and zebra trek across the Serengeti', image: '/img/Destination/TZ/serengeti-migration.jpg' },
+  { title: 'Masai Giraffe', desc: 'Elegant giants browsing acacia trees across the savanna', image: '/img/Destination/TZ/masai-giraffe.jpg' },
+  { title: 'Plains Zebra', desc: 'Iconic striped herds travel with wildebeest during migration', image: '/img/Destination/TZ/manyara-zebras.jpg' },
 ];
 
 const wildlifeDestinations = [
-  { id: 'serengeti', name: 'Serengeti', type: 'Great Migration', price: '$2,450', image: '/img/Destination/TZ/mbalageti-serengeti.jpg', desc: 'Witness the world\'s greatest wildlife spectacle in Tanzania\'s most famous national park.' },
-  { id: 'ngorongoro', name: 'Ngorongoro Crater', type: 'Volcanic Caldera', price: '$2,150', image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=400', desc: 'Explore the world\'s largest inactive volcanic caldera, a UNESCO World Heritage Site.' },
-  { id: 'kilimanjaro', name: 'Kilimanjaro', type: 'Highest Peak', price: '$3,200', image: 'https://images.unsplash.com/photo-1589182337358-2cb63099350c?auto=format&fit=crop&w=400', desc: 'Conquer Africa\'s highest mountain and witness breathtaking views from the roof of Africa.' },
-  { id: 'tarangire', name: 'Tarangire', type: 'Baobab & Elephants', price: '$1,850', image: 'https://images.unsplash.com/photo-1534199037132-3c447a97b9d3?auto=format&fit=crop&w=400', desc: 'Famous for its ancient baobab trees and large elephant herds in pristine wilderness.' },
+  { id: 'serengeti', name: 'Serengeti', type: 'Great Migration', price: '$2,450', image: '/img/Destination/TZ/serengeti-herds.jpg', desc: 'Witness the world\'s greatest wildlife spectacle in Tanzania\'s most famous national park.' },
+  { id: 'ngorongoro', name: 'Ngorongoro Crater', type: 'Volcanic Caldera', price: '$2,150', image: '/img/Destination/TZ/ngorongoro-caldera.jpg', desc: 'Explore the world\'s largest inactive volcanic caldera, a UNESCO World Heritage Site.' },
+  { id: 'kilimanjaro', name: 'Kilimanjaro', type: 'Highest Peak', price: '$3,200', image: '/img/Destination/TZ/kilimanjaro.jpg', desc: 'Conquer Africa\'s highest mountain and witness breathtaking views from the roof of Africa.' },
+  { id: 'tarangire', name: 'Tarangire', type: 'Baobab & Elephants', price: '$1,850', image: '/img/Destination/TZ/tarangire-baobab.jpg', desc: 'Famous for its ancient baobab trees and large elephant herds in pristine wilderness.' },
 ];
 
 const universities = [
   { id: 'udsm', name: 'U. of Dar es Salaam', type: 'Premier University', price: 'Public University', image: '/img/Destination/TZ/UDAS.jpeg', desc: 'Tanzania\'s oldest and most prestigious public university with diverse academic programs.' },
   { id: 'muhas', name: 'Muhimbili (MUHAS)', type: 'Health Sciences', price: 'Specialized University', image: '/img/Destination/TZ/muhimbili.jpeg', desc: 'Leading institution for medical and health sciences education in Tanzania.' },
-  { id: 'sua', name: 'Sokoine (SUA)', type: 'Agriculture', price: 'Public University', image: '/img/Destination/TZ/sokoine.jpeg', desc: 'Premier institution for agricultural sciences, veterinary medicine, and related fields.' },
-  { id: 'nm-aist', name: 'NM-AIST', type: 'Science & Tech', price: 'Postgraduate Institution', image: '/img/Destination/TZ/nelson.jpeg', desc: 'Postgraduate science and technology institution focused on innovation and research.' },
+  { id: 'sua', name: 'Sokoine (SUA)', type: 'Agriculture', price: 'Public University', image: '/img/Destination/TZ/sokoine-campus.jpg', desc: 'Premier institution for agricultural sciences, veterinary medicine, and related fields.' },
+  { id: 'nm-aist', name: 'NM-AIST', type: 'Science & Tech', price: 'Postgraduate Institution', image: '/img/Destination/TZ/nm-aist-campus.jpg', desc: 'Postgraduate science and technology institution focused on innovation and research.' },
 ];
 
 const accommodations = [
@@ -47,13 +47,11 @@ const accommodations = [
 
 export default function TanzaniaSafariPage() {
   const [activeTab, setActiveTab] = useState<'wildlife' | 'universities'>('wildlife');
-  const [mounted, setMounted] = useState(false);
   const [selectedDestId, setSelectedDestId] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [featuredStayIndex, setFeaturedStayIndex] = useState(0);
 
-  useEffect(() => setMounted(true), []);
   useEffect(() => {
     const timer = setInterval(() => {
       setFeaturedStayIndex((prev) => (prev + 1) % accommodations.length);
@@ -79,7 +77,6 @@ export default function TanzaniaSafariPage() {
     setShowBookingForm(true);
   };
 
-  if (!mounted) return null;
 
   const activeDestData = selectedDestId ? tanzaniaDetailsData[selectedDestId] : null;
   const featuredStay = accommodations[featuredStayIndex];
@@ -93,7 +90,7 @@ export default function TanzaniaSafariPage() {
         id={selectedDestId || ''} 
       />
 
-      <UnifiedHero eyebrow="Untamed Wilderness" title={<>Tanzania&apos;s <span className="block italic text-sunset-gold">Legendary Horizons</span></>} description="Where the Serengeti whispers ancient secrets and Kilimanjaro touches the sky." backgroundImage="/img/Destination/TZ/mbalageti-serengeti.jpg" mainImage="/img/Destination/TZ/mbalageti-serengeti.jpg" secondaryImage="/img/Destination/TZ/sasakwa.jpeg" imageAlt="Tanzania safari landscape" trustText="Planned by Tanzania specialists" note="Where legends roam" stats={stats.map((stat,index)=>({value:stat.value,label:stat.label,icon:['ri-bear-smile-line','ri-landscape-line','ri-earth-line','ri-sun-line'][index]}))} actions={<><button onClick={handleApply} className="rounded-2xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Request itinerary</button><a href="#highlights" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Explore Tanzania</a></>} />
+      <UnifiedHero title={<>Tanzania&apos;s <span className="block italic text-sunset-gold">Legendary Horizons</span></>} description="Where the Serengeti whispers ancient secrets and Kilimanjaro touches the sky." backgroundImage="/img/Destination/TZ/mbalageti-serengeti.jpg" mainImage="/img/Destination/TZ/mbalageti-serengeti.jpg" secondaryImage="/img/Destination/TZ/sasakwa.jpeg" imageAlt="Tanzania safari landscape" trustText="Planned by Tanzania specialists" note="Where legends roam" stats={stats.map((stat,index)=>({value:stat.value,label:stat.label,icon:['ri-bear-smile-line','ri-landscape-line','ri-earth-line','ri-sun-line'][index]}))} actions={<><button onClick={handleApply} className="rounded-2xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Request itinerary</button><a href="#highlights" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Explore Tanzania</a></>} />
 
       {/* Exploration Grid */}
       <section id="highlights" className="motion-reveal py-24 relative overflow-hidden">
@@ -120,9 +117,9 @@ export default function TanzaniaSafariPage() {
 
           <div className="grid md:grid-cols-2 gap-10">
             {(activeTab === 'wildlife' ? wildlifeDestinations : universities).map(item => (
-              <div key={item.id} className="motion-card group relative rounded-[3rem] overflow-hidden bg-slate-900 border border-white/5 shadow-2xl h-[600px] transition-all duration-700 hover:border-sunset-gold/30">
-                <Image src={item.image} alt={item.name} fill className="object-cover transition-transform duration-[2s] group-hover:scale-110 opacity-60" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+              <div key={item.id} className="photo-card motion-card group relative rounded-[3rem] overflow-hidden bg-slate-900 border border-white/5 shadow-2xl h-[600px] transition-all duration-700 hover:border-sunset-gold/30">
+                <Image src={item.image} alt={item.name} fill sizes="(min-width: 768px) 50vw, 100vw" quality={85} className="object-cover transition-transform duration-[2s] group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
                 
                 <div className="absolute inset-0 p-12 flex flex-col justify-end">
                   <div className="mb-6 transform transition-transform duration-500 group-hover:-translate-y-4">
@@ -130,7 +127,7 @@ export default function TanzaniaSafariPage() {
                       {item.type}
                     </span>
                     <h3 className="text-2xl md:text-3xl font-black text-white mb-4 italic leading-none">{item.name}</h3>
-                    <p className="text-slate-400 text-lg leading-relaxed max-w-md line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
+                    <p className="text-white/90 text-lg leading-relaxed max-w-md line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
                       {item.desc}
                     </p>
                   </div>
@@ -322,7 +319,7 @@ export default function TanzaniaSafariPage() {
       {/* Booking Form Section */}
       {showBookingForm && (
         <div className="fixed inset-0 z-[120] overlay-fade-in">
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={closeBookingForm} />
+          <div className="form-modal-backdrop absolute inset-0" onClick={closeBookingForm} />
           <div className="relative h-full w-full flex items-center justify-center p-4 md:p-6">
             <div id="booking-section" className="overlay-pop-in w-full max-w-5xl max-h-[92vh] overflow-y-auto rounded-3xl border border-white/15 bg-slate-950 shadow-2xl">
               <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-slate-950/95 backdrop-blur border-b border-white/10">

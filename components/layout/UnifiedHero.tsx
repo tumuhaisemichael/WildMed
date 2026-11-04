@@ -8,7 +8,6 @@ export type HeroStat = {
 };
 
 type UnifiedHeroProps = {
-  eyebrow: string;
   title: ReactNode;
   description: string;
   backgroundImage: string;
@@ -23,7 +22,6 @@ type UnifiedHeroProps = {
 };
 
 export default function UnifiedHero({
-  eyebrow,
   title,
   description,
   backgroundImage,
@@ -46,10 +44,6 @@ export default function UnifiedHero({
       <div className="mx-auto max-w-7xl px-6 pb-32 pt-12 sm:px-8 sm:pt-14 lg:pb-28 lg:pt-16">
         <div className="grid items-center gap-14 lg:grid-cols-[1.08fr_.92fr] lg:gap-10">
           <div className="relative z-10 max-w-3xl">
-            <p className="mb-5 flex items-center gap-3 text-xs font-black uppercase tracking-[0.3em] text-sunset-gold">
-              <span className="h-0.5 w-9 bg-sunset-orange" />
-              {eyebrow}
-            </p>
             <h1 className="headline text-5xl font-bold leading-[0.96] text-white sm:text-6xl lg:text-7xl xl:text-[5rem]">
               {title}
             </h1>

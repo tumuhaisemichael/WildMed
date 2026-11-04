@@ -17,24 +17,24 @@ const stats = [
 
 const highlights = [
   { title: 'Mountain Gorilla', desc: 'Gentle giants of the Virunga Mountains, Rwanda\'s most famous residents', image: '/img/Destination/UG/gorilla.jpeg' },
-  { title: 'Golden Monkey', desc: 'Playful and endangered primates found in the Virunga volcanic region', image: 'https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?auto=format&fit=crop&w=400' },
+  { title: 'Golden Monkey', desc: 'Playful and endangered primates found in the Virunga volcanic region', image: '/img/Destination/rwanda/golden-monkey.jpg' },
   { title: 'Chimpanzee', desc: 'Our closest relatives, thriving in Nyungwe Forest\'s ancient canopy', image: '/img/Destination/UG/Chimpanzee-Tracking-in-Kibale-National-Park.jpg' },
   { title: 'African Elephant', desc: 'Majestic herds roaming Akagera\'s savannas and wetlands', image: '/img/Destination/UG/elephant.jpeg' },
-  { title: 'Lion', desc: 'Reintroduced to Akagera, now thriving in Rwanda\'s only savanna park', image: 'https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=400' },
+  { title: 'Lion', desc: 'Reintroduced to Akagera, now thriving in Rwanda\'s only savanna park', image: '/img/Destination/common/african-lion.jpg' },
   { title: 'Hippopotamus', desc: 'Abundant in Akagera\'s lakes and along Lake Kivu\'s shores', image: '/img/Destination/UG/hippos.jpeg' },
 ];
 
 const wildlifeDestinations = [
   { id: 'volcanoes', name: 'Volcanoes NP', type: 'Mountain Gorillas', price: '$1,500', image: '/img/Destination/rwanda/volcanoes park.jpeg', desc: 'Home to Rwanda\'s famous mountain gorillas in the dramatic Virunga Mountains.' },
-  { id: 'nyungwe', name: 'Nyungwe Forest', type: 'Primate Paradise', price: '$1,200', image: '/img/Destination/rwanda/nyungwe.jpeg', desc: 'Ancient rainforest with chimpanzees, colobus monkeys, and spectacular canopy walks.' },
-  { id: 'akagera', name: 'Akagera NP', type: 'Big Five Safari', price: '$950', image: '/img/Destination/rwanda/akagera.jpeg', desc: 'Rwanda\'s only savanna park with lions, elephants, and diverse wildlife.' },
-  { id: 'lake-kivu', name: 'Lake Kivu', type: 'Scenic Retreat', price: '$800', image: '/img/Destination/rwanda/lakekivu.jpeg', desc: 'Beautiful freshwater lake perfect for relaxation after gorilla trekking.' },
+  { id: 'nyungwe', name: 'Nyungwe Forest', type: 'Primate Paradise', price: '$1,200', image: '/img/Destination/rwanda/nyungwe-canopy-walk.jpg', desc: 'Ancient rainforest with chimpanzees, colobus monkeys, and spectacular canopy walks.' },
+  { id: 'akagera', name: 'Akagera NP', type: 'Big Five Safari', price: '$950', image: '/img/Destination/rwanda/akagera-giraffes.jpg', desc: 'Rwanda\'s only savanna park with lions, elephants, and diverse wildlife.' },
+  { id: 'lake-kivu', name: 'Lake Kivu', type: 'Scenic Retreat', price: '$800', image: '/img/Destination/rwanda/lake-kivu.jpg', desc: 'Beautiful freshwater lake perfect for relaxation after gorilla trekking.' },
 ];
 
 const universities = [
-  { id: 'ur', name: 'University of Rwanda', type: 'Premier Institution', price: 'Public University', image: '/img/Destination/rwanda/uor.jpeg', desc: 'Rwanda\'s largest and most prestigious public university with multiple campuses.' },
-  { id: 'alu', name: 'ALU Rwanda', type: 'Leadership Education', price: 'Private University', image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400', desc: 'Innovative pan-African university focused on developing future leaders.' },
-  { id: 'ughe', name: 'UGHE', type: 'Global Health', price: 'Specialized University', image: 'https://images.unsplash.com/photo-1541178735493-479c1a27ed24?auto=format&fit=crop&w=400', desc: 'Specialized institution focused on global health equity and community-driven care.' },
+  { id: 'ur', name: 'University of Rwanda', type: 'Premier Institution', price: 'Public University', image: '/img/Destination/rwanda/university-of-rwanda.jpg', desc: 'Rwanda\'s largest and most prestigious public university with multiple campuses.' },
+  { id: 'alu', name: 'ALU Rwanda', type: 'Leadership Education', price: 'Private University', image: '/img/Destination/rwanda/alu-campus.jpg', desc: 'Innovative pan-African university focused on developing future leaders.' },
+  { id: 'ughe', name: 'UGHE', type: 'Global Health', price: 'Specialized University', image: '/img/Destination/rwanda/ughe-graduation.jpg', desc: 'Specialized institution focused on global health equity and community-driven care.' },
   { id: 'cmu', name: 'CMU-Africa', type: 'Tech & Engineering', price: 'Postgraduate Campus', image: '/img/Destination/rwanda/CMU.jpeg', desc: 'The Rwanda campus of the world-renowned Carnegie Mellon University.' },
 ];
 
@@ -47,13 +47,11 @@ const accommodations = [
 
 export default function RwandaSafarisPage() {
   const [activeTab, setActiveTab] = useState<'wildlife' | 'universities'>('wildlife');
-  const [mounted, setMounted] = useState(false);
   const [selectedDestId, setSelectedDestId] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [featuredStayIndex, setFeaturedStayIndex] = useState(0);
 
-  useEffect(() => setMounted(true), []);
   useEffect(() => {
     const timer = setInterval(() => {
       setFeaturedStayIndex((prev) => (prev + 1) % accommodations.length);
@@ -79,7 +77,6 @@ export default function RwandaSafarisPage() {
     setShowBookingForm(true);
   };
 
-  if (!mounted) return null;
 
   const activeDestData = selectedDestId ? rwandaDetailsData[selectedDestId] : null;
   const featuredStay = accommodations[featuredStayIndex];
@@ -93,7 +90,7 @@ export default function RwandaSafarisPage() {
         id={selectedDestId || ''} 
       />
 
-      <UnifiedHero eyebrow="Land of a Thousand Hills" title={<>Rwanda&apos;s <span className="block italic text-sunset-gold">Emerald Peaks</span></>} description="A pristine sanctuary for primates and a testament to remarkable conservation success." backgroundImage="/img/Destination/rwanda/volcanoes park.jpeg" mainImage="/assets/uganda-rwanda-11day/day10-golden-monkeys.png" secondaryImage="/img/Destination/rwanda/volcanoes park.jpeg" imageAlt="Rwanda primate safari" trustText="Guided by Rwanda specialists" note="A thousand hills await" stats={stats.map((stat,index)=>({value:stat.value,label:stat.label,icon:['ri-bear-smile-line','ri-landscape-line','ri-leaf-line','ri-earth-line'][index]}))} actions={<><button onClick={handleApply} className="rounded-2xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Start your journey</button><a href="#highlights" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Explore Rwanda</a></>} />
+      <UnifiedHero title={<>Rwanda&apos;s <span className="block italic text-sunset-gold">Emerald Peaks</span></>} description="A pristine sanctuary for primates and a testament to remarkable conservation success." backgroundImage="/img/Destination/rwanda/volcanoes park.jpeg" mainImage="/assets/11day-uganda-rwanda/day10-golden-monkeys.png" secondaryImage="/img/Destination/rwanda/volcanoes park.jpeg" imageAlt="Rwanda primate safari" trustText="Guided by Rwanda specialists" note="A thousand hills await" stats={stats.map((stat,index)=>({value:stat.value,label:stat.label,icon:['ri-bear-smile-line','ri-landscape-line','ri-leaf-line','ri-earth-line'][index]}))} actions={<><button onClick={handleApply} className="rounded-2xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Start your journey</button><a href="#highlights" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Explore Rwanda</a></>} />
 
       {/* Exploration Grid */}
       <section id="highlights" className="motion-reveal py-24 relative overflow-hidden">
@@ -120,9 +117,9 @@ export default function RwandaSafarisPage() {
 
           <div className="grid md:grid-cols-2 gap-10">
             {(activeTab === 'wildlife' ? wildlifeDestinations : universities).map(item => (
-              <div key={item.id} className="motion-card group relative rounded-[3rem] overflow-hidden bg-slate-900 border border-white/5 shadow-2xl h-[600px] transition-all duration-700 hover:border-sunset-gold/30">
-                <Image src={item.image} alt={item.name} fill className="object-cover transition-transform duration-[2s] group-hover:scale-110 opacity-60" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+              <div key={item.id} className="photo-card motion-card group relative rounded-[3rem] overflow-hidden bg-slate-900 border border-white/5 shadow-2xl h-[600px] transition-all duration-700 hover:border-sunset-gold/30">
+                <Image src={item.image} alt={item.name} fill sizes="(min-width: 768px) 50vw, 100vw" quality={85} className="object-cover transition-transform duration-[2s] group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
                 
                 <div className="absolute inset-0 p-12 flex flex-col justify-end">
                   <div className="mb-6 transform transition-transform duration-500 group-hover:-translate-y-4">
@@ -130,7 +127,7 @@ export default function RwandaSafarisPage() {
                       {item.type}
                     </span>
                     <h3 className="text-2xl md:text-3xl font-black text-white mb-4 italic leading-none">{item.name}</h3>
-                    <p className="text-slate-400 text-lg leading-relaxed max-w-md line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
+                    <p className="text-white/90 text-lg leading-relaxed max-w-md line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
                       {item.desc}
                     </p>
                   </div>
@@ -322,7 +319,7 @@ export default function RwandaSafarisPage() {
       {/* Booking Form Section */}
       {showBookingForm && (
         <div className="fixed inset-0 z-[120] overlay-fade-in">
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={closeBookingForm} />
+          <div className="form-modal-backdrop absolute inset-0" onClick={closeBookingForm} />
           <div className="relative h-full w-full flex items-center justify-center p-4 md:p-6">
             <div id="booking-section" className="overlay-pop-in w-full max-w-5xl max-h-[92vh] overflow-y-auto rounded-3xl border border-white/15 bg-slate-950 shadow-2xl">
               <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-slate-950/95 backdrop-blur border-b border-white/10">

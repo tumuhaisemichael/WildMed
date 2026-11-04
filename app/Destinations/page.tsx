@@ -1,9 +1,14 @@
-"use client";
-
-import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import UnifiedHero from '@/components/layout/UnifiedHero';
+import { pageMetadata } from '@/lib/seo';
+
+export const metadata = pageMetadata({
+  title: 'East Africa Destinations',
+  description: 'Explore safaris and field expeditions in Uganda, Rwanda, Kenya, and Tanzania: gorillas, the Great Migration, volcanoes, and more.',
+  path: '/Destinations',
+  image: '/img/Destination/TZ/serengeti-migration.jpg',
+});
 
 const destinations = [
   {
@@ -36,7 +41,7 @@ const destinations = [
     tagline: 'The Land of Kilimanjaro',
     title: 'Wild Horizon',
     desc: 'From the endless plains of the Serengeti to the tropical paradise of Zanzibar.',
-    image: '/img/Destination/TZ/mbalageti-serengeti.jpg',
+    image: '/img/Destination/TZ/serengeti-plains.jpg',
     signature: 'Serengeti Migration & Ngorongoro Crater',
     parks: ['Serengeti', 'Ngorongoro', 'Tarangire', 'Zanzibar'],
     href: '/Tanzania-Safari',
@@ -64,17 +69,12 @@ const stats = [
 ];
 
 export default function DestinationsPage() {
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
-  if (!mounted) return null;
 
   return (
     <div className="bg-slate-950 min-h-screen">
-      <UnifiedHero eyebrow="The Expedition Atlas" title={<>Choose Your <span className="block italic text-sunset-gold">Wild Trail</span></>} description="From the misty gorilla sanctuaries of the Albertine Rift to the golden savannas of the Mara, every destination carries a different rhythm of the wild." backgroundImage="/img/home/DSC_0112.JPG" mainImage="/img/Destination/UG/bwindi.jpeg" secondaryImage="/img/Destination/Kenya/greatmig.webp" imageAlt="East African wildlife destination" trustText="Four countries, one expert team" note="Find your wild" stats={stats.map(({value,label,icon})=>({value,label,icon}))} actions={<><a href="#destination-grid" className="rounded-2xl bg-sunset-gold px-8 py-4 text-center font-black text-slate-950 transition hover:bg-white">Explore destinations <i className="ri-arrow-right-line" /></a><Link href="/Custom-Safaris" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Plan a custom trip</Link></>} />
+      <UnifiedHero title={<>Choose Your <span className="block italic text-sunset-gold">Wild Trail</span></>} description="From the misty gorilla sanctuaries of the Albertine Rift to the golden savannas of the Mara, every destination carries a different rhythm of the wild." backgroundImage="/img/home/DSC_0112.JPG" mainImage="/img/Destination/UG/bwindi.jpeg" secondaryImage="/img/Destination/Kenya/greatmig.webp" imageAlt="East African wildlife destination" trustText="Four countries, one expert team" note="Find your wild" stats={stats.map(({value,label,icon})=>({value,label,icon}))} actions={<><a href="#destination-grid" className="rounded-2xl bg-sunset-gold px-8 py-4 text-center font-black text-slate-950 transition hover:bg-white">Explore destinations <i className="ri-arrow-right-line" /></a><Link href="/Custom-Safaris" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Plan a custom trip</Link></>} />
 
       {/* Main Destination Grid */}
       <section id="destination-grid" className="py-20 relative">

@@ -1,14 +1,97 @@
 import UnifiedHero from '@/components/layout/UnifiedHero';
+import { pageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'About WildMed Safaris',
+export const metadata = pageMetadata({
+  title: 'About Us',
   description: 'Learn about WildMed Safaris, our mission, team, and East Africa conservation and education programs.',
+  path: '/About-Us',
+  image: '/assets/8day-uganda-rwanda/murchison-falls.jpg',
+});
+
+type TeamMember = {
+  name: string;
+  title: string;
+  bio: string;
+  img?: string;
+  initials?: string;
+  links: { href: string; icon: string; label: string }[];
 };
+
+const email = (address: string) => ({ href: `mailto:${address}?subject=WildMedUG`, icon: 'ri-mail-line', label: 'Email' });
+const phone = (number: string) => ({ href: `tel:${number}`, icon: 'ri-phone-line', label: 'Call' });
+const linkedin = (href: string) => ({ href, icon: 'ri-linkedin-fill', label: 'LinkedIn profile of' });
+
+const team: TeamMember[] = [
+  {
+    img: '/img/sente.jpeg',
+    name: 'Celsus Sente',
+    title: 'Wildlife Veterinarian | Tour Operator | Lecturer',
+    bio: 'One Health professional connecting wildlife medicine, public health, conservation, and experiential tourism.',
+    links: [email('csente37@gmail.com'), phone('+256777370494'), linkedin('https://www.linkedin.com/in/celsus-sente-6364361b7/')],
+  },
+  {
+    img: '/assets/img/team/t2.jpg',
+    name: 'Dr. Benigna G. Namara',
+    title: 'Microbiologist | Epidemiologist | M&E',
+    bio: 'MBChB | MMED Microbiology | MPH | Field Epidemiology | M&E',
+    links: [email('benignamara@gmail.com'), linkedin('https://www.linkedin.com/in/benigna-namara-3aba7952/')],
+  },
+  {
+    img: '/img/nicki.jpg',
+    name: 'Nicki Grønkjær Jensen',
+    title: 'Denmark & Europe Representative',
+    bio: 'Phone: +45 60 13 18 28',
+    links: [phone('+4560131828')],
+  },
+  {
+    initials: 'MLK',
+    name: 'Margaret L. Khaitsa, BVM, MSc, Ph. D, ACVPM',
+    title: 'USA Representative, WildMed',
+    bio: 'Professor, Dept. Pathobiology and Population Medicine, MSU, USA',
+    links: [email('mkhaitsa@cvm.msstate.edu'), phone('+16623251365')],
+  },
+  {
+    img: '/img/dale.png',
+    name: 'Dale W. Botting',
+    title: 'Strategic Advisor and Canada Representative',
+    bio: 'Founder of the Global Alliance for Professional Leadership Development, author, strategist, business coach, and leadership trainer.',
+    links: [{ href: 'https://www.dalebottinginsights.ca/', icon: 'ri-global-line', label: 'Website of' }, phone('+13062211785')],
+  },
+  {
+    img: '/assets/img/team/t1.jfif',
+    name: 'Mary Lisa Kasakamu',
+    title: 'Graduate Research Assistant | USA Representative',
+    bio: 'Stress physiology, animal behavior, and welfare with emphasis on swine.',
+    links: [email('mkasakamu2@huskers.unl.edu'), linkedin('https://www.linkedin.com/in/mary-lisa-kasakamu-499098167/')],
+  },
+  {
+    img: '/assets/img/team/t3.jpg',
+    name: 'Carol Namae',
+    title: 'Finland European representative',
+    bio: 'Supporting European travelers with tailored planning and logistics.',
+    links: [email('caroline.namae.cn@gmail.com')],
+  },
+  {
+    img: '/assets/img/team/Michael.jpg',
+    name: 'Michael Tumuhaise',
+    title: 'Web Developer & IT',
+    bio: 'Cool, calm, and collected. Ready to tackle any tech challenge.',
+    links: [email('michaeltumuhaise11@gmail.com')],
+  },
+];
+
+const collaborators = [
+  { name: 'Uganda Tourism Board', src: '/assets/partners/uganda-tourism-board.png' },
+  { name: 'Strevolt Foundation', src: '/assets/partners/strevolt-logo.png' },
+  { name: 'Makerere University', src: '/assets/partners/makerere-university.png' },
+  { name: 'EduPartnershipsGlobal (EPG Consult)', src: '/assets/partners/EPG.jpg' },
+  { name: 'African Union of Conservationists', src: '/assets/partners/african-union-of-conservationists.png' },
+];
 
 export default function AboutUsPage() {
   return (
     <div className="bg-slate-950 text-white min-h-screen">
-      <UnifiedHero eyebrow="Our story" title={<>People, Wildlife and Communities <span className="block italic text-sunset-gold">at the Heart of Our Journeys</span></>} description="We design meaningful wildlife experiences that protect nature, support local communities, and connect travelers to East Africa’s extraordinary ecosystems." backgroundImage="/img/Destination/Rwensori.png" mainImage="/img/Destination/UG/bwindi.jpeg" secondaryImage="/img/home/DSC_0112.JPG" imageAlt="Mountain gorilla in Uganda" trustText="Trusted across East Africa" note="Conserving today for tomorrow" stats={[{value:'12+',label:'Years experience',icon:'ri-time-line'},{value:'30+',label:'Programs',icon:'ri-compass-3-line'},{value:'20+',label:'Partners',icon:'ri-team-line'},{value:'4',label:'Countries',icon:'ri-earth-line'}]} actions={<><a href="#mission" className="rounded-2xl bg-sunset-gold px-8 py-4 text-center font-black text-slate-950 transition hover:bg-white">Our story <i className="ri-arrow-right-line" /></a><a href="#team" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Meet our team</a></>} />
+      <UnifiedHero title={<>People, Wildlife and Communities <span className="block italic text-sunset-gold">at the Heart of Our Journeys</span></>} description="We design meaningful wildlife experiences that protect nature, support local communities, and connect travelers to East Africa’s extraordinary ecosystems." backgroundImage="/img/Destination/Rwensori.png" mainImage="/img/Destination/UG/bwindi.jpeg" secondaryImage="/img/home/DSC_0112.JPG" imageAlt="Mountain gorilla in Uganda" trustText="Trusted across East Africa" note="Conserving today for tomorrow" stats={[{value:'12+',label:'Years experience',icon:'ri-time-line'},{value:'30+',label:'Programs',icon:'ri-compass-3-line'},{value:'20+',label:'Partners',icon:'ri-team-line'},{value:'4',label:'Countries',icon:'ri-earth-line'}]} actions={<><a href="#mission" className="rounded-2xl bg-sunset-gold px-8 py-4 text-center font-black text-slate-950 transition hover:bg-white">Our story <i className="ri-arrow-right-line" /></a><a href="#team" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Meet our team</a></>} />
 
       <section id="mission" className="motion-reveal py-20 bg-slate-900/40">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
@@ -59,13 +142,13 @@ export default function AboutUsPage() {
               <div className="w-16 h-16 bg-sunset-orange/20 rounded-2xl flex items-center justify-center mb-6 border border-sunset-orange/30">
                 <i className="ri-stethoscope-line text-sunset-orange text-3xl" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Professional Biological Field Expeditions</h3>
+              <h3 className="text-2xl font-bold mb-4">One Health Tourism</h3>
               <ul className="text-slate-300 space-y-2 mb-6 leading-relaxed">
                 <li>Tailored Science Driven Field Expeditions</li>
                 <li>Veterinary and Conservation Field Expeditions</li>
                 <li>Medical professional expeditions</li>
               </ul>
-              <a href="/Professional-Biological-Field-Research-Expeditions" className="text-sunset-gold hover:text-sunset-orange font-medium">Learn More →</a>
+              <a href="/Professional-Biological-Field-Expeditions" className="text-sunset-gold hover:text-sunset-orange font-medium">Learn More →</a>
             </div>
             <div className="motion-card bg-white/10 p-8 rounded-2xl shadow-lg border border-white/10 hover:shadow-xl transition-all">
               <div className="w-16 h-16 bg-sunset-amber/20 rounded-2xl flex items-center justify-center mb-6 border border-sunset-amber/30">
@@ -114,66 +197,25 @@ export default function AboutUsPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                img: '/assets/img/team/t2.jpg',
-                name: 'Dr. Benigna G. Namara',
-                title: 'Microbiologist | Epidemiologist | M&E',
-                bio: 'MBChB | MMED Microbiology | MPH | Field Epidemiology | M&E',
-                contact: 'mailto:benignamara@gmail.com?subject=WildMedUG',
-                icon: 'ri-mail-line',
-              },
-              {
-                img: '/img/nicki.jpg',
-                name: 'Nicki Grønkjær Jensen',
-                title: 'Denmark & Europe Representative',
-                bio: 'Phone: +45 60 13 18 28',
-                contact: 'tel:+4560131828',
-                icon: 'ri-phone-line',
-              },
-              {
-                img: '/assets/img/team/t1.jfif',
-                name: 'Margaret L. Khaitsa, BVM, MSc, Ph. D, ACVPM',
-                title: 'USA Representative, WildMed',
-                bio: 'Professor, Dept. Pathobiology and Population Medicine',
-                contact: 'mailto:mkhaitsa@cvm.msstate.edu?subject=WildMedUG',
-                icon: 'ri-mail-line',
-              },
-              {
-                img: '/assets/img/team/t1.jfif',
-                name: 'Mary Lisa Kasakamu',
-                title: 'Graduate Research Assistant',
-                bio: 'Stress physiology, animal behavior, and welfare with emphasis on swine.',
-                contact: 'mailto:mkasakamu2@huskers.unl.edu?subject=WildMedUG',
-                icon: 'ri-mail-line',
-              },
-              {
-                img: '/assets/img/team/t3.jpg',
-                name: 'Carol Namae',
-                title: 'Finland European representative',
-                bio: 'Supporting European travelers with tailored planning and logistics.',
-                contact: 'mailto:caroline.namae.cn@gmail.com?subject=WildMedUG',
-                icon: 'ri-mail-line',
-              },
-              {
-                img: '/assets/img/team/Michael.jpg',
-                name: 'Michael Tumuhaise',
-                title: 'Web Developer & IT',
-                bio: 'Cool, calm, and collected. Ready to tackle any tech challenge.',
-                contact: 'mailto:michaeltumuhaise11@gmail.com?subject=WildMedUG',
-                icon: 'ri-mail-line',
-              },
-            ].map((member) => (
+            {team.map((member) => (
               <div key={member.name} className="motion-card h-full bg-white/10 border border-white/10 rounded-2xl p-6 hover:-translate-y-1 transition-transform flex flex-col">
                 <div className="relative">
                   <div className="absolute -top-3 -left-3 h-16 w-16 rounded-2xl bg-emerald-500/20 blur-xl" />
-                  <img src={member.img} alt={member.name} className="h-32 w-32 rounded-2xl object-cover border-2 border-white/20" />
+                  {member.img ? (
+                    <img src={member.img} alt={member.name} className="h-32 w-32 rounded-2xl object-cover border-2 border-white/20" />
+                  ) : (
+                    <div className="h-32 w-32 rounded-2xl bg-white/10 border-2 border-white/20 flex items-center justify-center">
+                      <span className="text-3xl font-semibold text-emerald-200">{member.initials}</span>
+                    </div>
+                  )}
                 </div>
                 <h4 className="text-xl font-semibold mt-5">{member.name}</h4>
                 <span className="text-emerald-300 text-sm border-b border-white/10 pb-2 block mb-2">{member.title}</span>
                 <p className="text-sm text-white/70 mt-2 flex-grow">{member.bio}</p>
                 <div className="flex items-center space-x-4 mt-4 text-white/60">
-                  <a href={member.contact} aria-label={`Contact ${member.name}`} className="hover:text-emerald-300"><i className={member.icon} /></a>
+                  {member.links.map((link) => (
+                    <a key={link.href} href={link.href} aria-label={`${link.label} ${member.name}`} className="hover:text-emerald-300" {...(link.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}><i className={link.icon} /></a>
+                  ))}
                 </div>
               </div>
             ))}
@@ -185,9 +227,9 @@ export default function AboutUsPage() {
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h3 className="text-2xl font-bold text-slate-300 uppercase tracking-widest mb-12">Our Collaborators</h3>
           <div className="flex flex-wrap justify-center items-center gap-12 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-            <img src="/assets/logos/mak.png" alt="Makerere University" className="h-16 md:h-20 object-contain" />
-            <img src="/assets/logos/uma.jfif" alt="Uganda Wildlife Authority" className="h-16 md:h-20 object-contain" />
-            <img src="/assets/logos/auc.jfif" alt="African Union of Conservationists" className="h-16 md:h-20 object-contain" />
+            {collaborators.map((logo) => (
+              <img key={logo.name} src={logo.src} alt={logo.name} loading="lazy" className="h-16 md:h-20 w-auto max-w-[220px] rounded bg-white object-contain p-2" />
+            ))}
           </div>
         </div>
       </section>

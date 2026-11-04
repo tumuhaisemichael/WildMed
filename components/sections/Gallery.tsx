@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -21,7 +21,7 @@ const row2 = [
   { src: '/img/home/move6.jpg',  alt: 'Student field research' },
   { src: '/img/home/move7.jpg',  alt: 'Mountain gorilla family' },
   { src: '/img/home/move8.jpg',  alt: 'Medical expedition team' },
-  { src: '/img/home/move9.jpg',  alt: 'Lions of Kidepo Valley' },
+  { src: '/img/home/move6.1.jpg', alt: 'Elephant encounter in the grasslands' },
   { src: '/img/home/move10.jpg', alt: 'Boat safari exploration' },
   { src: '/img/home/move14.jfif', alt: 'Traditional cultural encounter' },
   { src: '/img/home/move15.jfif', alt: 'Wildflower survey in the valley' },
@@ -32,10 +32,8 @@ const row2 = [
 ];
 
 const Gallery = () => {
-  const [mounted, setMounted] = useState(false);
   const [selectedImg, setSelectedImg] = useState<{src: string, alt: string} | null>(null);
 
-  useEffect(() => setMounted(true), []);
 
   const openLightbox = (img: {src: string, alt: string}) => {
     setSelectedImg(img);
@@ -47,7 +45,6 @@ const Gallery = () => {
     document.body.style.overflow = '';
   };
 
-  if (!mounted) return null;
 
   return (
     <section className="pb-10 pt-16 bg-slate-950 overflow-hidden relative border-t border-white/5">

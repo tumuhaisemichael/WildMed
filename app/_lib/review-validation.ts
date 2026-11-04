@@ -1,4 +1,17 @@
+import { timingSafeEqual } from 'crypto';
+
 export type ReviewInput = { name: string; tripType: string; review: string; rating: number };
+export type ReviewStatus = 'pending' | 'approved';
+
+export function isReviewStatus(value: unknown): value is ReviewStatus {
+  return value === 'pending' || value === 'approved';
+}
+
+// REVIEW_STORAGE=json keeps reviews only in the JSON file (handy before a database exists);
+// anything else saves to both the database and the JSON file.
+export function usesDatabase() {
+  return process.env.REVIEW_STORAGE?.trim().toLowerCase() !== 'json';
+}
 
 function clean(value: unknown) {
   return typeof value === 'string' ? value.trim().replace(/\s+/g, ' ') : '';
@@ -21,5 +34,8 @@ export function validateReview(value: unknown): { data?: ReviewInput; error?: st
 export function isReviewAdmin(request: Request) {
   const configured = process.env.REVIEW_ADMIN_TOKEN;
   const supplied = request.headers.get('authorization')?.replace(/^Bearer\s+/i, '');
-  return Boolean(configured && supplied && supplied === configured);
+  if (!configured || !supplied) return false;
+  const expected = Buffer.from(configured);
+  const actual = Buffer.from(supplied);
+  return expected.length === actual.length && timingSafeEqual(expected, actual);
 }

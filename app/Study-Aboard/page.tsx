@@ -4,9 +4,11 @@ import Link from 'next/link';
 import { FormEvent, useEffect, useState } from 'react';
 import UnifiedHero from '@/components/layout/UnifiedHero';
 import FormSuccess from '@/components/forms/FormSuccess';
+import SpamTrap from '@/components/forms/SpamTrap';
+import DateField from '@/components/forms/DateField';
+import { sendEnquiry } from '@/lib/enquiry';
 
-const heroImage =
-  'https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=2000&q=85';
+const heroImage = '/assets/programs/study-abroad/cta-one-health-training.jpg';
 
 const focusAreas = [
   { icon: 'ri-heart-pulse-line', title: 'Human health', text: 'Public health systems, clinical exposure, nutrition, and community health.' },
@@ -14,14 +16,7 @@ const focusAreas = [
   { icon: 'ri-leaf-line', title: 'Environment', text: 'Ecosystem health, food systems, conservation, and the human–wildlife interface.' },
 ];
 
-const gallery = [
-  heroImage,
-  heroImage,
-  heroImage,
-  heroImage,
-  heroImage,
-  heroImage,
-];
+const gallery = Array.from({ length: 6 }, (_, index) => '/assets/programs/study-abroad/gallery-0' + (index + 1) + '.jpg');
 
 const disciplines = [
   'Biological Sciences', 'Environmental Sciences', 'Medical Sciences',
@@ -68,23 +63,9 @@ export default function StudyAbroadPage() {
   const submitApplication = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
-    const data = {
-      programme: 'Study Abroad — One Health East Africa',
-      ...Object.fromEntries(new FormData(form)),
-    };
 
     try {
-      const response = await fetch('https://formspree.io/f/mldlkwke', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) throw new Error('Application submission failed');
-
+      await sendEnquiry(form, 'Study Abroad application', { programme: 'Study Abroad — One Health East Africa' });
       form.reset();
       setSubmitted(true);
     } catch (error) {
@@ -95,7 +76,7 @@ export default function StudyAbroadPage() {
 
   return (
     <main className="study-abroad-page min-h-screen overflow-hidden bg-slate-950 text-white">
-      <UnifiedHero eyebrow="One Health · East Africa" title={<>Study beyond <span className="block italic text-sunset-gold">the classroom.</span></>} description="Immersive field rotations connecting human, animal, and environmental health across Uganda and East Africa." backgroundImage="/assets/heroes/study-abroad-hero.png" mainImage="/assets/heroes/study-abroad-hero.png" secondaryImage="/img/Destination/Rwensori.png" imageAlt="Students conducting field research with a Ugandan instructor" trustText="Supported by partner institutions" note="Education with purpose" stats={[{value:'50+',label:'Annual participants',icon:'ri-group-line'},{value:'10+',label:'Partner institutions',icon:'ri-government-line'},{value:'14–35',label:'Programme days',icon:'ri-calendar-event-line'},{value:'12',label:'Disciplines',icon:'ri-book-open-line'}]} actions={<><button onClick={() => setApplicationOpen(true)} className="rounded-2xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Apply for the programme</button><a href="#programme" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Explore the experience</a></>} />
+      <UnifiedHero title={<>Study beyond <span className="block italic text-sunset-gold">the classroom.</span></>} description="Immersive field rotations connecting human, animal, and environmental health across Uganda and East Africa." backgroundImage="/assets/heroes/study-abroad-hero.png" mainImage="/assets/heroes/study-abroad-hero.png" secondaryImage="/img/Destination/Rwensori.png" imageAlt="Students conducting field research with a Ugandan instructor" trustText="Supported by partner institutions" note="Education with purpose" stats={[{value:'50+',label:'Annual participants',icon:'ri-group-line'},{value:'10+',label:'Partner institutions',icon:'ri-government-line'},{value:'14–35',label:'Programme days',icon:'ri-calendar-event-line'},{value:'12',label:'Disciplines',icon:'ri-book-open-line'}]} actions={<><button onClick={() => setApplicationOpen(true)} className="rounded-2xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Apply for the programme</button><a href="#programme" className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 text-center font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Explore the experience</a></>} />
 
       <section id="programme" className="px-6 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
@@ -142,7 +123,7 @@ export default function StudyAbroadPage() {
 
       {selectedImage && <div className="gallery-lightbox fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/95 p-5 backdrop-blur-xl" onClick={() => setSelectedImage(null)} role="dialog" aria-modal="true"><button onClick={() => setSelectedImage(null)} className="absolute right-5 top-5 text-3xl text-white" aria-label="Close image">×</button><img src={selectedImage} alt="Expanded Study Abroad field experience" className="max-h-[85vh] max-w-full object-contain" onClick={(event) => event.stopPropagation()} /></div>}
 
-      {applicationOpen && <div className="fixed inset-0 z-[100] overflow-y-auto bg-slate-950/90 p-5 backdrop-blur-xl" role="dialog" aria-modal="true" onClick={() => setApplicationOpen(false)}><div className="mx-auto my-10 max-w-xl bg-[#fff7e8] p-7 text-slate-900 shadow-2xl sm:p-10" onClick={(event) => event.stopPropagation()}><div className="flex items-start justify-between gap-5"><div><p className="text-xs font-black uppercase tracking-[0.25em] text-orange-700">One Health programme</p><h2 className="headline mt-2 text-3xl font-bold">Begin your application</h2></div><button onClick={() => setApplicationOpen(false)} className="text-3xl" aria-label="Close application">×</button></div>{submitted ? <FormSuccess title="Study Abroad application received" message="Our programme team will review your academic interests and contact you with the next steps." onClose={() => { setApplicationOpen(false); setSubmitted(false); }} /> : <form onSubmit={submitApplication} className="mt-8 grid gap-5 sm:grid-cols-2"><label className="text-sm text-slate-600">Full name<input required name="name" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600">Email address<input required type="email" name="email" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600 sm:col-span-2">University or institution<input required name="institution" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600">Preferred start date<input required type="date" name="date" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600">Duration<select name="duration" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange">{prices.map((price) => <option key={price.duration}>{price.duration}</option>)}</select></label><label className="text-sm text-slate-600 sm:col-span-2">Special interests<textarea name="interests" rows={3} className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><button type="submit" className="bg-slate-950 px-7 py-4 font-black text-white transition hover:bg-sunset-orange sm:col-span-2">Submit application request</button></form>}</div></div>}
+      {applicationOpen && <div className="form-modal-backdrop fixed inset-0 z-[100] overflow-y-auto p-5" role="dialog" aria-modal="true" onClick={() => setApplicationOpen(false)}><div className="mx-auto my-10 max-w-xl bg-[#fff7e8] p-7 text-slate-900 shadow-2xl sm:p-10" onClick={(event) => event.stopPropagation()}><div className="flex items-start justify-between gap-5"><div><p className="text-xs font-black uppercase tracking-[0.25em] text-orange-700">One Health programme</p><h2 className="headline mt-2 text-3xl font-bold">Begin your application</h2></div><button onClick={() => setApplicationOpen(false)} className="text-3xl" aria-label="Close application">×</button></div>{submitted ? <FormSuccess title="Study Abroad application received" message="Our programme team will review your academic interests and contact you with the next steps." onClose={() => { setApplicationOpen(false); setSubmitted(false); }} /> : <form onSubmit={submitApplication} className="mt-8 grid gap-5 sm:grid-cols-2"><SpamTrap /><label className="text-sm text-slate-600">Full name<input required name="name" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600">Email address<input required type="email" name="email" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600 sm:col-span-2">University or institution<input required name="institution" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><label className="text-sm text-slate-600">Preferred start date<span className="mt-2 block"><DateField name="date" required inputClassName="w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none placeholder:text-slate-400 focus:border-sunset-orange" buttonClassName="text-slate-500" /></span></label><label className="text-sm text-slate-600">Duration<select name="duration" className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange">{prices.map((price) => <option key={price.duration}>{price.duration}</option>)}</select></label><label className="text-sm text-slate-600 sm:col-span-2">Special interests<textarea name="interests" rows={3} className="mt-2 w-full border-b border-slate-400 bg-transparent px-0 py-2 text-slate-900 outline-none focus:border-sunset-orange" /></label><button type="submit" className="bg-slate-950 px-7 py-4 font-black text-white transition hover:bg-sunset-orange sm:col-span-2">Submit application request</button></form>}</div></div>}
     </main>
   );
 }
