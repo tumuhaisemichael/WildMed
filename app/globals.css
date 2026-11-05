@@ -319,7 +319,12 @@ html[data-theme="light"] .immersive-hero [class*="bg-slate-950/"] {
 }
 
 html[data-theme="light"] .gallery-lightbox[class*="bg-slate-950/"] {
-  background-color: rgba(2, 6, 23, 0.95) !important;
+  background-color: rgba(2, 6, 23, 0.5) !important;
+}
+
+html[data-theme="light"] .gallery-lightbox [class*="text-slate-400"],
+html[data-theme="light"] .gallery-lightbox [class*="text-slate-500"] {
+  color: #94a3b8 !important;
 }
 
 html[data-theme="light"] .study-abroad-page > section:not(.immersive-hero) [class*="text-sunset-gold"] {

@@ -9,12 +9,12 @@ const row1 = [
   { src: '/img/home/move2.jpg',  alt: 'Chimpanzee encounter, Kibale' },
   { src: '/img/home/move3.jpg',  alt: 'Elephant herd in the savanna' },
   { src: '/img/home/move4.jpg',  alt: 'Field work session' },
-  { src: '/img/home/move5.jpg',  alt: 'Sunrise safari drive' },
+  { src: '/assets/14day-luxury/murchison-sunrise.jpg', alt: 'Sunrise over Murchison Falls National Park' },
   { src: '/img/home/move11.jpg', alt: 'Leopard tracking expedition' },
   { src: '/img/home/move12.jpg', alt: 'Bird watching in the wetlands' },
   { src: '/img/home/move13.jpeg', alt: 'Community conservation meeting' },
   { src: '/img/home/MtElogn.webp', alt: 'Trekking on Mt. Elgon' },
-  { src: '/img/home/kibale.webp', alt: 'Rainforest canopy walk' },
+  { src: '/img/Destination/rwanda/nyungwe-canopy-walk.jpg', alt: 'Rainforest canopy walk' },
 ];
 
 const row2 = [
@@ -26,8 +26,8 @@ const row2 = [
   { src: '/img/home/move14.jfif', alt: 'Traditional cultural encounter' },
   { src: '/img/home/move15.jfif', alt: 'Wildflower survey in the valley' },
   { src: '/img/home/move16.jfif', alt: 'Veterinary care in the field' },
-  { src: '/img/home/kidapo.webp', alt: 'Rugged landscape of Kidepo' },
-  { src: '/img/home/lakemburo.webp', alt: 'Sunset over Lake Mburo' },
+  { src: '/assets/14day-luxury/savanna-sunset.jpg', alt: 'Sunset over the savanna' },
+  { src: '/assets/11day-uganda-rwanda/lake-mburo-zebra-walk.jpeg', alt: 'Zebras at Lake Mburo' },
   { src: '/img/home/rwen.webp', alt: 'The majestic Rwenzori Mountains' },
 ];
 
@@ -129,7 +129,7 @@ const Gallery = () => {
       {/* Lightbox Modal */}
       {selectedImg && (
         <div 
-          className="fixed inset-0 z-[200] bg-slate-950/98 backdrop-blur-2xl flex items-center justify-center p-6"
+          className="gallery-lightbox fixed inset-0 z-[200] bg-slate-950/50 backdrop-blur-lg flex items-center justify-center p-6"
           onClick={closeLightbox}
         >
           <button 

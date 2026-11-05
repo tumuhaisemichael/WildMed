@@ -140,7 +140,7 @@ export default function GalleryPage() {
       </section>
 
       {isLightboxOpen && (
-        <div className="gallery-lightbox fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/95 p-4 backdrop-blur-xl" role="dialog" aria-modal="true" aria-label="Expanded gallery photograph" onClick={() => setIsLightboxOpen(false)}>
+        <div className="gallery-lightbox fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/50 p-4 backdrop-blur-lg" role="dialog" aria-modal="true" aria-label="Expanded gallery photograph" onClick={() => setIsLightboxOpen(false)}>
           <button type="button" onClick={() => setIsLightboxOpen(false)} className="absolute right-5 top-5 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-xl text-white hover:border-sunset-gold hover:text-sunset-gold" aria-label="Close photograph"><i className="ri-close-line" aria-hidden="true" /></button>
           <div className="relative h-[84vh] w-full max-w-6xl" onClick={(event) => event.stopPropagation()}><Image src={galleryItems[activeIndex].image} alt={galleryItems[activeIndex].title} fill sizes="100vw" className="object-contain" /></div>
         </div>

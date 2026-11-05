@@ -14,7 +14,7 @@ const CTA = () => {
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-[12s] hover:scale-110"
-        style={{ backgroundImage: "url('/img/home/kidapo.webp')" }}
+        style={{ backgroundImage: "url('/assets/8day-uganda-rwanda/murchison-nile-2.jpg')" }}
       />
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-sunset-purple/90 via-slate-950/80 to-black/85" />

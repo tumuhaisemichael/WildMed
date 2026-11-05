@@ -166,16 +166,19 @@ const Header = () => {
                 />
               </div>
             </div>
-            {!scrolled && (
-              <div className="flex flex-col lg:hidden min-[1400px]:flex">
-                <span className="bg-gradient-to-r from-sunset-orange via-sunset-gold to-sunset-orange bg-[length:200%_auto] bg-clip-text text-xl font-black italic tracking-wider text-transparent animate-gradient-x">
-                  WildMed
-                </span>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-sunset-honey/60 font-medium">
-                  Safaris & Field Projects
-                </span>
-              </div>
-            )}
+            {/* Company name stays visible in both states; it just tightens up in the scrolled pill. */}
+            <div className="flex flex-col lg:hidden min-[1400px]:flex">
+              <span className={`bg-gradient-to-r from-sunset-orange via-sunset-gold to-sunset-orange bg-[length:200%_auto] bg-clip-text font-black italic tracking-wider text-transparent animate-gradient-x transition-all duration-500 ${
+                scrolled ? 'text-lg leading-tight' : 'text-xl'
+              }`}>
+                WildMed
+              </span>
+              <span className={`overflow-hidden whitespace-nowrap text-[10px] uppercase tracking-[0.2em] text-sunset-honey/60 font-medium transition-all duration-500 ${
+                scrolled ? 'max-h-0 opacity-0' : 'max-h-4 opacity-100'
+              }`}>
+                Safaris & Field Projects
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation: links stay on one line and truncate with an ellipsis when space runs out */}

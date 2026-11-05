@@ -50,9 +50,9 @@ const itinerary = [
 
 const highlights = [
   { title: "Mountain Gorilla Encounter", category: "Wildlife", text: "Spend a remarkable hour with a mountain gorilla family in its natural habitat.", image: "/assets/3day-gorilla/bwindi-gorilla-resting.jpg", layout: "lg:col-span-2 lg:row-span-2" },
-  { title: "Bwindi Impenetrable Forest", category: "Landscape", text: "Follow forest trails through one of Africa's most biologically rich landscapes.", image: "/assets/3day-gorilla/gorilla2.png", layout: "" },
+  { title: "Bwindi Impenetrable Forest", category: "Landscape", text: "Follow forest trails through one of Africa's most biologically rich landscapes.", image: "/img/Destination/UG/volcanoes-safaris-bwindi-lodge-uganda-jungle-gorilla-lodge.jpg", layout: "" },
   { title: "Batwa Cultural Experience", category: "Culture", text: "Meet an indigenous community and learn about its deep relationship with the forest.", image: "/assets/3day-gorilla/gorilla3.png", layout: "" },
-  { title: "Gorilla Trekking Group", category: "Expedition", text: "Travel with an experienced guide who handles the route, timing and park formalities.", image: "/assets/3day-gorilla/gorilla4.png", layout: "lg:col-span-2" },
+  { title: "Gorilla Trekking Group", category: "Expedition", text: "Travel with an experienced guide who handles the route, timing and park formalities.", image: "/assets/4day2/4day9.jpg", layout: "lg:col-span-2" },
 ];
 
 const lodges = [
@@ -206,7 +206,7 @@ export default function Ugandan3DaysPage() {
 
   return (
     <div className="overflow-hidden bg-slate-950 text-white">
-      <UnifiedHero title={<>3-Day Gorilla Trekking <span className="block italic text-sunset-gold">& Batwa Experience</span></>} description="Experience the magic of mountain gorillas on a compact journey pairing intimate wildlife encounters with meaningful cultural immersion in Uganda's magnificent Bwindi Impenetrable Forest." backgroundImage="/assets/3day-gorilla/gorilla1.png" mainImage="/assets/3day-gorilla/gorilla2.png" secondaryImage="/assets/3day-gorilla/gorilla4.png" imageAlt="Mountain gorilla in Bwindi Impenetrable Forest" trustText="4.9/5 traveler rating" note="One journey, lifelong memories" stats={[{value:'3 days',label:'2 nights',icon:'ri-calendar-check-line'},{value:'Bwindi',label:'Destination',icon:'ri-map-pin-2-line'},{value:'Private',label:'Your own group',icon:'ri-group-line'},{value:'USD 2,540',label:'Per person',icon:'ri-price-tag-3-line'}]} actions={<><button onClick={openBooking} className="rounded-2xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Book this journey <i className="ri-arrow-right-line" /></button><button onClick={openBooking} className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Check permit availability</button></>} />
+      <UnifiedHero title={<>3-Day Gorilla Trekking <span className="block italic text-sunset-gold">& Batwa Experience</span></>} description="Experience the magic of mountain gorillas on a compact journey pairing intimate wildlife encounters with meaningful cultural immersion in Uganda's magnificent Bwindi Impenetrable Forest." backgroundImage="/assets/3day-gorilla/gorilla1.png" mainImage="/assets/4day-flyin-primate/bwindi-gorilla-closeup.jpg" secondaryImage="/assets/4day-express/bwindi-gorilla-family.jpg" imageAlt="Mountain gorilla in Bwindi Impenetrable Forest" trustText="4.9/5 traveler rating" note="One journey, lifelong memories" stats={[{value:'3 days',label:'2 nights',icon:'ri-calendar-check-line'},{value:'Bwindi',label:'Destination',icon:'ri-map-pin-2-line'},{value:'Private',label:'Your own group',icon:'ri-group-line'},{value:'USD 2,540',label:'Per person',icon:'ri-price-tag-3-line'}]} actions={<><button onClick={openBooking} className="rounded-2xl bg-sunset-gold px-8 py-4 font-black text-slate-950 transition hover:bg-white">Book this journey <i className="ri-arrow-right-line" /></button><button onClick={openBooking} className="rounded-2xl border border-sunset-gold/70 bg-slate-950/30 px-8 py-4 font-black text-white backdrop-blur transition hover:bg-sunset-gold hover:text-slate-950">Check permit availability</button></>} />
 
       <section className="bg-slate-950 px-6 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
@@ -363,7 +363,7 @@ export default function Ugandan3DaysPage() {
       </section>
 
       {selectedHighlight && (
-        <div className="gallery-lightbox fixed inset-0 z-[200] flex items-center justify-center bg-slate-950/95 p-4 backdrop-blur-xl" role="dialog" aria-modal="true" aria-label={`Expanded ${selectedHighlight.title}`} onClick={() => setSelectedHighlight(null)}>
+        <div className="gallery-lightbox fixed inset-0 z-[200] flex items-center justify-center bg-slate-950/50 p-4 backdrop-blur-lg" role="dialog" aria-modal="true" aria-label={`Expanded ${selectedHighlight.title}`} onClick={() => setSelectedHighlight(null)}>
           <button type="button" onClick={() => setSelectedHighlight(null)} className="absolute right-5 top-5 z-10 grid h-11 w-11 place-items-center rounded-full border border-white/20 bg-white/10 text-xl text-white hover:border-sunset-gold hover:text-sunset-gold" aria-label="Close photograph"><i className="ri-close-line" /></button>
           <div className="relative h-[84vh] w-full max-w-6xl" onClick={(event) => event.stopPropagation()}><Image src={selectedHighlight.image} alt={selectedHighlight.title} fill sizes="100vw" className="object-contain" /></div>
         </div>
